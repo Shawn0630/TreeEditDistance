@@ -1,0 +1,577 @@
+Compute Free(1, 1)
+ID: 1 label: B
+Root
+childrenNum: 3
+2 3 4 
+subTreeSize: 4
+subTreeSizeSum: 7
+leftmostForestNum: 6
+rightmostForestNum: 6
+specialmostForestNum: 7
+
+ID: 1 label: B
+Root
+childrenNum: 2
+2 3 
+subTreeSize: 4
+subTreeSizeSum: 8
+leftmostForestNum: 6
+rightmostForestNum: 5
+specialmostForestNum: 6
+
+Compute Free(2, 1)
+ID: 2 label: C
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 1 label: B
+Root
+childrenNum: 2
+2 3 
+subTreeSize: 4
+subTreeSizeSum: 8
+leftmostForestNum: 6
+rightmostForestNum: 5
+specialmostForestNum: 6
+
+If select 2 in Tree A #Subproblem: 6 Direction: Left
+Compute Free(2, 2)
+ID: 2 label: C
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 2 label: C
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+If select 2 in Tree A #Subproblem: 1 Direction: Left
+If select 2 in Tree B #Subproblem: 1 Direction: Left
+FreeStrategies[2][2]
+Keynode: 2 in Tree A
+Direction: right
+Compute Free(2, 3)
+ID: 2 label: C
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 3 label: D
+parent is 1
+childrenNum: 1
+4 
+subTreeSize: 2
+subTreeSizeSum: 3
+leftmostForestNum: 2
+rightmostForestNum: 2
+specialmostForestNum: 2
+
+If select 2 in Tree A #Subproblem: 2 Direction: Left
+Compute Free(2, 4)
+ID: 2 label: C
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 4 label: E
+parent is 3
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+If select 2 in Tree A #Subproblem: 1 Direction: Left
+If select 4 in Tree B #Subproblem: 1 Direction: Left
+FreeStrategies[2][4]
+Keynode: 2 in Tree A
+Direction: right
+Compute Free(2, 4)
+Free(2, 4) = 1
+If select 4(leftmost) in Tree B #Subproblem: 2 Direction: RightCompute Free(2, 4)
+Free(2, 4) = 1
+If select 4(rightmost) in Tree B #Subproblem: 2 Direction: LeftFreeStrategies[2][3]
+Keynode: 2 in Tree A
+Direction: right
+Compute Free(2, 2)
+Free(2, 2) = 1
+If select 2(leftmost) in Tree B #Subproblem: 6 Direction: RightCompute Free(2, 3)
+Free(2, 3) = 2
+Compute Free(2, 4)
+Free(2, 4) = 1
+Compute Free(2, 4)
+Free(2, 4) = 1
+Compute Free(2, 4)
+Free(2, 4) = 1
+If select 3(rightmost) in Tree B #Subproblem: 5 Direction: LeftFreeStrategies[2][1]
+Keynode: 3 in TreeB
+Direction: left
+Compute Free(3, 1)
+ID: 3 label: D
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 1 label: B
+Root
+childrenNum: 2
+2 3 
+subTreeSize: 4
+subTreeSizeSum: 8
+leftmostForestNum: 6
+rightmostForestNum: 5
+specialmostForestNum: 6
+
+If select 3 in Tree A #Subproblem: 6 Direction: Left
+Compute Free(3, 2)
+ID: 3 label: D
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 2 label: C
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+If select 3 in Tree A #Subproblem: 1 Direction: Left
+If select 2 in Tree B #Subproblem: 1 Direction: Left
+FreeStrategies[3][2]
+Keynode: 3 in Tree A
+Direction: right
+Compute Free(3, 3)
+ID: 3 label: D
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 3 label: D
+parent is 1
+childrenNum: 1
+4 
+subTreeSize: 2
+subTreeSizeSum: 3
+leftmostForestNum: 2
+rightmostForestNum: 2
+specialmostForestNum: 2
+
+If select 3 in Tree A #Subproblem: 2 Direction: Left
+Compute Free(3, 4)
+ID: 3 label: D
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 4 label: E
+parent is 3
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+If select 3 in Tree A #Subproblem: 1 Direction: Left
+If select 4 in Tree B #Subproblem: 1 Direction: Left
+FreeStrategies[3][4]
+Keynode: 3 in Tree A
+Direction: right
+Compute Free(3, 4)
+Free(3, 4) = 1
+If select 4(leftmost) in Tree B #Subproblem: 2 Direction: RightCompute Free(3, 4)
+Free(3, 4) = 1
+If select 4(rightmost) in Tree B #Subproblem: 2 Direction: LeftFreeStrategies[3][3]
+Keynode: 3 in Tree A
+Direction: right
+Compute Free(3, 2)
+Free(3, 2) = 1
+If select 2(leftmost) in Tree B #Subproblem: 6 Direction: RightCompute Free(3, 3)
+Free(3, 3) = 2
+Compute Free(3, 4)
+Free(3, 4) = 1
+Compute Free(3, 4)
+Free(3, 4) = 1
+Compute Free(3, 4)
+Free(3, 4) = 1
+If select 3(rightmost) in Tree B #Subproblem: 5 Direction: LeftFreeStrategies[3][1]
+Keynode: 3 in TreeB
+Direction: left
+Compute Free(4, 1)
+ID: 4 label: E
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 1 label: B
+Root
+childrenNum: 2
+2 3 
+subTreeSize: 4
+subTreeSizeSum: 8
+leftmostForestNum: 6
+rightmostForestNum: 5
+specialmostForestNum: 6
+
+If select 4 in Tree A #Subproblem: 6 Direction: Left
+Compute Free(4, 2)
+ID: 4 label: E
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 2 label: C
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+If select 4 in Tree A #Subproblem: 1 Direction: Left
+If select 2 in Tree B #Subproblem: 1 Direction: Left
+FreeStrategies[4][2]
+Keynode: 4 in Tree A
+Direction: right
+Compute Free(4, 3)
+ID: 4 label: E
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 3 label: D
+parent is 1
+childrenNum: 1
+4 
+subTreeSize: 2
+subTreeSizeSum: 3
+leftmostForestNum: 2
+rightmostForestNum: 2
+specialmostForestNum: 2
+
+If select 4 in Tree A #Subproblem: 2 Direction: Left
+Compute Free(4, 4)
+ID: 4 label: E
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 4 label: E
+parent is 3
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+If select 4 in Tree A #Subproblem: 1 Direction: Left
+If select 4 in Tree B #Subproblem: 1 Direction: Left
+FreeStrategies[4][4]
+Keynode: 4 in Tree A
+Direction: right
+Compute Free(4, 4)
+Free(4, 4) = 1
+If select 4(leftmost) in Tree B #Subproblem: 2 Direction: RightCompute Free(4, 4)
+Free(4, 4) = 1
+If select 4(rightmost) in Tree B #Subproblem: 2 Direction: LeftFreeStrategies[4][3]
+Keynode: 4 in Tree A
+Direction: right
+Compute Free(4, 2)
+Free(4, 2) = 1
+If select 2(leftmost) in Tree B #Subproblem: 6 Direction: RightCompute Free(4, 3)
+Free(4, 3) = 2
+Compute Free(4, 4)
+Free(4, 4) = 1
+Compute Free(4, 4)
+Free(4, 4) = 1
+Compute Free(4, 4)
+Free(4, 4) = 1
+If select 3(rightmost) in Tree B #Subproblem: 5 Direction: LeftFreeStrategies[4][1]
+Keynode: 3 in TreeB
+Direction: left
+Compute Free(1, 2)
+ID: 1 label: B
+Root
+childrenNum: 3
+2 3 4 
+subTreeSize: 4
+subTreeSizeSum: 7
+leftmostForestNum: 6
+rightmostForestNum: 6
+specialmostForestNum: 7
+
+ID: 2 label: C
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+If select 2 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(2, 2)
+Free(2, 2) = 1
+Compute Free(3, 2)
+Free(3, 2) = 1
+Compute Free(4, 2)
+Free(4, 2) = 1
+Compute Free(2, 2)
+Free(2, 2) = 1
+Compute LeftA(2, 2)
+If select 2(leftmost) in Tree A #Subproblem: 6 Direction: Right
+Compute Free(3, 2)
+Free(3, 2) = 1
+If select 3 in Tree A #Subproblem: 6 Direction: Left
+Compute Free(4, 2)
+Free(4, 2) = 1
+If select 4(rightmost) in Tree A #Subproblem: 6 Direction: Left
+FreeStrategies[1][2]
+Keynode: 2 in TreeB
+Direction: right
+Compute Free(1, 3)
+ID: 1 label: B
+Root
+childrenNum: 3
+2 3 4 
+subTreeSize: 4
+subTreeSizeSum: 7
+leftmostForestNum: 6
+rightmostForestNum: 6
+specialmostForestNum: 7
+
+ID: 3 label: D
+parent is 1
+childrenNum: 1
+4 
+subTreeSize: 2
+subTreeSizeSum: 3
+leftmostForestNum: 2
+rightmostForestNum: 2
+specialmostForestNum: 2
+
+Compute Free(2, 3)
+Free(2, 3) = 2
+Compute Free(3, 3)
+Free(3, 3) = 2
+Compute Free(4, 3)
+Free(4, 3) = 2
+Compute Free(1, 4)
+ID: 1 label: B
+Root
+childrenNum: 3
+2 3 4 
+subTreeSize: 4
+subTreeSizeSum: 7
+leftmostForestNum: 6
+rightmostForestNum: 6
+specialmostForestNum: 7
+
+ID: 4 label: E
+parent is 3
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+If select 4 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(2, 4)
+Free(2, 4) = 1
+Compute Free(3, 4)
+Free(3, 4) = 1
+Compute Free(4, 4)
+Free(4, 4) = 1
+Compute Free(2, 4)
+Free(2, 4) = 1
+Compute LeftA(2, 4)
+If select 2(leftmost) in Tree A #Subproblem: 6 Direction: Right
+Compute Free(3, 4)
+Free(3, 4) = 1
+If select 3 in Tree A #Subproblem: 6 Direction: Left
+Compute Free(4, 4)
+Free(4, 4) = 1
+If select 4(rightmost) in Tree A #Subproblem: 6 Direction: Left
+FreeStrategies[1][4]
+Keynode: 4 in TreeB
+Direction: right
+Compute Free(2, 3)
+Free(2, 3) = 2
+Compute LeftA(2, 3)
+If select 2(leftmost) in Tree A #Subproblem: 12 Direction: Right
+Compute Free(3, 3)
+Free(3, 3) = 2
+If select 3 in Tree A #Subproblem: 12 Direction: Left
+Compute Free(4, 3)
+Free(4, 3) = 2
+If select 4(rightmost) in Tree A #Subproblem: 12 Direction: Left
+Compute Free(1, 4)
+Free(1, 4) = 6
+If select 4(leftmost) in Tree B #Subproblem: 12 Direction: RightCompute Free(1, 4)
+Free(1, 4) = 6
+If select 4(rightmost) in Tree B #Subproblem: 12 Direction: LeftFreeStrategies[1][3]
+Keynode: 2 in Tree A
+Direction: right
+Compute Free(2, 1)
+Free(2, 1) = 5
+Compute LeftA(2, 1)
+If select 2(leftmost) in Tree A #Subproblem: 34 Direction: Right
+Compute Free(3, 1)
+Free(3, 1) = 5
+If select 3 in Tree A #Subproblem: 32 Direction: Left
+Compute Free(4, 1)
+Free(4, 1) = 5
+If select 4(rightmost) in Tree A #Subproblem: 30 Direction: Left
+Compute Free(1, 2)
+Free(1, 2) = 6
+If select 2(leftmost) in Tree B #Subproblem: 36 Direction: RightCompute Free(1, 3)
+Free(1, 3) = 12
+Compute Free(1, 4)
+Free(1, 4) = 6
+Compute Free(1, 4)
+Free(1, 4) = 6
+Compute Free(1, 4)
+Free(1, 4) = 6
+If select 3(rightmost) in Tree B #Subproblem: 26 Direction: LeftFreeStrategies[1][1]
+Keynode: 3 in TreeB
+Direction: left
+RESULT
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+-1 26 6 12 6 -1 -1 -1 -1 -1 
+-1 5 1 2 1 -1 -1 -1 -1 -1 
+-1 5 1 2 1 -1 -1 -1 -1 -1 
+-1 5 1 2 1 -1 -1 -1 -1 -1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+FreeStrategies[1][1]
+Keynode: 3 in TreeB
+Direction: left
+FreeStrategies[1][2]
+Keynode: 2 in TreeB
+Direction: right
+FreeStrategies[1][3]
+Keynode: 2 in Tree A
+Direction: right
+FreeStrategies[1][4]
+Keynode: 4 in TreeB
+Direction: right
+FreeStrategies[2][1]
+Keynode: 3 in TreeB
+Direction: left
+FreeStrategies[2][2]
+Keynode: 2 in Tree A
+Direction: right
+FreeStrategies[2][3]
+Keynode: 2 in Tree A
+Direction: right
+FreeStrategies[2][4]
+Keynode: 2 in Tree A
+Direction: right
+FreeStrategies[3][1]
+Keynode: 3 in TreeB
+Direction: left
+FreeStrategies[3][2]
+Keynode: 3 in Tree A
+Direction: right
+FreeStrategies[3][3]
+Keynode: 3 in Tree A
+Direction: right
+FreeStrategies[3][4]
+Keynode: 3 in Tree A
+Direction: right
+FreeStrategies[4][1]
+Keynode: 3 in TreeB
+Direction: left
+FreeStrategies[4][2]
+Keynode: 4 in Tree A
+Direction: right
+FreeStrategies[4][3]
+Keynode: 4 in Tree A
+Direction: right
+FreeStrategies[4][4]
+Keynode: 4 in Tree A
+Direction: right
