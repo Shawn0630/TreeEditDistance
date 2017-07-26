@@ -12,17 +12,25 @@ class Tree {
 
 private:
 	string label_;
-	vector<Node*> pre;
-	vector<Node*> post;
-
+	int treeSize_;
+	vector<Node*> preL;
+	//vector<Node*> post;
+	int* preL_to_preR;
+	int* preR_to_preL;
+	int* preL_to_postL;
+	int* postL_to_preL;
+	int* preL_to_postR;
+	int* postR_to_preL;
 public:
-	Tree();
-	Tree(string);
+	Tree(string, int);
 	string getLabel(void) const;
-	vector<Node*> getPre(void) const;
-	vector<Node*> getPost(void) const;
-	void pushNodeToPre(Node*);
-	void pushNodeToPost(Node*);
+	int getTreeSize(void) const;
+	vector<Node*> getPreL(void) const;
+	//vector<Node*> getPost(void) const;
+	void pushNodeToPreL(Node*);
+	//void pushNodeToPost(Node*);
+
+	friend class RNA;
 
 };
 

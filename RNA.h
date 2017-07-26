@@ -13,10 +13,11 @@ class RNA {
 private:
 	string RNAName_;
 	int RNASize_; // from 1 to RNASize_(inclusive)
-	int preOrderSequenceSize_;
+	int treeSize_;
+	int preLSequenceSize_;
 	char originalSequence[maxSize];
 	int secondaryStructure[maxSize];
-	char preOrderSequence[2 * maxSize];
+	char preLSequence[2 * maxSize];
 public:
 	RNA();
 	RNA(string);
@@ -30,7 +31,10 @@ public:
 
 	char* getOriginalSequence(void);
 	int* getSecondaryStructure(void);
-	char* getPreOrderSequence(void);
+	char* getPreLSequence(void);
+
+	int getTreeSize() const;
+	void setTreeSize(int);
 
 	void setPreOrderSequence(string);
 

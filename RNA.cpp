@@ -72,87 +72,100 @@ int* RNA::getSecondaryStructure(void) {
 	return structure;
 };
 
-void RNA::setPreOrderSequence(string preOrderSequence_) {
+void RNA::setPreOrderSequence(string preLSequence_) {
 	for(int i = 0; i < preOrderSequence_.length(); i++) {
-		preOrderSequence[i] = preOrderSequence_[i];
+		preLSequence[i] = preLSequence_[i];
 	}
 };
 
-char* RNA::getPreOrderSequence(void) {
+int RNA::getTreeSize() const {
+	return treeSize_;
+};
+void RNA::setTreeSize(int treeSize) {
+	treeSize_ = treeSize;
+};
+
+char* RNA::getPreLSequence(void) {
 	int j = 0;
+	int treeSize = 0;
 	for(int i = 1; i <= RNASize_; i++) {
 		if(secondaryStructure[i] == i){
-			preOrderSequence[j++] = '(';
-			preOrderSequence[j++] = originalSequence[i];
-			preOrderSequence[j++] = ')';
+			preLSequence[j++] = '(';
+			preLSequence[j++] = originalSequence[i];
+			preLSequence[j++] = ')';
+			treeSize++;
 		}
 		// if the base have pair, process the smaller one 
 		else if(secondaryStructure[i] > i){
-			preOrderSequence[j++] = '(';
+			preLSequence[j++] = '(';
 			// there are altogether 16 cases.
 			if(originalSequence[i] == 'A' && originalSequence[secondaryStructure[i]] == 'A'){
-				preOrderSequence[j++] = 'B';
+				preLSequence[j++] = 'B';
 			}
 			else if(originalSequence[i] == 'A' && originalSequence[secondaryStructure[i]] == 'G'){
-				preOrderSequence[j++] = 'D';
+				preLSequence[j++] = 'D';
 			}
 			else if(originalSequence[i] == 'A' && originalSequence[secondaryStructure[i]] == 'C'){
-				preOrderSequence[j++] = 'E';
+				preLSequence[j++] = 'E';
 			}
 			else if(originalSequence[i] == 'A' && originalSequence[secondaryStructure[i]] == 'U'){
-				preOrderSequence[j++] = 'F';
+				preLSequence[j++] = 'F';
 			}
 			else if(originalSequence[i] == 'G' && originalSequence[secondaryStructure[i]] == 'A'){
-				preOrderSequence[j++] = 'H';
+				preLSequence[j++] = 'H';
 			}
 			else if(originalSequence[i] == 'G' && originalSequence[secondaryStructure[i]] == 'G'){
-				preOrderSequence[j++] = 'I';
+				preLSequence[j++] = 'I';
 			}
 			else if(originalSequence[i] == 'G' && originalSequence[secondaryStructure[i]] == 'C'){
-				preOrderSequence[j++] = 'J';
+				preLSequence[j++] = 'J';
 			}
 			else if(originalSequence[i] == 'G' && originalSequence[secondaryStructure[i]] == 'U'){
-				preOrderSequence[j++] = 'K';
+				preLSequence[j++] = 'K';
 			}
 			else if(originalSequence[i] == 'C' && originalSequence[secondaryStructure[i]] == 'A'){
-				preOrderSequence[j++] = 'L';
+				preLSequence[j++] = 'L';
 			}
 			else if(originalSequence[i] == 'C' && originalSequence[secondaryStructure[i]] == 'G'){
-				preOrderSequence[j++] = 'M';
+				preLSequence[j++] = 'M';
 			}
 			else if(originalSequence[i] == 'C' && originalSequence[secondaryStructure[i]] == 'C'){
-				preOrderSequence[j++] = 'N';
+				preLSequence[j++] = 'N';
 			}
 			else if(originalSequence[i] == 'C' && originalSequence[secondaryStructure[i]] == 'U'){
-				preOrderSequence[j++] = 'O';
+				preLSequence[j++] = 'O';
 			}
 			else if(originalSequence[i] == 'U' && originalSequence[secondaryStructure[i]] == 'A'){
-				preOrderSequence[j++] = 'P';
+				preLSequence[j++] = 'P';
 			}
 			else if(originalSequence[i] == 'U' && originalSequence[secondaryStructure[i]] == 'G'){
-				preOrderSequence[j++] = 'Q';
+				preLSequence[j++] = 'Q';
 			}
 			else if(originalSequence[i] == 'U' && originalSequence[secondaryStructure[i]] == 'C'){
-				preOrderSequence[j++] = 'R';
+				preLSequence[j++] = 'R';
 			}
 			else if(originalSequence[i] == 'U' && originalSequence[secondaryStructure[i]] == 'U'){
-				preOrderSequence[j++] = 'S';
+				preLSequence[j++] = 'S';
 			}
+			treeSize++;
 		}
 		else {
-			preOrderSequence[j++] = ')';
+			preLSequence[j++] = ')';
 		}
 	}
-	preOrderSequenceSize_ = j;
-	return preOrderSequence;
+	preLSequenceSize_ = j;
+	treeSize_ = treeSize;
+	return preLSequence;
 };
-
+/*
+	Before building the tree, preOrderSequence and the corresponding treeSize_ should be known.
+*/
 Tree* RNA::buildTree(void) {
 	stack<Node*> nodes;
-	Tree* tree = new Tree(RNAName_);
-	int preN = 1;
+	Tree* tree = new Tree(RNAName_, treeSize_);
+	int preN = 0;
 	int cursor = 1;
-	int postN;
+	int postN = 0;
 	int left = 1;
 	Node* node = new Node(preN, preOrderSequence[cursor]);
 	nodes.push(node);
@@ -171,16 +184,16 @@ Tree* RNA::buildTree(void) {
 			vector<Node*> children = nodes.top()->getChildren();
 			int size = 0;
 			int sum = 0;
-			int left = 0;
-			int right = 0;
-			int special = 0;
+			int leftmostForestNum = 0;
+			int rightmostForestNum = 0;
+			int specialForestNum = 0;
 			int leftmostSize = 0;
 			int rightmostSize = 0;
 			for(int i = 0; i < children.size(); i++) {
 				sum += children[i]->getSubTreeSizeSum();
 				size += children[i]->getSubTreeSize();
-				left += children[i]->getLeftmostForestNum();
-				right += children[i]->getRightmostForestNum();
+				leftmostForestNum += children[i]->getLeftmostForestNum();
+				rightmostForestNum += children[i]->getRightmostForestNum();
 			}
 			if(!children.empty()) {
 				leftmostSize = children[0]->getSubTreeSize();
@@ -188,15 +201,15 @@ Tree* RNA::buildTree(void) {
 			}
 			size += 1;
 			sum += size;
-			left += size - leftmostSize;
-			right += size - rightmostSize;
-			special = size * (size + 3) / 2 - sum;
+			leftmostForestNum += size - leftmostSize;
+			rightmostForestNum += size - rightmostSize;
+			specialForestNum = size * (size + 3) / 2 - sum;
 			nodes.top()->setSubTreeSize(size);
-			nodes.top()->setLeftmostForestNum(left);
-			nodes.top()->setRightmostForestNum(right);
-			nodes.top()->setSpecialForestNum(special);
+			nodes.top()->setLeftmostForestNum(leftmostForestNum);
+			nodes.top()->setRightmostForestNum(rightmostForestNum);
+			nodes.top()->setSpecialForestNum(specialForestNum);
 			nodes.top()->setSubTreeSizeSum(sum);
-			tree->pushNodeToPost(nodes.top());
+			tree->preL_to_postL[nodes.top()->getID()] = postN++						//tree->pushNodeToPost(nodes.top());
 			nodes.pop();
 		}
 	}
