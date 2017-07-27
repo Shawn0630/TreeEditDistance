@@ -6,8 +6,6 @@
 using namespace std;
 //using namespace FPM;
 
-Tree::Tree(){
-};
 
 Tree::Tree(string label, int treeSize) {
 	Tree();
@@ -45,3 +43,27 @@ void Tree::pushNodeToPreL(Node* node) {
 /*void Tree::pushNodeToPost(Node* node) {
 	post.push_back(node);
 };*/
+
+string Tree::toString() const {
+	string res = "";
+	res += "preL\n";
+	for(int i = 0; i < pre.size(); i++) {
+		res += pre[i] + "\n"
+	}
+	res += "\n";
+	res += "preL_to_preR\n";
+	for(int i = 0; i < treeSize_; i++) {
+		res += to_string(preL_to_preR[i]) + " "; 
+	}
+	res += "\n";
+	res += "preL_to_postL\n";
+	for(int i = 0; i < treeSize_; i++) {
+		res += to_string(preL_to_postL[i]) + " ";
+	}
+	res += "\n";
+	res += "preL_to_postR\n";
+	for(int i = 0; i < treeSize_; i++) {
+		res += to_string(preL_to_postR[i]) + " ";
+	}
+	return res;
+};

@@ -175,6 +175,8 @@ Tree* RNA::buildTree(void) {
 		if(preOrderSequence[cursor] == '(') {
 			left++;
 			Node* node = new Node(++preN, preOrderSequence[++cursor]);
+			tree->preL_to_postR[node->getID()] = tree->treeSize_ - 1 - node->getID();
+			tree->postR_to_preL[tree->treeSize_ - 1 - node->getID()] = node->getID();
 			node->setParent(nodes.top());
 			nodes.top()->pushChild(node);
 			nodes.push(node);
@@ -210,6 +212,10 @@ Tree* RNA::buildTree(void) {
 			nodes.top()->setSpecialForestNum(specialForestNum);
 			nodes.top()->setSubTreeSizeSum(sum);
 			tree->preL_to_postL[nodes.top()->getID()] = postN++						//tree->pushNodeToPost(nodes.top());
+			tree->preL_to_preR[nodes.top()->getID()] = tree->treeSize_ - 1 - tree->preL_to_postL[nodes.top()->getID()];
+			tree->preR_to_preL[tree->treeSize_ - 1 - tree->preL_to_postL[nodes.top()->getID()]] = nodes.top()->getID();
+
+			tree->preL_to_postR[]
 			nodes.pop();
 		}
 	}

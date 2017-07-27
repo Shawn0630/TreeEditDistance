@@ -32,6 +32,8 @@ public:
 
 	friend class RNA;
 
+	string toString()const;
+
 };
 
 
