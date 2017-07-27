@@ -8,7 +8,6 @@ using namespace std;
 
 
 Tree::Tree(string label, int treeSize) {
-	Tree();
 	label_ = label;
 	treeSize_ = treeSize;
 	preL_to_preR = new int[treeSize_];
@@ -29,7 +28,7 @@ int Tree::getTreeSize(void) const {
 
 
 vector<Node*> Tree::getPreL(void) const {
-	return pre;
+	return preL;
 };
 
 /*vector<Node*> Tree::getPost(void) const {
@@ -46,9 +45,9 @@ void Tree::pushNodeToPreL(Node* node) {
 
 string Tree::toString() const {
 	string res = "";
-	res += "preL\n";
-	for(int i = 0; i < pre.size(); i++) {
-		res += pre[i] + "\n"
+	res += "preL size = " + to_string(preL.size()) + "\n";
+	for(int i = 0; i < preL.size(); i++) {
+		res = res + preL[i]->toString() + "\n";
 	}
 	res += "\n";
 	res += "preL_to_preR\n";

@@ -13,17 +13,58 @@ TreeComparison::TreeComparison() {
 }
 
 TreeComparison::TreeComparison(Tree* A, Tree* B) {
-	TreeComparison();
 	A_ = A;
 	B_ = B;
-};
+	treeSizeA = A_->getTreeSize();
+	treeSizeB = B_->getTreeSize();
 
-void TreeComparison::setTreeA(Tree* A) {
-	A_ = A;
-}
-void TreeComparison::setTreeB(Tree* B) {
-	B_ = B;
-}
+
+	Free = new int*[treeSizeA];
+	LeftA = new int*[treeSizeA];
+	LeftB = new int*[treeSizeA];
+	RightA = new int*[treeSizeA];
+	RightB = new int*[treeSizeA];
+	AllA = new int*[treeSizeA];
+	AllB = new int*[treeSizeA];
+	LeftAStrategies = new Strategy*[treeSizeA];
+	LeftBStrategies = new Strategy*[treeSizeA];
+	RightAStrategies = new Strategy*[treeSizeA];
+	RightBStrategies = new Strategy*[treeSizeA];
+	AllAStrategies = new Strategy*[treeSizeA];
+	AllBStrategies = new Strategy*[treeSizeA];
+	FreeStrategies = new Strategy*[treeSizeA];
+	for(int i = 0; i < treeSizeA; i++) {
+		Free[i] = new int[treeSizeB];
+		LeftA[i] = new int[treeSizeB];
+		LeftB[i] = new int[treeSizeB];
+		RightA[i] = new int[treeSizeB];
+		RightB[i] = new int[treeSizeB];
+		AllA[i] = new int[treeSizeB];
+		AllB[i] = new int[treeSizeB];
+		LeftAStrategies[i] = new Strategy[treeSizeB];
+		LeftBStrategies[i] = new Strategy[treeSizeB];
+		RightAStrategies[i] = new Strategy[treeSizeB];
+		RightBStrategies[i] = new Strategy[treeSizeB];
+		AllAStrategies[i] = new Strategy[treeSizeB];
+		AllBStrategies[i] = new Strategy[treeSizeB];
+		FreeStrategies[i] = new Strategy[treeSizeB];
+	}
+
+	for(int i = 0; i < treeSizeA; i++) {
+		for(int j = 0; j < treeSizeB; j++) {
+			Free[i][j] = -1;
+			LeftA[i][j] = -1;
+			LeftB[i][j] = -1;
+			RightA[i][j] = -1;
+			RightB[i][j] = -1;
+			AllA[i][j] = -1;
+			AllB[i][j] = -1;
+		}
+	}
+
+	ou.open("out.txt");
+
+};
 
 
 /*void TreeComparison::strategyComputation() {
@@ -540,35 +581,24 @@ void TreeComparison::setTreeB(Tree* B) {
 };*/
 
 void TreeComparison::strategyComputation() {
-	vector<Node*> preA = A_->getPre();
-	vector<Node*> preB = B_->getPre();
-	for(int i = 0; i < maxSize; i++) {
-		for(int j = 0; j < maxSize; j++) {
-			Free[i][j] = -1;
-			LeftA[i][j] = -1;
-			RightA[i][j] = -1;
-			AllA[i][j] = -1;
-			LeftB[i][j] = -1;
-			RightB[i][j] = -1;
-			AllB[i][j] = -1;
-		}
-	}
-	ou.open("out.txt");
+	vector<Node*> preA = A_->getPreL();
+	vector<Node*> preB = B_->getPreL();
+
 	free(preA[0], preB[0]);
 	if(DEBUG) {
 		ou << "RESULT" << endl;
-		for(int i = 0; i < 10; i++) {
-			for(int j = 0; j < 10; j++) {
+		for(int i = 0; i < treeSizeA; i++) {
+			for(int j = 0; j < treeSizeB; j++) {
 				ou << Free[i][j] << " ";
 			}
 			ou << endl;
 		}
 
-		for(int i = 0; i < 10; i++) {
-			for(int j = 0; j < 10; j++) {
-				if(FreeStrategies[i][j] != NULL) {
+		for(int i = 0; i < treeSizeA; i++) {
+			for(int j = 0; j < treeSizeB; j++) {
+				if(&FreeStrategies[i][j] != NULL) {
 					ou << "FreeStrategies[" << i << "][" << j << "]" << endl;
-					ou << FreeStrategies[i][j]->toString() << endl;
+					ou << FreeStrategies[i][j].toString() << endl;
 				}
 			}
 		}
@@ -594,7 +624,7 @@ int TreeComparison::free(Node* a, Node* b) {
 	}
 	vector<Node*> childrenA = a->getChildren();
 	vector<Node*> childrenB = b->getChildren();
-	Strategy* freeS = new Strategy();
+	Strategy freeS;
 	int min = INT_MAX;
 	int freeSumA = 0;
 	vector<int> childrenSizeSumA;
@@ -606,14 +636,14 @@ int TreeComparison::free(Node* a, Node* b) {
 		int right = b->getLeftmostForestNum();
 		if(min > right) {
 			min = right;
-			freeS->setDirection(0);
-			freeS->setTreeToDecompose(0);
-			freeS->setKeyNode(a->getID());
+			freeS.setDirection(0);
+			freeS.setTreeToDecompose(0);
+			freeS.setKeyNode(a->getID());
 		} else if(min > left){
 			min = left;
-			freeS->setDirection(1);
-			freeS->setTreeToDecompose(0);
-			freeS->setKeyNode(a->getID());
+			freeS.setDirection(1);
+			freeS.setTreeToDecompose(0);
+			freeS.setKeyNode(a->getID());
 		}
 		if(DEBUG) {
 			ou << "If select " << to_string(a->getID()) << " in Tree A #Subproblem: " << to_string(min) << " Direction: ";
@@ -626,14 +656,14 @@ int TreeComparison::free(Node* a, Node* b) {
 		int right = a->getLeftmostForestNum();
 		if(min > right) {
 			min = right;
-			freeS->setDirection(0);
-			freeS->setTreeToDecompose(1);
-			freeS->setKeyNode(b->getID());
+			freeS.setDirection(0);
+			freeS.setTreeToDecompose(1);
+			freeS.setKeyNode(b->getID());
 		} else if(min > left){
 			min = left;
-			freeS->setDirection(1);
-			freeS->setTreeToDecompose(1);
-			freeS->setKeyNode(b->getID());
+			freeS.setDirection(1);
+			freeS.setTreeToDecompose(1);
+			freeS.setKeyNode(b->getID());
 		}
 
 		if(DEBUG) {
@@ -667,9 +697,9 @@ int TreeComparison::free(Node* a, Node* b) {
 		}
 		if(min > aleftmost) {
 			min = aleftmost;
-			freeS->setKeyNode(childrenA[0]->getID());
-			freeS->setTreeToDecompose(0);
-			freeS->setDirection(0);
+			freeS.setKeyNode(childrenA[0]->getID());
+			freeS.setTreeToDecompose(0);
+			freeS.setDirection(0);
 		}
 		for(int i = 1; i < childrenA.size() - 1; i++) {
 			int prefix = freeSumA - free(childrenA[i], b) + allA(childrenA[i], b);
@@ -680,10 +710,10 @@ int TreeComparison::free(Node* a, Node* b) {
 			else sum = prefix + left;
 			if(min > sum) {
 				min = sum;
-				freeS->setKeyNode(childrenA[i]->getID());
-				freeS->setTreeToDecompose(0);
-				if(left > right)freeS->setDirection(0);
-				else freeS->setDirection(1);
+				freeS.setKeyNode(childrenA[i]->getID());
+				freeS.setTreeToDecompose(0);
+				if(left > right)freeS.setDirection(0);
+				else freeS.setDirection(1);
 			}
 			if(DEBUG) {
 				ou << "If select " << to_string(childrenA[i]->getID()) << " in Tree A #Subproblem: " << to_string(sum) << " Direction: ";
@@ -697,9 +727,9 @@ int TreeComparison::free(Node* a, Node* b) {
 		}
 		if(min > arightmost) {
 			min = arightmost;
-			freeS->setKeyNode(childrenA[childrenA.size() - 1]->getID());
-			freeS->setTreeToDecompose(0);
-			freeS->setDirection(1);
+			freeS.setKeyNode(childrenA[childrenA.size() - 1]->getID());
+			freeS.setTreeToDecompose(0);
+			freeS.setDirection(1);
 		}
 	}
 
@@ -710,9 +740,9 @@ int TreeComparison::free(Node* a, Node* b) {
 		}
 		if(min > bleftmost) {
 			min = bleftmost;
-			freeS->setKeyNode(childrenB[0]->getID());
-			freeS->setTreeToDecompose(1);
-			freeS->setDirection(0);
+			freeS.setKeyNode(childrenB[0]->getID());
+			freeS.setTreeToDecompose(1);
+			freeS.setDirection(0);
 		}
 
 		for(int i = 1; i < childrenB.size() - 1; i++) {
@@ -724,10 +754,10 @@ int TreeComparison::free(Node* a, Node* b) {
 			else sum = prefix + left;
 			if(min > sum) {
 				min = sum;
-				freeS->setKeyNode(childrenB[i]->getID());
-				freeS->setTreeToDecompose(1);
-				if(left > right)freeS->setDirection(0);
-				else freeS->setDirection(1);
+				freeS.setKeyNode(childrenB[i]->getID());
+				freeS.setTreeToDecompose(1);
+				if(left > right)freeS.setDirection(0);
+				else freeS.setDirection(1);
 			}
 			if(DEBUG) {
 				ou << "If select " << to_string(childrenB[i]->getID()) << " in Tree B #Subproblem: " << to_string(sum) << " Direction: ";
@@ -742,16 +772,16 @@ int TreeComparison::free(Node* a, Node* b) {
 		}
 		if(min > brightmost) {
 			min = brightmost;
-			freeS->setKeyNode(childrenB[childrenB.size() - 1]->getID());
-			freeS->setTreeToDecompose(1);
-			freeS->setDirection(1);
+			freeS.setKeyNode(childrenB[childrenB.size() - 1]->getID());
+			freeS.setTreeToDecompose(1);
+			freeS.setDirection(1);
 		}
 	}
 	Free[a->getID()][b->getID()] = min;
 	FreeStrategies[a->getID()][b->getID()] = freeS;
 	if(DEBUG) {
 		ou << "FreeStrategies[" << to_string(a->getID()) << "][" << to_string(b->getID()) << "]"  << endl;
-		ou << FreeStrategies[a->getID()][b->getID()]->toString() << endl;
+		ou << FreeStrategies[a->getID()][b->getID()].toString() << endl;
 	}
 	return min;
 };
@@ -768,12 +798,12 @@ int TreeComparison::leftA(Node* a, Node* b) {
 	}
 	vector<Node*> childrenA = a->getChildren();
 	int min = INT_MAX;
-	Strategy* leftAS = new Strategy();
+	Strategy leftAS;
 	if(childrenA.empty()) {
 		min = b->getLeftmostForestNum();
-		leftAS->setKeyNode(a->getID());
-		leftAS->setTreeToDecompose(0);
-		leftAS->setDirection(0);
+		leftAS.setKeyNode(a->getID());
+		leftAS.setTreeToDecompose(0);
+		leftAS.setDirection(0);
 	} else {
 		int freeSumA = 0;
 		vector<int> childrenSizeSumA;
@@ -786,9 +816,9 @@ int TreeComparison::leftA(Node* a, Node* b) {
 		int aleftmost = freeSumA - free(childrenA[0], b) + leftA(childrenA[0], b) + b->getLeftmostForestNum() * (a->getSubTreeSize() - childrenA[0]->getSubTreeSize());
 		if(min >aleftmost) {
 			min = aleftmost;
-			leftAS->setKeyNode(childrenA[0]->getID());
-			leftAS->setTreeToDecompose(0);
-			leftAS->setDirection(0);
+			leftAS.setKeyNode(childrenA[0]->getID());
+			leftAS.setTreeToDecompose(0);
+			leftAS.setDirection(0);
 		}
 
 		for(int i = 1; i < childrenA.size() - 1; i++) {
@@ -800,18 +830,18 @@ int TreeComparison::leftA(Node* a, Node* b) {
 			else sum = prefix + left;
 			if(min > sum) {
 				min = sum;
-				leftAS->setKeyNode(childrenA[i]->getID());
-				leftAS->setTreeToDecompose(0);
-				if(left > right)leftAS->setDirection(0);
-				else leftAS->setDirection(1);
+				leftAS.setKeyNode(childrenA[i]->getID());
+				leftAS.setTreeToDecompose(0);
+				if(left > right)leftAS.setDirection(0);
+				else leftAS.setDirection(1);
 			}
 		}
 		int arightmost = freeSumA - free(childrenA[childrenA.size() - 1], b) + allA(childrenA[childrenA.size() - 1], b) + b->getSpecialForestNum() * (a->getSubTreeSize() - childrenA[childrenA.size() - 1]->getSubTreeSize());
 		if(min > arightmost) {
 			min = arightmost;
-			leftAS->setKeyNode(childrenA[childrenA.size() - 1]->getID());
-			leftAS->setTreeToDecompose(0);
-			leftAS->setDirection(1);
+			leftAS.setKeyNode(childrenA[childrenA.size() - 1]->getID());
+			leftAS.setTreeToDecompose(0);
+			leftAS.setDirection(1);
 		}
 	}
 	LeftA[a->getID()][b->getID()] = min;
@@ -824,12 +854,12 @@ int TreeComparison::rightA(Node* a, Node* b) {
 	if(RightA[a->getID()][b->getID()] != -1) return RightA[a->getID()][b->getID()];
 	vector<Node*> childrenA = a->getChildren();
 	int min = INT_MAX;
-	Strategy* rightAS = new Strategy();
+	Strategy rightAS;
 	if(childrenA.empty()) {
 		min = b->getRightmostForestNum();
-		rightAS->setKeyNode(a->getID());
-		rightAS->setTreeToDecompose(0);
-		rightAS->setDirection(1);
+		rightAS.setKeyNode(a->getID());
+		rightAS.setTreeToDecompose(0);
+		rightAS.setDirection(1);
 	} else {
 		int freeSumA = 0;
 		vector<int> childrenSizeSumA;
@@ -842,9 +872,9 @@ int TreeComparison::rightA(Node* a, Node* b) {
 		int aleftmost = freeSumA - free(childrenA[0], b) + allA(childrenA[0], b) + b->getSpecialForestNum() * (a->getSubTreeSize() - childrenA[0]->getSubTreeSize());
 		if(min >aleftmost) {
 			min = aleftmost;
-			rightAS->setKeyNode(childrenA[0]->getID());
-			rightAS->setTreeToDecompose(0);
-			rightAS->setDirection(0);
+			rightAS.setKeyNode(childrenA[0]->getID());
+			rightAS.setTreeToDecompose(0);
+			rightAS.setDirection(0);
 		}
 
 		for(int i = 1; i < childrenA.size() - 1; i++) {
@@ -856,18 +886,18 @@ int TreeComparison::rightA(Node* a, Node* b) {
 			else sum = prefix + left;
 			if(min > sum) {
 				min = sum;
-				rightAS->setKeyNode(childrenA[i]->getID());
-				rightAS->setTreeToDecompose(0);
-				if(left > right)rightAS->setDirection(0);
-				else rightAS->setDirection(1);
+				rightAS.setKeyNode(childrenA[i]->getID());
+				rightAS.setTreeToDecompose(0);
+				if(left > right)rightAS.setDirection(0);
+				else rightAS.setDirection(1);
 			}
 		}
 		int arightmost = freeSumA - free(childrenA[childrenA.size() - 1], b) + rightA(childrenA[childrenA.size() - 1], b) + b->getLeftmostForestNum()* (a->getSubTreeSize() - childrenA[childrenA.size() - 1]->getSubTreeSize());
 		if(min > arightmost) {
 			min = arightmost;
-			rightAS->setKeyNode(childrenA[childrenA.size() - 1]->getID());
-			rightAS->setTreeToDecompose(0);
-			rightAS->setDirection(1);
+			rightAS.setKeyNode(childrenA[childrenA.size() - 1]->getID());
+			rightAS.setTreeToDecompose(0);
+			rightAS.setDirection(1);
 		}
 	}
 	RightA[a->getID()][b->getID()] = min;
@@ -879,11 +909,11 @@ int TreeComparison::allA(Node* a, Node* b) {
 	if(AllA[a->getID()][b->getID()] != -1) return AllA[a->getID()][b->getID()];
 	vector<Node*> childrenA = a->getChildren();
 	int min = INT_MAX;
-	Strategy* allAS = new Strategy();
+	Strategy allAS;
 	if(childrenA.empty()) {
 		min = b->getSpecialForestNum();
-		allAS->setKeyNode(a->getID());
-		allAS->setTreeToDecompose(0);
+		allAS.setKeyNode(a->getID());
+		allAS.setTreeToDecompose(0);
 	} else {
 		int freeSumA = 0;
 		vector<int> childrenSizeSumA;
@@ -896,18 +926,18 @@ int TreeComparison::allA(Node* a, Node* b) {
 		int aleftmost = freeSumA - free(childrenA[0], b) + allA(childrenA[0], b) + b->getSpecialForestNum() * (a->getSubTreeSize() - childrenA[0]->getSubTreeSize());
 		if(min >aleftmost) {
 			min = aleftmost;
-			allAS->setKeyNode(childrenA[0]->getID());
-			allAS->setTreeToDecompose(0);
+			allAS.setKeyNode(childrenA[0]->getID());
+			allAS.setTreeToDecompose(0);
 		}
 
 		for(int i = 1; i < childrenA.size(); i++) {
 			int sum = freeSumA - free(childrenA[i], b) + allA(childrenA[i], b) + b->getSpecialForestNum() * (a->getSubTreeSize() - childrenA[i]->getSubTreeSize());
 			if(min > sum) {
 				min = sum;
-				allAS->setKeyNode(childrenA[i]->getID());
-				allAS->setTreeToDecompose(0);
-				if(left > right)allAS->setDirection(0);
-				else allAS->setDirection(1);
+				allAS.setKeyNode(childrenA[i]->getID());
+				allAS.setTreeToDecompose(0);
+				if(left > right)allAS.setDirection(0);
+				else allAS.setDirection(1);
 			}
 		}
 	}
@@ -920,12 +950,12 @@ int TreeComparison::leftB(Node* a, Node* b) {
 	if(LeftB[a->getID()][b->getID()] != -1) return LeftB[a->getID()][b->getID()];
 	vector<Node*> childrenB = b->getChildren();
 	int min = INT_MAX;
-	Strategy* leftBS = new Strategy();
+	Strategy leftBS;
 	if(childrenB.empty()) {
 		min = a->getLeftmostForestNum();
-		leftBS->setKeyNode(b->getID());
-		leftBS->setTreeToDecompose(1);
-		leftBS->setDirection(0);
+		leftBS.setKeyNode(b->getID());
+		leftBS.setTreeToDecompose(1);
+		leftBS.setDirection(0);
 	} else {
 		int freeSumB = 0;
 		vector<int> childrenSizeSumB;
@@ -938,9 +968,9 @@ int TreeComparison::leftB(Node* a, Node* b) {
 		int bleftmost = freeSumB - free(a, childrenB[0]) + leftB(a, childrenB[0]) + a->getLeftmostForestNum() * (b->getSubTreeSize() - childrenB[0]->getSubTreeSize());
 		if(min >bleftmost) {
 			min = bleftmost;
-			leftBS->setKeyNode(childrenB[0]->getID());
-			leftBS->setTreeToDecompose(1);
-			leftBS->setDirection(0);
+			leftBS.setKeyNode(childrenB[0]->getID());
+			leftBS.setTreeToDecompose(1);
+			leftBS.setDirection(0);
 		}
 
 		for(int i = 1; i < childrenB.size() - 1; i++) {
@@ -952,18 +982,18 @@ int TreeComparison::leftB(Node* a, Node* b) {
 			else sum = prefix + left;
 			if(min > sum) {
 				min = sum;
-				leftBS->setKeyNode(childrenB[i]->getID());
-				leftBS->setTreeToDecompose(1);
-				if(left > right)leftBS->setDirection(0);
-				else leftBS->setDirection(1);
+				leftBS.setKeyNode(childrenB[i]->getID());
+				leftBS.setTreeToDecompose(1);
+				if(left > right)leftBS.setDirection(0);
+				else leftBS.setDirection(1);
 			}
 		}
 		int brightmost = freeSumB - free(a, childrenB[childrenB.size() - 1]) + allB(a, childrenB[childrenB.size() - 1]) + a->getSpecialForestNum() * (b->getSubTreeSize() - childrenB[childrenB.size() - 1]->getSubTreeSize());
 		if(min > brightmost) {
 			min = brightmost;
-			leftBS->setKeyNode(childrenB[childrenB.size() - 1]->getID());
-			leftBS->setTreeToDecompose(1);
-			leftBS->setDirection(1);
+			leftBS.setKeyNode(childrenB[childrenB.size() - 1]->getID());
+			leftBS.setTreeToDecompose(1);
+			leftBS.setDirection(1);
 		}
 	}
 	LeftB[a->getID()][b->getID()] = min;
@@ -975,12 +1005,12 @@ int TreeComparison::rightB(Node* a, Node* b) {
 	if(RightB[a->getID()][b->getID()] != -1) return RightB[a->getID()][b->getID()];
 	vector<Node*> childrenB = b->getChildren();
 	int min = INT_MAX;
-	Strategy* rightBS = new Strategy();
+	Strategy rightBS;
 	if(childrenB.empty()) {
 		min = a->getRightmostForestNum();
-		rightBS->setKeyNode(a->getID());
-		rightBS->setTreeToDecompose(1);
-		rightBS->setDirection(1);
+		rightBS.setKeyNode(a->getID());
+		rightBS.setTreeToDecompose(1);
+		rightBS.setDirection(1);
 	} else {
 		int freeSumB = 0;
 		vector<int> childrenSizeSumB;
@@ -993,9 +1023,9 @@ int TreeComparison::rightB(Node* a, Node* b) {
 		int bleftmost = freeSumB - free(a, childrenB[0]) + allB(a, childrenB[0]) + a->getSpecialForestNum() * (b->getSubTreeSize() - childrenB[0]->getSubTreeSize());
 		if(min >bleftmost) {
 			min = bleftmost;
-			rightBS->setKeyNode(childrenB[0]->getID());
-			rightBS->setTreeToDecompose(1);
-			rightBS->setDirection(0);
+			rightBS.setKeyNode(childrenB[0]->getID());
+			rightBS.setTreeToDecompose(1);
+			rightBS.setDirection(0);
 		}
 
 		for(int i = 1; i < childrenB.size() - 1; i++) {
@@ -1007,18 +1037,18 @@ int TreeComparison::rightB(Node* a, Node* b) {
 			else sum = prefix + left;
 			if(min > sum) {
 				min = sum;
-				rightBS->setKeyNode(childrenB[i]->getID());
-				rightBS->setTreeToDecompose(1);
-				if(left > right)rightBS->setDirection(0);
-				else rightBS->setDirection(1);
+				rightBS.setKeyNode(childrenB[i]->getID());
+				rightBS.setTreeToDecompose(1);
+				if(left > right)rightBS.setDirection(0);
+				else rightBS.setDirection(1);
 			}
 		}
 		int brightmost = freeSumB - free(a, childrenB[childrenB.size() - 1]) + rightB(a, childrenB[childrenB.size() - 1]) + a->getLeftmostForestNum()* (b->getSubTreeSize() - childrenB[childrenB.size() - 1]->getSubTreeSize());
 		if(min > brightmost) {
 			min = brightmost;
-			rightBS->setKeyNode(childrenB[childrenB.size() - 1]->getID());
-			rightBS->setTreeToDecompose(1);
-			rightBS->setDirection(1);
+			rightBS.setKeyNode(childrenB[childrenB.size() - 1]->getID());
+			rightBS.setTreeToDecompose(1);
+			rightBS.setDirection(1);
 		}
 	}
 	RightB[a->getID()][b->getID()] = min;
@@ -1030,11 +1060,11 @@ int TreeComparison::allB(Node* a, Node* b) {
 	if(AllB[a->getID()][b->getID()] != -1) return AllB[a->getID()][b->getID()];
 	vector<Node*> childrenB = b->getChildren();
 	int min = INT_MAX;
-	Strategy* allBS = new Strategy();
+	Strategy allBS;
 	if(childrenB.empty()) {
 		min = b->getSpecialForestNum();
-		allBS->setKeyNode(a->getID());
-		allBS->setTreeToDecompose(1);
+		allBS.setKeyNode(a->getID());
+		allBS.setTreeToDecompose(1);
 	} else {
 		int freeSumB = 0;
 		vector<int> childrenSizeSumB;
@@ -1047,18 +1077,18 @@ int TreeComparison::allB(Node* a, Node* b) {
 		int bleftmost = freeSumB - free(a, childrenB[0]) + allB(a, childrenB[0]) + a->getSpecialForestNum() * (b->getSubTreeSize() - childrenB[0]->getSubTreeSize());
 		if(min >bleftmost) {
 			min = bleftmost;
-			allBS->setKeyNode(childrenB[0]->getID());
-			allBS->setTreeToDecompose(1);
+			allBS.setKeyNode(childrenB[0]->getID());
+			allBS.setTreeToDecompose(1);
 		}
 
 		for(int i = 1; i < childrenB.size(); i++) {
 			int sum = freeSumB - free(a, childrenB[i]) + allB(a, childrenB[i]) + a->getSpecialForestNum() * (b->getSubTreeSize() - childrenB[i]->getSubTreeSize());
 			if(min > sum) {
 				min = sum;
-				allBS->setKeyNode(childrenB[i]->getID());
-				allBS->setTreeToDecompose(1);
-				if(left > right)allBS->setDirection(0);
-				else allBS->setDirection(1);
+				allBS.setKeyNode(childrenB[i]->getID());
+				allBS.setTreeToDecompose(1);
+				if(left > right)allBS.setDirection(0);
+				else allBS.setDirection(1);
 			}
 		}
 	}

@@ -36,7 +36,7 @@ int RNA::getRNASize(void) const {
 };
 
 int RNA::getPreOrderSequenceSize(void)const {
-	return preOrderSequenceSize_;
+	return preLSequenceSize_;
 };
 
 char& RNA::operator[] (int i) {
@@ -73,7 +73,7 @@ int* RNA::getSecondaryStructure(void) {
 };
 
 void RNA::setPreOrderSequence(string preLSequence_) {
-	for(int i = 0; i < preOrderSequence_.length(); i++) {
+	for(int i = 0; i < preLSequence_.length(); i++) {
 		preLSequence[i] = preLSequence_[i];
 	}
 };
@@ -167,21 +167,23 @@ Tree* RNA::buildTree(void) {
 	int cursor = 1;
 	int postN = 0;
 	int left = 1;
-	Node* node = new Node(preN, preOrderSequence[cursor]);
+	Node* node = new Node(preN, preLSequence[cursor]);
 	nodes.push(node);
-	tree->pushNodeToPre(node);
+	tree->preL_to_postR[node->getID()] = tree->treeSize_ - 1 - node->getID();
+	tree->postR_to_preL[tree->treeSize_ - 1 - node->getID()] = node->getID();
+	tree->pushNodeToPreL(node);
 	while(left > 0) {
 		cursor++;
-		if(preOrderSequence[cursor] == '(') {
+		if(preLSequence[cursor] == '(') {
 			left++;
-			Node* node = new Node(++preN, preOrderSequence[++cursor]);
+			Node* node = new Node(++preN, preLSequence[++cursor]);
 			tree->preL_to_postR[node->getID()] = tree->treeSize_ - 1 - node->getID();
 			tree->postR_to_preL[tree->treeSize_ - 1 - node->getID()] = node->getID();
 			node->setParent(nodes.top());
 			nodes.top()->pushChild(node);
 			nodes.push(node);
-			tree->pushNodeToPre(node);
-		} else if(preOrderSequence[cursor] == ')') {
+			tree->pushNodeToPreL(node);
+		} else if(preLSequence[cursor] == ')') {
 			left--;
 			vector<Node*> children = nodes.top()->getChildren();
 			int size = 0;
@@ -211,11 +213,9 @@ Tree* RNA::buildTree(void) {
 			nodes.top()->setRightmostForestNum(rightmostForestNum);
 			nodes.top()->setSpecialForestNum(specialForestNum);
 			nodes.top()->setSubTreeSizeSum(sum);
-			tree->preL_to_postL[nodes.top()->getID()] = postN++						//tree->pushNodeToPost(nodes.top());
+			tree->preL_to_postL[nodes.top()->getID()] = postN++;						//tree->pushNodeToPost(nodes.top());
 			tree->preL_to_preR[nodes.top()->getID()] = tree->treeSize_ - 1 - tree->preL_to_postL[nodes.top()->getID()];
 			tree->preR_to_preL[tree->treeSize_ - 1 - tree->preL_to_postL[nodes.top()->getID()]] = nodes.top()->getID();
-
-			tree->preL_to_postR[]
 			nodes.pop();
 		}
 	}

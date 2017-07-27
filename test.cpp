@@ -58,18 +58,21 @@ int main() {
 	}*/
 
 	RNA r1, r2;
+	//ofstream ou("out.txt");
 	r1.setRNAName("A");
-	r2.setRNAName("B");
-	//string s1 = "(B(C)(D(F)(G))(E))";
-	//string s2 = "(B(C(E(F)(G))))";
-	string s1 = "(B(C)(D)(E))";
-	string s2 = "(B(C)(D(E)))";
+	//r2.setRNAName("B");
+	string s1 = "(B(C)(D(F)(G))(E))";
+	string s2 = "(B(C(E(F)(G))))";
+	//string s1 = "(B(C)(D)(E))";
+	//string s2 = "(B(C)(D(E)))";
 	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(6);
 	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(5);
+	//r2.setPreOrderSequence(s2);
 	Tree* t1 = r1.buildTree();
+	//ou << t1->toString() << endl;
 	Tree* t2 = r2.buildTree();
-	TreeComparison tc;
-	tc.setTreeA(t1);
-	tc.setTreeB(t2);
+	TreeComparison tc(t1, t2);
 	tc.strategyComputation();
 }

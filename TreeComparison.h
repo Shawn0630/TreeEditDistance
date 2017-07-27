@@ -10,20 +10,24 @@ class TreeComparison {
 private:	
 	Tree* A_;
 	Tree* B_;
-	int Free[maxSize][maxSize];
-	int LeftA[maxSize][maxSize];
-	int LeftB[maxSize][maxSize];
-	int RightA[maxSize][maxSize];
-	int RightB[maxSize][maxSize];
-	int AllA[maxSize][maxSize];
-	int AllB[maxSize][maxSize];
-	Strategy* LeftAStrategies[maxSize][maxSize];
-	Strategy* RightAStrategies[maxSize][maxSize];
-	Strategy* LeftBStrategies[maxSize][maxSize];
-	Strategy* RightBStrategies[maxSize][maxSize];
-	Strategy* AllAStrategies[maxSize][maxSize];
-	Strategy* AllBStrategies[maxSize][maxSize];
-	Strategy* FreeStrategies[maxSize][maxSize];
+	int treeSizeA;
+	int treeSizeB;
+	int** Free;
+	int** LeftA;
+	int** LeftB;
+	int** RightA;
+	int** RightB;
+	int** AllA;
+	int** AllB;
+	Strategy** LeftAStrategies;
+	Strategy** RightAStrategies;
+	Strategy** LeftBStrategies;
+	Strategy** RightBStrategies;
+	Strategy** AllAStrategies;
+	Strategy** AllBStrategies;
+	Strategy** FreeStrategies;
+
+	Path** Paths;
 
 	int free(Node*, Node*);
 	int leftA(Node*, Node*);
@@ -33,13 +37,13 @@ private:
 	int allA(Node*, Node*);
 	int allB(Node*, Node*);
 
+	void computePath();
+
 	ofstream ou;
 
 public:
 	TreeComparison();
 	TreeComparison(Tree*, Tree*);
 	void strategyComputation();
-	void setTreeA(Tree*);
-	void setTreeB(Tree*);
 
 };
