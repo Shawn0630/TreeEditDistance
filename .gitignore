@@ -17,6 +17,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# C++ intermediate files
+*.h.gch
+*.o
+
 # =========================
 # Operating System Files
 # =========================
