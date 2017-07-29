@@ -35,8 +35,6 @@ private:
 	int allA(Node*, Node*);
 	int allB(Node*, Node*);
 
-	void computePath();
-
 	ofstream ou;
 
 public:

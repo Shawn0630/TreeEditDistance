@@ -40,6 +40,7 @@ string Strategy::toString() const {
 	else res += " in TreeB\n";
 	res += "Direction: ";
 	if(direction_ == 0) res += "right";
-	else res += "left";
+	else res += "left\n";
+	res += "Leaf: " + to_string(leaf_);
 	return res;
 };

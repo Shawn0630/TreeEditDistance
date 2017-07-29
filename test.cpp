@@ -8,7 +8,7 @@
 using namespace std;
 
 int main() {
-	/*string fileName = "rna17.data";
+	string fileName = "rna16.data";
 	vector<RNA> RNAs;
 	//ofstream ou("out.txt");
 	FileManage* file = FileManage::getInstance();
@@ -16,12 +16,16 @@ int main() {
 	RNAs = file->readRNAsFromFile();
 	//ou << RNAs[0].toString() << endl;
 	//ou << RNAs[1].toString() << endl;
-	RNAs[0].getPreOrderSequence();
-	RNAs[1].getPreOrderSequence();
+	RNAs[0].getPreLSequence();
+	RNAs[1].getPreLSequence();
 	Tree* t1 = RNAs[0].buildTree();
 	Tree* t2 = RNAs[1].buildTree();
+/*	ou << "TreeA" << endl;
+	ou << t1->toString() << endl;
+	ou << "TreeB" << endl;
+	ou << t2->toString() << endl;*/
 	TreeComparison tc(t1, t2);
-	tc.strategyComputation();*/
+	tc.strategyComputation();
 
 
 	/*if(DEBUG) {
@@ -57,23 +61,27 @@ int main() {
 		}
 	}*/
 
-	RNA r1, r2;
+/*	RNA r1, r2;
 	//ofstream ou("out.txt");
 	r1.setRNAName("A");
+	r2.setRNAName("B");
 	//r2.setRNAName("B");
 	//string s1 = "(B(C)(D(F)(G))(E))";
-	string s2 = "(B(C(E(F)(G))))";
+	string s1 = "(B(C(E(G(I)(J))(H))(F))(D))";
 	//string s1 = "(B(C)(D)(E))";
 	//string s2 = "(B(C)(D(E)))";
-	string s1 = "(B(C(D)(E))(F(G)(H)))";
+	string s2 = "(B(C)(D(E)(F(G)(H(I)(J)))))";
 	r1.setPreOrderSequence(s1);
-	r1.setTreeSize(7);
+	r1.setTreeSize(9);
 	r2.setPreOrderSequence(s2);
-	r2.setTreeSize(5);
+	r2.setTreeSize(9);
 	//r2.setPreOrderSequence(s2);
+	//ou << "TreeA" << endl;
 	Tree* t1 = r1.buildTree();
 	//ou << t1->toString() << endl;
+	//ou << "TreeB" << endl;
 	Tree* t2 = r2.buildTree();
+	//ou << t2->toString() << endl;
 	TreeComparison tc(t1, t2);
-	tc.strategyComputation();
+	tc.strategyComputation();*/
 }

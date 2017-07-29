@@ -597,7 +597,9 @@ void TreeComparison::strategyComputation() {
 		for(int i = 0; i < treeSizeA; i++) {
 			for(int j = 0; j < treeSizeB; j++) {
 				if(&FreeStrategies[i][j] != NULL) {
-					ou << FreeStrategies[i][j].getLeaf() << " ";
+					ou << FreeStrategies[i][j].getLeaf() << " in ";
+					if(FreeStrategies[i][j].getTreeToDecompose() == 0) ou << "A ";
+					else ou << "B ";
 				}
 			}
 			ou << endl;
@@ -610,20 +612,21 @@ void TreeComparison::strategyComputation() {
 
 
 int TreeComparison::free(Node* a, Node* b) {
-	if(DEBUG) {
+	/*if(DEBUG) {
 		ou << "Compute Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
-	}
-	if(Free[a->getID()][b->getID()] != -1) {
+	}*/
+/*	if(Free[a->getID()][b->getID()] != -1) {
 		if(DEBUG) {
 			ou << "Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") = " << to_string(Free[a->getID()][b->getID()]) << endl;
 		}
 		return Free[a->getID()][b->getID()];
-	}
+	}*/
 	
-	if(DEBUG) {
+	/*if(DEBUG) {
 		ou << a->toString() << endl;
 		ou << b->toString() << endl;
-	}
+	}*/
+	if(Free[a->getID()][b->getID()] != -1) return Free[a->getID()][b->getID()];
 	vector<Node*> childrenA = a->getChildren();
 	vector<Node*> childrenB = b->getChildren();
 	Strategy freeS;
@@ -632,7 +635,7 @@ int TreeComparison::free(Node* a, Node* b) {
 	vector<int> childrenSizeSumA;
 	int freeSumB = 0;
 	vector<int> childrenSizeSumB;
-	
+
 	if(childrenA.empty()) {
 		int left = b->getRightmostForestNum();
 		int right = b->getLeftmostForestNum();
@@ -650,6 +653,7 @@ int TreeComparison::free(Node* a, Node* b) {
 			freeS.setLeaf(a->getID());
 		}
 		if(DEBUG) {
+			ou << "Compute Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
 			ou << "If select " << to_string(a->getID()) << " in Tree A #Subproblem: " << to_string(min) << " Direction: ";
 			if(left > right) ou << "Right" << endl;
 			else ou << "Left" << endl;
@@ -673,6 +677,7 @@ int TreeComparison::free(Node* a, Node* b) {
 		}
 
 		if(DEBUG) {
+			ou << "Compute Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
 			ou << "If select " << to_string(b->getID()) << " in Tree B #Subproblem: " << to_string(min) << " Direction: ";
 			if(left > right) ou << "Right" << endl;
 			else ou << "Left" << endl;
@@ -699,6 +704,7 @@ int TreeComparison::free(Node* a, Node* b) {
 	if(!childrenA.empty()) {
 		int aleftmost = freeSumA - free(childrenA[0], b) + leftA(childrenA[0], b) + b->getLeftmostForestNum() * (a->getSubTreeSize() - childrenA[0]->getSubTreeSize());
 		if(DEBUG) {
+			ou << "Compute Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
 			ou << "If select " << to_string(childrenA[0]->getID()) << "(leftmost) in Tree A #Subproblem: " << to_string(aleftmost) << " Direction: Right" << endl;
 		}
 		if(min > aleftmost) {
@@ -724,6 +730,7 @@ int TreeComparison::free(Node* a, Node* b) {
 				else freeS.setDirection(1);
 			}
 			if(DEBUG) {
+				ou << "Compute Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
 				ou << "If select " << to_string(childrenA[i]->getID()) << " in Tree A #Subproblem: " << to_string(sum) << " Direction: ";
 				if(left > right) ou << "Right" << endl;
 				else ou << "Left" << endl;
@@ -731,6 +738,7 @@ int TreeComparison::free(Node* a, Node* b) {
 		}
 		int arightmost = freeSumA - free(childrenA[childrenA.size() - 1], b) + rightA(childrenA[childrenA.size() - 1], b) + b->getRightmostForestNum() * (a->getSubTreeSize() - childrenA[childrenA.size() - 1]->getSubTreeSize());
 		if(DEBUG) {
+			ou << "Compute Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
 			ou << "If select " << to_string(childrenA[childrenA.size() - 1]->getID()) << "(rightmost) in Tree A #Subproblem: " << to_string(arightmost) << " Direction: Left" << endl;
 		}
 		if(min > arightmost) {
@@ -745,7 +753,8 @@ int TreeComparison::free(Node* a, Node* b) {
 	if(!childrenB.empty()) {
 		int bleftmost = freeSumB - free(a, childrenB[0]) + leftB(a, childrenB[0]) + a->getLeftmostForestNum() * (b->getSubTreeSize() - childrenB[0]->getSubTreeSize());
 		if(DEBUG) {
-			ou << "If select " << to_string(childrenB[0]->getID()) << "(leftmost) in Tree B #Subproblem: " << to_string(bleftmost) << " Direction: Right";
+			ou << "Compute Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
+			ou << "If select " << to_string(childrenB[0]->getID()) << "(leftmost) in Tree B #Subproblem: " << to_string(bleftmost) << " Direction: Right" << endl;
 		}
 		if(min > bleftmost) {
 			min = bleftmost;
@@ -771,6 +780,7 @@ int TreeComparison::free(Node* a, Node* b) {
 				else freeS.setDirection(1);
 			}
 			if(DEBUG) {
+				ou << "Compute Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
 				ou << "If select " << to_string(childrenB[i]->getID()) << " in Tree B #Subproblem: " << to_string(sum) << " Direction: ";
 				if(left > right) ou << "Right" << endl;
 				else ou << "Left" << endl;
@@ -779,7 +789,8 @@ int TreeComparison::free(Node* a, Node* b) {
 
 		int brightmost = freeSumB - free(a, childrenB[childrenB.size() - 1]) + rightB(a, childrenB[childrenB.size() - 1]) + a->getRightmostForestNum() * (b->getSubTreeSize() - childrenB[childrenB.size() - 1]->getSubTreeSize());
 		if(DEBUG) {
-			ou << "If select " << to_string(childrenB[childrenB.size() - 1]->getID()) << "(rightmost) in Tree B #Subproblem: " << to_string(brightmost) << " Direction: Left";
+			ou << "Compute Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
+			ou << "If select " << to_string(childrenB[childrenB.size() - 1]->getID()) << "(rightmost) in Tree B #Subproblem: " << to_string(brightmost) << " Direction: Left" << endl;
 		}
 		if(min > brightmost) {
 			min = brightmost;
@@ -792,22 +803,23 @@ int TreeComparison::free(Node* a, Node* b) {
 	Free[a->getID()][b->getID()] = min;
 	FreeStrategies[a->getID()][b->getID()] = freeS;
 	if(DEBUG) {
-		ou << "FreeStrategies[" << to_string(a->getID()) << "][" << to_string(b->getID()) << "]"  << endl;
+		ou << "FreeS(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
 		ou << FreeStrategies[a->getID()][b->getID()].toString() << endl;
 	}
 	return min;
 };
 
 int TreeComparison::leftA(Node* a, Node* b) {
-	if(DEBUG) {
+	/*if(DEBUG) {
 		ou << "Compute LeftA(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
-	}
-	if(LeftA[a->getID()][b->getID()] != -1) {
+	}*/
+	/*if(LeftA[a->getID()][b->getID()] != -1) {
 		if(DEBUG) {
 			ou << "Compute LeftA(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") = " << to_string(LeftA[a->getID()][b->getID()]) << endl;
 		}
 		return LeftA[a->getID()][b->getID()];
-	}
+	}*/
+	if(LeftA[a->getID()][b->getID()] != -1) return LeftA[a->getID()][b->getID()];
 	vector<Node*> childrenA = a->getChildren();
 	int min = INT_MAX;
 	Strategy leftAS;
@@ -874,6 +886,7 @@ int TreeComparison::rightA(Node* a, Node* b) {
 	if(childrenA.empty()) {
 		min = b->getRightmostForestNum();
 		rightAS.setKeyNode(a->getID());
+		rightAS.setLeaf(a->getID());
 		rightAS.setTreeToDecompose(0);
 		rightAS.setDirection(1);
 	} else {
@@ -1101,7 +1114,7 @@ int TreeComparison::allB(Node* a, Node* b) {
 		vector<int> childrenSizeSumB;
 		int prev = 0;
 		for(int i = 0; i < childrenB.size(); i++) {
-			freeSumB += free(childrenB[i], b);
+			freeSumB += free(a, childrenB[i]);
 			prev += childrenB[i]->getSubTreeSize();
 			childrenSizeSumB.push_back(prev);
 		}

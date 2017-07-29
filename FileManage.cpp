@@ -15,6 +15,7 @@ FileManage::~FileManage() {
 
 FileManage::FileManage() {
 	rnaFileName_ = "";
+	simiFileName_ = "";
 }
 
 FileManage* FileManage::getInstance(void) {
@@ -30,20 +31,24 @@ void FileManage::setRNAFileName(string rnaFileName) {
 	rnaFileName_ = rnaFileName;
 };
 
+
+void FileManage::setSimiFileName(string simiFileName) {
+	simiFileName_ = simiFileName;
+};
+
 vector<RNA> FileManage::readRNAsFromFile(void) {
+	if(rnaFileName_ == "") return res;
 	vector<RNA> res;
 	ifstream in;
 	in.open(rnaFileName_);
+	if(!in.is_open()) return res;
 	string tmp;
 	string RNA1Name, RNA2Name;
 	RNA r1, r2;
 	int RNA1Start, RNA2Start;
 	int n1 = 2, n2 = 2;
 	char c;
-
-	if(rnaFileName_ == "") return res;
-	if(!in.is_open()) return res;
-		
+	
 	getline(in, RNA1Name);
 	r1.setRNAName(RNA1Name);
 	in >> RNA1Start;
@@ -120,4 +125,17 @@ vector<RNA> FileManage::readRNAsFromFile(void) {
 	res.push_back(r2);
 	in.close();
 	return res;
+};
+
+SimiMatrix FileManage::readSimiFromFile(void) {
+	SimiMatrix matrix;
+	ifstream in;
+	in.open(simiFileName_);
+
+	if(simiFileName == "") return matrix;
+	if(!in.is_open()) return matrix;
+
+
+
+
 };

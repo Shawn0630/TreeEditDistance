@@ -4,6 +4,7 @@
 #include "Node.h"
 #include "Tree.h"
 #include "RNA.h"
+#include "SimiMatrix.h"
 
 #include <string>
 #include <vector>
@@ -16,11 +17,14 @@ public:
   ~FileManage();
   static FileManage *getInstance(void);
   void setRNAFileName(string);
+  void setSimiFileName(string);
   vector<RNA> readRNAsFromFile(void);
+  SimiMatrix readSimiFromFile(void);
 
 private:
   FileManage();
   string rnaFileName_;
+  string simiFileName_;
   static FileManage *instance_;
   static bool instanceFlag_;
 };
