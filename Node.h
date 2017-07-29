@@ -38,6 +38,8 @@ public:
 	void setSpecialForestNum(int);
 	int getSpecialForestNum(void)const;
 	vector<Node*> getChildren(void) const;
+	Node* getLeftmostChild(void) const;
+	Node* getRightmostChild(void) const;
 
 	string toString(void) const;
 };

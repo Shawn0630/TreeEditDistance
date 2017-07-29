@@ -18,6 +18,7 @@ private:
 	char originalSequence[maxSize];
 	int secondaryStructure[maxSize];
 	char preLSequence[2 * maxSize];
+	
 public:
 	RNA();
 	RNA(string);

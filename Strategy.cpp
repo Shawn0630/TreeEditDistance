@@ -11,6 +11,14 @@ int Strategy::getKeyNode(void) const {
 	return keynode_;
 };
 
+
+void Strategy::setLeaf(int leaf) {
+	leaf_ = leaf;
+};
+int Strategy::getLeaf(void)const {
+	return leaf_;
+};
+
 void Strategy::setTreeToDecompose(int treeToDecompose) {
 	treeToDecompose_ = treeToDecompose;
 };

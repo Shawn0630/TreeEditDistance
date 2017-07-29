@@ -43,6 +43,17 @@ vector<Node*> Node::getChildren(void) const {
 	return children_;
 }
 
+Node* Node::getLeftmostChild(void) const {
+	if(children_.size() == 0) return NULL;
+	return children_[0];
+};
+
+Node* Node::getRightmostChild(void) const {
+	if(children_.size() == 0) return NULL;
+	return children_[children_.size() - 1];
+};
+
+
 void Node::setSubTreeSize(int subTreeSize) {
 	subTreeSize_ = subTreeSize;
 };
@@ -94,5 +105,6 @@ string Node::toString(void) const {
 	res = res + "leftmostForestNum: " + to_string(left_) + "\n";
 	res = res + "rightmostForestNum: " + to_string(right_) + "\n";
 	res = res + "specialmostForestNum: " + to_string(special_) + "\n";
+
 	return res;
 }

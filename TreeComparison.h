@@ -27,8 +27,6 @@ private:
 	Strategy** AllBStrategies;
 	Strategy** FreeStrategies;
 
-	Path** Paths;
-
 	int free(Node*, Node*);
 	int leftA(Node*, Node*);
 	int leftB(Node*, Node*);

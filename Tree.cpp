@@ -16,6 +16,8 @@ Tree::Tree(string label, int treeSize) {
 	postL_to_preL = new int[treeSize_];
 	preL_to_postR = new int[treeSize_];
 	postR_to_preL = new int[treeSize_];
+	preL_to_lid = new int[treeSize_];
+	preL_to_rid = new int[treeSize_];
 };
 
 string Tree::getLabel(void) const{
@@ -63,6 +65,16 @@ string Tree::toString() const {
 	res += "preL_to_postR\n";
 	for(int i = 0; i < treeSize_; i++) {
 		res += to_string(preL_to_postR[i]) + " ";
+	}
+	res += "\n";
+	res += "preL_to_lid\n";
+	for(int i = 0; i < treeSize_; i++) {
+		res += to_string(preL_to_lid[i]) + " ";
+	}
+	res += "\n";
+	res += "preL_to_rid\n";
+	for(int i = 0; i < treeSize_; i++) {
+		res += to_string(preL_to_rid[i]) + " ";
 	}
 	return res;
 };

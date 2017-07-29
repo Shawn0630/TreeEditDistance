@@ -61,12 +61,13 @@ int main() {
 	//ofstream ou("out.txt");
 	r1.setRNAName("A");
 	//r2.setRNAName("B");
-	string s1 = "(B(C)(D(F)(G))(E))";
+	//string s1 = "(B(C)(D(F)(G))(E))";
 	string s2 = "(B(C(E(F)(G))))";
 	//string s1 = "(B(C)(D)(E))";
 	//string s2 = "(B(C)(D(E)))";
+	string s1 = "(B(C(D)(E))(F(G)(H)))";
 	r1.setPreOrderSequence(s1);
-	r1.setTreeSize(6);
+	r1.setTreeSize(7);
 	r2.setPreOrderSequence(s2);
 	r2.setTreeSize(5);
 	//r2.setPreOrderSequence(s2);

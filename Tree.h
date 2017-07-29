@@ -21,6 +21,8 @@ private:
 	int* postL_to_preL;
 	int* preL_to_postR;
 	int* postR_to_preL;
+	int* preL_to_lid;
+	int* preL_to_rid;
 public:
 	Tree(string, int);
 	string getLabel(void) const;

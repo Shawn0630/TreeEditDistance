@@ -214,6 +214,13 @@ Tree* RNA::buildTree(void) {
 			nodes.top()->setSpecialForestNum(specialForestNum);
 			nodes.top()->setSubTreeSizeSum(sum);
 			tree->preL_to_postL[nodes.top()->getID()] = postN++;						//tree->pushNodeToPost(nodes.top());
+			if(nodes.top()->getSubTreeSize() == 1) {
+				tree->preL_to_lid[nodes.top()->getID()] = nodes.top()->getID();
+				tree->preL_to_rid[nodes.top()->getID()] = nodes.top()->getID();
+			} else {
+				tree->preL_to_lid[nodes.top()->getID()] = tree->preL_to_lid[nodes.top()->getLeftmostChild()->getID()];
+      			tree->preL_to_rid[nodes.top()->getID()] = tree->preL_to_rid[nodes.top()->getRightmostChild()->getID()];
+			}
 			tree->preL_to_preR[nodes.top()->getID()] = tree->treeSize_ - 1 - tree->preL_to_postL[nodes.top()->getID()];
 			tree->preR_to_preL[tree->treeSize_ - 1 - tree->preL_to_postL[nodes.top()->getID()]] = nodes.top()->getID();
 			nodes.pop();

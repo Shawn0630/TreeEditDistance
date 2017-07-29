@@ -587,22 +587,24 @@ void TreeComparison::strategyComputation() {
 	free(preA[0], preB[0]);
 	if(DEBUG) {
 		ou << "RESULT" << endl;
-		for(int i = 0; i < treeSizeA; i++) {
+	/*	for(int i = 0; i < treeSizeA; i++) {
 			for(int j = 0; j < treeSizeB; j++) {
 				ou << Free[i][j] << " ";
 			}
 			ou << endl;
-		}
+		}*/
 
 		for(int i = 0; i < treeSizeA; i++) {
 			for(int j = 0; j < treeSizeB; j++) {
 				if(&FreeStrategies[i][j] != NULL) {
-					ou << "FreeStrategies[" << i << "][" << j << "]" << endl;
-					ou << FreeStrategies[i][j].toString() << endl;
+					ou << FreeStrategies[i][j].getLeaf() << " ";
 				}
 			}
+			ou << endl;
 		}
 	}
+
+
 
 };
 
@@ -639,11 +641,13 @@ int TreeComparison::free(Node* a, Node* b) {
 			freeS.setDirection(0);
 			freeS.setTreeToDecompose(0);
 			freeS.setKeyNode(a->getID());
+			freeS.setLeaf(a->getID());
 		} else if(min > left){
 			min = left;
 			freeS.setDirection(1);
 			freeS.setTreeToDecompose(0);
 			freeS.setKeyNode(a->getID());
+			freeS.setLeaf(a->getID());
 		}
 		if(DEBUG) {
 			ou << "If select " << to_string(a->getID()) << " in Tree A #Subproblem: " << to_string(min) << " Direction: ";
@@ -659,11 +663,13 @@ int TreeComparison::free(Node* a, Node* b) {
 			freeS.setDirection(0);
 			freeS.setTreeToDecompose(1);
 			freeS.setKeyNode(b->getID());
+			freeS.setLeaf(b->getID());
 		} else if(min > left){
 			min = left;
 			freeS.setDirection(1);
 			freeS.setTreeToDecompose(1);
 			freeS.setKeyNode(b->getID());
+			freeS.setLeaf(b->getID());
 		}
 
 		if(DEBUG) {
@@ -700,6 +706,7 @@ int TreeComparison::free(Node* a, Node* b) {
 			freeS.setKeyNode(childrenA[0]->getID());
 			freeS.setTreeToDecompose(0);
 			freeS.setDirection(0);
+			freeS.setLeaf(LeftAStrategies[childrenA[0]->getID()][b->getID()].getLeaf());
 		}
 		for(int i = 1; i < childrenA.size() - 1; i++) {
 			int prefix = freeSumA - free(childrenA[i], b) + allA(childrenA[i], b);
@@ -712,6 +719,7 @@ int TreeComparison::free(Node* a, Node* b) {
 				min = sum;
 				freeS.setKeyNode(childrenA[i]->getID());
 				freeS.setTreeToDecompose(0);
+				freeS.setLeaf(AllAStrategies[childrenA[i]->getID()][b->getID()].getLeaf());
 				if(left > right)freeS.setDirection(0);
 				else freeS.setDirection(1);
 			}
@@ -728,6 +736,7 @@ int TreeComparison::free(Node* a, Node* b) {
 		if(min > arightmost) {
 			min = arightmost;
 			freeS.setKeyNode(childrenA[childrenA.size() - 1]->getID());
+			freeS.setLeaf(RightAStrategies[childrenA[childrenA.size() - 1]->getID()][b->getID()].getLeaf());
 			freeS.setTreeToDecompose(0);
 			freeS.setDirection(1);
 		}
@@ -741,6 +750,7 @@ int TreeComparison::free(Node* a, Node* b) {
 		if(min > bleftmost) {
 			min = bleftmost;
 			freeS.setKeyNode(childrenB[0]->getID());
+			freeS.setLeaf(LeftBStrategies[a->getID()][childrenB[0]->getID()].getLeaf());
 			freeS.setTreeToDecompose(1);
 			freeS.setDirection(0);
 		}
@@ -755,6 +765,7 @@ int TreeComparison::free(Node* a, Node* b) {
 			if(min > sum) {
 				min = sum;
 				freeS.setKeyNode(childrenB[i]->getID());
+				freeS.setLeaf(AllBStrategies[a->getID()][childrenB[i]->getID()].getLeaf());
 				freeS.setTreeToDecompose(1);
 				if(left > right)freeS.setDirection(0);
 				else freeS.setDirection(1);
@@ -773,6 +784,7 @@ int TreeComparison::free(Node* a, Node* b) {
 		if(min > brightmost) {
 			min = brightmost;
 			freeS.setKeyNode(childrenB[childrenB.size() - 1]->getID());
+			freeS.setLeaf(RightBStrategies[a->getID()][childrenB[childrenB.size() - 1]->getID()].getLeaf());
 			freeS.setTreeToDecompose(1);
 			freeS.setDirection(1);
 		}
@@ -802,6 +814,7 @@ int TreeComparison::leftA(Node* a, Node* b) {
 	if(childrenA.empty()) {
 		min = b->getLeftmostForestNum();
 		leftAS.setKeyNode(a->getID());
+		leftAS.setLeaf(a->getID());
 		leftAS.setTreeToDecompose(0);
 		leftAS.setDirection(0);
 	} else {
@@ -817,6 +830,7 @@ int TreeComparison::leftA(Node* a, Node* b) {
 		if(min >aleftmost) {
 			min = aleftmost;
 			leftAS.setKeyNode(childrenA[0]->getID());
+			leftAS.setLeaf(LeftAStrategies[childrenA[0]->getID()][b->getID()].getLeaf());
 			leftAS.setTreeToDecompose(0);
 			leftAS.setDirection(0);
 		}
@@ -832,6 +846,7 @@ int TreeComparison::leftA(Node* a, Node* b) {
 				min = sum;
 				leftAS.setKeyNode(childrenA[i]->getID());
 				leftAS.setTreeToDecompose(0);
+				leftAS.setLeaf(AllAStrategies[childrenA[i]->getID()][b->getID()].getLeaf());
 				if(left > right)leftAS.setDirection(0);
 				else leftAS.setDirection(1);
 			}
@@ -840,6 +855,7 @@ int TreeComparison::leftA(Node* a, Node* b) {
 		if(min > arightmost) {
 			min = arightmost;
 			leftAS.setKeyNode(childrenA[childrenA.size() - 1]->getID());
+			leftAS.setLeaf(AllAStrategies[childrenA[childrenA.size() - 1]->getID()][b->getID()].getLeaf());
 			leftAS.setTreeToDecompose(0);
 			leftAS.setDirection(1);
 		}
@@ -873,6 +889,7 @@ int TreeComparison::rightA(Node* a, Node* b) {
 		if(min >aleftmost) {
 			min = aleftmost;
 			rightAS.setKeyNode(childrenA[0]->getID());
+			rightAS.setLeaf(AllAStrategies[childrenA[0]->getID()][b->getID()].getLeaf());
 			rightAS.setTreeToDecompose(0);
 			rightAS.setDirection(0);
 		}
@@ -887,6 +904,7 @@ int TreeComparison::rightA(Node* a, Node* b) {
 			if(min > sum) {
 				min = sum;
 				rightAS.setKeyNode(childrenA[i]->getID());
+				rightAS.setLeaf(AllAStrategies[childrenA[i]->getID()][b->getID()].getLeaf());
 				rightAS.setTreeToDecompose(0);
 				if(left > right)rightAS.setDirection(0);
 				else rightAS.setDirection(1);
@@ -896,6 +914,7 @@ int TreeComparison::rightA(Node* a, Node* b) {
 		if(min > arightmost) {
 			min = arightmost;
 			rightAS.setKeyNode(childrenA[childrenA.size() - 1]->getID());
+			rightAS.setLeaf(AllAStrategies[childrenA[childrenA.size() - 1]->getID()][b->getID()].getLeaf());
 			rightAS.setTreeToDecompose(0);
 			rightAS.setDirection(1);
 		}
@@ -913,6 +932,7 @@ int TreeComparison::allA(Node* a, Node* b) {
 	if(childrenA.empty()) {
 		min = b->getSpecialForestNum();
 		allAS.setKeyNode(a->getID());
+		allAS.setLeaf(a->getID());
 		allAS.setTreeToDecompose(0);
 	} else {
 		int freeSumA = 0;
@@ -927,6 +947,7 @@ int TreeComparison::allA(Node* a, Node* b) {
 		if(min >aleftmost) {
 			min = aleftmost;
 			allAS.setKeyNode(childrenA[0]->getID());
+			allAS.setLeaf(AllAStrategies[childrenA[0]->getID()][b->getID()].getLeaf());
 			allAS.setTreeToDecompose(0);
 		}
 
@@ -936,6 +957,7 @@ int TreeComparison::allA(Node* a, Node* b) {
 				min = sum;
 				allAS.setKeyNode(childrenA[i]->getID());
 				allAS.setTreeToDecompose(0);
+				allAS.setLeaf(AllAStrategies[childrenA[i]->getID()][b->getID()].getLeaf());
 				if(left > right)allAS.setDirection(0);
 				else allAS.setDirection(1);
 			}
@@ -954,6 +976,7 @@ int TreeComparison::leftB(Node* a, Node* b) {
 	if(childrenB.empty()) {
 		min = a->getLeftmostForestNum();
 		leftBS.setKeyNode(b->getID());
+		leftBS.setLeaf(b->getID());
 		leftBS.setTreeToDecompose(1);
 		leftBS.setDirection(0);
 	} else {
@@ -969,6 +992,7 @@ int TreeComparison::leftB(Node* a, Node* b) {
 		if(min >bleftmost) {
 			min = bleftmost;
 			leftBS.setKeyNode(childrenB[0]->getID());
+			leftBS.setLeaf(LeftBStrategies[a->getID()][childrenB[0]->getID()].getLeaf());
 			leftBS.setTreeToDecompose(1);
 			leftBS.setDirection(0);
 		}
@@ -983,6 +1007,7 @@ int TreeComparison::leftB(Node* a, Node* b) {
 			if(min > sum) {
 				min = sum;
 				leftBS.setKeyNode(childrenB[i]->getID());
+				leftBS.setLeaf(AllBStrategies[a->getID()][childrenB[i]->getID()].getLeaf());
 				leftBS.setTreeToDecompose(1);
 				if(left > right)leftBS.setDirection(0);
 				else leftBS.setDirection(1);
@@ -992,6 +1017,7 @@ int TreeComparison::leftB(Node* a, Node* b) {
 		if(min > brightmost) {
 			min = brightmost;
 			leftBS.setKeyNode(childrenB[childrenB.size() - 1]->getID());
+			leftBS.setLeaf(AllBStrategies[a->getID()][childrenB[childrenB.size() - 1]->getID()].getLeaf());
 			leftBS.setTreeToDecompose(1);
 			leftBS.setDirection(1);
 		}
@@ -1008,7 +1034,8 @@ int TreeComparison::rightB(Node* a, Node* b) {
 	Strategy rightBS;
 	if(childrenB.empty()) {
 		min = a->getRightmostForestNum();
-		rightBS.setKeyNode(a->getID());
+		rightBS.setKeyNode(b->getID());
+		rightBS.setLeaf(b->getID());
 		rightBS.setTreeToDecompose(1);
 		rightBS.setDirection(1);
 	} else {
@@ -1024,6 +1051,7 @@ int TreeComparison::rightB(Node* a, Node* b) {
 		if(min >bleftmost) {
 			min = bleftmost;
 			rightBS.setKeyNode(childrenB[0]->getID());
+			rightBS.setLeaf(AllBStrategies[a->getID()][childrenB[0]->getID()].getLeaf());
 			rightBS.setTreeToDecompose(1);
 			rightBS.setDirection(0);
 		}
@@ -1038,6 +1066,7 @@ int TreeComparison::rightB(Node* a, Node* b) {
 			if(min > sum) {
 				min = sum;
 				rightBS.setKeyNode(childrenB[i]->getID());
+				rightBS.setLeaf(AllBStrategies[a->getID()][childrenB[i]->getID()].getLeaf());
 				rightBS.setTreeToDecompose(1);
 				if(left > right)rightBS.setDirection(0);
 				else rightBS.setDirection(1);
@@ -1047,6 +1076,7 @@ int TreeComparison::rightB(Node* a, Node* b) {
 		if(min > brightmost) {
 			min = brightmost;
 			rightBS.setKeyNode(childrenB[childrenB.size() - 1]->getID());
+			rightBS.setLeaf(RightBStrategies[a->getID()][childrenB[childrenB.size() - 1]->getID()].getLeaf());
 			rightBS.setTreeToDecompose(1);
 			rightBS.setDirection(1);
 		}
@@ -1062,8 +1092,9 @@ int TreeComparison::allB(Node* a, Node* b) {
 	int min = INT_MAX;
 	Strategy allBS;
 	if(childrenB.empty()) {
-		min = b->getSpecialForestNum();
-		allBS.setKeyNode(a->getID());
+		min = a->getSpecialForestNum();
+		allBS.setLeaf(b->getID());
+		allBS.setKeyNode(b->getID());
 		allBS.setTreeToDecompose(1);
 	} else {
 		int freeSumB = 0;
@@ -1078,6 +1109,7 @@ int TreeComparison::allB(Node* a, Node* b) {
 		if(min >bleftmost) {
 			min = bleftmost;
 			allBS.setKeyNode(childrenB[0]->getID());
+			allBS.setLeaf(AllBStrategies[a->getID()][childrenB[0]->getID()].getLeaf());
 			allBS.setTreeToDecompose(1);
 		}
 
@@ -1086,6 +1118,7 @@ int TreeComparison::allB(Node* a, Node* b) {
 			if(min > sum) {
 				min = sum;
 				allBS.setKeyNode(childrenB[i]->getID());
+				allBS.setLeaf(AllBStrategies[a->getID()][childrenB[i]->getID()].getLeaf());
 				allBS.setTreeToDecompose(1);
 				if(left > right)allBS.setDirection(0);
 				else allBS.setDirection(1);

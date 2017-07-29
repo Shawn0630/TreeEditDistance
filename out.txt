@@ -1,13 +1,13 @@
 Compute Free(0, 0)
 ID: 0 label: B
 Root
-childrenNum: 3
-1 2 5 
-subTreeSize: 6
-subTreeSizeSum: 13
-leftmostForestNum: 11
-rightmostForestNum: 11
-specialmostForestNum: 14
+childrenNum: 2
+1 4 
+subTreeSize: 7
+subTreeSizeSum: 17
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 18
 
 ID: 0 label: B
 Root
@@ -22,6 +22,27 @@ specialmostForestNum: 6
 Compute Free(1, 0)
 ID: 1 label: C
 parent is 0
+childrenNum: 2
+2 3 
+subTreeSize: 3
+subTreeSizeSum: 5
+leftmostForestNum: 4
+rightmostForestNum: 4
+specialmostForestNum: 4
+
+ID: 0 label: B
+Root
+childrenNum: 1
+1 
+subTreeSize: 5
+subTreeSizeSum: 14
+leftmostForestNum: 6
+rightmostForestNum: 6
+specialmostForestNum: 6
+
+Compute Free(2, 0)
+ID: 2 label: D
+parent is 1
 childrenNum: 0
 
 subTreeSize: 1
@@ -40,10 +61,10 @@ leftmostForestNum: 6
 rightmostForestNum: 6
 specialmostForestNum: 6
 
-If select 1 in Tree A #Subproblem: 6 Direction: Left
-Compute Free(1, 1)
-ID: 1 label: C
-parent is 0
+If select 2 in Tree A #Subproblem: 6 Direction: Left
+Compute Free(2, 1)
+ID: 2 label: D
+parent is 1
 childrenNum: 0
 
 subTreeSize: 1
@@ -62,10 +83,10 @@ leftmostForestNum: 5
 rightmostForestNum: 5
 specialmostForestNum: 5
 
-If select 1 in Tree A #Subproblem: 5 Direction: Left
-Compute Free(1, 2)
-ID: 1 label: C
-parent is 0
+If select 2 in Tree A #Subproblem: 5 Direction: Left
+Compute Free(2, 2)
+ID: 2 label: D
+parent is 1
 childrenNum: 0
 
 subTreeSize: 1
@@ -84,10 +105,10 @@ leftmostForestNum: 4
 rightmostForestNum: 4
 specialmostForestNum: 4
 
-If select 1 in Tree A #Subproblem: 4 Direction: Left
-Compute Free(1, 3)
-ID: 1 label: C
-parent is 0
+If select 2 in Tree A #Subproblem: 4 Direction: Left
+Compute Free(2, 3)
+ID: 2 label: D
+parent is 1
 childrenNum: 0
 
 subTreeSize: 1
@@ -106,14 +127,14 @@ leftmostForestNum: 1
 rightmostForestNum: 1
 specialmostForestNum: 1
 
-If select 1 in Tree A #Subproblem: 1 Direction: Left
+If select 2 in Tree A #Subproblem: 1 Direction: Left
 If select 3 in Tree B #Subproblem: 1 Direction: Left
-FreeStrategies[1][3]
-Keynode: 1 in Tree A
+FreeStrategies[2][3]
+Keynode: 2 in Tree A
 Direction: right
-Compute Free(1, 4)
-ID: 1 label: C
-parent is 0
+Compute Free(2, 4)
+ID: 2 label: D
+parent is 1
 childrenNum: 0
 
 subTreeSize: 1
@@ -132,49 +153,49 @@ leftmostForestNum: 1
 rightmostForestNum: 1
 specialmostForestNum: 1
 
-If select 1 in Tree A #Subproblem: 1 Direction: Left
+If select 2 in Tree A #Subproblem: 1 Direction: Left
 If select 4 in Tree B #Subproblem: 1 Direction: Left
-FreeStrategies[1][4]
-Keynode: 1 in Tree A
+FreeStrategies[2][4]
+Keynode: 2 in Tree A
 Direction: right
-Compute Free(1, 3)
-Free(1, 3) = 1
-If select 3(leftmost) in Tree B #Subproblem: 4 Direction: RightCompute Free(1, 4)
-Free(1, 4) = 1
-If select 4(rightmost) in Tree B #Subproblem: 4 Direction: LeftFreeStrategies[1][2]
-Keynode: 1 in Tree A
+Compute Free(2, 3)
+Free(2, 3) = 1
+If select 3(leftmost) in Tree B #Subproblem: 4 Direction: RightCompute Free(2, 4)
+Free(2, 4) = 1
+If select 4(rightmost) in Tree B #Subproblem: 4 Direction: LeftFreeStrategies[2][2]
+Keynode: 2 in Tree A
 Direction: right
-Compute Free(1, 2)
-Free(1, 2) = 4
-Compute Free(1, 3)
-Free(1, 3) = 1
-Compute Free(1, 4)
-Free(1, 4) = 1
-Compute Free(1, 3)
-Free(1, 3) = 1
-Compute Free(1, 4)
-Free(1, 4) = 1
-If select 2(leftmost) in Tree B #Subproblem: 5 Direction: RightCompute Free(1, 2)
-Free(1, 2) = 4
-Compute Free(1, 3)
-Free(1, 3) = 1
-Compute Free(1, 4)
-Free(1, 4) = 1
-Compute Free(1, 3)
-Free(1, 3) = 1
-Compute Free(1, 4)
-Free(1, 4) = 1
-If select 2(rightmost) in Tree B #Subproblem: 5 Direction: LeftFreeStrategies[1][1]
-Keynode: 1 in Tree A
+Compute Free(2, 2)
+Free(2, 2) = 4
+Compute Free(2, 3)
+Free(2, 3) = 1
+Compute Free(2, 4)
+Free(2, 4) = 1
+Compute Free(2, 3)
+Free(2, 3) = 1
+Compute Free(2, 4)
+Free(2, 4) = 1
+If select 2(leftmost) in Tree B #Subproblem: 5 Direction: RightCompute Free(2, 2)
+Free(2, 2) = 4
+Compute Free(2, 3)
+Free(2, 3) = 1
+Compute Free(2, 4)
+Free(2, 4) = 1
+Compute Free(2, 3)
+Free(2, 3) = 1
+Compute Free(2, 4)
+Free(2, 4) = 1
+If select 2(rightmost) in Tree B #Subproblem: 5 Direction: LeftFreeStrategies[2][1]
+Keynode: 2 in Tree A
 Direction: right
-Compute Free(1, 1)
-Free(1, 1) = 5
-Compute Free(1, 2)
-Free(1, 2) = 4
-Compute Free(1, 2)
-Free(1, 2) = 4
-Compute Free(1, 2)
-Free(1, 2) = 4
+Compute Free(2, 1)
+Free(2, 1) = 5
+Compute Free(2, 2)
+Free(2, 2) = 4
+Compute Free(2, 2)
+Free(2, 2) = 4
+Compute Free(2, 2)
+Free(2, 2) = 4
 Compute Free(3, 2)
 ID: 3 label: F
 parent is 2
@@ -337,45 +358,24 @@ Free(4, 4) = 1
 If select 4(rightmost) in Tree B #Subproblem: 4 Direction: LeftFreeStrategies[4][2]
 Keynode: 4 in Tree A
 Direction: right
-Compute Free(1, 3)
-Free(1, 3) = 1
-Compute Free(1, 4)
-Free(1, 4) = 1
-If select 1(leftmost) in Tree B #Subproblem: 6 Direction: RightCompute Free(1, 1)
-Free(1, 1) = 5
-Compute Free(1, 2)
-Free(1, 2) = 4
-Compute Free(1, 2)
-Free(1, 2) = 4
-Compute Free(1, 2)
-Free(1, 2) = 4
-If select 1(rightmost) in Tree B #Subproblem: 6 Direction: LeftFreeStrategies[1][0]
-Keynode: 1 in Tree A
+Compute Free(2, 3)
+Free(2, 3) = 1
+Compute Free(2, 4)
+Free(2, 4) = 1
+If select 1(leftmost) in Tree B #Subproblem: 6 Direction: RightCompute Free(2, 1)
+Free(2, 1) = 5
+Compute Free(2, 2)
+Free(2, 2) = 4
+Compute Free(2, 2)
+Free(2, 2) = 4
+Compute Free(2, 2)
+Free(2, 2) = 4
+If select 1(rightmost) in Tree B #Subproblem: 6 Direction: LeftFreeStrategies[2][0]
+Keynode: 2 in Tree A
 Direction: right
-Compute Free(2, 0)
-ID: 2 label: D
-parent is 0
-childrenNum: 2
-3 4 
-subTreeSize: 3
-subTreeSizeSum: 5
-leftmostForestNum: 4
-rightmostForestNum: 4
-specialmostForestNum: 4
-
-ID: 0 label: B
-Root
-childrenNum: 1
-1 
-subTreeSize: 5
-subTreeSizeSum: 14
-leftmostForestNum: 6
-rightmostForestNum: 6
-specialmostForestNum: 6
-
 Compute Free(3, 0)
-ID: 3 label: F
-parent is 2
+ID: 3 label: E
+parent is 1
 childrenNum: 0
 
 subTreeSize: 1
@@ -396,8 +396,8 @@ specialmostForestNum: 6
 
 If select 3 in Tree A #Subproblem: 6 Direction: Left
 Compute Free(3, 1)
-ID: 3 label: F
-parent is 2
+ID: 3 label: E
+parent is 1
 childrenNum: 0
 
 subTreeSize: 1
@@ -469,107 +469,11 @@ Free(3, 2) = 4
 If select 1(rightmost) in Tree B #Subproblem: 6 Direction: LeftFreeStrategies[3][0]
 Keynode: 3 in Tree A
 Direction: right
-Compute Free(4, 0)
-ID: 4 label: G
-parent is 2
-childrenNum: 0
-
-subTreeSize: 1
-subTreeSizeSum: 1
-leftmostForestNum: 1
-rightmostForestNum: 1
-specialmostForestNum: 1
-
-ID: 0 label: B
-Root
-childrenNum: 1
-1 
-subTreeSize: 5
-subTreeSizeSum: 14
-leftmostForestNum: 6
-rightmostForestNum: 6
-specialmostForestNum: 6
-
-If select 4 in Tree A #Subproblem: 6 Direction: Left
-Compute Free(4, 1)
-ID: 4 label: G
-parent is 2
-childrenNum: 0
-
-subTreeSize: 1
-subTreeSizeSum: 1
-leftmostForestNum: 1
-rightmostForestNum: 1
-specialmostForestNum: 1
-
+Compute Free(1, 1)
 ID: 1 label: C
 parent is 0
-childrenNum: 1
-2 
-subTreeSize: 4
-subTreeSizeSum: 9
-leftmostForestNum: 5
-rightmostForestNum: 5
-specialmostForestNum: 5
-
-If select 4 in Tree A #Subproblem: 5 Direction: Left
-Compute Free(4, 2)
-Free(4, 2) = 4
-Compute Free(4, 2)
-Free(4, 2) = 4
-Compute Free(4, 3)
-Free(4, 3) = 1
-Compute Free(4, 4)
-Free(4, 4) = 1
-Compute Free(4, 3)
-Free(4, 3) = 1
-Compute Free(4, 4)
-Free(4, 4) = 1
-If select 2(leftmost) in Tree B #Subproblem: 5 Direction: RightCompute Free(4, 2)
-Free(4, 2) = 4
-Compute Free(4, 3)
-Free(4, 3) = 1
-Compute Free(4, 4)
-Free(4, 4) = 1
-Compute Free(4, 3)
-Free(4, 3) = 1
-Compute Free(4, 4)
-Free(4, 4) = 1
-If select 2(rightmost) in Tree B #Subproblem: 5 Direction: LeftFreeStrategies[4][1]
-Keynode: 4 in Tree A
-Direction: right
-Compute Free(4, 1)
-Free(4, 1) = 5
-Compute Free(4, 2)
-Free(4, 2) = 4
-Compute Free(4, 2)
-Free(4, 2) = 4
-Compute Free(4, 2)
-Free(4, 2) = 4
-Compute Free(3, 2)
-Free(3, 2) = 4
-Compute Free(4, 2)
-Free(4, 2) = 4
-Compute Free(4, 3)
-Free(4, 3) = 1
-Compute Free(4, 4)
-Free(4, 4) = 1
-If select 1(leftmost) in Tree B #Subproblem: 6 Direction: RightCompute Free(4, 1)
-Free(4, 1) = 5
-Compute Free(4, 2)
-Free(4, 2) = 4
-Compute Free(4, 2)
-Free(4, 2) = 4
-Compute Free(4, 2)
-Free(4, 2) = 4
-If select 1(rightmost) in Tree B #Subproblem: 6 Direction: LeftFreeStrategies[4][0]
-Keynode: 4 in Tree A
-Direction: right
-Compute Free(2, 1)
-ID: 2 label: D
-parent is 0
 childrenNum: 2
-3 4 
+2 3 
 subTreeSize: 3
 subTreeSizeSum: 5
 leftmostForestNum: 4
@@ -586,15 +490,15 @@ leftmostForestNum: 5
 rightmostForestNum: 5
 specialmostForestNum: 5
 
+Compute Free(2, 1)
+Free(2, 1) = 5
 Compute Free(3, 1)
 Free(3, 1) = 5
-Compute Free(4, 1)
-Free(4, 1) = 5
-Compute Free(2, 2)
-ID: 2 label: D
+Compute Free(1, 2)
+ID: 1 label: C
 parent is 0
 childrenNum: 2
-3 4 
+2 3 
 subTreeSize: 3
 subTreeSizeSum: 5
 leftmostForestNum: 4
@@ -611,15 +515,15 @@ leftmostForestNum: 4
 rightmostForestNum: 4
 specialmostForestNum: 4
 
+Compute Free(2, 2)
+Free(2, 2) = 4
 Compute Free(3, 2)
 Free(3, 2) = 4
-Compute Free(4, 2)
-Free(4, 2) = 4
-Compute Free(2, 3)
-ID: 2 label: D
+Compute Free(1, 3)
+ID: 1 label: C
 parent is 0
 childrenNum: 2
-3 4 
+2 3 
 subTreeSize: 3
 subTreeSizeSum: 5
 leftmostForestNum: 4
@@ -637,25 +541,25 @@ rightmostForestNum: 1
 specialmostForestNum: 1
 
 If select 3 in Tree B #Subproblem: 4 Direction: Left
+Compute Free(2, 3)
+Free(2, 3) = 1
 Compute Free(3, 3)
 Free(3, 3) = 1
-Compute Free(4, 3)
-Free(4, 3) = 1
+Compute Free(2, 3)
+Free(2, 3) = 1
+Compute LeftA(2, 3)
+If select 2(leftmost) in Tree A #Subproblem: 4 Direction: Right
 Compute Free(3, 3)
 Free(3, 3) = 1
-Compute LeftA(3, 3)
-If select 3(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(4, 3)
-Free(4, 3) = 1
-If select 4(rightmost) in Tree A #Subproblem: 4 Direction: Left
-FreeStrategies[2][3]
+If select 3(rightmost) in Tree A #Subproblem: 4 Direction: Left
+FreeStrategies[1][3]
 Keynode: 3 in TreeB
 Direction: right
-Compute Free(2, 4)
-ID: 2 label: D
+Compute Free(1, 4)
+ID: 1 label: C
 parent is 0
 childrenNum: 2
-3 4 
+2 3 
 subTreeSize: 3
 subTreeSizeSum: 5
 leftmostForestNum: 4
@@ -673,101 +577,122 @@ rightmostForestNum: 1
 specialmostForestNum: 1
 
 If select 4 in Tree B #Subproblem: 4 Direction: Left
+Compute Free(2, 4)
+Free(2, 4) = 1
 Compute Free(3, 4)
 Free(3, 4) = 1
-Compute Free(4, 4)
-Free(4, 4) = 1
+Compute Free(2, 4)
+Free(2, 4) = 1
+Compute LeftA(2, 4)
+If select 2(leftmost) in Tree A #Subproblem: 4 Direction: Right
 Compute Free(3, 4)
 Free(3, 4) = 1
-Compute LeftA(3, 4)
-If select 3(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(4, 4)
-Free(4, 4) = 1
-If select 4(rightmost) in Tree A #Subproblem: 4 Direction: Left
-FreeStrategies[2][4]
+If select 3(rightmost) in Tree A #Subproblem: 4 Direction: Left
+FreeStrategies[1][4]
 Keynode: 4 in TreeB
 Direction: right
+Compute Free(2, 2)
+Free(2, 2) = 4
+Compute LeftA(2, 2)
+If select 2(leftmost) in Tree A #Subproblem: 16 Direction: Right
 Compute Free(3, 2)
 Free(3, 2) = 4
-Compute LeftA(3, 2)
-If select 3(leftmost) in Tree A #Subproblem: 16 Direction: Right
-Compute Free(4, 2)
-Free(4, 2) = 4
-If select 4(rightmost) in Tree A #Subproblem: 16 Direction: Left
-Compute Free(2, 3)
-Free(2, 3) = 4
-If select 3(leftmost) in Tree B #Subproblem: 16 Direction: RightCompute Free(2, 4)
-Free(2, 4) = 4
-If select 4(rightmost) in Tree B #Subproblem: 16 Direction: LeftFreeStrategies[2][2]
-Keynode: 3 in Tree A
+If select 3(rightmost) in Tree A #Subproblem: 16 Direction: Left
+Compute Free(1, 3)
+Free(1, 3) = 4
+If select 3(leftmost) in Tree B #Subproblem: 16 Direction: RightCompute Free(1, 4)
+Free(1, 4) = 4
+If select 4(rightmost) in Tree B #Subproblem: 16 Direction: LeftFreeStrategies[1][2]
+Keynode: 2 in Tree A
 Direction: right
+Compute Free(2, 1)
+Free(2, 1) = 5
+Compute LeftA(2, 1)
+If select 2(leftmost) in Tree A #Subproblem: 20 Direction: Right
 Compute Free(3, 1)
 Free(3, 1) = 5
-Compute LeftA(3, 1)
-If select 3(leftmost) in Tree A #Subproblem: 20 Direction: Right
-Compute Free(4, 1)
-Free(4, 1) = 5
-If select 4(rightmost) in Tree A #Subproblem: 20 Direction: Left
-Compute Free(2, 2)
-Free(2, 2) = 16
-Compute Free(2, 3)
-Free(2, 3) = 4
-Compute Free(2, 4)
-Free(2, 4) = 4
-Compute Free(2, 3)
-Free(2, 3) = 4
-Compute Free(2, 4)
-Free(2, 4) = 4
-If select 2(leftmost) in Tree B #Subproblem: 17 Direction: RightCompute Free(2, 2)
-Free(2, 2) = 16
-Compute Free(2, 3)
-Free(2, 3) = 4
-Compute Free(2, 4)
-Free(2, 4) = 4
-Compute Free(2, 3)
-Free(2, 3) = 4
-Compute Free(2, 4)
-Free(2, 4) = 4
-If select 2(rightmost) in Tree B #Subproblem: 17 Direction: LeftFreeStrategies[2][1]
-Keynode: 2 in TreeB
+If select 3(rightmost) in Tree A #Subproblem: 20 Direction: Left
+Compute Free(1, 2)
+Free(1, 2) = 16
+Compute Free(1, 3)
+Free(1, 3) = 4
+Compute Free(1, 4)
+Free(1, 4) = 4
+Compute Free(1, 3)
+Free(1, 3) = 4
+Compute Free(1, 4)
+Free(1, 4) = 4
+If select 2(leftmost) in Tree B #Subproblem: 20 Direction: RightCompute Free(1, 2)
+Free(1, 2) = 16
+Compute Free(1, 3)
+Free(1, 3) = 4
+Compute Free(1, 4)
+Free(1, 4) = 4
+Compute Free(1, 3)
+Free(1, 3) = 4
+Compute Free(1, 4)
+Free(1, 4) = 4
+If select 2(rightmost) in Tree B #Subproblem: 20 Direction: LeftFreeStrategies[1][1]
+Keynode: 2 in Tree A
 Direction: right
+Compute Free(2, 0)
+Free(2, 0) = 6
+Compute LeftA(2, 0)
+If select 2(leftmost) in Tree A #Subproblem: 24 Direction: Right
 Compute Free(3, 0)
 Free(3, 0) = 6
-Compute LeftA(3, 0)
-If select 3(leftmost) in Tree A #Subproblem: 24 Direction: Right
-Compute Free(4, 0)
-Free(4, 0) = 6
-If select 4(rightmost) in Tree A #Subproblem: 24 Direction: Left
-Compute Free(2, 1)
-Free(2, 1) = 17
-Compute Free(2, 2)
-Free(2, 2) = 16
-Compute Free(2, 2)
-Free(2, 2) = 16
-Compute Free(2, 2)
-Free(2, 2) = 16
+If select 3(rightmost) in Tree A #Subproblem: 24 Direction: Left
+Compute Free(1, 1)
+Free(1, 1) = 20
+Compute Free(1, 2)
+Free(1, 2) = 16
+Compute Free(1, 2)
+Free(1, 2) = 16
+Compute Free(1, 2)
+Free(1, 2) = 16
 Compute Free(3, 2)
 Free(3, 2) = 4
 Compute Free(4, 2)
 Free(4, 2) = 4
-Compute Free(2, 3)
-Free(2, 3) = 4
-Compute Free(2, 4)
-Free(2, 4) = 4
-If select 1(leftmost) in Tree B #Subproblem: 21 Direction: RightCompute Free(2, 1)
-Free(2, 1) = 17
-Compute Free(2, 2)
-Free(2, 2) = 16
-Compute Free(2, 2)
-Free(2, 2) = 16
-Compute Free(2, 2)
-Free(2, 2) = 16
-If select 1(rightmost) in Tree B #Subproblem: 21 Direction: LeftFreeStrategies[2][0]
-Keynode: 1 in TreeB
+Compute Free(1, 3)
+Free(1, 3) = 4
+Compute Free(1, 4)
+Free(1, 4) = 4
+If select 1(leftmost) in Tree B #Subproblem: 24 Direction: RightCompute Free(1, 1)
+Free(1, 1) = 20
+Compute Free(1, 2)
+Free(1, 2) = 16
+Compute Free(1, 2)
+Free(1, 2) = 16
+Compute Free(1, 2)
+Free(1, 2) = 16
+If select 1(rightmost) in Tree B #Subproblem: 24 Direction: LeftFreeStrategies[1][0]
+Keynode: 2 in Tree A
 Direction: right
-Compute Free(5, 0)
-ID: 5 label: E
+Compute Free(4, 0)
+ID: 4 label: F
 parent is 0
+childrenNum: 2
+5 6 
+subTreeSize: 3
+subTreeSizeSum: 5
+leftmostForestNum: 4
+rightmostForestNum: 4
+specialmostForestNum: 4
+
+ID: 0 label: B
+Root
+childrenNum: 1
+1 
+subTreeSize: 5
+subTreeSizeSum: 14
+leftmostForestNum: 6
+rightmostForestNum: 6
+specialmostForestNum: 6
+
+Compute Free(5, 0)
+ID: 5 label: G
+parent is 4
 childrenNum: 0
 
 subTreeSize: 1
@@ -788,8 +713,8 @@ specialmostForestNum: 6
 
 If select 5 in Tree A #Subproblem: 6 Direction: Left
 Compute Free(5, 1)
-ID: 5 label: E
-parent is 0
+ID: 5 label: G
+parent is 4
 childrenNum: 0
 
 subTreeSize: 1
@@ -810,8 +735,8 @@ specialmostForestNum: 5
 
 If select 5 in Tree A #Subproblem: 5 Direction: Left
 Compute Free(5, 2)
-ID: 5 label: E
-parent is 0
+ID: 5 label: G
+parent is 4
 childrenNum: 0
 
 subTreeSize: 1
@@ -832,8 +757,8 @@ specialmostForestNum: 4
 
 If select 5 in Tree A #Subproblem: 4 Direction: Left
 Compute Free(5, 3)
-ID: 5 label: E
-parent is 0
+ID: 5 label: G
+parent is 4
 childrenNum: 0
 
 subTreeSize: 1
@@ -858,8 +783,8 @@ FreeStrategies[5][3]
 Keynode: 5 in Tree A
 Direction: right
 Compute Free(5, 4)
-ID: 5 label: E
-parent is 0
+ID: 5 label: G
+parent is 4
 childrenNum: 0
 
 subTreeSize: 1
@@ -940,16 +865,282 @@ Free(5, 2) = 4
 If select 1(rightmost) in Tree B #Subproblem: 6 Direction: LeftFreeStrategies[5][0]
 Keynode: 5 in Tree A
 Direction: right
+Compute Free(6, 0)
+ID: 6 label: H
+parent is 4
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 0 label: B
+Root
+childrenNum: 1
+1 
+subTreeSize: 5
+subTreeSizeSum: 14
+leftmostForestNum: 6
+rightmostForestNum: 6
+specialmostForestNum: 6
+
+If select 6 in Tree A #Subproblem: 6 Direction: Left
+Compute Free(6, 1)
+ID: 6 label: H
+parent is 4
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 1 label: C
+parent is 0
+childrenNum: 1
+2 
+subTreeSize: 4
+subTreeSizeSum: 9
+leftmostForestNum: 5
+rightmostForestNum: 5
+specialmostForestNum: 5
+
+If select 6 in Tree A #Subproblem: 5 Direction: Left
+Compute Free(6, 2)
+ID: 6 label: H
+parent is 4
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 2 label: E
+parent is 1
+childrenNum: 2
+3 4 
+subTreeSize: 3
+subTreeSizeSum: 5
+leftmostForestNum: 4
+rightmostForestNum: 4
+specialmostForestNum: 4
+
+If select 6 in Tree A #Subproblem: 4 Direction: Left
+Compute Free(6, 3)
+ID: 6 label: H
+parent is 4
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 3 label: F
+parent is 2
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+If select 6 in Tree A #Subproblem: 1 Direction: Left
+If select 3 in Tree B #Subproblem: 1 Direction: Left
+FreeStrategies[6][3]
+Keynode: 6 in Tree A
+Direction: right
+Compute Free(6, 4)
+ID: 6 label: H
+parent is 4
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 4 label: G
+parent is 2
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+If select 6 in Tree A #Subproblem: 1 Direction: Left
+If select 4 in Tree B #Subproblem: 1 Direction: Left
+FreeStrategies[6][4]
+Keynode: 6 in Tree A
+Direction: right
+Compute Free(6, 3)
+Free(6, 3) = 1
+If select 3(leftmost) in Tree B #Subproblem: 4 Direction: RightCompute Free(6, 4)
+Free(6, 4) = 1
+If select 4(rightmost) in Tree B #Subproblem: 4 Direction: LeftFreeStrategies[6][2]
+Keynode: 6 in Tree A
+Direction: right
+Compute Free(6, 2)
+Free(6, 2) = 4
+Compute Free(6, 3)
+Free(6, 3) = 1
+Compute Free(6, 4)
+Free(6, 4) = 1
+Compute Free(6, 3)
+Free(6, 3) = 1
+Compute Free(6, 4)
+Free(6, 4) = 1
+If select 2(leftmost) in Tree B #Subproblem: 5 Direction: RightCompute Free(6, 2)
+Free(6, 2) = 4
+Compute Free(6, 3)
+Free(6, 3) = 1
+Compute Free(6, 4)
+Free(6, 4) = 1
+Compute Free(6, 3)
+Free(6, 3) = 1
+Compute Free(6, 4)
+Free(6, 4) = 1
+If select 2(rightmost) in Tree B #Subproblem: 5 Direction: LeftFreeStrategies[6][1]
+Keynode: 6 in Tree A
+Direction: right
+Compute Free(6, 1)
+Free(6, 1) = 5
+Compute Free(6, 2)
+Free(6, 2) = 4
+Compute Free(6, 2)
+Free(6, 2) = 4
+Compute Free(6, 2)
+Free(6, 2) = 4
+Compute Free(3, 2)
+Free(3, 2) = 4
+Compute Free(4, 2)
+Free(4, 2) = 4
+Compute Free(6, 3)
+Free(6, 3) = 1
+Compute Free(6, 4)
+Free(6, 4) = 1
+If select 1(leftmost) in Tree B #Subproblem: 6 Direction: RightCompute Free(6, 1)
+Free(6, 1) = 5
+Compute Free(6, 2)
+Free(6, 2) = 4
+Compute Free(6, 2)
+Free(6, 2) = 4
+Compute Free(6, 2)
+Free(6, 2) = 4
+If select 1(rightmost) in Tree B #Subproblem: 6 Direction: LeftFreeStrategies[6][0]
+Keynode: 6 in Tree A
+Direction: right
+Compute Free(4, 1)
+ID: 4 label: F
+parent is 0
+childrenNum: 2
+5 6 
+subTreeSize: 3
+subTreeSizeSum: 5
+leftmostForestNum: 4
+rightmostForestNum: 4
+specialmostForestNum: 4
+
+ID: 1 label: C
+parent is 0
+childrenNum: 1
+2 
+subTreeSize: 4
+subTreeSizeSum: 9
+leftmostForestNum: 5
+rightmostForestNum: 5
+specialmostForestNum: 5
+
+Compute Free(5, 1)
+Free(5, 1) = 5
+Compute Free(6, 1)
+Free(6, 1) = 5
+Compute Free(4, 2)
+Free(4, 2) = 4
+Compute Free(5, 1)
+Free(5, 1) = 5
+Compute LeftA(5, 1)
+If select 5(leftmost) in Tree A #Subproblem: 20 Direction: Right
+Compute Free(6, 1)
+Free(6, 1) = 5
+If select 6(rightmost) in Tree A #Subproblem: 20 Direction: Left
+Compute Free(4, 2)
+Free(4, 2) = 4
+Compute Free(4, 3)
+Free(4, 3) = 1
+Compute Free(4, 4)
+Free(4, 4) = 1
+Compute Free(4, 3)
+Free(4, 3) = 1
+Compute Free(4, 4)
+Free(4, 4) = 1
+If select 2(leftmost) in Tree B #Subproblem: 14 Direction: RightCompute Free(4, 2)
+Free(4, 2) = 4
+Compute Free(4, 3)
+Free(4, 3) = 1
+Compute Free(4, 4)
+Free(4, 4) = 1
+Compute Free(4, 3)
+Free(4, 3) = 1
+Compute Free(4, 4)
+Free(4, 4) = 1
+If select 2(rightmost) in Tree B #Subproblem: 14 Direction: LeftFreeStrategies[4][1]
+Keynode: 2 in TreeB
+Direction: right
+Compute Free(5, 0)
+Free(5, 0) = 6
+Compute LeftA(5, 0)
+If select 5(leftmost) in Tree A #Subproblem: 24 Direction: Right
+Compute Free(6, 0)
+Free(6, 0) = 6
+If select 6(rightmost) in Tree A #Subproblem: 24 Direction: Left
+Compute Free(4, 1)
+Free(4, 1) = 14
+Compute Free(4, 2)
+Free(4, 2) = 4
+Compute Free(4, 2)
+Free(4, 2) = 4
+Compute Free(4, 2)
+Free(4, 2) = 4
+Compute Free(3, 2)
+Free(3, 2) = 4
+Compute Free(4, 2)
+Free(4, 2) = 4
+Compute Free(4, 3)
+Free(4, 3) = 1
+Compute Free(4, 4)
+Free(4, 4) = 1
+If select 1(leftmost) in Tree B #Subproblem: 18 Direction: RightCompute Free(4, 1)
+Free(4, 1) = 14
+Compute Free(4, 2)
+Free(4, 2) = 4
+Compute Free(4, 2)
+Free(4, 2) = 4
+Compute Free(4, 2)
+Free(4, 2) = 4
+If select 1(rightmost) in Tree B #Subproblem: 18 Direction: LeftFreeStrategies[4][0]
+Keynode: 1 in TreeB
+Direction: right
 Compute Free(0, 1)
 ID: 0 label: B
 Root
-childrenNum: 3
-1 2 5 
-subTreeSize: 6
-subTreeSizeSum: 13
-leftmostForestNum: 11
-rightmostForestNum: 11
-specialmostForestNum: 14
+childrenNum: 2
+1 4 
+subTreeSize: 7
+subTreeSizeSum: 17
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 18
 
 ID: 1 label: C
 parent is 0
@@ -962,21 +1153,19 @@ rightmostForestNum: 5
 specialmostForestNum: 5
 
 Compute Free(1, 1)
-Free(1, 1) = 5
-Compute Free(2, 1)
-Free(2, 1) = 17
-Compute Free(5, 1)
-Free(5, 1) = 5
+Free(1, 1) = 20
+Compute Free(4, 1)
+Free(4, 1) = 14
 Compute Free(0, 2)
 ID: 0 label: B
 Root
-childrenNum: 3
-1 2 5 
-subTreeSize: 6
-subTreeSizeSum: 13
-leftmostForestNum: 11
-rightmostForestNum: 11
-specialmostForestNum: 14
+childrenNum: 2
+1 4 
+subTreeSize: 7
+subTreeSizeSum: 17
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 18
 
 ID: 2 label: E
 parent is 1
@@ -989,21 +1178,19 @@ rightmostForestNum: 4
 specialmostForestNum: 4
 
 Compute Free(1, 2)
-Free(1, 2) = 4
-Compute Free(2, 2)
-Free(2, 2) = 16
-Compute Free(5, 2)
-Free(5, 2) = 4
+Free(1, 2) = 16
+Compute Free(4, 2)
+Free(4, 2) = 4
 Compute Free(0, 3)
 ID: 0 label: B
 Root
-childrenNum: 3
-1 2 5 
-subTreeSize: 6
-subTreeSizeSum: 13
-leftmostForestNum: 11
-rightmostForestNum: 11
-specialmostForestNum: 14
+childrenNum: 2
+1 4 
+subTreeSize: 7
+subTreeSizeSum: 17
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 18
 
 ID: 3 label: F
 parent is 2
@@ -1015,44 +1202,49 @@ leftmostForestNum: 1
 rightmostForestNum: 1
 specialmostForestNum: 1
 
-If select 3 in Tree B #Subproblem: 11 Direction: Left
+If select 3 in Tree B #Subproblem: 12 Direction: Left
 Compute Free(1, 3)
-Free(1, 3) = 1
-Compute Free(2, 3)
-Free(2, 3) = 4
-Compute Free(5, 3)
-Free(5, 3) = 1
+Free(1, 3) = 4
+Compute Free(4, 3)
+Free(4, 3) = 1
 Compute Free(1, 3)
-Free(1, 3) = 1
+Free(1, 3) = 4
 Compute LeftA(1, 3)
-If select 1(leftmost) in Tree A #Subproblem: 11 Direction: Right
 Compute Free(2, 3)
-Free(2, 3) = 4
+Free(2, 3) = 1
 Compute Free(3, 3)
 Free(3, 3) = 1
-Compute Free(4, 3)
-Free(4, 3) = 1
+Compute Free(2, 3)
+Free(2, 3) = 1
+Compute LeftA(2, 3)
+Compute LeftA(2, 3) = 1
 Compute Free(3, 3)
 Free(3, 3) = 1
+If select 1(leftmost) in Tree A #Subproblem: 9 Direction: Right
 Compute Free(4, 3)
 Free(4, 3) = 1
-If select 2 in Tree A #Subproblem: 9 Direction: Left
 Compute Free(5, 3)
 Free(5, 3) = 1
-If select 5(rightmost) in Tree A #Subproblem: 11 Direction: Left
+Compute Free(6, 3)
+Free(6, 3) = 1
+Compute Free(5, 3)
+Free(5, 3) = 1
+Compute Free(6, 3)
+Free(6, 3) = 1
+If select 4(rightmost) in Tree A #Subproblem: 12 Direction: Left
 FreeStrategies[0][3]
-Keynode: 2 in Tree A
-Direction: left
+Keynode: 1 in Tree A
+Direction: right
 Compute Free(0, 4)
 ID: 0 label: B
 Root
-childrenNum: 3
-1 2 5 
-subTreeSize: 6
-subTreeSizeSum: 13
-leftmostForestNum: 11
-rightmostForestNum: 11
-specialmostForestNum: 14
+childrenNum: 2
+1 4 
+subTreeSize: 7
+subTreeSizeSum: 17
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 18
 
 ID: 4 label: G
 parent is 2
@@ -1064,77 +1256,96 @@ leftmostForestNum: 1
 rightmostForestNum: 1
 specialmostForestNum: 1
 
-If select 4 in Tree B #Subproblem: 11 Direction: Left
+If select 4 in Tree B #Subproblem: 12 Direction: Left
 Compute Free(1, 4)
-Free(1, 4) = 1
-Compute Free(2, 4)
-Free(2, 4) = 4
-Compute Free(5, 4)
-Free(5, 4) = 1
+Free(1, 4) = 4
+Compute Free(4, 4)
+Free(4, 4) = 1
 Compute Free(1, 4)
-Free(1, 4) = 1
+Free(1, 4) = 4
 Compute LeftA(1, 4)
-If select 1(leftmost) in Tree A #Subproblem: 11 Direction: Right
 Compute Free(2, 4)
-Free(2, 4) = 4
+Free(2, 4) = 1
 Compute Free(3, 4)
 Free(3, 4) = 1
-Compute Free(4, 4)
-Free(4, 4) = 1
+Compute Free(2, 4)
+Free(2, 4) = 1
+Compute LeftA(2, 4)
+Compute LeftA(2, 4) = 1
 Compute Free(3, 4)
 Free(3, 4) = 1
+If select 1(leftmost) in Tree A #Subproblem: 9 Direction: Right
 Compute Free(4, 4)
 Free(4, 4) = 1
-If select 2 in Tree A #Subproblem: 9 Direction: Left
 Compute Free(5, 4)
 Free(5, 4) = 1
-If select 5(rightmost) in Tree A #Subproblem: 11 Direction: Left
+Compute Free(6, 4)
+Free(6, 4) = 1
+Compute Free(5, 4)
+Free(5, 4) = 1
+Compute Free(6, 4)
+Free(6, 4) = 1
+If select 4(rightmost) in Tree A #Subproblem: 12 Direction: Left
 FreeStrategies[0][4]
-Keynode: 2 in Tree A
-Direction: left
+Keynode: 1 in Tree A
+Direction: right
 Compute Free(1, 2)
-Free(1, 2) = 4
+Free(1, 2) = 16
 Compute LeftA(1, 2)
-If select 1(leftmost) in Tree A #Subproblem: 44 Direction: Right
 Compute Free(2, 2)
-Free(2, 2) = 16
+Free(2, 2) = 4
 Compute Free(3, 2)
 Free(3, 2) = 4
-Compute Free(4, 2)
-Free(4, 2) = 4
+Compute Free(2, 2)
+Free(2, 2) = 4
+Compute LeftA(2, 2)
+Compute LeftA(2, 2) = 4
 Compute Free(3, 2)
 Free(3, 2) = 4
+If select 1(leftmost) in Tree A #Subproblem: 36 Direction: Right
 Compute Free(4, 2)
 Free(4, 2) = 4
-If select 2 in Tree A #Subproblem: 36 Direction: Left
 Compute Free(5, 2)
 Free(5, 2) = 4
-If select 5(rightmost) in Tree A #Subproblem: 44 Direction: Left
+Compute Free(6, 2)
+Free(6, 2) = 4
+Compute Free(5, 2)
+Free(5, 2) = 4
+Compute Free(6, 2)
+Free(6, 2) = 4
+If select 4(rightmost) in Tree A #Subproblem: 48 Direction: Left
 Compute Free(0, 3)
 Free(0, 3) = 9
-If select 3(leftmost) in Tree B #Subproblem: 42 Direction: RightCompute Free(0, 4)
+If select 3(leftmost) in Tree B #Subproblem: 45 Direction: RightCompute Free(0, 4)
 Free(0, 4) = 9
-If select 4(rightmost) in Tree B #Subproblem: 42 Direction: LeftFreeStrategies[0][2]
-Keynode: 2 in Tree A
-Direction: left
+If select 4(rightmost) in Tree B #Subproblem: 45 Direction: LeftFreeStrategies[0][2]
+Keynode: 1 in Tree A
+Direction: right
 Compute Free(1, 1)
-Free(1, 1) = 5
+Free(1, 1) = 20
 Compute LeftA(1, 1)
-If select 1(leftmost) in Tree A #Subproblem: 52 Direction: Right
 Compute Free(2, 1)
-Free(2, 1) = 17
+Free(2, 1) = 5
 Compute Free(3, 1)
 Free(3, 1) = 5
-Compute Free(4, 1)
-Free(4, 1) = 5
+Compute Free(2, 1)
+Free(2, 1) = 5
+Compute LeftA(2, 1)
+Compute LeftA(2, 1) = 5
 Compute Free(3, 1)
 Free(3, 1) = 5
+If select 1(leftmost) in Tree A #Subproblem: 54 Direction: Right
 Compute Free(4, 1)
-Free(4, 1) = 5
-If select 2 in Tree A #Subproblem: 45 Direction: Left
+Free(4, 1) = 14
 Compute Free(5, 1)
 Free(5, 1) = 5
-If select 5(rightmost) in Tree A #Subproblem: 52 Direction: Left
+Compute Free(6, 1)
+Free(6, 1) = 5
+Compute Free(5, 1)
+Free(5, 1) = 5
+Compute Free(6, 1)
+Free(6, 1) = 5
+If select 4(rightmost) in Tree A #Subproblem: 60 Direction: Left
 Compute Free(0, 2)
 Free(0, 2) = 36
 Compute Free(0, 3)
@@ -1145,7 +1356,7 @@ Compute Free(0, 3)
 Free(0, 3) = 9
 Compute Free(0, 4)
 Free(0, 4) = 9
-If select 2(leftmost) in Tree B #Subproblem: 49 Direction: RightCompute Free(0, 2)
+If select 2(leftmost) in Tree B #Subproblem: 57 Direction: RightCompute Free(0, 2)
 Free(0, 2) = 36
 Compute Free(0, 3)
 Free(0, 3) = 9
@@ -1155,29 +1366,36 @@ Compute Free(0, 3)
 Free(0, 3) = 9
 Compute Free(0, 4)
 Free(0, 4) = 9
-If select 2(rightmost) in Tree B #Subproblem: 49 Direction: LeftFreeStrategies[0][1]
-Keynode: 2 in Tree A
-Direction: left
+If select 2(rightmost) in Tree B #Subproblem: 57 Direction: LeftFreeStrategies[0][1]
+Keynode: 1 in Tree A
+Direction: right
 Compute Free(1, 0)
-Free(1, 0) = 6
+Free(1, 0) = 24
 Compute LeftA(1, 0)
-If select 1(leftmost) in Tree A #Subproblem: 63 Direction: Right
 Compute Free(2, 0)
-Free(2, 0) = 21
+Free(2, 0) = 6
 Compute Free(3, 0)
 Free(3, 0) = 6
-Compute Free(4, 0)
-Free(4, 0) = 6
+Compute Free(2, 0)
+Free(2, 0) = 6
+Compute LeftA(2, 0)
+Compute LeftA(2, 0) = 6
 Compute Free(3, 0)
 Free(3, 0) = 6
+If select 1(leftmost) in Tree A #Subproblem: 66 Direction: Right
 Compute Free(4, 0)
-Free(4, 0) = 6
-If select 2 in Tree A #Subproblem: 54 Direction: Left
+Free(4, 0) = 18
 Compute Free(5, 0)
 Free(5, 0) = 6
-If select 5(rightmost) in Tree A #Subproblem: 63 Direction: Left
+Compute Free(6, 0)
+Free(6, 0) = 6
+Compute Free(5, 0)
+Free(5, 0) = 6
+Compute Free(6, 0)
+Free(6, 0) = 6
+If select 4(rightmost) in Tree A #Subproblem: 72 Direction: Left
 Compute Free(0, 1)
-Free(0, 1) = 45
+Free(0, 1) = 54
 Compute Free(0, 2)
 Free(0, 2) = 36
 Compute Free(0, 2)
@@ -1192,111 +1410,22 @@ Compute Free(0, 3)
 Free(0, 3) = 9
 Compute Free(0, 4)
 Free(0, 4) = 9
-If select 1(leftmost) in Tree B #Subproblem: 53 Direction: RightCompute Free(0, 1)
-Free(0, 1) = 45
+If select 1(leftmost) in Tree B #Subproblem: 69 Direction: RightCompute Free(0, 1)
+Free(0, 1) = 54
 Compute Free(0, 2)
 Free(0, 2) = 36
 Compute Free(0, 2)
 Free(0, 2) = 36
 Compute Free(0, 2)
 Free(0, 2) = 36
-If select 1(rightmost) in Tree B #Subproblem: 53 Direction: LeftFreeStrategies[0][0]
-Keynode: 1 in TreeB
+If select 1(rightmost) in Tree B #Subproblem: 69 Direction: LeftFreeStrategies[0][0]
+Keynode: 1 in Tree A
 Direction: right
 RESULT
-53 45 36 9 9 
-6 5 4 1 1 
-21 17 16 4 4 
-6 5 4 1 1 
-6 5 4 1 1 
-6 5 4 1 1 
-FreeStrategies[0][0]
-Keynode: 1 in TreeB
-Direction: right
-FreeStrategies[0][1]
-Keynode: 2 in Tree A
-Direction: left
-FreeStrategies[0][2]
-Keynode: 2 in Tree A
-Direction: left
-FreeStrategies[0][3]
-Keynode: 2 in Tree A
-Direction: left
-FreeStrategies[0][4]
-Keynode: 2 in Tree A
-Direction: left
-FreeStrategies[1][0]
-Keynode: 1 in Tree A
-Direction: right
-FreeStrategies[1][1]
-Keynode: 1 in Tree A
-Direction: right
-FreeStrategies[1][2]
-Keynode: 1 in Tree A
-Direction: right
-FreeStrategies[1][3]
-Keynode: 1 in Tree A
-Direction: right
-FreeStrategies[1][4]
-Keynode: 1 in Tree A
-Direction: right
-FreeStrategies[2][0]
-Keynode: 1 in TreeB
-Direction: right
-FreeStrategies[2][1]
-Keynode: 2 in TreeB
-Direction: right
-FreeStrategies[2][2]
-Keynode: 3 in Tree A
-Direction: right
-FreeStrategies[2][3]
-Keynode: 3 in TreeB
-Direction: right
-FreeStrategies[2][4]
-Keynode: 4 in TreeB
-Direction: right
-FreeStrategies[3][0]
-Keynode: 3 in Tree A
-Direction: right
-FreeStrategies[3][1]
-Keynode: 3 in Tree A
-Direction: right
-FreeStrategies[3][2]
-Keynode: 3 in Tree A
-Direction: right
-FreeStrategies[3][3]
-Keynode: 3 in Tree A
-Direction: right
-FreeStrategies[3][4]
-Keynode: 3 in Tree A
-Direction: right
-FreeStrategies[4][0]
-Keynode: 4 in Tree A
-Direction: right
-FreeStrategies[4][1]
-Keynode: 4 in Tree A
-Direction: right
-FreeStrategies[4][2]
-Keynode: 4 in Tree A
-Direction: right
-FreeStrategies[4][3]
-Keynode: 4 in Tree A
-Direction: right
-FreeStrategies[4][4]
-Keynode: 4 in Tree A
-Direction: right
-FreeStrategies[5][0]
-Keynode: 5 in Tree A
-Direction: right
-FreeStrategies[5][1]
-Keynode: 5 in Tree A
-Direction: right
-FreeStrategies[5][2]
-Keynode: 5 in Tree A
-Direction: right
-FreeStrategies[5][3]
-Keynode: 5 in Tree A
-Direction: right
-FreeStrategies[5][4]
-Keynode: 5 in Tree A
-Direction: right
+2 2 2 2 2 
+2 2 2 3 4 
+2 2 2 2 2 
+3 3 3 3 3 
+3 3 4 4 4 
+5 5 5 5 5 
+6 6 6 6 6 
