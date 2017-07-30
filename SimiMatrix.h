@@ -2,18 +2,20 @@
 #define SIMIMATRIX_H
 
 #include <string>
+#include <map>
 
 using namespace std;
 
 class SimiMatrix {
 
 private:
-	char base[21];
+	map<char, int> base;
 	float simiMatrix[50][50];
 
 public:
 	SimiMatrix();
-	char& operator[] (int);
+	void setBase(char, int);
+	int operator[] (char);
 	float& operator() (int, int);
 	string toString(void);
 };

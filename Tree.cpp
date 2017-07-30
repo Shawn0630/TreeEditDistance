@@ -1,5 +1,7 @@
 #include "Tree.h"
 #include "Node.h"
+
+#include <iostream>
 #include <vector>
 #include <string>
 
@@ -31,6 +33,14 @@ int Tree::getTreeSize(void) const {
 
 vector<Node*> Tree::getPreL(void) const {
 	return preL;
+};
+
+Node* Tree::operator[](int i) {
+	if(i < 0 || i >= treeSize_) {
+		cout << "Overflow" << endl;
+		return preL[0];
+	}
+	return preL[i];
 };
 
 /*vector<Node*> Tree::getPost(void) const {

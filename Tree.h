@@ -23,11 +23,15 @@ private:
 	int* postR_to_preL;
 	int* preL_to_lid;
 	int* preL_to_rid;
+
+	int* preL_to_sumDelCost;
+	int* preL_to_sumInsCost;
 public:
 	Tree(string, int);
 	string getLabel(void) const;
 	int getTreeSize(void) const;
 	vector<Node*> getPreL(void) const;
+	Node* operator[](int);
 	//vector<Node*> getPost(void) const;
 	void pushNodeToPreL(Node*);
 	//void pushNodeToPost(Node*);

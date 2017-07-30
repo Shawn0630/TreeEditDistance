@@ -146,6 +146,7 @@ SimiMatrix FileManage::readSimiFromFile(void) {
 	ifstream in;
 	string temp;
 	char c;
+	char index;
 	int i = 0, j = 1;
 	in.open(simiFileName_);
 
@@ -159,59 +160,61 @@ SimiMatrix FileManage::readSimiFromFile(void) {
 	for(int k = 0; k < temp.length(); k++) {
 		while(!(temp[k] >= 65 && temp[k] <= 90 || temp[k] == '-'))k++;
 		if(k >= temp.length()) break;
-		matrix[i] = temp[k];
+		//matrix[i] = temp[k];
+		index = temp[k];
 		if(temp[k + 1] >= 65 && temp[k + 1] <= 90) {
 			c = temp[k + 1];
-			if(matrix[i] == 'A' && c == 'A'){
-				matrix[i] = 'B';
+			if(index == 'A' && c == 'A'){
+				index = 'B';
 			}
-			else if(matrix[i] == 'A' && c == 'G'){
-				matrix[i] = 'D';
+			else if(index == 'A' && c == 'G'){
+				index = 'D';
 			}
-			else if(matrix[i] == 'A' && c == 'C'){
-				matrix[i] = 'E';
+			else if(index == 'A' && c == 'C'){
+				index = 'E';
 			}
-			else if(matrix[i] == 'A' && c == 'U'){
-				matrix[i] = 'F';
+			else if(index == 'A' && c == 'U'){
+				index = 'F';
 			}
-			else if(matrix[i] == 'G' && c == 'A'){
-				matrix[i] = 'H';
+			else if(index == 'G' && c == 'A'){
+				index = 'H';
 			}
-			else if(matrix[i] == 'G' && c == 'G'){
-				matrix[i] = 'I';
+			else if(index == 'G' && c == 'G'){
+				index = 'I';
 			}
-			else if(matrix[i] == 'G' && c == 'C'){
-				matrix[i] = 'J';
+			else if(index == 'G' && c == 'C'){
+				index = 'J';
 			}
-			else if(matrix[i] == 'G' && c == 'U'){
-				matrix[i] = 'K';
+			else if(index == 'G' && c == 'U'){
+				index = 'K';
 			}
-			else if(matrix[i] == 'C' && c == 'A'){
-				matrix[i] = 'L';
+			else if(index == 'C' && c == 'A'){
+				index = 'L';
 			}
-			else if(matrix[i] == 'C' && c == 'G'){
-				matrix[i] = 'M';
+			else if(index == 'C' && c == 'G'){
+				index = 'M';
 			}
-			else if(matrix[i] == 'C' && c == 'C'){
-				matrix[i] = 'N';
+			else if(index == 'C' && c == 'C'){
+				index = 'N';
 			}
-			else if(matrix[i] == 'C' && c == 'U'){
-				matrix[i] = 'O';
+			else if(index == 'C' && c == 'U'){
+				index = 'O';
 			}
-			else if(matrix[i] == 'U' && c == 'A'){
-				matrix[i] = 'P';
+			else if(index == 'U' && c == 'A'){
+				index = 'P';
 			}
-			else if(matrix[i] == 'U' && c == 'G'){
-				matrix[i] = 'Q';
+			else if(index == 'U' && c == 'G'){
+				index = 'Q';
 			}
-			else if(matrix[i] == 'U' && c == 'C'){
-				matrix[i] = 'R';
+			else if(index == 'U' && c == 'C'){
+				index = 'R';
 			}
-			else if(matrix[i] == 'U' && c == 'U'){
-				matrix[i] = 'S';
+			else if(index == 'U' && c == 'U'){
+				index = 'S';
 			}
 			k++;
 		}
+		matrix.setBase(index, i);
 		i++;
 	}
 	getline(in, temp);
@@ -225,6 +228,7 @@ SimiMatrix FileManage::readSimiFromFile(void) {
 		j++;
 	}
 	
+	in.close();
 	return matrix;
 
 };

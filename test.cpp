@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
 	string fileName = "rna16.data";
-	string simiFileName = "ss_simi";
+	string simiFileName = "ss_simi3";
 	SimiMatrix matrix;
 	vector<RNA> RNAs;
 	//ofstream ou("out.txt");
@@ -21,6 +21,7 @@ int main() {
 	RNAs = file->readRNAsFromFile();
 	matrix = file->readSimiFromFile();
 	cout << matrix.toString() << endl;
+	cout << matrix['C'] << " " << matrix['A'] << " " << matrix['-'] << endl;
 	//ou << RNAs[0].toString() << endl;
 	//ou << RNAs[1].toString() << endl;
 /*	RNAs[0].getPreLSequence();
