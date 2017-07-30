@@ -12,12 +12,13 @@ using namespace std;
 TreeComparison::TreeComparison() {
 }
 
-TreeComparison::TreeComparison(Tree* A, Tree* B) {
+TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 	A_ = A;
 	B_ = B;
+	costModel_ = costModel;
+
 	treeSizeA = A_->getTreeSize();
 	treeSizeB = B_->getTreeSize();
-
 
 	Free = new int*[treeSizeA];
 	LeftA = new int*[treeSizeA];
@@ -33,6 +34,7 @@ TreeComparison::TreeComparison(Tree* A, Tree* B) {
 	AllAStrategies = new Strategy*[treeSizeA];
 	AllBStrategies = new Strategy*[treeSizeA];
 	FreeStrategies = new Strategy*[treeSizeA];
+	delta = new float*[treeSizeA];
 	for(int i = 0; i < treeSizeA; i++) {
 		Free[i] = new int[treeSizeB];
 		LeftA[i] = new int[treeSizeB];
@@ -48,6 +50,7 @@ TreeComparison::TreeComparison(Tree* A, Tree* B) {
 		AllAStrategies[i] = new Strategy[treeSizeB];
 		AllBStrategies[i] = new Strategy[treeSizeB];
 		FreeStrategies[i] = new Strategy[treeSizeB];
+		delta[i] = new float[treeSizeB];
 	}
 
 	for(int i = 0; i < treeSizeA; i++) {
@@ -580,9 +583,61 @@ TreeComparison::TreeComparison(Tree* A, Tree* B) {
 	}
 };*/
 
+void TreeComparison::deltaInit() {
+	int treeSizeA = A_->getTreeSize();
+	int treeSizeB = B_->getTreeSize();
+	for(int i = 0; i < treeSizeA; i++) {
+		Node* a = (*A_)[i];
+		for(int j = 0; j < treeSizeB; j++) {
+			Node* b = (*B_)[j];
+			if(a->getSubTreeSize() == 1 && b->getSubTreeSize() == 1) {
+				delta[i][j] = 0.0f;
+			} else if(a->getSubTreeSize() == 1) {
+				delta[i][j] = B_->preL_to_sumInsCost[j] - costModel_.ins(b->getLabel());
+			} else if(b->getSubTreeSize() == 1) {
+				delta[i][j] = A_->preL_to_sumDelCost[i] - costModel_.del(a->getLabel());
+			}
+		}
+	}
+};
+
+
+void TreeComparison::computeSumInsAndDelCost(Tree* tree) {
+	int treeSize = tree->getTreeSize();
+	for(int i = 0; i < treeSize; i++) {
+		int nodeForSum = treeSize - i - 1;// postOrder from bottom to up
+		Node* node = (*tree)[nodeForSum];
+		Node* parent = node->getParent();
+	/*	cout << "Before" << endl;
+		cout << "preL_to_sumInsCost[" << to_string(nodeForSum) << "] = " << to_string(tree->preL_to_sumInsCost[nodeForSum]) << endl;
+		cout << "preL_to_sumDelCost[" << to_string(nodeForSum) << "] = " << to_string(tree->preL_to_sumDelCost[nodeForSum]) << endl;
+		cout << "ins " << node->getLabel() << " " << costModel_.ins(node->getLabel()) << endl;
+		cout << "del " << node->getLabel() << " " << costModel_.del(node->getLabel()) << endl;
+		cout << "After" << endl;*/
+		tree->preL_to_sumInsCost[nodeForSum] += costModel_.ins(node->getLabel());
+		tree->preL_to_sumDelCost[nodeForSum] += costModel_.del(node->getLabel());
+/*		cout << "preL_to_sumInsCost[" << to_string(nodeForSum) << "] = " << to_string(tree->preL_to_sumInsCost[nodeForSum]) << endl;
+		cout << "preL_to_sumDelCost[" << to_string(nodeForSum) << "] = " << to_string(tree->preL_to_sumDelCost[nodeForSum]) << endl;*/
+		if(parent != NULL) {
+			/*cout << "Update Parent Before" << endl;
+			cout << "preL_to_sumInsCost[" << to_string(parent->getID()) << "] = " << to_string(tree->preL_to_sumInsCost[parent->getID()]) << endl;
+			cout << "preL_to_sumDelCost[" << to_string(parent->getID()) << "] = " << to_string(tree->preL_to_sumDelCost[parent->getID()]) << endl;*/
+			tree->preL_to_sumInsCost[parent->getID()] += tree->preL_to_sumInsCost[node->getID()];
+			tree->preL_to_sumDelCost[parent->getID()] += tree->preL_to_sumDelCost[node->getID()];
+/*			cout << "Update Parent After" << endl;
+			cout << "preL_to_sumInsCost[" << to_string(parent->getID()) << "] = " << to_string(tree->preL_to_sumInsCost[parent->getID()]) << endl;
+			cout << "preL_to_sumDelCost[" << to_string(parent->getID()) << "] = " << to_string(tree->preL_to_sumDelCost[parent->getID()]) << endl;*/
+		}
+	}
+
+};
+
 void TreeComparison::strategyComputation() {
 	vector<Node*> preA = A_->getPreL();
 	vector<Node*> preB = B_->getPreL();
+
+	computeSumInsAndDelCost(A_);
+	computeSumInsAndDelCost(B_);
 
 	free(preA[0], preB[0]);
 	if(DEBUG) {

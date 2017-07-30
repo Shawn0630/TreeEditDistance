@@ -27,6 +27,26 @@ float& SimiMatrix::operator() (int x, int y) {
 	return simiMatrix[x][y];
 };
 
+float SimiMatrix::del(char c) {
+	if(base.find(c) == base.end()) return 0;
+	int cid = base[c];
+	return simiMatrix[cid][0];
+};
+
+float SimiMatrix::ins(char c) {
+	if(base.find(c) == base.end()) return 0;
+	int cid = base[c];
+	return simiMatrix[cid][0];
+
+};
+float SimiMatrix::ren(char a, char b) {
+	if(base.find(a) == base.end() || base.find(b) == base.end()) return 0;
+	int aid = base[a];
+	int bid = base[b];
+	if(aid >= bid) simiMatrix[aid][bid];
+	else return simiMatrix[bid][aid];
+};
+
 string SimiMatrix::toString(void) {
 	string res = "";
 	/*for(int i = 0; i < 21; i++) {

@@ -15,13 +15,19 @@ int main() {
 	SimiMatrix matrix;
 	vector<RNA> RNAs;
 	//ofstream ou("out.txt");
-	FileManage* file = FileManage::getInstance();
+/*	FileManage* file = FileManage::getInstance();
 	file->setRNAFileName(fileName);
 	file->setSimiFileName(simiFileName);
 	RNAs = file->readRNAsFromFile();
+	RNAs[0].getPreLSequence();
+	RNAs[1].getPreLSequence();
+	Tree* t1 = RNAs[0].buildTree();
+	Tree* t2 = RNAs[1].buildTree();
 	matrix = file->readSimiFromFile();
-	cout << matrix.toString() << endl;
-	cout << matrix['C'] << " " << matrix['A'] << " " << matrix['-'] << endl;
+	TreeComparison tc(t1, t2, matrix);
+	tc.strategyComputation();*/
+	/*cout << matrix.toString() << endl;
+	cout << matrix['C'] << " " << matrix['A'] << " " << matrix['-'] << endl;*/
 	//ou << RNAs[0].toString() << endl;
 	//ou << RNAs[1].toString() << endl;
 /*	RNAs[0].getPreLSequence();
@@ -69,8 +75,11 @@ int main() {
 		}
 	}*/
 
-/*	RNA r1, r2;
-	//ofstream ou("out.txt");
+	RNA r1, r2;
+	FileManage* file = FileManage::getInstance();
+	file->setSimiFileName(simiFileName);
+	matrix = file->readSimiFromFile();
+	ofstream ou("out.txt");
 	r1.setRNAName("A");
 	r2.setRNAName("B");
 	//r2.setRNAName("B");
@@ -90,6 +99,12 @@ int main() {
 	//ou << "TreeB" << endl;
 	Tree* t2 = r2.buildTree();
 	//ou << t2->toString() << endl;
-	TreeComparison tc(t1, t2);
-	tc.strategyComputation();*/
+	TreeComparison tc(t1, t2, matrix);
+	tc.strategyComputation();
+	ou << "TreeA" << endl;
+	ou << t1->toString() << endl;
+	ou << "TreeB" << endl;
+	ou << t2->toString() << endl;
+
+
 }

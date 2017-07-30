@@ -37,6 +37,7 @@ public:
 	//void pushNodeToPost(Node*);
 
 	friend class RNA;
+	friend class TreeComparison;
 
 	string toString()const;
 

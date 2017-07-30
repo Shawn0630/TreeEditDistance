@@ -17,6 +17,9 @@ public:
 	void setBase(char, int);
 	int operator[] (char);
 	float& operator() (int, int);
+	float del(char);
+	float ins(char);
+	float ren(char, char);
 	string toString(void);
 };
 

@@ -20,6 +20,20 @@ Tree::Tree(string label, int treeSize) {
 	postR_to_preL = new int[treeSize_];
 	preL_to_lid = new int[treeSize_];
 	preL_to_rid = new int[treeSize_];
+	preL_to_sumDelCost = new int[treeSize_];
+	preL_to_sumInsCost = new int[treeSize_];
+
+	fill_n(preL_to_preR, treeSize_, 0); 
+	fill_n(preR_to_preL, treeSize_, 0); 
+	fill_n(preL_to_postL, treeSize_, 0); 
+	fill_n(postL_to_preL, treeSize_, 0); 
+	fill_n(preL_to_postR, treeSize_, 0); 
+	fill_n(postR_to_preL, treeSize_, 0); 
+	fill_n(preL_to_lid, treeSize_, 0); 
+	fill_n(preL_to_rid, treeSize_, 0); 
+	fill_n(preL_to_sumDelCost, treeSize_, 0); 
+	fill_n(preL_to_sumInsCost, treeSize_, 0); 
+
 };
 
 string Tree::getLabel(void) const{
@@ -85,6 +99,16 @@ string Tree::toString() const {
 	res += "preL_to_rid\n";
 	for(int i = 0; i < treeSize_; i++) {
 		res += to_string(preL_to_rid[i]) + " ";
+	}
+	res += "\n";
+	res += "preL_to_sumDelCost\n";
+	for(int i = 0; i < treeSize_; i++) {
+		res += to_string(preL_to_sumDelCost[i]) + " ";
+	}
+	res += "\n";
+	res += "preL_to_sumInsCost\n";
+	for(int i = 0; i < treeSize_; i++) {
+		res += to_string(preL_to_sumInsCost[i]) + " ";
 	}
 	return res;
 };
