@@ -3,29 +3,36 @@
 #include <iostream>
 
 #include "RNA.h"
+#include "SimiMatrix.h"
 #include "FileManage.h"
 #include "TreeComparison.h"
+
 using namespace std;
 
 int main() {
 	string fileName = "rna16.data";
+	string simiFileName = "ss_simi";
+	SimiMatrix matrix;
 	vector<RNA> RNAs;
 	//ofstream ou("out.txt");
 	FileManage* file = FileManage::getInstance();
 	file->setRNAFileName(fileName);
+	file->setSimiFileName(simiFileName);
 	RNAs = file->readRNAsFromFile();
+	matrix = file->readSimiFromFile();
+	cout << matrix.toString() << endl;
 	//ou << RNAs[0].toString() << endl;
 	//ou << RNAs[1].toString() << endl;
-	RNAs[0].getPreLSequence();
+/*	RNAs[0].getPreLSequence();
 	RNAs[1].getPreLSequence();
 	Tree* t1 = RNAs[0].buildTree();
 	Tree* t2 = RNAs[1].buildTree();
-/*	ou << "TreeA" << endl;
+	ou << "TreeA" << endl;
 	ou << t1->toString() << endl;
 	ou << "TreeB" << endl;
-	ou << t2->toString() << endl;*/
+	ou << t2->toString() << endl;
 	TreeComparison tc(t1, t2);
-	tc.strategyComputation();
+	tc.strategyComputation();*/
 
 
 	/*if(DEBUG) {

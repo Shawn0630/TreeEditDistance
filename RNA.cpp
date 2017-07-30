@@ -40,7 +40,7 @@ int RNA::getPreOrderSequenceSize(void)const {
 };
 
 char& RNA::operator[] (int i) {
-	if(i >= maxSize) {
+	if(i >= maxSize || i < 0) {
 		cout << "Overflow" << endl;
 		return originalSequence[0];
 	}
@@ -49,7 +49,7 @@ char& RNA::operator[] (int i) {
 };
 
 int& RNA::operator() (int i) {
-	if(i >= maxSize) {
+	if(i >= maxSize || i < 0) {
 		cout << "Overflow" << endl;
 		return secondaryStructure[0];
 	}

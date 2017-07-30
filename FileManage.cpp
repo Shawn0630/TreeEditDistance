@@ -1,4 +1,5 @@
 #include "FileManage.h"
+#include "Errors.h"
 
 #include <iostream>
 #include <fstream>
@@ -37,11 +38,18 @@ void FileManage::setSimiFileName(string simiFileName) {
 };
 
 vector<RNA> FileManage::readRNAsFromFile(void) {
-	if(rnaFileName_ == "") return res;
 	vector<RNA> res;
+	if(rnaFileName_ == "") {
+		readRNAFileError = true; 
+		return res;
+	}
+
 	ifstream in;
 	in.open(rnaFileName_);
-	if(!in.is_open()) return res;
+	if(!in.is_open()) {
+		readRNAFileError = true;
+		return res;
+	}
 	string tmp;
 	string RNA1Name, RNA2Name;
 	RNA r1, r2;
@@ -129,13 +137,94 @@ vector<RNA> FileManage::readRNAsFromFile(void) {
 
 SimiMatrix FileManage::readSimiFromFile(void) {
 	SimiMatrix matrix;
+	ofstream ou("out.txt");
+	if(simiFileName_ == "") {
+		readSimiFileError = true;
+		return matrix;
+	}
+
 	ifstream in;
+	string temp;
+	char c;
+	int i = 0, j = 1;
 	in.open(simiFileName_);
 
-	if(simiFileName == "") return matrix;
-	if(!in.is_open()) return matrix;
-
-
-
+	if(!in.is_open()) {
+		readSimiFileError = true;
+		return matrix;
+	}
+	getline(in, temp);
+	getline(in, temp);
+	getline(in, temp);
+	for(int k = 0; k < temp.length(); k++) {
+		while(!(temp[k] >= 65 && temp[k] <= 90 || temp[k] == '-'))k++;
+		if(k >= temp.length()) break;
+		matrix[i] = temp[k];
+		if(temp[k + 1] >= 65 && temp[k + 1] <= 90) {
+			c = temp[k + 1];
+			if(matrix[i] == 'A' && c == 'A'){
+				matrix[i] = 'B';
+			}
+			else if(matrix[i] == 'A' && c == 'G'){
+				matrix[i] = 'D';
+			}
+			else if(matrix[i] == 'A' && c == 'C'){
+				matrix[i] = 'E';
+			}
+			else if(matrix[i] == 'A' && c == 'U'){
+				matrix[i] = 'F';
+			}
+			else if(matrix[i] == 'G' && c == 'A'){
+				matrix[i] = 'H';
+			}
+			else if(matrix[i] == 'G' && c == 'G'){
+				matrix[i] = 'I';
+			}
+			else if(matrix[i] == 'G' && c == 'C'){
+				matrix[i] = 'J';
+			}
+			else if(matrix[i] == 'G' && c == 'U'){
+				matrix[i] = 'K';
+			}
+			else if(matrix[i] == 'C' && c == 'A'){
+				matrix[i] = 'L';
+			}
+			else if(matrix[i] == 'C' && c == 'G'){
+				matrix[i] = 'M';
+			}
+			else if(matrix[i] == 'C' && c == 'C'){
+				matrix[i] = 'N';
+			}
+			else if(matrix[i] == 'C' && c == 'U'){
+				matrix[i] = 'O';
+			}
+			else if(matrix[i] == 'U' && c == 'A'){
+				matrix[i] = 'P';
+			}
+			else if(matrix[i] == 'U' && c == 'G'){
+				matrix[i] = 'Q';
+			}
+			else if(matrix[i] == 'U' && c == 'C'){
+				matrix[i] = 'R';
+			}
+			else if(matrix[i] == 'U' && c == 'U'){
+				matrix[i] = 'S';
+			}
+			k++;
+		}
+		i++;
+	}
+	getline(in, temp);
+	while(in >> c){
+		if(j > 4) in >> c;
+		for(int k = 0; k <= j; k++){
+			float num = 0;
+			in >> num;
+			matrix(j, k) = num;
+		}
+		j++;
+	}
+	
+	return matrix;
 
 };

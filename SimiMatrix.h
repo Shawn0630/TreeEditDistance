@@ -1,6 +1,9 @@
 #ifndef SIMIMATRIX_H
 #define SIMIMATRIX_H
 
+#include <string>
+
+using namespace std;
 
 class SimiMatrix {
 
@@ -12,7 +15,7 @@ public:
 	SimiMatrix();
 	char& operator[] (int);
 	float& operator() (int, int);
-
-}
+	string toString(void);
+};
 
 #endif
