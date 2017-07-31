@@ -62,6 +62,7 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 			RightB[i][j] = -1;
 			AllA[i][j] = -1;
 			AllB[i][j] = -1;
+			delta[i][j] = 0.0f;
 		}
 	}
 
@@ -632,12 +633,58 @@ void TreeComparison::computeSumInsAndDelCost(Tree* tree) {
 
 };
 
+void TreeComparison::gted(Node* a, Node* b) {
+	int treeSizeA = a->getSubTreeSize();
+	int treeSizeB = b->getSubTreeSize();
+	
+	if ((treeSizeA == 1 || treeSizeB == 1)) {
+      return spf1(a, treeSizeA, b, treeSizeB);
+    }
+
+	int pathLeaf = FreeStrategies[a->getID()][b->getID()].getLeaf();
+	int treeToDecompose = FreeStrategies[a->getID()][b->getID()].getTreeToDecompose();
+
+
+	if(treeToDecompose == 0) { // decompose tree A
+		Node* currentPathNode = (*A_)[pathLeaf];
+		Node* parent = currentPathNode->getParent();
+		int pathType = getPathType(A_, a, pathLeaf);// 0 left 1 right 2 special
+		while(parent != NULL && parent->getID() >= a->getID()) {
+        	vector<Node*> children = parent->getChildren();
+        	for(int i = 0; i < children.size(); i++) {
+          		Node* child = children[i];
+          		if(child->getID() != currentPathNode->getID()) {
+            		gted(child, it2);
+          		}
+        	}
+        currentPathNode = parent;
+      }
+
+      if (pathType == 0) {
+        return spfL(a, b, false);
+      }
+      if (pathType == 1) {
+        return spfR(a, b, false);
+      }
+      return spfA(a, b, leaf, pathType, false);
+	} 
+
+
+};
+
+int TreeComparison::getPathType(Tree* tree, Node* node, int leaf) {
+	if(tree->preL_to_lid[node->getID()] == leaf) return 0;
+	else if(tree->preL_to_rid[node->getID()] == leaf) return 1;
+	else return 2;
+}
+
 void TreeComparison::strategyComputation() {
 	vector<Node*> preA = A_->getPreL();
 	vector<Node*> preB = B_->getPreL();
 
 	computeSumInsAndDelCost(A_);
 	computeSumInsAndDelCost(B_);
+	deltaInit();
 
 	free(preA[0], preB[0]);
 	if(DEBUG) {
@@ -660,8 +707,6 @@ void TreeComparison::strategyComputation() {
 			ou << endl;
 		}
 	}
-
-
 
 };
 

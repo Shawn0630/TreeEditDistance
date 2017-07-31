@@ -40,6 +40,8 @@ private:
 	int allB(Node*, Node*);
 
 	void deltaInit();
+	void gted(Node*, Node*);
+	void getPathType(Tree*, Node*);
 	void computeSumInsAndDelCost(Tree*);
 	void computeTreeDistance();
 
