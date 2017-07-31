@@ -654,23 +654,116 @@ void TreeComparison::gted(Node* a, Node* b) {
         	for(int i = 0; i < children.size(); i++) {
           		Node* child = children[i];
           		if(child->getID() != currentPathNode->getID()) {
-            		gted(child, it2);
+            		gted(child, b);
           		}
         	}
-        currentPathNode = parent;
-      }
+        	currentPathNode = parent;
+        }
 
-      if (pathType == 0) {
-        return spfL(a, b, false);
-      }
-      if (pathType == 1) {
-        return spfR(a, b, false);
-      }
-      return spfA(a, b, leaf, pathType, false);
-	} 
+      	if (pathType == 0) {
+        	return spfL(a, b, false);
+      	}
+      	else if (pathType == 1) {
+        	return spfR(a, b, false);
+      	}
+      	return spfA(a, b, leaf, pathType, false);
+	} else if(treeToDecompose == 1) {
+		Node* currentPathNode = (*B_)[pathLeaf];
+		Node* parent = currentPathNode->getParent();
+		int pathType = getPathType(B_, b, pathLeaf);
+		while(parent != NULL && parent->getID() >= a->getID()) {
+			vector<Node*> children = parent->getChildren();
+			for(int i = 0; i < children.size(); i++) {
+				Node* child = children[i];
+				if(child->getID() != currentPathNode->getID()) {
+					gted(a, child);
+				}
+			}
+			currentPathNode = parent;
+		}
+
+		if(pathType == 0) {
+			return spfL(b, a, true);
+		}
+		else if(pathType == 1) {
+			return spfR(b, a, true);
+		}
+		return spfA(b, a, leaf, pathType, true);
+	}
+};
+
+float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) {
+	int endF = a->getID();
+	int endG = b->getID();
+	int sizeF = a->getSubTreeSize();
+	int sizeG = b->getSubTreeSize();
+	int endPathNode = leaf;
+	int startPathNode = -1;
+	int lFFirst, lFLast, lF;
+	int rFFirst, rFlast, rF;
+	int lGFirst, lGLast;
+	int rGFirst, rGLast;
+
+	//loop A
+	while(endPathNode >= endF) {
+		int endPathNode_in_preR = A_->preL_to_preR[endPathNode];
+		int startPathNode_in_preR = startPathNode == -1? 0x7fffffff : A_->preL_to_preR[startPathNode];
+
+		int parent_of_endPathNode = (*A_)[endPathNode]->getParent() == NULL? -1 : (*A_)[endPathNode]->getParent()->getID();
+		int parent_of_endPathNode_preR = parent_of_endPathNode == -1? 0x7fffffff : A_->preL_to_preR[parent_of_endPathNode];
+
+		bool hasLeftPart;
+		bool hasRightPart;
+
+		if(startPathNode - endPathNode > 1) {
+			hasLeftPart = true;
+		} else {
+			hasLeftPart = false;
+		}
+		if(startPathNode >= 0 && startPathNode_in_preR - endPathNode_in_preR > 1) {
+			hasRightPart = true;
+		} else {
+			hasRightPart = false;
+		}
+
+		if(pathType == 1 || pathType == 2 && hasLeftPart) {
+			// lFFirst and LFLast is important in this condition.
+			// rGFirst and rGLast is to set in this stage.
+			if(startPathNode == -1) {
+				lFFirst = endPathNode;//the first node is the node on the path
+				rFFirst = endPathNode_in_preR;// the first node is the node on the path
+			} else {
+				lFFirst = startPathNode - 1;//the first node is the node to the left of the path
+				rFFirst = startPathNode_in_preR;//rFFirst set to the node on the path
+			}
+			if(!hasRightPart) {
+				rFLast = endPathNode_in_preR;
+			}
+			lFLast = hasRightPart? endPathNode + 1 : endPathNode;
+
+			rGLast = B_->preL_to_preR[endG];
+			rGFirst = (rGLast + sizeG) - 1; // get the leftmost child in G
+			//loop B
+			for(int rG = rGFirst; rG >= rGLast; rG--) {
+				lGFirst = B_->preL_to_preR[rG];
+				rG_in_preL = B_->preR_to_preL[rG];
+				int rGminus1 = rG - 1;
+				int rGminus1_in_preR = B_->preL_to_preR[rGminus1];
+				
+			}
+
+		}
+
+
+
+
+
+	}
 
 
 };
+
+
 
 int TreeComparison::getPathType(Tree* tree, Node* node, int leaf) {
 	if(tree->preL_to_lid[node->getID()] == leaf) return 0;

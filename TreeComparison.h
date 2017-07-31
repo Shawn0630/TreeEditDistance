@@ -45,6 +45,9 @@ private:
 	void computeSumInsAndDelCost(Tree*);
 	void computeTreeDistance();
 
+	float spfA(Node*, Node*, int, bool);
+	float spfR();
+
 	ofstream ou;
 
 public:
