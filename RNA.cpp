@@ -167,10 +167,12 @@ Tree* RNA::buildTree(void) {
 	int cursor = 1;
 	int postN = 0;
 	int left = 1;
+	int currentLeaf = -1;
 	Node* node = new Node(preN, preLSequence[cursor]);
 	nodes.push(node);
 	tree->preL_to_postR[node->getID()] = tree->treeSize_ - 1 - node->getID();
 	tree->postR_to_preL[tree->treeSize_ - 1 - node->getID()] = node->getID();
+	tree->preL_to_ln[node->getID()] = currentLeaf;
 	tree->pushNodeToPreL(node);
 	while(left > 0) {
 		cursor++;
@@ -179,6 +181,7 @@ Tree* RNA::buildTree(void) {
 			Node* node = new Node(++preN, preLSequence[++cursor]);
 			tree->preL_to_postR[node->getID()] = tree->treeSize_ - 1 - node->getID();
 			tree->postR_to_preL[tree->treeSize_ - 1 - node->getID()] = node->getID();
+			tree->preL_to_ln[node->getID()] = currentLeaf;
 			node->setParent(nodes.top());
 			nodes.top()->pushChild(node);
 			nodes.push(node);
@@ -208,6 +211,7 @@ Tree* RNA::buildTree(void) {
 			leftmostForestNum += size - leftmostSize;
 			rightmostForestNum += size - rightmostSize;
 			specialForestNum = size * (size + 3) / 2 - sum;
+			if(size == 1) currentLeaf = nodes.top()->getID();
 			nodes.top()->setSubTreeSize(size);
 			nodes.top()->setLeftmostForestNum(leftmostForestNum);
 			nodes.top()->setRightmostForestNum(rightmostForestNum);
@@ -226,6 +230,15 @@ Tree* RNA::buildTree(void) {
 			nodes.pop();
 		}
 	}
+
+	currentLeaf = -1;
+    for(int i = 0; i < tree->getTreeSize(); i++) {
+      tree->preR_to_ln[i] = currentLeaf;
+      if((*tree)[tree->preR_to_preL[i]]->getChildren().size() == 0) {
+        currentLeaf = i;
+      }
+    }
+
 	return tree;
 };
 

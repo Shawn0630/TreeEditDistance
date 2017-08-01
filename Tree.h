@@ -23,8 +23,8 @@ private:
 	int* postR_to_preL;
 	int* preL_to_lid;
 	int* preL_to_rid;
-	int* preL_to_ln;//first leaf node to the left of n.
-	int* preR_to_ln;//first leaf node to the right of n.
+	int* preL_to_ln;//first leaf node to the left of n in left-to-right preorder.
+	int* preR_to_ln;//first leaf node to the right of n in right-to-left preorder.
 
 	int* preL_to_sumDelCost;
 	int* preL_to_sumInsCost;

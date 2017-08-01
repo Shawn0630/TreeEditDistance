@@ -30,6 +30,8 @@ private:
 	Strategy** FreeStrategies;
 
 	float** delta;
+	int *fn;
+	int *ft;
 
 	int free(Node*, Node*);
 	int leftA(Node*, Node*);

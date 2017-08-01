@@ -20,6 +20,10 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 	treeSizeA = A_->getTreeSize();
 	treeSizeB = B_->getTreeSize();
 
+	int maxSize = treeSizeA < treeSizeB? treeSizeB + 1 : treeSizeA + 1;
+	fn = new int[maxSize + 1];
+	ft = new int[maxSize + 1];
+
 	Free = new int*[treeSizeA];
 	LeftA = new int*[treeSizeA];
 	LeftB = new int*[treeSizeA];
@@ -706,6 +710,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 	int lGFirst, lGLast;
 	int rGFirst, rGLast;
 
+
 	//loop A
 	while(endPathNode >= endF) {
 		int endPathNode_in_preR = A_->preL_to_preR[endPathNode];
@@ -745,6 +750,12 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 
 			rGLast = B_->preL_to_preR[endG];
 			rGFirst = (rGLast + sizeG) - 1; // get the leftmost child in G
+
+			fn[sizeG] = -1;
+        	for (int i = endG; i < endG + sizeG; i++) {
+            	fn[i] = -1;
+            	ft[i] = -1;
+        	}
 			
 			//loop B
 			for(int rG = rGFirst; rG >= rGLast; rG--) {
@@ -765,27 +776,37 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           		}
 			}
 
+			updateFnArray(B_->preL_to_ln[lGFirst], lGFirst, b->getID()); //stores the counter in D loop fn[ln] stores the start point
+         	updateFtArray(B_->preL_to_ln[lGFirst], lGFirst); //
+
 			//loop C
 			for(int lF = lFFirst; lF >= lFLast; lF--) {
-				
+				int lG = lGfirst;
+				//loop D
 				while (lG >= lGlast) {
-
+					lG = ft[lG];
 				}
 			}
-
-
-
 		}
-
-
-
-
-
 	}
-
-
 };
 
+void updateFnArray(int lnForNode, int node, int currentSubtreePreL) {
+    if (lnForNode >= currentSubtreePreL) {
+      fn[node] = fn[lnForNode];//fn -> times to loop in D
+      fn[lnForNode] = node;// fn[lnfornode] start point from
+    } else {
+      fn[node] = fn[fn.length - 1];
+      fn[fn.length - 1] = node;
+    }
+}
+
+void updateFtArray(int lnForNode, int node) {
+    ft[node] = lnForNode;
+    if(fn[node] > -1) {
+      ft[fn[node]] = node;
+    }
+}
 
 
 int TreeComparison::getPathType(Tree* tree, Node* node, int leaf) {

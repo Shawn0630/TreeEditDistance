@@ -21,7 +21,7 @@ Tree::Tree(string label, int treeSize) {
 	preL_to_lid = new int[treeSize_];
 	preL_to_rid = new int[treeSize_];
 	preL_to_ln = new int[treeSize_];
-	preL_to_ln = new int[treeSize_];
+	preR_to_ln = new int[treeSize_];
 	
 	preL_to_sumDelCost = new int[treeSize_];
 	preL_to_sumInsCost = new int[treeSize_];
@@ -112,6 +112,16 @@ string Tree::toString() const {
 	res += "preL_to_sumInsCost\n";
 	for(int i = 0; i < treeSize_; i++) {
 		res += to_string(preL_to_sumInsCost[i]) + " ";
+	}
+	res += "\n";
+	res += "preL_to_ln\n";
+	for(int i = 0; i < treeSize_; i++) {
+		res += to_string(preL_to_ln[i]) + " ";
+	}
+	res += "\n";
+	res += "preR_to_ln\n";
+	for(int i = 0; i < treeSize_; i++) {
+		res += to_string(preR_to_ln[i]) + " ";
 	}
 	return res;
 };
