@@ -20,6 +20,9 @@ Tree::Tree(string label, int treeSize) {
 	postR_to_preL = new int[treeSize_];
 	preL_to_lid = new int[treeSize_];
 	preL_to_rid = new int[treeSize_];
+	preL_to_ln = new int[treeSize_];
+	preL_to_ln = new int[treeSize_];
+	
 	preL_to_sumDelCost = new int[treeSize_];
 	preL_to_sumInsCost = new int[treeSize_];
 

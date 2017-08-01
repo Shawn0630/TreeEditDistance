@@ -694,7 +694,9 @@ void TreeComparison::gted(Node* a, Node* b) {
 
 float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) {
 	int endF = a->getID();
+	int enF_in_preR = A_->preL_to_preR[endF];
 	int endG = b->getID();
+	int endG_in_preR = B_->preL_to_preR[endG];
 	int sizeF = a->getSubTreeSize();
 	int sizeG = b->getSubTreeSize();
 	int endPathNode = leaf;
@@ -743,14 +745,35 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 
 			rGLast = B_->preL_to_preR[endG];
 			rGFirst = (rGLast + sizeG) - 1; // get the leftmost child in G
+			
 			//loop B
 			for(int rG = rGFirst; rG >= rGLast; rG--) {
-				lGFirst = B_->preL_to_preR[rG];
+				Node* parent = (*B_)[rG]->getParent;
+				int parent_of_rG_in_preL = parent == NULL? -1 : parent->getID();
+				lGFirst = B_->preL_to_preR[rG];// lGFirst is set to rGFirst;
 				rG_in_preL = B_->preR_to_preL[rG];
-				int rGminus1 = rG - 1;
-				int rGminus1_in_preR = B_->preL_to_preR[rGminus1];
-				
+				int rGminus1_in_preL = rG <= endG? -1 : rG - 1;
+				int rGminus1_in_preR = rG <= endG_in_preR? 0x7fffffff : B_->preL_to_preR[rGminus1_in_preL];
+				if (pathType == 1){
+            		if (lGFirst == endG || rGminus1_in_preL != parent_of_rG_in_preL) {
+              			lGLast = lGfirst;//lGLast is set to lGFirst
+            		} else {
+              			lGLast = parent_of_rG_in_preL + 1;//lGLast is set to the leftmost child of rG's parent
+            		}
+          		} else {
+            		lGLast = lGFirst == endG? lGFirst : endG + 1;//lGLast is set to the leftmost child of the whole tree
+          		}
 			}
+
+			//loop C
+			for(int lF = lFFirst; lF >= lFLast; lF--) {
+				
+				while (lG >= lGlast) {
+
+				}
+			}
+
+
 
 		}
 
