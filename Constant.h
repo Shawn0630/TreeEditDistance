@@ -2,6 +2,6 @@
 #define CONSTANT_H
 
 const int maxSize = 500;
-const bool DEBUG = false;
+const bool DEBUG = true;
 
 #endif

@@ -29,9 +29,11 @@ private:
 	Strategy** AllBStrategies;
 	Strategy** FreeStrategies;
 
+	bool** hasVisited;
+
 	float** delta;
-	int *fn;
-	int *ft;
+	int* fn;
+	int* ft;
 
 	int free(Node*, Node*);
 	int leftA(Node*, Node*);
@@ -42,13 +44,15 @@ private:
 	int allB(Node*, Node*);
 
 	void deltaInit();
-	void gted(Node*, Node*);
-	void getPathType(Tree*, Node*);
+	float gted(Node*, Node*);
+	int getPathType(Tree*, Node*, int);
 	void computeSumInsAndDelCost(Tree*);
 	void computeTreeDistance();
 
-	float spfA(Node*, Node*, int, bool);
-	float spfR();
+	void updateFnArray(int, int, int);
+	void updateFtArray(int, int);
+
+	float spfA(Node*, Node*, int, int, bool);
 
 	ofstream ou;
 

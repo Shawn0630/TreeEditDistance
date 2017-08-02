@@ -39,6 +39,7 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 	AllBStrategies = new Strategy*[treeSizeA];
 	FreeStrategies = new Strategy*[treeSizeA];
 	delta = new float*[treeSizeA];
+	hasVisited = new bool*[treeSizeA];
 	for(int i = 0; i < treeSizeA; i++) {
 		Free[i] = new int[treeSizeB];
 		LeftA[i] = new int[treeSizeB];
@@ -55,6 +56,7 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 		AllBStrategies[i] = new Strategy[treeSizeB];
 		FreeStrategies[i] = new Strategy[treeSizeB];
 		delta[i] = new float[treeSizeB];
+		hasVisited[i] = new bool[treeSizeB];
 	}
 
 	for(int i = 0; i < treeSizeA; i++) {
@@ -67,6 +69,7 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 			AllA[i][j] = -1;
 			AllB[i][j] = -1;
 			delta[i][j] = 0.0f;
+			hasVisited[i][j] = false;
 		}
 	}
 
@@ -637,20 +640,33 @@ void TreeComparison::computeSumInsAndDelCost(Tree* tree) {
 
 };
 
-void TreeComparison::gted(Node* a, Node* b) {
+float TreeComparison::gted(Node* a, Node* b) {
+	
+	if(hasVisited[a->getID()][b->getID()] == true) return 0.0f;
+	hasVisited[a->getID()][b->getID()] = true;
 	int treeSizeA = a->getSubTreeSize();
 	int treeSizeB = b->getSubTreeSize();
+	if(DEBUG) {
+		ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
+		ou << "treeSizeA = " << to_string(treeSizeA) << endl;
+		ou << "treeSizeB = " << to_string(treeSizeB) << endl;
+	}
 	
 	if ((treeSizeA == 1 || treeSizeB == 1)) {
-      return spf1(a, treeSizeA, b, treeSizeB);
+      //return spf1(a, treeSizeA, b, treeSizeB);
+		if(DEBUG) {
+			ou << "return 0.0f" << endl;
+		}
+		return 0.0f;
     }
+
 
 	int pathLeaf = FreeStrategies[a->getID()][b->getID()].getLeaf();
 	int treeToDecompose = FreeStrategies[a->getID()][b->getID()].getTreeToDecompose();
+	Node* currentPathNode = treeToDecompose == 0? (*A_)[pathLeaf] : (*B_)[pathLeaf];
 
 
 	if(treeToDecompose == 0) { // decompose tree A
-		Node* currentPathNode = (*A_)[pathLeaf];
 		Node* parent = currentPathNode->getParent();
 		int pathType = getPathType(A_, a, pathLeaf);// 0 left 1 right 2 special
 		while(parent != NULL && parent->getID() >= a->getID()) {
@@ -658,21 +674,29 @@ void TreeComparison::gted(Node* a, Node* b) {
         	for(int i = 0; i < children.size(); i++) {
           		Node* child = children[i];
           		if(child->getID() != currentPathNode->getID()) {
+          			if(DEBUG) {
+          				ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") ";
+          				ou << "create problem in A " << "gted(" << to_string(child->getID()) << ", " << to_string(b->getID()) << ")" << endl;
+          			}
             		gted(child, b);
           		}
         	}
+        	parent = currentPathNode->getParent();
         	currentPathNode = parent;
         }
 
       	if (pathType == 0) {
-        	return spfL(a, b, false);
+        	//return spfL(a, b, false);
+        	return 0.0f;
       	}
       	else if (pathType == 1) {
-        	return spfR(a, b, false);
+        	//return spfR(a, b, false);
+        	return 0.0f;
       	}
-      	return spfA(a, b, leaf, pathType, false);
-	} else if(treeToDecompose == 1) {
-		Node* currentPathNode = (*B_)[pathLeaf];
+      	return spfA(a, b, pathLeaf, pathType, false);
+	} 
+
+	else if(treeToDecompose == 1) {
 		Node* parent = currentPathNode->getParent();
 		int pathType = getPathType(B_, b, pathLeaf);
 		while(parent != NULL && parent->getID() >= a->getID()) {
@@ -680,19 +704,26 @@ void TreeComparison::gted(Node* a, Node* b) {
 			for(int i = 0; i < children.size(); i++) {
 				Node* child = children[i];
 				if(child->getID() != currentPathNode->getID()) {
+					if(DEBUG) {
+						ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") ";
+          				ou << "create problem in B " << "gted(" << to_string(a->getID()) << ", " << to_string(child->getID()) << ")" << endl;
+          			}
 					gted(a, child);
 				}
 			}
-			currentPathNode = parent;
+			parent = currentPathNode->getParent();
+        	currentPathNode = parent;
 		}
 
 		if(pathType == 0) {
-			return spfL(b, a, true);
+			//return spfL(b, a, true);
+			return 0.0f;
 		}
 		else if(pathType == 1) {
-			return spfR(b, a, true);
+			//return spfR(b, a, true);
+			return 0.0f;
 		}
-		return spfA(b, a, leaf, pathType, true);
+		return spfA(b, a, pathLeaf, pathType, true);
 	}
 };
 
@@ -706,7 +737,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 	int endPathNode = leaf;
 	int startPathNode = -1;
 	int lFFirst, lFLast, lF;
-	int rFFirst, rFlast, rF;
+	int rFFirst, rFLast, rF;
 	int lGFirst, lGLast;
 	int rGFirst, rGLast;
 
@@ -759,36 +790,46 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 			
 			//loop B
 			for(int rG = rGFirst; rG >= rGLast; rG--) {
-				Node* parent = (*B_)[rG]->getParent;
+				Node* parent = (*B_)[rG]->getParent();
 				int parent_of_rG_in_preL = parent == NULL? -1 : parent->getID();
-				lGFirst = B_->preL_to_preR[rG];// lGFirst is set to rGFirst;
-				rG_in_preL = B_->preR_to_preL[rG];
-				int rGminus1_in_preL = rG <= endG? -1 : rG - 1;
-				int rGminus1_in_preR = rG <= endG_in_preR? 0x7fffffff : B_->preL_to_preR[rGminus1_in_preL];
+				lGFirst = B_->preR_to_preL[rG];// lGFirst is set to rGFirst;
+				int rG_in_preL = B_->preR_to_preL[rG];
+				
+				int rGminus1_in_preL = rG <= endG_in_preR? 0x7fffffff : B_->preR_to_preL[rG - 1];// rG should greater than endG_in_preR cause rG is the inner node of subtree enG
+				int rGminus1_in_preR = rG <= endG_in_preR? 0x7fffffff : rG - 1;
+				
 				if (pathType == 1){
-            		if (lGFirst == endG || rGminus1_in_preL != parent_of_rG_in_preL) {
-              			lGLast = lGfirst;//lGLast is set to lGFirst
+            		if (lGFirst == endG || rGminus1_in_preL != parent_of_rG_in_preL) {// parent not exist or not the rightmost child
+              			lGLast = lGFirst;//lGLast is set to lGFirst
             		} else {
               			lGLast = parent_of_rG_in_preL + 1;//lGLast is set to the leftmost child of rG's parent
             		}
           		} else {
             		lGLast = lGFirst == endG? lGFirst : endG + 1;//lGLast is set to the leftmost child of the whole tree
           		}
-			}
-
-			updateFnArray(B_->preL_to_ln[lGFirst], lGFirst, b->getID()); //stores the counter in D loop fn[ln] stores the start point
-         	updateFtArray(B_->preL_to_ln[lGFirst], lGFirst); //
-
-			//loop C
-			for(int lF = lFFirst; lF >= lFLast; lF--) {
-				int lG = lGfirst;
-				//loop D
-				while (lG >= lGlast) {
+			
+          		updateFnArray(B_->preL_to_ln[lGFirst], lGFirst, endG); //stores the counter in D loop fn[ln] stores the start point
+         		updateFtArray(B_->preL_to_ln[lGFirst], lGFirst); //
+				//loop C
+				for(int lF = lFFirst; lF >= lFLast; lF--) {
+					int lG = lGFirst;
+					//loop D
+					if(DEBUG) {
+          				ou << "(" << to_string(lF) << ", " << to_string(endPathNode) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+					}
 					lG = ft[lG];
+					while (lG >= lGLast) {
+						if(DEBUG) {
+							ou << "(" << to_string(lF) << ", " << to_string(endPathNode) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+						}
+						lG = ft[lG];
+					}
 				}
 			}
 		}
-		if (pathType == 0 || pathType == 2 && rightPart || pathType == 2 && !leftPart && !rightPart) {
+
+
+		if (pathType == 0 || pathType == 2 && hasRightPart || pathType == 2 && !hasLeftPart && !hasRightPart) {
 			if (startPathNode == -1) {
           		lFFirst = endPathNode;
           		rFFirst = A_->preL_to_preR[endPathNode];
@@ -803,24 +844,70 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
         	lGLast = B_->preL_to_preR[endG];
         	lGFirst = (lGLast + sizeG) - 1;
 
+        	fn[sizeG] = -1;
+        	for (int i = endG; i < endG + sizeG; i++) {
+            	fn[i] = -1;
+            	ft[i] = -1;
+        	}
+
+        	//loop B'
+        	for (int lG = lGFirst; lG >= lGLast; lG--) {
+        		Node* parent = (*B_)[lG]->getParent();
+        		int parent_of_lG_in_preR = parent == NULL? -1 : parent->getID();// not exist -1;
+				rGFirst = B_->preL_to_preR[lG];
+				int lG_in_preR = B_->preL_to_preR[lG];
+
+				int lGminus1_in_preL = lG <= endG? 0x7fffffff : lG - 1;
+				int lGminus1_in_preR = lG <= endG? 0x7fffffff : B_->preL_to_preR[lG - 1];
+
+				 if (pathType == 0) {
+           	 		if (lG == endG || lGminus1_in_preR != parent_of_lG_in_preR) {//parent not exists or not the leftmost child.
+              			rGLast = rGFirst;
+            		} else {
+              			rGLast = parent_of_lG_in_preR + 1;
+            		}
+          		} else {// left and right
+            		rGLast = rGFirst == endG_in_preR ? rGFirst : endG_in_preR;
+          		}
 
 
-
+				updateFnArray(B_->preR_to_ln[rGFirst], rGFirst, endG_in_preR);
+          		updateFtArray(B_->preR_to_ln[rGFirst], rGFirst);
+          		// loop C'
+          		for(int rF = rFFirst; rF >= rFLast; rF--) {
+          			int rG = rGFirst;
+          			if(DEBUG) {
+          				ou << "(" << to_string(endPathNode) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+					}
+          			rG = ft[rG];
+          			// loop D'
+          			while(rG >= rGLast) {
+          				if(DEBUG) {
+          					ou << "(" << to_string(endPathNode) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+						}
+          				rG = ft[rG];
+          			}
+          		}
+        	}
 		}
+
+	startPathNode = endPathNode;
+    endPathNode = (*A_)[endPathNode] ->getParent() == NULL? -1 : (*A_)[endPathNode] ->getParent()->getID();	
 	}
 };
 
-void updateFnArray(int lnForNode, int node, int currentSubtreePreL) {
+void TreeComparison::updateFnArray(int lnForNode, int node, int currentSubtreePreL) {
     if (lnForNode >= currentSubtreePreL) {
       fn[node] = fn[lnForNode];//fn -> times to loop in D
       fn[lnForNode] = node;// fn[lnfornode] start point from
     } else {
-      fn[node] = fn[fn.length - 1];
-      fn[fn.length - 1] = node;
+      int maxSize = treeSizeA < treeSizeB? treeSizeB + 1 : treeSizeA + 1;
+      fn[node] = fn[maxSize];
+      fn[maxSize] = node;
     }
 }
 
-void updateFtArray(int lnForNode, int node) {
+void TreeComparison::updateFtArray(int lnForNode, int node) {
     ft[node] = lnForNode;
     if(fn[node] > -1) {
       ft[fn[node]] = node;
@@ -863,6 +950,7 @@ void TreeComparison::strategyComputation() {
 			ou << endl;
 		}
 	}
+	gted(preA[0], preB[0]);
 
 };
 

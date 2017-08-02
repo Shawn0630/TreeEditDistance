@@ -82,29 +82,54 @@ int main() {
 	ofstream ou("out.txt");
 	r1.setRNAName("A");
 	r2.setRNAName("B");
-	//r2.setRNAName("B");
-	//string s1 = "(B(C)(D(F)(G))(E))";
-	string s1 = "(B(C(E(G(I)(J))(H))(F))(D))";
-	//string s1 = "(B(C)(D)(E))";
-	//string s2 = "(B(C)(D(E)))";
+
+
+
+	/*
+	 	       B                         B
+		      / \                       / \
+    	   	 C   D                     C   D
+    	  	/ \                           / \
+    	    E  F                          E   F 
+           / \                               / \
+       	  G   H                             G   H
+         / \                                   / \
+        I   J                                 I   J
+
+	*/
+/*	string s1 = "(B(C(E(G(I)(J))(H))(F))(D))";
 	string s2 = "(B(C)(D(E)(F(G)(H(I)(J)))))";
 	r1.setPreOrderSequence(s1);
 	r1.setTreeSize(9);
 	r2.setPreOrderSequence(s2);
-	r2.setTreeSize(9);
-	//r2.setPreOrderSequence(s2);
-	//ou << "TreeA" << endl;
+	r2.setTreeSize(9);*/
+
+
+	/*
+		 A                               A
+	   / | \                            / \
+      B  C  E                          B   D
+         |                             |
+         D                             C
+	
+	*/
+
+    string s1 = "(A(B)(C(D))(E))";
+    string s2 = "(A(B(C))(D))";
+    r1.setPreOrderSequence(s1);
+    r1.setTreeSize(5);
+    r2.setPreOrderSequence(s2);
+    r2.setTreeSize(4);
+
 	Tree* t1 = r1.buildTree();
-	//ou << t1->toString() << endl;
-	//ou << "TreeB" << endl;
 	Tree* t2 = r2.buildTree();
 	//ou << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
 	tc.strategyComputation();
-	ou << "TreeA" << endl;
+/*	ou << "TreeA" << endl;
 	ou << t1->toString() << endl;
 	ou << "TreeB" << endl;
-	ou << t2->toString() << endl;
+	ou << t2->toString() << endl;*/
 
 
 }
