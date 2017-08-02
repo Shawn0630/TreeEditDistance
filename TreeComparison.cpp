@@ -788,6 +788,25 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 				}
 			}
 		}
+		if (pathType == 0 || pathType == 2 && rightPart || pathType == 2 && !leftPart && !rightPart) {
+			if (startPathNode == -1) {
+          		lFFirst = endPathNode;
+          		rFFirst = A_->preL_to_preR[endPathNode];
+        	} else {
+          		rFFirst = A_->preL_to_preR[startPathNode] - 1;//the node right to the node on the path
+          		lFFirst = endPathNode + 1;//lFirst is set to the node on the path
+        	}
+
+        	lFLast = endPathNode;
+        	rFLast = A_->preL_to_preR[endPathNode];
+
+        	lGLast = B_->preL_to_preR[endG];
+        	lGFirst = (lGLast + sizeG) - 1;
+
+
+
+
+		}
 	}
 };
 
