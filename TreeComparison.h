@@ -32,6 +32,12 @@ private:
 	bool** hasVisited;
 
 	float** delta;
+	float** d;
+	float** s;
+	float** t;
+	float* f;
+
+
 	int* fn;
 	int* ft;
 

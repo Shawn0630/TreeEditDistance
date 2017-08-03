@@ -40,6 +40,10 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 	FreeStrategies = new Strategy*[treeSizeA];
 	delta = new float*[treeSizeA];
 	hasVisited = new bool*[treeSizeA];
+	d = new float*[treeSizeA];
+	s = new float*[treeSizeA];
+	t = new float*[treeSizeB];
+	q = new float[treeSizeA];
 	for(int i = 0; i < treeSizeA; i++) {
 		Free[i] = new int[treeSizeB];
 		LeftA[i] = new int[treeSizeB];
@@ -57,6 +61,12 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 		FreeStrategies[i] = new Strategy[treeSizeB];
 		delta[i] = new float[treeSizeB];
 		hasVisited[i] = new bool[treeSizeB];
+		d[i] = new float[treeSizeB];
+		s[i] = new float[treeSizeB];
+	}
+
+	for(int i = 0; i < treeSizeB; i++) {
+		t[i] = new float[treeSizeB];
 	}
 
 	for(int i = 0; i < treeSizeA; i++) {
