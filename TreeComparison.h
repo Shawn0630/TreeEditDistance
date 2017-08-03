@@ -35,7 +35,7 @@ private:
 	float** d;
 	float** s;
 	float** t;
-	float* f;
+	float* q;
 
 
 	int* fn;

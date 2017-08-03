@@ -888,6 +888,19 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 
 				updateFnArray(B_->preR_to_ln[rGFirst], rGFirst, endG_in_preR);
           		updateFtArray(B_->preR_to_ln[rGFirst], rGFirst);
+          		if(DEBUG) {
+          			ou << "start from rG = " << to_string(rGFirst) << endl;
+          			ou << "FN" << endl;
+          			for(int i = endG; i < endG + sizeG; i++) {
+          				ou << fn[i] << " ";
+          			}
+          			ou << endl;
+          			ou << "FT" << endl;
+          			for(int i = endG; i < endG + sizeG; i++) {
+          				ou << ft[i] << " ";
+          			}
+          			ou << endl;
+          		}
           		lF = lF_prev;
           		// loop C'
           		for(int rF = rFFirst; rF >= rFLast; rF--) {
