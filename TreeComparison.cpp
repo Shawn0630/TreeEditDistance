@@ -753,6 +753,8 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 		bool hasLeftPart;
 		bool hasRightPart;
 
+		int lF_prev = endPathNode;
+
 		if(startPathNode - endPathNode > 1) {
 			hasLeftPart = true;
 		} else {
@@ -787,6 +789,8 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
             	fn[i] = -1;
             	ft[i] = -1;
         	}
+
+
 			
 			//loop B
 			for(int rG = rGFirst; rG >= rGLast; rG--) {
@@ -815,15 +819,16 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 					int lG = lGFirst;
 					//loop D
 					if(DEBUG) {
-          				ou << "(" << to_string(lF) << ", " << to_string(endPathNode) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+          				ou << "Left (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
 					}
 					lG = ft[lG];
 					while (lG >= lGLast) {
 						if(DEBUG) {
-							ou << "(" << to_string(lF) << ", " << to_string(endPathNode) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+							ou << "Left (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
 						}
 						lG = ft[lG];
 					}
+					lF_prev = lF;
 				}
 			}
 		}
@@ -873,24 +878,26 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 
 				updateFnArray(B_->preR_to_ln[rGFirst], rGFirst, endG_in_preR);
           		updateFtArray(B_->preR_to_ln[rGFirst], rGFirst);
+          		lF = lF_prev;
           		// loop C'
           		for(int rF = rFFirst; rF >= rFLast; rF--) {
           			int rG = rGFirst;
+          			if(rF == rFLast) lF = A_->preR_to_preL[rFLast]; 
           			if(DEBUG) {
-          				ou << "(" << to_string(endPathNode) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+          				ou << "Right (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
 					}
           			rG = ft[rG];
           			// loop D'
           			while(rG >= rGLast) {
           				if(DEBUG) {
-          					ou << "(" << to_string(endPathNode) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+          					ou << "Right (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
 						}
           				rG = ft[rG];
           			}
           		}
         	}
 		}
-
+	rF = endPathNode_in_preR;//in D loop
 	startPathNode = endPathNode;
     endPathNode = (*A_)[endPathNode] ->getParent() == NULL? -1 : (*A_)[endPathNode] ->getParent()->getID();	
 	}
