@@ -121,6 +121,38 @@ int main() {
     r2.setPreOrderSequence(s2);
     r2.setTreeSize(4);
 
+    /*
+		   A                                 A
+	   / / | \ \                            / \
+      B C  D  F G                          B   D
+           |                               |
+           E                               C
+	
+	*/
+
+/*    string s1 = "(A(B)(C)(D(E))(F)(G))";
+    string s2 = "(A(B(C))(D))";
+    r1.setPreOrderSequence(s1);
+    r1.setTreeSize(7);
+    r2.setPreOrderSequence(s2);
+    r2.setTreeSize(4);*/
+
+    /*
+		   A                                 A
+	   / / | \ \ \                            / \
+      B C  D  F G H                          B   D
+           |                               |
+           E                               C
+	
+	*/
+
+  /*  string s1 = "(A(B)(C)(D(E))(F)(G)(H))";
+    string s2 = "(A(B(C))(D))";
+    r1.setPreOrderSequence(s1);
+    r1.setTreeSize(8);
+    r2.setPreOrderSequence(s2);
+    r2.setTreeSize(4);*/
+
 	Tree* t1 = r1.buildTree();
 	Tree* t2 = r2.buildTree();
 	//ou << t2->toString() << endl;

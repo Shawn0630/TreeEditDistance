@@ -804,6 +804,9 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 			
 			//loop B
 			for(int rG = rGFirst; rG >= rGLast; rG--) {
+				if(DEBUG) {
+					ou << "new Round B" << endl;
+				}
 				Node* parent = (*B_)[rG]->getParent();
 				int parent_of_rG_in_preL = parent == NULL? -1 : parent->getID();
 				lGFirst = B_->preR_to_preL[rG];// lGFirst is set to rGFirst;
@@ -826,6 +829,9 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
          		updateFtArray(B_->preL_to_ln[lGFirst], lGFirst); //
 				//loop C
 				for(int lF = lFFirst; lF >= lFLast; lF--) {
+					if(DEBUG) {
+						ou << "new round C" << endl;
+					}
 					int lG = lGFirst;
 					//loop D
 					if(DEBUG) {
@@ -867,6 +873,9 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 
         	//loop B'
         	for (int lG = lGFirst; lG >= lGLast; lG--) {
+        		if(DEBUG) {
+					ou << "new Round B'" << endl;
+				}
         		Node* parent = (*B_)[lG]->getParent();
         		int parent_of_lG_in_preR = parent == NULL? -1 : parent->getID();// not exist -1;
 				rGFirst = B_->preL_to_preR[lG];
@@ -888,7 +897,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 
 				updateFnArray(B_->preR_to_ln[rGFirst], rGFirst, endG_in_preR);
           		updateFtArray(B_->preR_to_ln[rGFirst], rGFirst);
-          		if(DEBUG) {
+          		/*if(DEBUG) {
           			ou << "start from rG = " << to_string(rGFirst) << endl;
           			ou << "FN" << endl;
           			for(int i = endG; i < endG + sizeG; i++) {
@@ -900,10 +909,13 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           				ou << ft[i] << " ";
           			}
           			ou << endl;
-          		}
+          		}*/
           		lF = lF_prev;
           		// loop C'
           		for(int rF = rFFirst; rF >= rFLast; rF--) {
+          			if(DEBUG) {
+          				ou << "new Round C'" << endl;
+          			}
           			int rG = rGFirst;
           			if(rF == rFLast) lF = A_->preR_to_preL[rFLast]; 
           			if(DEBUG) {
