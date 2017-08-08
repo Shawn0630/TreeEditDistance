@@ -837,6 +837,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 
 					if(DEBUG) {
           				ou << "Left (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+          				ou << "Save to S[" << to_string(lF) << ", " << to_string(lG) << "]" << endl;
 					}
 					lG = ft[lG];
 
@@ -845,6 +846,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 					while (lG >= lGLast) {
 						if(DEBUG) {
 							ou << "Left (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+							ou << "Save to S[" << to_string(lF) << ", " << to_string(lG) << "]" << endl;
 						}
 						lG = ft[lG];
 					}
@@ -878,8 +880,18 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
               			}
               		}
 
-              		
+              		for (int lF = lFFirst; lF >= lFLast; lF--) {
+              			if(DEBUG) {
+              				ou << "Q[" << to_string(lF) << "] = " << "S[" << to_string(lF) << ", " << to_string(parent_of_rG_in_preL + 1) << "]" << endl;
+              			}
+            		}
 				}
+
+				for (int lG = lGFirst; lG >= lGLast; lG = ft[lG]) {
+					if(DEBUG) {
+						ou << "T[" << to_string(lG) << ", " << to_string(rG) << "] = " << "S[" << to_string(lFLast) << ", " << to_string(lG) << "]" << endl;
+					}
+          		}
 			}
 		}
 
@@ -999,7 +1011,6 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           				}
             		}
           		}
-
           		for (int rG = rGFirst; rG >= rGLast; rG = ft[rG]) {
             		if(DEBUG) {
             			ou << "T[" << to_string(lG) << ", " << to_string(rG) << "] = " << "S[" << to_string(rFLast) << ", " << to_string(rG) << "]" << endl;
