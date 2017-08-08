@@ -757,8 +757,8 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 		int endPathNode_in_preR = A_->preL_to_preR[endPathNode];
 		int startPathNode_in_preR = startPathNode == -1? 0x7fffffff : A_->preL_to_preR[startPathNode];
 
-		int parent_of_endPathNode = (*A_)[endPathNode]->getParent() == NULL? -1 : (*A_)[endPathNode]->getParent()->getID();
-		int parent_of_endPathNode_preR = parent_of_endPathNode == -1? 0x7fffffff : A_->preL_to_preR[parent_of_endPathNode];
+		int parent_of_endPathNode_preL = (*A_)[endPathNode]->getParent() == NULL? 0x7fffffff : (*A_)[endPathNode]->getParent()->getID();
+		int parent_of_endPathNode_preR = (*A_)[endPathNode]->getParent() == NULL? 0x7fffffff : A_->preL_to_preR[parent_of_endPathNode_preL];
 
 		bool hasLeftPart;
 		bool hasRightPart;
@@ -808,7 +808,8 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 					ou << "new Round B" << endl;
 				}
 				Node* parent = (*B_)[rG]->getParent();
-				int parent_of_rG_in_preL = parent == NULL? -1 : parent->getID();
+				int parent_of_rG_in_preL = parent == NULL? 0x7fffffff : parent->getID();
+				int parent_of_rG_in_preR = parent == NULL? 0x7fffffff : B_->preL_to_preR[parent_of_rG_in_preL];
 				lGFirst = B_->preR_to_preL[rG];// lGFirst is set to rGFirst;
 				int rG_in_preL = B_->preR_to_preL[rG];
 				
@@ -833,11 +834,14 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 						ou << "new round C" << endl;
 					}
 					int lG = lGFirst;
-					//loop D
+
 					if(DEBUG) {
           				ou << "Left (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
 					}
 					lG = ft[lG];
+
+
+					//loop D
 					while (lG >= lGLast) {
 						if(DEBUG) {
 							ou << "Left (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
@@ -845,6 +849,36 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 						lG = ft[lG];
 					}
 					lF_prev = lF;
+				}
+
+				if(rGminus1_in_preR == parent_of_rG_in_preR && rGminus1_in_preR != 0x7fffffff) {
+					if (!hasRightPart) {
+              			if (hasLeftPart) {
+              				if(swap) {
+              					if(DEBUG) {
+              						ou << "D[" << to_string(parent_of_rG_in_preL) << ", " << to_string(endPathNode) << "] = " << "S[" << to_string(lFLast + 1) << ", " << to_string(rGminus1_in_preL + 1) << "]" << endl;
+              					}
+              				} else {
+              					if(DEBUG) {
+              						ou << "D[" << to_string(endPathNode) << ", " << to_string(parent_of_rG_in_preL) << "] = " << "S[" << to_string(lFLast + 1) << ", " << to_string(rGminus1_in_preL + 1) << "]" << endl;
+              					}
+              				}
+              			}
+
+              			if (endPathNode > 0 && endPathNode == parent_of_endPathNode_preL + 1 && endPathNode_in_preR == parent_of_endPathNode_preR + 1) {
+                			if (swap) {
+                				if(DEBUG) {
+                					ou << "D[" << to_string(parent_of_rG_in_preL) << ", " << to_string(parent_of_endPathNode_preL) << "] = " << "S[" << to_string(lFLast) << ", " << to_string(rGminus1_in_preL + 1) << "]" << endl;
+                				}
+                			} else {
+                				if(DEBUG) {
+                					ou << "D[" << to_string(parent_of_endPathNode_preL) << ", " << to_string(parent_of_rG_in_preL) << "] = " << "S[" << to_string(lFLast) << ", " << to_string(rGminus1_in_preL + 1) << "]" << endl;
+                				}
+                			}
+              			}
+              		}
+
+              		
 				}
 			}
 		}
@@ -877,7 +911,8 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 					ou << "new Round B'" << endl;
 				}
         		Node* parent = (*B_)[lG]->getParent();
-        		int parent_of_lG_in_preR = parent == NULL? -1 : parent->getID();// not exist -1;
+        		int parent_of_lG_in_preL = parent == NULL? 0x7fffffff: parent->getID();
+        		int parent_of_lG_in_preR = parent == NULL? 0x7fffffff : B_->preL_to_preR[parent->getID()];// not exist -1;
 				rGFirst = B_->preL_to_preR[lG];
 				int lG_in_preR = B_->preL_to_preR[lG];
 
@@ -885,7 +920,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 				int lGminus1_in_preR = lG <= endG? 0x7fffffff : B_->preL_to_preR[lG - 1];
 
 				 if (pathType == 0) {
-           	 		if (lG == endG || lGminus1_in_preR != parent_of_lG_in_preR) {//parent not exists or not the leftmost child.
+           	 		if (lG == endG || lGminus1_in_preL != parent_of_lG_in_preL) {//parent not exists or not the leftmost child.
               			rGLast = rGFirst;
             		} else {
               			rGLast = parent_of_lG_in_preR + 1;
@@ -920,15 +955,55 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           			if(rF == rFLast) lF = A_->preR_to_preL[rFLast]; 
           			if(DEBUG) {
           				ou << "Right (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+          				ou << "Save to S[" << to_string(rF) << ", " << to_string(rG) << "]" << endl;
 					}
           			rG = ft[rG];
           			// loop D'
           			while(rG >= rGLast) {
           				if(DEBUG) {
           					ou << "Right (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+          					ou << "Save to S[" << to_string(rF) << ", " << to_string(rG) << "]" << endl;
 						}
           				rG = ft[rG];
           			}
+          		}
+
+          		if(lGminus1_in_preL == parent_of_lG_in_preL && lGminus1_in_preL != 0x7fffffff) { // lG is the leftmost child of its parent
+    
+          			if(hasRightPart) {
+          				if(swap) {
+          					if(DEBUG) {
+          						ou << "D[" << to_string(parent_of_lG_in_preL) << ", " << to_string(endPathNode) << "] = " << "S[" << to_string(rFLast) << ", " << to_string(lGminus1_in_preR + 1) << "]" << endl; //rightmosts child of p(lG)
+          					}
+          				} else {
+          					if(DEBUG) {
+          						ou << "D[" << to_string(endPathNode) << ", " << to_string(parent_of_lG_in_preL) << "] = " << "S[" << to_string(rFLast) << ", " << to_string(lGminus1_in_preR + 1) << "]" << endl; //rightmosts child of p(lG)
+          					}
+          				}
+          			}
+          			if (endPathNode > 0 && endPathNode == parent_of_endPathNode_preL + 1 && endPathNode_in_preR == parent_of_endPathNode_preR + 1) {//no left and right
+          				if(swap) {
+          					if(DEBUG) {
+          						ou << "D[" << to_string(parent_of_lG_in_preL) << ", " << to_string(parent_of_endPathNode_preL) << "] = " << "S[" << to_string(rFLast) << ", " << to_string(lGminus1_in_preR + 1) << "]" << endl; //rightmosts child of p(lG)
+          					}
+          				} else {
+          					if(DEBUG) {
+          						ou << "D[" << to_string(parent_of_endPathNode_preL) << ", " << to_string(parent_of_lG_in_preL) << "] = " << "S[" << to_string(rFLast) << ", " << to_string(lGminus1_in_preR + 1) << "]" << endl; //rightmosts child of p(lG)
+          					}
+          				}
+          			}
+
+          			for (int rF = rFFirst; rF >= rFLast; rF--) {
+          				if(DEBUG) {
+          					ou << "Q[" << to_string(rF) << "] = " << "S[" << to_string(rF) << ", " << to_string(parent_of_lG_in_preR + 1) << "]" << endl;	
+          				}
+            		}
+          		}
+
+          		for (int rG = rGFirst; rG >= rGLast; rG = ft[rG]) {
+            		if(DEBUG) {
+            			ou << "T[" << to_string(lG) << ", " << to_string(rG) << "] = " << "S[" << to_string(rFLast) << ", " << to_string(rG) << "]" << endl;
+            		}
           		}
         	}
 		}
