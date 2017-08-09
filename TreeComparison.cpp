@@ -964,15 +964,88 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           				ou << "new Round C'" << endl;
           			}
           			int rG = rGFirst;
-          			int rF_in_preL = (A_)->preR_to_preL[rF];
-          			bool FForestIsTree = lF == rF_in_preL;
-
+          			
           			if(rF == rFLast) lF = A_->preR_to_preL[rFLast]; 
+
+
           			if(DEBUG) {
           				ou << "Right (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
 
           				ou << "Save to S[" << to_string(rF) << ", " << to_string(rG) << "]" << endl;
 					}
+          			
+
+          			int rF_in_preL = (A_)->preR_to_preL[rF];
+          			
+          			bool FForestIsTree = lF == rF_in_preL;
+          			int rFSubtreeSize = (*A_)[rF_in_preL]->getSubTreeSize();
+          			
+          			int case1SLeftIndex, case1SRightIndex;//S[rF + 1, rG];
+          			int case2SLeftIndex, case2SRightIndex;//S[rF, rG];
+          			int case1TLeftIndex, case1TRightIndex;//T[lG, rG];
+
+          			float case1 = 0, case2 = 0, case3 = 0;
+          			int case1_case, case2_case, case3_case;
+
+          			float GcurrentForestCost = (swap ? (B_)->preL_to_sumDelCost[lG] : (B_)->preL_to_sumInsCost[lG]); // USE COST MODEL - reset to subtree insertion cost.
+
+
+          			case1SLeftIndex = rF + 1;
+          			case1SRightIndex = rG;
+
+          			case2SLeftIndex = rF;
+
+          			case1TLeftIndex = lG;
+          			case1TRightIndex = rG;
+
+          			bool rFIsConsecutiveNodeOfCurrentPathNode;
+
+          			case1_case = 1;
+          			case3_case = 1;
+
+          			if (startPathNode > 0) {
+              			rFIsConsecutiveNodeOfCurrentPathNode = startPathNode_in_preR - rF == 1;
+              			rFIsRightSiblingOfCurrentPathNode = rF + rFSubtreeSize == startPathNode_in_preR;
+            		} else {
+              			rFIsConsecutiveNodeOfCurrentPathNode = false;//consecutiveNode use T;
+              			rFIsRightSiblingOfCurrentPathNode = false;//
+            		}
+
+          			if(FForestIsTree) {
+          				if(rFsubtreeSize == 1) {
+          					// F_{lF, rF} - rF = null
+          					//case1 = GcurrentForestCost;//sumG
+          					case1_case = 1;
+          				} else if(rFIsConsecutiveNodeOfCurrentPathNode) {
+          					// F_{lF, rF} - rF = tree
+          					//case1 = t[case1TLeftIndex][case1TRightIndex];//T[lG, rG];
+          					case1_case = 2;
+          				}
+          				case3 = 0;
+          			} else {
+          				if (rFIsConsecutiveNodeOfCurrentPathNode) {// F_{lF, rF} - rF = the subforest to the left of the path
+          					//case1 = t[case1TLeftIndex][case1TRightIndex];//T[lG, rG]
+          					case1_case = 2;
+          				} else {//otherwise
+          					//case1 = s[case1SLeftIndex][case1SRightIndex];//S[rF + 1, rG];
+          					case1_case = 3;
+          				}
+          				case3 = FcurrentForestCost - (swap ? (A_)->preL_to_sumInsCost[rF_in_preL] : (A_)->preL_to_sumDelCost[rF_in_preL]);
+
+          				if(rFIsRightSiblingOfCurrentPathNode) {
+          					case3_case = 3;
+
+          				}
+          			}
+
+          			if (currentForestSize2 == 1) {
+              			case2 = FcurrentForestCost;// USE COST MODEL - Delete F_{lF,rF}.
+            		} else {
+              			case2 = q[rF];
+            		}
+
+
+
           			rG = ft[rG];
           			// loop D'
           			while(rG >= rGLast) {
