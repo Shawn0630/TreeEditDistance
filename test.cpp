@@ -114,12 +114,12 @@ int main() {
 	
 	*/
 
-/*    string s1 = "(A(B)(C(D))(E))";
+    string s1 = "(A(B)(C(D))(E))";
     string s2 = "(A(B(C))(D))";
     r1.setPreOrderSequence(s1);
     r1.setTreeSize(5);
     r2.setPreOrderSequence(s2);
-    r2.setTreeSize(4);*/
+    r2.setTreeSize(4);
 
     /*
 		   A                                 A
@@ -130,12 +130,12 @@ int main() {
 	
 	*/
 
-    string s1 = "(A(B)(C)(D(E))(F)(G))";
+/*    string s1 = "(A(B)(C)(D(E))(F)(G))";
     string s2 = "(A(B(C))(D))";
     r1.setPreOrderSequence(s1);
     r1.setTreeSize(7);
     r2.setPreOrderSequence(s2);
-    r2.setTreeSize(4);
+    r2.setTreeSize(4);*/
 
     /*
 		   A                                 A

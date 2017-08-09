@@ -964,9 +964,13 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           				ou << "new Round C'" << endl;
           			}
           			int rG = rGFirst;
+          			int rF_in_preL = (A_)->preR_to_preL[rF];
+          			bool FForestIsTree = lF == rF_in_preL;
+
           			if(rF == rFLast) lF = A_->preR_to_preL[rFLast]; 
           			if(DEBUG) {
           				ou << "Right (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+
           				ou << "Save to S[" << to_string(rF) << ", " << to_string(rG) << "]" << endl;
 					}
           			rG = ft[rG];
