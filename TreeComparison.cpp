@@ -1046,13 +1046,13 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           				}
           				//case3 = FcurrentForestCost - (swap ? (A_)->preL_to_sumInsCost[rF_in_preL] : (A_)->preL_to_sumDelCost[rF_in_preL]);// the first case in G should be G_{lG, rG} - l(rG) = null // F_{lF, rF} - F(rF), G_{lG, rG} - G(rG)
 
-          				if(rFIsRightSiblingOfCurrentPathNode) {
+          				if (rFIsRightSiblingOfCurrentPathNode) {
           					case3_case = 3; // use T
           				}
           			}
 
           			if (case3_case == 1) {
-              			case3SLeftIndex = rF + rFSubtreeSize;//delete the whole rightmost tree
+              			case3SLeftIndex = rF + rFSubtreeSize;//delete the whole rightmost tree//otherwise
             		}
 
             		switch(case1_case) {
@@ -1116,7 +1116,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           			rG = ft[rG];
           			
           			// loop D'
-          			while(rG >= rGLast) {
+          			while(rG >= rGLast) {// every G is a subforest not a subtree
           				rG_in_preL = (B_)->preR_to_preL[rG];
 
           				if(DEBUG) {
@@ -1157,7 +1157,14 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
               				minCost = case2;
               			}
 
-              			case3 = swap ? d[rG_in_preL][rF_in_preL] : d[rF_in_preL][rG_in_preL];//F_{rF} - rF, G_{rG} - rG
+              			//case3 = swap ? d[rG_in_preL][rF_in_preL] : d[rF_in_preL][rG_in_preL];//F_{rF} - rF, G_{rG} - rG
+              			if(DEBUG) {
+              				if(swap) {
+              					ou << "case3_case d[" << to_string(rG_in_preL) << ", " << to_string(rF_in_preL) << "]" << endl;
+              				} else {
+              					ou << "case3_case d[" << to_string(rF_in_preL) << ", " << to_string(rG_in_preL) << "]" << endl;
+              				}
+              			}
               			if(case3 < minCost) {
               				switch(case3_case) {
               					case 1: 
