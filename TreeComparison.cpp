@@ -834,14 +834,36 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 						ou << "new round C" << endl;
 					}
 					int lG = lGFirst;
+					int lF_in_preR = (A_)->preL_to_preR[lF];
+
 
 					if(DEBUG) {
           				ou << "Left (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
           				ou << "Save to S[" << to_string(lF) << ", " << to_string(lG) << "]" << endl;
 					}
+
+
+					bool fForestIsTree = lF_in_preR == rF;
+					int lFSubtreeSize = (*A_)[lF]->getSubTreeSize();
+					bool lFIsLeftSiblingOfCurrentPathNode = lF + lFSubtreeSize == startPathNode;
+
+					int case1SLeftIndex, case1SRightIndex;//S[lF + 1, lG];
+          			int case1TLeftIndex, case1TRightIndex;//T[lG, rG];
+          			
+          			int case2SLeftIndex, case2SRightIndex;//S[lF, lG];
+
+          			int case3SLeftIndex, case3SRightIndex;
+          			int case3TLeftIndex, case3TRightIndex;
+
+          			case1SLeftIndex =  lF + 1;
+          			case2SLeftIndex = lF;
+
+          			
+
+
+
+
 					lG = ft[lG];
-
-
 					//loop D
 					while (lG >= lGLast) {
 						if(DEBUG) {
