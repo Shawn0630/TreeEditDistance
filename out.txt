@@ -218,6 +218,7 @@ new Round B'
 new Round C'
 Right (3, 3, 3, 1)
 Save to S[3, 1]
+case3 = 0
 case1_case3 = -1
 case2_case1 = FcurrentForestCost
 case3_case3 D[3, 3]
@@ -226,6 +227,7 @@ new Round B'
 new Round C'
 Right (3, 3, 2, 3)
 Save to S[3, 3]
+case3 = 0
 case1_case3 = -1
 case2_case1 = FcurrentForestCost
 case3_case3 D[3, 2]
@@ -242,6 +244,7 @@ new Round B'
 new Round C'
 Right (3, 3, 1, 2)
 Save to S[3, 2]
+case3 = 0
 case1_case3 = -2
 case2_case2 = q[3]
 case3_case3 D[3, 1]
@@ -258,6 +261,7 @@ new Round B'
 new Round C'
 Right (3, 3, 0, 0)
 Save to S[3, 0]
+case3 = 0
 case1_case3 = -4
 case2_case2 = q[3]
 case3_case3 D[3, 0]
@@ -266,6 +270,7 @@ new Round B'
 new Round C'
 Right (2, 2, 3, 1)
 Save to S[2, 1]
+case3 = 0
 case1_case2 = t[3, 1]
 case2_case1 = FcurrentForestCost
 case3_case3 D[2, 3]
@@ -274,12 +279,13 @@ new Round B'
 new Round C'
 Right (2, 2, 2, 3)
 Save to S[2, 3]
+case3 = 0
 case1_case2 = t[2, 3]
 case2_case1 = FcurrentForestCost
 case3_case3 D[2, 2]
 Right (2, 2, 2, 1)
 Save to S[2, 1]
-case1_case2 t[2, 3]
+case1_case2 t[2, 1]
 case2_case3 s[2, 3]
 case3_case d[2, 3]
 Q[2] = S[2, 3]
@@ -289,12 +295,13 @@ new Round B'
 new Round C'
 Right (2, 2, 1, 2)
 Save to S[2, 2]
+case3 = 0
 case1_case2 = t[1, 2]
 case2_case2 = q[2]
 case3_case3 D[2, 1]
 Right (2, 2, 1, 1)
 Save to S[2, 1]
-case1_case2 t[1, 2]
+case1_case2 t[1, 1]
 case2_case3 s[2, 2]
 case3_case d[2, 3]
 Q[2] = S[2, 1]
@@ -304,6 +311,7 @@ new Round B'
 new Round C'
 Right (2, 2, 0, 0)
 Save to S[2, 0]
+case3 = 0
 case1_case2 = t[0, 0]
 case2_case2 = q[2]
 case3_case3 D[2, 0]
@@ -313,6 +321,7 @@ new round C
 Left (1, 2, 2, 3)
 Save to S[1, 2]
 case3_case FcurrentForest - F(lF)
+case1_case2 t[2, 3]
 case2_case1 FcurrentForestCost
 T[2, 3] = S[1, 2]
 new Round B
@@ -320,6 +329,7 @@ new round C
 Left (1, 2, 1, 2)
 Save to S[1, 1]
 case3_case FcurrentForest - F(lF)
+case1_case2 t[1, 2]
 case2_case2 q[1]
 T[1, 2] = S[1, 1]
 new Round B
@@ -327,11 +337,20 @@ new round C
 Left (1, 2, 3, 1)
 Save to S[1, 3]
 case3_case FcurrentForest - F(lF)
+case1_case2 t[3, 1]
 case2_case1 FcurrentForestCost
 Left (1, 2, 2, 1)
 Save to S[1, 2]
+case1_case2 t[2, 1]
+case2 s[1, 3]
+case3 d[1, 2]
+case3 t[3, 1]
 Left (1, 2, 1, 1)
 Save to S[1, 1]
+case1_case2 t[1, 1]
+case2 s[1, 2]
+case3 d[1, 1]
+case3 t[3, 1]
 Q[1] = S[1, 1]
 T[3, 1] = S[1, 3]
 T[2, 1] = S[1, 2]
@@ -341,18 +360,21 @@ new round C
 Left (1, 2, 0, 0)
 Save to S[1, 0]
 case3_case FcurrentForest - F(lF)
+case1_case2 t[0, 0]
 case2_case2 q[1]
 T[0, 0] = S[1, 0]
 new Round B'
 new Round C'
 Right (1, 1, 3, 1)
 Save to S[1, 1]
+case3_case FcurrentForest - F(rF)
 case1_case2 = t[3, 1]
 case2_case1 = FcurrentForestCost
 case3_case3 D[4, 3]
 new Round C'
 Right (0, 0, 3, 1)
 Save to S[0, 1]
+case3 = 0
 case1_case1 = s[1, 1]
 case2_case1 = FcurrentForestCost
 case3_case3 D[0, 3]
@@ -361,23 +383,25 @@ new Round B'
 new Round C'
 Right (1, 1, 2, 3)
 Save to S[1, 3]
+case3_case FcurrentForest - F(rF)
 case1_case2 = t[2, 3]
 case2_case1 = FcurrentForestCost
 case3_case3 D[4, 2]
 Right (1, 1, 2, 1)
 Save to S[1, 1]
-case1_case2 t[2, 3]
+case1_case2 t[2, 1]
 case2_case3 s[1, 3]
 case3_case d[4, 3]
 new Round C'
 Right (0, 0, 2, 3)
 Save to S[0, 3]
+case3 = 0
 case1_case1 = s[1, 3]
 case2_case1 = FcurrentForestCost
 case3_case3 D[0, 2]
 Right (0, 0, 2, 1)
 Save to S[0, 1]
-case1_case1 s[1, 3]
+case1_case1 s[1, 1]
 case2_case3 s[0, 3]
 case3_case d[0, 3]
 D[0, 1] = S[0, 3]
@@ -389,23 +413,25 @@ new Round B'
 new Round C'
 Right (1, 1, 1, 2)
 Save to S[1, 2]
+case3_case FcurrentForest - F(rF)
 case1_case2 = t[1, 2]
 case2_case2 = q[1]
 case3_case3 D[4, 1]
 Right (1, 1, 1, 1)
 Save to S[1, 1]
-case1_case2 t[1, 2]
+case1_case2 t[1, 1]
 case2_case3 s[1, 2]
 case3_case d[4, 3]
 new Round C'
 Right (0, 0, 1, 2)
 Save to S[0, 2]
+case3 = 0
 case1_case1 = s[1, 2]
 case2_case2 = q[0]
 case3_case3 D[0, 1]
 Right (0, 0, 1, 1)
 Save to S[0, 1]
-case1_case1 s[1, 2]
+case1_case1 s[1, 1]
 case2_case3 s[0, 2]
 case3_case d[0, 3]
 D[0, 0] = S[0, 1]
@@ -417,12 +443,14 @@ new Round B'
 new Round C'
 Right (1, 1, 0, 0)
 Save to S[1, 0]
+case3_case FcurrentForest - F(rF)
 case1_case2 = t[0, 0]
 case2_case2 = q[1]
 case3_case3 D[4, 0]
 new Round C'
 Right (0, 0, 0, 0)
 Save to S[0, 0]
+case3 = 0
 case1_case1 = s[1, 0]
 case2_case2 = q[0]
 case3_case3 D[0, 0]
