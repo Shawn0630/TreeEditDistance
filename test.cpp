@@ -138,30 +138,46 @@ int main() {
     r2.setTreeSize(4);*/
 
     /*
-		   A                                 A
+		   A                                   A
 	   / / | \ \ \                            / \
       B C  D  F G H                          B   D
-           |                               |
-           E                               C
+           |                                 |
+           E                                 C
 	
 	*/
 
-    string s1 = "(A(B)(C)(D(E))(F)(G)(H))";
+/*    string s1 = "(A(B)(C)(D(E))(F)(G)(H))";
     string s2 = "(A(B(C))(D))";
     r1.setPreOrderSequence(s1);
     r1.setTreeSize(8);
     r2.setPreOrderSequence(s2);
-    r2.setTreeSize(4);
+    r2.setTreeSize(4);*/
+
+
+
+    /*
+          A                              A 
+    	/ | \                          / | \
+       B  C  E                        B  C  E
+          |                              |
+          D                              D
+    */
+    string s1 = "(A(B)(C(D))(E))";
+    string s2 = "(A(B)(C(D))(E))";
+    r1.setPreOrderSequence(s1);
+    r1.setTreeSize(5);
+    r2.setPreOrderSequence(s2);
+    r2.setTreeSize(5);
 
 	Tree* t1 = r1.buildTree();
 	Tree* t2 = r2.buildTree();
-	//ou << t2->toString() << endl;
+	cout << "TreeA" << endl;
+	cout << t1->toString() << endl;
+	cout << "TreeB" << endl;
+	cout << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
 	tc.strategyComputation();
-/*	ou << "TreeA" << endl;
-	ou << t1->toString() << endl;
-	ou << "TreeB" << endl;
-	ou << t2->toString() << endl;*/
+
 
 
 }
