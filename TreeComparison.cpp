@@ -24,6 +24,8 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 	fn = new int[maxSize + 1];
 	ft = new int[maxSize + 1];
 
+	fn_ft_length = maxSize + 1;
+
 	Free = new int*[treeSizeA];
 	LeftA = new int*[treeSizeA];
 	LeftB = new int*[treeSizeA];
@@ -679,10 +681,16 @@ float TreeComparison::gted(Node* a, Node* b) {
 	if(treeToDecompose == 0) { // decompose tree A
 		Node* parent = currentPathNode->getParent();
 		int pathType = getPathType(A_, a, pathLeaf);// 0 left 1 right 2 special
+		if(DEBUG) {
+			ou << "getPathType A(" << to_string(a->getID()) << " ," << to_string(pathLeaf) << ") = " << to_string(pathType) << endl;
+		}
 		while(parent != NULL && parent->getID() >= a->getID()) {
         	vector<Node*> children = parent->getChildren();
         	for(int i = 0; i < children.size(); i++) {
           		Node* child = children[i];
+          		if(DEBUG) {
+          			ou << "A child = " << to_string(child->getID()) << " currentPathNode = " << to_string(currentPathNode->getID()) << " parent = " << to_string(parent->getID()) << endl;
+          		}
           		if(child->getID() != currentPathNode->getID()) {
           			if(DEBUG) {
           				ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") ";
@@ -691,9 +699,13 @@ float TreeComparison::gted(Node* a, Node* b) {
             		gted(child, b);
           		}
         	}
-        	parent = currentPathNode->getParent();
         	currentPathNode = parent;
+        	parent = currentPathNode->getParent();
         }
+
+        if(DEBUG) {
+      		ou << "swap = " << "false " << "pathType = " << to_string(pathType) << endl; 
+      	}
 
       	if (pathType == 0) {
         	//return spfL(a, b, false);
@@ -703,16 +715,23 @@ float TreeComparison::gted(Node* a, Node* b) {
         	//return spfR(a, b, false);
         	return 0.0f;
       	}
+
       	return spfA(a, b, pathLeaf, pathType, false);
 	} 
 
 	else if(treeToDecompose == 1) {
 		Node* parent = currentPathNode->getParent();
 		int pathType = getPathType(B_, b, pathLeaf);
-		while(parent != NULL && parent->getID() >= a->getID()) {
+		if(DEBUG) {
+			ou << "getPathType B (" << to_string(b->getID()) << " ," << to_string(pathLeaf) << ") = " << to_string(pathType) << endl;
+		}
+		while(parent != NULL && parent->getID() >= b->getID()) {
 			vector<Node*> children = parent->getChildren();
 			for(int i = 0; i < children.size(); i++) {
 				Node* child = children[i];
+				if(DEBUG) {
+          			ou << "A child = " << to_string(child->getID()) << " currentPathNode = " << to_string(currentPathNode->getID()) << " parent = " << to_string(parent->getID()) << endl;
+          		}
 				if(child->getID() != currentPathNode->getID()) {
 					if(DEBUG) {
 						ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") ";
@@ -721,9 +740,13 @@ float TreeComparison::gted(Node* a, Node* b) {
 					gted(a, child);
 				}
 			}
-			parent = currentPathNode->getParent();
         	currentPathNode = parent;
+        	parent = currentPathNode->getParent();
 		}
+
+		if(DEBUG) {
+      		ou << "swap = " << "true " << "pathType = " << to_string(pathType) << endl; 
+      	}
 
 		if(pathType == 0) {
 			//return spfL(b, a, true);
@@ -739,9 +762,17 @@ float TreeComparison::gted(Node* a, Node* b) {
 
 float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) {
 	int endF = a->getID();
-	int enF_in_preR = A_->preL_to_preR[endF];
+	Tree *F, *G;
+	if(swap) {
+		F = B_;
+		G = A_;
+	} else {
+		F = A_;
+		G = B_;
+	}
+	int endF_in_preR = F->preL_to_preR[endF];
 	int endG = b->getID();
-	int endG_in_preR = B_->preL_to_preR[endG];
+	int endG_in_preR = G->preL_to_preR[endG];
 	int sizeF = a->getSubTreeSize();
 	int sizeG = b->getSubTreeSize();
 	int endPathNode = leaf;
@@ -752,17 +783,17 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 	int rGFirst, rGLast;
 
 	if(DEBUG) {
-		ou << "spfA(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
+		ou << "spfA(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") " << swap << endl;
 	}
 
 
 	//loop A
 	while(endPathNode >= endF) {
-		int endPathNode_in_preR = A_->preL_to_preR[endPathNode];
-		int startPathNode_in_preR = startPathNode == -1? 0x7fffffff : A_->preL_to_preR[startPathNode];
+		int endPathNode_in_preR = F->preL_to_preR[endPathNode];
+		int startPathNode_in_preR = startPathNode == -1? 0x7fffffff : F->preL_to_preR[startPathNode];
 
-		int parent_of_endPathNode_preL = (*A_)[endPathNode]->getParent() == NULL? 0x7fffffff : (*A_)[endPathNode]->getParent()->getID();
-		int parent_of_endPathNode_preR = (*A_)[endPathNode]->getParent() == NULL? 0x7fffffff : A_->preL_to_preR[parent_of_endPathNode_preL];
+		int parent_of_endPathNode_preL = (*F)[endPathNode]->getParent() == NULL? 0x7fffffff : (*F)[endPathNode]->getParent()->getID();
+		int parent_of_endPathNode_preR = (*F)[endPathNode]->getParent() == NULL? 0x7fffffff : F->preL_to_preR[parent_of_endPathNode_preL];
 
 		bool hasLeftPart;
 		bool hasRightPart;
@@ -795,10 +826,13 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 			}
 			lFLast = hasRightPart? endPathNode + 1 : endPathNode;
 
-			rGLast = B_->preL_to_preR[endG];
+			rGLast = G->preL_to_preR[endG];
 			rGFirst = (rGLast + sizeG) - 1; // get the leftmost child in G
 
-			fn[sizeG] = -1;
+			fn[fn_ft_length - 1] = -1;
+			if(DEBUG) {
+				ou << "initial fn and ft endG = " << to_string(endG) << " endG + sizeG + 2 = " << to_string(endG + sizeG + 2) << endl;
+			}
         	for (int i = endG; i < endG + sizeG; i++) {
             	fn[i] = -1;
             	ft[i] = -1;
@@ -809,13 +843,13 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 				if(DEBUG) {
 					ou << "new Round B" << endl;
 				}
-				int rG_in_preL = (B_)->preR_to_preL[rG];
-				Node* parent = (*B_)[rG_in_preL]->getParent();
+				int rG_in_preL = (G)->preR_to_preL[rG];
+				Node* parent = (*G)[rG_in_preL]->getParent();
 				int parent_of_rG_in_preL = parent == NULL? 0x7fffffff : parent->getID();
-				int parent_of_rG_in_preR = parent == NULL? 0x7fffffff : B_->preL_to_preR[parent_of_rG_in_preL];
-				lGFirst = B_->preR_to_preL[rG];// lGFirst is set to rGFirst;
+				int parent_of_rG_in_preR = parent == NULL? 0x7fffffff : G->preL_to_preR[parent_of_rG_in_preL];
+				lGFirst = G->preR_to_preL[rG];// lGFirst is set to rGFirst;
 				
-				int rGminus1_in_preL = rG <= endG_in_preR? 0x7fffffff : B_->preR_to_preL[rG - 1];// rG should greater than endG_in_preR cause rG is the inner node of subtree enG
+				int rGminus1_in_preL = rG <= endG_in_preR? 0x7fffffff : G->preR_to_preL[rG - 1];// rG should greater than endG_in_preR cause rG is the inner node of subtree enG
 				int rGminus1_in_preR = rG <= endG_in_preR? 0x7fffffff : rG - 1;
 				
 				if (pathType == 1){
@@ -828,15 +862,15 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
             		lGLast = lGFirst == endG? lGFirst : endG + 1;//lGLast is set to the leftmost child of the whole tree
           		}
 			
-          		updateFnArray(B_->preL_to_ln[lGFirst], lGFirst, endG); //stores the counter in D loop fn[ln] stores the start point
-         		updateFtArray(B_->preL_to_ln[lGFirst], lGFirst); 
+          		updateFnArray(G->preL_to_ln[lGFirst], lGFirst, endG); //stores the counter in D loop fn[ln] stores the start point
+         		updateFtArray(G->preL_to_ln[lGFirst], lGFirst); 
 				//loop C
 				for(int lF = lFFirst; lF >= lFLast; lF--) {
 					if(DEBUG) {
 						ou << "new round C" << endl;
 					}
 					int lG = lGFirst;
-					int lF_in_preR = (A_)->preL_to_preR[lF];
+					int lF_in_preR = (F)->preL_to_preR[lF];
 
 
 					if(DEBUG) {
@@ -844,12 +878,12 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           				ou << "Save to S[" << to_string(lF) << ", " << to_string(lG) << "]" << endl;
 					}
 
-					int GcurrentForestSize = (*B_)[lG]->getSubTreeSize();
-           		 	int GcurrentForestCost = (swap ? (B_)->preL_to_sumDelCost[lG] : (B_)->preL_to_sumInsCost[lG]); 
+					int GcurrentForestSize = (*G)[lG]->getSubTreeSize();
+           		 	int GcurrentForestCost = (swap ? (G)->preL_to_sumDelCost[lG] : (G)->preL_to_sumInsCost[lG]); 
 
 
 					bool fForestIsTree = lF_in_preR == rF;
-					int lFSubtreeSize = (*A_)[lF]->getSubTreeSize();
+					int lFSubtreeSize = (*F)[lF]->getSubTreeSize();
 					bool lFIsLeftSiblingOfCurrentPathNode = lF + lFSubtreeSize == startPathNode;
 					bool lFIsConsecutiveNodeOfCurrentPathNode = startPathNode - lF == 1;
 
@@ -931,7 +965,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
               				break; // USE COST MODEL - Insert G_{lG,rG}.
             		}
 
-            		case1 += (swap ? costModel_.ins((*A_)[lF]->getLabel()) : costModel_.del((*A_)[lF]->getLabel()));
+            		case1 += (swap ? costModel_.ins((*F)[lF]->getLabel()) : costModel_.del((*F)[lF]->getLabel()));
             		//minCost = case1;
 
             		if (GcurrentForestSize == 1) { // G_{lG,rG} is a single node.
@@ -953,7 +987,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
             				else ou << "case3_case3 D[" << to_string(lF) << ", " << to_string(lG) << "]" << endl;
             			}
             			if(minCost < case3) {
-            				case3 += swap? costModel_.ren((*B_)[lG]->getLabel(), (*A_)[lF]->getLabel()) : costModel_.ren((*A_)[lF]->getLabel(), (*B_)[lG]->getLabel());
+            				case3 += swap? costModel_.ren((*G)[lG]->getLabel(), (*F)[lF]->getLabel()) : costModel_.ren((*F)[lF]->getLabel(), (*G)[lG]->getLabel());
             			} 
             			if(minCost < case3) {
             				minCost = case3;
@@ -968,7 +1002,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 						}
 
 						GcurrentForestSize++;
-						GcurrentForestCost += (swap ? costModel_.del((*B_)[lG]->getLabel()) : costModel_.ins((*B_)[lG]->getLabel()));
+						GcurrentForestCost += (swap ? costModel_.del((*G)[lG]->getLabel()) : costModel_.ins((*G)[lG]->getLabel()));
 						minCost = 0;
 
 						switch(case1_case) {
@@ -1015,7 +1049,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
               			//if (minCost < case3) {
                 			switch(case3_case) {
                     			case 1: 
-                    				case3SRightIndex = fn[lG] + (*B_)[lG]->getSubTreeSize();
+                    				case3SRightIndex = fn[lG] + (*G)[lG]->getSubTreeSize();
                     				if(DEBUG) {
                     					ou << "case3 s[" << to_string(case3SLeftIndex) << ", " << to_string(case3SRightIndex) << "]" << endl;
                     				}
@@ -1028,7 +1062,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
                     				}
                     				break; // USE COST MODEL - Insert G_{lG,rG}-G_lG.
                     			case 3: 
-                    				case3TLeftIndex = fn[lG + (*B_)[lG]->getSubTreeSize() - 1];
+                    				case3TLeftIndex = fn[lG + (*G)[lG]->getSubTreeSize() - 1];
                 					if(DEBUG) {
                 						ou << "case3 t[" << to_string(case3TLeftIndex) << ", " << to_string(case3TRightIndex) << "]" << endl;
                 					}
@@ -1036,7 +1070,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
                     				break;
                 			}
                 			if (case3 < minCost) {
-                  				case3 += (swap ? costModel_.ren((*B_)[lG]->getLabel(), (*A_)[lF]->getLabel()) : costModel_.ren((*A_)[lF]->getLabel(), (*B_)[lG]->getLabel())); // USE COST MODEL - Rename the leftmost root nodes in F_{lF,rF} and G_{lG,rG}.
+                  				case3 += (swap ? costModel_.ren((*G)[lG]->getLabel(), (*F)[lF]->getLabel()) : costModel_.ren((*F)[lF]->getLabel(), (*G)[lG]->getLabel())); // USE COST MODEL - Rename the leftmost root nodes in F_{lF,rF} and G_{lG,rG}.
                   				if (case3 < minCost) {
                     				minCost = case3;
                   				}
@@ -1054,11 +1088,11 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
               			if (hasLeftPart) {
               				if(swap) {
               					if(DEBUG) {
-              						ou << "D[" << to_string(parent_of_rG_in_preL) << ", " << to_string(endPathNode) << "] = " << "S[" << to_string(lFLast + 1) << ", " << to_string(rGminus1_in_preL + 1) << "]" << endl;
+              						ou << "save to D[" << to_string(parent_of_rG_in_preL) << ", " << to_string(endPathNode) << "] = " << "S[" << to_string(lFLast + 1) << ", " << to_string(rGminus1_in_preL + 1) << "]" << endl;
               					}
               				} else {
               					if(DEBUG) {
-              						ou << "D[" << to_string(endPathNode) << ", " << to_string(parent_of_rG_in_preL) << "] = " << "S[" << to_string(lFLast + 1) << ", " << to_string(rGminus1_in_preL + 1) << "]" << endl;
+              						ou << "save to D[" << to_string(endPathNode) << ", " << to_string(parent_of_rG_in_preL) << "] = " << "S[" << to_string(lFLast + 1) << ", " << to_string(rGminus1_in_preL + 1) << "]" << endl;
               					}
               				}
               			}
@@ -1066,11 +1100,11 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
               			if (endPathNode > 0 && endPathNode == parent_of_endPathNode_preL + 1 && endPathNode_in_preR == parent_of_endPathNode_preR + 1) {
                 			if (swap) {
                 				if(DEBUG) {
-                					ou << "D[" << to_string(parent_of_rG_in_preL) << ", " << to_string(parent_of_endPathNode_preL) << "] = " << "S[" << to_string(lFLast) << ", " << to_string(rGminus1_in_preL + 1) << "]" << endl;
+                					ou << "save to D[" << to_string(parent_of_rG_in_preL) << ", " << to_string(parent_of_endPathNode_preL) << "] = " << "S[" << to_string(lFLast) << ", " << to_string(rGminus1_in_preL + 1) << "]" << endl;
                 				}
                 			} else {
                 				if(DEBUG) {
-                					ou << "D[" << to_string(parent_of_endPathNode_preL) << ", " << to_string(parent_of_rG_in_preL) << "] = " << "S[" << to_string(lFLast) << ", " << to_string(rGminus1_in_preL + 1) << "]" << endl;
+                					ou << "save to D[" << to_string(parent_of_endPathNode_preL) << ", " << to_string(parent_of_rG_in_preL) << "] = " << "S[" << to_string(lFLast) << ", " << to_string(rGminus1_in_preL + 1) << "]" << endl;
                 				}
                 			}
               			}
@@ -1095,20 +1129,23 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 		if (pathType == 0 || pathType == 2 && hasRightPart || pathType == 2 && !hasLeftPart && !hasRightPart) {
 			if (startPathNode == -1) {
           		lFFirst = endPathNode;
-          		rFFirst = A_->preL_to_preR[endPathNode];
+          		rFFirst = F->preL_to_preR[endPathNode];
         	} else {
-          		rFFirst = A_->preL_to_preR[startPathNode] - 1;//the node right to the node on the path
+          		rFFirst = F->preL_to_preR[startPathNode] - 1;//the node right to the node on the path
           		lFFirst = endPathNode + 1;//lFirst is set to the node on the path
         	}
 
         	lFLast = endPathNode;
-        	rFLast = A_->preL_to_preR[endPathNode];
+        	rFLast = F->preL_to_preR[endPathNode];
 
-        	lGLast = B_->preL_to_preR[endG];
+        	lGLast = G->preL_to_preR[endG];
         	lGFirst = (lGLast + sizeG) - 1;
 
-        	fn[sizeG] = -1;
-        	for (int i = endG; i < endG + sizeG + 2; i++) {
+        	fn[fn_ft_length - 1] = -1;
+        	if(DEBUG) {
+				ou << "initial fn and ft endG = " << to_string(endG) << " endG + sizeG + 2 = " << to_string(endG + sizeG + 2) << endl;
+			}
+        	for (int i = endG; i < endG + sizeG; i++) {
             	fn[i] = -1;
             	ft[i] = -1;
         	}
@@ -1118,14 +1155,14 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
         		if(DEBUG) {
 					ou << "new Round B'" << endl;
 				}
-        		Node* parent = (*B_)[lG]->getParent();
+        		Node* parent = (*G)[lG]->getParent();
         		int parent_of_lG_in_preL = parent == NULL? 0x7fffffff: parent->getID();
-        		int parent_of_lG_in_preR = parent == NULL? 0x7fffffff : B_->preL_to_preR[parent->getID()];// not exist -1;
-				rGFirst = B_->preL_to_preR[lG];
-				int lG_in_preR = B_->preL_to_preR[lG];
+        		int parent_of_lG_in_preR = parent == NULL? 0x7fffffff : G->preL_to_preR[parent->getID()];// not exist -1;
+				rGFirst = G->preL_to_preR[lG];
+				int lG_in_preR = G->preL_to_preR[lG];
 
 				int lGminus1_in_preL = lG <= endG? 0x7fffffff : lG - 1;
-				int lGminus1_in_preR = lG <= endG? 0x7fffffff : B_->preL_to_preR[lG - 1];
+				int lGminus1_in_preR = lG <= endG? 0x7fffffff : G->preL_to_preR[lG - 1];
 
 				 if (pathType == 0) {
            	 		if (lG == endG || lGminus1_in_preL != parent_of_lG_in_preL) {//parent not exists or not the leftmost child.
@@ -1139,16 +1176,16 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 
 
 				if(DEBUG) {
-					ou << "updateFnArray(" << to_string(B_->preR_to_ln[rGFirst]) << ", " << to_string(rGFirst) << ", " << to_string(endG_in_preR) << ")" << endl;
+					ou << "updateFnArray(" << to_string(G->preR_to_ln[rGFirst]) << ", " << to_string(rGFirst) << ", " << to_string(endG_in_preR) << ")" << endl;
 				}
-				updateFnArray(B_->preR_to_ln[rGFirst], rGFirst, endG_in_preR);
+				updateFnArray(G->preR_to_ln[rGFirst], rGFirst, endG_in_preR);
 			
 				if(DEBUG) {
-					ou << "updateFtArray(" << to_string(B_->preR_to_ln[rGFirst]) << ", " << to_string(rGFirst) << ")" << endl;
+					ou << "updateFtArray(" << to_string(G->preR_to_ln[rGFirst]) << ", " << to_string(rGFirst) << ")" << endl;
 				}
-          		updateFtArray(B_->preR_to_ln[rGFirst], rGFirst);
+          		updateFtArray(G->preR_to_ln[rGFirst], rGFirst);
           	
-          		if(DEBUG) {
+          		/*if(DEBUG) {
           			ou << "endG_in_preR = " << to_string(endG_in_preR) << endl;
           			ou << "start from rG = " << to_string(rGFirst) << endl;
           			ou << "FN" << endl;
@@ -1161,7 +1198,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           				ou << ft[i] << " ";
           			}
           			ou << endl;
-          		}
+          		}*/
           		lF = lF_prev;
           		// loop C'
           		for(int rF = rFFirst; rF >= rFLast; rF--) {
@@ -1169,9 +1206,9 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           				ou << "new Round C'" << endl;
           			}
           			int rG = rGFirst;
-          			int rG_in_preL = (B_)->preR_to_preL[rG];
+          			int rG_in_preL = (G)->preR_to_preL[rG];
           			
-          			if(rF == rFLast) lF = A_->preR_to_preL[rFLast]; 
+          			if(rF == rFLast) lF = F->preR_to_preL[rFLast]; 
 
 
           			if(DEBUG) {
@@ -1181,10 +1218,10 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 					}
           			
 
-          			int rF_in_preL = (A_)->preR_to_preL[rF];
+          			int rF_in_preL = (F)->preR_to_preL[rF];
           			
           			bool FForestIsTree = lF == rF_in_preL;
-          			int rFSubtreeSize = (*A_)[rF_in_preL]->getSubTreeSize();
+          			int rFSubtreeSize = (*F)[rF_in_preL]->getSubTreeSize();
           			
           			
           			int case1SLeftIndex, case1SRightIndex;//S[rF + 1, rG];
@@ -1199,8 +1236,8 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           			float case1 = 0, case2 = 0, case3 = 0;
           			int case1_case, case2_case, case3_case;
 
-          			int GcurrentForestSize = (*B_)[lG]->getSubTreeSize();
-          			float GcurrentForestCost = (swap ? (B_)->preL_to_sumDelCost[lG] : (B_)->preL_to_sumInsCost[lG]); // USE COST MODEL - reset to subtree insertion cost.
+          			int GcurrentForestSize = (*G)[lG]->getSubTreeSize();
+          			float GcurrentForestCost = (swap ? (G)->preL_to_sumDelCost[lG] : (G)->preL_to_sumInsCost[lG]); // USE COST MODEL - reset to subtree insertion cost.
 
           			float minCost = 0;
 
@@ -1316,7 +1353,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
             				else ou << "case3_case3 D[" << to_string(rF_in_preL) << ", " << to_string(rG_in_preL) << "]" << endl;
             			}
             			if(minCost < case3) {
-            				 case3 += (swap ? costModel_.ren((*B_)[rG_in_preL]->getLabel(), (*A_)[rF_in_preL]->getLabel()) : costModel_.ren((*A_)[rF_in_preL]->getLabel(), (*B_)[rG_in_preL]->getLabel()));
+            				 case3 += (swap ? costModel_.ren((*G)[rG_in_preL]->getLabel(), (*F)[rF_in_preL]->getLabel()) : costModel_.ren((*F)[rF_in_preL]->getLabel(), (*G)[rG_in_preL]->getLabel()));
             			}
             			if(case3 < minCost) {
             				minCost = case3;
@@ -1329,7 +1366,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           			
           			// loop D'
           			while(rG >= rGLast) {// every G is a subforest not a subtree
-          				rG_in_preL = (B_)->preR_to_preL[rG];
+          				rG_in_preL = (G)->preR_to_preL[rG];
 
           				if(DEBUG) {
           					ou << "Right (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
@@ -1337,7 +1374,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 						}
 
 						GcurrentForestSize++;
-						GcurrentForestCost += (swap ? costModel_.del((*B_)[rG_in_preL]->getLabel()) : costModel_.ins((*B_)[rG_in_preL]->getLabel()));
+						GcurrentForestCost += (swap ? costModel_.del((*G)[rG_in_preL]->getLabel()) : costModel_.ins((*G)[rG_in_preL]->getLabel()));
 
 						
 
@@ -1369,7 +1406,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
               			if(DEBUG) {
               				ou << "case2_case3 s[" << to_string(case2SLeftIndex) << ", " << to_string(case2SRightIndex) << "]" << endl;
               			}
-              			case2 = s[case2SLeftIndex][case2SRightIndex] + (swap ? costModel_.del((*B_)[rG_in_preL]->getLabel()) : costModel_.ins((*B_)[rG_in_preL]->getLabel()));//G is not a tree or a node for sure in D loop
+              			case2 = s[case2SLeftIndex][case2SRightIndex] + (swap ? costModel_.del((*G)[rG_in_preL]->getLabel()) : costModel_.ins((*G)[rG_in_preL]->getLabel()));//G is not a tree or a node for sure in D loop
               			if(case2 < minCost) {
               				minCost = case2;
               			}
@@ -1385,7 +1422,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
               			//if(case3 < minCost) {
               				switch(case3_case) {
               					case 1: 
-              					case3SRightIndex = fn[(rG + (*B_)[rG_in_preL]->getSubTreeSize()) - 1];
+              					case3SRightIndex = fn[(rG + (*G)[rG_in_preL]->getSubTreeSize()) - 1];
               					//case3 += s[case3SLeftIndex][case3SRightIndex];
               					if(DEBUG) {
               						ou << "case3_case1 s[" << to_string(case3SLeftIndex) << ", " << to_string(case3SRightIndex) << "]" << endl; 
@@ -1398,7 +1435,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
               					}
               					break;
               					case 3: 
-              					case3TRightIndex = fn[(rG + (*B_)[rG_in_preL]->getSubTreeSize()) - 1];
+              					case3TRightIndex = fn[(rG + (*G)[rG_in_preL]->getSubTreeSize()) - 1];
               					//case3 += t[case3TLeftIndex][case3TRightIndex];
               					if(DEBUG) {
               						ou << "case3_case3 t[" << to_string(case3TLeftIndex) << ", " << to_string(case3TRightIndex) << "]" << endl; 
@@ -1406,7 +1443,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
               					break;
               				}
               				if(minCost < case3) {
-              					case3 += (swap ? costModel_.ren((*B_)[rG_in_preL]->getLabel(), (*A_)[rF_in_preL]->getLabel()) : costModel_.ren((*A_)[rF_in_preL]->getLabel(), (*B_)[rG_in_preL]->getLabel()));
+              					case3 += (swap ? costModel_.ren((*G)[rG_in_preL]->getLabel(), (*F)[rF_in_preL]->getLabel()) : costModel_.ren((*F)[rF_in_preL]->getLabel(), (*G)[rG_in_preL]->getLabel()));
               					if(case3 < minCost) {
               						minCost = case3;
               					}
@@ -1423,22 +1460,22 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           			if(hasRightPart) {
           				if(swap) {
           					if(DEBUG) {
-          						ou << "D[" << to_string(parent_of_lG_in_preL) << ", " << to_string(endPathNode) << "] = " << "S[" << to_string(rFLast) << ", " << to_string(lGminus1_in_preR + 1) << "]" << endl; //rightmosts child of p(lG)
+          						ou << "save to D[" << to_string(parent_of_lG_in_preL) << ", " << to_string(endPathNode) << "] = " << "S[" << to_string(rFLast) << ", " << to_string(lGminus1_in_preR + 1) << "]" << endl; //rightmosts child of p(lG)
           					}
           				} else {
           					if(DEBUG) {
-          						ou << "D[" << to_string(endPathNode) << ", " << to_string(parent_of_lG_in_preL) << "] = " << "S[" << to_string(rFLast) << ", " << to_string(lGminus1_in_preR + 1) << "]" << endl; //rightmosts child of p(lG)
+          						ou << "save to D[" << to_string(endPathNode) << ", " << to_string(parent_of_lG_in_preL) << "] = " << "S[" << to_string(rFLast) << ", " << to_string(lGminus1_in_preR + 1) << "]" << endl; //rightmosts child of p(lG)
           					}
           				}
           			}
           			if (endPathNode > 0 && endPathNode == parent_of_endPathNode_preL + 1 && endPathNode_in_preR == parent_of_endPathNode_preR + 1) {//no left and right
           				if(swap) {
           					if(DEBUG) {
-          						ou << "D[" << to_string(parent_of_lG_in_preL) << ", " << to_string(parent_of_endPathNode_preL) << "] = " << "S[" << to_string(rFLast) << ", " << to_string(lGminus1_in_preR + 1) << "]" << endl; //rightmosts child of p(lG)
+          						ou << "save to D[" << to_string(parent_of_lG_in_preL) << ", " << to_string(parent_of_endPathNode_preL) << "] = " << "S[" << to_string(rFLast) << ", " << to_string(lGminus1_in_preR + 1) << "]" << endl; //rightmosts child of p(lG)
           					}
           				} else {
           					if(DEBUG) {
-          						ou << "D[" << to_string(parent_of_endPathNode_preL) << ", " << to_string(parent_of_lG_in_preL) << "] = " << "S[" << to_string(rFLast) << ", " << to_string(lGminus1_in_preR + 1) << "]" << endl; //rightmosts child of p(lG)
+          						ou << "save to D[" << to_string(parent_of_endPathNode_preL) << ", " << to_string(parent_of_lG_in_preL) << "] = " << "S[" << to_string(rFLast) << ", " << to_string(lGminus1_in_preR + 1) << "]" << endl; //rightmosts child of p(lG)
           					}
           				}
           			}
@@ -1458,7 +1495,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 		}
 	rF = endPathNode_in_preR;//in D loop
 	startPathNode = endPathNode;
-    endPathNode = (*A_)[endPathNode] ->getParent() == NULL? -1 : (*A_)[endPathNode] ->getParent()->getID();	
+    endPathNode = (*F)[endPathNode] ->getParent() == NULL? -1 : (*F)[endPathNode] ->getParent()->getID();	
 	}
 };
 
@@ -1467,16 +1504,15 @@ void TreeComparison::updateFnArray(int lnForNode, int node, int currentSubtreePr
       fn[node] = fn[lnForNode];//the last leaf node whose next leaf is lnForNode
       fn[lnForNode] = node;// fn[lnfornode] points to the start point
       if(DEBUG) {
-      	ou << "fn[" << to_string(node) << "] = fn[" << to_string(lnForNode) << "]" << endl; 
+      	ou << "fn[" << to_string(node) << "] = fn[" << to_string(lnForNode) << "] = " << to_string(fn[lnForNode]) << endl; 
       	ou << "fn[" << to_string(lnForNode) << "] = " << to_string(node) << endl;
       }
     } else {
-      int maxSize = treeSizeA < treeSizeB? treeSizeB + 1 : treeSizeA + 1;
-      fn[node] = fn[maxSize];
-      fn[maxSize] = node;
+      fn[node] = fn[fn_ft_length - 1];
+      fn[fn_ft_length - 1] = node;
       if(DEBUG) {
-      	ou << "fn[" << to_string(node) << "] = fn[" << to_string(maxSize) << "]" << endl; 
-      	ou << "fn[" << to_string(maxSize) << "] = " << to_string(node) << endl;
+      	ou << "O fn[" << to_string(node) << "] = fn[" << to_string(fn_ft_length - 1) << "] = " << fn[fn_ft_length - 1] << endl; 
+      	ou << "O fn[" << to_string(fn_ft_length - 1) << "] = " << to_string(node) << endl;
       }
     }
 }

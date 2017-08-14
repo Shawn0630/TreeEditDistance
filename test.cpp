@@ -79,9 +79,22 @@ int main() {
 	FileManage* file = FileManage::getInstance();
 	file->setSimiFileName(simiFileName);
 	matrix = file->readSimiFromFile();
-	ofstream ou("out.txt");
+	ofstream ou("out2.txt");
 	r1.setRNAName("A");
 	r2.setRNAName("B");
+
+	file->setRNAFileName(fileName);
+	RNAs = file->readRNAsFromFile();
+	RNAs[0].getPreLSequence();
+	RNAs[1].getPreLSequence();
+	Tree* t1 = RNAs[0].buildTree();
+	Tree* t2 = RNAs[1].buildTree();
+	ou << "TreeA" << endl;
+	ou << t1->toString() << endl;
+	ou << "TreeB" << endl;
+	ou << t2->toString() << endl;
+	TreeComparison tc(t1, t2, matrix);
+	tc.strategyComputation();
 
 
 
@@ -162,12 +175,69 @@ int main() {
           |                              |
           D                              D
     */
-    string s1 = "(A(B)(C(D))(E))";
+/*    string s1 = "(A(B)(C(D))(E))";
     string s2 = "(A(B)(C(D))(E))";
     r1.setPreOrderSequence(s1);
     r1.setTreeSize(5);
     r2.setPreOrderSequence(s2);
-    r2.setTreeSize(5);
+    r2.setTreeSize(5);*/
+
+
+
+
+    /*
+	  	  A		        A                                   
+	    /  \   		/ / | \ \ \ \ \                         
+       B   D 		B C D  F G H I J                        
+       |       		    |                                 
+       C       		    E                                 
+	
+	*/
+
+
+/*    string s1 = "(A(B(C))(D))";
+    string s2 = "(A(B)(C)(D(E))(F)(G)(H)(I)(J))";
+    r1.setPreOrderSequence(s1);
+    r1.setTreeSize(4);
+    r2.setPreOrderSequence(s2);
+    r2.setTreeSize(10);*/
+
+        /*
+	  	  A		        A                                   
+	    /  \   		/ / | \ \ \ \ \                         
+       B   D 		B C D  F G H I J                        
+       |       		    |                                 
+       C       		    E                                 
+	
+	*/
+
+
+/*    string s1 = "(A(B)(C)(D(E))(F)(G)(H)(I)(J))";
+    string s2 = "(A(B(C))(D))";
+    r1.setPreOrderSequence(s1);
+    r1.setTreeSize(10);
+    r2.setPreOrderSequence(s2);
+    r2.setTreeSize(4);*/
+
+
+
+    /*
+	  	  A		        A                                   
+	    /  \   		/ / | \ \ \ \ \                         
+       B    C 		B C D  F G H I J                        
+              		    |                                 
+              		    E                                 
+	
+	*/
+
+/*
+    string s1 = "(A(B)(C)(D(E))(F)(G)(H)(I)(J))";
+    string s2 = "(A(B)(C))";
+    r1.setPreOrderSequence(s1);
+    r1.setTreeSize(10);
+    r2.setPreOrderSequence(s2);
+    r2.setTreeSize(3);
+
 
 	Tree* t1 = r1.buildTree();
 	Tree* t2 = r2.buildTree();
@@ -176,7 +246,7 @@ int main() {
 	cout << "TreeB" << endl;
 	cout << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
-	tc.strategyComputation();
+	tc.strategyComputation();*/
 
 
 

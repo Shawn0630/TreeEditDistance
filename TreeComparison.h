@@ -41,6 +41,8 @@ private:
 	int* fn;
 	int* ft;
 
+	int fn_ft_length;
+
 	int free(Node*, Node*);
 	int leftA(Node*, Node*);
 	int leftB(Node*, Node*);
