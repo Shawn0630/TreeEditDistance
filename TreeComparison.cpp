@@ -1108,7 +1108,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
         	lGFirst = (lGLast + sizeG) - 1;
 
         	fn[sizeG] = -1;
-        	for (int i = endG; i < endG + sizeG; i++) {
+        	for (int i = endG; i < endG + sizeG + 2; i++) {
             	fn[i] = -1;
             	ft[i] = -1;
         	}
@@ -1137,6 +1137,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
             		rGLast = rGFirst == endG_in_preR ? rGFirst : endG_in_preR;
           		}
 
+
 				if(DEBUG) {
 					ou << "updateFnArray(" << to_string(B_->preR_to_ln[rGFirst]) << ", " << to_string(rGFirst) << ", " << to_string(endG_in_preR) << ")" << endl;
 				}
@@ -1151,12 +1152,12 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           			ou << "endG_in_preR = " << to_string(endG_in_preR) << endl;
           			ou << "start from rG = " << to_string(rGFirst) << endl;
           			ou << "FN" << endl;
-          			for(int i = endG; i < endG + sizeG; i++) {
+          			for(int i = endG; i < endG + sizeG + 1; i++) {
           				ou << fn[i] << " ";
           			}
           			ou << endl;
           			ou << "FT" << endl;
-          			for(int i = endG; i < endG + sizeG; i++) {
+          			for(int i = endG; i < endG + sizeG + 1; i++) {
           				ou << ft[i] << " ";
           			}
           			ou << endl;
@@ -1463,8 +1464,8 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 
 void TreeComparison::updateFnArray(int lnForNode, int node, int currentSubtreePreL) {
     if (lnForNode >= currentSubtreePreL) {
-      fn[node] = fn[lnForNode];//fn -> times to loop in D
-      fn[lnForNode] = node;// fn[lnfornode] start point from
+      fn[node] = fn[lnForNode];//the last leaf node whose next leaf is lnForNode
+      fn[lnForNode] = node;// fn[lnfornode] points to the start point
       if(DEBUG) {
       	ou << "fn[" << to_string(node) << "] = fn[" << to_string(lnForNode) << "]" << endl; 
       	ou << "fn[" << to_string(lnForNode) << "] = " << to_string(node) << endl;
