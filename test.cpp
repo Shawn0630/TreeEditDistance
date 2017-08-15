@@ -231,12 +231,29 @@ int main() {
 	*/
 
 
-    string s1 = "(A(B)(C)(D(E))(F)(G)(H)(I)(J))";
+/*    string s1 = "(A(B)(C)(D(E))(F)(G)(H)(I)(J))";
     string s2 = "(A(B)(C))";
     r1.setPreOrderSequence(s1);
     r1.setTreeSize(10);
     r2.setPreOrderSequence(s2);
-    r2.setTreeSize(3);
+    r2.setTreeSize(3);*/
+
+
+
+/*        	    A                          A
+     	  /     |   \                     / \
+    	 B      C    D                   B   C
+   	   / | \   / \    \                    / | \
+  	  E  F G  H   I    J                  D  E  F
+  	  */
+
+  	  string s1 = "(A(B(E)(F)(G))(C(H)(I))(D(J)))";
+    string s2 = "(A(B)(C(D)(E)(F)))";
+    r1.setPreOrderSequence(s2);
+    r1.setTreeSize(6);
+    r2.setPreOrderSequence(s1);
+    r2.setTreeSize(10);
+
 
 
 	Tree* t1 = r1.buildTree();

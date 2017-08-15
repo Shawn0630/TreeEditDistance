@@ -1848,6 +1848,7 @@ int TreeComparison::leftA(Node* a, Node* b) {
 };
 
 int TreeComparison::rightA(Node* a, Node* b) {
+
 	if(RightA[a->getID()][b->getID()] != -1) return RightA[a->getID()][b->getID()];
 	vector<Node*> childrenA = a->getChildren();
 	int min = INT_MAX;
@@ -1896,13 +1897,16 @@ int TreeComparison::rightA(Node* a, Node* b) {
 		if(min > arightmost) {
 			min = arightmost;
 			rightAS.setKeyNode(childrenA[childrenA.size() - 1]->getID());
-			rightAS.setLeaf(AllAStrategies[childrenA[childrenA.size() - 1]->getID()][b->getID()].getLeaf());
+			rightAS.setLeaf(RightAStrategies[childrenA[childrenA.size() - 1]->getID()][b->getID()].getLeaf());
 			rightAS.setTreeToDecompose(0);
 			rightAS.setDirection(1);
 		}
 	}
 	RightA[a->getID()][b->getID()] = min;
 	RightAStrategies[a->getID()][b->getID()] = rightAS;
+	if(DEBUG) {
+		ou << "RightA[" << to_string(a->getID()) << ", " << to_string(b->getID()) << "] set to " << to_string(rightAS.getLeaf()) << endl;
+	}
 	return min;
 };
 

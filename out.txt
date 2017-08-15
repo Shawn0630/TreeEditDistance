@@ -1,12 +1,7 @@
 Compute Free(1, 0)
-If select 1 in Tree A #Subproblem: 4 Direction: Left
+If select 1 in Tree A #Subproblem: 18 Direction: Right
 Compute Free(1, 1)
-If select 1 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(1, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Left
-FreeS(1, 1)
-Keynode: 1 in Tree A
-Direction: rightLeaf: 1
+If select 1 in Tree A #Subproblem: 6 Direction: Left
 Compute Free(1, 2)
 If select 1 in Tree A #Subproblem: 1 Direction: Left
 Compute Free(1, 2)
@@ -14,45 +9,163 @@ If select 2 in Tree B #Subproblem: 1 Direction: Left
 FreeS(1, 2)
 Keynode: 1 in Tree A
 Direction: rightLeaf: 1
+Compute Free(1, 3)
+If select 1 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(1, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Left
+FreeS(1, 3)
+Keynode: 1 in Tree A
+Direction: rightLeaf: 1
+Compute Free(1, 4)
+If select 1 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(1, 4)
+If select 4 in Tree B #Subproblem: 1 Direction: Left
+FreeS(1, 4)
+Keynode: 1 in Tree A
+Direction: rightLeaf: 1
+Compute Free(1, 1)
+If select 2(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(1, 1)
+If select 3 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(1, 1)
+If select 4(rightmost) in Tree B #Subproblem: 6 Direction: Left
+FreeS(1, 1)
+Keynode: 1 in Tree A
+Direction: rightLeaf: 1
+Compute Free(1, 5)
+If select 1 in Tree A #Subproblem: 4 Direction: Left
+Compute Free(1, 6)
+If select 1 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(1, 6)
+If select 6 in Tree B #Subproblem: 1 Direction: Left
+FreeS(1, 6)
+Keynode: 1 in Tree A
+Direction: rightLeaf: 1
+Compute Free(1, 7)
+If select 1 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(1, 7)
+If select 7 in Tree B #Subproblem: 1 Direction: Left
+FreeS(1, 7)
+Keynode: 1 in Tree A
+Direction: rightLeaf: 1
+Compute Free(1, 5)
+If select 6(leftmost) in Tree B #Subproblem: 4 Direction: Right
+Compute Free(1, 5)
+If select 7(rightmost) in Tree B #Subproblem: 4 Direction: Left
+FreeS(1, 5)
+Keynode: 1 in Tree A
+Direction: rightLeaf: 1
+Compute Free(1, 8)
+If select 1 in Tree A #Subproblem: 2 Direction: Left
+Compute Free(1, 9)
+If select 1 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(1, 9)
+If select 9 in Tree B #Subproblem: 1 Direction: Left
+FreeS(1, 9)
+Keynode: 1 in Tree A
+Direction: rightLeaf: 1
+Compute Free(1, 8)
+If select 9(leftmost) in Tree B #Subproblem: 2 Direction: Right
+Compute Free(1, 8)
+If select 9(rightmost) in Tree B #Subproblem: 2 Direction: Left
+FreeS(1, 8)
+Keynode: 1 in Tree A
+Direction: rightLeaf: 1
 Compute Free(1, 0)
-If select 1(leftmost) in Tree B #Subproblem: 4 Direction: Right
+If select 1(leftmost) in Tree B #Subproblem: 18 Direction: Right
 Compute Free(1, 0)
-If select 2(rightmost) in Tree B #Subproblem: 4 Direction: Left
+If select 5 in Tree B #Subproblem: 19 Direction: Left
+Compute Free(1, 0)
+If select 8(rightmost) in Tree B #Subproblem: 20 Direction: Left
 FreeS(1, 0)
 Keynode: 1 in Tree A
 Direction: rightLeaf: 1
-Compute Free(2, 0)
-If select 2 in Tree A #Subproblem: 4 Direction: Left
-Compute Free(2, 1)
-If select 2 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(2, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Left
-FreeS(2, 1)
-Keynode: 2 in Tree A
-Direction: rightLeaf: 2
-Compute Free(2, 2)
-If select 2 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(2, 2)
+Compute Free(3, 0)
+If select 3 in Tree A #Subproblem: 18 Direction: Right
+Compute Free(3, 1)
+If select 3 in Tree A #Subproblem: 6 Direction: Left
+Compute Free(3, 2)
+If select 3 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(3, 2)
 If select 2 in Tree B #Subproblem: 1 Direction: Left
-FreeS(2, 2)
-Keynode: 2 in Tree A
-Direction: rightLeaf: 2
-Compute Free(2, 0)
-If select 1(leftmost) in Tree B #Subproblem: 4 Direction: Right
-Compute Free(2, 0)
-If select 2(rightmost) in Tree B #Subproblem: 4 Direction: Left
-FreeS(2, 0)
-Keynode: 2 in Tree A
-Direction: rightLeaf: 2
+FreeS(3, 2)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 3
+Compute Free(3, 3)
+If select 3 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(3, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Left
+FreeS(3, 3)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 3
+Compute Free(3, 4)
+If select 3 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(3, 4)
+If select 4 in Tree B #Subproblem: 1 Direction: Left
+FreeS(3, 4)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 3
+Compute Free(3, 1)
+If select 2(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(3, 1)
+If select 3 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(3, 1)
+If select 4(rightmost) in Tree B #Subproblem: 6 Direction: Left
+FreeS(3, 1)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 3
+Compute Free(3, 5)
+If select 3 in Tree A #Subproblem: 4 Direction: Left
+Compute Free(3, 6)
+If select 3 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(3, 6)
+If select 6 in Tree B #Subproblem: 1 Direction: Left
+FreeS(3, 6)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 3
+Compute Free(3, 7)
+If select 3 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(3, 7)
+If select 7 in Tree B #Subproblem: 1 Direction: Left
+FreeS(3, 7)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 3
+Compute Free(3, 5)
+If select 6(leftmost) in Tree B #Subproblem: 4 Direction: Right
+Compute Free(3, 5)
+If select 7(rightmost) in Tree B #Subproblem: 4 Direction: Left
+FreeS(3, 5)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 3
+Compute Free(3, 8)
+If select 3 in Tree A #Subproblem: 2 Direction: Left
+Compute Free(3, 9)
+If select 3 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(3, 9)
+If select 9 in Tree B #Subproblem: 1 Direction: Left
+FreeS(3, 9)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 3
+Compute Free(3, 8)
+If select 9(leftmost) in Tree B #Subproblem: 2 Direction: Right
+Compute Free(3, 8)
+If select 9(rightmost) in Tree B #Subproblem: 2 Direction: Left
+FreeS(3, 8)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 3
+Compute Free(3, 0)
+If select 1(leftmost) in Tree B #Subproblem: 18 Direction: Right
+Compute Free(3, 0)
+If select 5 in Tree B #Subproblem: 19 Direction: Left
+Compute Free(3, 0)
+If select 8(rightmost) in Tree B #Subproblem: 20 Direction: Left
+FreeS(3, 0)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 3
 Compute Free(4, 0)
-If select 4 in Tree A #Subproblem: 4 Direction: Left
+If select 4 in Tree A #Subproblem: 18 Direction: Right
 Compute Free(4, 1)
-If select 4 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(4, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Left
-FreeS(4, 1)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
+If select 4 in Tree A #Subproblem: 6 Direction: Left
 Compute Free(4, 2)
 If select 4 in Tree A #Subproblem: 1 Direction: Left
 Compute Free(4, 2)
@@ -60,51 +173,81 @@ If select 2 in Tree B #Subproblem: 1 Direction: Left
 FreeS(4, 2)
 Keynode: 4 in Tree A
 Direction: rightLeaf: 4
+Compute Free(4, 3)
+If select 4 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(4, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Left
+FreeS(4, 3)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+Compute Free(4, 4)
+If select 4 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(4, 4)
+If select 4 in Tree B #Subproblem: 1 Direction: Left
+FreeS(4, 4)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+Compute Free(4, 1)
+If select 2(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(4, 1)
+If select 3 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(4, 1)
+If select 4(rightmost) in Tree B #Subproblem: 6 Direction: Left
+FreeS(4, 1)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+Compute Free(4, 5)
+If select 4 in Tree A #Subproblem: 4 Direction: Left
+Compute Free(4, 6)
+If select 4 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(4, 6)
+If select 6 in Tree B #Subproblem: 1 Direction: Left
+FreeS(4, 6)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+Compute Free(4, 7)
+If select 4 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(4, 7)
+If select 7 in Tree B #Subproblem: 1 Direction: Left
+FreeS(4, 7)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+Compute Free(4, 5)
+If select 6(leftmost) in Tree B #Subproblem: 4 Direction: Right
+Compute Free(4, 5)
+If select 7(rightmost) in Tree B #Subproblem: 4 Direction: Left
+FreeS(4, 5)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+Compute Free(4, 8)
+If select 4 in Tree A #Subproblem: 2 Direction: Left
+Compute Free(4, 9)
+If select 4 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(4, 9)
+If select 9 in Tree B #Subproblem: 1 Direction: Left
+FreeS(4, 9)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+Compute Free(4, 8)
+If select 9(leftmost) in Tree B #Subproblem: 2 Direction: Right
+Compute Free(4, 8)
+If select 9(rightmost) in Tree B #Subproblem: 2 Direction: Left
+FreeS(4, 8)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
 Compute Free(4, 0)
-If select 1(leftmost) in Tree B #Subproblem: 4 Direction: Right
+If select 1(leftmost) in Tree B #Subproblem: 18 Direction: Right
 Compute Free(4, 0)
-If select 2(rightmost) in Tree B #Subproblem: 4 Direction: Left
+If select 5 in Tree B #Subproblem: 19 Direction: Left
+Compute Free(4, 0)
+If select 8(rightmost) in Tree B #Subproblem: 20 Direction: Left
 FreeS(4, 0)
 Keynode: 4 in Tree A
 Direction: rightLeaf: 4
-Compute Free(3, 1)
-If select 1 in Tree B #Subproblem: 2 Direction: Left
-Compute Free(3, 1)
-If select 4(leftmost) in Tree A #Subproblem: 2 Direction: Right
-Compute Free(3, 1)
-If select 4(rightmost) in Tree A #Subproblem: 2 Direction: Left
-FreeS(3, 1)
-Keynode: 1 in TreeB
-Direction: rightLeaf: 1
-Compute Free(3, 2)
-If select 2 in Tree B #Subproblem: 2 Direction: Left
-Compute Free(3, 2)
-If select 4(leftmost) in Tree A #Subproblem: 2 Direction: Right
-Compute Free(3, 2)
-If select 4(rightmost) in Tree A #Subproblem: 2 Direction: Left
-FreeS(3, 2)
-Keynode: 2 in TreeB
-Direction: rightLeaf: 2
-Compute Free(3, 0)
-If select 4(leftmost) in Tree A #Subproblem: 8 Direction: Right
-Compute Free(3, 0)
-If select 4(rightmost) in Tree A #Subproblem: 8 Direction: Left
-Compute Free(3, 0)
-If select 1(leftmost) in Tree B #Subproblem: 8 Direction: Right
-Compute Free(3, 0)
-If select 2(rightmost) in Tree B #Subproblem: 8 Direction: Left
-FreeS(3, 0)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
 Compute Free(5, 0)
-If select 5 in Tree A #Subproblem: 4 Direction: Left
+If select 5 in Tree A #Subproblem: 18 Direction: Right
 Compute Free(5, 1)
-If select 5 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(5, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Left
-FreeS(5, 1)
-Keynode: 5 in Tree A
-Direction: rightLeaf: 5
+If select 5 in Tree A #Subproblem: 6 Direction: Left
 Compute Free(5, 2)
 If select 5 in Tree A #Subproblem: 1 Direction: Left
 Compute Free(5, 2)
@@ -112,600 +255,360 @@ If select 2 in Tree B #Subproblem: 1 Direction: Left
 FreeS(5, 2)
 Keynode: 5 in Tree A
 Direction: rightLeaf: 5
+Compute Free(5, 3)
+If select 5 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(5, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Left
+FreeS(5, 3)
+Keynode: 5 in Tree A
+Direction: rightLeaf: 5
+Compute Free(5, 4)
+If select 5 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(5, 4)
+If select 4 in Tree B #Subproblem: 1 Direction: Left
+FreeS(5, 4)
+Keynode: 5 in Tree A
+Direction: rightLeaf: 5
+Compute Free(5, 1)
+If select 2(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(5, 1)
+If select 3 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(5, 1)
+If select 4(rightmost) in Tree B #Subproblem: 6 Direction: Left
+FreeS(5, 1)
+Keynode: 5 in Tree A
+Direction: rightLeaf: 5
+Compute Free(5, 5)
+If select 5 in Tree A #Subproblem: 4 Direction: Left
+Compute Free(5, 6)
+If select 5 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(5, 6)
+If select 6 in Tree B #Subproblem: 1 Direction: Left
+FreeS(5, 6)
+Keynode: 5 in Tree A
+Direction: rightLeaf: 5
+Compute Free(5, 7)
+If select 5 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(5, 7)
+If select 7 in Tree B #Subproblem: 1 Direction: Left
+FreeS(5, 7)
+Keynode: 5 in Tree A
+Direction: rightLeaf: 5
+Compute Free(5, 5)
+If select 6(leftmost) in Tree B #Subproblem: 4 Direction: Right
+Compute Free(5, 5)
+If select 7(rightmost) in Tree B #Subproblem: 4 Direction: Left
+FreeS(5, 5)
+Keynode: 5 in Tree A
+Direction: rightLeaf: 5
+Compute Free(5, 8)
+If select 5 in Tree A #Subproblem: 2 Direction: Left
+Compute Free(5, 9)
+If select 5 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(5, 9)
+If select 9 in Tree B #Subproblem: 1 Direction: Left
+FreeS(5, 9)
+Keynode: 5 in Tree A
+Direction: rightLeaf: 5
+Compute Free(5, 8)
+If select 9(leftmost) in Tree B #Subproblem: 2 Direction: Right
+Compute Free(5, 8)
+If select 9(rightmost) in Tree B #Subproblem: 2 Direction: Left
+FreeS(5, 8)
+Keynode: 5 in Tree A
+Direction: rightLeaf: 5
 Compute Free(5, 0)
-If select 1(leftmost) in Tree B #Subproblem: 4 Direction: Right
+If select 1(leftmost) in Tree B #Subproblem: 18 Direction: Right
 Compute Free(5, 0)
-If select 2(rightmost) in Tree B #Subproblem: 4 Direction: Left
+If select 5 in Tree B #Subproblem: 19 Direction: Left
+Compute Free(5, 0)
+If select 8(rightmost) in Tree B #Subproblem: 20 Direction: Left
 FreeS(5, 0)
 Keynode: 5 in Tree A
 Direction: rightLeaf: 5
-Compute Free(6, 0)
-If select 6 in Tree A #Subproblem: 4 Direction: Left
-Compute Free(6, 1)
-If select 6 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(6, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Left
-FreeS(6, 1)
-Keynode: 6 in Tree A
-Direction: rightLeaf: 6
-Compute Free(6, 2)
-If select 6 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(6, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Left
-FreeS(6, 2)
-Keynode: 6 in Tree A
-Direction: rightLeaf: 6
-Compute Free(6, 0)
-If select 1(leftmost) in Tree B #Subproblem: 4 Direction: Right
-Compute Free(6, 0)
-If select 2(rightmost) in Tree B #Subproblem: 4 Direction: Left
-FreeS(6, 0)
-Keynode: 6 in Tree A
-Direction: rightLeaf: 6
-Compute Free(7, 0)
-If select 7 in Tree A #Subproblem: 4 Direction: Left
-Compute Free(7, 1)
-If select 7 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(7, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Left
-FreeS(7, 1)
-Keynode: 7 in Tree A
-Direction: rightLeaf: 7
-Compute Free(7, 2)
-If select 7 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(7, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Left
-FreeS(7, 2)
-Keynode: 7 in Tree A
-Direction: rightLeaf: 7
-Compute Free(7, 0)
-If select 1(leftmost) in Tree B #Subproblem: 4 Direction: Right
-Compute Free(7, 0)
-If select 2(rightmost) in Tree B #Subproblem: 4 Direction: Left
-FreeS(7, 0)
-Keynode: 7 in Tree A
-Direction: rightLeaf: 7
-Compute Free(8, 0)
-If select 8 in Tree A #Subproblem: 4 Direction: Left
-Compute Free(8, 1)
-If select 8 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(8, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Left
-FreeS(8, 1)
-Keynode: 8 in Tree A
-Direction: rightLeaf: 8
-Compute Free(8, 2)
-If select 8 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(8, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Left
-FreeS(8, 2)
-Keynode: 8 in Tree A
-Direction: rightLeaf: 8
-Compute Free(8, 0)
-If select 1(leftmost) in Tree B #Subproblem: 4 Direction: Right
-Compute Free(8, 0)
-If select 2(rightmost) in Tree B #Subproblem: 4 Direction: Left
-FreeS(8, 0)
-Keynode: 8 in Tree A
-Direction: rightLeaf: 8
-Compute Free(9, 0)
-If select 9 in Tree A #Subproblem: 4 Direction: Left
-Compute Free(9, 1)
-If select 9 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(9, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Left
-FreeS(9, 1)
-Keynode: 9 in Tree A
-Direction: rightLeaf: 9
-Compute Free(9, 2)
-If select 9 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(9, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Left
-FreeS(9, 2)
-Keynode: 9 in Tree A
-Direction: rightLeaf: 9
-Compute Free(9, 0)
-If select 1(leftmost) in Tree B #Subproblem: 4 Direction: Right
-Compute Free(9, 0)
-If select 2(rightmost) in Tree B #Subproblem: 4 Direction: Left
-FreeS(9, 0)
-Keynode: 9 in Tree A
-Direction: rightLeaf: 9
-Compute Free(0, 1)
-If select 1 in Tree B #Subproblem: 18 Direction: Left
-Compute Free(0, 1)
-If select 1(leftmost) in Tree A #Subproblem: 18 Direction: Right
-Compute Free(0, 1)
-If select 2 in Tree A #Subproblem: 18 Direction: Left
-Compute Free(0, 1)
-If select 3 in Tree A #Subproblem: 17 Direction: Left
-Compute Free(0, 1)
-If select 5 in Tree A #Subproblem: 18 Direction: Left
-Compute Free(0, 1)
-If select 6 in Tree A #Subproblem: 18 Direction: Left
-Compute Free(0, 1)
-If select 7 in Tree A #Subproblem: 18 Direction: Left
-Compute Free(0, 1)
-If select 8 in Tree A #Subproblem: 18 Direction: Left
-Compute Free(0, 1)
-If select 9(rightmost) in Tree A #Subproblem: 18 Direction: Left
-FreeS(0, 1)
+Compute Free(2, 2)
+If select 2 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(2, 2)
+If select 3(leftmost) in Tree A #Subproblem: 6 Direction: Right
+Compute Free(2, 2)
+If select 4 in Tree A #Subproblem: 6 Direction: Left
+RightA[5, 2] set to 5
+Compute Free(2, 2)
+If select 5(rightmost) in Tree A #Subproblem: 6 Direction: Left
+FreeS(2, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(2, 3)
+If select 3 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(2, 3)
+If select 3(leftmost) in Tree A #Subproblem: 6 Direction: Right
+Compute Free(2, 3)
+If select 4 in Tree A #Subproblem: 6 Direction: Left
+RightA[5, 3] set to 5
+Compute Free(2, 3)
+If select 5(rightmost) in Tree A #Subproblem: 6 Direction: Left
+FreeS(2, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+Compute Free(2, 4)
+If select 4 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(2, 4)
+If select 3(leftmost) in Tree A #Subproblem: 6 Direction: Right
+Compute Free(2, 4)
+If select 4 in Tree A #Subproblem: 6 Direction: Left
+RightA[5, 4] set to 5
+Compute Free(2, 4)
+If select 5(rightmost) in Tree A #Subproblem: 6 Direction: Left
+FreeS(2, 4)
+Keynode: 4 in TreeB
+Direction: rightLeaf: 4
+Compute Free(2, 1)
+If select 3(leftmost) in Tree A #Subproblem: 36 Direction: Right
+Compute Free(2, 1)
+If select 4 in Tree A #Subproblem: 38 Direction: Left
+RightA[5, 1] set to 5
+Compute Free(2, 1)
+If select 5(rightmost) in Tree A #Subproblem: 36 Direction: Left
+Compute Free(2, 1)
+If select 2(leftmost) in Tree B #Subproblem: 36 Direction: Right
+Compute Free(2, 1)
+If select 3 in Tree B #Subproblem: 38 Direction: Left
+Compute Free(2, 1)
+If select 4(rightmost) in Tree B #Subproblem: 36 Direction: Left
+FreeS(2, 1)
 Keynode: 3 in Tree A
-Direction: left
-Leaf: 4
+Direction: rightLeaf: 3
+Compute Free(2, 6)
+If select 6 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(2, 6)
+If select 3(leftmost) in Tree A #Subproblem: 6 Direction: Right
+Compute Free(2, 6)
+If select 4 in Tree A #Subproblem: 6 Direction: Left
+RightA[5, 6] set to 5
+Compute Free(2, 6)
+If select 5(rightmost) in Tree A #Subproblem: 6 Direction: Left
+FreeS(2, 6)
+Keynode: 6 in TreeB
+Direction: rightLeaf: 6
+Compute Free(2, 7)
+If select 7 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(2, 7)
+If select 3(leftmost) in Tree A #Subproblem: 6 Direction: Right
+Compute Free(2, 7)
+If select 4 in Tree A #Subproblem: 6 Direction: Left
+RightA[5, 7] set to 5
+Compute Free(2, 7)
+If select 5(rightmost) in Tree A #Subproblem: 6 Direction: Left
+FreeS(2, 7)
+Keynode: 7 in TreeB
+Direction: rightLeaf: 7
+Compute Free(2, 5)
+If select 3(leftmost) in Tree A #Subproblem: 24 Direction: Right
+Compute Free(2, 5)
+If select 4 in Tree A #Subproblem: 24 Direction: Left
+RightA[5, 5] set to 5
+Compute Free(2, 5)
+If select 5(rightmost) in Tree A #Subproblem: 24 Direction: Left
+Compute Free(2, 5)
+If select 6(leftmost) in Tree B #Subproblem: 24 Direction: Right
+Compute Free(2, 5)
+If select 7(rightmost) in Tree B #Subproblem: 24 Direction: Left
+FreeS(2, 5)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 3
+Compute Free(2, 9)
+If select 9 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(2, 9)
+If select 3(leftmost) in Tree A #Subproblem: 6 Direction: Right
+Compute Free(2, 9)
+If select 4 in Tree A #Subproblem: 6 Direction: Left
+RightA[5, 9] set to 5
+Compute Free(2, 9)
+If select 5(rightmost) in Tree A #Subproblem: 6 Direction: Left
+FreeS(2, 9)
+Keynode: 9 in TreeB
+Direction: rightLeaf: 9
+Compute Free(2, 8)
+If select 3(leftmost) in Tree A #Subproblem: 12 Direction: Right
+Compute Free(2, 8)
+If select 4 in Tree A #Subproblem: 12 Direction: Left
+RightA[5, 8] set to 5
+Compute Free(2, 8)
+If select 5(rightmost) in Tree A #Subproblem: 12 Direction: Left
+Compute Free(2, 8)
+If select 9(leftmost) in Tree B #Subproblem: 12 Direction: Right
+Compute Free(2, 8)
+If select 9(rightmost) in Tree B #Subproblem: 12 Direction: Left
+FreeS(2, 8)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 3
+Compute Free(2, 0)
+If select 3(leftmost) in Tree A #Subproblem: 108 Direction: Right
+Compute Free(2, 0)
+If select 4 in Tree A #Subproblem: 152 Direction: Right
+RightA[5, 0] set to 5
+Compute Free(2, 0)
+If select 5(rightmost) in Tree A #Subproblem: 116 Direction: Left
+Compute Free(2, 0)
+If select 1(leftmost) in Tree B #Subproblem: 108 Direction: Right
+Compute Free(2, 0)
+If select 5 in Tree B #Subproblem: 119 Direction: Left
+Compute Free(2, 0)
+If select 8(rightmost) in Tree B #Subproblem: 120 Direction: Left
+FreeS(2, 0)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 3
 Compute Free(0, 2)
-If select 2 in Tree B #Subproblem: 18 Direction: Left
+If select 2 in Tree B #Subproblem: 12 Direction: Left
 Compute Free(0, 2)
-If select 1(leftmost) in Tree A #Subproblem: 18 Direction: Right
+If select 1(leftmost) in Tree A #Subproblem: 12 Direction: Right
+RightA[2, 2] set to 3
 Compute Free(0, 2)
-If select 2 in Tree A #Subproblem: 18 Direction: Left
-Compute Free(0, 2)
-If select 3 in Tree A #Subproblem: 17 Direction: Left
-Compute Free(0, 2)
-If select 5 in Tree A #Subproblem: 18 Direction: Left
-Compute Free(0, 2)
-If select 6 in Tree A #Subproblem: 18 Direction: Left
-Compute Free(0, 2)
-If select 7 in Tree A #Subproblem: 18 Direction: Left
-Compute Free(0, 2)
-If select 8 in Tree A #Subproblem: 18 Direction: Left
-Compute Free(0, 2)
-If select 9(rightmost) in Tree A #Subproblem: 18 Direction: Left
+If select 2(rightmost) in Tree A #Subproblem: 9 Direction: Left
 FreeS(0, 2)
-Keynode: 3 in Tree A
+Keynode: 2 in Tree A
 Direction: left
-Leaf: 4
-Compute Free(0, 0)
+Leaf: 3
+Compute Free(0, 3)
+If select 3 in Tree B #Subproblem: 12 Direction: Left
+Compute Free(0, 3)
+If select 1(leftmost) in Tree A #Subproblem: 12 Direction: Right
+RightA[2, 3] set to 3
+Compute Free(0, 3)
+If select 2(rightmost) in Tree A #Subproblem: 9 Direction: Left
+FreeS(0, 3)
+Keynode: 2 in Tree A
+Direction: left
+Leaf: 3
+Compute Free(0, 4)
+If select 4 in Tree B #Subproblem: 12 Direction: Left
+Compute Free(0, 4)
+If select 1(leftmost) in Tree A #Subproblem: 12 Direction: Right
+RightA[2, 4] set to 3
+Compute Free(0, 4)
+If select 2(rightmost) in Tree A #Subproblem: 9 Direction: Left
+FreeS(0, 4)
+Keynode: 2 in Tree A
+Direction: left
+Leaf: 3
+Compute Free(0, 1)
 If select 1(leftmost) in Tree A #Subproblem: 72 Direction: Right
-Compute Free(0, 0)
-If select 2 in Tree A #Subproblem: 72 Direction: Left
-Compute Free(0, 0)
-If select 3 in Tree A #Subproblem: 68 Direction: Left
-Compute Free(0, 0)
-If select 5 in Tree A #Subproblem: 72 Direction: Left
-Compute Free(0, 0)
-If select 6 in Tree A #Subproblem: 72 Direction: Left
-Compute Free(0, 0)
-If select 7 in Tree A #Subproblem: 72 Direction: Left
-Compute Free(0, 0)
-If select 8 in Tree A #Subproblem: 72 Direction: Left
-Compute Free(0, 0)
-If select 9(rightmost) in Tree A #Subproblem: 72 Direction: Left
-Compute Free(0, 0)
-If select 1(leftmost) in Tree B #Subproblem: 71 Direction: Right
-Compute Free(0, 0)
-If select 2(rightmost) in Tree B #Subproblem: 71 Direction: Left
-FreeS(0, 0)
-Keynode: 3 in Tree A
+RightA[2, 1] set to 5
+Compute Free(0, 1)
+If select 2(rightmost) in Tree A #Subproblem: 54 Direction: Left
+Compute Free(0, 1)
+If select 2(leftmost) in Tree B #Subproblem: 66 Direction: Right
+Compute Free(0, 1)
+If select 3 in Tree B #Subproblem: 62 Direction: Left
+Compute Free(0, 1)
+If select 4(rightmost) in Tree B #Subproblem: 54 Direction: Left
+FreeS(0, 1)
+Keynode: 2 in Tree A
 Direction: left
-Leaf: 4
+Leaf: 5
+Compute Free(0, 6)
+If select 6 in Tree B #Subproblem: 12 Direction: Left
+Compute Free(0, 6)
+If select 1(leftmost) in Tree A #Subproblem: 12 Direction: Right
+RightA[2, 6] set to 3
+Compute Free(0, 6)
+If select 2(rightmost) in Tree A #Subproblem: 9 Direction: Left
+FreeS(0, 6)
+Keynode: 2 in Tree A
+Direction: left
+Leaf: 3
+Compute Free(0, 7)
+If select 7 in Tree B #Subproblem: 12 Direction: Left
+Compute Free(0, 7)
+If select 1(leftmost) in Tree A #Subproblem: 12 Direction: Right
+RightA[2, 7] set to 3
+Compute Free(0, 7)
+If select 2(rightmost) in Tree A #Subproblem: 9 Direction: Left
+FreeS(0, 7)
+Keynode: 2 in Tree A
+Direction: left
+Leaf: 3
+Compute Free(0, 5)
+If select 1(leftmost) in Tree A #Subproblem: 48 Direction: Right
+RightA[2, 5] set to 3
+Compute Free(0, 5)
+If select 2(rightmost) in Tree A #Subproblem: 36 Direction: Left
+Compute Free(0, 5)
+If select 6(leftmost) in Tree B #Subproblem: 45 Direction: Right
+Compute Free(0, 5)
+If select 7(rightmost) in Tree B #Subproblem: 36 Direction: Left
+FreeS(0, 5)
+Keynode: 2 in Tree A
+Direction: left
+Leaf: 3
+Compute Free(0, 9)
+If select 9 in Tree B #Subproblem: 12 Direction: Left
+Compute Free(0, 9)
+If select 1(leftmost) in Tree A #Subproblem: 12 Direction: Right
+RightA[2, 9] set to 3
+Compute Free(0, 9)
+If select 2(rightmost) in Tree A #Subproblem: 9 Direction: Left
+FreeS(0, 9)
+Keynode: 2 in Tree A
+Direction: left
+Leaf: 3
+Compute Free(0, 8)
+If select 1(leftmost) in Tree A #Subproblem: 24 Direction: Right
+RightA[2, 8] set to 3
+Compute Free(0, 8)
+If select 2(rightmost) in Tree A #Subproblem: 18 Direction: Left
+Compute Free(0, 8)
+If select 9(leftmost) in Tree B #Subproblem: 24 Direction: Right
+Compute Free(0, 8)
+If select 9(rightmost) in Tree B #Subproblem: 18 Direction: Left
+FreeS(0, 8)
+Keynode: 2 in Tree A
+Direction: left
+Leaf: 3
+Compute Free(0, 0)
+If select 1(leftmost) in Tree A #Subproblem: 216 Direction: Right
+RightA[2, 0] set to 5
+Compute Free(0, 0)
+If select 2(rightmost) in Tree A #Subproblem: 168 Direction: Left
+Compute Free(0, 0)
+If select 1(leftmost) in Tree B #Subproblem: 192 Direction: Right
+Compute Free(0, 0)
+If select 5 in Tree B #Subproblem: 191 Direction: Left
+Compute Free(0, 0)
+If select 8(rightmost) in Tree B #Subproblem: 183 Direction: Left
+FreeS(0, 0)
+Keynode: 2 in Tree A
+Direction: left
+Leaf: 5
 RESULT
-4 in A 4 in A 4 in A 
-1 in A 1 in A 1 in A 
-2 in A 2 in A 2 in A 
-4 in A 1 in B 2 in B 
-4 in A 4 in A 4 in A 
-5 in A 5 in A 5 in A 
-6 in A 6 in A 6 in A 
-7 in A 7 in A 7 in A 
-8 in A 8 in A 8 in A 
-9 in A 9 in A 9 in A 
+5 in A 5 in A 3 in A 3 in A 3 in A 3 in A 3 in A 3 in A 3 in A 3 in A 
+1 in A 1 in A 1 in A 1 in A 1 in A 1 in A 1 in A 1 in A 1 in A 1 in A 
+3 in A 3 in A 2 in B 3 in B 4 in B 3 in A 6 in B 7 in B 3 in A 9 in B 
+3 in A 3 in A 3 in A 3 in A 3 in A 3 in A 3 in A 3 in A 3 in A 3 in A 
+4 in A 4 in A 4 in A 4 in A 4 in A 4 in A 4 in A 4 in A 4 in A 4 in A 
+5 in A 5 in A 5 in A 5 in A 5 in A 5 in A 5 in A 5 in A 5 in A 5 in A 
 gted(0, 0)
-treeSizeA = 10
-treeSizeB = 3
-getPathType A(0 ,4) = 2
-A child = 4 currentPathNode = 4 parent = 3
-A child = 1 currentPathNode = 3 parent = 0
+treeSizeA = 6
+treeSizeB = 10
+getPathType A(0 ,5) = 1
+A child = 3 currentPathNode = 5 parent = 2
+gted(0, 0) create problem in A gted(3, 0)
+gted(3, 0)
+treeSizeA = 1
+treeSizeB = 10
+return 0.0f
+A child = 4 currentPathNode = 5 parent = 2
+gted(0, 0) create problem in A gted(4, 0)
+gted(4, 0)
+treeSizeA = 1
+treeSizeB = 10
+return 0.0f
+A child = 5 currentPathNode = 5 parent = 2
+A child = 1 currentPathNode = 2 parent = 0
 gted(0, 0) create problem in A gted(1, 0)
 gted(1, 0)
 treeSizeA = 1
-treeSizeB = 3
+treeSizeB = 10
 return 0.0f
-A child = 2 currentPathNode = 3 parent = 0
-gted(0, 0) create problem in A gted(2, 0)
-gted(2, 0)
-treeSizeA = 1
-treeSizeB = 3
-return 0.0f
-A child = 3 currentPathNode = 3 parent = 0
-A child = 5 currentPathNode = 3 parent = 0
-gted(0, 0) create problem in A gted(5, 0)
-gted(5, 0)
-treeSizeA = 1
-treeSizeB = 3
-return 0.0f
-A child = 6 currentPathNode = 3 parent = 0
-gted(0, 0) create problem in A gted(6, 0)
-gted(6, 0)
-treeSizeA = 1
-treeSizeB = 3
-return 0.0f
-A child = 7 currentPathNode = 3 parent = 0
-gted(0, 0) create problem in A gted(7, 0)
-gted(7, 0)
-treeSizeA = 1
-treeSizeB = 3
-return 0.0f
-A child = 8 currentPathNode = 3 parent = 0
-gted(0, 0) create problem in A gted(8, 0)
-gted(8, 0)
-treeSizeA = 1
-treeSizeB = 3
-return 0.0f
-A child = 9 currentPathNode = 3 parent = 0
-gted(0, 0) create problem in A gted(9, 0)
-gted(9, 0)
-treeSizeA = 1
-treeSizeB = 3
-return 0.0f
-swap = false pathType = 2
-spfA(0, 0) 0
-initial fn and ft endG = 0 endG + sizeG = 3
-new Round B'
-updateFnArray(-1, 1, 0)
-O fn[1] = fn[11] = 1
-O fn[11] = 1
-updateFtArray(-1, 1)
-ft[1] = -1
-new Round C'
-Right (4, 7, 2, 1)
-Save to S[7, 1]
-case3 = 0
-case1_case3 = -1
-case2_case1 = FcurrentForestCost
-case3_case3 D[4, 2]
-T[2, 1] = S[7, 1]
-new Round B'
-updateFnArray(1, 2, 0)
-fn[2] = fn[1] = 2
-fn[1] = 2
-updateFtArray(1, 2)
-ft[2] = 1
-new Round C'
-Right (4, 7, 1, 2)
-Save to S[7, 2]
-case3 = 0
-case1_case3 = -1
-case2_case1 = FcurrentForestCost
-case3_case3 D[4, 1]
-Right (4, 7, 1, 1)
-Save to S[7, 1]
-case1_case3 -2
-case2_case3 s[7, 2]
-case3_case d[4, 2]
-case3_case2 GcurrentForestCost - G(rG) 
-save to D[3, 0] = S[7, 1]
-Q[7] = S[7, 1]
-T[1, 2] = S[7, 2]
-T[1, 1] = S[7, 1]
-new Round B'
-updateFnArray(-1, 0, 0)
-O fn[0] = fn[11] = 0
-O fn[11] = 0
-updateFtArray(-1, 0)
-ft[0] = -1
-ft[fn[0]] = 0
-new Round C'
-Right (4, 7, 0, 0)
-Save to S[7, 0]
-case3 = 0
-case1_case3 = -3
-case2_case2 = q[7]
-case3_case3 D[4, 0]
-T[0, 0] = S[7, 0]
-initial fn and ft endG = 0 endG + sizeG = 3
-new Round B'
-updateFnArray(-1, 1, 0)
-O fn[1] = fn[11] = 1
-O fn[11] = 1
-updateFtArray(-1, 1)
-ft[1] = -1
-new Round C'
-Right (3, 6, 2, 1)
-Save to S[6, 1]
-case3 = 0
-case1_case2 = t[2, 1]
-case2_case1 = FcurrentForestCost
-case3_case3 D[3, 2]
-T[2, 1] = S[6, 1]
-new Round B'
-updateFnArray(1, 2, 0)
-fn[2] = fn[1] = 2
-fn[1] = 2
-updateFtArray(1, 2)
-ft[2] = 1
-new Round C'
-Right (3, 6, 1, 2)
-Save to S[6, 2]
-case3 = 0
-case1_case2 = t[1, 2]
-case2_case1 = FcurrentForestCost
-case3_case3 D[3, 1]
-Right (3, 6, 1, 1)
-Save to S[6, 1]
-case1_case2 t[1, 1]
-case2_case3 s[6, 2]
-case3_case d[3, 2]
-case3_case2 GcurrentForestCost - G(rG) 
-Q[6] = S[6, 1]
-T[1, 2] = S[6, 2]
-T[1, 1] = S[6, 1]
-new Round B'
-updateFnArray(-1, 0, 0)
-O fn[0] = fn[11] = 0
-O fn[11] = 0
-updateFtArray(-1, 0)
-ft[0] = -1
-ft[fn[0]] = 0
-new Round C'
-Right (3, 6, 0, 0)
-Save to S[6, 0]
-case3 = 0
-case1_case2 = t[0, 0]
-case2_case2 = q[6]
-case3_case3 D[3, 0]
-T[0, 0] = S[6, 0]
-initial fn and ft endG = 0 endG + sizeG = 3
-new Round B
-O fn[1] = fn[11] = 1
-O fn[11] = 1
-ft[1] = -1
-new round C
-Left (2, 6, 1, 2)
-Save to S[2, 1]
-case3_case FcurrentForest - F(lF)
-case1_case2 t[1, 2]
-case2_case1 FcurrentForestCost
-new round C
-Left (1, 6, 1, 2)
-Save to S[1, 1]
-case3_case FcurrentForest - F(lF)
-case1_case1 s[2, 1]
-case2_case1 FcurrentForestCost
-rGminus1_in_preR = 1 rG = 2 parent_of_rG_in_preL = 0 parent_of_rG_in_preR = 0
-T[1, 2] = S[1, 1]
-new Round B
-fn[2] = fn[1] = 2
-fn[1] = 2
-ft[2] = 1
-new round C
-Left (2, 6, 2, 1)
-Save to S[2, 2]
-case3_case FcurrentForest - F(lF)
-case1_case2 t[2, 1]
-case2_case1 FcurrentForestCost
-Left (2, 6, 1, 1)
-Save to S[2, 1]
-case1_case2 t[1, 1]
-case2 s[2, 2]
-case3 d[2, 1]
-case3 t[2, 1]
-new round C
-Left (1, 6, 2, 1)
-Save to S[1, 2]
-case3_case FcurrentForest - F(lF)
-case1_case1 s[2, 2]
-case2_case1 FcurrentForestCost
-Left (1, 6, 1, 1)
-Save to S[1, 1]
-case1_case1 s[2, 1]
-case2 s[1, 2]
-case3 d[1, 1]
-case3 s[2, 3]
-rGminus1_in_preR = 0 rG = 1 parent_of_rG_in_preL = 0 parent_of_rG_in_preR = 0
-Q[2] = S[2, 1]
-Q[1] = S[1, 1]
-T[2, 1] = S[1, 2]
-T[1, 1] = S[1, 1]
-new Round B
-O fn[0] = fn[11] = 0
-O fn[11] = 0
-ft[0] = -1
-ft[fn[0]] = 0
-new round C
-Left (2, 6, 0, 0)
-Save to S[2, 0]
-case3_case FcurrentForest - F(lF)
-case1_case2 t[0, 0]
-case2_case2 q[2]
-new round C
-Left (1, 6, 0, 0)
-Save to S[1, 0]
-case3_case FcurrentForest - F(lF)
-case1_case1 s[2, 0]
-case2_case2 q[1]
-rGminus1_in_preR = 2147483647 rG = 0 parent_of_rG_in_preL = 2147483647 parent_of_rG_in_preR = 2147483647
-T[0, 0] = S[1, 0]
-initial fn and ft endG = 0 endG + sizeG = 3
-new Round B'
-updateFnArray(-1, 1, 0)
-O fn[1] = fn[11] = 1
-O fn[11] = 1
-updateFtArray(-1, 1)
-ft[1] = -1
-new Round C'
-Right (1, 5, 2, 1)
-Save to S[5, 1]
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[2, 1]
-case2_case1 = FcurrentForestCost
-case3_case3 D[5, 2]
-new Round C'
-Right (1, 4, 2, 1)
-Save to S[4, 1]
-case3_case FcurrentForest - F(rF)
-case1_case1 = s[5, 1]
-case2_case1 = FcurrentForestCost
-case3_case3 D[6, 2]
-new Round C'
-Right (1, 3, 2, 1)
-Save to S[3, 1]
-case3_case FcurrentForest - F(rF)
-case1_case1 = s[4, 1]
-case2_case1 = FcurrentForestCost
-case3_case3 D[7, 2]
-new Round C'
-Right (1, 2, 2, 1)
-Save to S[2, 1]
-case3_case FcurrentForest - F(rF)
-case1_case1 = s[3, 1]
-case2_case1 = FcurrentForestCost
-case3_case3 D[8, 2]
-new Round C'
-Right (1, 1, 2, 1)
-Save to S[1, 1]
-case3_case FcurrentForest - F(rF)
-case1_case1 = s[2, 1]
-case2_case1 = FcurrentForestCost
-case3_case3 D[9, 2]
-new Round C'
-Right (0, 0, 2, 1)
-Save to S[0, 1]
-case3 = 0
-case1_case1 = s[1, 1]
-case2_case1 = FcurrentForestCost
-case3_case3 D[0, 2]
-T[2, 1] = S[0, 1]
-new Round B'
-updateFnArray(1, 2, 0)
-fn[2] = fn[1] = 2
-fn[1] = 2
-updateFtArray(1, 2)
-ft[2] = 1
-new Round C'
-Right (1, 5, 1, 2)
-Save to S[5, 2]
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[1, 2]
-case2_case1 = FcurrentForestCost
-case3_case3 D[5, 1]
-Right (1, 5, 1, 1)
-Save to S[5, 1]
-case1_case2 t[1, 1]
-case2_case3 s[5, 2]
-case3_case d[5, 2]
-case3_case3 t[1, 2]
-new Round C'
-Right (1, 4, 1, 2)
-Save to S[4, 2]
-case3_case FcurrentForest - F(rF)
-case1_case1 = s[5, 2]
-case2_case1 = FcurrentForestCost
-case3_case3 D[6, 1]
-Right (1, 4, 1, 1)
-Save to S[4, 1]
-case1_case1 s[5, 1]
-case2_case3 s[4, 2]
-case3_case d[6, 2]
-case3_case1 s[5, 2]
-new Round C'
-Right (1, 3, 1, 2)
-Save to S[3, 2]
-case3_case FcurrentForest - F(rF)
-case1_case1 = s[4, 2]
-case2_case1 = FcurrentForestCost
-case3_case3 D[7, 1]
-Right (1, 3, 1, 1)
-Save to S[3, 1]
-case1_case1 s[4, 1]
-case2_case3 s[3, 2]
-case3_case d[7, 2]
-case3_case1 s[4, 2]
-new Round C'
-Right (1, 2, 1, 2)
-Save to S[2, 2]
-case3_case FcurrentForest - F(rF)
-case1_case1 = s[3, 2]
-case2_case1 = FcurrentForestCost
-case3_case3 D[8, 1]
-Right (1, 2, 1, 1)
-Save to S[2, 1]
-case1_case1 s[3, 1]
-case2_case3 s[2, 2]
-case3_case d[8, 2]
-case3_case1 s[3, 2]
-new Round C'
-Right (1, 1, 1, 2)
-Save to S[1, 2]
-case3_case FcurrentForest - F(rF)
-case1_case1 = s[2, 2]
-case2_case1 = FcurrentForestCost
-case3_case3 D[9, 1]
-Right (1, 1, 1, 1)
-Save to S[1, 1]
-case1_case1 s[2, 1]
-case2_case3 s[1, 2]
-case3_case d[9, 2]
-case3_case1 s[2, 2]
-new Round C'
-Right (0, 0, 1, 2)
-Save to S[0, 2]
-case3 = 0
-case1_case1 = s[1, 2]
-case2_case1 = FcurrentForestCost
-case3_case3 D[0, 1]
-Right (0, 0, 1, 1)
-Save to S[0, 1]
-case1_case1 s[1, 1]
-case2_case3 s[0, 2]
-case3_case d[0, 2]
-case3_case2 GcurrentForestCost - G(rG) 
-save to D[0, 0] = S[0, 1]
-Q[5] = S[5, 1]
-Q[4] = S[4, 1]
-Q[3] = S[3, 1]
-Q[2] = S[2, 1]
-Q[1] = S[1, 1]
-Q[0] = S[0, 1]
-T[1, 2] = S[0, 2]
-T[1, 1] = S[0, 1]
-new Round B'
-updateFnArray(-1, 0, 0)
-O fn[0] = fn[11] = 0
-O fn[11] = 0
-updateFtArray(-1, 0)
-ft[0] = -1
-ft[fn[0]] = 0
-new Round C'
-Right (1, 5, 0, 0)
-Save to S[5, 0]
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[0, 0]
-case2_case2 = q[5]
-case3_case3 D[5, 0]
-new Round C'
-Right (1, 4, 0, 0)
-Save to S[4, 0]
-case3_case FcurrentForest - F(rF)
-case1_case1 = s[5, 0]
-case2_case2 = q[4]
-case3_case3 D[6, 0]
-new Round C'
-Right (1, 3, 0, 0)
-Save to S[3, 0]
-case3_case FcurrentForest - F(rF)
-case1_case1 = s[4, 0]
-case2_case2 = q[3]
-case3_case3 D[7, 0]
-new Round C'
-Right (1, 2, 0, 0)
-Save to S[2, 0]
-case3_case FcurrentForest - F(rF)
-case1_case1 = s[3, 0]
-case2_case2 = q[2]
-case3_case3 D[8, 0]
-new Round C'
-Right (1, 1, 0, 0)
-Save to S[1, 0]
-case3_case FcurrentForest - F(rF)
-case1_case1 = s[2, 0]
-case2_case2 = q[1]
-case3_case3 D[9, 0]
-new Round C'
-Right (0, 0, 0, 0)
-Save to S[0, 0]
-case3 = 0
-case1_case1 = s[1, 0]
-case2_case2 = q[0]
-case3_case3 D[0, 0]
-T[0, 0] = S[0, 0]
+A child = 2 currentPathNode = 2 parent = 0
+swap = false pathType = 1
