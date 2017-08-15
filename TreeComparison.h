@@ -61,6 +61,8 @@ private:
 	void updateFtArray(int, int);
 
 	float spfA(Node*, Node*, int, int, bool);
+	float spfL(Node*, Node*, bool);
+	float spfR(Node*, Node*, bool);
 
 	ofstream ou;
 

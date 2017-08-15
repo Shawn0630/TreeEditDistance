@@ -707,14 +707,14 @@ float TreeComparison::gted(Node* a, Node* b) {
       		ou << "swap = " << "false " << "pathType = " << to_string(pathType) << endl; 
       	}
 
-      	if (pathType == 0) {
+/*      	if (pathType == 0) {
         	//return spfL(a, b, false);
         	return 0.0f;
       	}
       	else if (pathType == 1) {
         	//return spfR(a, b, false);
         	return 0.0f;
-      	}
+      	}*/
 
       	return spfA(a, b, pathLeaf, pathType, false);
 	} 
@@ -748,17 +748,22 @@ float TreeComparison::gted(Node* a, Node* b) {
       		ou << "swap = " << "true " << "pathType = " << to_string(pathType) << endl; 
       	}
 
-		if(pathType == 0) {
+		/*if(pathType == 0) {
 			//return spfL(b, a, true);
 			return 0.0f;
 		}
 		else if(pathType == 1) {
 			//return spfR(b, a, true);
 			return 0.0f;
-		}
+		}*/
 		return spfA(b, a, pathLeaf, pathType, true);
 	}
 };
+
+
+float TreeComparison::spfL(Node* a, Node* b, bool swap) {
+	
+}
 
 float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) {
 	int endF = a->getID();
@@ -1894,7 +1899,7 @@ int TreeComparison::rightA(Node* a, Node* b) {
 			}
 		}
 		int arightmost = freeSumA - free(childrenA[childrenA.size() - 1], b) + rightA(childrenA[childrenA.size() - 1], b) + b->getLeftmostForestNum()* (a->getSubTreeSize() - childrenA[childrenA.size() - 1]->getSubTreeSize());
-		if(min > arightmost) {
+		if(min >= arightmost) {
 			min = arightmost;
 			rightAS.setKeyNode(childrenA[childrenA.size() - 1]->getID());
 			rightAS.setLeaf(RightAStrategies[childrenA[childrenA.size() - 1]->getID()][b->getID()].getLeaf());
@@ -2059,7 +2064,7 @@ int TreeComparison::rightB(Node* a, Node* b) {
 			}
 		}
 		int brightmost = freeSumB - free(a, childrenB[childrenB.size() - 1]) + rightB(a, childrenB[childrenB.size() - 1]) + a->getLeftmostForestNum()* (b->getSubTreeSize() - childrenB[childrenB.size() - 1]->getSubTreeSize());
-		if(min > brightmost) {
+		if(min >= brightmost) {
 			min = brightmost;
 			rightBS.setKeyNode(childrenB[childrenB.size() - 1]->getID());
 			rightBS.setLeaf(RightBStrategies[a->getID()][childrenB[childrenB.size() - 1]->getID()].getLeaf());
@@ -2069,6 +2074,9 @@ int TreeComparison::rightB(Node* a, Node* b) {
 	}
 	RightB[a->getID()][b->getID()] = min;
 	RightBStrategies[a->getID()][b->getID()] = rightBS;
+	if(DEBUG) {
+		ou << "RightB(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") = " << to_string(rightBS.getLeaf()) << endl;
+	}
 	return min;
 };
 

@@ -10,7 +10,7 @@
 using namespace std;
 
 int main() {
-	string fileName = "rna18.data";
+	string fileName = "rna19.data";
 	string simiFileName = "ss_simi3";
 	SimiMatrix matrix;
 	vector<RNA> RNAs;
@@ -83,7 +83,7 @@ int main() {
 	r1.setRNAName("A");
 	r2.setRNAName("B");
 
-/*	file->setRNAFileName(fileName);
+	file->setRNAFileName(fileName);
 	RNAs = file->readRNAsFromFile();
 	RNAs[0].getPreLSequence();
 	RNAs[1].getPreLSequence();
@@ -95,7 +95,7 @@ int main() {
 	ou << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
 	tc.strategyComputation();
-*/
+
 
 
 	/*
@@ -247,23 +247,90 @@ int main() {
   	  E  F G  H   I    J                  D  E  F
   	  */
 
-  	  string s1 = "(A(B(E)(F)(G))(C(H)(I))(D(J)))";
+/*  	  string s1 = "(A(B(E)(F)(G))(C(H)(I))(D(J)))";
     string s2 = "(A(B)(C(D)(E)(F)))";
     r1.setPreOrderSequence(s2);
     r1.setTreeSize(6);
     r2.setPreOrderSequence(s1);
     r2.setTreeSize(10);
+*/
 
 
 
-	Tree* t1 = r1.buildTree();
+	/*
+	 	         B                          B
+		      /  | \                       / \
+    	   	 C   E  D                     C   D
+    	  	/ \                             / \
+    	   E  F                            E   F 
+           / \                                / \
+       	  G   H                              G   H
+         / \                                    / \
+        I     J                                I   J
+		  /   |   \
+         B    C    D
+           /  | \
+          E   F   G
+            / | \
+           B  C  D
+	*/
+/*	string s1 = "(B(C(E(G(I)(J(B)(C(E)(F(B)(C)(D))(G))(D)))(H))(F))(D))";
+	string s2 = "(B(C)(D(E)(F(G)(H(I)(J)))))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(18);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(9);*/
+
+
+
+/*	              B                               B
+	       /      |    \                         / \
+	      C       D     E                       C   D
+	    / | \   / | \                              
+       F  G  H F  G  H                            
+      / \       / | \                                 
+     I  J      I  J  K                              
+                                                       
+                                                      
+*/
+/*	string s1 = "(B(C(F(I)(J))(G)(H))(D(F)(G(I)(J)(K))(H))(E))";
+	string s2 = "(B(C)(D))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(15);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(3);*/
+
+
+/*	                                          B
+	                                         / \
+	       B                                C   D
+	     / | \                                 / \
+        C  D  E                               E   F
+            / | \                                / \ 
+           F  G  H                              G   H
+                                                   / \
+                                                  I   J
+*/
+
+
+/*    string s1 = "(B(C)(D)(E(F)(G)(H)))";
+	string s2 = "(B(C)(D(E)(F(G)(H(I)(J)))))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(7);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(9);*/
+
+
+
+
+/*	Tree* t1 = r1.buildTree();
 	Tree* t2 = r2.buildTree();
 	cout << "TreeA" << endl;
 	cout << t1->toString() << endl;
 	cout << "TreeB" << endl;
 	cout << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
-	tc.strategyComputation();
+	tc.strategyComputation();*/
 
 
 
