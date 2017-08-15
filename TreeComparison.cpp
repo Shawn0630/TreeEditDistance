@@ -831,10 +831,14 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 
 			fn[fn_ft_length - 1] = -1;
 			if(DEBUG) {
-				ou << "initial fn and ft endG = " << to_string(endG) << " endG + sizeG + 2 = " << to_string(endG + sizeG + 2) << endl;
+				ou << "initial fn and ft endG = " << to_string(endG) << " endG + sizeG = " << to_string(endG + sizeG) << endl;
 			}
-        	for (int i = endG; i < endG + sizeG; i++) {
+        	/*for (int i = endG; i < endG + sizeG; i++) {
             	fn[i] = -1;
+            	ft[i] = -1;
+        	}*/
+        	for(int i = 0; i < fn_ft_length; i++) {
+        		fn[i] = -1;
             	ft[i] = -1;
         	}
 
@@ -1143,9 +1147,14 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 
         	fn[fn_ft_length - 1] = -1;
         	if(DEBUG) {
-				ou << "initial fn and ft endG = " << to_string(endG) << " endG + sizeG + 2 = " << to_string(endG + sizeG + 2) << endl;
+				ou << "initial fn and ft endG = " << to_string(endG_in_preR) << " endG + sizeG = " << to_string(endG_in_preR + sizeG) << endl;
 			}
-        	for (int i = endG; i < endG + sizeG; i++) {
+        /*	for (int i = endG_in_preR; i < endG_in_preR + sizeG; i++) {
+            	fn[i] = -1;
+            	ft[i] = -1;
+        	}*/
+
+        	for (int i = 0; i < fn_ft_length; i++) {
             	fn[i] = -1;
             	ft[i] = -1;
         	}

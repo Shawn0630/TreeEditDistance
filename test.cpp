@@ -10,7 +10,7 @@
 using namespace std;
 
 int main() {
-	string fileName = "rna16.data";
+	string fileName = "rna18.data";
 	string simiFileName = "ss_simi3";
 	SimiMatrix matrix;
 	vector<RNA> RNAs;
@@ -83,7 +83,7 @@ int main() {
 	r1.setRNAName("A");
 	r2.setRNAName("B");
 
-	file->setRNAFileName(fileName);
+/*	file->setRNAFileName(fileName);
 	RNAs = file->readRNAsFromFile();
 	RNAs[0].getPreLSequence();
 	RNAs[1].getPreLSequence();
@@ -95,7 +95,7 @@ int main() {
 	ou << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
 	tc.strategyComputation();
-
+*/
 
 
 	/*
@@ -230,7 +230,7 @@ int main() {
 	
 	*/
 
-/*
+
     string s1 = "(A(B)(C)(D(E))(F)(G)(H)(I)(J))";
     string s2 = "(A(B)(C))";
     r1.setPreOrderSequence(s1);
@@ -246,7 +246,7 @@ int main() {
 	cout << "TreeB" << endl;
 	cout << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
-	tc.strategyComputation();*/
+	tc.strategyComputation();
 
 
 
