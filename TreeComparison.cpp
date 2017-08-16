@@ -43,9 +43,7 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 	delta = new float*[treeSizeA];
 	hasVisited = new bool*[treeSizeA];
 	d = new float*[treeSizeA];
-	s = new float*[treeSizeA];
-	t = new float*[treeSizeB];
-	q = new float[treeSizeA];
+
 	for(int i = 0; i < treeSizeA; i++) {
 		Free[i] = new int[treeSizeB];
 		LeftA[i] = new int[treeSizeB];
@@ -64,11 +62,14 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 		delta[i] = new float[treeSizeB];
 		hasVisited[i] = new bool[treeSizeB];
 		d[i] = new float[treeSizeB];
-		s[i] = new float[treeSizeB];
 	}
 
-	for(int i = 0; i < treeSizeB; i++) {
-		t[i] = new float[treeSizeB];
+	s = new float*[maxSize - 1];
+	t = new float*[maxSize - 1];
+	q = new float[maxSize - 1];
+	for(int i = 0; i < maxSize - 1; i++) {
+		s[i] = new float[maxSize - 1];
+		t[i] = new float[maxSize - 1];
 	}
 
 	for(int i = 0; i < treeSizeA; i++) {
@@ -766,7 +767,6 @@ float TreeComparison::spfL(Node* a, Node* b, bool swap) {
 }
 
 float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) {
-	int endF = a->getID();
 	Tree *F, *G;
 	if(swap) {
 		F = B_;
@@ -775,11 +775,12 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 		F = A_;
 		G = B_;
 	}
-	int endF_in_preR = F->preL_to_preR[endF];
+	int endF = a->getID(); 
 	int endG = b->getID();
-	int endG_in_preR = G->preL_to_preR[endG];
 	int sizeF = a->getSubTreeSize();
 	int sizeG = b->getSubTreeSize();
+	int endF_in_preR = F->preL_to_preR[endF];
+	int endG_in_preR = G->preL_to_preR[endG];
 	int endPathNode = leaf;
 	int startPathNode = -1;
 	int lFFirst, lFLast, lF;
@@ -838,14 +839,14 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
 			if(DEBUG) {
 				ou << "initial fn and ft endG = " << to_string(endG) << " endG + sizeG = " << to_string(endG + sizeG) << endl;
 			}
-        	/*for (int i = endG; i < endG + sizeG; i++) {
+        	for (int i = endG; i < endG + sizeG; i++) {
             	fn[i] = -1;
             	ft[i] = -1;
-        	}*/
-        	for(int i = 0; i < fn_ft_length; i++) {
+        	}
+/*        	for(int i = 0; i < fn_ft_length; i++) {
         		fn[i] = -1;
             	ft[i] = -1;
-        	}
+        	}*/
 
 			//loop B
 			for(int rG = rGFirst; rG >= rGLast; rG--) {
@@ -1147,22 +1148,22 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
         	lFLast = endPathNode;
         	rFLast = F->preL_to_preR[endPathNode];
 
-        	lGLast = G->preL_to_preR[endG];
+        	lGLast = endG;
         	lGFirst = (lGLast + sizeG) - 1;
 
         	fn[fn_ft_length - 1] = -1;
         	if(DEBUG) {
-				ou << "initial fn and ft endG = " << to_string(endG_in_preR) << " endG + sizeG = " << to_string(endG_in_preR + sizeG) << endl;
+				ou << "initial fn and ft endG_in_preR = " << to_string(endG_in_preR) << " endG_in_preR + sizeG = " << to_string(endG_in_preR + sizeG) << endl;
 			}
-        /*	for (int i = endG_in_preR; i < endG_in_preR + sizeG; i++) {
-            	fn[i] = -1;
-            	ft[i] = -1;
-        	}*/
-
-        	for (int i = 0; i < fn_ft_length; i++) {
+        	for (int i = endG_in_preR; i < endG_in_preR + sizeG; i++) {
             	fn[i] = -1;
             	ft[i] = -1;
         	}
+
+/*        	for (int i = 0; i < fn_ft_length; i++) {
+            	fn[i] = -1;
+            	ft[i] = -1;
+        	}*/
 
         	//loop B'
         	for (int lG = lGFirst; lG >= lGLast; lG--) {
