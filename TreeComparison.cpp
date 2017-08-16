@@ -762,8 +762,43 @@ float TreeComparison::gted(Node* a, Node* b) {
 };
 
 
-float TreeComparison::spfL(Node* a, Node* b, bool swap) {
+float TreeComparison::spfL(Node* a, Node* b, int leaf, bool swap) {
+	Tree *F, *G;
+	if(swap) {
+		F = B_;
+		G = A_;
+	} else {
+		F = A_;
+		G = B_;
+	}
+	int* keyRoots = new int[(*G)[b->getID()]->getSubTreeSize()];
+	int firstKeyRoot = computeKeyRoots(G, b, leaf, keyRoots, 0);	
+
+	float** forestdist = new float*[(*F)[a->getID()]->getSubTreeSize() + 1];
+	for(int i = 0; i < (*F)[a->getID()]->getSubTreeSize() + 1; i++) {
+		forestdist[i] = new float[(*G)[b->getID()]->getSubTreeSize() + 1];
+	}
+
+}
+
+int TreeComparison::computeKeyRoots(Tree* G, Node* b, int leaf, int* keyRoots, int index) {
 	
+	keyRoots[index++] = b->getID();
+
+	int pathNode = leaf;
+	while(pathNode > b->getID()) {
+		Node* parent = (*G)[b->getID()]->getParent();
+		if(parent != NULL) vector<Node*> children = parent->getChildren();
+		for(int i = 0; i < children.size(); i++) {
+			if(children[i]->getID() != pathNode) {
+				computeKeyRoots(G, children[i], G->preL_to_lid[children[i]->getID()], keyRoots, index);
+			}
+		}
+		pathNode = parent->getID();
+	}
+
+	return index;
+
 }
 
 float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) {

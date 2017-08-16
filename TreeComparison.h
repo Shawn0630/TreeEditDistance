@@ -61,8 +61,10 @@ private:
 	void updateFtArray(int, int);
 
 	float spfA(Node*, Node*, int, int, bool);
-	float spfL(Node*, Node*, bool);
-	float spfR(Node*, Node*, bool);
+	float spfL(Node*, Node*, int, bool);
+	float spfR(Node*, Node*, int, bool);
+
+	int computeKeyRoots(Tree*, Node*, int, int*, int);	
 
 	ofstream ou;
 
