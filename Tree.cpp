@@ -26,6 +26,7 @@ Tree::Tree(string label, int treeSize) {
 	preL_to_sumDelCost = new int[treeSize_];
 	preL_to_sumInsCost = new int[treeSize_];
 
+
 	fill_n(preL_to_preR, treeSize_, 0); 
 	fill_n(preR_to_preL, treeSize_, 0); 
 	fill_n(preL_to_postL, treeSize_, 0); 

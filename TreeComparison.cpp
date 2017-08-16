@@ -91,519 +91,6 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 };
 
 
-/*void TreeComparison::strategyComputation() {
-	vector<Node*> postA = A_->getPost();
-	vector<Node*> postB = B_->getPost();
-
-	for(int i = 0; i < postA.size(); i++) {
-		vector<Node*> children = postA[i]->getChildren();
-		
-		for(int j = 0; j < postB.size(); j++) {
-			if(DEBUG) {
-				ou << "Calculate" << endl;
-				ou << postA[i]->toString() << endl;
-				ou << postB[j]->toString() << endl;
-			}
-			if(children.empty()) {
-				LeftA[postA[i]->getID()][postB[j]->getID()] = postB[j]->getLeftmostForestNum();
-				RightA[postA[i]->getID()][postB[j]->getID()] = postB[j]->getRightmostForestNum();
-				AllA[postA[i]->getID()][postB[j]->getID()] = postB[j]->getSpecialForestNum();
-				if(DEBUG) {
-					ou << "LeftA[" << to_string(postA[i]->getID()) << "][" << to_string(postB[j]->getID()) << "] = " << to_string(postB[j]->getLeftmostForestNum()) << endl;
-					ou << "RightA[" << to_string(postA[i]->getID()) << "][" << to_string(postB[j]->getID()) << "] = " << to_string(postB[j]->getRightmostForestNum()) << endl;
-					ou << "AllA[" << to_string(postA[i]->getID()) << "][" << to_string(postB[j]->getID()) << "] = " << to_string(postB[j]->getSpecialForestNum()) << endl;
-				}
-			} else {
-				int freeSum = 0;
-				vector<int> subTreeSizeSum;
-				int prevSubTreeSizeSum = 0;
-				for(int z = 0; z < children.size(); z++) {
-					freeSum += Free[children[z]->getID()][postB[j]->getID()];
-					prevSubTreeSizeSum += children[z]->getSubTreeSize();
-					subTreeSizeSum.push_back(prevSubTreeSizeSum);
-				}
-				if(DEBUG) {
-					ou << "Compute LeftA" << endl;
-				}
-				//Compute LeftA inherited from the last right decomposition.
-				Strategy* leftAS = new Strategy();
-				leftAS->setKeyNode(children[0]->getID());
-				leftAS->setDirection(0);
-				leftAS->setTreeToDecompose(0);
-				int leftALeftmost = freeSum - Free[children[0]->getID()][postB[j]->getID()] + LeftA[children[0]->getID()][postB[j]->getID()] + postB[j]->getLeftmostForestNum() * (postA[i]->getSubTreeSize() - children[0]->getSubTreeSize());
-				int leftAMin = leftALeftmost;
-				if(DEBUG) {
-					ou << "If select Tree A " << to_string(children[0]->getID()) << " #Subproblem: " << to_string(leftALeftmost) << " Direction: Right" << endl;
-				}
-				for(int z = 1; z < children.size() - 1; z++) {
-					if(DEBUG) {
-						ou << "If select Tree A " << to_string(children[z]->getID()) << " #Subproblem: ";
-					}
-					int prefix = freeSum - Free[children[z]->getID()][postB[j]->getID()] + AllA[children[z]->getID()][postB[j]->getID()];
-					int left = postB[j]->getSpecialForestNum() * (postA[i]->getSubTreeSize() - children[z]->getSubTreeSize());
-					int right = postB[j]->getLeftmostForestNum() * (1 + subTreeSizeSum[children.size() - 1] - subTreeSizeSum[z - 1]) + postB[j]->getSpecialForestNum() * (subTreeSizeSum[z - 1]);
-					int sum = 0;
-					if(left > right) sum = prefix + right;
-					else sum = prefix + left;
-					if(leftAMin > sum) {
-						leftAMin = sum;
-						leftAS->setKeyNode(children[z]->getID());
-						if(left > right) leftAS->setDirection(0);
-						else leftAS->setDirection(1);
-					}
-					if(DEBUG) {
-						ou << to_string(sum) << " Direction: ";
-						if(left > right) ou << "Right" << endl;
-						else ou << "Left" << endl;
-					}
-				}
-				int leftARightmost = freeSum - Free[children[children.size() - 1]->getID()][postB[j]->getID()] + AllA[children[children.size() - 1]->getID()][postB[j]->getID()] + postB[j]->getSpecialForestNum() * (postA[i]->getSubTreeSize() - children[children.size() - 1]->getSubTreeSize());
-				if(leftAMin > leftARightmost) {
-					leftAS->setKeyNode(children[children.size() - 1]->getID());
-					leftAS->setDirection(1);
-				}
-				if(DEBUG) {
-					ou << "If select Tree A " << to_string(children[children.size() - 1]->getID()) << " #Subproblem: " << to_string(leftARightmost) << " Direction: Left" << endl;
-				}
-				LeftA[postA[i]->getID()][postB[j]->getID()] = leftAMin;
-				LeftAStrategies[postA[i]->getID()][postB[j]->getID()] = leftAS;
-				if(DEBUG) {
-					ou << "LeftAStrategies[" << to_string(postA[i]->getID()) << "][" << to_string(postB[j]->getID()) << "] = " << leftAS->toString() << endl;
-				}
-
-
-				if(DEBUG) {
-					ou << "Compute RightA" << endl;
-				}
-				//Compute RightA inherited from the last left decomposition.
-				Strategy* rightAS = new Strategy();
-				rightAS->setKeyNode(children[0]->getID());
-				rightAS->setTreeToDecompose(0);
-				rightAS->setDirection(1);
-				int rightARightmost = freeSum - Free[children[children.size() - 1]->getID()][postB[j]->getID()] + RightA[children[children.size() - 1]->getID()][postB[j]->getID()] + postB[j]->getRightmostForestNum() * (postA[i]->getSubTreeSize() - children[children.size() - 1]->getSubTreeSize());
-				int rightAMin = rightARightmost;
-				if(DEBUG) {
-					ou << "If select Tree A " << to_string(children[children.size() - 1]->getID()) << " #Subproblem: " << to_string(rightARightmost) << " Direction: Left" << endl;
-				}
-				for(int z = 1; z < children.size() - 1; z++) {
-					if(DEBUG) {
-						ou << "If select Tree A " << to_string(children[z]->getID()) << " #Subproblem: ";
-					}
-					int prefix = freeSum - Free[children[z]->getID()][postB[j]->getID()] + AllA[children[z]->getID()][postB[j]->getID()];
-					int left = postB[j]->getRightmostForestNum() * (1 + subTreeSizeSum[z - 1]) + postB[j]->getSpecialForestNum() * (subTreeSizeSum[children.size() - 1] - subTreeSizeSum[z]);
-					int right = postB[j]->getSpecialForestNum() * (postA[i]->getSubTreeSize() - children[z]->getSubTreeSize());
-					int sum = 0;
-					if(left > right) sum = prefix + right;
-					else sum = prefix + left;
-					if(rightAMin > sum) {
-						rightAMin = sum;
-						rightAS->setKeyNode(children[z]->getID());
-						if(left > right) rightAS->setDirection(0);
-						else rightAS->setDirection(1);
-					}
-					if(DEBUG) {
-						ou << to_string(sum) << " Direction: ";
-						if(left > right) ou << "Right" << endl;
-						else ou << "Left" << endl;
-					}
-				}
-				int rightALeftmost = freeSum - Free[children[0]->getID()][postB[j]->getID()] + AllA[children[children.size() - 1]->getID()][postB[j]->getID()] + postB[j]->getSpecialForestNum() * (postA[i]->getSubTreeSize() - children[0]->getSubTreeSize());
-				if(rightAMin > rightALeftmost) {
-					rightAS->setKeyNode(children[0]->getID());
-					rightAS->setDirection(0);
-				}
-				if(DEBUG) {
-					ou << "If select Tree A " << to_string(children[0]->getID()) << " #Subproblem: " << to_string(rightALeftmost) << " Direction: Right" << endl;
-				}
-				RightA[postA[i]->getID()][postB[j]->getID()] = rightAMin;
-				RightAStrategies[postA[i]->getID()][postB[j]->getID()] = rightAS;
-				if(DEBUG) {
-					ou << "RightAStrategies[" << to_string(postA[i]->getID()) << "][" << to_string(postB[j]->getID()) << "] = " << rightAS->toString() << endl;
-				}
-
-
-				//Compute AllA inherited from the last left-right decomposition
-				Strategy* allAS = new Strategy();
-				allAS->setKeyNode(children[0]->getID());
-				allAS->setTreeToDecompose(0);
-				int allAmin = freeSum - Free[children[0]->getID()][postB[j]->getID()] + AllA[children[0]->getID()][postB[j]->getID()] + postB[j]->getSpecialForestNum() * (postA[i]->getSubTreeSize() - children[0]->getSubTreeSize());
-				if(DEBUG) {
-					ou << "If select Tree A " << to_string(children[0]->getID()) << " #Subproblem: " << to_string(allAmin) << endl;
-				}
-				for(int z = 1; z < children.size(); z++) {
-					int sum = freeSum - Free[children[0]->getID()][postB[j]->getID()] + AllA[children[z]->getID()][postB[j]->getID()] + postB[j]->getSpecialForestNum() * (postA[i]->getSubTreeSize() - children[z]->getSubTreeSize());
-					if(DEBUG) {
-					ou << "If select Tree A " << to_string(children[z]->getID()) << " #Subproblem: " << to_string(sum) << endl;
-					}
-					if(allAmin > sum) {
-						allAmin = sum;
-						allAS->setKeyNode(children[z]->getID());
-					}
-				}
-				AllA[postA[i]->getID()][postB[j]->getID()] = allAmin;
-				AllAStrategies[postA[i]->getID()][postB[j]->getID()] = allAS;
-				if(DEBUG) {
-					ou << "AllAStrategies[" << to_string(postA[i]->getID()) << "][" << to_string(postB[j]->getID()) << "] = " << allAS->toString() << endl;
-					ou << endl;
-				}
-			}
-		}
-	}
-
-	for(int i = 0; i < postB.size(); i++) {
-		vector<Node*> children = postB[i]->getChildren();
-	
-		for(int j = 0; j < postA.size(); j++) {
-			if(DEBUG) {
-				ou << "Calculate" << endl;
-				ou << postA[j]->toString() << endl;
-				ou << postB[i]->toString() << endl;
-			}
-			if(children.empty()) {
-				LeftB[postA[j]->getID()][postB[i]->getID()] = postA[j]->getLeftmostForestNum();
-				RightB[postA[j]->getID()][postB[i]->getID()] = postA[j]->getRightmostForestNum();
-				AllB[postA[j]->getID()][postB[i]->getID()] = postA[j]->getSpecialForestNum();
-				if(DEBUG) {
-					ou << "LeftB[" << to_string(postA[j]->getID()) << "][" << to_string(postB[i]->getID()) << "] = " << to_string(postA[j]->getLeftmostForestNum()) << endl;
-					ou << "RightB[" << to_string(postA[j]->getID()) << "][" << to_string(postB[i]->getID()) << "] = " << to_string(postA[j]->getRightmostForestNum()) << endl;
-					ou << "AllB[" << to_string(postA[j]->getID()) << "][" << to_string(postB[i]->getID()) << "] = " << to_string(postA[j]->getSpecialForestNum()) << endl;
-				}
-			} else {
-				int freeSum = 0;
-				vector<int> subTreeSizeSum;
-				int prevSubTreeSizeSum = 0;
-				
-				for(int z = 0; z < children.size(); z++) {
-					freeSum += Free[postA[j]->getID()][children[z]->getID()];
-					prevSubTreeSizeSum += children[z]->getSubTreeSize();
-					subTreeSizeSum.push_back(prevSubTreeSizeSum);
-				}
-
-				if(DEBUG) {
-					ou << "Compute LeftB" << endl;
-				}
-				//Compute LeftB inherited from the last right decomposition.
-				Strategy* leftBS = new Strategy();
-				leftBS->setKeyNode(children[0]->getID());
-				leftBS->setTreeToDecompose(1);
-				leftBS->setDirection(0);
-				if(DEBUG) {
-					ou << "Free[" << postA[j]->getID() << "][" << children[0]->getID() << "] = " << Free[postA[j]->getID()][children[0]->getID()] << endl;
-					ou << "LeftB[" << postA[j]->getID() << "][" << children[0]->getID() << "] = " << LeftB[postA[j]->getID()][children[0]->getID()] << endl;
-				}
-				int leftBLeftmost = freeSum - Free[postA[j]->getID()][children[0]->getID()] + LeftB[postA[j]->getID()][children[0]->getID()] + postA[j]->getLeftmostForestNum() * (postB[i]->getSubTreeSize() - children[0]->getSubTreeSize());
-				int leftBMin = leftBLeftmost;
-				if(DEBUG) {
-					ou << "If select Tree B " << to_string(children[0]->getID()) << " #Subproblem: " << to_string(leftBLeftmost) << " Direction: Right" << endl;
-				}
-				for(int z = 1; z < children.size() - 1; z++) {
-					if(DEBUG) {
-						ou << "If select Tree B " << to_string(children[z]->getID()) << " #Subproblem: ";
-					}
-					int prefix = freeSum - Free[postA[j]->getID()][children[z]->getID()] + AllB[postA[j]->getID()][children[z]->getID()];
-					int left = postA[j]->getSpecialForestNum() * (postB[i]->getSubTreeSize() - children[z]->getSubTreeSize());
-					int right = postA[j]->getLeftmostForestNum() * (1 + subTreeSizeSum[children.size() - 1] - subTreeSizeSum[z]) + postA[j]->getSpecialForestNum() * (subTreeSizeSum[z - 1]);
-					int sum = 0;
-					if(left > right) sum = prefix + right;
-					else sum = prefix + left;
-					if(DEBUG) {
-						ou << to_string(sum) << " Direction: ";
-						if(left > right) ou << "Right" << endl;
-						else ou << "Left" << endl;
-					}
-					if(leftBMin > sum) {
-						leftBMin = sum;
-						leftBS->setKeyNode(children[z]->getID());
-						if(left > right) leftBS->setDirection(0);
-						else leftBS->setDirection(1);
-					}
-				}
-				if(DEBUG) {
-					ou << "Free[" << postA[j]->getID() << "][" << children[children.size() - 1]->getID() << "] = " << Free[postA[j]->getID()][children[0]->getID()] << endl;
-					ou << "AllB[" << postA[j]->getID() << "][" << children[children.size() - 1]->getID() << "] = " << AllB[postA[j]->getID()][children[0]->getID()] << endl;
-				}
-				int leftBRightmost = freeSum - Free[postA[j]->getID()][children[children.size() - 1]->getID()] + AllB[postA[j]->getID()][children[children.size() - 1]->getID()] + postA[j]->getSpecialForestNum() * (postB[i]->getSubTreeSize() - children[children.size() - 1]->getSubTreeSize());
-				if(DEBUG) {
-					ou << "If select Tree B " << to_string(children[children.size() - 1]->getID()) << " #Subproblem: " << to_string(leftBRightmost) << " Direction: Left" << endl;
-				}
-				if(leftBMin > leftBRightmost) {
-					leftBS->setKeyNode(children[children.size() - 1]->getID());
-					leftBS->setDirection(1);
-				}
-				LeftB[postA[j]->getID()][postB[i]->getID()] = leftBMin;
-				LeftBStrategies[postA[j]->getID()][postB[i]->getID()] = leftBS;
-				if(DEBUG) {
-					ou << "LeftBStrategies[" << to_string(postA[j]->getID()) << "][" << to_string(postB[i]->getID()) << "] = " << leftBS->toString() << endl;
-				}
-
-				if(DEBUG) {
-					ou << "Compute RightB" << endl;
-				}
-
-
-				//Compute RightB inherited from the last left decomposition.
-				Strategy* rightBS = new Strategy();
-				rightBS->setKeyNode(children[0]->getID());
-				rightBS->setTreeToDecompose(1);
-				rightBS->setDirection(1);
-				int rightBRightmost = freeSum - Free[postA[j]->getID()][children[children.size() - 1]->getID()] + RightB[postA[j]->getID()][children[children.size() - 1]->getID()] + postA[j]->getRightmostForestNum() * (postB[i]->getSubTreeSize() - children[children.size() - 1]->getSubTreeSize());
-				int rightBMin = rightBRightmost;
-				if(DEBUG) {
-					ou << "If select Tree B " << to_string(children[children.size() - 1]->getID()) << " #Subproblem: " << to_string(rightBRightmost) << " Direction: Left" << endl;
-				}
-				for(int z = 1; z < children.size() - 1; z++) {
-					if(DEBUG) {
-						ou << "If select Tree B " << to_string(children[z]->getID()) << " #Subproblem: ";
-					}
-					int prefix = freeSum - Free[postA[j]->getID()][children[z]->getID()] + AllB[postA[j]->getID()][children[z]->getID()];
-					int left = postA[j]->getRightmostForestNum() * (1 + subTreeSizeSum[z - 1]) + postB[i]->getSpecialForestNum() * (subTreeSizeSum[children.size() - 1] - subTreeSizeSum[z]);
-					int right = postA[j]->getSpecialForestNum() * (postB[i]->getSubTreeSize() - children[z]->getSubTreeSize());
-					int sum = 0;
-					if(left > right) sum = prefix + right;
-					else sum = prefix + left;
-					if(rightBMin > sum) {
-						rightBMin = sum;
-						rightBS->setKeyNode(children[z]->getID());
-						if(left > right) rightBS->setDirection(0);
-						else rightBS->setDirection(1);
-					}
-					if(DEBUG) {
-						ou << to_string(sum) << " Direction: ";
-						if(left > right) ou << "Right" << endl;
-						else ou << "Left" << endl;
-					}
-				}
-				int rightBLeftmost = freeSum - Free[postA[j]->getID()][children[children.size() - 1]->getID()] + AllB[postA[j]->getID()][children[children.size() - 1]->getID()] + postA[j]->getLeftmostForestNum() * (postB[i]->getSubTreeSize() - children[0]->getSubTreeSize());
-				if(DEBUG) {
-					ou << "If select Tree B " << to_string(children[0]->getID()) << " #Subproblem: " << to_string(rightBLeftmost) << " Direction: Right" << endl;
-				}
-				if(rightBMin > rightBLeftmost) {
-					rightBMin = rightBLeftmost;
-					rightBS->setKeyNode(children[children.size() - 1]->getID());
-					rightBS->setDirection(0);
-				}
-				RightB[postA[j]->getID()][postB[i]->getID()] = rightBMin;
-				RightBStrategies[postA[j]->getID()][postB[i]->getID()] = rightBS;
-				if(DEBUG) {
-					ou << "rightBStrategies[" << to_string(postA[j]->getID()) << "][" << to_string(postB[i]->getID()) << "] = " << rightBS->toString() << endl;
-				}
-
-				if(DEBUG) {
-					ou << "Compute AllB" << endl;
-				}
-
-				//Compute AllA inherited from the last left-right decomposition
-				Strategy* allBS = new Strategy();
-				allBS->setKeyNode(children[0]->getID());
-				allBS->setTreeToDecompose(1);
-				int allBmin = freeSum - Free[postA[j]->getID()][children[0]->getID()] + AllA[postA[j]->getID()][children[0]->getID()] + postA[j]->getSpecialForestNum() * (postB[i]->getSubTreeSize() - children[0]->getSubTreeSize());
-				if(DEBUG) {
-					ou << "If select Tree B " << to_string(children[0]->getID()) << " #Subproblem: " << to_string(allBmin) << endl;
-				}
-				for(int z = 1; z < children.size(); z++) {
-					int sum = freeSum - Free[children[0]->getID()][postB[i]->getID()] + AllA[children[0]->getID()][postB[i]->getID()] + postA[j]->getSpecialForestNum() * (postB[i]->getSubTreeSize() - children[z]->getSubTreeSize());
-					if(allBmin > sum) {
-						allBmin = sum;
-						allBS->setKeyNode(children[z]->getID());
-					}
-					if(DEBUG) {
-					ou << "If select Tree B " << to_string(children[0]->getID()) << " #Subproblem: " << to_string(sum) << endl;
-					}
-				}
-				AllB[postA[j]->getID()][postB[i]->getID()] = allBmin;
-				AllBStrategies[postA[j]->getID()][postB[i]->getID()] = allBS;
-				if(DEBUG) {
-					ou << "AllBStrategies[" << to_string(postA[j]->getID()) << "][" << to_string(postB[i]->getID()) << "] = " << allBS->toString() << endl;
-				}
-			}
-		}
-	}
-
-	if(DEBUG) {
-		ou << "Compute Free" << endl;
-	}
-
-
-	for(int i = 0; i < postA.size(); i++) {
-		for(int j = 0; j < postB.size(); j++) {
-			
-			int min = 0;
-			int sum = 0;
-			int prefix = 0;
-			int left = 0;
-			int right = 0;
-			Strategy* freeS = new Strategy();
-
-			vector<Node*> childrenA = postA[i]->getChildren();
-			if(childrenA.empty()) {
-
-				left = postB[j]->getRightmostForestNum();
-				right = postB[j]->getLeftmostForestNum();
-				if(left > right) {
-					min = right;
-					freeS->setDirection(0);
-				} else {
-					min = left;
-					freeS->setDirection(1);
-				}
-
-				if(DEBUG) {
-					ou << to_string(postA[i]->getID()) << " in Tree A has no child." << endl;
-					ou << "If direction is left, then #Subproblem: " << to_string(left) << endl;
-					ou << "If direction is right, then #Subproblem: " << to_string(right) << endl; 
-				}
-			}  else {
-			int freeSumA = 0;
-			vector<int> subTreeSizeSumA;
-			int prevSubTreeSizeSumA = 0;
-			for(int z = 0; z < childrenA.size(); z++) {
-				freeSumA += Free[childrenA[z]->getID()][postB[j]->getID()];
-				prevSubTreeSizeSumA += childrenA[z]->getSubTreeSize();
-				subTreeSizeSumA.push_back(prevSubTreeSizeSumA);
-			}
-			
-
-			prefix = freeSumA - Free[childrenA[0]->getID()][postB[j]->getID()] + LeftA[childrenA[0]->getID()][postB[j]->getID()] + postB[j]->getLeftmostForestNum() * (postA[i]->getSubTreeSize() - childrenA[0]->getSubTreeSize());
-			right = 0;
-			left = 0;
-			sum = prefix + right;
-			if(DEBUG) {
-				ou << "If select Tree A " << to_string(childrenA[0]->getID()) << " #Subproblem: " << to_string(sum) << " Direction: Right";
-			}
-			if(min > sum) {
-				freeS->setKeyNode(childrenA[0]->getID());
-				freeS->setTreeToDecompose(0);
-				freeS->setDirection(0);
-				min = sum;
-			}
-
-			for(int z = 1; z < childrenA.size() - 1; z++) {
-				if(DEBUG) {
-					ou << "If select Tree A " << to_string(childrenA[z]->getID()) << " #Subproblem: ";
-				}
-
-				prefix = freeSumA - Free[childrenA[z]->getID()][postB[j]->getID()] + AllA[childrenA[z]->getID()][postB[j]->getID()];
-				left = postB[j]->getRightmostForestNum() * (1 + subTreeSizeSumA[z - 1]) + postB[j]->getSpecialForestNum() * (subTreeSizeSumA[childrenA.size() - 1] - subTreeSizeSumA[z]);
-				right = postB[j]->getLeftmostForestNum() * (1 + subTreeSizeSumA[childrenA.size() - 1] - subTreeSizeSumA[z]) + postB[j]->getSpecialForestNum() * (subTreeSizeSumA[z - 1]);
-				if(left > right) sum = prefix + right;
-				else sum = prefix + left;
-				if(min > sum){
-					min = sum;
-					freeS->setKeyNode(childrenA[z]->getID());
-					freeS->setTreeToDecompose(0);
-					if(left > right)freeS->setDirection(0);
-					else freeS->setDirection(1);
-				}
-				if(DEBUG) {
-					ou << to_string(sum) << " Direction: ";
-					if(left > right) ou << "Right" << endl;
-					else ou << "Left" << endl;
-				}
-
-			}
-
-			prefix = freeSumA - Free[childrenA[childrenA.size() - 1]->getID()][postB[j]->getID()] + RightA[childrenA[childrenA.size() - 1]->getID()][postB[j]->getID()] + postB[j]->getRightmostForestNum() * (postA[i]->getSubTreeSize() - childrenA[childrenA.size() - 1]->getSubTreeSize());
-			right = 0;
-			left = 0;
-			sum = prefix + left;
-			if(DEBUG) {
-				ou << "If select Tree A " << to_string(childrenA[0]->getID()) << " #Subproblem: " << to_string(sum) << " Direction: Left" << endl;
-			}
-			if(min > sum) {
-				min = sum;
-				freeS->setKeyNode(childrenA[childrenA.size() - 1]->getID());
-				freeS->setTreeToDecompose(0);
-				freeS->setDirection(1);
-			}
-			}
-			
-			vector<Node*> childrenB= postB[j]->getChildren();
-			if(childrenB.empty()) {
-				left = postA[i]->getRightmostForestNum();
-				right = postA[i]->getLeftmostForestNum();
-				if(min > right) {
-					min = right;
-					freeS->setDirection(0);
-				}
-				if(min > left) {
-					min = left;
-					freeS->setDirection(1);
-				}
-				if(DEBUG) {
-					ou << to_string(postA[i]->getID()) << " in Tree B has no child." << endl;
-					ou << "If direction is left, then #Subproblem: " << to_string(left) << endl;
-					ou << "If direction is right, then #Subproblem: " << to_string(right) << endl; 
-				}
-
-			} else {
-			int freeSumB = 0;
-			vector<int> subTreeSizeSumB;
-			int prevSubTreeSizeSumB = 0;
-			for(int z = 0; z < childrenB.size(); z++) {
-				freeSumB += Free[postA[i]->getID()][childrenB[z]->getID()];
-				prevSubTreeSizeSumB += childrenB[z]->getSubTreeSize();
-				subTreeSizeSumB.push_back(prevSubTreeSizeSumB);
-			}
-
-
-			prefix = freeSumB - Free[postA[i]->getID()][childrenB[0]->getID()] + LeftB[postA[i]->getID()][childrenB[0]->getID()] + postA[i]->getLeftmostForestNum() * (postB[j]->getSubTreeSize() - childrenB[0]->getSubTreeSize());
-			left = 0;
-			right = 0;
-			sum = prefix + right;
-			if(DEBUG) {
-				ou << "If select Tree B " << to_string(childrenB[0]->getID()) << " #Subproblem: " << to_string(sum) << " Direction: Right";
-			}
-			if(min > sum) {
-				freeS->setKeyNode(childrenB[0]->getID());
-				freeS->setTreeToDecompose(1);
-				freeS->setDirection(0);
-			}
-			for(int z = 1; z < childrenB.size() - 1; z++) {
-				if(DEBUG) {
-					ou << "If select Tree B " << to_string(childrenB[z]->getID()) << " #Subproblem: ";
-				}
-
-				prefix = freeSumB - Free[postA[i]->getID()][childrenB[z]->getID()] + AllB[postA[i]->getID()][childrenB[z]->getID()];
-				left = postA[i]->getRightmostForestNum() * (1 + subTreeSizeSumB[z - 1]) + postA[i]->getSpecialForestNum() * (subTreeSizeSumB[childrenB.size() - 1] - subTreeSizeSumB[z]);
-				right = postA[i]->getLeftmostForestNum() * (1 + subTreeSizeSumB[childrenB.size() - 1] - subTreeSizeSumB[z]) + postA[i]->getSpecialForestNum() * (subTreeSizeSumB[z - 1]);
-				if(left > right) sum = prefix + right;
-				else sum = prefix + left;
-				if(min > sum) {
-					min = sum;
-					freeS->setKeyNode(childrenB[z]->getID());
-					freeS->setTreeToDecompose(1);
-					if(left > right) freeS->setDirection(0);
-					else freeS->setDirection(1);
-				}
-				if(DEBUG) {
-					ou << to_string(sum) << " Direction: ";
-					if(left > right) ou << "Right" << endl;
-					else ou << "Left" << endl;
-				}
-			}
-			prefix = freeSumB - Free[postA[i]->getID()][childrenB[childrenB.size() - 1]->getID()] + RightB[postA[i]->getID()][childrenB[childrenB.size() - 1]->getID()] + postA[i]->getRightmostForestNum() * (postB[j]->getSubTreeSize() - childrenB[childrenB.size() - 1]->getSubTreeSize());
-			left = 0;
-			right = 0;
-			sum = prefix + left;
-			if(DEBUG) {
-				ou << "If select Tree B " << to_string(childrenB[childrenB.size() - 1]->getID()) << " #Subproblem: " << to_string(sum) << " Direction: Left";
-			}
-			if(min > sum) {
-				min = sum;
-				freeS->setKeyNode(childrenB[childrenB.size() - 1]->getID());
-				freeS->setTreeToDecompose(1);
-				freeS->setDirection(1);
-			}
-			}
-			Free[postA[i]->getID()][postB[j]->getID()] = min;
-			FreeStrategies[postA[i]->getID()][postB[j]->getID()] = freeS;
-			if(DEBUG) {
-				ou << "FreeStrategies[" << to_string(postA[i]->getID()) << "][" << to_string(postB[j]->getID()) << "] = " << freeS->toString() << endl;
-			}
-		}
-	}
-};*/
-
 void TreeComparison::deltaInit() {
 	int treeSizeA = A_->getTreeSize();
 	int treeSizeB = B_->getTreeSize();
@@ -652,6 +139,217 @@ void TreeComparison::computeSumInsAndDelCost(Tree* tree) {
 	}
 
 };
+
+
+Strategy** TreeComparison::APTED_ComputeOptStrategy_postL(Node* a, Node* b) {
+	Strategy** S = new Strategy*[treeSizeA];
+	float** cost1_L = new float*[treeSizeA];
+    float** cost1_R = new float*[treeSizeA];
+    float** cost1_I = new float*[treeSizeA];
+    int pathIDOffset = treeSizeA;
+
+	for(int i = 0; i < treeSizeA; i++) {
+		S[i] = new Strategy[treeSizeB];
+		cost1_L = new float[treeSizeB];
+		cost1_R = new float[treeSizeB];
+		cost1_I = new float[treeSizeB];
+	}
+
+	float* cost2_L = new float[treeSizeB];
+    float* cost2_R = new float[treeSizeB];
+    float* cost2_I = new float[treeSizeB];
+    int* cost2_path = new int[treeSizeB];
+    float* leafRow = new float[treeSizeB];
+
+	float minCost = 0x7fffffffffffffffL;
+	int strategyPath = -1;
+
+	int size_i, size_j;
+
+	stack<float*> rowsToReuse_L = new stack<float*>();
+    stack<float*> rowsToReuse_R = new stack<float*>();
+    stack<float*> rowsToReuse_I = new stack<float*>();
+
+	for(int i = 0 ; i < treeSizeA; i++) {
+
+		Strategy s;
+		
+		i_in_preL = (A_)->postL_to_preL[i];
+		size_i = (*A_)[i_in_preL]->getSubTreeSize();
+
+		bool is_i_leaf = size_i == 1? true : false;
+		Node* parent_i = (*A_)[i_in_preL]->getParent();
+		int parent_i_preL;
+		int parent_i_postL;
+
+		int strategyLeftIndex = i_in_preL;
+		int strategy_parent_i_LeftIndex, strategy_parent_i_RightIndex;
+
+		int cost_L_LeftIndex, cost_L_RightIndex;
+		int cost_R_LeftIndex, cost_R_RightIndex;
+		int cost_I_LeftIndex, cost_I_RightIndex;
+
+		int cost_L_parent_i_LeftIndex, cost_L_parent_i_RightIndex;
+		int cost_R_parent_i_LeftIndex, cost_R_parent_i_RightIndex;
+		int cost_I_parent_i_LeftIndex, cost_I_parent_i_RightIndex;
+
+		if(parent_i != NULL) {
+			parent_i_preL = parent_i->getID();
+			parent_i_postL = (A_)->preL_to_postL[parent_i_preL];
+		}
+
+
+        int leftPath_i = (A_)->preL_to_lid[i_in_preL];
+        int rightPath_i = (A_)->preL_to_rid[i_in_preL];
+      	int i_leftmost_forest = (*A_)[i_in_preL]->getLeftmostForestNum();
+      	int i_rightmost_forest = (*A_)[i_in_preL]->getRightmostForestNum();
+      	int i_special_forest = (*A_)[i_in_preL]->getSpecialForestNum();
+
+      	if(is_i_leaf) {
+        	cost1_L[i] = leafRow;
+        	cost1_R[i] = leafRow;
+        	cost1_I[i] = leafRow;
+        	for(int j = 0; j < treeSizeB; j++) {
+        		int strategyRightIndex = (B_)->postL_to_preL[j];
+        		s.setLeaf(i_in_preL);
+        		s.setTreeToDecompose(0);
+          		S[strategyLeftIndex][strategyRightIndex] = s;
+        	}
+      	}
+
+        cost_L_LeftIndex = i;
+        cost_R_LeftIndex = i;
+        cost_I_LeftIndex = i;
+
+        if(parent_i != NULL && cost1_L[parent_i_postL] == NULL) {
+        	if (rowsToReuse_L.isEmpty()) {
+         		cost1_L[parent_i_postL] = new float[treeSizeB];
+          		cost1_R[parent_i_postL] = new float[treeSizeB];
+          		cost1_I[parent_i_postL] = new float[treeSizeB];
+        	} else {
+          		cost1_L[parent_i_postL] = rowsToReuse_L.pop();
+          		cost1_R[parent_i_postL] = rowsToReuse_R.pop();
+          		cost1_I[parent_i_postL] = rowsToReuse_I.pop();
+        	}
+      	}
+
+      	if (parent_i != NULL) {
+        	cost_L_parent_i_LeftIndex = parent_i_postL;
+        	cost_R_parent_i_LeftIndex = parent_i_postL;
+        	cost_I_parent_i_LeftIndex = parent_i_postL;
+        	strategy_parent_i_LeftIndex = parent_i_preL;
+      	}
+
+      	fill_n(cost2_L, 0L);
+      	fill_n(cost2_R, 0L);
+      	fill_n(cost2_I, 0L);
+      	fill_n(cost2_path, 0);
+
+      	for(int j = 0; j < treeSizeB; j++) {
+ 			j_in_preL = (B_)->postL_to_preL[j];
+ 			parent_j = (*B_)[j_in_preL]->getParent();
+ 			int parent_j_preL, parent_j_postL;
+        	if (parent_j != NULL) {
+        		parent_j_preL = parent_j->getID();
+          		parent_j_postL = (B_)->preL_to_postL_2[parent_j_preL];
+        	}
+        	size_j = (*B_)[j_in_preL]->getSubTreeSize();
+        	bool is_j_leaf = size_j == 1? true : false;
+        	if (is_j_leaf) {
+          		cost2_L[j] = 0L;
+          		cost2_R[j] = 0L;
+          		cost2_I[j] = 0L;
+          		cost2_path[j] = j_in_preL;
+        	}
+        	minCost = 0x7fffffffffffffffL;
+       		strategyPath = -1;
+        	float tmpCost = 0x7fffffffffffffffL;
+
+        	if (size_i <= 1 || size_j <= 1) { // USE NEW SINGLE_PATH FUNCTIONS FOR SMALL SUBTREES
+          		minCost = size_i > size_j? size_i : size_j;
+        	} else {
+
+        		cost_L_RightIndex = j;//left path decomposition in i
+				tmpCost = (float) size_i * (float) (*B_)[j_in_preL]->getLeftmostForestNum() + cost1_L[cost_L_LeftIndex][cost_L_RightIndex];
+          		if (tmpCost < minCost) {
+            		minCost = tmpCost;
+            		s.setLeaf(leftPath_i);
+            		s.setTreeToDecompose(0);
+         	 	}
+
+         	 	cost_R_RightIndex = j;//right path decomposition in i
+         	 	tmpCost = (float) size_i * (float) (*B_)[j_in_preL]->getRightmostForestNum() + cost1_R[cost_R_LeftIndex][cost_R_RightIndex];
+          		if (tmpCost < minCost) {
+            		minCost = tmpCost;
+            		s.setLeaf(rightPath_i);
+            		s.setTreeToDecompose(0);
+          		}
+
+          		cost_I_RightIndex = j;//special path decomposition in i
+          		tmpCost = (float) size_i * (float) (*B_)[j_in_preL]->getSpecialForestNum() + cost1_I[cost_I_LeftIndex][cost_I_RightIndex];
+          		if (tmpCost < minCost) {
+            		minCost = tmpCost;
+            		strategyRightIndex = j_in_preL;
+            		s.setLeaf((int)S[strategyLeftIndex][strategyRightIndex] + 1);
+            		s.setTreeToDecompose(0);
+          		}
+
+          		//left path decomposition in j
+          		tmpCost = (float) size_j * (float) i_leftmost_forest + cost2_L[j];
+          		if (tmpCost < minCost) {
+            		minCost = tmpCost;
+            		s.setLeaf((B_)->preL_to_lid(j_in_preL));
+            		s.setTreeToDecompose(1);
+          		}
+
+          		//right path decompostion in j
+          		tmpCost = (float) size_j * (float) i_rightmost_forest + cost2_R[j];
+          		if (tmpCost < minCost) {
+            		minCost = tmpCost;
+            		s.setLeaf((B_)->preL_to_rid[j_in_preL]);
+            		s.setTreeToDecompose(1);
+          		}
+
+          		//special path decompostion in j
+          		tmpCost = (float) size_j * (float) i_special_forest + cost2_I[j];
+          		if (tmpCost < minCost) {
+            		minCost = tmpCost;
+            		s.setLeaf(cost2_path[j] + pathIDOffset + 1);
+            		s.setTreeToDecompose(1);
+          		}
+        	}
+
+        	if (parent_i != NULL) {
+        		cost_R_parent_i_RightIndex = j;
+        		cost1_R[cost_R_parent_i_LeftIndex][cost_R_parent_i_RightIndex] += minCost;
+        		tmpCost = -minCost + cost1_I[i][j];
+        		if (tmpCost < cost1_I[parent_i_postL][j]) {
+        			cost_I_parent_i_RightIndex = j;
+            		cost1_I[cost_I_parent_i_LeftIndex][cost_I_parent_i_RightIndex] = tmpCost;
+            		strategy_parent_i_RightIndex = j_in_preL;
+            		strategyRightIndex = j_in_preL;
+            		S[strategy_parent_i_LeftIndex][strategy_parent_i_RightIndex] = S[strategyLeftIndex][strategyRightIndex];
+          		}
+          		vector<Node*> children = parent_i->getChildren();
+          		if (nodeType_R_1[v_in_preL]) {
+          			cost_I_parent_i_RightIndex = j;
+          			cost_R_parent_i_RightIndex = j;
+            		cost1_I[cost_I_parent_i_LeftIndex]][cost_I_parent_i_RightIndex] += cost1_R[cost_R_parent_i_LeftIndex][cost_R_parent_i_RightIndex];
+            		cost_R_parent_i_RightIndex = j;
+            		cost_R_RightIndex = j
+            		cost1_R[cost_R_parent_i_LeftIndex][cost_R_parent_i_RightIndex] += cost1_R[cost_R_LeftIndex][cost_R_RightIndex] - minCost;
+          		}
+          		if (nodeType_L_1[v_in_preL]) {
+            		cost_Lpointer_parent_v[w] += cost_Lpointer_v[w];
+          		} else {
+            		cost_Lpointer_parent_v[w] += minCost;
+          		}
+        	}
+
+      	}
+	}
+	return S;
+}
 
 float TreeComparison::gted(Node* a, Node* b) {
 	
@@ -779,6 +477,7 @@ float TreeComparison::spfL(Node* a, Node* b, int leaf, bool swap) {
 		forestdist[i] = new float[(*G)[b->getID()]->getSubTreeSize() + 1];
 	}
 
+
 }
 
 int TreeComparison::computeKeyRoots(Tree* G, Node* b, int leaf, int* keyRoots, int index) {
@@ -796,9 +495,7 @@ int TreeComparison::computeKeyRoots(Tree* G, Node* b, int leaf, int* keyRoots, i
 		}
 		pathNode = parent->getID();
 	}
-
 	return index;
-
 }
 
 float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) {

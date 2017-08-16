@@ -66,6 +66,8 @@ private:
 
 	int computeKeyRoots(Tree*, Node*, int, int*, int);	
 
+	Strategy** APTED_ComputeOptStrategy_postL(Node*, Node*);
+
 	ofstream ou;
 
 public:

@@ -28,6 +28,7 @@ private:
 
 	int* preL_to_sumDelCost;
 	int* preL_to_sumInsCost;
+
 public:
 	Tree(string, int);
 	string getLabel(void) const;
