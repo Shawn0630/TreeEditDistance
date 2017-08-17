@@ -83,7 +83,7 @@ int main() {
 	r1.setRNAName("A");
 	r2.setRNAName("B");
 
-/*	file->setRNAFileName(fileName);
+	file->setRNAFileName(fileName);
 	RNAs = file->readRNAsFromFile();
 	RNAs[0].getPreLSequence();
 	RNAs[1].getPreLSequence();
@@ -94,7 +94,7 @@ int main() {
 	ou << "TreeB" << endl;
 	ou << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
-	tc.strategyComputation();*/
+	tc.strategyComputation();
 
 
 
@@ -293,12 +293,12 @@ int main() {
                                                        
                                                       
 */
-	string s1 = "(B(C(F(I)(J))(G)(H))(D(F)(G(I)(J)(K))(H))(E))";
+/*	string s1 = "(B(C(F(I)(J))(G)(H))(D(F)(G(I)(J)(K))(H))(E))";
 	string s2 = "(B(C)(D))";
 	r1.setPreOrderSequence(s1);
 	r1.setTreeSize(15);
 	r2.setPreOrderSequence(s2);
-	r2.setTreeSize(3);
+	r2.setTreeSize(3);*/
 
 
 /*	                                          B
@@ -323,14 +323,14 @@ int main() {
 
 
 
-	Tree* t1 = r1.buildTree();
+/*	Tree* t1 = r1.buildTree();
 	Tree* t2 = r2.buildTree();
 	ou << "TreeA" << endl;
 	ou << t1->toString() << endl;
 	ou << "TreeB" << endl;
 	ou << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
-	tc.strategyComputation();
+	tc.strategyComputation();*/
 
 
 

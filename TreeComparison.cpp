@@ -1496,8 +1496,9 @@ void TreeComparison::strategyComputation() {
 			}
 			ou << endl;
 		}
+
 	}
-	gted(preA[0], preB[0]);
+	//gted(preA[0], preB[0]);
 
 };
 
