@@ -124,5 +124,10 @@ string Tree::toString() const {
 	for(int i = 0; i < treeSize_; i++) {
 		res += to_string(preR_to_ln[i]) + " ";
 	}
+	res += "\n";
+	res += "postL_to_preL\n";
+	for(int i = 0; i < treeSize_; i++) {
+		res += to_string(postL_to_preL[i]) + " ";
+	}
 	return res;
 };
