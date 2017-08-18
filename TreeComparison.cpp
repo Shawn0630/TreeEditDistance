@@ -343,8 +343,8 @@ Strategy** TreeComparison::APTED_ComputeOptStrategy_postL() {
         			pathLeaf = rightPath_i;
         			treeToDecompose = 0;
         		}
-        	} else {
-
+        	}
+        	if(size_i != 1) {
         		cost_L_RightIndex = j;//left path decomposition in i
 				tmpCost = (float) size_i * (float) (*B_)[j_in_preL]->getLeftmostForestNum() + cost1_L[cost_L_LeftIndex][cost_L_RightIndex];
 				if(DEBUG) {
@@ -374,7 +374,7 @@ Strategy** TreeComparison::APTED_ComputeOptStrategy_postL() {
           		cost_I_RightIndex = j;//special path decomposition in i
           		tmpCost = (float) size_i * (float) (*B_)[j_in_preL]->getSpecialForestNum() + cost1_I[cost_I_LeftIndex][cost_I_RightIndex];
           		if(DEBUG) {
-					ou << "special leaf(i) in " << to_string(i_in_preL) << " = " << to_string((int)S[strategyLeftIndex][strategyRightIndex].getLeaf()) << " tmpCost = " << to_string(tmpCost) << endl;
+					ou << "special leaf(i) in " << to_string(i_in_preL) << " = " << to_string((int)S[strategyLeftIndex][strategyRightIndex].getLeaf()) << " tmpCost = " << to_string(tmpCost) << " cost1_I[" << to_string(i_in_preL) << ", " << to_string(j_in_preL) << "] = " << to_string(cost1_I[cost_I_LeftIndex][cost_I_RightIndex]) << endl;
 				}
           		if (tmpCost < minCost) {
             		minCost = tmpCost;
@@ -384,7 +384,8 @@ Strategy** TreeComparison::APTED_ComputeOptStrategy_postL() {
             		//S[strategyLeftIndex][strategyRightIndex].setLeaf((int)S[strategyLeftIndex][strategyRightIndex].getLeaf() + 1);
             		//S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(0);
           		}
-
+          	}
+          	if(size_j != 1) {
           		//left path decomposition in j
           		tmpCost = (float) size_j * (float) i_leftmost_forest + cost2_L[j];
           		if(DEBUG) {
@@ -414,7 +415,7 @@ Strategy** TreeComparison::APTED_ComputeOptStrategy_postL() {
           		//special path decompostion in j
           		tmpCost = (float) size_j * (float) i_special_forest + cost2_I[j];
           		if(DEBUG) {
-					ou << "special leaf(j) in " << to_string(j_in_preL) << " = " << to_string(cost2_path[j]) << " tmpCost = " << to_string(tmpCost) << endl;
+					ou << "special leaf(j) in " << to_string(j_in_preL) << " = " << to_string(cost2_path[j]) << " tmpCost = " << to_string(tmpCost) << " cost2_I[" << to_string(j_in_preL) << "] = " << cost2_I[j] << endl;
 				}
           		if (tmpCost < minCost) {
             		minCost = tmpCost;
@@ -429,16 +430,22 @@ Strategy** TreeComparison::APTED_ComputeOptStrategy_postL() {
         		cost_R_parent_i_RightIndex = j;
         		cost1_R[cost_R_parent_i_LeftIndex][cost_R_parent_i_RightIndex] += minCost;
         		tmpCost = -minCost + cost1_I[i][j];
+        		/*if(DEBUG) {
+          			ou << "minCost = " << to_string(minCost) << " cost1_I[" << to_string(i_in_preL) << ", " << to_string(j_in_preL) << "] = " << to_string(cost1_I[i][j]) << endl;
+          		}*/
         		
         		if (tmpCost < cost1_I[parent_i_postL][j]) {
         			cost_I_parent_i_RightIndex = j;
+        			if(DEBUG) {
+          				ou << "cost1_I[" << to_string(parent_i_preL) << ", " << to_string(parent_j_preL) << "] = " << to_string(tmpCost) << endl;
+          			}
             		cost1_I[cost_I_parent_i_LeftIndex][cost_I_parent_i_RightIndex] = tmpCost;
             		strategy_parent_i_RightIndex = j_in_preL;
             		strategyRightIndex = j_in_preL;
             		S[strategy_parent_i_LeftIndex][strategy_parent_i_RightIndex] = S[strategyLeftIndex][strategyRightIndex];
-            		if(DEBUG) {
+            		/*if(DEBUG) {
             			ou << "S[" << to_string(strategy_parent_i_LeftIndex) << ", " << to_string(strategy_parent_i_RightIndex) << "] = S[" << to_string(strategyLeftIndex) << ", " << to_string(strategyRightIndex) << "] = " << to_string(S[strategyLeftIndex][strategyRightIndex].getLeaf()) << endl;
-            		}
+            		}*/
           		}
 
           		vector<Node*> children = parent_i->getChildren();
@@ -451,7 +458,14 @@ Strategy** TreeComparison::APTED_ComputeOptStrategy_postL() {
           		if (is_i_rightmost_child) {
           			cost_I_parent_i_RightIndex = j;
           			cost_R_parent_i_RightIndex = j;
+          			if(DEBUG) {
+          				ou << "cost1_I[" << to_string(parent_i_preL) << ", " << to_string(j_in_preL) << "](" << to_string(cost1_I[parent_i_postL][j]) << ") += ";
+          			}
             		cost1_I[cost_I_parent_i_LeftIndex][cost_I_parent_i_RightIndex] += cost1_R[cost_R_parent_i_LeftIndex][cost_R_parent_i_RightIndex];
+            		if(DEBUG) {				
+          				ou << "cost1_R[" << to_string(i_in_preL) << ", " << to_string(j_in_preL) << "](" << to_string(cost1_R[parent_i_postL][j]) << ") = ";
+          				ou << to_string(cost1_I[parent_i_postL][j]) << endl;
+          			}
             		cost_R_parent_i_RightIndex = j;
             		cost_R_RightIndex = j;
             		cost1_R[cost_R_parent_i_LeftIndex][cost_R_parent_i_RightIndex] += cost1_R[cost_R_LeftIndex][cost_R_RightIndex] - minCost;
@@ -470,8 +484,14 @@ Strategy** TreeComparison::APTED_ComputeOptStrategy_postL() {
         	if (parent_j != NULL) {
           		cost2_R[parent_j_postL] += minCost;
           		tmpCost = -minCost + cost2_I[j];
-
+          		/*if(DEBUG) {
+          			ou << "minCost = " << to_string(minCost) << " cost2_I[" << to_string(j_in_preL) << "] = " << to_string(cost2_I[j]) << endl;
+          		}
+*/
           		if (tmpCost < cost2_I[parent_j_postL]) {
+          			if(DEBUG) {
+          				ou << "cost2_I[" << to_string(parent_j_preL) << "] = " << to_string(tmpCost) << endl;
+          			}
             		cost2_I[parent_j_postL] = tmpCost;
             		cost2_path[parent_j_postL] = cost2_path[j];
           		}
@@ -483,7 +503,14 @@ Strategy** TreeComparison::APTED_ComputeOptStrategy_postL() {
           			ou << "is_j_rightmost_child = " << to_string(is_j_rightmost_child) << endl;
           		}*/
           		if (is_j_rightmost_child) {
+          			if(DEBUG) {
+          				ou << "cost2_I[" << to_string(parent_j_preL) << "](" << to_string(cost2_I[parent_j_postL]) << ") += "; 
+          			}
             		cost2_I[parent_j_postL] += cost2_R[parent_j_postL];
+            		if(DEBUG) {
+          				ou << "cost2_R[" << to_string(parent_j_preL) << "](" << to_string(cost2_R[parent_j_postL]) << ") = ";
+          				ou << to_string(cost2_I[parent_j_postL]) << endl;
+          			}
             		cost2_R[parent_j_postL] += cost2_R[j] - minCost;
           		}
           		if (is_j_leftmost_child) {
@@ -1608,18 +1635,18 @@ int TreeComparison::free(Node* a, Node* b) {
 		}
 		for(int i = 1; i < childrenA.size() - 1; i++) {
 			int prefix = freeSumA - free(childrenA[i], b) + allA(childrenA[i], b);
-			int left = b->getRightmostForestNum() * (1 + childrenSizeSumA[i - 1])  + b->getSpecialForestNum() * (childrenSizeSumA[childrenA.size() - 1] - childrenSizeSumA[i]);
-			int right = b->getLeftmostForestNum() * (1 + childrenSizeSumA[childrenA.size() - 1] - childrenSizeSumA[i]) + b->getSpecialForestNum() * (childrenSizeSumA[i - 1]);
-			int sum = 0;
-			if(left > right) sum = prefix + right;
-			else sum = prefix + left;
+			//int left = b->getRightmostForestNum() * (1 + childrenSizeSumA[i - 1])  + b->getSpecialForestNum() * (childrenSizeSumA[childrenA.size() - 1] - childrenSizeSumA[i]);
+			//int right = b->getLeftmostForestNum() * (1 + childrenSizeSumA[childrenA.size() - 1] - childrenSizeSumA[i]) + b->getSpecialForestNum() * (childrenSizeSumA[i - 1]);
+			int sum = prefix + b->getSpecialForestNum() * (a->getSubTreeSize() - childrenA[i]->getSubTreeSize());
+			//if(left > right) sum = prefix + right;
+			//else sum = prefix + left;
 			if(min > sum) {
 				min = sum;
 				freeS.setKeyNode(childrenA[i]->getID());
 				freeS.setTreeToDecompose(0);
 				freeS.setLeaf(AllAStrategies[childrenA[i]->getID()][b->getID()].getLeaf());
-				if(left > right)freeS.setDirection(0);
-				else freeS.setDirection(1);
+				//if(left > right)freeS.setDirection(0);
+				//else freeS.setDirection(1);
 			}
 			if(DEBUG) {
 				ou << "Compute Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
@@ -1658,18 +1685,18 @@ int TreeComparison::free(Node* a, Node* b) {
 
 		for(int i = 1; i < childrenB.size() - 1; i++) {
 			int prefix = freeSumB - free(a, childrenB[i]) + allB(a, childrenB[i]);
-			int left = a->getRightmostForestNum() * (1 + childrenSizeSumB[i - 1]) + a->getSpecialForestNum() * (childrenSizeSumB[childrenB.size() - 1] - childrenSizeSumB[i]);
-			int right = a->getLeftmostForestNum() * (1 + childrenSizeSumB[childrenB.size() - 1] - childrenSizeSumB[i]) + a->getSpecialForestNum() * (childrenSizeSumB[i - 1]);
-			int sum = 0;
-			if(left > right) sum = prefix + right;
-			else sum = prefix + left;
+			//int left = a->getRightmostForestNum() * (1 + childrenSizeSumB[i - 1]) + a->getSpecialForestNum() * (childrenSizeSumB[childrenB.size() - 1] - childrenSizeSumB[i]);
+			//int right = a->getLeftmostForestNum() * (1 + childrenSizeSumB[childrenB.size() - 1] - childrenSizeSumB[i]) + a->getSpecialForestNum() * (childrenSizeSumB[i - 1]);
+			int sum = prefix + a->getSpecialForestNum() * (b->getSubTreeSize() - childrenB[i]->getSubTreeSize());
+			//if(left > right) sum = prefix + right;
+			//else sum = prefix + left;
 			if(min > sum) {
 				min = sum;
 				freeS.setKeyNode(childrenB[i]->getID());
 				freeS.setLeaf(AllBStrategies[a->getID()][childrenB[i]->getID()].getLeaf());
 				freeS.setTreeToDecompose(1);
-				if(left > right)freeS.setDirection(0);
-				else freeS.setDirection(1);
+				//if(left > right)freeS.setDirection(0);
+				//else freeS.setDirection(1);
 			}
 			if(DEBUG) {
 				ou << "Compute Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
