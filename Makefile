@@ -69,7 +69,7 @@ CC           = gcc
 CXX          = g++
 
 # The pre-processor and compiler options for C programs.
-CFLAGS       = -g3 -O2 -c #-pg
+CFLAGS       = -g3 -O2 -c -g -std=c++11 #-pg
 
 # The pre-processor and compiler options for C++ programs.
 CXXFLAGS     = $(CFLAGS)
@@ -155,13 +155,13 @@ $(OBJ_DIR)/%.o:%.cc
 
 $(OBJ_DIR)/%.o:%.cpp
 	@echo 'Building target: $@'
-	$(COMPILE.cxx) $< $(INCLUDES) -g -std=c++11 -o $@
+	$(COMPILE.cxx) $< $(INCLUDES) -o $@
 	@echo 'Finished building: $@'
 	@echo ''
 
 $(OBJ_DIR)/%.o:%.CPP
 	@echo 'Building target: $@'
-	$(COMPILE.cxx) $< $(INCLUDES) -g -std=c++11 -o $@
+	$(COMPILE.cxx) $< $(INCLUDES) -o $@
 	@echo 'Finished building: $@'
 	@echo ''
 
