@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "RNA.h"
+#include "Errors.h"
 #include "SimiMatrix.h"
 #include "FileManage.h"
 #include "TreeComparison.h"
@@ -79,12 +80,20 @@ int main() {
 	FileManage* file = FileManage::getInstance();
 	file->setSimiFileName(simiFileName);
 	matrix = file->readSimiFromFile();
+	if(readSimiFileError) {
+		cout << "Error in reading simi file!" << endl;
+		exit(1);
+	}
 	ofstream ou("out2.txt");
 	r1.setRNAName("A");
 	r2.setRNAName("B");
 
-/*	file->setRNAFileName(fileName);
+	file->setRNAFileName(fileName);
 	RNAs = file->readRNAsFromFile();
+	if(readRNAFileError) {
+		cout << "Error in reading RNA file!" << endl;
+		exit(1);
+	}
 	RNAs[0].getPreLSequence();
 	RNAs[1].getPreLSequence();
 	Tree* t1 = RNAs[0].buildTree();
@@ -95,7 +104,7 @@ int main() {
 	ou << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
 	tc.strategyComputation();
-*/
+
 
 
 	/*
@@ -247,13 +256,13 @@ int main() {
   	  E  F G  H   I    J                  D  E  F
   	  */
 
-  	  string s1 = "(A(B(E)(F)(G))(C(H)(I))(D(J)))";
+/*  	  string s1 = "(A(B(E)(F)(G))(C(H)(I))(D(J)))";
     string s2 = "(A(B)(C(D)(E)(F)))";
     r1.setPreOrderSequence(s1);
     r1.setTreeSize(10);
     r2.setPreOrderSequence(s2);
     r2.setTreeSize(6);
-
+*/
 
 
 
@@ -261,12 +270,12 @@ int main() {
 	 	         B                          B
 		      /  | \                       / \
     	   	 C   E  D                     C   D
-    	  	/ \                             / \
-    	   E  F                            E   F 
-           / \                                / \
-       	  G   H                              G   H
-         / \                                    / \
-        I     J                                I   J
+    	  	/ \  |                           / \
+    	   E  F  F...F                      E   F 
+          / \                                  / \
+       	 G   H                                G   H
+         / \                                     / \
+        I     J                                 I   J
 		  /   |   \
          B    C    D
            /  | \
@@ -274,10 +283,10 @@ int main() {
             / | \
            B  C  D
 	*/
-/*	string s1 = "(B(C(E(G(I)(J(B)(C(E)(F(B)(C)(D))(G))(D)))(H))(F))(D))";
+/*	string s1 = "(B(C(E(G(I)(J(B)(C(E)(F(B)(C)(D))(G))(D)))(H))(F))(E(F)(F)(F)(F)(F)(F)(F)(F)(F)(F))(D))";
 	string s2 = "(B(C)(D(E)(F(G)(H(I)(J)))))";
 	r1.setPreOrderSequence(s1);
-	r1.setTreeSize(18);
+	r1.setTreeSize(29);
 	r2.setPreOrderSequence(s2);
 	r2.setTreeSize(9);*/
 
@@ -321,9 +330,50 @@ int main() {
 	r2.setTreeSize(9);*/
 
 
+/*
+	      B                                        B
+	 /  /   \  \                              /  /    \  \ 
+    C  D     E  F                            C  D      E  F
+     / | \    \                                 |          \
+    G  H  I    G                                G           G
+   / \                                                     / \
+  K   L                                                   H   I*/
 
 
-	Tree* t1 = r1.buildTree();
+ /*   string s1 = "(B(C)(D(G(K)(L))(H)(I))(E(G))(F))";
+	//string s2 = "(B(C)(D(G))(E)(F(G(H)(I))))";
+	string s2 = "(B(C)(D))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(11);
+	r2.setPreOrderSequence(s2);
+	//r2.setTreeSize(9);
+	r2.setTreeSize(3);*/
+
+
+/*	      B                                        B
+	 /  /   \  \                              /  /    \  \ 
+    C  D     E  F                            C  D      E  F
+   /  / \    \                                  |          \
+  G  H  I     G                                 G          G
+ / \     \                                                / \
+K   L     K                                              H   I
+   / \     \
+  K   L     K
+             \
+              L
+               \
+                L*/
+/*    string s1 = "(B(C(G(K)(L(K)(L))))(D(H)(I(K(K(L(L))))))(E(G))(F))";
+	//string s2 = "(B(C)(D(G))(E)(F(G(H)(I))))";
+	string s2 = "(B(C)(D))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(17);
+	r2.setPreOrderSequence(s2);
+	//r2.setTreeSize(9);
+	r2.setTreeSize(3);*/
+
+
+/*	Tree* t1 = r1.buildTree();
 	Tree* t2 = r2.buildTree();
 	ou << "TreeA" << endl;
 	ou << t1->toString() << endl;
@@ -331,7 +381,7 @@ int main() {
 	ou << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
 	tc.strategyComputation();
-
+*/
 
 
 }

@@ -45,6 +45,7 @@ vector<RNA> FileManage::readRNAsFromFile(void) {
 	}
 
 	ifstream in;
+	//cout << "rnaFileName_ = " << rnaFileName_ << endl;
 	in.open(rnaFileName_);
 	if(!in.is_open()) {
 		readRNAFileError = true;
@@ -137,7 +138,6 @@ vector<RNA> FileManage::readRNAsFromFile(void) {
 
 SimiMatrix FileManage::readSimiFromFile(void) {
 	SimiMatrix matrix;
-	ofstream ou("out.txt");
 	if(simiFileName_ == "") {
 		readSimiFileError = true;
 		return matrix;
@@ -149,7 +149,7 @@ SimiMatrix FileManage::readSimiFromFile(void) {
 	char index;
 	int i = 0, j = 1;
 	in.open(simiFileName_);
-
+	//cout << "simiFileName_ = " << simiFileName_ << endl;
 	if(!in.is_open()) {
 		readSimiFileError = true;
 		return matrix;

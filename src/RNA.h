@@ -1,5 +1,5 @@
 #ifndef RNA_H
-#define RNA_H
+#define RNA_H 1
 
 #include "Constant.h"
 #include "Tree.h"
