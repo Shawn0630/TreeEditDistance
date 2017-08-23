@@ -88,7 +88,7 @@ int main() {
 	r1.setRNAName("A");
 	r2.setRNAName("B");
 
-	file->setRNAFileName(fileName);
+/*	file->setRNAFileName(fileName);
 	RNAs = file->readRNAsFromFile();
 	if(readRNAFileError) {
 		cout << "Error in reading RNA file!" << endl;
@@ -103,7 +103,7 @@ int main() {
 	ou << "TreeB" << endl;
 	ou << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
-	tc.strategyComputation();
+	tc.strategyComputation();*/
 
 
 
@@ -152,12 +152,12 @@ int main() {
 	
 	*/
 
-/*    string s1 = "(A(B)(C)(D(E))(F)(G))";
+    string s1 = "(A(B)(C)(D(E))(F)(G))";
     string s2 = "(A(B(C))(D))";
     r1.setPreOrderSequence(s1);
     r1.setTreeSize(7);
     r2.setPreOrderSequence(s2);
-    r2.setTreeSize(4);*/
+    r2.setTreeSize(4);
 
     /*
 		   A                                   A
@@ -362,7 +362,8 @@ K   L     K                                              H   I
              \
               L
                \
-                L*/
+                L
+*/
 /*    string s1 = "(B(C(G(K)(L(K)(L))))(D(H)(I(K(K(L(L))))))(E(G))(F))";
 	//string s2 = "(B(C)(D(G))(E)(F(G(H)(I))))";
 	string s2 = "(B(C)(D))";
@@ -373,7 +374,45 @@ K   L     K                                              H   I
 	r2.setTreeSize(3);*/
 
 
-/*	Tree* t1 = r1.buildTree();
+/*	 B                              B
+	 |                             / \
+	 C                            C   D
+	 |
+	 D
+	/ \
+   E   F
+       |
+       G
+       |
+       H*/
+/*    string s1 = "(B(C(D(E)(F(G(H))))))";
+	string s2 = "(B(C)(D))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(7);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(3);*/
+
+/*	 B                              B
+	 |                             / \
+	 C                            C   D
+	 |
+	 D
+	/ \
+   E   F
+   |   
+   G   
+   |   
+   H   
+*/
+/*    string s1 = "(B(C(D(E(G(H)))(F))))";
+	string s2 = "(B(C)(D))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(7);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(3);*/
+
+
+	Tree* t1 = r1.buildTree();
 	Tree* t2 = r2.buildTree();
 	ou << "TreeA" << endl;
 	ou << t1->toString() << endl;
@@ -381,7 +420,7 @@ K   L     K                                              H   I
 	ou << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
 	tc.strategyComputation();
-*/
+
 
 
 }
