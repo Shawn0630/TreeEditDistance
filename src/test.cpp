@@ -152,12 +152,13 @@ int main() {
 	
 	*/
 
-    string s1 = "(A(B)(C)(D(E))(F)(G))";
+/*    string s1 = "(A(B)(C)(D(E))(F)(G))";
     string s2 = "(A(B(C))(D))";
     r1.setPreOrderSequence(s1);
     r1.setTreeSize(7);
     r2.setPreOrderSequence(s2);
     r2.setTreeSize(4);
+*/
 
 /*
 		   A                                   A
@@ -395,11 +396,11 @@ K   L     K                                              H   I
 	r2.setTreeSize(3);
 */
 
-/*	 B                              B
-	 |                             / \
-	 C                            C   D
-	 |
-	 D
+/*	 B                               B
+	 |                             / | \
+	 C                            C  D  F
+	 |                               |
+	 D                               E
 	/ \
    E   F
    |   
@@ -407,13 +408,13 @@ K   L     K                                              H   I
    |   
    H   
 */
-/*  string s1 = "(B(C(D(E(G(H)))(F))))";
-	string s2 = "(B(C)(D))";
+  string s1 = "(B(C(D(E(G(H)))(F))))";
+	string s2 = "(B(C)(D(E))(F))";
 	r1.setPreOrderSequence(s1);
 	r1.setTreeSize(7);
 	r2.setPreOrderSequence(s2);
-	r2.setTreeSize(3);
-*/
+	r2.setTreeSize(5);
+
 
 
 	Tree* t1 = r1.buildTree();

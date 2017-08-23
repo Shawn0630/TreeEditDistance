@@ -1,183 +1,14 @@
-Compute Free(1, 0)
-If select 1 in Tree A #Subproblem: 5 Direction: Right
-Compute Free(1, 1)
-If select 1 in Tree A #Subproblem: 2 Direction: Left
-Compute Free(1, 2)
-If select 1 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(1, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Left
-FreeS(1, 2)
-Keynode: 1 in Tree A
-Direction: rightLeaf: 1
-LeftB[1, 2] = 1
-Compute Free(1, 1)
-If select 2(leftmost) in Tree B #Subproblem: 2 Direction: Right
-RightB(1, 2) = 1
-Compute Free(1, 1)
-If select 2(rightmost) in Tree B #Subproblem: 2 Direction: Left
-FreeS(1, 1)
-Keynode: 1 in Tree A
-Direction: rightLeaf: 1
-Compute Free(1, 3)
-If select 1 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(1, 3)
-If select 3 in Tree B #Subproblem: 1 Direction: Left
-FreeS(1, 3)
-Keynode: 1 in Tree A
-Direction: rightLeaf: 1
-LeftB[1, 1] = 2
-Compute Free(1, 0)
-If select 1(leftmost) in Tree B #Subproblem: 5 Direction: Right
-RightB(1, 3) = 1
-Compute Free(1, 0)
-If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
-FreeS(1, 0)
-Keynode: 1 in Tree A
-Direction: rightLeaf: 1
-Compute Free(2, 0)
-If select 2 in Tree A #Subproblem: 5 Direction: Right
-Compute Free(2, 1)
-If select 2 in Tree A #Subproblem: 2 Direction: Left
-Compute Free(2, 2)
-If select 2 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(2, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Left
-FreeS(2, 2)
-Keynode: 2 in Tree A
-Direction: rightLeaf: 2
-LeftB[2, 2] = 1
-Compute Free(2, 1)
-If select 2(leftmost) in Tree B #Subproblem: 2 Direction: Right
-RightB(2, 2) = 1
-Compute Free(2, 1)
-If select 2(rightmost) in Tree B #Subproblem: 2 Direction: Left
-FreeS(2, 1)
-Keynode: 2 in Tree A
-Direction: rightLeaf: 2
-Compute Free(2, 3)
-If select 2 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(2, 3)
-If select 3 in Tree B #Subproblem: 1 Direction: Left
-FreeS(2, 3)
-Keynode: 2 in Tree A
-Direction: rightLeaf: 2
-LeftB[2, 1] = 2
-Compute Free(2, 0)
-If select 1(leftmost) in Tree B #Subproblem: 5 Direction: Right
-RightB(2, 3) = 1
-Compute Free(2, 0)
-If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
-FreeS(2, 0)
-Keynode: 2 in Tree A
-Direction: rightLeaf: 2
-Compute Free(4, 0)
-If select 4 in Tree A #Subproblem: 5 Direction: Right
-Compute Free(4, 1)
-If select 4 in Tree A #Subproblem: 2 Direction: Left
-Compute Free(4, 2)
-If select 4 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(4, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Left
-FreeS(4, 2)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
-LeftB[4, 2] = 1
-Compute Free(4, 1)
-If select 2(leftmost) in Tree B #Subproblem: 2 Direction: Right
-RightB(4, 2) = 1
-Compute Free(4, 1)
-If select 2(rightmost) in Tree B #Subproblem: 2 Direction: Left
-FreeS(4, 1)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
-Compute Free(4, 3)
-If select 4 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(4, 3)
-If select 3 in Tree B #Subproblem: 1 Direction: Left
-FreeS(4, 3)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
-LeftB[4, 1] = 2
-Compute Free(4, 0)
-If select 1(leftmost) in Tree B #Subproblem: 5 Direction: Right
-RightB(4, 3) = 1
-Compute Free(4, 0)
-If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
-FreeS(4, 0)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
-Compute Free(3, 2)
-If select 2 in Tree B #Subproblem: 2 Direction: Left
-LeftA[4, 2] = 1
-Compute Free(3, 2)
-If select 4(leftmost) in Tree A #Subproblem: 2 Direction: Right
-RightA[4, 2] set to 4
-Compute Free(3, 2)
-If select 4(rightmost) in Tree A #Subproblem: 2 Direction: Left
-FreeS(3, 2)
-Keynode: 2 in TreeB
-Direction: rightLeaf: 2
-LeftA[4, 1] = 2
-Compute Free(3, 1)
-If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
-RightA[4, 1] set to 4
-Compute Free(3, 1)
-If select 4(rightmost) in Tree A #Subproblem: 4 Direction: Left
-LeftB[3, 2] = 2
-Compute Free(3, 1)
-If select 2(leftmost) in Tree B #Subproblem: 4 Direction: Right
-RightB(3, 2) = 2
-Compute Free(3, 1)
-If select 2(rightmost) in Tree B #Subproblem: 4 Direction: Left
-FreeS(3, 1)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
-Compute Free(3, 3)
-If select 3 in Tree B #Subproblem: 2 Direction: Left
-LeftA[4, 3] = 1
-Compute Free(3, 3)
-If select 4(leftmost) in Tree A #Subproblem: 2 Direction: Right
-RightA[4, 3] set to 4
-Compute Free(3, 3)
-If select 4(rightmost) in Tree A #Subproblem: 2 Direction: Left
-FreeS(3, 3)
-Keynode: 3 in TreeB
-Direction: rightLeaf: 3
-LeftA[4, 0] = 5
-Compute Free(3, 0)
-If select 4(leftmost) in Tree A #Subproblem: 10 Direction: Right
-RightA[4, 0] set to 4
-Compute Free(3, 0)
-If select 4(rightmost) in Tree A #Subproblem: 12 Direction: Left
-LeftB[3, 1] = 4
-Compute Free(3, 0)
-If select 1(leftmost) in Tree B #Subproblem: 10 Direction: Right
-RightB(3, 3) = 2
-Compute Free(3, 0)
-If select 3(rightmost) in Tree B #Subproblem: 12 Direction: Left
-FreeS(3, 0)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
 Compute Free(5, 0)
-If select 5 in Tree A #Subproblem: 5 Direction: Right
+If select 5 in Tree A #Subproblem: 8 Direction: Left
 Compute Free(5, 1)
-If select 5 in Tree A #Subproblem: 2 Direction: Left
-Compute Free(5, 2)
 If select 5 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(5, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Left
-FreeS(5, 2)
-Keynode: 5 in Tree A
-Direction: rightLeaf: 5
-LeftB[5, 2] = 1
 Compute Free(5, 1)
-If select 2(leftmost) in Tree B #Subproblem: 2 Direction: Right
-RightB(5, 2) = 1
-Compute Free(5, 1)
-If select 2(rightmost) in Tree B #Subproblem: 2 Direction: Left
+If select 1 in Tree B #Subproblem: 1 Direction: Left
 FreeS(5, 1)
 Keynode: 5 in Tree A
 Direction: rightLeaf: 5
+Compute Free(5, 2)
+If select 5 in Tree A #Subproblem: 2 Direction: Left
 Compute Free(5, 3)
 If select 5 in Tree A #Subproblem: 1 Direction: Left
 Compute Free(5, 3)
@@ -185,35 +16,179 @@ If select 3 in Tree B #Subproblem: 1 Direction: Left
 FreeS(5, 3)
 Keynode: 5 in Tree A
 Direction: rightLeaf: 5
-LeftB[5, 1] = 2
-Compute Free(5, 0)
-If select 1(leftmost) in Tree B #Subproblem: 5 Direction: Right
+LeftB[5, 3] = 1
+Compute Free(5, 2)
+If select 3(leftmost) in Tree B #Subproblem: 2 Direction: Right
 RightB(5, 3) = 1
-Compute Free(5, 0)
-If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
-FreeS(5, 0)
+Compute Free(5, 2)
+If select 3(rightmost) in Tree B #Subproblem: 2 Direction: Left
+FreeS(5, 2)
 Keynode: 5 in Tree A
 Direction: rightLeaf: 5
+Compute Free(5, 4)
+If select 5 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(5, 4)
+If select 4 in Tree B #Subproblem: 1 Direction: Left
+FreeS(5, 4)
+Keynode: 5 in Tree A
+Direction: rightLeaf: 5
+LeftB[5, 1] = 1
+Compute Free(5, 0)
+If select 1(leftmost) in Tree B #Subproblem: 8 Direction: Right
+Compute Free(5, 0)
+If select 2 in Tree B #Subproblem: 7 Direction: Left
+RightB(5, 4) = 1
+Compute Free(5, 0)
+If select 4(rightmost) in Tree B #Subproblem: 8 Direction: Left
+FreeS(5, 0)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 3
+Compute Free(4, 1)
+If select 1 in Tree B #Subproblem: 2 Direction: Left
+LeftA[5, 1] = 1
+Compute Free(4, 1)
+If select 5(leftmost) in Tree A #Subproblem: 2 Direction: Right
+RightA[5, 1] set to 5
+Compute Free(4, 1)
+If select 5(rightmost) in Tree A #Subproblem: 2 Direction: Left
+FreeS(4, 1)
+Keynode: 1 in TreeB
+Direction: rightLeaf: 1
+Compute Free(4, 3)
+If select 3 in Tree B #Subproblem: 2 Direction: Left
+LeftA[5, 3] = 1
+Compute Free(4, 3)
+If select 5(leftmost) in Tree A #Subproblem: 2 Direction: Right
+RightA[5, 3] set to 5
+Compute Free(4, 3)
+If select 5(rightmost) in Tree A #Subproblem: 2 Direction: Left
+FreeS(4, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+LeftA[5, 2] = 2
+Compute Free(4, 2)
+If select 5(leftmost) in Tree A #Subproblem: 4 Direction: Right
+RightA[5, 2] set to 5
+Compute Free(4, 2)
+If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
+LeftB[4, 3] = 2
+Compute Free(4, 2)
+If select 3(leftmost) in Tree B #Subproblem: 4 Direction: Right
+RightB(4, 3) = 2
+Compute Free(4, 2)
+If select 3(rightmost) in Tree B #Subproblem: 4 Direction: Left
+FreeS(4, 2)
+Keynode: 5 in Tree A
+Direction: rightLeaf: 5
+Compute Free(4, 4)
+If select 4 in Tree B #Subproblem: 2 Direction: Left
+LeftA[5, 4] = 1
+Compute Free(4, 4)
+If select 5(leftmost) in Tree A #Subproblem: 2 Direction: Right
+RightA[5, 4] set to 5
+Compute Free(4, 4)
+If select 5(rightmost) in Tree A #Subproblem: 2 Direction: Left
+FreeS(4, 4)
+Keynode: 4 in TreeB
+Direction: rightLeaf: 4
+LeftA[5, 0] = 8
+Compute Free(4, 0)
+If select 5(leftmost) in Tree A #Subproblem: 16 Direction: Right
+RightA[5, 0] set to 5
+Compute Free(4, 0)
+If select 5(rightmost) in Tree A #Subproblem: 16 Direction: Left
+LeftB[4, 1] = 2
+Compute Free(4, 0)
+If select 1(leftmost) in Tree B #Subproblem: 16 Direction: Right
+Compute Free(4, 0)
+If select 2 in Tree B #Subproblem: 14 Direction: Left
+RightB(4, 4) = 2
+Compute Free(4, 0)
+If select 4(rightmost) in Tree B #Subproblem: 16 Direction: Left
+FreeS(4, 0)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 3
+Compute Free(3, 1)
+If select 1 in Tree B #Subproblem: 3 Direction: Left
+aleftmost = 1 + 1 = 2
+LeftA[4, 1] = 2
+Compute Free(3, 1)
+If select 4(leftmost) in Tree A #Subproblem: 3 Direction: Right
+RightA[4, 1] set to 5
+Compute Free(3, 1)
+If select 4(rightmost) in Tree A #Subproblem: 3 Direction: Left
+FreeS(3, 1)
+Keynode: 1 in TreeB
+Direction: rightLeaf: 1
+Compute Free(3, 3)
+If select 3 in Tree B #Subproblem: 3 Direction: Left
+aleftmost = 1 + 1 = 2
+LeftA[4, 3] = 2
+Compute Free(3, 3)
+If select 4(leftmost) in Tree A #Subproblem: 3 Direction: Right
+RightA[4, 3] set to 5
+Compute Free(3, 3)
+If select 4(rightmost) in Tree A #Subproblem: 3 Direction: Left
+FreeS(3, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+aleftmost = 2 + 2 = 4
+LeftA[4, 2] = 4
+Compute Free(3, 2)
+If select 4(leftmost) in Tree A #Subproblem: 6 Direction: Right
+RightA[4, 2] set to 5
+Compute Free(3, 2)
+If select 4(rightmost) in Tree A #Subproblem: 6 Direction: Left
+LeftB[3, 3] = 3
+Compute Free(3, 2)
+If select 3(leftmost) in Tree B #Subproblem: 6 Direction: Right
+RightB(3, 3) = 3
+Compute Free(3, 2)
+If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
+FreeS(3, 2)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 5
+Compute Free(3, 4)
+If select 4 in Tree B #Subproblem: 3 Direction: Left
+aleftmost = 1 + 1 = 2
+LeftA[4, 4] = 2
+Compute Free(3, 4)
+If select 4(leftmost) in Tree A #Subproblem: 3 Direction: Right
+RightA[4, 4] set to 5
+Compute Free(3, 4)
+If select 4(rightmost) in Tree A #Subproblem: 3 Direction: Left
+FreeS(3, 4)
+Keynode: 4 in TreeB
+Direction: rightLeaf: 4
+aleftmost = 8 + 8 = 16
+LeftA[4, 0] = 16
+Compute Free(3, 0)
+If select 4(leftmost) in Tree A #Subproblem: 24 Direction: Right
+RightA[4, 0] set to 5
+Compute Free(3, 0)
+If select 4(rightmost) in Tree A #Subproblem: 24 Direction: Left
+LeftB[3, 1] = 3
+Compute Free(3, 0)
+If select 1(leftmost) in Tree B #Subproblem: 24 Direction: Right
+Compute Free(3, 0)
+If select 2 in Tree B #Subproblem: 21 Direction: Left
+RightB(3, 4) = 3
+Compute Free(3, 0)
+If select 4(rightmost) in Tree B #Subproblem: 24 Direction: Left
+FreeS(3, 0)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 3
 Compute Free(6, 0)
-If select 6 in Tree A #Subproblem: 5 Direction: Right
+If select 6 in Tree A #Subproblem: 8 Direction: Left
 Compute Free(6, 1)
-If select 6 in Tree A #Subproblem: 2 Direction: Left
-Compute Free(6, 2)
 If select 6 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(6, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Left
-FreeS(6, 2)
-Keynode: 6 in Tree A
-Direction: rightLeaf: 6
-LeftB[6, 2] = 1
 Compute Free(6, 1)
-If select 2(leftmost) in Tree B #Subproblem: 2 Direction: Right
-RightB(6, 2) = 1
-Compute Free(6, 1)
-If select 2(rightmost) in Tree B #Subproblem: 2 Direction: Left
+If select 1 in Tree B #Subproblem: 1 Direction: Left
 FreeS(6, 1)
 Keynode: 6 in Tree A
 Direction: rightLeaf: 6
+Compute Free(6, 2)
+If select 6 in Tree A #Subproblem: 2 Direction: Left
 Compute Free(6, 3)
 If select 6 in Tree A #Subproblem: 1 Direction: Left
 Compute Free(6, 3)
@@ -221,799 +196,1138 @@ If select 3 in Tree B #Subproblem: 1 Direction: Left
 FreeS(6, 3)
 Keynode: 6 in Tree A
 Direction: rightLeaf: 6
-LeftB[6, 1] = 2
-Compute Free(6, 0)
-If select 1(leftmost) in Tree B #Subproblem: 5 Direction: Right
+LeftB[6, 3] = 1
+Compute Free(6, 2)
+If select 3(leftmost) in Tree B #Subproblem: 2 Direction: Right
 RightB(6, 3) = 1
-Compute Free(6, 0)
-If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
-FreeS(6, 0)
+Compute Free(6, 2)
+If select 3(rightmost) in Tree B #Subproblem: 2 Direction: Left
+FreeS(6, 2)
 Keynode: 6 in Tree A
 Direction: rightLeaf: 6
-Compute Free(0, 2)
-If select 2 in Tree B #Subproblem: 12 Direction: Left
-LeftA[1, 2] = 1
-Compute Free(0, 2)
-If select 1(leftmost) in Tree A #Subproblem: 12 Direction: Right
-Compute Free(0, 2)
-If select 2 in Tree A #Subproblem: 12 Direction: Left
-Compute Free(0, 2)
-If select 3 in Tree A #Subproblem: 11 Direction: Left
-Compute Free(0, 2)
-If select 5 in Tree A #Subproblem: 12 Direction: Left
-RightA[6, 2] set to 6
-Compute Free(0, 2)
-If select 6(rightmost) in Tree A #Subproblem: 12 Direction: Left
-FreeS(0, 2)
-Keynode: 3 in Tree A
-Direction: rightLeaf: 4
-LeftA[1, 1] = 2
-Compute Free(0, 1)
-If select 1(leftmost) in Tree A #Subproblem: 24 Direction: Right
-Compute Free(0, 1)
-If select 2 in Tree A #Subproblem: 24 Direction: Left
-Compute Free(0, 1)
-If select 3 in Tree A #Subproblem: 22 Direction: Left
-Compute Free(0, 1)
-If select 5 in Tree A #Subproblem: 24 Direction: Left
+Compute Free(6, 4)
+If select 6 in Tree A #Subproblem: 1 Direction: Left
+Compute Free(6, 4)
+If select 4 in Tree B #Subproblem: 1 Direction: Left
+FreeS(6, 4)
+Keynode: 6 in Tree A
+Direction: rightLeaf: 6
+LeftB[6, 1] = 1
+Compute Free(6, 0)
+If select 1(leftmost) in Tree B #Subproblem: 8 Direction: Right
+Compute Free(6, 0)
+If select 2 in Tree B #Subproblem: 7 Direction: Left
+RightB(6, 4) = 1
+Compute Free(6, 0)
+If select 4(rightmost) in Tree B #Subproblem: 8 Direction: Left
+FreeS(6, 0)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 3
+Compute Free(2, 1)
+If select 1 in Tree B #Subproblem: 6 Direction: Right
+aleftmost = 2 + 1 = 3
+LeftA[3, 1] = 3
+Compute Free(2, 1)
+If select 3(leftmost) in Tree A #Subproblem: 6 Direction: Right
 RightA[6, 1] set to 6
-Compute Free(0, 1)
-If select 6(rightmost) in Tree A #Subproblem: 24 Direction: Left
-LeftB[0, 2] = 12
-Compute Free(0, 1)
-If select 2(leftmost) in Tree B #Subproblem: 24 Direction: Right
-RightB(0, 2) = 12
-Compute Free(0, 1)
-If select 2(rightmost) in Tree B #Subproblem: 24 Direction: Left
-FreeS(0, 1)
-Keynode: 3 in Tree A
-Direction: rightLeaf: 4
-Compute Free(0, 3)
-If select 3 in Tree B #Subproblem: 12 Direction: Left
-LeftA[1, 3] = 1
-Compute Free(0, 3)
-If select 1(leftmost) in Tree A #Subproblem: 12 Direction: Right
-Compute Free(0, 3)
-If select 2 in Tree A #Subproblem: 12 Direction: Left
-Compute Free(0, 3)
-If select 3 in Tree A #Subproblem: 11 Direction: Left
-Compute Free(0, 3)
-If select 5 in Tree A #Subproblem: 12 Direction: Left
-RightA[6, 3] set to 6
-Compute Free(0, 3)
-If select 6(rightmost) in Tree A #Subproblem: 12 Direction: Left
-FreeS(0, 3)
-Keynode: 3 in Tree A
-Direction: rightLeaf: 4
-LeftA[1, 0] = 5
-Compute Free(0, 0)
-If select 1(leftmost) in Tree A #Subproblem: 60 Direction: Right
-Compute Free(0, 0)
-If select 2 in Tree A #Subproblem: 67 Direction: Left
-Compute Free(0, 0)
-If select 3 in Tree A #Subproblem: 62 Direction: Left
-Compute Free(0, 0)
-If select 5 in Tree A #Subproblem: 67 Direction: Left
-RightA[6, 0] set to 6
-Compute Free(0, 0)
-If select 6(rightmost) in Tree A #Subproblem: 67 Direction: Left
-LeftB[0, 1] = 24
-Compute Free(0, 0)
-If select 1(leftmost) in Tree B #Subproblem: 59 Direction: Right
-RightB(0, 3) = 12
-Compute Free(0, 0)
-If select 3(rightmost) in Tree B #Subproblem: 70 Direction: Left
-FreeS(0, 0)
+Compute Free(2, 1)
+If select 6(rightmost) in Tree A #Subproblem: 8 Direction: Left
+FreeS(2, 1)
 Keynode: 1 in TreeB
-Direction: rightLeaf: 2
-1 is a leaf
-set S[1, 2] = 1
-set S[1, 1] = 1
-set S[1, 3] = 1
-set S[1, 0] = 1
-compute 1, 2
-parent i = 0 parent j = 1
-left leaf(j) in 2 = 2 tmpCost = 1.000000
-right leaf(j) in 2 = 2 tmpCost = 1.000000
-left leaf(i) in 1 = 1 tmpCost = 1.000000
-right leaf(i) in 1 = 1 tmpCost = 1.000000
-cost1_I[0, 1] = -1.000000
-cost2_I[1] = -1.000000
-cost2_I[1](-1.000000) += cost2_R[1](1.000000) = 0.000000
-S[1, 2] = 2
-compute 1, 1
-parent i = 0 parent j = 0
-left leaf(j) in 1 = 2 tmpCost = 2.000000
-right leaf(j) in 1 = 2 tmpCost = 2.000000
-left leaf(j) in 1 = 2 tmpCost = 2.000000
-right leaf(j) in 1 = 2 tmpCost = 2.000000
-special leaf(j) in 1 = 2 tmpCost = 2.000000 cost2_I[1] = 0
-cost1_I[0, 0] = -2.000000
-cost2_I[0] = -2.000000
-S[1, 1] = 2
-compute 1, 3
-parent i = 0 parent j = 0
+Direction: rightLeaf: 1
+Compute Free(2, 3)
+If select 3 in Tree B #Subproblem: 6 Direction: Right
+aleftmost = 2 + 1 = 3
+LeftA[3, 3] = 3
+Compute Free(2, 3)
+If select 3(leftmost) in Tree A #Subproblem: 6 Direction: Right
+RightA[6, 3] set to 6
+Compute Free(2, 3)
+If select 6(rightmost) in Tree A #Subproblem: 8 Direction: Left
+FreeS(2, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+aleftmost = 4 + 2 = 6
+LeftA[3, 2] = 6
+Compute Free(2, 2)
+If select 3(leftmost) in Tree A #Subproblem: 12 Direction: Right
+RightA[6, 2] set to 6
+Compute Free(2, 2)
+If select 6(rightmost) in Tree A #Subproblem: 16 Direction: Left
+LeftB[2, 3] = 6
+Compute Free(2, 2)
+If select 3(leftmost) in Tree B #Subproblem: 12 Direction: Right
+RightB(2, 3) = 8
+Compute Free(2, 2)
+If select 3(rightmost) in Tree B #Subproblem: 16 Direction: Left
+FreeS(2, 2)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 5
+Compute Free(2, 4)
+If select 4 in Tree B #Subproblem: 6 Direction: Right
+aleftmost = 2 + 1 = 3
+LeftA[3, 4] = 3
+Compute Free(2, 4)
+If select 3(leftmost) in Tree A #Subproblem: 6 Direction: Right
+RightA[6, 4] set to 6
+Compute Free(2, 4)
+If select 6(rightmost) in Tree A #Subproblem: 8 Direction: Left
+FreeS(2, 4)
+Keynode: 4 in TreeB
+Direction: rightLeaf: 4
+aleftmost = 16 + 8 = 24
+LeftA[3, 0] = 24
+Compute Free(2, 0)
+If select 3(leftmost) in Tree A #Subproblem: 47 Direction: Right
+RightA[6, 0] set to 6
+Compute Free(2, 0)
+If select 6(rightmost) in Tree A #Subproblem: 61 Direction: Left
+LeftB[2, 1] = 6
+Compute Free(2, 0)
+If select 1(leftmost) in Tree B #Subproblem: 48 Direction: Right
+Compute Free(2, 0)
+If select 2 in Tree B #Subproblem: 52 Direction: Left
+RightB(2, 4) = 8
+Compute Free(2, 0)
+If select 4(rightmost) in Tree B #Subproblem: 58 Direction: Left
+FreeS(2, 0)
+Keynode: 3 in Tree A
+Direction: rightLeaf: 5
+Compute Free(1, 1)
+If select 1 in Tree B #Subproblem: 7 Direction: Right
+aleftmost = 4 + 2 = 6
+LeftA[2, 1] = 6
+Compute Free(1, 1)
+If select 2(leftmost) in Tree A #Subproblem: 7 Direction: Right
+RightA[2, 1] set to 5
+Compute Free(1, 1)
+If select 2(rightmost) in Tree A #Subproblem: 7 Direction: Left
+FreeS(1, 1)
+Keynode: 1 in TreeB
+Direction: rightLeaf: 1
+Compute Free(1, 3)
+If select 3 in Tree B #Subproblem: 7 Direction: Right
+aleftmost = 4 + 2 = 6
+LeftA[2, 3] = 6
+Compute Free(1, 3)
+If select 2(leftmost) in Tree A #Subproblem: 7 Direction: Right
+RightA[2, 3] set to 5
+Compute Free(1, 3)
+If select 2(rightmost) in Tree A #Subproblem: 7 Direction: Left
+FreeS(1, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+aleftmost = 8 + 4 = 12
+LeftA[2, 2] = 12
+Compute Free(1, 2)
+If select 2(leftmost) in Tree A #Subproblem: 14 Direction: Right
+RightA[2, 2] set to 5
+Compute Free(1, 2)
+If select 2(rightmost) in Tree A #Subproblem: 14 Direction: Left
+LeftB[1, 3] = 7
+Compute Free(1, 2)
+If select 3(leftmost) in Tree B #Subproblem: 14 Direction: Right
+RightB(1, 3) = 9
+Compute Free(1, 2)
+If select 3(rightmost) in Tree B #Subproblem: 18 Direction: Left
+FreeS(1, 2)
+Keynode: 2 in Tree A
+Direction: rightLeaf: 5
+Compute Free(1, 4)
+If select 4 in Tree B #Subproblem: 7 Direction: Right
+aleftmost = 4 + 2 = 6
+LeftA[2, 4] = 6
+Compute Free(1, 4)
+If select 2(leftmost) in Tree A #Subproblem: 7 Direction: Right
+RightA[2, 4] set to 5
+Compute Free(1, 4)
+If select 2(rightmost) in Tree A #Subproblem: 7 Direction: Left
+FreeS(1, 4)
+Keynode: 4 in TreeB
+Direction: rightLeaf: 4
+aleftmost = 31 + 16 = 47
+LeftA[2, 0] = 47
+Compute Free(1, 0)
+If select 2(leftmost) in Tree A #Subproblem: 55 Direction: Right
+RightA[2, 0] set to 5
+Compute Free(1, 0)
+If select 2(rightmost) in Tree A #Subproblem: 65 Direction: Left
+LeftB[1, 1] = 7
+Compute Free(1, 0)
+If select 1(leftmost) in Tree B #Subproblem: 56 Direction: Right
+Compute Free(1, 0)
+If select 2 in Tree B #Subproblem: 59 Direction: Left
+RightB(1, 4) = 9
+Compute Free(1, 0)
+If select 4(rightmost) in Tree B #Subproblem: 66 Direction: Left
+FreeS(1, 0)
+Keynode: 2 in Tree A
+Direction: rightLeaf: 5
+Compute Free(0, 1)
+If select 1 in Tree B #Subproblem: 8 Direction: Right
+aleftmost = 6 + 1 = 7
+LeftA[1, 1] = 7
+Compute Free(0, 1)
+If select 1(leftmost) in Tree A #Subproblem: 8 Direction: Right
+RightA[1, 1] set to 5
+Compute Free(0, 1)
+If select 1(rightmost) in Tree A #Subproblem: 8 Direction: Left
+FreeS(0, 1)
+Keynode: 1 in TreeB
+Direction: rightLeaf: 1
+Compute Free(0, 3)
+If select 3 in Tree B #Subproblem: 8 Direction: Right
+aleftmost = 6 + 1 = 7
+LeftA[1, 3] = 7
+Compute Free(0, 3)
+If select 1(leftmost) in Tree A #Subproblem: 8 Direction: Right
+RightA[1, 3] set to 5
+Compute Free(0, 3)
+If select 1(rightmost) in Tree A #Subproblem: 8 Direction: Left
+FreeS(0, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+aleftmost = 12 + 2 = 14
+LeftA[1, 2] = 14
+Compute Free(0, 2)
+If select 1(leftmost) in Tree A #Subproblem: 16 Direction: Right
+RightA[1, 2] set to 5
+Compute Free(0, 2)
+If select 1(rightmost) in Tree A #Subproblem: 16 Direction: Left
+LeftB[0, 3] = 8
+Compute Free(0, 2)
+If select 3(leftmost) in Tree B #Subproblem: 16 Direction: Right
+RightB(0, 3) = 10
+Compute Free(0, 2)
+If select 3(rightmost) in Tree B #Subproblem: 20 Direction: Left
+FreeS(0, 2)
+Keynode: 1 in Tree A
+Direction: rightLeaf: 5
+Compute Free(0, 4)
+If select 4 in Tree B #Subproblem: 8 Direction: Right
+aleftmost = 6 + 1 = 7
+LeftA[1, 4] = 7
+Compute Free(0, 4)
+If select 1(leftmost) in Tree A #Subproblem: 8 Direction: Right
+RightA[1, 4] set to 5
+Compute Free(0, 4)
+If select 1(rightmost) in Tree A #Subproblem: 8 Direction: Left
+FreeS(0, 4)
+Keynode: 4 in TreeB
+Direction: rightLeaf: 4
+aleftmost = 47 + 8 = 55
+LeftA[1, 0] = 55
+Compute Free(0, 0)
+If select 1(leftmost) in Tree A #Subproblem: 63 Direction: Right
+RightA[1, 0] set to 5
+Compute Free(0, 0)
+If select 1(rightmost) in Tree A #Subproblem: 73 Direction: Left
+LeftB[0, 1] = 8
+Compute Free(0, 0)
+If select 1(leftmost) in Tree B #Subproblem: 64 Direction: Right
+Compute Free(0, 0)
+If select 2 in Tree B #Subproblem: 66 Direction: Left
+RightB(0, 4) = 10
+Compute Free(0, 0)
+If select 4(rightmost) in Tree B #Subproblem: 74 Direction: Left
+FreeS(0, 0)
+Keynode: 1 in Tree A
+Direction: rightLeaf: 5
+5 is a leaf
+set S[5, 1] = 5
+set S[5, 3] = 5
+set S[5, 2] = 5
+set S[5, 4] = 5
+set S[5, 0] = 5
+compute 5, 1
+parent i = 4 parent j = 0
+left leaf(j) in 1 = 1 tmpCost = 1.000000
+right leaf(j) in 1 = 1 tmpCost = 1.000000
+left leaf(i) in 5 = 5 tmpCost = 1.000000
+right leaf(i) in 5 = 5 tmpCost = 1.000000
+cost1_I[4, 0] = -1.000000
+cost1_I[4, 1](-1.000000) += cost1_R[5, 1](1.000000) = 0.000000
+cost2_I[0] = -1.000000
+S[5, 1] = 1
+compute 5, 3
+parent i = 4 parent j = 2
 left leaf(j) in 3 = 3 tmpCost = 1.000000
 right leaf(j) in 3 = 3 tmpCost = 1.000000
-left leaf(i) in 1 = 1 tmpCost = 1.000000
-right leaf(i) in 1 = 1 tmpCost = 1.000000
-cost1_I[0, 0] = -1.000000
-cost2_I[0](-2.000000) += cost2_R[0](3.000000) = 1.000000
-S[1, 3] = 3
-compute 1, 0
-parent i = 0 parent j = NULL
-left leaf(j) in 0 = 2 tmpCost = 5.000000
-right leaf(j) in 0 = 3 tmpCost = 6.000000
-left leaf(j) in 0 = 2 tmpCost = 5.000000
-right leaf(j) in 0 = 3 tmpCost = 6.000000
-special leaf(j) in 0 = 2 tmpCost = 5.000000 cost2_I[0] = 1
-cost1_I[0, 0] = -5.000000
-S[1, 0] = 2
-2 is a leaf
-set S[2, 2] = 2
-set S[2, 1] = 2
-set S[2, 3] = 2
-set S[2, 0] = 2
-compute 2, 2
-parent i = 0 parent j = 1
-left leaf(j) in 2 = 2 tmpCost = 1.000000
-right leaf(j) in 2 = 2 tmpCost = 1.000000
-left leaf(i) in 2 = 2 tmpCost = 1.000000
-right leaf(i) in 2 = 2 tmpCost = 1.000000
-cost2_I[1] = -1.000000
-cost2_I[1](-1.000000) += cost2_R[1](1.000000) = 0.000000
-S[2, 2] = 2
-compute 2, 1
-parent i = 0 parent j = 0
-left leaf(j) in 1 = 2 tmpCost = 2.000000
-right leaf(j) in 1 = 2 tmpCost = 2.000000
-left leaf(j) in 1 = 2 tmpCost = 2.000000
-right leaf(j) in 1 = 2 tmpCost = 2.000000
-special leaf(j) in 1 = 2 tmpCost = 2.000000 cost2_I[1] = 0
+left leaf(i) in 5 = 5 tmpCost = 1.000000
+right leaf(i) in 5 = 5 tmpCost = 1.000000
+cost1_I[4, 2] = -1.000000
+cost1_I[4, 3](-1.000000) += cost1_R[5, 3](1.000000) = 0.000000
+cost2_I[2] = -1.000000
+cost2_I[2](-1.000000) += cost2_R[2](1.000000) = 0.000000
+S[5, 3] = 3
+compute 5, 2
+parent i = 4 parent j = 0
+left leaf(j) in 2 = 3 tmpCost = 2.000000
+right leaf(j) in 2 = 3 tmpCost = 2.000000
+left leaf(j) in 2 = 3 tmpCost = 2.000000
+right leaf(j) in 2 = 3 tmpCost = 2.000000
+special leaf(j) in 2 = 3 tmpCost = 2.000000 cost2_I[2] = 0
+cost1_I[4, 0] = -2.000000
+cost1_I[4, 2](-2.000000) += cost1_R[5, 2](2.000000) = 0.000000
 cost2_I[0] = -2.000000
-S[2, 1] = 2
-compute 2, 3
-parent i = 0 parent j = 0
-left leaf(j) in 3 = 3 tmpCost = 1.000000
-right leaf(j) in 3 = 3 tmpCost = 1.000000
-left leaf(i) in 2 = 2 tmpCost = 1.000000
-right leaf(i) in 2 = 2 tmpCost = 1.000000
-cost2_I[0](-2.000000) += cost2_R[0](3.000000) = 1.000000
-S[2, 3] = 3
-compute 2, 0
-parent i = 0 parent j = NULL
-left leaf(j) in 0 = 2 tmpCost = 5.000000
-right leaf(j) in 0 = 3 tmpCost = 6.000000
-left leaf(j) in 0 = 2 tmpCost = 5.000000
-right leaf(j) in 0 = 3 tmpCost = 6.000000
-special leaf(j) in 0 = 2 tmpCost = 5.000000 cost2_I[0] = 1
-S[2, 0] = 2
-4 is a leaf
-set S[4, 2] = 4
-set S[4, 1] = 4
-set S[4, 3] = 4
-set S[4, 0] = 4
-compute 4, 2
-parent i = 3 parent j = 1
-left leaf(j) in 2 = 2 tmpCost = 1.000000
-right leaf(j) in 2 = 2 tmpCost = 1.000000
-left leaf(i) in 4 = 4 tmpCost = 1.000000
-right leaf(i) in 4 = 4 tmpCost = 1.000000
-cost1_I[3, 1] = -1.000000
-cost1_I[3, 2](-1.000000) += cost1_R[4, 2](1.000000) = 0.000000
-cost2_I[1] = -1.000000
-cost2_I[1](-1.000000) += cost2_R[1](1.000000) = 0.000000
-S[4, 2] = 2
+S[5, 2] = 3
+compute 5, 4
+parent i = 4 parent j = 0
+left leaf(j) in 4 = 4 tmpCost = 1.000000
+right leaf(j) in 4 = 4 tmpCost = 1.000000
+left leaf(i) in 5 = 5 tmpCost = 1.000000
+right leaf(i) in 5 = 5 tmpCost = 1.000000
+cost1_I[4, 0] = -1.000000
+cost1_I[4, 4](-1.000000) += cost1_R[5, 4](1.000000) = 0.000000
+cost2_I[0](-2.000000) += cost2_R[0](4.000000) = 2.000000
+S[5, 4] = 4
+compute 5, 0
+parent i = 4 parent j = NULL
+left leaf(j) in 0 = 1 tmpCost = 8.000000
+right leaf(j) in 0 = 4 tmpCost = 8.000000
+left leaf(j) in 0 = 1 tmpCost = 8.000000
+right leaf(j) in 0 = 4 tmpCost = 8.000000
+special leaf(j) in 0 = 3 tmpCost = 7.000000 cost2_I[0] = 2
+cost1_I[4, 0] = -7.000000
+cost1_I[4, 0](-7.000000) += cost1_R[5, 0](7.000000) = 0.000000
+S[5, 0] = 3
 compute 4, 1
 parent i = 3 parent j = 0
-left leaf(j) in 1 = 2 tmpCost = 2.000000
-right leaf(j) in 1 = 2 tmpCost = 2.000000
-left leaf(j) in 1 = 2 tmpCost = 2.000000
-right leaf(j) in 1 = 2 tmpCost = 2.000000
-special leaf(j) in 1 = 2 tmpCost = 2.000000 cost2_I[1] = 0
+left leaf(i) in 4 = 5 tmpCost = 2.000000
+right leaf(i) in 4 = 5 tmpCost = 2.000000
+left leaf(i) in 4 = 5 tmpCost = 2.000000
+right leaf(i) in 4 = 5 tmpCost = 2.000000
+special leaf(i) in 4 = 5 tmpCost = 2.000000 cost1_I[4, 1] = 0.000000
 cost1_I[3, 0] = -2.000000
 cost1_I[3, 1](-2.000000) += cost1_R[4, 1](2.000000) = 0.000000
 cost2_I[0] = -2.000000
-S[4, 1] = 2
+S[4, 1] = 5
 compute 4, 3
+parent i = 3 parent j = 2
+left leaf(i) in 4 = 5 tmpCost = 2.000000
+right leaf(i) in 4 = 5 tmpCost = 2.000000
+left leaf(i) in 4 = 5 tmpCost = 2.000000
+right leaf(i) in 4 = 5 tmpCost = 2.000000
+special leaf(i) in 4 = 5 tmpCost = 2.000000 cost1_I[4, 3] = 0.000000
+cost1_I[3, 2] = -2.000000
+cost1_I[3, 3](-2.000000) += cost1_R[4, 3](2.000000) = 0.000000
+cost2_I[2] = -2.000000
+cost2_I[2](-2.000000) += cost2_R[2](2.000000) = 0.000000
+S[4, 3] = 5
+compute 4, 2
 parent i = 3 parent j = 0
-left leaf(j) in 3 = 3 tmpCost = 1.000000
-right leaf(j) in 3 = 3 tmpCost = 1.000000
-left leaf(i) in 4 = 4 tmpCost = 1.000000
-right leaf(i) in 4 = 4 tmpCost = 1.000000
-cost1_I[3, 0] = -1.000000
-cost1_I[3, 3](-1.000000) += cost1_R[4, 3](1.000000) = 0.000000
-cost2_I[0](-2.000000) += cost2_R[0](3.000000) = 1.000000
-S[4, 3] = 3
+left leaf(i) in 4 = 5 tmpCost = 4.000000
+right leaf(i) in 4 = 5 tmpCost = 4.000000
+special leaf(i) in 4 = 5 tmpCost = 4.000000 cost1_I[4, 2] = 0.000000
+left leaf(j) in 2 = 3 tmpCost = 4.000000
+right leaf(j) in 2 = 3 tmpCost = 4.000000
+special leaf(j) in 2 = 3 tmpCost = 4.000000 cost2_I[2] = 0
+cost1_I[3, 0] = -4.000000
+cost1_I[3, 2](-4.000000) += cost1_R[4, 2](4.000000) = 0.000000
+cost2_I[0] = -4.000000
+S[4, 2] = 5
+compute 4, 4
+parent i = 3 parent j = 0
+left leaf(i) in 4 = 5 tmpCost = 2.000000
+right leaf(i) in 4 = 5 tmpCost = 2.000000
+left leaf(i) in 4 = 5 tmpCost = 2.000000
+right leaf(i) in 4 = 5 tmpCost = 2.000000
+special leaf(i) in 4 = 5 tmpCost = 2.000000 cost1_I[4, 4] = 0.000000
+cost1_I[3, 0] = -2.000000
+cost1_I[3, 4](-2.000000) += cost1_R[4, 4](2.000000) = 0.000000
+cost2_I[0](-4.000000) += cost2_R[0](8.000000) = 4.000000
+S[4, 4] = 5
 compute 4, 0
 parent i = 3 parent j = NULL
-left leaf(j) in 0 = 2 tmpCost = 5.000000
-right leaf(j) in 0 = 3 tmpCost = 6.000000
-left leaf(j) in 0 = 2 tmpCost = 5.000000
-right leaf(j) in 0 = 3 tmpCost = 6.000000
-special leaf(j) in 0 = 2 tmpCost = 5.000000 cost2_I[0] = 1
-cost1_I[3, 0] = -5.000000
-cost1_I[3, 0](-5.000000) += cost1_R[4, 0](5.000000) = 0.000000
-S[4, 0] = 2
-compute 3, 2
-parent i = 0 parent j = 1
-left leaf(i) in 3 = 4 tmpCost = 2.000000
-right leaf(i) in 3 = 4 tmpCost = 2.000000
-left leaf(i) in 3 = 4 tmpCost = 2.000000
-right leaf(i) in 3 = 4 tmpCost = 2.000000
-special leaf(i) in 3 = 4 tmpCost = 2.000000 cost1_I[3, 2] = 0.000000
-cost1_I[0, 1] = -2.000000
-cost2_I[1] = -2.000000
-cost2_I[1](-2.000000) += cost2_R[1](2.000000) = 0.000000
-S[3, 2] = 4
+left leaf(i) in 4 = 5 tmpCost = 16.000000
+right leaf(i) in 4 = 5 tmpCost = 16.000000
+special leaf(i) in 4 = 5 tmpCost = 20.000000 cost1_I[4, 0] = 0.000000
+left leaf(j) in 0 = 1 tmpCost = 16.000000
+right leaf(j) in 0 = 4 tmpCost = 16.000000
+special leaf(j) in 0 = 3 tmpCost = 14.000000 cost2_I[0] = 4
+cost1_I[3, 0] = -14.000000
+cost1_I[3, 0](-14.000000) += cost1_R[4, 0](14.000000) = 0.000000
+S[4, 0] = 3
 compute 3, 1
-parent i = 0 parent j = 0
-left leaf(i) in 3 = 4 tmpCost = 4.000000
-right leaf(i) in 3 = 4 tmpCost = 4.000000
-special leaf(i) in 3 = 4 tmpCost = 4.000000 cost1_I[3, 1] = 0.000000
-left leaf(j) in 1 = 2 tmpCost = 4.000000
-right leaf(j) in 1 = 2 tmpCost = 4.000000
-special leaf(j) in 1 = 2 tmpCost = 4.000000 cost2_I[1] = 0
-cost1_I[0, 0] = -4.000000
-cost2_I[0] = -4.000000
-S[3, 1] = 4
+parent i = 2 parent j = 0
+left leaf(i) in 3 = 5 tmpCost = 3.000000
+right leaf(i) in 3 = 5 tmpCost = 3.000000
+left leaf(i) in 3 = 5 tmpCost = 3.000000
+right leaf(i) in 3 = 5 tmpCost = 3.000000
+special leaf(i) in 3 = 5 tmpCost = 3.000000 cost1_I[3, 1] = 0.000000
+cost1_I[2, 0] = -3.000000
+cost2_I[0] = -3.000000
+S[3, 1] = 5
 compute 3, 3
-parent i = 0 parent j = 0
-left leaf(i) in 3 = 4 tmpCost = 2.000000
-right leaf(i) in 3 = 4 tmpCost = 2.000000
-left leaf(i) in 3 = 4 tmpCost = 2.000000
-right leaf(i) in 3 = 4 tmpCost = 2.000000
-special leaf(i) in 3 = 4 tmpCost = 2.000000 cost1_I[3, 3] = 0.000000
-cost1_I[0, 0] = -2.000000
-cost2_I[0](-4.000000) += cost2_R[0](6.000000) = 2.000000
-S[3, 3] = 4
+parent i = 2 parent j = 2
+left leaf(i) in 3 = 5 tmpCost = 3.000000
+right leaf(i) in 3 = 5 tmpCost = 3.000000
+left leaf(i) in 3 = 5 tmpCost = 3.000000
+right leaf(i) in 3 = 5 tmpCost = 3.000000
+special leaf(i) in 3 = 5 tmpCost = 3.000000 cost1_I[3, 3] = 0.000000
+cost1_I[2, 2] = -3.000000
+cost2_I[2] = -3.000000
+cost2_I[2](-3.000000) += cost2_R[2](3.000000) = 0.000000
+S[3, 3] = 5
+compute 3, 2
+parent i = 2 parent j = 0
+left leaf(i) in 3 = 5 tmpCost = 6.000000
+right leaf(i) in 3 = 5 tmpCost = 6.000000
+special leaf(i) in 3 = 5 tmpCost = 6.000000 cost1_I[3, 2] = 0.000000
+left leaf(j) in 2 = 3 tmpCost = 6.000000
+right leaf(j) in 2 = 3 tmpCost = 6.000000
+special leaf(j) in 2 = 3 tmpCost = 6.000000 cost2_I[2] = 0
+cost1_I[2, 0] = -6.000000
+cost2_I[0] = -6.000000
+S[3, 2] = 5
+compute 3, 4
+parent i = 2 parent j = 0
+left leaf(i) in 3 = 5 tmpCost = 3.000000
+right leaf(i) in 3 = 5 tmpCost = 3.000000
+left leaf(i) in 3 = 5 tmpCost = 3.000000
+right leaf(i) in 3 = 5 tmpCost = 3.000000
+special leaf(i) in 3 = 5 tmpCost = 3.000000 cost1_I[3, 4] = 0.000000
+cost1_I[2, 0] = -3.000000
+cost2_I[0](-6.000000) += cost2_R[0](12.000000) = 6.000000
+S[3, 4] = 5
 compute 3, 0
-parent i = 0 parent j = NULL
-left leaf(i) in 3 = 4 tmpCost = 10.000000
-right leaf(i) in 3 = 4 tmpCost = 12.000000
-special leaf(i) in 3 = 4 tmpCost = 12.000000 cost1_I[3, 0] = 0.000000
-left leaf(j) in 0 = 2 tmpCost = 10.000000
-right leaf(j) in 0 = 3 tmpCost = 12.000000
-special leaf(j) in 0 = 2 tmpCost = 10.000000 cost2_I[0] = 2
-cost1_I[0, 0] = -10.000000
-S[3, 0] = 4
-5 is a leaf
-set S[5, 2] = 5
-set S[5, 1] = 5
-set S[5, 3] = 5
-set S[5, 0] = 5
-compute 5, 2
-parent i = 0 parent j = 1
-left leaf(j) in 2 = 2 tmpCost = 1.000000
-right leaf(j) in 2 = 2 tmpCost = 1.000000
-left leaf(i) in 5 = 5 tmpCost = 1.000000
-right leaf(i) in 5 = 5 tmpCost = 1.000000
-cost2_I[1] = -1.000000
-cost2_I[1](-1.000000) += cost2_R[1](1.000000) = 0.000000
-S[5, 2] = 2
-compute 5, 1
-parent i = 0 parent j = 0
-left leaf(j) in 1 = 2 tmpCost = 2.000000
-right leaf(j) in 1 = 2 tmpCost = 2.000000
-left leaf(j) in 1 = 2 tmpCost = 2.000000
-right leaf(j) in 1 = 2 tmpCost = 2.000000
-special leaf(j) in 1 = 2 tmpCost = 2.000000 cost2_I[1] = 0
-cost2_I[0] = -2.000000
-S[5, 1] = 2
-compute 5, 3
-parent i = 0 parent j = 0
-left leaf(j) in 3 = 3 tmpCost = 1.000000
-right leaf(j) in 3 = 3 tmpCost = 1.000000
-left leaf(i) in 5 = 5 tmpCost = 1.000000
-right leaf(i) in 5 = 5 tmpCost = 1.000000
-cost2_I[0](-2.000000) += cost2_R[0](3.000000) = 1.000000
-S[5, 3] = 3
-compute 5, 0
-parent i = 0 parent j = NULL
-left leaf(j) in 0 = 2 tmpCost = 5.000000
-right leaf(j) in 0 = 3 tmpCost = 6.000000
-left leaf(j) in 0 = 2 tmpCost = 5.000000
-right leaf(j) in 0 = 3 tmpCost = 6.000000
-special leaf(j) in 0 = 2 tmpCost = 5.000000 cost2_I[0] = 1
-S[5, 0] = 2
+parent i = 2 parent j = NULL
+left leaf(i) in 3 = 5 tmpCost = 24.000000
+right leaf(i) in 3 = 5 tmpCost = 24.000000
+special leaf(i) in 3 = 5 tmpCost = 30.000000 cost1_I[3, 0] = 0.000000
+left leaf(j) in 0 = 1 tmpCost = 24.000000
+right leaf(j) in 0 = 4 tmpCost = 24.000000
+special leaf(j) in 0 = 3 tmpCost = 21.000000 cost2_I[0] = 6
+cost1_I[2, 0] = -21.000000
+S[3, 0] = 3
 6 is a leaf
-set S[6, 2] = 6
 set S[6, 1] = 6
 set S[6, 3] = 6
+set S[6, 2] = 6
+set S[6, 4] = 6
 set S[6, 0] = 6
-compute 6, 2
-parent i = 0 parent j = 1
-left leaf(j) in 2 = 2 tmpCost = 1.000000
-right leaf(j) in 2 = 2 tmpCost = 1.000000
+compute 6, 1
+parent i = 2 parent j = 0
+left leaf(j) in 1 = 1 tmpCost = 1.000000
+right leaf(j) in 1 = 1 tmpCost = 1.000000
 left leaf(i) in 6 = 6 tmpCost = 1.000000
 right leaf(i) in 6 = 6 tmpCost = 1.000000
-cost1_I[0, 2](-2.000000) += cost1_R[6, 2](6.000000) = 4.000000
-cost2_I[1] = -1.000000
-cost2_I[1](-1.000000) += cost2_R[1](1.000000) = 0.000000
-S[6, 2] = 2
-compute 6, 1
-parent i = 0 parent j = 0
-left leaf(j) in 1 = 2 tmpCost = 2.000000
-right leaf(j) in 1 = 2 tmpCost = 2.000000
-left leaf(j) in 1 = 2 tmpCost = 2.000000
-right leaf(j) in 1 = 2 tmpCost = 2.000000
-special leaf(j) in 1 = 2 tmpCost = 2.000000 cost2_I[1] = 0
-cost1_I[0, 1](-4.000000) += cost1_R[6, 1](12.000000) = 8.000000
-cost2_I[0] = -2.000000
-S[6, 1] = 2
+cost1_I[2, 1](-3.000000) += cost1_R[6, 1](4.000000) = 1.000000
+cost2_I[0] = -1.000000
+S[6, 1] = 1
 compute 6, 3
-parent i = 0 parent j = 0
+parent i = 2 parent j = 2
 left leaf(j) in 3 = 3 tmpCost = 1.000000
 right leaf(j) in 3 = 3 tmpCost = 1.000000
 left leaf(i) in 6 = 6 tmpCost = 1.000000
 right leaf(i) in 6 = 6 tmpCost = 1.000000
-cost1_I[0, 3](-2.000000) += cost1_R[6, 3](6.000000) = 4.000000
-cost2_I[0](-2.000000) += cost2_R[0](3.000000) = 1.000000
+cost1_I[2, 3](-3.000000) += cost1_R[6, 3](4.000000) = 1.000000
+cost2_I[2] = -1.000000
+cost2_I[2](-1.000000) += cost2_R[2](1.000000) = 0.000000
 S[6, 3] = 3
+compute 6, 2
+parent i = 2 parent j = 0
+left leaf(j) in 2 = 3 tmpCost = 2.000000
+right leaf(j) in 2 = 3 tmpCost = 2.000000
+left leaf(j) in 2 = 3 tmpCost = 2.000000
+right leaf(j) in 2 = 3 tmpCost = 2.000000
+special leaf(j) in 2 = 3 tmpCost = 2.000000 cost2_I[2] = 0
+cost1_I[2, 2](-6.000000) += cost1_R[6, 2](8.000000) = 2.000000
+cost2_I[0] = -2.000000
+S[6, 2] = 3
+compute 6, 4
+parent i = 2 parent j = 0
+left leaf(j) in 4 = 4 tmpCost = 1.000000
+right leaf(j) in 4 = 4 tmpCost = 1.000000
+left leaf(i) in 6 = 6 tmpCost = 1.000000
+right leaf(i) in 6 = 6 tmpCost = 1.000000
+cost1_I[2, 4](-3.000000) += cost1_R[6, 4](4.000000) = 1.000000
+cost2_I[0](-2.000000) += cost2_R[0](4.000000) = 2.000000
+S[6, 4] = 4
 compute 6, 0
+parent i = 2 parent j = NULL
+left leaf(j) in 0 = 1 tmpCost = 8.000000
+right leaf(j) in 0 = 4 tmpCost = 8.000000
+left leaf(j) in 0 = 1 tmpCost = 8.000000
+right leaf(j) in 0 = 4 tmpCost = 8.000000
+special leaf(j) in 0 = 3 tmpCost = 7.000000 cost2_I[0] = 2
+cost1_I[2, 0](-21.000000) += cost1_R[6, 0](28.000000) = 7.000000
+S[6, 0] = 3
+compute 2, 1
+parent i = 1 parent j = 0
+left leaf(i) in 2 = 5 tmpCost = 6.000000
+right leaf(i) in 2 = 6 tmpCost = 8.000000
+left leaf(i) in 2 = 5 tmpCost = 6.000000
+right leaf(i) in 2 = 6 tmpCost = 8.000000
+special leaf(i) in 2 = 5 tmpCost = 6.000000 cost1_I[2, 1] = 1.000000
+cost1_I[1, 0] = -5.000000
+cost1_I[1, 1](-5.000000) += cost1_R[2, 1](6.000000) = 1.000000
+cost2_I[0] = -6.000000
+S[2, 1] = 5
+compute 2, 3
+parent i = 1 parent j = 2
+left leaf(i) in 2 = 5 tmpCost = 6.000000
+right leaf(i) in 2 = 6 tmpCost = 8.000000
+left leaf(i) in 2 = 5 tmpCost = 6.000000
+right leaf(i) in 2 = 6 tmpCost = 8.000000
+special leaf(i) in 2 = 5 tmpCost = 6.000000 cost1_I[2, 3] = 1.000000
+cost1_I[1, 2] = -5.000000
+cost1_I[1, 3](-5.000000) += cost1_R[2, 3](6.000000) = 1.000000
+cost2_I[2] = -6.000000
+cost2_I[2](-6.000000) += cost2_R[2](6.000000) = 0.000000
+S[2, 3] = 5
+compute 2, 2
+parent i = 1 parent j = 0
+left leaf(i) in 2 = 5 tmpCost = 12.000000
+right leaf(i) in 2 = 6 tmpCost = 16.000000
+special leaf(i) in 2 = 5 tmpCost = 12.000000 cost1_I[2, 2] = 2.000000
+left leaf(j) in 2 = 3 tmpCost = 12.000000
+right leaf(j) in 2 = 3 tmpCost = 16.000000
+special leaf(j) in 2 = 3 tmpCost = 16.000000 cost2_I[2] = 0
+cost1_I[1, 0] = -10.000000
+cost1_I[1, 2](-10.000000) += cost1_R[2, 2](12.000000) = 2.000000
+cost2_I[0] = -12.000000
+S[2, 2] = 5
+compute 2, 4
+parent i = 1 parent j = 0
+left leaf(i) in 2 = 5 tmpCost = 6.000000
+right leaf(i) in 2 = 6 tmpCost = 8.000000
+left leaf(i) in 2 = 5 tmpCost = 6.000000
+right leaf(i) in 2 = 6 tmpCost = 8.000000
+special leaf(i) in 2 = 5 tmpCost = 6.000000 cost1_I[2, 4] = 1.000000
+cost1_I[1, 0] = -5.000000
+cost1_I[1, 4](-5.000000) += cost1_R[2, 4](6.000000) = 1.000000
+cost2_I[0](-12.000000) += cost2_R[0](24.000000) = 12.000000
+S[2, 4] = 5
+compute 2, 0
+parent i = 1 parent j = NULL
+left leaf(i) in 2 = 5 tmpCost = 47.000000
+right leaf(i) in 2 = 6 tmpCost = 61.000000
+special leaf(i) in 2 = 5 tmpCost = 57.000000 cost1_I[2, 0] = 7.000000
+left leaf(j) in 0 = 1 tmpCost = 48.000000
+right leaf(j) in 0 = 4 tmpCost = 58.000000
+special leaf(j) in 0 = 3 tmpCost = 52.000000 cost2_I[0] = 12
+cost1_I[1, 0] = -40.000000
+cost1_I[1, 0](-40.000000) += cost1_R[2, 0](47.000000) = 7.000000
+S[2, 0] = 5
+compute 1, 1
+parent i = 0 parent j = 0
+left leaf(i) in 1 = 5 tmpCost = 7.000000
+right leaf(i) in 1 = 6 tmpCost = 9.000000
+left leaf(i) in 1 = 5 tmpCost = 7.000000
+right leaf(i) in 1 = 6 tmpCost = 9.000000
+special leaf(i) in 1 = 5 tmpCost = 7.000000 cost1_I[1, 1] = 1.000000
+cost1_I[0, 0] = -6.000000
+cost1_I[0, 1](-6.000000) += cost1_R[1, 1](7.000000) = 1.000000
+cost2_I[0] = -7.000000
+S[1, 1] = 5
+compute 1, 3
+parent i = 0 parent j = 2
+left leaf(i) in 1 = 5 tmpCost = 7.000000
+right leaf(i) in 1 = 6 tmpCost = 9.000000
+left leaf(i) in 1 = 5 tmpCost = 7.000000
+right leaf(i) in 1 = 6 tmpCost = 9.000000
+special leaf(i) in 1 = 5 tmpCost = 7.000000 cost1_I[1, 3] = 1.000000
+cost1_I[0, 2] = -6.000000
+cost1_I[0, 3](-6.000000) += cost1_R[1, 3](7.000000) = 1.000000
+cost2_I[2] = -7.000000
+cost2_I[2](-7.000000) += cost2_R[2](7.000000) = 0.000000
+S[1, 3] = 5
+compute 1, 2
+parent i = 0 parent j = 0
+left leaf(i) in 1 = 5 tmpCost = 14.000000
+right leaf(i) in 1 = 6 tmpCost = 18.000000
+special leaf(i) in 1 = 5 tmpCost = 14.000000 cost1_I[1, 2] = 2.000000
+left leaf(j) in 2 = 3 tmpCost = 14.000000
+right leaf(j) in 2 = 3 tmpCost = 18.000000
+special leaf(j) in 2 = 3 tmpCost = 18.000000 cost2_I[2] = 0
+cost1_I[0, 0] = -12.000000
+cost1_I[0, 2](-12.000000) += cost1_R[1, 2](14.000000) = 2.000000
+cost2_I[0] = -14.000000
+S[1, 2] = 5
+compute 1, 4
+parent i = 0 parent j = 0
+left leaf(i) in 1 = 5 tmpCost = 7.000000
+right leaf(i) in 1 = 6 tmpCost = 9.000000
+left leaf(i) in 1 = 5 tmpCost = 7.000000
+right leaf(i) in 1 = 6 tmpCost = 9.000000
+special leaf(i) in 1 = 5 tmpCost = 7.000000 cost1_I[1, 4] = 1.000000
+cost1_I[0, 0] = -6.000000
+cost1_I[0, 4](-6.000000) += cost1_R[1, 4](7.000000) = 1.000000
+cost2_I[0](-14.000000) += cost2_R[0](28.000000) = 14.000000
+S[1, 4] = 5
+compute 1, 0
 parent i = 0 parent j = NULL
-left leaf(j) in 0 = 2 tmpCost = 5.000000
-right leaf(j) in 0 = 3 tmpCost = 6.000000
-left leaf(j) in 0 = 2 tmpCost = 5.000000
-right leaf(j) in 0 = 3 tmpCost = 6.000000
-special leaf(j) in 0 = 2 tmpCost = 5.000000 cost2_I[0] = 1
-cost1_I[0, 0](-10.000000) += cost1_R[6, 0](30.000000) = 20.000000
-S[6, 0] = 2
-compute 0, 2
-parent i = NULL parent j = 1
-left leaf(i) in 0 = 1 tmpCost = 12.000000
-right leaf(i) in 0 = 6 tmpCost = 12.000000
-left leaf(i) in 0 = 1 tmpCost = 12.000000
-right leaf(i) in 0 = 6 tmpCost = 12.000000
-special leaf(i) in 0 = 4 tmpCost = 11.000000 cost1_I[0, 2] = 4.000000
-cost2_I[1] = -11.000000
-cost2_I[1](-11.000000) += cost2_R[1](11.000000) = 0.000000
-S[0, 2] = 4
+left leaf(i) in 1 = 5 tmpCost = 55.000000
+right leaf(i) in 1 = 6 tmpCost = 69.000000
+special leaf(i) in 1 = 5 tmpCost = 67.000000 cost1_I[1, 0] = 7.000000
+left leaf(j) in 0 = 1 tmpCost = 56.000000
+right leaf(j) in 0 = 4 tmpCost = 66.000000
+special leaf(j) in 0 = 3 tmpCost = 59.000000 cost2_I[0] = 14
+cost1_I[0, 0] = -48.000000
+cost1_I[0, 0](-48.000000) += cost1_R[1, 0](55.000000) = 7.000000
+S[1, 0] = 5
 compute 0, 1
 parent i = NULL parent j = 0
-left leaf(i) in 0 = 1 tmpCost = 24.000000
-right leaf(i) in 0 = 6 tmpCost = 24.000000
-special leaf(i) in 0 = 4 tmpCost = 22.000000 cost1_I[0, 1] = 8.000000
-left leaf(j) in 1 = 2 tmpCost = 24.000000
-right leaf(j) in 1 = 2 tmpCost = 24.000000
-special leaf(j) in 1 = 2 tmpCost = 42.000000 cost2_I[1] = 0
-cost2_I[0] = -22.000000
-S[0, 1] = 4
+left leaf(i) in 0 = 5 tmpCost = 8.000000
+right leaf(i) in 0 = 6 tmpCost = 10.000000
+left leaf(i) in 0 = 5 tmpCost = 8.000000
+right leaf(i) in 0 = 6 tmpCost = 10.000000
+special leaf(i) in 0 = 5 tmpCost = 8.000000 cost1_I[0, 1] = 1.000000
+cost2_I[0] = -8.000000
+S[0, 1] = 5
 compute 0, 3
+parent i = NULL parent j = 2
+left leaf(i) in 0 = 5 tmpCost = 8.000000
+right leaf(i) in 0 = 6 tmpCost = 10.000000
+left leaf(i) in 0 = 5 tmpCost = 8.000000
+right leaf(i) in 0 = 6 tmpCost = 10.000000
+special leaf(i) in 0 = 5 tmpCost = 8.000000 cost1_I[0, 3] = 1.000000
+cost2_I[2] = -8.000000
+cost2_I[2](-8.000000) += cost2_R[2](8.000000) = 0.000000
+S[0, 3] = 5
+compute 0, 2
 parent i = NULL parent j = 0
-left leaf(i) in 0 = 1 tmpCost = 12.000000
-right leaf(i) in 0 = 6 tmpCost = 12.000000
-left leaf(i) in 0 = 1 tmpCost = 12.000000
-right leaf(i) in 0 = 6 tmpCost = 12.000000
-special leaf(i) in 0 = 4 tmpCost = 11.000000 cost1_I[0, 3] = 4.000000
-cost2_I[0](-22.000000) += cost2_R[0](33.000000) = 11.000000
-S[0, 3] = 4
+left leaf(i) in 0 = 5 tmpCost = 16.000000
+right leaf(i) in 0 = 6 tmpCost = 20.000000
+special leaf(i) in 0 = 5 tmpCost = 16.000000 cost1_I[0, 2] = 2.000000
+left leaf(j) in 2 = 3 tmpCost = 16.000000
+right leaf(j) in 2 = 3 tmpCost = 20.000000
+special leaf(j) in 2 = 3 tmpCost = 20.000000 cost2_I[2] = 0
+cost2_I[0] = -16.000000
+S[0, 2] = 5
+compute 0, 4
+parent i = NULL parent j = 0
+left leaf(i) in 0 = 5 tmpCost = 8.000000
+right leaf(i) in 0 = 6 tmpCost = 10.000000
+left leaf(i) in 0 = 5 tmpCost = 8.000000
+right leaf(i) in 0 = 6 tmpCost = 10.000000
+special leaf(i) in 0 = 5 tmpCost = 8.000000 cost1_I[0, 4] = 1.000000
+cost2_I[0](-16.000000) += cost2_R[0](32.000000) = 16.000000
+S[0, 4] = 5
 compute 0, 0
 parent i = NULL parent j = NULL
-left leaf(i) in 0 = 1 tmpCost = 60.000000
-right leaf(i) in 0 = 6 tmpCost = 67.000000
-special leaf(i) in 0 = 4 tmpCost = 62.000000 cost1_I[0, 0] = 20.000000
-left leaf(j) in 0 = 2 tmpCost = 59.000000
-right leaf(j) in 0 = 3 tmpCost = 70.000000
-special leaf(j) in 0 = 2 tmpCost = 95.000000 cost2_I[0] = 11
-S[0, 0] = 2
+left leaf(i) in 0 = 5 tmpCost = 63.000000
+right leaf(i) in 0 = 6 tmpCost = 77.000000
+special leaf(i) in 0 = 5 tmpCost = 77.000000 cost1_I[0, 0] = 7.000000
+left leaf(j) in 0 = 1 tmpCost = 64.000000
+right leaf(j) in 0 = 4 tmpCost = 74.000000
+special leaf(j) in 0 = 3 tmpCost = 66.000000 cost2_I[0] = 16
+S[0, 0] = 5
 RESULT
-2 in B 4 in A 4 in A 4 in A 
-1 in A 1 in A 1 in A 1 in A 
-2 in A 2 in A 2 in A 2 in A 
-4 in A 4 in A 2 in B 3 in B 
-4 in A 4 in A 4 in A 4 in A 
-5 in A 5 in A 5 in A 5 in A 
-6 in A 6 in A 6 in A 6 in A 
+5 in A 1 in B 5 in A 3 in B 4 in B 
+5 in A 1 in B 5 in A 3 in B 4 in B 
+5 in A 1 in B 5 in A 3 in B 4 in B 
+3 in B 1 in B 5 in A 3 in B 4 in B 
+3 in B 1 in B 5 in A 3 in B 4 in B 
+3 in B 5 in A 5 in A 5 in A 5 in A 
+3 in B 6 in A 6 in A 6 in A 6 in A 
 RESULT 2
-2 in B 4 in A 4 in A 4 in A 
-2 in B 2 in B 2 in B 3 in B 
-2 in B 2 in B 2 in B 3 in B 
-4 in A 4 in A 4 in A 4 in A 
-2 in B 2 in B 2 in B 3 in B 
-2 in B 2 in B 2 in B 3 in B 
-2 in B 2 in B 2 in B 3 in B 
+5 in A 5 in A 5 in A 5 in A 5 in A 
+5 in A 5 in A 5 in A 5 in A 5 in A 
+5 in A 5 in A 5 in A 5 in A 5 in A 
+3 in B 5 in A 5 in A 5 in A 5 in A 
+3 in B 5 in A 5 in A 5 in A 5 in A 
+3 in B 1 in B 3 in B 3 in B 4 in B 
+3 in B 1 in B 3 in B 3 in B 4 in B 
 gted(0, 0)
 treeSizeA = 7
-treeSizeB = 4
-getPathType B (0 ,2) = 0
+treeSizeB = 5
+getPathType A(0 ,5) = 0
+A child = 5 currentPathNode = 5 parent = 4
+A child = 4 currentPathNode = 4 parent = 3
+A child = 3 currentPathNode = 3 parent = 2
+A child = 6 currentPathNode = 3 parent = 2
+gted(0, 0) create problem in A gted(6, 0)
+gted(6, 0)
+treeSizeA = 1
+treeSizeB = 5
+return 0.0f
 A child = 2 currentPathNode = 2 parent = 1
 A child = 1 currentPathNode = 1 parent = 0
-A child = 3 currentPathNode = 1 parent = 0
-gted(0, 0) create problem in B gted(0, 3)
-gted(0, 3)
-treeSizeA = 7
-treeSizeB = 1
-return 0.0f
-swap = true pathType = 0
-spfA(0, 0) 1 pathType: 0 hasLeftPart: 0 hasRightPart: 0
-initial fn and ft endG_in_preR = 0 endG_in_preR + sizeG = 7
+swap = false pathType = 0
+spfA(0, 0) 0 pathType: 0 hasLeftPart: 0 hasRightPart: 0
+initial fn and ft endG_in_preR = 0 endG_in_preR + sizeG = 5
 new Round B'
 new Round C'
-Right (2, 3, 6, 1)
-Save to S[3, 1]
+Right (5, 6, 4, 1)
+Save to S[6, 1]
 case3 = 0
 case1_case3 = -1
 case2_case1 = FcurrentForestCost
-case3_case3 d[6, 2]
-t[6, 1] = s[3, 1]
+case3_case3 d[5, 4]
+t[4, 1] = s[6, 1]
 new Round B'
 new Round C'
-Right (2, 3, 5, 2)
-Save to S[3, 2]
+Right (5, 6, 3, 3)
+Save to S[6, 3]
 case3 = 0
 case1_case3 = -1
 case2_case1 = FcurrentForestCost
-case3_case3 d[5, 2]
-t[5, 2] = s[3, 2]
+case3_case3 d[5, 3]
+save to d[4, 2] = s[6, 3]
+q[6] = s[6, 3]
+t[3, 3] = s[6, 3]
 new Round B'
 new Round C'
-Right (2, 3, 4, 4)
-Save to S[3, 4]
-case3 = 0
-case1_case3 = -1
-case2_case1 = FcurrentForestCost
-case3_case3 d[4, 2]
-save to d[3, 1] = s[3, 4]
-q[3] = s[3, 4]
-t[4, 4] = s[3, 4]
-new Round B'
-new Round C'
-Right (2, 3, 3, 3)
-Save to S[3, 3]
+Right (5, 6, 2, 2)
+Save to S[6, 2]
 case3 = 0
 case1_case3 = -2
-case2_case2 = q[3]
-case3_case3 d[3, 2]
-t[3, 3] = s[3, 3]
+case2_case2 = q[6]
+case3_case3 d[5, 2]
+t[2, 2] = s[6, 2]
 new Round B'
 new Round C'
-Right (2, 3, 2, 5)
-Save to S[3, 5]
+Right (5, 6, 1, 4)
+Save to S[6, 4]
 case3 = 0
 case1_case3 = -1
-case2_case1 = FcurrentForestCost
-case3_case3 d[2, 2]
-t[2, 5] = s[3, 5]
-new Round B'
-new Round C'
-Right (2, 3, 1, 6)
-Save to S[3, 6]
-case3 = 0
-case1_case3 = -1
-case2_case1 = FcurrentForestCost
-case3_case3 d[1, 2]
-Right (2, 3, 1, 5)
-Save to s[3, 5]
-case1_case3 -2
-case2_case3 s[3, 6]
-case3_case d[2, 2]
-case3_case2 GcurrentForestCost - G(rG) 
-Right (2, 3, 1, 4)
-Save to s[3, 4]
-case1_case3 -3
-case2_case3 s[3, 5]
-case3_case d[4, 2]
-case3_case2 GcurrentForestCost - G(rG) 
-Right (2, 3, 1, 3)
-Save to s[3, 3]
-case1_case3 -4
-case2_case3 s[3, 4]
-case3_case d[3, 2]
-case3_case2 GcurrentForestCost - G(rG) 
-Right (2, 3, 1, 2)
-Save to s[3, 2]
-case1_case3 -5
-case2_case3 s[3, 3]
-case3_case d[5, 2]
-case3_case2 GcurrentForestCost - G(rG) 
-Right (2, 3, 1, 1)
-Save to s[3, 1]
-case1_case3 -6
-case2_case3 s[3, 2]
-case3_case d[6, 2]
-case3_case2 GcurrentForestCost - G(rG) 
-save to d[0, 1] = s[3, 1]
-q[3] = s[3, 1]
-t[1, 6] = s[3, 6]
-t[1, 5] = s[3, 5]
-t[1, 4] = s[3, 4]
-t[1, 3] = s[3, 3]
-t[1, 2] = s[3, 2]
-t[1, 1] = s[3, 1]
-new Round B'
-new Round C'
-Right (2, 3, 0, 0)
-Save to S[3, 0]
-case3 = 0
-case1_case3 = -7
-case2_case2 = q[3]
-case3_case3 d[0, 2]
-t[0, 0] = s[3, 0]
-spfA(0, 0) 1 pathType: 0 hasLeftPart: 0 hasRightPart: 0
-initial fn and ft endG_in_preR = 0 endG_in_preR + sizeG = 7
-new Round B'
-new Round C'
-Right (1, 2, 6, 1)
-Save to S[2, 1]
-case3 = 0
-case1_case2 = t[6, 1]
-case2_case1 = FcurrentForestCost
-case3_case3 d[6, 1]
-t[6, 1] = s[2, 1]
-new Round B'
-new Round C'
-Right (1, 2, 5, 2)
-Save to S[2, 2]
-case3 = 0
-case1_case2 = t[5, 2]
 case2_case1 = FcurrentForestCost
 case3_case3 d[5, 1]
-t[5, 2] = s[2, 2]
+Right (5, 6, 1, 3)
+Save to s[6, 3]
+case1_case3 -2
+case2_case3 s[6, 4]
+case3_case d[5, 3]
+case3_case2 GcurrentForestCost - G(rG) 
+Right (5, 6, 1, 2)
+Save to s[6, 2]
+case1_case3 -3
+case2_case3 s[6, 3]
+case3_case d[5, 2]
+case3_case2 GcurrentForestCost - G(rG) 
+Right (5, 6, 1, 1)
+Save to s[6, 1]
+case1_case3 -4
+case2_case3 s[6, 2]
+case3_case d[5, 4]
+case3_case2 GcurrentForestCost - G(rG) 
+save to d[4, 0] = s[6, 1]
+q[6] = s[6, 1]
+t[1, 4] = s[6, 4]
+t[1, 3] = s[6, 3]
+t[1, 2] = s[6, 2]
+t[1, 1] = s[6, 1]
 new Round B'
 new Round C'
-Right (1, 2, 4, 4)
-Save to S[2, 4]
+Right (5, 6, 0, 0)
+Save to S[6, 0]
 case3 = 0
-case1_case2 = t[4, 4]
-case2_case1 = FcurrentForestCost
-case3_case3 d[4, 1]
-q[2] = s[2, 4]
-t[4, 4] = s[2, 4]
+case1_case3 = -5
+case2_case2 = q[6]
+case3_case3 d[5, 0]
+t[0, 0] = s[6, 0]
+spfA(0, 0) 0 pathType: 0 hasLeftPart: 0 hasRightPart: 0
+initial fn and ft endG_in_preR = 0 endG_in_preR + sizeG = 5
 new Round B'
 new Round C'
-Right (1, 2, 3, 3)
-Save to S[2, 3]
+Right (4, 5, 4, 1)
+Save to S[5, 1]
+case3 = 0
+case1_case2 = t[4, 1]
+case2_case1 = FcurrentForestCost
+case3_case3 d[4, 4]
+t[4, 1] = s[5, 1]
+new Round B'
+new Round C'
+Right (4, 5, 3, 3)
+Save to S[5, 3]
 case3 = 0
 case1_case2 = t[3, 3]
-case2_case2 = q[2]
+case2_case1 = FcurrentForestCost
+case3_case3 d[4, 3]
+save to d[3, 2] = s[5, 3]
+q[5] = s[5, 3]
+t[3, 3] = s[5, 3]
+new Round B'
+new Round C'
+Right (4, 5, 2, 2)
+Save to S[5, 2]
+case3 = 0
+case1_case2 = t[2, 2]
+case2_case2 = q[5]
+case3_case3 d[4, 2]
+t[2, 2] = s[5, 2]
+new Round B'
+new Round C'
+Right (4, 5, 1, 4)
+Save to S[5, 4]
+case3 = 0
+case1_case2 = t[1, 4]
+case2_case1 = FcurrentForestCost
+case3_case3 d[4, 1]
+Right (4, 5, 1, 3)
+Save to s[5, 3]
+case1_case2 t[1, 3]
+case2_case3 s[5, 4]
+case3_case d[4, 3]
+case3_case2 GcurrentForestCost - G(rG) 
+Right (4, 5, 1, 2)
+Save to s[5, 2]
+case1_case2 t[1, 2]
+case2_case3 s[5, 3]
+case3_case d[4, 2]
+case3_case2 GcurrentForestCost - G(rG) 
+Right (4, 5, 1, 1)
+Save to s[5, 1]
+case1_case2 t[1, 1]
+case2_case3 s[5, 2]
+case3_case d[4, 4]
+case3_case2 GcurrentForestCost - G(rG) 
+save to d[3, 0] = s[5, 1]
+q[5] = s[5, 1]
+t[1, 4] = s[5, 4]
+t[1, 3] = s[5, 3]
+t[1, 2] = s[5, 2]
+t[1, 1] = s[5, 1]
+new Round B'
+new Round C'
+Right (4, 5, 0, 0)
+Save to S[5, 0]
+case3 = 0
+case1_case2 = t[0, 0]
+case2_case2 = q[5]
+case3_case3 d[4, 0]
+t[0, 0] = s[5, 0]
+spfA(0, 0) 0 pathType: 0 hasLeftPart: 0 hasRightPart: 0
+initial fn and ft endG_in_preR = 0 endG_in_preR + sizeG = 5
+new Round B'
+new Round C'
+Right (3, 4, 4, 1)
+Save to S[4, 1]
+case3 = 0
+case1_case2 = t[4, 1]
+case2_case1 = FcurrentForestCost
+case3_case3 d[3, 4]
+t[4, 1] = s[4, 1]
+new Round B'
+new Round C'
+Right (3, 4, 3, 3)
+Save to S[4, 3]
+case3 = 0
+case1_case2 = t[3, 3]
+case2_case1 = FcurrentForestCost
+case3_case3 d[3, 3]
+q[4] = s[4, 3]
+t[3, 3] = s[4, 3]
+new Round B'
+new Round C'
+Right (3, 4, 2, 2)
+Save to S[4, 2]
+case3 = 0
+case1_case2 = t[2, 2]
+case2_case2 = q[4]
+case3_case3 d[3, 2]
+t[2, 2] = s[4, 2]
+new Round B'
+new Round C'
+Right (3, 4, 1, 4)
+Save to S[4, 4]
+case3 = 0
+case1_case2 = t[1, 4]
+case2_case1 = FcurrentForestCost
 case3_case3 d[3, 1]
+Right (3, 4, 1, 3)
+Save to s[4, 3]
+case1_case2 t[1, 3]
+case2_case3 s[4, 4]
+case3_case d[3, 3]
+case3_case2 GcurrentForestCost - G(rG) 
+Right (3, 4, 1, 2)
+Save to s[4, 2]
+case1_case2 t[1, 2]
+case2_case3 s[4, 3]
+case3_case d[3, 2]
+case3_case2 GcurrentForestCost - G(rG) 
+Right (3, 4, 1, 1)
+Save to s[4, 1]
+case1_case2 t[1, 1]
+case2_case3 s[4, 2]
+case3_case d[3, 4]
+case3_case2 GcurrentForestCost - G(rG) 
+q[4] = s[4, 1]
+t[1, 4] = s[4, 4]
+t[1, 3] = s[4, 3]
+t[1, 2] = s[4, 2]
+t[1, 1] = s[4, 1]
+new Round B'
+new Round C'
+Right (3, 4, 0, 0)
+Save to S[4, 0]
+case3 = 0
+case1_case2 = t[0, 0]
+case2_case2 = q[4]
+case3_case3 d[3, 0]
+t[0, 0] = s[4, 0]
+spfA(0, 0) 0 pathType: 0 hasLeftPart: 0 hasRightPart: 1
+initial fn and ft endG_in_preR = 0 endG_in_preR + sizeG = 5
+new Round B'
+new Round C'
+Right (3, 3, 4, 1)
+Save to S[3, 1]
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[4, 1]
+case2_case1 = FcurrentForestCost
+case3_case3 d[6, 4]
+new Round C'
+Right (2, 2, 4, 1)
+Save to S[2, 1]
+case3 = 0
+case1_case1 = s[3, 1]
+case2_case1 = FcurrentForestCost
+case3_case3 d[2, 4]
+t[4, 1] = s[2, 1]
+new Round B'
+new Round C'
+Right (3, 3, 3, 3)
+Save to S[3, 3]
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[3, 3]
+case2_case1 = FcurrentForestCost
+case3_case3 d[6, 3]
+new Round C'
+Right (2, 2, 3, 3)
+Save to S[2, 3]
+case3 = 0
+case1_case1 = s[3, 3]
+case2_case1 = FcurrentForestCost
+case3_case3 d[2, 3]
+save to d[2, 2] = s[2, 3]
+save to d[1, 2] = s[2, 3]
+q[3] = s[3, 3]
+q[2] = s[2, 3]
 t[3, 3] = s[2, 3]
 new Round B'
 new Round C'
-Right (1, 2, 2, 5)
-Save to S[2, 5]
+Right (3, 3, 2, 2)
+Save to S[3, 2]
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[2, 2]
+case2_case2 = q[3]
+case3_case3 d[6, 2]
+new Round C'
+Right (2, 2, 2, 2)
+Save to S[2, 2]
 case3 = 0
-case1_case2 = t[2, 5]
-case2_case1 = FcurrentForestCost
-case3_case3 d[2, 1]
-t[2, 5] = s[2, 5]
+case1_case1 = s[3, 2]
+case2_case2 = q[2]
+case3_case3 d[2, 2]
+t[2, 2] = s[2, 2]
 new Round B'
 new Round C'
-Right (1, 2, 1, 6)
-Save to S[2, 6]
-case3 = 0
-case1_case2 = t[1, 6]
+Right (3, 3, 1, 4)
+Save to S[3, 4]
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[1, 4]
 case2_case1 = FcurrentForestCost
-case3_case3 d[1, 1]
-Right (1, 2, 1, 5)
-Save to s[2, 5]
-case1_case2 t[1, 5]
-case2_case3 s[2, 6]
-case3_case d[2, 1]
-case3_case2 GcurrentForestCost - G(rG) 
-Right (1, 2, 1, 4)
-Save to s[2, 4]
-case1_case2 t[1, 4]
-case2_case3 s[2, 5]
-case3_case d[4, 1]
-case3_case2 GcurrentForestCost - G(rG) 
-Right (1, 2, 1, 3)
-Save to s[2, 3]
+case3_case3 d[6, 1]
+Right (3, 3, 1, 3)
+Save to s[3, 3]
 case1_case2 t[1, 3]
-case2_case3 s[2, 4]
-case3_case d[3, 1]
-case3_case2 GcurrentForestCost - G(rG) 
-Right (1, 2, 1, 2)
-Save to s[2, 2]
+case2_case3 s[3, 4]
+case3_case d[6, 3]
+case3_case3 t[1, 4]
+Right (3, 3, 1, 2)
+Save to s[3, 2]
 case1_case2 t[1, 2]
-case2_case3 s[2, 3]
-case3_case d[5, 1]
-case3_case2 GcurrentForestCost - G(rG) 
-Right (1, 2, 1, 1)
-Save to s[2, 1]
+case2_case3 s[3, 3]
+case3_case d[6, 2]
+case3_case3 t[1, 4]
+Right (3, 3, 1, 1)
+Save to s[3, 1]
 case1_case2 t[1, 1]
-case2_case3 s[2, 2]
-case3_case d[6, 1]
+case2_case3 s[3, 2]
+case3_case d[6, 4]
+case3_case3 t[1, 2]
+new Round C'
+Right (2, 2, 1, 4)
+Save to S[2, 4]
+case3 = 0
+case1_case1 = s[3, 4]
+case2_case1 = FcurrentForestCost
+case3_case3 d[2, 1]
+Right (2, 2, 1, 3)
+Save to s[2, 3]
+case1_case1 s[3, 3]
+case2_case3 s[2, 4]
+case3_case d[2, 3]
 case3_case2 GcurrentForestCost - G(rG) 
+Right (2, 2, 1, 2)
+Save to s[2, 2]
+case1_case1 s[3, 2]
+case2_case3 s[2, 3]
+case3_case d[2, 2]
+case3_case2 GcurrentForestCost - G(rG) 
+Right (2, 2, 1, 1)
+Save to s[2, 1]
+case1_case1 s[3, 1]
+case2_case3 s[2, 2]
+case3_case d[2, 4]
+case3_case2 GcurrentForestCost - G(rG) 
+save to d[2, 0] = s[2, 1]
+save to d[1, 0] = s[2, 1]
+q[3] = s[3, 1]
 q[2] = s[2, 1]
-t[1, 6] = s[2, 6]
-t[1, 5] = s[2, 5]
 t[1, 4] = s[2, 4]
 t[1, 3] = s[2, 3]
 t[1, 2] = s[2, 2]
 t[1, 1] = s[2, 1]
 new Round B'
 new Round C'
-Right (1, 2, 0, 0)
+Right (3, 3, 0, 0)
+Save to S[3, 0]
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[0, 0]
+case2_case2 = q[3]
+case3_case3 d[6, 0]
+new Round C'
+Right (2, 2, 0, 0)
 Save to S[2, 0]
 case3 = 0
-case1_case2 = t[0, 0]
+case1_case1 = s[3, 0]
 case2_case2 = q[2]
-case3_case3 d[0, 1]
+case3_case3 d[2, 0]
 t[0, 0] = s[2, 0]
-spfA(0, 0) 1 pathType: 0 hasLeftPart: 0 hasRightPart: 1
-initial fn and ft endG_in_preR = 0 endG_in_preR + sizeG = 7
+spfA(0, 0) 0 pathType: 0 hasLeftPart: 0 hasRightPart: 0
+initial fn and ft endG_in_preR = 0 endG_in_preR + sizeG = 5
 new Round B'
 new Round C'
-Right (1, 1, 6, 1)
+Right (1, 1, 4, 1)
 Save to S[1, 1]
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[6, 1]
-case2_case1 = FcurrentForestCost
-case3_case3 d[6, 3]
-new Round C'
-Right (0, 0, 6, 1)
-Save to S[0, 1]
 case3 = 0
-case1_case1 = s[1, 1]
+case1_case2 = t[4, 1]
 case2_case1 = FcurrentForestCost
-case3_case3 d[6, 0]
-t[6, 1] = s[0, 1]
-new Round B'
-new Round C'
-Right (1, 1, 5, 2)
-Save to S[1, 2]
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[5, 2]
-case2_case1 = FcurrentForestCost
-case3_case3 d[5, 3]
-new Round C'
-Right (0, 0, 5, 2)
-Save to S[0, 2]
-case3 = 0
-case1_case1 = s[1, 2]
-case2_case1 = FcurrentForestCost
-case3_case3 d[5, 0]
-t[5, 2] = s[0, 2]
-new Round B'
-new Round C'
-Right (1, 1, 4, 4)
-Save to S[1, 4]
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[4, 4]
-case2_case1 = FcurrentForestCost
-case3_case3 d[4, 3]
-new Round C'
-Right (0, 0, 4, 4)
-Save to S[0, 4]
-case3 = 0
-case1_case1 = s[1, 4]
-case2_case1 = FcurrentForestCost
-case3_case3 d[4, 0]
-save to d[3, 0] = s[0, 4]
-q[1] = s[1, 4]
-q[0] = s[0, 4]
-t[4, 4] = s[0, 4]
+case3_case3 d[1, 4]
+t[4, 1] = s[1, 1]
 new Round B'
 new Round C'
 Right (1, 1, 3, 3)
 Save to S[1, 3]
-case3_case FcurrentForest - F(rF)
+case3 = 0
 case1_case2 = t[3, 3]
-case2_case2 = q[1]
-case3_case3 d[3, 3]
-new Round C'
-Right (0, 0, 3, 3)
-Save to S[0, 3]
-case3 = 0
-case1_case1 = s[1, 3]
-case2_case2 = q[0]
-case3_case3 d[3, 0]
-t[3, 3] = s[0, 3]
-new Round B'
-new Round C'
-Right (1, 1, 2, 5)
-Save to S[1, 5]
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[2, 5]
-case2_case1 = FcurrentForestCost
-case3_case3 d[2, 3]
-new Round C'
-Right (0, 0, 2, 5)
-Save to S[0, 5]
-case3 = 0
-case1_case1 = s[1, 5]
-case2_case1 = FcurrentForestCost
-case3_case3 d[2, 0]
-t[2, 5] = s[0, 5]
-new Round B'
-new Round C'
-Right (1, 1, 1, 6)
-Save to S[1, 6]
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[1, 6]
 case2_case1 = FcurrentForestCost
 case3_case3 d[1, 3]
-Right (1, 1, 1, 5)
-Save to s[1, 5]
-case1_case2 t[1, 5]
-case2_case3 s[1, 6]
-case3_case d[2, 3]
-case3_case3 t[1, 6]
+save to d[0, 2] = s[1, 3]
+q[1] = s[1, 3]
+t[3, 3] = s[1, 3]
+new Round B'
+new Round C'
+Right (1, 1, 2, 2)
+Save to S[1, 2]
+case3 = 0
+case1_case2 = t[2, 2]
+case2_case2 = q[1]
+case3_case3 d[1, 2]
+t[2, 2] = s[1, 2]
+new Round B'
+new Round C'
 Right (1, 1, 1, 4)
-Save to s[1, 4]
-case1_case2 t[1, 4]
-case2_case3 s[1, 5]
-case3_case d[4, 3]
-case3_case3 t[1, 5]
+Save to S[1, 4]
+case3 = 0
+case1_case2 = t[1, 4]
+case2_case1 = FcurrentForestCost
+case3_case3 d[1, 1]
 Right (1, 1, 1, 3)
 Save to s[1, 3]
 case1_case2 t[1, 3]
 case2_case3 s[1, 4]
-case3_case d[3, 3]
-case3_case3 t[1, 5]
+case3_case d[1, 3]
+case3_case2 GcurrentForestCost - G(rG) 
 Right (1, 1, 1, 2)
 Save to s[1, 2]
 case1_case2 t[1, 2]
 case2_case3 s[1, 3]
-case3_case d[5, 3]
-case3_case3 t[1, 3]
+case3_case d[1, 2]
+case3_case2 GcurrentForestCost - G(rG) 
 Right (1, 1, 1, 1)
 Save to s[1, 1]
 case1_case2 t[1, 1]
 case2_case3 s[1, 2]
-case3_case d[6, 3]
-case3_case3 t[1, 2]
+case3_case d[1, 4]
+case3_case2 GcurrentForestCost - G(rG) 
+save to d[0, 0] = s[1, 1]
+q[1] = s[1, 1]
+t[1, 4] = s[1, 4]
+t[1, 3] = s[1, 3]
+t[1, 2] = s[1, 2]
+t[1, 1] = s[1, 1]
+new Round B'
 new Round C'
-Right (0, 0, 1, 6)
-Save to S[0, 6]
+Right (1, 1, 0, 0)
+Save to S[1, 0]
 case3 = 0
-case1_case1 = s[1, 6]
-case2_case1 = FcurrentForestCost
+case1_case2 = t[0, 0]
+case2_case2 = q[1]
 case3_case3 d[1, 0]
-Right (0, 0, 1, 5)
-Save to s[0, 5]
-case1_case1 s[1, 5]
-case2_case3 s[0, 6]
-case3_case d[2, 0]
-case3_case2 GcurrentForestCost - G(rG) 
+t[0, 0] = s[1, 0]
+spfA(0, 0) 0 pathType: 0 hasLeftPart: 0 hasRightPart: 0
+initial fn and ft endG_in_preR = 0 endG_in_preR + sizeG = 5
+new Round B'
+new Round C'
+Right (0, 0, 4, 1)
+Save to S[0, 1]
+case3 = 0
+case1_case2 = t[4, 1]
+case2_case1 = FcurrentForestCost
+case3_case3 d[0, 4]
+t[4, 1] = s[0, 1]
+new Round B'
+new Round C'
+Right (0, 0, 3, 3)
+Save to S[0, 3]
+case3 = 0
+case1_case2 = t[3, 3]
+case2_case1 = FcurrentForestCost
+case3_case3 d[0, 3]
+q[0] = s[0, 3]
+t[3, 3] = s[0, 3]
+new Round B'
+new Round C'
+Right (0, 0, 2, 2)
+Save to S[0, 2]
+case3 = 0
+case1_case2 = t[2, 2]
+case2_case2 = q[0]
+case3_case3 d[0, 2]
+t[2, 2] = s[0, 2]
+new Round B'
+new Round C'
 Right (0, 0, 1, 4)
-Save to s[0, 4]
-case1_case1 s[1, 4]
-case2_case3 s[0, 5]
-case3_case d[4, 0]
-case3_case2 GcurrentForestCost - G(rG) 
+Save to S[0, 4]
+case3 = 0
+case1_case2 = t[1, 4]
+case2_case1 = FcurrentForestCost
+case3_case3 d[0, 1]
 Right (0, 0, 1, 3)
 Save to s[0, 3]
-case1_case1 s[1, 3]
+case1_case2 t[1, 3]
 case2_case3 s[0, 4]
-case3_case d[3, 0]
+case3_case d[0, 3]
 case3_case2 GcurrentForestCost - G(rG) 
 Right (0, 0, 1, 2)
 Save to s[0, 2]
-case1_case1 s[1, 2]
+case1_case2 t[1, 2]
 case2_case3 s[0, 3]
-case3_case d[5, 0]
+case3_case d[0, 2]
 case3_case2 GcurrentForestCost - G(rG) 
 Right (0, 0, 1, 1)
 Save to s[0, 1]
-case1_case1 s[1, 1]
+case1_case2 t[1, 1]
 case2_case3 s[0, 2]
-case3_case d[6, 0]
+case3_case d[0, 4]
 case3_case2 GcurrentForestCost - G(rG) 
-save to d[0, 0] = s[0, 1]
-q[1] = s[1, 1]
 q[0] = s[0, 1]
-t[1, 6] = s[0, 6]
-t[1, 5] = s[0, 5]
 t[1, 4] = s[0, 4]
 t[1, 3] = s[0, 3]
 t[1, 2] = s[0, 2]
 t[1, 1] = s[0, 1]
 new Round B'
 new Round C'
-Right (1, 1, 0, 0)
-Save to S[1, 0]
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[0, 0]
-case2_case2 = q[1]
-case3_case3 d[0, 3]
-new Round C'
 Right (0, 0, 0, 0)
 Save to S[0, 0]
 case3 = 0
-case1_case1 = s[1, 0]
+case1_case2 = t[0, 0]
 case2_case2 = q[0]
 case3_case3 d[0, 0]
 t[0, 0] = s[0, 0]
