@@ -240,9 +240,9 @@ Tree* RNA::buildTree(void) {
         currentLeaf = i;
       }
     }
-
 	return tree;
 };
+
 
 string RNA::toString(void) {
 	string res;

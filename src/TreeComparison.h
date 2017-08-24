@@ -64,7 +64,8 @@ private:
 	float spfL(Node*, Node*, int, bool);
 	float spfR(Node*, Node*, int, bool);
 
-	int computeKeyRoots(Tree*, Node*, int, int*, int);	
+	int computeKeyRoots(Tree*, Node*, int, int*, int);
+	void treeEditDist(Node*, Node*, float**, bool);	
 
 	Strategy** APTED_ComputeOptStrategy_postL();
 

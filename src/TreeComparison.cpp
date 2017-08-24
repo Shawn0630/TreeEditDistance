@@ -668,12 +668,14 @@ float TreeComparison::spfL(Node* a, Node* b, int leaf, bool swap) {
 	int* keyRoots = new int[(*G)[b->getID()]->getSubTreeSize()];
 	int firstKeyRoot = computeKeyRoots(G, b, leaf, keyRoots, 0);	
 
-	float** forestdist = new float*[(*F)[a->getID()]->getSubTreeSize() + 1];
-	for(int i = 0; i < (*F)[a->getID()]->getSubTreeSize() + 1; i++) {
+	float** forestdist = new float*[(*F)[a->getID()]->getSubTreeSize() + 1];//consider the null
+	for(int i = 0; i < (*F)[a->getID()]->getSubTreeSize() + 1; i++) {//consider the null
 		forestdist[i] = new float[(*G)[b->getID()]->getSubTreeSize() + 1];
 	}
 
-
+  for (int i = firstKeyRoot - 1; i >= 0; i--) {
+      treeEditDist(a, (*G)[keyRoots[i]], forestdist, swap);
+  }
 }
 
 int TreeComparison::computeKeyRoots(Tree* G, Node* b, int leaf, int* keyRoots, int index) {
@@ -694,6 +696,68 @@ int TreeComparison::computeKeyRoots(Tree* G, Node* b, int leaf, int* keyRoots, i
 	}
 	return index;
 }
+// postL all the trees on the left have already computed
+// postR all the trees on the right have already computed
+void TreeComparison::treeEditDist(Node* a, Node* b, float** forestdist, bool swap) {
+  Tree *F, *G;
+  if(swap) {
+    F = B_;
+    G = A_;
+  } else {
+    F = A_;
+    G = B_;
+  }
+
+  int a_in_preL = a->getID();
+  int b_in_preL = b->getID();
+
+  int a_in_postL = F->preL_to_postL[a_preL];
+  int b_in_postL = G->preL_to_postL[b_preL];
+
+  int a_leftmost_leaf_in_preL = F->preL_to_lid[a_in_preL];
+  int b_leftmost_leaf_in_preL = G->preL_to_rid[b_in_preL];
+
+  int a_leftmost_leaf_in_postL = F->preL_to_postL[a_leftmost_leaf_in_preL];
+  int b_leftmost_leaf_in_postL = G->preL_to_postL[b_leftmost_leaf_in_preL];
+
+  int aoff = a_leftmost_leaf_in_postL - 1;//not tree-tree distance but tree-tree remove the root
+  int boff = b_leftmost_leaf_in_postL - 1;//not tree-tree distance but tree-tree remove the root
+
+  float da = 0;
+  float db = 0;
+  float dc = 0;
+
+  forestdist[0][0] = 0;
+  for (int a1 = 1; a1 <= a_in_postL - aoff; a1++) {
+    int a1_plus_aoff_in_preL = F->postL_to_preL[a1 + aoff];
+    forestdist[a1][0] = forestdist[a1 - 1][0] + (swap ? costModel_.ins((*F)[a1_plus_aoff_in_preL]->getLabel()) : costModel_.del((*F)[a1_plus_aoff_in_preL]->getLabel())); // USE COST MODEL - delete a1.
+  }
+  for (int b1 = 1; b1 <= b_in_postL - boff; b1++) {
+    int b1_plus_boff_in_preL = G->postL_to_preL[b1 + boff];
+    forestdist[0][b1] = forestdist[0][b1 - 1] + (swap ? costModel_.del((*G)[b1_plus_boff_in_preL]->getLabel()) : costModel_.ins((*G)[b1_plus_boff_in_preL]->getLabel())); // USE COST MODEL - insert b1.
+  }
+
+  // Fill in the remaining costs.
+  for (int a1 = 1; a1 <= a_in_postL - aoff; a1++) {
+    for (int b1 = 1; b1 <= b_in_postL - boff; b1++) {
+      int a1_plus_aoff_in_preL = F->postL_to_preL[a1 + aoff];
+      int b1_plus_boff_in_preL = G->postL_to_preL[b1 + boff];
+      float u = (swap ? costModel_.ren(G[b1_plus_boff_in_preL]->getLabel(), F[a1_plus_aoff_in_preL]->getLabel()) : costModel_.ren(F[a1_plus_aoff_in_preL]->getLabel(), G[b1_plus_boff_in_preL]->getLabel())); // USE COST MODEL - rename a1 to g1.
+      da = forestdist[a1 - 1][b1] + (swap ? costModel_.ins((*F)[a1_plus_aoff_in_preL]->getLabel()) : costModel_.del((*F)[a1_plus_aoff_in_preL]->getLabel())); // USE COST MODEL - delete a1.
+      db = forestdist[a1][b1 - 1] + (swap ? costModel_.del((*G)[b1_plus_boff_in_preL]->getLabel()) : costModel_.ins((*G)[b1_plus_boff_in_preL]->getLabel())); // USE COST MODEL - insert b1.
+      
+      // If current subforests are subtrees. 
+      int a1_preL = F->postL_to_preL[a1];
+      int a1_leafmost_leaf = F->preL_to_lid[a1_preL];
+      if (it1.postL_to_lld[i1 + ioff] == it1.postL_to_lld[i] && it2.postL_to_lld[j1 + joff] == it2.postL_to_lld[j]) {
+
+      }
+    }
+  }
+
+
+}
+
 
 float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) {
 	Tree *F, *G;

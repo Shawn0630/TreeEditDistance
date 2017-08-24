@@ -11,7 +11,11 @@ using namespace std;
 
 Tree::Tree(string label, int treeSize) {
 	label_ = label;
+	
 	treeSize_ = treeSize;
+	keyRoot_L_size = 0;
+	keyRoot_R_size = 0;
+
 	preL_to_preR = new int[treeSize_];
 	preR_to_preL = new int[treeSize_];
 	preL_to_postL = new int[treeSize_];
@@ -26,6 +30,9 @@ Tree::Tree(string label, int treeSize) {
 	preL_to_sumDelCost = new int[treeSize_];
 	preL_to_sumInsCost = new int[treeSize_];
 
+	keyRoot_L = new int[treeSize_];
+	keyRoot_R = new int[treeSize_];
+
 
 	fill_n(preL_to_preR, treeSize_, 0); 
 	fill_n(preR_to_preL, treeSize_, 0); 
@@ -36,7 +43,9 @@ Tree::Tree(string label, int treeSize) {
 	fill_n(preL_to_lid, treeSize_, 0); 
 	fill_n(preL_to_rid, treeSize_, 0); 
 	fill_n(preL_to_sumDelCost, treeSize_, 0); 
-	fill_n(preL_to_sumInsCost, treeSize_, 0); 
+	fill_n(preL_to_sumInsCost, treeSize_, 0);
+	fill_n(keyRoot_L, treeSize_, 0);
+	fill_n(keyRoot_R, treeSize_, 0); 
 
 };
 
