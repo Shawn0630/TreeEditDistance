@@ -12,7 +12,7 @@ using namespace std;
 
 int main() {
 	string fileName = "rna19.data";
-	string simiFileName = "ss_simi3";
+	string simiFileName = "ss_distance";
 	SimiMatrix matrix;
 	vector<RNA> RNAs;
 	//ofstream ou("out.txt");
@@ -184,13 +184,13 @@ int main() {
           |                              |
           D                              D
 */
-/*  string s1 = "(A(B)(C(D))(E))";
+  string s1 = "(A(B)(C(D))(E))";
     string s2 = "(A(B)(C(D))(E))";
     r1.setPreOrderSequence(s1);
     r1.setTreeSize(5);
     r2.setPreOrderSequence(s2);
     r2.setTreeSize(5);
-*/
+
 
 
 
@@ -388,13 +388,13 @@ K   L     K                                              H   I
        |
        H
 */
-/*  string s1 = "(B(C(D(E)(F(G(H))))))";
+/*  	string s1 = "(B(C(D(E)(F(G(H))))))";
 	string s2 = "(B(C)(D))";
 	r1.setPreOrderSequence(s1);
 	r1.setTreeSize(7);
 	r2.setPreOrderSequence(s2);
-	r2.setTreeSize(3);
-*/
+	r2.setTreeSize(3);*/
+
 
 /*	 B                               B
 	 |                             / | \
@@ -408,12 +408,12 @@ K   L     K                                              H   I
    |   
    H   
 */
-  string s1 = "(B(C(D(E(G(H)))(F))))";
+/*    string s1 = "(B(C(D(E(G(H)))(F))))";
 	string s2 = "(B(C)(D(E))(F))";
 	r1.setPreOrderSequence(s1);
 	r1.setTreeSize(7);
 	r2.setPreOrderSequence(s2);
-	r2.setTreeSize(5);
+	r2.setTreeSize(5);*/
 
 
 

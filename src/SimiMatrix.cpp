@@ -43,7 +43,7 @@ float SimiMatrix::ren(char a, char b) {
 	if(base.find(a) == base.end() || base.find(b) == base.end()) return 0;
 	int aid = base[a];
 	int bid = base[b];
-	if(aid >= bid) simiMatrix[aid][bid];
+	if(aid >= bid) return simiMatrix[aid][bid];
 	else return simiMatrix[bid][aid];
 };
 
@@ -53,7 +53,6 @@ string SimiMatrix::toString(void) {
 		res += base[i];// be careful of string + char[]
 		res += " ";
 	}*/
-	cout << base.size() << endl;
 	map<char, int>::iterator it;
 	for(it = base.begin(); it != base.end(); it++) {
 		res += it->first;
