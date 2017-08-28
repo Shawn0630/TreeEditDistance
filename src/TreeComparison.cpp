@@ -95,6 +95,97 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 
 };
 
+void TreeComparison::setTreeA(Tree* A) {
+  A_ = A;
+};
+
+void TreeComparison::setTreeB(Tree* B) {
+  B_ = B;
+};
+
+void TreeComparison::setCostModel(SimiMatrix costModel) {
+  costModel_ = costModel;
+}
+
+void TreeComparison::init(void) {
+  if(A_ == NULL || B_ == NULL) return;
+  treeSizeA = A_->getTreeSize();
+  treeSizeB = B_->getTreeSize();
+
+  int maxSize = treeSizeA < treeSizeB? treeSizeB + 1 : treeSizeA + 1;
+  fn = new int[maxSize + 1];
+  ft = new int[maxSize + 1];
+
+  fn_ft_length = maxSize + 1;
+
+  counter = 0;
+
+  Free = new int*[treeSizeA];
+  LeftA = new int*[treeSizeA];
+  LeftB = new int*[treeSizeA];
+  RightA = new int*[treeSizeA];
+  RightB = new int*[treeSizeA];
+  AllA = new int*[treeSizeA];
+  AllB = new int*[treeSizeA];
+  LeftAStrategies = new Strategy*[treeSizeA];
+  LeftBStrategies = new Strategy*[treeSizeA];
+  RightAStrategies = new Strategy*[treeSizeA];
+  RightBStrategies = new Strategy*[treeSizeA];
+  AllAStrategies = new Strategy*[treeSizeA];
+  AllBStrategies = new Strategy*[treeSizeA];
+  FreeStrategies = new Strategy*[treeSizeA];
+  delta = new float*[treeSizeA];
+  hasVisited = new bool*[treeSizeA];
+
+  for(int i = 0; i < treeSizeA; i++) {
+    Free[i] = new int[treeSizeB];
+    LeftA[i] = new int[treeSizeB];
+    LeftB[i] = new int[treeSizeB];
+    RightA[i] = new int[treeSizeB];
+    RightB[i] = new int[treeSizeB];
+    AllA[i] = new int[treeSizeB];
+    AllB[i] = new int[treeSizeB];
+    LeftAStrategies[i] = new Strategy[treeSizeB];
+    LeftBStrategies[i] = new Strategy[treeSizeB];
+    RightAStrategies[i] = new Strategy[treeSizeB];
+    RightBStrategies[i] = new Strategy[treeSizeB];
+    AllAStrategies[i] = new Strategy[treeSizeB];
+    AllBStrategies[i] = new Strategy[treeSizeB];
+    FreeStrategies[i] = new Strategy[treeSizeB];
+    delta[i] = new float[treeSizeB];
+    hasVisited[i] = new bool[treeSizeB];
+  }
+
+  s = new float*[maxSize - 1];
+  t = new float*[maxSize - 1];
+  q = new float[maxSize - 1];
+  for(int i = 0; i < maxSize - 1; i++) {
+    s[i] = new float[maxSize - 1];
+    t[i] = new float[maxSize - 1];
+  }
+
+  for(int i = 0; i < treeSizeA; i++) {
+    for(int j = 0; j < treeSizeB; j++) {
+      Free[i][j] = -1;
+      LeftA[i][j] = -1;
+      LeftB[i][j] = -1;
+      RightA[i][j] = -1;
+      RightB[i][j] = -1;
+      AllA[i][j] = -1;
+      AllB[i][j] = -1;
+      delta[i][j] = 0.0f;
+      hasVisited[i][j] = false;
+    }
+  }
+
+  ou.open("out.txt");
+
+  computeSumInsAndDelCost(A_);
+  computeSumInsAndDelCost(B_);
+  deltaInit();
+
+};
+
 
 void TreeComparison::deltaInit() {
 	int treeSizeA = A_->getTreeSize();
@@ -550,12 +641,15 @@ Strategy** TreeComparison::APTED_ComputeOptStrategy_postL() {
 
 float TreeComparison::gted(Node* a, Node* b) {
 	
-	if(hasVisited[a->getID()][b->getID()] == true) return 0.0f;
+  if(DEBUG) {
+    ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
+    ou << "hasVisited[" << to_string(a->getID()) << ", " << to_string(b->getID()) << "] = " << to_string(hasVisited[a->getID()][b->getID()]) << endl;
+  }
+	if(hasVisited[a->getID()][b->getID()] == true) return delta[a->getID()][b->getID()] + costModel_.ren(a->getLabel(), b->getLabel());
 	hasVisited[a->getID()][b->getID()] = true;
 	int treeSizeA = a->getSubTreeSize();
 	int treeSizeB = b->getSubTreeSize();
 	if(DEBUG) {
-		ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
 		ou << "treeSizeA = " << to_string(treeSizeA) << endl;
 		ou << "treeSizeB = " << to_string(treeSizeB) << endl;
 	}
@@ -602,7 +696,7 @@ float TreeComparison::gted(Node* a, Node* b) {
       	if (pathType == 0) {
         	return spfL(a, b, pathLeaf, false);
       	}
-/*      	else if (pathType == 1) {
+/*      else if (pathType == 1) {
         	//return spfR(a, b, false);
         	return 0.0f;
       	}*/
@@ -622,27 +716,27 @@ float TreeComparison::gted(Node* a, Node* b) {
 				Node* child = children[i];
 				if(DEBUG) {
           			ou << "A child = " << to_string(child->getID()) << " currentPathNode = " << to_string(currentPathNode->getID()) << " parent = " << to_string(parent->getID()) << endl;
-          		}
+        }
 				if(child->getID() != currentPathNode->getID()) {
 					if(DEBUG) {
 						ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") ";
           				ou << "create problem in B " << "gted(" << to_string(a->getID()) << ", " << to_string(child->getID()) << ")" << endl;
-          			}
+          }
 					gted(a, child);
 				}
 			}
-        	currentPathNode = parent;
-        	parent = currentPathNode->getParent();
+      currentPathNode = parent;
+      parent = currentPathNode->getParent();
 		}
 
 		if(DEBUG) {
       		ou << "swap = " << "true " << "pathType = " << to_string(pathType) << endl; 
-      	}
+    }
 
 		if(pathType == 0) {
 			return spfL(b, a, pathLeaf, true);
 		}
-/*		else if(pathType == 1) {
+/*	else if(pathType == 1) {
 			//return spfR(b, a, true);
 			return 0.0f;
 		}*/
@@ -1093,6 +1187,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           if(DEBUG) {
             ou << "s[" << to_string(lF) << ", " << to_string(lG) << "] = " << to_string(minCost) << endl;
           }
+          dist = minCost;
           s[lF][lG] = minCost;
 					lG = ft[lG];
 					
@@ -1207,6 +1302,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
               ou << "s[" << to_string(lF) << ", " << to_string(lG) << "] = " << to_string(minCost) << endl;
             }
             s[lF][lG] = minCost;
+            dist = minCost;
 						lG = ft[lG];
 					}
 					lF_prev = lF;
@@ -1522,6 +1618,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           ou << "case3 = " << to_string(case3) << endl;
         }
         s[rF][rG] = minCost;
+        dist = minCost;
         if(DEBUG) {
            ou << "Save to s[" << to_string(rF) << ", " << to_string(rG) << "] = " << to_string(s[rF][rG]) << endl;
         }
@@ -1751,13 +1848,6 @@ void TreeComparison::strategyComputation() {
 	Strategy** S = APTED_ComputeOptStrategy_postL();
 	if(DEBUG) {
 		ou << "RESULT" << endl;
-	/*	for(int i = 0; i < treeSizeA; i++) {
-			for(int j = 0; j < treeSizeB; j++) {
-				ou << Free[i][j] << " ";
-			}
-			ou << endl;
-		}*/
-
 		for(int i = 0; i < treeSizeA; i++) {
 			for(int j = 0; j < treeSizeB; j++) {
 				if(&FreeStrategies[i][j] != NULL) {
@@ -1784,34 +1874,26 @@ void TreeComparison::strategyComputation() {
 
     ou << "Distance Matrix" << endl;
     ou << costModel_.toString() << endl;
-
 	}
-	
-
 };
 
 float TreeComparison::getTreeDistance(void) {
   vector<Node*> preA = A_->getPreL();
   vector<Node*> preB = B_->getPreL();
+  if(DEBUG) {
+    for(int i = 0; i < treeSizeA; i++) {
+      for(int j = 0; j < treeSizeB; j++) {
+        ou << hasVisited[i][j] << " ";
+      }
+      ou << endl;
+    }
+    ou << endl; 
+  }
   return gted(preA[0], preB[0]);
 };
 
 
 int TreeComparison::free(Node* a, Node* b) {
-	/*if(DEBUG) {
-		ou << "Compute Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
-	}*/
-/*	if(Free[a->getID()][b->getID()] != -1) {
-		if(DEBUG) {
-			ou << "Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") = " << to_string(Free[a->getID()][b->getID()]) << endl;
-		}
-		return Free[a->getID()][b->getID()];
-	}*/
-	
-	/*if(DEBUG) {
-		ou << a->toString() << endl;
-		ou << b->toString() << endl;
-	}*/
 	if(Free[a->getID()][b->getID()] != -1) return Free[a->getID()][b->getID()];
 	vector<Node*> childrenA = a->getChildren();
 	vector<Node*> childrenB = b->getChildren();
@@ -1997,15 +2079,6 @@ int TreeComparison::free(Node* a, Node* b) {
 };
 
 int TreeComparison::leftA(Node* a, Node* b) {
-	/*if(DEBUG) {
-		ou << "Compute LeftA(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
-	}*/
-	/*if(LeftA[a->getID()][b->getID()] != -1) {
-		if(DEBUG) {
-			ou << "Compute LeftA(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") = " << to_string(LeftA[a->getID()][b->getID()]) << endl;
-		}
-		return LeftA[a->getID()][b->getID()];
-	}*/
 	if(LeftA[a->getID()][b->getID()] != -1) return LeftA[a->getID()][b->getID()];
 	vector<Node*> childrenA = a->getChildren();
 	int min = INT_MAX;
@@ -2072,7 +2145,6 @@ int TreeComparison::leftA(Node* a, Node* b) {
 };
 
 int TreeComparison::rightA(Node* a, Node* b) {
-
 	if(RightA[a->getID()][b->getID()] != -1) return RightA[a->getID()][b->getID()];
 	vector<Node*> childrenA = a->getChildren();
 	int min = INT_MAX;

@@ -30,10 +30,10 @@ PROGRAM      = TreeEditDistance
 
 # The source files directories (do not include last '/').
 # If not specified, only the current directory will be searched.
-SRC_DIRS     = src
+SRC_DIRS     = src test
 
 # Header file directories (do not include last '/').
-INCLUDE_DIRS =
+INCLUDE_DIRS = 
 
 # The library directories (do not include last '/').
 LIB_DIRS     = 
@@ -41,8 +41,7 @@ LIB_DIRS     =
 # The library names.
 LIB_NAMES    = 
 
-# The library names for GTest.
-LIBGTEST = /usr/lib/libgtest_main.a /usr/lib/libgtest.a
+# The static 
 
 # Object files directory (do not include last '/').
 OBJ_DIR      = obj
@@ -115,10 +114,11 @@ ifeq ($(OUTPUT_DIR),)
   OUTPUT_DIR = .
 endif
 
-SOURCES = $(foreach d,$(SRC_DIRS),$(wildcard $(addprefix $(d)/*,$(SRCEXTS))))
-SRC_CXX = $(filter-out %.c,$(SOURCES))
-OBJS    = $(addprefix $(OBJ_DIR)/,$(notdir $(foreach x,$(SRCEXTS),$(patsubst %$(x),%.o,$(filter %$(x),$(SOURCES))))))
-DEPS    = $(OBJS:.o=.d)
+
+SOURCES   = $(foreach d,$(SRC_DIRS),$(wildcard $(addprefix $(d)/*,$(SRCEXTS))))
+SRC_CXX   = $(filter-out %.c,$(SOURCES))
+OBJS      = $(addprefix $(OBJ_DIR)/,$(notdir $(foreach x,$(SRCEXTS),$(patsubst %$(x),%.o,$(filter %$(x),$(SOURCES))))))
+DEPS      = $(OBJS:.o=.d)
 
 ## Define some useful variables.
 INCLUDES    = $(addprefix -I ,$(INCLUDE_DIRS)) $(addprefix -I ,$(SRC_DIRS))
@@ -130,7 +130,7 @@ COMPILE.cxx = $(CXX) $(DEP_OPT) $(CXXFLAGS)
 LINK.c      = $(CC)  $(CLDFLAGS)
 LINK.cxx    = $(CXX) $(CXXLDFLAGS)
 
-.PHONY: all objs clean distclean rebuild help check
+.PHONY: all objs clean cleantest distclean rebuild help check
 
 # Delete the default suffixes
 .SUFFIXES:
@@ -194,7 +194,7 @@ $(OBJ_DIR)/%.o:%.cxx
 $(OUT):$(OBJS)
 ifeq ($(SRC_CXX),)              # C program
 	@echo 'Building target: $@'
-	$(LINK.c)   $(OBJS) $(LIBS) -o $@
+	$(LINK.c)   $(OBJS) $(LIBS) -o $@ -lgtest -lpthread
 	@echo 'Finished building: $@'
 	@echo ''
 	@echo 'Type "cd $(OUTPUT_DIR)" to change to output file directory.'
@@ -203,7 +203,7 @@ ifeq ($(SRC_CXX),)              # C program
 #	@echo 'Type ./$@ to execute the program.'
 else                            # C++ program
 	@echo 'Building target: $@'
-	$(LINK.cxx) $(OBJS) $(LIBS) -o $@
+	$(LINK.cxx) $(OBJS) $(LIBS) -o $@ -lgtest -lpthread
 	@echo 'Finished building: $@'
 	@echo ''
 	@echo 'Type "cd $(OUTPUT_DIR)" to change to output file directory.'
@@ -221,43 +221,13 @@ ifneq ($(MAKECMDGOALS),clean)
     endif
   endif
 endif
-
-# Gtest
-check:$(OBJS)
-ifeq ($(SRC_CXX),)              # C program
-	@echo 'Building target: $@'
-	$(LINK.c)   $(OBJS) $(LIBS) -o $@
-	@echo 'Finished building: $@'
-	@echo ''
-	@echo 'Type "cd $(OUTPUT_DIR)" to change to output file directory.'
-	@echo 'Then type "./$(PROGRAM)" to execute the program.'
-	@echo ''
-#	@echo 'Type ./$@ to execute the program.'
-else                            # C++ program
-	@echo 'Building target: $@'
-	$(LINK.cxx) $(OBJS) $(LIBS) -o $@
-	@echo 'Finished building: $@'
-	@echo ''
-	@echo 'Type "cd $(OUTPUT_DIR)" to change to output file directory.'
-	@echo 'Then type "./$(PROGRAM)" to execute the program.'
-	@echo ''
-#	@echo 'Type ./$@ to execute the program.'
-endif
-
-ifneq ($(MAKECMDGOALS),clean)
-  ifneq ($(MAKECMDGOALS),distclean)
-    ifneq ($(MAKECMDGOALS),rebuild)
-      ifneq ($(strip $(DEPS)),)
-        -include $(DEPS)
-      endif
-    endif
-  endif
-endif
-
 
 
 # clean objects and dependencies
 clean:
+	$(RM) $(OBJS) $(DEPS)
+
+cleantest:
 	$(RM) $(OBJS) $(DEPS)
 
 # clean objects, dependencies and the executable
@@ -287,8 +257,12 @@ show:
 	@echo 'PROGRAM     :' $(PROGRAM)
 	@echo 'SRC_DIRS    :' $(SRC_DIRS)
 	@echo 'SOURCES     :' $(SOURCES)
+	@echo 'TESTFILES   :' $(TESTFILES)
+	@echo 'MAINFILES   :' $(MAINFILES)
 	@echo 'SRC_CXX     :' $(SRC_CXX)
 	@echo 'OBJS        :' $(OBJS)
+	@echo 'TESTOBJS    :' $(TESTOBJS)
+	@echo 'MAINOBJS    :' $(MAINOBJS)
 	@echo 'DEPS        :' $(DEPS)
 	@echo 'INCLUDES    :' $(INCLUDES)
 	@echo 'LIBS        :' $(LIBS)

@@ -76,6 +76,10 @@ private:
 public:
 	TreeComparison(void);
 	TreeComparison(Tree*, Tree*, SimiMatrix);
+	void setTreeA(Tree*);
+	void setTreeB(Tree*);
+	void setCostModel(SimiMatrix);
+	void init(void);
 	void strategyComputation(void);
 	float getTreeDistance(void);
 	int getCounter(void);

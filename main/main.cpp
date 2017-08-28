@@ -2,11 +2,11 @@
 #include <fstream>
 #include <iostream>
 
-#include "RNA.h"
-#include "Errors.h"
-#include "SimiMatrix.h"
-#include "FileManage.h"
-#include "TreeComparison.h"
+#include "src/RNA.h"
+#include "src/Errors.h"
+#include "src/SimiMatrix.h"
+#include "src/FileManage.h"
+#include "src/TreeComparison.h"
 
 using namespace std;
 
