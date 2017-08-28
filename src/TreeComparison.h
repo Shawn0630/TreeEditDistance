@@ -62,6 +62,7 @@ private:
 	float spfA(Node*, Node*, int, int, bool);
 	float spfL(Node*, Node*, int, bool);
 	float spfR(Node*, Node*, int, bool);
+	float spf1(Node*, int, Node*, int);
 
 	int computeKeyRoots(Tree*, Node*, int, int*, int);
 	void treeEditDist(Node*, Node*, float**, bool);	
@@ -70,9 +71,13 @@ private:
 
 	ofstream ou;
 
+	int counter;
+
 public:
-	TreeComparison();
+	TreeComparison(void);
 	TreeComparison(Tree*, Tree*, SimiMatrix);
-	void strategyComputation();
+	void strategyComputation(void);
+	float getTreeDistance(void);
+	int getCounter(void);
 
 };

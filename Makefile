@@ -39,7 +39,10 @@ INCLUDE_DIRS =
 LIB_DIRS     = 
 
 # The library names.
-LIB_NAMES    =
+LIB_NAMES    = 
+
+# The library names for GTest.
+LIBGTEST = /usr/lib/libgtest_main.a /usr/lib/libgtest.a
 
 # Object files directory (do not include last '/').
 OBJ_DIR      = obj
@@ -72,7 +75,10 @@ CXX          = g++
 CFLAGS       = -g3 -O2 -c -g -std=c++11 #-pg
 
 # The pre-processor and compiler options for C++ programs.
-CXXFLAGS     = $(CFLAGS)
+CXXFLAGS     = $(CFLAGS) 
+
+# The pre-processor and compiler options for C++ Gtest programs.
+GTESTLIBS = -lgtest -lgtest_main -lpthread
 
 # The linker options for C programs.
 CLDFLAGS     = -g3 -O2 #-pg
@@ -115,8 +121,8 @@ OBJS    = $(addprefix $(OBJ_DIR)/,$(notdir $(foreach x,$(SRCEXTS),$(patsubst %$(
 DEPS    = $(OBJS:.o=.d)
 
 ## Define some useful variables.
-INCLUDES    = $(addprefix -I,$(INCLUDE_DIRS)) $(addprefix -I,$(SRC_DIRS))
-LIBS        = $(addprefix -L,$(LIB_DIRS)) $(addprefix -l,$(LIB_NAMES))
+INCLUDES    = $(addprefix -I ,$(INCLUDE_DIRS)) $(addprefix -I ,$(SRC_DIRS))
+LIBS        = $(addprefix -L ,$(LIB_DIRS)) $(addprefix -l ,$(LIB_NAMES))
 OUT         = $(OUTPUT_DIR)/$(PROGRAM)
 DEP_OPT     = -MMD -MP -MT"$(@:%.o=%.d)"
 COMPILE.c   = $(CC)  $(DEP_OPT) $(CFLAGS)
@@ -124,7 +130,7 @@ COMPILE.cxx = $(CXX) $(DEP_OPT) $(CXXFLAGS)
 LINK.c      = $(CC)  $(CLDFLAGS)
 LINK.cxx    = $(CXX) $(CXXLDFLAGS)
 
-.PHONY: all objs clean distclean rebuild help
+.PHONY: all objs clean distclean rebuild help check
 
 # Delete the default suffixes
 .SUFFIXES:
@@ -215,6 +221,40 @@ ifneq ($(MAKECMDGOALS),clean)
     endif
   endif
 endif
+
+# Gtest
+check:$(OBJS)
+ifeq ($(SRC_CXX),)              # C program
+	@echo 'Building target: $@'
+	$(LINK.c)   $(OBJS) $(LIBS) -o $@
+	@echo 'Finished building: $@'
+	@echo ''
+	@echo 'Type "cd $(OUTPUT_DIR)" to change to output file directory.'
+	@echo 'Then type "./$(PROGRAM)" to execute the program.'
+	@echo ''
+#	@echo 'Type ./$@ to execute the program.'
+else                            # C++ program
+	@echo 'Building target: $@'
+	$(LINK.cxx) $(OBJS) $(LIBS) -o $@
+	@echo 'Finished building: $@'
+	@echo ''
+	@echo 'Type "cd $(OUTPUT_DIR)" to change to output file directory.'
+	@echo 'Then type "./$(PROGRAM)" to execute the program.'
+	@echo ''
+#	@echo 'Type ./$@ to execute the program.'
+endif
+
+ifneq ($(MAKECMDGOALS),clean)
+  ifneq ($(MAKECMDGOALS),distclean)
+    ifneq ($(MAKECMDGOALS),rebuild)
+      ifneq ($(strip $(DEPS)),)
+        -include $(DEPS)
+      endif
+    endif
+  endif
+endif
+
+
 
 # clean objects and dependencies
 clean:

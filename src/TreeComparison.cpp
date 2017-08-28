@@ -27,6 +27,8 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 
 	fn_ft_length = maxSize + 1;
 
+  counter = 0;
+
 	Free = new int*[treeSizeA];
 	LeftA = new int*[treeSizeA];
 	LeftB = new int*[treeSizeA];
@@ -87,6 +89,10 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 
 	ou.open("out.txt");
 
+  computeSumInsAndDelCost(A_);
+  computeSumInsAndDelCost(B_);
+  deltaInit();
+
 };
 
 
@@ -143,9 +149,9 @@ void TreeComparison::computeSumInsAndDelCost(Tree* tree) {
 Strategy** TreeComparison::APTED_ComputeOptStrategy_postL() {
 	Strategy** S = new Strategy*[treeSizeA];
 	float** cost1_L = new float*[treeSizeA];//in postL order
-    float** cost1_R = new float*[treeSizeA];//in postL order
-    float** cost1_I = new float*[treeSizeA];//in postL order
-    int pathIDOffset = treeSizeA;
+  float** cost1_R = new float*[treeSizeA];//in postL order
+  float** cost1_I = new float*[treeSizeA];//in postL order
+  int pathIDOffset = treeSizeA;
 
 	for(int i = 0; i < treeSizeA; i++) {
 		S[i] = new Strategy[treeSizeB];
@@ -164,10 +170,10 @@ Strategy** TreeComparison::APTED_ComputeOptStrategy_postL() {
 	}
 
 	float* cost2_L = new float[treeSizeB];//in postL order
-    float* cost2_R = new float[treeSizeB];//in postL order
-    float* cost2_I = new float[treeSizeB];//in postL order
-    int* cost2_path = new int[treeSizeB];//in postL order
-    float* leafRow = new float[treeSizeB];
+  float* cost2_R = new float[treeSizeB];//in postL order
+  float* cost2_I = new float[treeSizeB];//in postL order
+  int* cost2_path = new int[treeSizeB];//in postL order
+  float* leafRow = new float[treeSizeB];
 
 	float minCost = 0x7fffffffffffffffL;
 	int strategyPath = -1;
@@ -206,222 +212,220 @@ Strategy** TreeComparison::APTED_ComputeOptStrategy_postL() {
 		}
 
 
-        int leftPath_i = (A_)->preL_to_lid[i_in_preL];
-        int rightPath_i = (A_)->preL_to_rid[i_in_preL];
-      	int i_leftmost_forest = (*A_)[i_in_preL]->getLeftmostForestNum();
-      	int i_rightmost_forest = (*A_)[i_in_preL]->getRightmostForestNum();
-      	int i_special_forest = (*A_)[i_in_preL]->getSpecialForestNum();
+    int leftPath_i = (A_)->preL_to_lid[i_in_preL];
+    int rightPath_i = (A_)->preL_to_rid[i_in_preL];
+    int i_leftmost_forest = (*A_)[i_in_preL]->getLeftmostForestNum();
+    int i_rightmost_forest = (*A_)[i_in_preL]->getRightmostForestNum();
+    int i_special_forest = (*A_)[i_in_preL]->getSpecialForestNum();
 
-      	if(is_i_leaf) {
-      		if(DEBUG) {
-      			ou << to_string(i_in_preL) << " is a leaf" << endl;
-      		}
-        	cost1_L[i] = leafRow;
-        	cost1_R[i] = leafRow;
-        	cost1_I[i] = leafRow;
-        	for(int j = 0; j < treeSizeB; j++) {
-        		strategyRightIndex = (B_)->postL_to_preL[j];
-        		if(DEBUG) {
-        			ou << "set S[" << to_string(strategyLeftIndex) << ", " << to_string(strategyRightIndex) << "] = " << to_string(i_in_preL) << endl;
-        		}
-          		S[strategyLeftIndex][strategyRightIndex].setLeaf(i_in_preL);//decomposit the left tree
-          		S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(0);
-        	}
-      	}
+    if(is_i_leaf) {
+      if(DEBUG) {
+      	ou << to_string(i_in_preL) << " is a leaf" << endl;
+      }
+      cost1_L[i] = leafRow;
+      cost1_R[i] = leafRow;
+      cost1_I[i] = leafRow;
+      for(int j = 0; j < treeSizeB; j++) {
+        strategyRightIndex = (B_)->postL_to_preL[j];
+        if(DEBUG) {
+        	ou << "set S[" << to_string(strategyLeftIndex) << ", " << to_string(strategyRightIndex) << "] = " << to_string(i_in_preL) << endl;
+        }
+        S[strategyLeftIndex][strategyRightIndex].setLeaf(i_in_preL);//decomposit the left tree
+        S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(0);
+        }
+      }
+      cost_L_LeftIndex = i;
+      cost_R_LeftIndex = i;
+      cost_I_LeftIndex = i;
 
-        cost_L_LeftIndex = i;
-        cost_R_LeftIndex = i;
-        cost_I_LeftIndex = i;
+      if(parent_i != NULL && cost1_L[parent_i_postL] == NULL) {
+        if (rowsToReuse_L.empty()) {
+         	cost1_L[parent_i_postL] = new float[treeSizeB];
+          cost1_R[parent_i_postL] = new float[treeSizeB];
+          cost1_I[parent_i_postL] = new float[treeSizeB];
+        } else {
+          cost1_L[parent_i_postL] = rowsToReuse_L.top();
+          rowsToReuse_L.pop();
+          cost1_R[parent_i_postL] = rowsToReuse_R.top();
+          rowsToReuse_R.pop();
+          cost1_I[parent_i_postL] = rowsToReuse_I.top();
+          rowsToReuse_I.pop();
+        }
+      }
 
-        if(parent_i != NULL && cost1_L[parent_i_postL] == NULL) {
-        	if (rowsToReuse_L.empty()) {
-         		cost1_L[parent_i_postL] = new float[treeSizeB];
-          		cost1_R[parent_i_postL] = new float[treeSizeB];
-          		cost1_I[parent_i_postL] = new float[treeSizeB];
+      if (parent_i != NULL) {
+        cost_L_parent_i_LeftIndex = parent_i_postL;
+        cost_R_parent_i_LeftIndex = parent_i_postL;
+        cost_I_parent_i_LeftIndex = parent_i_postL;
+        strategy_parent_i_LeftIndex = parent_i_preL;
+      }
+
+      fill_n(cost2_L, treeSizeB, 0L);
+      fill_n(cost2_R, treeSizeB, 0L);
+      fill_n(cost2_I, treeSizeB, 0L);
+      fill_n(cost2_path, treeSizeB, 0);
+      fill_n(leafRow, treeSizeB, 0);
+
+      for(int j = 0; j < treeSizeB; j++) {
+ 			  int j_in_preL = (B_)->postL_to_preL[j];
+
+ 			  if(DEBUG) {
+ 				 ou << "compute " << to_string(i_in_preL) << ", " << to_string(j_in_preL) << endl;
+ 			  }
+
+ 			  strategyRightIndex = j_in_preL;
+ 			  Node* parent_j = (*B_)[j_in_preL]->getParent();
+ 			  int parent_j_preL, parent_j_postL;
+        if (parent_j != NULL) {
+        	parent_j_preL = parent_j->getID();
+          parent_j_postL = (B_)->preL_to_postL[parent_j_preL];
+        }
+        if(DEBUG) {
+        	ou << "parent i = "; 
+        	if(parent_i == NULL) {
+        		ou << "NULL";
         	} else {
-          		cost1_L[parent_i_postL] = rowsToReuse_L.top();
-          		rowsToReuse_L.pop();
-          		cost1_R[parent_i_postL] = rowsToReuse_R.top();
-          		rowsToReuse_R.pop();
-          		cost1_I[parent_i_postL] = rowsToReuse_I.top();
-          		rowsToReuse_I.pop();
+        		ou << to_string(parent_i_preL);
         	}
-      	}
-
-      	if (parent_i != NULL) {
-        	cost_L_parent_i_LeftIndex = parent_i_postL;
-        	cost_R_parent_i_LeftIndex = parent_i_postL;
-        	cost_I_parent_i_LeftIndex = parent_i_postL;
-        	strategy_parent_i_LeftIndex = parent_i_preL;
-      	}
-
-      	fill_n(cost2_L, treeSizeB, 0L);
-      	fill_n(cost2_R, treeSizeB, 0L);
-      	fill_n(cost2_I, treeSizeB, 0L);
-      	fill_n(cost2_path, treeSizeB, 0);
-
-      	for(int j = 0; j < treeSizeB; j++) {
- 			int j_in_preL = (B_)->postL_to_preL[j];
-
- 			if(DEBUG) {
- 				ou << "compute " << to_string(i_in_preL) << ", " << to_string(j_in_preL) << endl;
- 			}
-
- 			strategyRightIndex = j_in_preL;
- 			Node* parent_j = (*B_)[j_in_preL]->getParent();
- 			int parent_j_preL, parent_j_postL;
-        	if (parent_j != NULL) {
-        		parent_j_preL = parent_j->getID();
-          		parent_j_postL = (B_)->preL_to_postL[parent_j_preL];
+        	ou << " parent j = ";
+        	if(parent_j == NULL) {
+        		ou << "NULL" << endl;
+        	} else {
+        		ou << to_string(parent_j_preL) << endl;
         	}
+        }
+        size_j = (*B_)[j_in_preL]->getSubTreeSize();
+        bool is_j_leaf = size_j == 1? true : false;
+        if (is_j_leaf) {
+          cost2_L[j] = 0L;
+          cost2_R[j] = 0L;
+          cost2_I[j] = 0L;
+          cost2_path[j] = j_in_preL;
+        }
+        minCost = 0x7fffffffffffffffL;
+        int pathLeaf = -1;
+        int treeToDecompose = 0;
+        float tmpCost = 0x7fffffffffffffffL;
+
+        if (size_i == 1) {
+        	tmpCost = (float) (*B_)[j_in_preL]->getLeftmostForestNum();
         	if(DEBUG) {
-        		ou << "parent i = "; 
-        		if(parent_i == NULL) {
-        			ou << "NULL";
-        		} else {
-        			ou << to_string(parent_i_preL);
-        		}
-        		ou << " parent j = ";
-        		if(parent_j == NULL) {
-        			ou << "NULL" << endl;
-        		} else {
-        			ou << to_string(parent_j_preL) << endl;
-        		}
+					 ou << "left leaf(j) in " << to_string(j_in_preL) << " = " << to_string((B_)->preL_to_lid[j_in_preL]) << " tmpCost = " << to_string(tmpCost) << endl;
+				  }
+        	if(tmpCost < minCost) {
+        		minCost = tmpCost;
+        		pathLeaf = (B_)->preL_to_lid[j_in_preL];
+        		treeToDecompose = 1;
         	}
-        	size_j = (*B_)[j_in_preL]->getSubTreeSize();
-        	bool is_j_leaf = size_j == 1? true : false;
-        	if (is_j_leaf) {
-          		cost2_L[j] = 0L;
-          		cost2_R[j] = 0L;
-          		cost2_I[j] = 0L;
-          		cost2_path[j] = j_in_preL;
+          tmpCost = (float) (*B_)[j_in_preL]->getRightmostForestNum();
+          if(DEBUG) {
+					 ou << "right leaf(j) in " << to_string(j_in_preL) << " = " << to_string((B_)->preL_to_rid[j_in_preL]) << " tmpCost = " << to_string(tmpCost) << endl;
+				  }
+          if(tmpCost < minCost) {
+          	minCost = tmpCost;
+          	pathLeaf = (B_)->preL_to_rid[j_in_preL];
+          	treeToDecompose = 1;
+          }
+        }
+        if(size_j == 1) {
+        	tmpCost = (float) (*A_)[i_in_preL]->getLeftmostForestNum();
+        	if(DEBUG) {
+					 ou << "left leaf(i) in " << to_string(i_in_preL) << " = " << to_string(leftPath_i) << " tmpCost = " << to_string(tmpCost) << endl;
+				  }
+        	if(tmpCost < minCost) {
+        		minCost = tmpCost;
+        		pathLeaf = leftPath_i;
+        		treeToDecompose = 0;
         	}
-        	minCost = 0x7fffffffffffffffL;
-        	int pathLeaf = -1;
-        	int treeToDecompose = 0;
-        	float tmpCost = 0x7fffffffffffffffL;
+        	tmpCost = (float) (*A_)[i_in_preL]->getRightmostForestNum();
+        	if(DEBUG) {
+					 ou << "right leaf(i) in " << to_string(i_in_preL) << " = " << to_string(rightPath_i) << " tmpCost = " << to_string(tmpCost) << endl;
+				  }
+        	if(tmpCost < minCost) {
+        		minCost = tmpCost;
+        		pathLeaf = rightPath_i;
+        		treeToDecompose = 0;
+        	}
+        }
+        if(size_i != 1 && size_j != 1) {
+        	cost_L_RightIndex = j;//left path decomposition in i
+				  tmpCost = (float) size_i * (float) (*B_)[j_in_preL]->getLeftmostForestNum() + cost1_L[cost_L_LeftIndex][cost_L_RightIndex];
+				  if(DEBUG) {
+					 ou << "left leaf(i) in " << to_string(i_in_preL) << " = " << to_string(leftPath_i) << " tmpCost = " << to_string(tmpCost) << endl;
+				  }
+          if (tmpCost < minCost) {
+            minCost = tmpCost;
+            pathLeaf = leftPath_i;
+            treeToDecompose = 0;
+            //S[strategyLeftIndex][strategyRightIndex].setLeaf(leftPath_i);
+            //S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(0);
+         	 }
 
-        	if (size_i == 1) {
-        		tmpCost = (float) (*B_)[j_in_preL]->getLeftmostForestNum();
-        		if(DEBUG) {
-					ou << "left leaf(j) in " << to_string(j_in_preL) << " = " << to_string((B_)->preL_to_lid[j_in_preL]) << " tmpCost = " << to_string(tmpCost) << endl;
-				}
-        		if(tmpCost < minCost) {
-        			minCost = tmpCost;
-        			pathLeaf = (B_)->preL_to_lid[j_in_preL];
-        			treeToDecompose = 1;
-        		}
-          		tmpCost = (float) (*B_)[j_in_preL]->getRightmostForestNum();
-          		if(DEBUG) {
-					ou << "right leaf(j) in " << to_string(j_in_preL) << " = " << to_string((B_)->preL_to_rid[j_in_preL]) << " tmpCost = " << to_string(tmpCost) << endl;
-				}
-          		if(tmpCost < minCost) {
-          			minCost = tmpCost;
-          			pathLeaf = (B_)->preL_to_rid[j_in_preL];
-          			treeToDecompose = 1;
-          		}
-        	}
-        	if(size_j == 1) {
-        		tmpCost = (float) (*A_)[i_in_preL]->getLeftmostForestNum();
-        		if(DEBUG) {
-					ou << "left leaf(i) in " << to_string(i_in_preL) << " = " << to_string(leftPath_i) << " tmpCost = " << to_string(tmpCost) << endl;
-				}
-        		if(tmpCost < minCost) {
-        			minCost = tmpCost;
-        			pathLeaf = leftPath_i;
-        			treeToDecompose = 0;
-        		}
-        		tmpCost = (float) (*A_)[i_in_preL]->getRightmostForestNum();
-        		if(DEBUG) {
-					ou << "right leaf(i) in " << to_string(i_in_preL) << " = " << to_string(rightPath_i) << " tmpCost = " << to_string(tmpCost) << endl;
-				}
-        		if(tmpCost < minCost) {
-        			minCost = tmpCost;
-        			pathLeaf = rightPath_i;
-        			treeToDecompose = 0;
-        		}
-        	}
-        	if(size_i != 1) {
-        		cost_L_RightIndex = j;//left path decomposition in i
-				tmpCost = (float) size_i * (float) (*B_)[j_in_preL]->getLeftmostForestNum() + cost1_L[cost_L_LeftIndex][cost_L_RightIndex];
-				if(DEBUG) {
-					ou << "left leaf(i) in " << to_string(i_in_preL) << " = " << to_string(leftPath_i) << " tmpCost = " << to_string(tmpCost) << endl;
-				}
-          		if (tmpCost < minCost) {
-            		minCost = tmpCost;
-            		pathLeaf = leftPath_i;
-            		treeToDecompose = 0;
-            		//S[strategyLeftIndex][strategyRightIndex].setLeaf(leftPath_i);
-            		//S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(0);
-         	 	}
+         	 cost_R_RightIndex = j;//right path decomposition in i
+         	 tmpCost = (float) size_i * (float) (*B_)[j_in_preL]->getRightmostForestNum() + cost1_R[cost_R_LeftIndex][cost_R_RightIndex];
+         	 if(DEBUG) {
+				    ou << "right leaf(i) in " << to_string(i_in_preL) << " = " << to_string(rightPath_i) << " tmpCost = " << to_string(tmpCost) << endl;
+				   }
+           if (tmpCost < minCost) {
+            minCost = tmpCost;
+            pathLeaf = rightPath_i;
+            treeToDecompose = 0;
+            //S[strategyLeftIndex][strategyRightIndex].setLeaf(rightPath_i);
+            //S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(0);
+           }
 
-         	 	cost_R_RightIndex = j;//right path decomposition in i
-         	 	tmpCost = (float) size_i * (float) (*B_)[j_in_preL]->getRightmostForestNum() + cost1_R[cost_R_LeftIndex][cost_R_RightIndex];
-         	 	if(DEBUG) {
-					ou << "right leaf(i) in " << to_string(i_in_preL) << " = " << to_string(rightPath_i) << " tmpCost = " << to_string(tmpCost) << endl;
-				}
-          		if (tmpCost < minCost) {
-            		minCost = tmpCost;
-            		pathLeaf = rightPath_i;
-            		treeToDecompose = 0;
-            		//S[strategyLeftIndex][strategyRightIndex].setLeaf(rightPath_i);
-            		//S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(0);
-          		}
-
-          		cost_I_RightIndex = j;//special path decomposition in i
-          		tmpCost = (float) size_i * (float) (*B_)[j_in_preL]->getSpecialForestNum() + cost1_I[cost_I_LeftIndex][cost_I_RightIndex];
-          		if(DEBUG) {
-					ou << "special leaf(i) in " << to_string(i_in_preL) << " = " << to_string((int)S[strategyLeftIndex][strategyRightIndex].getLeaf()) << " tmpCost = " << to_string(tmpCost) << " cost1_I[" << to_string(i_in_preL) << ", " << to_string(j_in_preL) << "] = " << to_string(cost1_I[cost_I_LeftIndex][cost_I_RightIndex]) << endl;
-				}
-          		if (tmpCost < minCost) {
-            		minCost = tmpCost;
-            		strategyRightIndex = j_in_preL;
-            		pathLeaf = (int)S[strategyLeftIndex][strategyRightIndex].getLeaf();
-            		treeToDecompose = 0;
-            		//S[strategyLeftIndex][strategyRightIndex].setLeaf((int)S[strategyLeftIndex][strategyRightIndex].getLeaf() + 1);
-            		//S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(0);
-          		}
+          	cost_I_RightIndex = j;//special path decomposition in i
+          	tmpCost = (float) size_i * (float) (*B_)[j_in_preL]->getSpecialForestNum() + cost1_I[cost_I_LeftIndex][cost_I_RightIndex];
+          	if(DEBUG) {
+					    ou << "special leaf(i) in " << to_string(i_in_preL) << " = " << to_string((int)S[strategyLeftIndex][strategyRightIndex].getLeaf()) << " tmpCost = " << to_string(tmpCost) << " cost1_I[" << to_string(i_in_preL) << ", " << to_string(j_in_preL) << "] = " << to_string(cost1_I[cost_I_LeftIndex][cost_I_RightIndex]) << endl;
+				    }
+          	if (tmpCost < minCost) {
+            	minCost = tmpCost;
+            	strategyRightIndex = j_in_preL;
+            	pathLeaf = (int)S[strategyLeftIndex][strategyRightIndex].getLeaf();
+            	treeToDecompose = 0;
+            	//S[strategyLeftIndex][strategyRightIndex].setLeaf((int)S[strategyLeftIndex][strategyRightIndex].getLeaf() + 1);
+            	//S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(0);
           	}
-          	if(size_j != 1) {
-          		//left path decomposition in j
-          		tmpCost = (float) size_j * (float) i_leftmost_forest + cost2_L[j];
-          		if(DEBUG) {
-					ou << "left leaf(j) in " << to_string(j_in_preL) << " = " << to_string((B_)->preL_to_lid[j_in_preL]) << " tmpCost = " << to_string(tmpCost) << endl;
-				}
-          		if (tmpCost < minCost) {
-            		minCost = tmpCost;
-            		pathLeaf = (B_)->preL_to_lid[j_in_preL];
-            		treeToDecompose = 1;
-            		//S[strategyLeftIndex][strategyRightIndex].setLeaf((B_)->preL_to_lid[j_in_preL]);
-            		//S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(1);
-          		}
+          	//left path decomposition in j
+          	tmpCost = (float) size_j * (float) i_leftmost_forest + cost2_L[j];
+          	if(DEBUG) {
+					     ou << "left leaf(j) in " << to_string(j_in_preL) << " = " << to_string((B_)->preL_to_lid[j_in_preL]) << " tmpCost = " << to_string(tmpCost) << endl;
+				    }
+          	if (tmpCost < minCost) {
+            	minCost = tmpCost;
+            	pathLeaf = (B_)->preL_to_lid[j_in_preL];
+            	treeToDecompose = 1;
+            	//S[strategyLeftIndex][strategyRightIndex].setLeaf((B_)->preL_to_lid[j_in_preL]);
+            	//S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(1);
+          	}
 
-          		//right path decompostion in j
-          		tmpCost = (float) size_j * (float) i_rightmost_forest + cost2_R[j];
-          		if(DEBUG) {
-					ou << "right leaf(j) in " << to_string(j_in_preL) << " = " << to_string((B_)->preL_to_rid[j_in_preL]) << " tmpCost = " << to_string(tmpCost) << endl;
-				}
-          		if (tmpCost < minCost) {
-            		minCost = tmpCost;
-            		pathLeaf = (B_)->preL_to_rid[j_in_preL];
-            		treeToDecompose = 1;
-            		//S[strategyLeftIndex][strategyRightIndex].setLeaf((B_)->preL_to_rid[j_in_preL]);
-            		//S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(1);
-          		}
+          	//right path decompostion in j
+          	tmpCost = (float) size_j * (float) i_rightmost_forest + cost2_R[j];
+          	if(DEBUG) {
+					     ou << "right leaf(j) in " << to_string(j_in_preL) << " = " << to_string((B_)->preL_to_rid[j_in_preL]) << " tmpCost = " << to_string(tmpCost) << endl;
+				    }
+          	if (tmpCost < minCost) {
+            	minCost = tmpCost;
+            	pathLeaf = (B_)->preL_to_rid[j_in_preL];
+            	treeToDecompose = 1;
+            	//S[strategyLeftIndex][strategyRightIndex].setLeaf((B_)->preL_to_rid[j_in_preL]);
+            	//S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(1);
+          	}
 
-          		//special path decompostion in j
-          		tmpCost = (float) size_j * (float) i_special_forest + cost2_I[j];
-          		if(DEBUG) {
-					ou << "special leaf(j) in " << to_string(j_in_preL) << " = " << to_string(cost2_path[j]) << " tmpCost = " << to_string(tmpCost) << " cost2_I[" << to_string(j_in_preL) << "] = " << cost2_I[j] << endl;
-				}
-          		if (tmpCost < minCost) {
-            		minCost = tmpCost;
-            		pathLeaf = cost2_path[j];
-            		treeToDecompose = 1;
-            		//S[strategyLeftIndex][strategyRightIndex].setLeaf(cost2_path[j] + pathIDOffset + 1);
-            		//S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(1);
-          		}
-        	}
+          	//special path decompostion in j
+          	tmpCost = (float) size_j * (float) i_special_forest + cost2_I[j];
+          	if(DEBUG) {
+					     ou << "special leaf(j) in " << to_string(j_in_preL) << " = " << to_string(cost2_path[j]) << " tmpCost = " << to_string(tmpCost) << " cost2_I[" << to_string(j_in_preL) << "] = " << cost2_I[j] << endl;
+				    }
+          	if (tmpCost < minCost) {
+            	minCost = tmpCost;
+            	pathLeaf = cost2_path[j];
+            	treeToDecompose = 1;
+            	//S[strategyLeftIndex][strategyRightIndex].setLeaf(cost2_path[j] + pathIDOffset + 1);
+            	//S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(1);
+          	}
+          }
 
         	if (parent_i != NULL) {
         		cost_R_parent_i_RightIndex = j;
@@ -528,7 +532,7 @@ Strategy** TreeComparison::APTED_ComputeOptStrategy_postL() {
         	}
         	S[strategyLeftIndex][strategyRightIndex].setLeaf(pathLeaf);
         	S[strategyLeftIndex][strategyRightIndex].setTreeToDecompose(treeToDecompose);
-		}
+		    }
 
         bool is_i_in_preL_leaf = (*A_)[i_in_preL]->getSubTreeSize() == 1? true : false;
 
@@ -557,12 +561,8 @@ float TreeComparison::gted(Node* a, Node* b) {
 	}
 	
 	if ((treeSizeA == 1 || treeSizeB == 1)) {
-      //return spf1(a, treeSizeA, b, treeSizeB);
-		if(DEBUG) {
-			ou << "return 0.0f" << endl;
-		}
-		return 0.0f;
-    }
+    return spf1(a, treeSizeA, b, treeSizeB);
+  }
 
 
 	int pathLeaf = FreeStrategies[a->getID()][b->getID()].getLeaf();
@@ -599,11 +599,10 @@ float TreeComparison::gted(Node* a, Node* b) {
       		ou << "swap = " << "false " << "pathType = " << to_string(pathType) << endl; 
       	}
 
-/*      	if (pathType == 0) {
-        	//return spfL(a, b, false);
-        	return 0.0f;
+      	if (pathType == 0) {
+        	return spfL(a, b, pathLeaf, false);
       	}
-      	else if (pathType == 1) {
+/*      	else if (pathType == 1) {
         	//return spfR(a, b, false);
         	return 0.0f;
       	}*/
@@ -640,16 +639,73 @@ float TreeComparison::gted(Node* a, Node* b) {
       		ou << "swap = " << "true " << "pathType = " << to_string(pathType) << endl; 
       	}
 
-		/*if(pathType == 0) {
-			//return spfL(b, a, true);
-			return 0.0f;
+		if(pathType == 0) {
+			return spfL(b, a, pathLeaf, true);
 		}
-		else if(pathType == 1) {
+/*		else if(pathType == 1) {
 			//return spfR(b, a, true);
 			return 0.0f;
 		}*/
 		return spfA(b, a, pathLeaf, pathType, true);
 	}
+};
+
+float TreeComparison::spf1(Node* a, int treeSizeA, Node* b, int treeSizeB) {
+  Tree* F, *G;
+  F = A_;
+  G = B_;
+
+  if (treeSizeA == 1 && treeSizeB == 1) {
+    float maxCost = costModel_.del(a->getLabel()) + costModel_.ins(b->getLabel());
+    float renCost = costModel_.ren(a->getLabel(), b->getLabel());
+    if(DEBUG) {
+      if(renCost < maxCost) ou << "spf1(" << a->getID() << ", " << b->getID() << ") = " << renCost << endl;
+      else ou << "spf1(" << a->getID() << ", " << b->getID() << ") = " << maxCost << endl;
+    }
+    return renCost < maxCost ? renCost : maxCost;
+  }
+
+  if (treeSizeA == 1) {
+    float cost = G->preL_to_sumInsCost[b->getID()];
+    float maxCost = cost + costModel_.del(a->getLabel());
+    float minRenMinusIns = cost;
+    float nodeRenMinusIns = 0;
+    for (int i = b->getID(); i < b->getID() + treeSizeB; i++) {
+      Node* node = (*G)[i];
+      nodeRenMinusIns = costModel_.ren(a->getLabel(), node->getLabel()) - costModel_.ins(node->getLabel());
+      if (nodeRenMinusIns < minRenMinusIns) {
+        minRenMinusIns = nodeRenMinusIns;
+      }
+    }
+    cost += minRenMinusIns;
+    if(DEBUG) {
+      if(cost < maxCost) ou << "spf1(" << a->getID() << ", " << b->getID() << ") = " << cost << endl;
+      else ou << "spf1(" << a->getID() << ", " << b->getID() << ") = " << maxCost << endl;
+    }
+    return cost < maxCost ? cost : maxCost;
+  }
+
+  if (treeSizeB == 1) {
+    float cost = F->preL_to_sumDelCost[a->getID()];
+    float maxCost = cost + costModel_.ins(b->getLabel());
+    float minRenMinusDel = cost;
+    float nodeRenMinusDel = 0;
+    for (int i = a->getID(); i < a->getID() + treeSizeB; i++) {
+      Node* node = (*F)[i];
+      nodeRenMinusDel = costModel_.ren(node->getLabel(), b->getLabel()) - costModel_.del(node->getLabel());
+      if (nodeRenMinusDel < minRenMinusDel) {
+        minRenMinusDel = nodeRenMinusDel;
+      }
+    }
+    cost += minRenMinusDel;
+    if(DEBUG) {
+      if(cost < maxCost) ou << "spf1(" << a->getID() << ", " << b->getID() << ") = " << cost << endl;
+      else ou << "spf1(" << a->getID() << ", " << b->getID() << ") = " << maxCost << endl;
+    }
+    return cost < maxCost ? cost : maxCost;
+  }
+
+  return -1;
 };
 
 
@@ -793,6 +849,8 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
   int FtmpForestSize = 0;
   float FtmpForestCost = 0;
 
+  float dist = 0;
+
 	
 	//loop A
 	while(endPathNode >= endF) {
@@ -894,9 +952,10 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           }
 					int lG = lGFirst;
 					int lF_in_preR = (F)->preL_to_preR[lF];
+          counter++;
 
 					if(DEBUG) {
-          	ou << "Left (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+          	ou << "Left (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ") counter = " << to_string(counter) << endl;
           	ou << "Save to s[" << to_string(lF) << ", " << to_string(lG) << "]" << endl;
 					}
 
@@ -1031,14 +1090,17 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
             	minCost = case3;
             }
           }
-
+          if(DEBUG) {
+            ou << "s[" << to_string(lF) << ", " << to_string(lG) << "] = " << to_string(minCost) << endl;
+          }
           s[lF][lG] = minCost;
 					lG = ft[lG];
 					
           //loop D
 					while (lG >= lGLast) {
+            counter++;
 						if(DEBUG) {
-							ou << "Left (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+							ou << "Left (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ") counter = " << to_string(counter) << endl;
 							ou << "Save to s[" << to_string(lF) << ", " << to_string(lG) << "]" << endl;
 						}
 
@@ -1140,6 +1202,9 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
                   minCost = case3;
                 }
               }
+            }
+            if(DEBUG) {
+              ou << "s[" << to_string(lF) << ", " << to_string(lG) << "] = " << to_string(minCost) << endl;
             }
             s[lF][lG] = minCost;
 						lG = ft[lG];
@@ -1290,9 +1355,9 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           int rG_in_preL = (G)->preR_to_preL[rG];
           			
           if(rF == rFLast) lF = F->preR_to_preL[rFLast]; 
-          	
+          counter++;
           if(DEBUG) {
-            ou << "Right (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+            ou << "Right (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ") counter  = " << to_string(counter) << endl;
 				  }
 
           int rF_in_preL = (F)->preR_to_preL[rF];
@@ -1423,6 +1488,11 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
             }
 
             case2 += (swap ? costModel_.del((*G)[rG_in_preL]->getLabel()) : costModel_.ins((*G)[rG_in_preL]->getLabel()));
+            if(DEBUG) {
+              ou << "case2 += ";
+              if(swap) ou << "delete " << (*G)[rG_in_preL]->getLabel() << endl;
+              else ou << "insert " << (*G)[rG_in_preL]->getLabel() << endl;
+            }
             if(case2 < minCost) {
               minCost = case2;
             }
@@ -1437,7 +1507,6 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
               if(case3 < minCost) {
                 case3 += (swap ? costModel_.ren((*G)[rG_in_preL]->getLabel(), (*F)[rF_in_preL]->getLabel()) : costModel_.ren((*F)[rF_in_preL]->getLabel(), (*G)[rG_in_preL]->getLabel()));
                 //case3 += costModel_.ren((*G)[rG_in_preL]->getLabel(), (*F)[rF_in_preL]->getLabel());
-                case3 += costModel_.ren((*F)[rF_in_preL]->getLabel(), (*G)[rG_in_preL]->getLabel());
                 if(DEBUG) {
                   if(swap) ou << "case3_case3 += " << (*G)[rG_in_preL]->getLabel() << " -> " << (*F)[rF_in_preL]->getLabel() << " = " << to_string(costModel_.ren((*G)[rG_in_preL]->getLabel(), (*F)[rF_in_preL]->getLabel())) << endl;
                   else ou << "case3_case3 += " << (*F)[rF_in_preL]->getLabel() << " -> " << (*G)[rG_in_preL]->getLabel() << " = " << to_string(costModel_.ren((*F)[rF_in_preL]->getLabel(), (*G)[rG_in_preL]->getLabel())) << endl;
@@ -1447,7 +1516,11 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
                 minCost = case3;
               }
             }
-
+        if(DEBUG) {
+          ou << "case1 = " << to_string(case1) << endl;
+          ou << "case2 = " << to_string(case2) << endl;
+          ou << "case3 = " << to_string(case3) << endl;
+        }
         s[rF][rG] = minCost;
         if(DEBUG) {
            ou << "Save to s[" << to_string(rF) << ", " << to_string(rG) << "] = " << to_string(s[rF][rG]) << endl;
@@ -1456,10 +1529,10 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
         
         // loop D'
         while(rG >= rGLast) {// every G is a subforest not a subtree
+          counter++;
           rG_in_preL = (G)->preR_to_preL[rG];
-
         	if(DEBUG) {
-          	ou << "Right (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ")" << endl;
+          	ou << "Right (" << to_string(lF) << ", " << to_string(rF) << ", " << to_string(lG) << ", " << to_string(rG) << ") counter = " << to_string(counter) << endl;
           	ou << "Save to s[" << to_string(rF) << ", " << to_string(rG) << "]" << endl;
 					}
 
@@ -1559,8 +1632,16 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
               }
             }
           }
-
+          if(DEBUG) {
+            ou << "case1 = " << to_string(case1) << endl;
+            ou << "case2 = " << to_string(case2) << endl;
+            ou << "case3 = " << to_string(case3) << endl; 
+          }
+            if(DEBUG) {
+              ou << "s[" << to_string(rF) << ", " << to_string(rG) << "] = " << to_string(minCost) << endl;
+            }
             s[rF][rG] = minCost;
+            dist = minCost;
             rG = ft[rG];
           }
         }
@@ -1569,16 +1650,16 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
     
           if(hasRightPart) {
             if(swap) {
-              delta[parent_of_lG_in_preL][endPathNode] = s[rFLast][lGminus1_in_preR + 1];
+              delta[parent_of_lG_in_preL][endPathNode] = s[rFLast + 1][lGminus1_in_preR + 1];
               if(DEBUG) {
           	   ou << "save to delta[" << to_string(parent_of_lG_in_preL) << ", " << to_string(endPathNode) << "] = " << "s[" << to_string(rFLast) << ", " << to_string(lGminus1_in_preR + 1) << "] = "; //rightmosts child of p(lG)
-               ou << to_string(s[rFLast][lGminus1_in_preR + 1]) << endl;
+               ou << to_string(s[rFLast + 1][lGminus1_in_preR + 1]) << endl;
               }
             } else {
-              delta[endPathNode][parent_of_lG_in_preL] = s[rFLast][lGminus1_in_preR + 1];
+              delta[endPathNode][parent_of_lG_in_preL] = s[rFLast + 1][lGminus1_in_preR + 1];
               if(DEBUG) {
                 ou << "save to delta[" << to_string(endPathNode) << ", " << to_string(parent_of_lG_in_preL) << "] = " << "s[" << to_string(rFLast) << ", " << to_string(lGminus1_in_preR + 1) << "] = "; //rightmosts child of p(lG)
-                ou << to_string(s[rFLast][lGminus1_in_preR + 1]) << endl;
+                ou << to_string(s[rFLast + 1][lGminus1_in_preR + 1]) << endl;
               }
             }
           }
@@ -1621,6 +1702,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
     endPathNode = (*F)[endPathNode] ->getParent() == NULL? -1 : (*F)[endPathNode] ->getParent()->getID();	
     endPathNode_in_preR = F->preL_to_preR[endPathNode];
   }
+  return dist;
 };
 
 void TreeComparison::updateFnArray(int lnForNode, int node, int currentSubtreePreL) {
@@ -1665,10 +1747,6 @@ void TreeComparison::strategyComputation() {
 	vector<Node*> preA = A_->getPreL();
 	vector<Node*> preB = B_->getPreL();
 
-	computeSumInsAndDelCost(A_);
-	computeSumInsAndDelCost(B_);
-	deltaInit();
-
 	free(preA[0], preB[0]);
 	Strategy** S = APTED_ComputeOptStrategy_postL();
 	if(DEBUG) {
@@ -1708,8 +1786,14 @@ void TreeComparison::strategyComputation() {
     ou << costModel_.toString() << endl;
 
 	}
-	gted(preA[0], preB[0]);
+	
 
+};
+
+float TreeComparison::getTreeDistance(void) {
+  vector<Node*> preA = A_->getPreL();
+  vector<Node*> preB = B_->getPreL();
+  return gted(preA[0], preB[0]);
 };
 
 
@@ -2269,4 +2353,8 @@ int TreeComparison::allB(Node* a, Node* b) {
 	AllB[a->getID()][b->getID()] = min;
 	AllBStrategies[a->getID()][b->getID()] = allBS;
 	return min;
+};
+
+int TreeComparison::getCounter(void) {
+  return counter;
 };

@@ -184,12 +184,12 @@ int main() {
           |                              |
           D                              D
 */
-  string s1 = "(A(B)(C(D))(E))";
+/*  string s1 = "(A(B)(C(D))(E))";
     string s2 = "(A(B)(C(D))(E))";
     r1.setPreOrderSequence(s1);
     r1.setTreeSize(5);
     r2.setPreOrderSequence(s2);
-    r2.setTreeSize(5);
+    r2.setTreeSize(5);*/
 
 
 
@@ -416,6 +416,148 @@ K   L     K                                              H   I
 	r2.setTreeSize(5);*/
 
 
+/*
+d = 2
+*/
+
+/*	string s1 = "(F(A)(E(C(B))(D)))";
+	string s2 = "(F(A)(C(E(B)(D))))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(6);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(6);*/
+
+
+/*
+d = 1
+*/
+
+/*    string s1 = "(A(B)(C(E)(F))(D))";
+	string s2 = "(A(B)(C(E))(D))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(6);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(5);*/
+
+/*
+d = 2
+*/
+/*    string s1 = "(A(B)(C(E)(F))(D))";
+	string s2 = "(A(B)(C)(D))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(6);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(4);*/
+
+/*
+d = 3
+*/
+
+/*    string s1 = "(A(S)(C(E)(F))(D))";
+	string s2 = "(A(B)(C)(D))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(6);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(4);*/
+
+/*
+d = 3
+*/
+/*    string s1 = "(A(B)(C(E)(F))(D))";
+	string s2 = "(A(B)(C))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(6);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(3);*/
+
+
+/*
+d = 12
+*/
+/*    string s1 = "(A(B(I)(J(U)))(C(D)(E(Q(N)(M))))(F(S)))";
+	string s2 = "(A)";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(13);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(1);*/
+
+/*
+d = 13
+*/
+
+/*    string s1 = "(A(B(I)(J(U)))(C(D)(E(Q(N)(M))))(F(S)))";
+	string s2 = "(K)";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(13);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(1);*/
+
+/*
+d = 7
+*/
+
+/*    string s1 = "(K)";
+	string s2 = "(A(D)(E(L)(T(G)(H))))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(1);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(7);*/
+
+
+/*
+d = 6
+*/
+/*    string s1 = "(A(B)(C(D(F)(G(H)(I)))(E)))";
+	string s2 = "(G(H)(I))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(9);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(3);*/
+
+/*
+d = 3 something wrong
+*/
+/*    string s1 = "(A(A(A)(A(A)(A)))(A(A)(A(A))(A)))";
+	string s2 = "(A(A(A)(A)(A))(A(A(A)(A)(A))))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(11);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(10);*/
+
+/*
+d = 5
+*/
+    string s1 = "(A(B(D)(E))(C))";
+	string s2 = "(F(G(H)(I))(K))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(5);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(5);
+
+/*
+d = 2
+*/
+
+/*    string s1 = "(A(B(C)(D(E)(F))))";
+	string s2 = "(B(C)(E)(F))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(6);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(4);*/
+
+/*
+d = 2
+*/
+/*  	string s1 = "(A(B(C)(D(E)(F))))";
+	string s2 = "(B(C)(E)(F))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(6);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(4);*/
+
+
+
+
 
 	Tree* t1 = r1.buildTree();
 	Tree* t2 = r2.buildTree();
@@ -425,6 +567,8 @@ K   L     K                                              H   I
 	ou << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
 	tc.strategyComputation();
+	ou << "Counter" << endl;
+	ou << to_string(tc.getCounter()) << endl;
 
 
 }
