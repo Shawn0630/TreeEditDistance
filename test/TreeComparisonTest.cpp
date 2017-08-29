@@ -67,7 +67,9 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   }
   ou.close();
   tc.strategyComputation();
-  ASSERT_EQ(tc.getTreeDistance(), 2);  
+  ASSERT_EQ(\
+    tc.getTreeDistance(),\
+    2);  
 
 
   s1 = "(A(B)(C(E)(F))(D))";
@@ -90,7 +92,9 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   }
   ou.close();
   tc.strategyComputation();
-  ASSERT_EQ(tc.getTreeDistance(), 1); 
+  ASSERT_EQ(\
+    tc.getTreeDistance(),\
+    1); 
 
   s1 = "(A(B)(C(E)(F))(D))";
   s2 = "(A(B)(C)(D))";
@@ -112,7 +116,9 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   }
   ou.close();
   tc.strategyComputation();
-  ASSERT_EQ(tc.getTreeDistance(), 2); 
+  ASSERT_EQ(\
+    tc.getTreeDistance(),\
+    2); 
 
   s1 = "(A(S)(C(E)(F))(D))";
   s2 = "(A(B)(C)(D))";
@@ -134,7 +140,9 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   }
   ou.close();
   tc.strategyComputation();
-  ASSERT_EQ(tc.getTreeDistance(), 3); 
+  ASSERT_EQ(\
+    tc.getTreeDistance(),\
+    3); 
 
 
   s1 = "(A(B)(C(E)(F))(D))";
@@ -157,7 +165,9 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   }
   ou.close();
   tc.strategyComputation();
-  ASSERT_EQ(tc.getTreeDistance(), 3); 
+  ASSERT_EQ(\
+    tc.getTreeDistance(),\
+    3); 
 
   s1 = "(A(B(I)(J(U)))(C(D)(E(Q(N)(M))))(F(S)))";
   s2 = "(A)";
@@ -179,7 +189,9 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   }
   ou.close();
   tc.strategyComputation();
-  ASSERT_EQ(tc.getTreeDistance(), 12); 
+  ASSERT_EQ(\
+    tc.getTreeDistance(),\
+    12); 
 
   s1 = "(A(B(I)(J(U)))(C(D)(E(Q(N)(M))))(F(S)))";
   s2 = "(K)";
@@ -201,7 +213,9 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   }
   ou.close();
   tc.strategyComputation();
-  ASSERT_EQ(tc.getTreeDistance(), 13);
+  ASSERT_EQ(\
+    tc.getTreeDistance(),\
+    13);
 
   s1 = "(K)";
   s2 = "(A(D)(E(L)(F(G)(H))))";
@@ -223,7 +237,9 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   }
   ou.close();
   tc.strategyComputation();
-  ASSERT_EQ(tc.getTreeDistance(), 7);
+  ASSERT_EQ(\
+    tc.getTreeDistance(),\
+    7);
 
   s1 = "(A(B)(C(D(F)(G(H)(I)))(E)))";
   s2 = "(G(H)(I))";
@@ -245,7 +261,9 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   }
   ou.close();
   tc.strategyComputation();
-  ASSERT_EQ(tc.getTreeDistance(), 6);
+  ASSERT_EQ(\
+    tc.getTreeDistance(),\
+    6);
 
   s1 = "(A(B(D)(E))(C))";
   s2 = "(F(G(H)(I))(K))";
@@ -267,9 +285,56 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   }
   ou.close();
   tc.strategyComputation();
-  ASSERT_EQ(tc.getTreeDistance(), 5);
+  ASSERT_EQ(\
+    tc.getTreeDistance(),\
+    5);
+
+  s1 = "(A(B(C)(D(E)(F))))";
+  s2 = "(B(C)(E)(F))";
+  r1.setPreOrderSequence(s1);
+  r1.setTreeSize(6);
+  r2.setPreOrderSequence(s2);
+  r2.setTreeSize(4);
+  t1 = r1.buildTree();
+  t2 = r2.buildTree();
+  tc.setTreeA(t1);
+  tc.setTreeB(t2);
+  tc.init();
+  ou.open("tree.txt");
+  if(DEBUG) {
+    ou << "Tree A" << endl;
+    ou << t1->toString() << endl;
+    ou << "Tree B" << endl;
+    ou << t2->toString() << endl;
+  }
+  ou.close();
+  tc.strategyComputation();
+  ASSERT_EQ(\
+    tc.getTreeDistance(),\
+    2);
 
 
-
-
+  s1 = "(A(B(C)(D(E)(F))))";
+  s2 = "(B(C)(E)(F))";
+  r1.setPreOrderSequence(s1);
+  r1.setTreeSize(6);
+  r2.setPreOrderSequence(s2);
+  r2.setTreeSize(4);
+  t1 = r1.buildTree();
+  t2 = r2.buildTree();
+  tc.setTreeA(t1);
+  tc.setTreeB(t2);
+  tc.init();
+  ou.open("tree.txt");
+  if(DEBUG) {
+    ou << "Tree A" << endl;
+    ou << t1->toString() << endl;
+    ou << "Tree B" << endl;
+    ou << t2->toString() << endl;
+  }
+  ou.close();
+  tc.strategyComputation();
+  ASSERT_EQ(\
+    tc.getTreeDistance(),\
+    2);
 } 

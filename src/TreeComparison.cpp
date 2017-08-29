@@ -697,7 +697,7 @@ float TreeComparison::gted(Node* a, Node* b) {
         	return spfL(a, b, pathLeaf, false);
       	}
 /*      else if (pathType == 1) {
-        	//return spfR(a, b, false);
+        	//return spfR(a, b, pathLeaf, false);
         	return 0.0f;
       	}*/
 
@@ -737,7 +737,7 @@ float TreeComparison::gted(Node* a, Node* b) {
 			return spfL(b, a, pathLeaf, true);
 		}
 /*	else if(pathType == 1) {
-			//return spfR(b, a, true);
+			//return spfR(b, a, pathLeaf, true);
 			return 0.0f;
 		}*/
 		return spfA(b, a, pathLeaf, pathType, true);
@@ -843,6 +843,32 @@ float TreeComparison::spfL(Node* a, Node* b, int leaf, bool swap) {
   return dist;
 }
 
+float TreeComparison::spfR(Node* a, Node* b, int leaf, bool swap) {
+  Tree *F, *G;
+  if(swap) {
+    F = B_;
+    G = A_;
+  } else {
+    F = A_;
+    G = B_;
+  }
+  int* keyRoots = new int[(*G)[b->getID()]->getSubTreeSize()];
+  int firstKeyRoot = computeKeyRoots(G, b, leaf, keyRoots, 0);  
+
+  float** forestdist = new float*[(*F)[a->getID()]->getSubTreeSize() + 1];//consider the null
+  for(int i = 0; i < (*F)[a->getID()]->getSubTreeSize() + 1; i++) {//consider the null
+    forestdist[i] = new float[(*G)[b->getID()]->getSubTreeSize() + 1];
+  }
+
+  for (int i = firstKeyRoot - 1; i >= 0; i--) {
+      treeEditDist(a, (*G)[keyRoots[i]], forestdist, swap);
+  }
+  float dist = 0;
+  if(swap) dist = delta[b->getID()][a->getID()] + costModel_.ren(b->getLabel(), a->getLabel());
+  else dist = delta[a->getID()][b->getID()] + costModel_.ren(a->getLabel(), b->getLabel());
+  return dist;
+}
+
 int TreeComparison::computeKeyRoots(Tree* G, Node* b, int leaf, int* keyRoots, int index) {
 	if(DEBUG) {
     ou << "computeKeyRoots(" << to_string(b->getID()) << ", " << to_string(leaf) << ", " << to_string(index) << ")" << endl;
@@ -866,6 +892,7 @@ int TreeComparison::computeKeyRoots(Tree* G, Node* b, int leaf, int* keyRoots, i
 }
 // postL all the trees on the left have already computed
 // postR all the trees on the right have already computed
+// add right and delete right
 void TreeComparison::treeEditDist(Node* a, Node* b, float** forestdist, bool swap) {
   if(DEBUG) {
     ou << "TreeDistance(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
@@ -920,7 +947,6 @@ void TreeComparison::treeEditDist(Node* a, Node* b, float** forestdist, bool swa
       }
       ou << endl;
     }
-    ou << endl;
   }
 
   // Fill in the remaining costs.
@@ -929,27 +955,33 @@ void TreeComparison::treeEditDist(Node* a, Node* b, float** forestdist, bool swa
       int a1_plus_aoff_in_preL = F->postL_to_preL[a1 + aoff];
       int b1_plus_boff_in_preL = G->postL_to_preL[b1 + boff];
       if(DEBUG) {
-        ou << "forestDist(" << to_string(a1_plus_aoff_in_preL) << ", " << to_string(b1_plus_boff_in_preL) << ")" << endl;
+        ou << "Compute forestdist(" << to_string(a1_plus_aoff_in_preL) << ", " << to_string(b1_plus_boff_in_preL) << ")" << endl;
       }
       float u = (swap ? costModel_.ren((*G)[b1_plus_boff_in_preL]->getLabel(), (*F)[a1_plus_aoff_in_preL]->getLabel()) : costModel_.ren((*F)[a1_plus_aoff_in_preL]->getLabel(), (*G)[b1_plus_boff_in_preL]->getLabel())); // USE COST MODEL - rename a1 to g1.
       
       da = forestdist[a1 - 1][b1] + (swap ? costModel_.ins((*F)[a1_plus_aoff_in_preL]->getLabel()) : costModel_.del((*F)[a1_plus_aoff_in_preL]->getLabel())); // USE COST MODEL - delete a1.
       if(DEBUG) {
+        ou << "forestdist[" << to_string(a1 - 1) << ", " << to_string(b1) << "] = " << to_string(forestdist[a1 - 1][b1]) << " ";
         if(swap) ou << "insert F " << (*F)[a1_plus_aoff_in_preL]->getLabel() << " + " << costModel_.ins((*F)[a1_plus_aoff_in_preL]->getLabel());
         else ou << "delete F " << (*F)[a1_plus_aoff_in_preL]->getLabel() << " + " << costModel_.del((*F)[a1_plus_aoff_in_preL]->getLabel());
         ou << " da = " << to_string(da) << endl;
       }
       db = forestdist[a1][b1 - 1] + (swap ? costModel_.del((*G)[b1_plus_boff_in_preL]->getLabel()) : costModel_.ins((*G)[b1_plus_boff_in_preL]->getLabel())); // USE COST MODEL - insert b1.
       if(DEBUG) {
+        ou << "forestdist[" << to_string(a1) << ", " << to_string(b1 - 1) << "] = " << to_string(forestdist[a1][b1 - 1]) << " ";
         if(swap) ou << "delete G " << (*G)[b1_plus_boff_in_preL]->getLabel() << " + " << costModel_.del((*G)[b1_plus_boff_in_preL]->getLabel());
         else ou << "insert G " << (*G)[b1_plus_boff_in_preL]->getLabel() << " + " << costModel_.ins((*G)[b1_plus_boff_in_preL]->getLabel());
         ou << " db = " << to_string(db) << endl;
       }
       // If current subforests are subtrees. 
-      int a1_preL = F->postL_to_preL[a1];
+      int a1_preL = F->postL_to_preL[a1 + aoff];//a1+aoff the actual postL
       int a1_leftmost_leaf = F->preL_to_lid[a1_preL];
-      int b1_preL = G->postL_to_preL[b1];
+      int b1_preL = G->postL_to_preL[b1 + boff];
       int b1_leftmost_leaf = G->preL_to_lid[b1_preL];
+      if(DEBUG) {
+        ou << "a1_preL = " << to_string(a1_preL) << " a1_leftmost_leaf = " << to_string(a1_leftmost_leaf) << " a_leftmost_leaf_in_preL = " << to_string(a_leftmost_leaf_in_preL) << endl;
+        ou << "b1_preL = " << to_string(b1_preL) << " b1_leftmost_leaf = " << to_string(b1_leftmost_leaf) << " b_leftmost_leaf_in_preL = " << to_string(b_leftmost_leaf_in_preL) << endl; 
+      }
       if (a1_leftmost_leaf == a_leftmost_leaf_in_preL && b1_leftmost_leaf == b_leftmost_leaf_in_preL) {//is a tree
          dc = forestdist[a1 - 1][b1 - 1] + u;
          if(DEBUG) {
@@ -969,10 +1001,22 @@ void TreeComparison::treeEditDist(Node* a, Node* b, float** forestdist, bool swa
            }
          }
       } else {
-          dc = forestdist[a1_leftmost_leaf - 1 - aoff][b1_leftmost_leaf - 1 - boff] +
+          int a1_leftmost_leaf_in_postL = F->preL_to_postL[a1_leftmost_leaf];
+          int b1_leftmost_leaf_in_postL = G->preL_to_postL[b1_leftmost_leaf];
+          dc = forestdist[a1_leftmost_leaf_in_postL - 1 - aoff][b1_leftmost_leaf_in_postL - 1 - boff] +
             (swap ? delta[b1_plus_boff_in_preL][a1_plus_aoff_in_preL] : delta[a1_plus_aoff_in_preL][b1_plus_boff_in_preL]) + u;
+          if(DEBUG) {
+            ou << "dc = forestdist[" << to_string(a1_leftmost_leaf_in_postL - 1 - aoff) << ", " << to_string(b1_leftmost_leaf_in_postL - 1 - boff) << "](" << to_string(forestdist[a1_leftmost_leaf_in_postL - 1 - aoff][b1_leftmost_leaf_in_postL - 1 - boff]) << ")";
+            ou << " + ";
+            if(swap) ou << "delta[" << to_string(b1_plus_boff_in_preL) << ", " << to_string(a1_plus_aoff_in_preL) << "](" << to_string(delta[b1_plus_boff_in_preL][a1_plus_aoff_in_preL]) << ")";
+            else ou << "delta[" << to_string(a1_plus_aoff_in_preL) << ", " << to_string(b1_plus_boff_in_preL) << "](" << to_string(delta[a1_plus_aoff_in_preL][b1_plus_boff_in_preL]) << ")";
+            ou << " = " << to_string(dc) << endl;
+          }
       }
       forestdist[a1][b1] = da >= db ? db >= dc ? dc : db : da >= dc ? dc : da;
+      if(DEBUG) {
+        ou << "forestdist[" << to_string(a1) << ", " << to_string(b1) << "] = " << to_string(forestdist[a1][b1]) << endl;
+      }
     }
   }
 }
