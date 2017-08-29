@@ -6,6 +6,7 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 class TreeComparisonTest : public testing::Test {
@@ -23,6 +24,9 @@ class TreeComparisonTest : public testing::Test {
 };
 
 TEST_F(TreeComparisonTest, getTreeEditDistance) {
+
+  ofstream ou;
+  
  
 
   string s1 = "";
@@ -54,6 +58,14 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeA(t1);
   tc.setTreeB(t2);
   tc.init();
+  ou.open("tree.txt");
+  if(DEBUG) {
+    ou << "Tree A" << endl;
+    ou << t1->toString() << endl;
+    ou << "Tree B" << endl;
+    ou << t2->toString() << endl;
+  }
+  ou.close();
   tc.strategyComputation();
   ASSERT_EQ(tc.getTreeDistance(), 2);  
 
@@ -69,6 +81,14 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeA(t1);
   tc.setTreeB(t2);
   tc.init();
+  ou.open("tree.txt");
+  if(DEBUG) {
+    ou << "Tree A" << endl;
+    ou << t1->toString() << endl;
+    ou << "Tree B" << endl;
+    ou << t2->toString() << endl;
+  }
+  ou.close();
   tc.strategyComputation();
   ASSERT_EQ(tc.getTreeDistance(), 1); 
 
@@ -83,6 +103,14 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeA(t1);
   tc.setTreeB(t2);
   tc.init();
+  ou.open("tree.txt");
+  if(DEBUG) {
+    ou << "Tree A" << endl;
+    ou << t1->toString() << endl;
+    ou << "Tree B" << endl;
+    ou << t2->toString() << endl;
+  }
+  ou.close();
   tc.strategyComputation();
   ASSERT_EQ(tc.getTreeDistance(), 2); 
 
@@ -97,6 +125,14 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeA(t1);
   tc.setTreeB(t2);
   tc.init();
+  ou.open("tree.txt");
+  if(DEBUG) {
+    ou << "Tree A" << endl;
+    ou << t1->toString() << endl;
+    ou << "Tree B" << endl;
+    ou << t2->toString() << endl;
+  }
+  ou.close();
   tc.strategyComputation();
   ASSERT_EQ(tc.getTreeDistance(), 3); 
 
@@ -112,6 +148,14 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeA(t1);
   tc.setTreeB(t2);
   tc.init();
+  ou.open("tree.txt");
+  if(DEBUG) {
+    ou << "Tree A" << endl;
+    ou << t1->toString() << endl;
+    ou << "Tree B" << endl;
+    ou << t2->toString() << endl;
+  }
+  ou.close();
   tc.strategyComputation();
   ASSERT_EQ(tc.getTreeDistance(), 3); 
 
@@ -126,6 +170,14 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeA(t1);
   tc.setTreeB(t2);
   tc.init();
+  ou.open("tree.txt");
+  if(DEBUG) {
+    ou << "Tree A" << endl;
+    ou << t1->toString() << endl;
+    ou << "Tree B" << endl;
+    ou << t2->toString() << endl;
+  }
+  ou.close();
   tc.strategyComputation();
   ASSERT_EQ(tc.getTreeDistance(), 12); 
 
@@ -140,11 +192,19 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeA(t1);
   tc.setTreeB(t2);
   tc.init();
+  ou.open("tree.txt");
+  if(DEBUG) {
+    ou << "Tree A" << endl;
+    ou << t1->toString() << endl;
+    ou << "Tree B" << endl;
+    ou << t2->toString() << endl;
+  }
+  ou.close();
   tc.strategyComputation();
   ASSERT_EQ(tc.getTreeDistance(), 13);
 
   s1 = "(K)";
-  s2 = "(A(D)(E(L)(T(G)(H))))";
+  s2 = "(A(D)(E(L)(F(G)(H))))";
   r1.setPreOrderSequence(s1);
   r1.setTreeSize(1);
   r2.setPreOrderSequence(s2);
@@ -154,6 +214,14 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeA(t1);
   tc.setTreeB(t2);
   tc.init();
+  ou.open("tree.txt");
+  if(DEBUG) {
+    ou << "Tree A" << endl;
+    ou << t1->toString() << endl;
+    ou << "Tree B" << endl;
+    ou << t2->toString() << endl;
+  }
+  ou.close();
   tc.strategyComputation();
   ASSERT_EQ(tc.getTreeDistance(), 7);
 
@@ -168,6 +236,14 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeA(t1);
   tc.setTreeB(t2);
   tc.init();
+  ou.open("tree.txt");
+  if(DEBUG) {
+    ou << "Tree A" << endl;
+    ou << t1->toString() << endl;
+    ou << "Tree B" << endl;
+    ou << t2->toString() << endl;
+  }
+  ou.close();
   tc.strategyComputation();
   ASSERT_EQ(tc.getTreeDistance(), 6);
 
@@ -182,6 +258,14 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeA(t1);
   tc.setTreeB(t2);
   tc.init();
+  ou.open("tree.txt");
+  if(DEBUG) {
+    ou << "Tree A" << endl;
+    ou << t1->toString() << endl;
+    ou << "Tree B" << endl;
+    ou << t2->toString() << endl;
+  }
+  ou.close();
   tc.strategyComputation();
   ASSERT_EQ(tc.getTreeDistance(), 5);
 
