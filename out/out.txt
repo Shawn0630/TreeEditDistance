@@ -196,7 +196,7 @@ LeftB[1, 1] = 9
 Compute Free(1, 0)
 If select 1(leftmost) in Tree B #Subproblem: 50 Direction: Right
 Compute Free(1, 0)
-If select 2 in Tree B #Subproblem: 50 Direction: Left
+If select 2 in Tree B #Subproblem: 46 Direction: Left
 RightB(1, 3) = 7
 Compute Free(1, 0)
 If select 3(rightmost) in Tree B #Subproblem: 42 Direction: Left
@@ -251,7 +251,7 @@ LeftB[0, 1] = 10
 Compute Free(0, 0)
 If select 1(leftmost) in Tree B #Subproblem: 56 Direction: Right
 Compute Free(0, 0)
-If select 2 in Tree B #Subproblem: 56 Direction: Left
+If select 2 in Tree B #Subproblem: 52 Direction: Left
 RightB(0, 3) = 8
 Compute Free(0, 0)
 If select 3(rightmost) in Tree B #Subproblem: 48 Direction: Left
@@ -553,17 +553,167 @@ spf1(2, 0) = 3
 A child = 3 currentPathNode = 3 parent = 1
 A child = 1 currentPathNode = 1 parent = 0
 swap = false pathType = 1
-computeRevKeyRoots(0, 5, 0)
+computeRevKeyRoots(0, 3, 0)
+computeRevKeyRoots(1, 1, 1)
+computeRevKeyRoots(2, 2, 2)
+RevTreeDistance(0, 2)
+aoff = -1
+boff = 0
+0 1 
+1 6.40969e-10 
+2 5.82761e-10 
+3 6.40969e-10 
+4 4.00464e-11 
+5 6.40969e-10 
+6 4.00464e-11 
+Compute revforestdist(5, 2)
+forestdist[0, 1] = 1.000000 delete F F + 1 da = 2.000000
+forestdist[1, 0] = 1.000000 insert G E + 1 db = 2.000000
+a1_preL = 5 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
+b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 2
+F -> E dc = 1.000000
+delta[5, 2] = forestdist[0, 0] = 0.000000
+da = 2.000000
+db = 2.000000
+dc = 1.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(4, 2)
+forestdist[1, 1] = 1.000000 delete F E + 1 da = 2.000000
+forestdist[2, 0] = 2.000000 insert G E + 1 db = 3.000000
+a1_preL = 4 a1_rightmost_leaf = 4 a_rightmost_leaf_in_preL = 5
+b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 2
+dc = forestdist[1, 0](1.000000) + delta[4, 2](0.000000) = 1.000000
+da = 2.000000
+db = 3.000000
+dc = 1.000000
+forestdist[2, 1] = 1.000000
+Compute revforestdist(3, 2)
+forestdist[2, 1] = 1.000000 delete F D + 1 da = 2.000000
+forestdist[3, 0] = 3.000000 insert G E + 1 db = 4.000000
+a1_preL = 3 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
+b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 2
+D -> E dc = 3.000000
+delta[3, 2] = forestdist[2, 0] = 2.000000
+da = 2.000000
+db = 4.000000
+dc = 3.000000
+forestdist[3, 1] = 2.000000
+Compute revforestdist(2, 2)
+forestdist[3, 1] = 2.000000 delete F C + 1 da = 3.000000
+forestdist[4, 0] = 4.000000 insert G E + 1 db = 5.000000
+a1_preL = 2 a1_rightmost_leaf = 2 a_rightmost_leaf_in_preL = 5
+b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 2
+dc = forestdist[3, 0](3.000000) + delta[2, 2](0.000000) = 4.000000
+da = 3.000000
+db = 5.000000
+dc = 4.000000
+forestdist[4, 1] = 3.000000
+Compute revforestdist(1, 2)
+forestdist[4, 1] = 3.000000 delete F B + 1 da = 4.000000
+forestdist[5, 0] = 5.000000 insert G E + 1 db = 6.000000
+a1_preL = 1 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
+b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 2
+B -> E dc = 5.000000
+delta[1, 2] = forestdist[4, 0] = 4.000000
+da = 4.000000
+db = 6.000000
+dc = 5.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(0, 2)
+forestdist[5, 1] = 4.000000 delete F A + 1 da = 5.000000
+forestdist[6, 0] = 6.000000 insert G E + 1 db = 7.000000
+a1_preL = 0 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
+b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 2
+A -> E dc = 6.000000
+delta[0, 2] = forestdist[5, 0] = 5.000000
+da = 5.000000
+db = 7.000000
+dc = 6.000000
+forestdist[6, 1] = 5.000000
+RevTreeDistance(0, 1)
+aoff = -1
+boff = 1
+0 1 
+1 1 
+2 1 
+3 2 
+4 3 
+5 4 
+6 5 
+Compute revforestdist(5, 1)
+forestdist[0, 1] = 1.000000 delete F F + 1 da = 2.000000
+forestdist[1, 0] = 1.000000 insert G C + 1 db = 2.000000
+a1_preL = 5 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
+b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 1
+F -> C dc = 1.000000
+delta[5, 1] = forestdist[0, 0] = 0.000000
+da = 2.000000
+db = 2.000000
+dc = 1.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(4, 1)
+forestdist[1, 1] = 1.000000 delete F E + 1 da = 2.000000
+forestdist[2, 0] = 2.000000 insert G C + 1 db = 3.000000
+a1_preL = 4 a1_rightmost_leaf = 4 a_rightmost_leaf_in_preL = 5
+b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 1
+dc = forestdist[1, 0](1.000000) + delta[4, 1](0.000000) = 2.000000
+da = 2.000000
+db = 3.000000
+dc = 2.000000
+forestdist[2, 1] = 2.000000
+Compute revforestdist(3, 1)
+forestdist[2, 1] = 2.000000 delete F D + 1 da = 3.000000
+forestdist[3, 0] = 3.000000 insert G C + 1 db = 4.000000
+a1_preL = 3 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
+b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 1
+D -> C dc = 3.000000
+delta[3, 1] = forestdist[2, 0] = 2.000000
+da = 3.000000
+db = 4.000000
+dc = 3.000000
+forestdist[3, 1] = 3.000000
+Compute revforestdist(2, 1)
+forestdist[3, 1] = 3.000000 delete F C + 1 da = 4.000000
+forestdist[4, 0] = 4.000000 insert G C + 1 db = 5.000000
+a1_preL = 2 a1_rightmost_leaf = 2 a_rightmost_leaf_in_preL = 5
+b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 1
+dc = forestdist[3, 0](3.000000) + delta[2, 1](0.000000) = 3.000000
+da = 4.000000
+db = 5.000000
+dc = 3.000000
+forestdist[4, 1] = 3.000000
+Compute revforestdist(1, 1)
+forestdist[4, 1] = 3.000000 delete F B + 1 da = 4.000000
+forestdist[5, 0] = 5.000000 insert G C + 1 db = 6.000000
+a1_preL = 1 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
+b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 1
+B -> C dc = 5.000000
+delta[1, 1] = forestdist[4, 0] = 4.000000
+da = 4.000000
+db = 6.000000
+dc = 5.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(0, 1)
+forestdist[5, 1] = 4.000000 delete F A + 1 da = 5.000000
+forestdist[6, 0] = 6.000000 insert G C + 1 db = 7.000000
+a1_preL = 0 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
+b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 1
+A -> C dc = 6.000000
+delta[0, 1] = forestdist[5, 0] = 5.000000
+da = 5.000000
+db = 7.000000
+dc = 6.000000
+forestdist[6, 1] = 5.000000
 RevTreeDistance(0, 0)
 aoff = -1
 boff = -1
 0 1 2 3 4 
-1 6.40969e-10 1.49237e-19 6.40941e-10 6.40969e-10 
-2 5.82761e-10 6.40969e-10 1.49237e-19 6.40941e-10 
-3 6.40969e-10 5.82761e-10 6.40969e-10 1.49237e-19 
-4 4.00464e-11 6.40969e-10 5.82761e-10 6.40969e-10 
-5 6.40969e-10 4.00464e-11 6.40969e-10 5.82761e-10 
-6 4.00464e-11 6.40969e-10 5.82761e-10 6.40969e-10 
+1 1 1.49237e-19 6.40941e-10 6.40969e-10 
+2 2 6.40969e-10 1.49237e-19 6.40941e-10 
+3 3 5.82761e-10 6.40969e-10 1.49237e-19 
+4 3 6.40969e-10 5.82761e-10 6.40969e-10 
+5 4 4.00464e-11 6.40969e-10 5.82761e-10 
+6 5 6.40969e-10 5.82761e-10 6.40969e-10 
 Compute revforestdist(5, 3)
 forestdist[0, 1] = 1.000000 delete F F + 1 da = 2.000000
 forestdist[1, 0] = 1.000000 insert G F + 1 db = 2.000000

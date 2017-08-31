@@ -64,7 +64,8 @@ vector<Node*> Tree::getPreL(void) const {
 
 Node* Tree::operator[](int i) {
 	if(i < 0 || i >= treeSize_) {
-		cout << "Overflow" << endl;
+		cout << "i = " << i << " treeSize_ = " << treeSize_ << endl;
+		cout << "Tree Overflow" << endl;
 		return preL[0];
 	}
 	return preL[i];

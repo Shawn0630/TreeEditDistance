@@ -699,8 +699,7 @@ float TreeComparison::gted(Node* a, Node* b) {
         else if (pathType == 1) {
         	return spfR(a, b, pathLeaf, false);
       	}
-
-      	return spfA(a, b, pathLeaf, pathType, false);
+      	return spfA(a, b, pathLeaf, pathType, FreeStrategies[a->getID()][b->getID()].getDirection(), false);
 	} 
 
 	else if(treeToDecompose == 1) {
@@ -738,7 +737,7 @@ float TreeComparison::gted(Node* a, Node* b) {
 	  else if(pathType == 1) {
 			return spfR(b, a, pathLeaf, true);
 		}
-		return spfA(b, a, pathLeaf, pathType, true);
+		return spfA(b, a, pathLeaf, pathType, FreeStrategies[a->getID()][b->getID()].getDirection(), true);
 	}
 };
 
@@ -825,7 +824,7 @@ float TreeComparison::spfL(Node* a, Node* b, int leaf, bool swap) {
 		G = B_;
 	}
 	int* keyRoots = new int[(*G)[b->getID()]->getSubTreeSize()];
-	int firstKeyRoot = computeKeyRoots(G, b, leaf, keyRoots, 0);	
+	int firstKeyRoot = computeKeyRoots(G, b, G->preL_to_rid[b->getID()], keyRoots, 0);	
 
 	float** forestdist = new float*[(*F)[a->getID()]->getSubTreeSize() + 1];//consider the null
 	for(int i = 0; i < (*F)[a->getID()]->getSubTreeSize() + 1; i++) {//consider the null
@@ -848,7 +847,7 @@ float TreeComparison::spfR(Node* a, Node* b, int leaf, bool swap) {
     G = B_;
   }
   int* keyRoots = new int[(*G)[b->getID()]->getSubTreeSize()];
-  int firstKeyRoot = computeRevKeyRoots(G, b, leaf, keyRoots, 0);  
+  int firstKeyRoot = computeRevKeyRoots(G, b, G->preL_to_rid[b->getID()], keyRoots, 0);  
 
   float** forestdist = new float*[(*F)[a->getID()]->getSubTreeSize() + 1];//consider the null
   for(int i = 0; i < (*F)[a->getID()]->getSubTreeSize() + 1; i++) {//consider the null
@@ -1181,7 +1180,7 @@ float TreeComparison::revTreeEditDist(Node* a, Node* b, float** forestdist, bool
 }
 
 
-float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) {
+float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, int direction, bool swap) {
 	Tree *F, *G;
 	if(swap) {
 		F = B_;
@@ -2065,6 +2064,9 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
     endPathNode = (*F)[endPathNode] ->getParent() == NULL? -1 : (*F)[endPathNode] ->getParent()->getID();	
     endPathNode_in_preR = F->preL_to_preR[endPathNode];
   }
+
+
+
   return dist;
 };
 
@@ -2243,18 +2245,18 @@ int TreeComparison::free(Node* a, Node* b) {
 		}
 		for(int i = 1; i < childrenA.size() - 1; i++) {
 			int prefix = freeSumA - free(childrenA[i], b) + allA(childrenA[i], b);
-			//int left = b->getRightmostForestNum() * (1 + childrenSizeSumA[i - 1])  + b->getSpecialForestNum() * (childrenSizeSumA[childrenA.size() - 1] - childrenSizeSumA[i]);
-			//int right = b->getLeftmostForestNum() * (1 + childrenSizeSumA[childrenA.size() - 1] - childrenSizeSumA[i]) + b->getSpecialForestNum() * (childrenSizeSumA[i - 1]);
+			int left = b->getRightmostForestNum() * (1 + childrenSizeSumA[i - 1])  + b->getSpecialForestNum() * (childrenSizeSumA[childrenA.size() - 1] - childrenSizeSumA[i]);
+			int right = b->getLeftmostForestNum() * (1 + childrenSizeSumA[childrenA.size() - 1] - childrenSizeSumA[i]) + b->getSpecialForestNum() * (childrenSizeSumA[i - 1]);
 			int sum = prefix + b->getSpecialForestNum() * (a->getSubTreeSize() - childrenA[i]->getSubTreeSize());
-			//if(left > right) sum = prefix + right;
-			//else sum = prefix + left;
+			if(left > right) sum = prefix + right;
+			else sum = prefix + left;
 			if(min > sum) {
 				min = sum;
 				freeS.setKeyNode(childrenA[i]->getID());
 				freeS.setTreeToDecompose(0);
 				freeS.setLeaf(AllAStrategies[childrenA[i]->getID()][b->getID()].getLeaf());
-				//if(left > right)freeS.setDirection(0);
-				//else freeS.setDirection(1);
+				if(left > right)freeS.setDirection(0);
+				else freeS.setDirection(1);
 			}
 			if(DEBUG) {
 				ou << "Compute Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
@@ -2293,19 +2295,19 @@ int TreeComparison::free(Node* a, Node* b) {
 
 		for(int i = 1; i < childrenB.size() - 1; i++) {
 			int prefix = freeSumB - free(a, childrenB[i]) + allB(a, childrenB[i]);
-			//int left = a->getRightmostForestNum() * (1 + childrenSizeSumB[i - 1]) + a->getSpecialForestNum() * (childrenSizeSumB[childrenB.size() - 1] - childrenSizeSumB[i]);
-			//int right = a->getLeftmostForestNum() * (1 + childrenSizeSumB[childrenB.size() - 1] - childrenSizeSumB[i]) + a->getSpecialForestNum() * (childrenSizeSumB[i - 1]);
+			int left = a->getRightmostForestNum() * (1 + childrenSizeSumB[i - 1]) + a->getSpecialForestNum() * (childrenSizeSumB[childrenB.size() - 1] - childrenSizeSumB[i]);
+			int right = a->getLeftmostForestNum() * (1 + childrenSizeSumB[childrenB.size() - 1] - childrenSizeSumB[i]) + a->getSpecialForestNum() * (childrenSizeSumB[i - 1]);
 			int sum = prefix + a->getSpecialForestNum() * (b->getSubTreeSize() - childrenB[i]->getSubTreeSize()
 				);
-			//if(left > right) sum = prefix + right;
-			//else sum = prefix + left;
+			if(left > right) sum = prefix + right;
+			else sum = prefix + left;
 			if(min > sum) {
 				min = sum;
 				freeS.setKeyNode(childrenB[i]->getID());
 				freeS.setLeaf(AllBStrategies[a->getID()][childrenB[i]->getID()].getLeaf());
 				freeS.setTreeToDecompose(1);
-				//if(left > right)freeS.setDirection(0);
-				//else freeS.setDirection(1);
+				if(left > right)freeS.setDirection(0);
+				else freeS.setDirection(1);
 			}
 			if(DEBUG) {
 				ou << "Compute Free(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
