@@ -1,47 +1,17 @@
 Tree A
-preL size = 6
-ID: 0 label: A
+preL size = 3
+ID: 0 label: C
 Root
-childrenNum: 1
-1 
-subTreeSize: 6
-subTreeSizeSum: 17
-leftmostForestNum: 10
-rightmostForestNum: 8
-specialmostForestNum: 10
-
-ID: 1 label: B
-parent is 0
 childrenNum: 2
-2 3 
-subTreeSize: 5
-subTreeSizeSum: 11
-leftmostForestNum: 9
-rightmostForestNum: 7
-specialmostForestNum: 9
-
-ID: 2 label: C
-parent is 1
-childrenNum: 0
-
-subTreeSize: 1
-subTreeSizeSum: 1
-leftmostForestNum: 1
-rightmostForestNum: 1
-specialmostForestNum: 1
-
-ID: 3 label: D
-parent is 1
-childrenNum: 2
-4 5 
+1 2 
 subTreeSize: 3
 subTreeSizeSum: 5
 leftmostForestNum: 4
 rightmostForestNum: 4
 specialmostForestNum: 4
 
-ID: 4 label: E
-parent is 3
+ID: 1 label: E
+parent is 0
 childrenNum: 0
 
 subTreeSize: 1
@@ -50,8 +20,8 @@ leftmostForestNum: 1
 rightmostForestNum: 1
 specialmostForestNum: 1
 
-ID: 5 label: F
-parent is 3
+ID: 2 label: F
+parent is 0
 childrenNum: 0
 
 subTreeSize: 1
@@ -62,28 +32,28 @@ specialmostForestNum: 1
 
 
 preL_to_preR
-0 1 5 2 4 3 
+0 2 1 
 preL_to_postL
-5 4 0 3 1 2 
+2 0 1 
 preL_to_postR
-5 4 3 2 1 0 
+2 1 0 
 preL_to_lid
-2 2 2 4 4 5 
+1 1 2 
 preL_to_rid
-5 5 2 5 4 5 
+2 1 2 
 preL_to_sumDelCost
-6 5 1 3 1 1 
+3 1 1 
 preL_to_sumInsCost
-6 5 1 3 1 1 
+3 1 1 
 preL_to_ln
--1 -1 -1 2 2 4 
+-1 -1 1 
 preR_to_ln
--1 -1 -1 -1 3 4 
+-1 -1 1 
 postL_to_preL
-2 4 5 3 1 0 
+1 2 0 
 Tree B
 preL size = 4
-ID: 0 label: B
+ID: 0 label: A
 Root
 childrenNum: 3
 1 2 3 
@@ -93,7 +63,7 @@ leftmostForestNum: 6
 rightmostForestNum: 6
 specialmostForestNum: 7
 
-ID: 1 label: C
+ID: 1 label: B
 parent is 0
 childrenNum: 0
 
@@ -103,7 +73,7 @@ leftmostForestNum: 1
 rightmostForestNum: 1
 specialmostForestNum: 1
 
-ID: 2 label: E
+ID: 2 label: C
 parent is 0
 childrenNum: 0
 
@@ -113,7 +83,7 @@ leftmostForestNum: 1
 rightmostForestNum: 1
 specialmostForestNum: 1
 
-ID: 3 label: F
+ID: 3 label: D
 parent is 0
 childrenNum: 0
 

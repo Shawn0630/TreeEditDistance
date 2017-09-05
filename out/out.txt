@@ -1,479 +1,262 @@
+Compute Free(1, 0)
+If select 1 in Tree A #Subproblem: 4 Direction: LeftCompute Free(1, 1)
+If select 1 in Tree A #Subproblem: 1 Direction: LeftCompute Free(1, 1)
+If select 1 in Tree B #Subproblem: 1 Direction: Leftfree[1][1] freeSumA = 0 freeSumB = 0
+Free[1][1] = 1
+FreeS(1, 1)
+Keynode: 1 in TreeB
+Direction: rightLeaf: 1
+Compute Free(1, 2)
+If select 1 in Tree A #Subproblem: 1 Direction: LeftCompute Free(1, 2)
+If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[1][2] freeSumA = 0 freeSumB = 0
+Free[1][2] = 1
+FreeS(1, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(1, 3)
+If select 1 in Tree A #Subproblem: 1 Direction: LeftCompute Free(1, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[1][3] freeSumA = 0 freeSumB = 0
+Free[1][3] = 1
+FreeS(1, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[1][0] freeSumA = 0 freeSumB = 3
+LeftB[1, 1] = 1
+Compute Free(1, 0)
+If select 1(leftmost) in Tree B #Subproblem: 6 Direction: Right
+bleftmost = 6
+1 + childrenSizeSumB[1] = 2 childrenSizeSumB[2] - childrenSizeSumB[1] = 1
+left = 3
+1 + childrenSizeSumB[2] - childrenSizeSumB[1] = -1 childrenSizeSumB[0] = 1
+right = 3
+Compute Free(1, 0)
+If select 2 in Tree B #Subproblem: 6 Direction: Left
+RightB(1, 3) = 1
+brightmost = 6
+Compute Free(1, 0)
+If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[1][0] = 4
+FreeS(1, 0)
+Keynode: 1 in Tree A
+Direction: rightLeaf: 1
 Compute Free(2, 0)
-If select 2 in Tree A #Subproblem: 6 Direction: Left
-Compute Free(2, 1)
-If select 2 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(2, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Left
+If select 2 in Tree A #Subproblem: 4 Direction: LeftCompute Free(2, 1)
+If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 1)
+If select 1 in Tree B #Subproblem: 1 Direction: Leftfree[2][1] freeSumA = 0 freeSumB = 0
+Free[2][1] = 1
 FreeS(2, 1)
-Keynode: 2 in Tree A
-Direction: rightLeaf: 2
+Keynode: 1 in TreeB
+Direction: rightLeaf: 1
 Compute Free(2, 2)
-If select 2 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(2, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Left
+If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 2)
+If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[2][2] freeSumA = 0 freeSumB = 0
+Free[2][2] = 1
 FreeS(2, 2)
-Keynode: 2 in Tree A
+Keynode: 2 in TreeB
 Direction: rightLeaf: 2
 Compute Free(2, 3)
-If select 2 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(2, 3)
-If select 3 in Tree B #Subproblem: 1 Direction: Left
+If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[2][3] freeSumA = 0 freeSumB = 0
+Free[2][3] = 1
 FreeS(2, 3)
-Keynode: 2 in Tree A
-Direction: rightLeaf: 2
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[2][0] freeSumA = 0 freeSumB = 3
 LeftB[2, 1] = 1
 Compute Free(2, 0)
 If select 1(leftmost) in Tree B #Subproblem: 6 Direction: Right
+bleftmost = 6
+1 + childrenSizeSumB[1] = 2 childrenSizeSumB[2] - childrenSizeSumB[1] = 1
+left = 3
+1 + childrenSizeSumB[2] - childrenSizeSumB[1] = -1 childrenSizeSumB[0] = 1
+right = 3
 Compute Free(2, 0)
 If select 2 in Tree B #Subproblem: 6 Direction: Left
 RightB(2, 3) = 1
+brightmost = 6
 Compute Free(2, 0)
 If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[2][0] = 4
 FreeS(2, 0)
 Keynode: 2 in Tree A
 Direction: rightLeaf: 2
-Compute Free(4, 0)
-If select 4 in Tree A #Subproblem: 6 Direction: Left
-Compute Free(4, 1)
-If select 4 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(4, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Left
-FreeS(4, 1)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
-Compute Free(4, 2)
-If select 4 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(4, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Left
-FreeS(4, 2)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
-Compute Free(4, 3)
-If select 4 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(4, 3)
-If select 3 in Tree B #Subproblem: 1 Direction: Left
-FreeS(4, 3)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
-LeftB[4, 1] = 1
-Compute Free(4, 0)
-If select 1(leftmost) in Tree B #Subproblem: 6 Direction: Right
-Compute Free(4, 0)
-If select 2 in Tree B #Subproblem: 6 Direction: Left
-RightB(4, 3) = 1
-Compute Free(4, 0)
-If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
-FreeS(4, 0)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
-Compute Free(5, 0)
-If select 5 in Tree A #Subproblem: 6 Direction: Left
-Compute Free(5, 1)
-If select 5 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(5, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Left
-FreeS(5, 1)
-Keynode: 5 in Tree A
-Direction: rightLeaf: 5
-Compute Free(5, 2)
-If select 5 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(5, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Left
-FreeS(5, 2)
-Keynode: 5 in Tree A
-Direction: rightLeaf: 5
-Compute Free(5, 3)
-If select 5 in Tree A #Subproblem: 1 Direction: Left
-Compute Free(5, 3)
-If select 3 in Tree B #Subproblem: 1 Direction: Left
-FreeS(5, 3)
-Keynode: 5 in Tree A
-Direction: rightLeaf: 5
-LeftB[5, 1] = 1
-Compute Free(5, 0)
-If select 1(leftmost) in Tree B #Subproblem: 6 Direction: Right
-Compute Free(5, 0)
-If select 2 in Tree B #Subproblem: 6 Direction: Left
-RightB(5, 3) = 1
-Compute Free(5, 0)
-If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
-FreeS(5, 0)
-Keynode: 5 in Tree A
-Direction: rightLeaf: 5
-Compute Free(3, 1)
-If select 1 in Tree B #Subproblem: 4 Direction: Left
-LeftA[4, 1] = 1
-Compute Free(3, 1)
-If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
-RightA[5, 1] set to 5
-Compute Free(3, 1)
-If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
-FreeS(3, 1)
+Compute Free(0, 1)
+If select 1 in Tree B #Subproblem: 3 Direction: Leftfree[0][1] freeSumA = 2 freeSumB = 0
+LeftA[1, 1] = 1
+Compute Free(0, 1)
+If select 1(leftmost) in Tree A #Subproblem: 4 Direction: Right
+free(1, 1)(1) leftA(1, 1)(1)  b->getLeftmostForestNum() = 1 a->getSubTreeSize() - childrenA[0]->getSubTreeSize()2
+aleftmost = 4
+RightA[2, 1] set to 2
+arightmost = 4
+Compute Free(0, 1)
+If select 2(rightmost) in Tree A #Subproblem: 4 Direction: Left
+Free[0][1] = 3
+FreeS(0, 1)
 Keynode: 1 in TreeB
 Direction: rightLeaf: 1
-Compute Free(3, 2)
-If select 2 in Tree B #Subproblem: 4 Direction: Left
-LeftA[4, 2] = 1
-Compute Free(3, 2)
-If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
-RightA[5, 2] set to 5
-Compute Free(3, 2)
-If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
-FreeS(3, 2)
+Compute Free(0, 2)
+If select 2 in Tree B #Subproblem: 3 Direction: Leftfree[0][2] freeSumA = 2 freeSumB = 0
+LeftA[1, 2] = 1
+Compute Free(0, 2)
+If select 1(leftmost) in Tree A #Subproblem: 4 Direction: Right
+free(1, 2)(1) leftA(1, 2)(1)  b->getLeftmostForestNum() = 1 a->getSubTreeSize() - childrenA[0]->getSubTreeSize()2
+aleftmost = 4
+RightA[2, 2] set to 2
+arightmost = 4
+Compute Free(0, 2)
+If select 2(rightmost) in Tree A #Subproblem: 4 Direction: Left
+Free[0][2] = 3
+FreeS(0, 2)
 Keynode: 2 in TreeB
 Direction: rightLeaf: 2
-Compute Free(3, 3)
-If select 3 in Tree B #Subproblem: 4 Direction: Left
-LeftA[4, 3] = 1
-Compute Free(3, 3)
-If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
-RightA[5, 3] set to 5
-Compute Free(3, 3)
-If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
-FreeS(3, 3)
+Compute Free(0, 3)
+If select 3 in Tree B #Subproblem: 3 Direction: Leftfree[0][3] freeSumA = 2 freeSumB = 0
+LeftA[1, 3] = 1
+Compute Free(0, 3)
+If select 1(leftmost) in Tree A #Subproblem: 4 Direction: Right
+free(1, 3)(1) leftA(1, 3)(1)  b->getLeftmostForestNum() = 1 a->getSubTreeSize() - childrenA[0]->getSubTreeSize()2
+aleftmost = 4
+RightA[2, 3] set to 2
+arightmost = 4
+Compute Free(0, 3)
+If select 2(rightmost) in Tree A #Subproblem: 4 Direction: Left
+Free[0][3] = 3
+FreeS(0, 3)
 Keynode: 3 in TreeB
 Direction: rightLeaf: 3
-LeftA[4, 0] = 6
-Compute Free(3, 0)
-If select 4(leftmost) in Tree A #Subproblem: 24 Direction: Right
-RightA[5, 0] set to 5
-Compute Free(3, 0)
-If select 5(rightmost) in Tree A #Subproblem: 24 Direction: Left
-LeftB[3, 1] = 4
-Compute Free(3, 0)
-If select 1(leftmost) in Tree B #Subproblem: 24 Direction: Right
-Compute Free(3, 0)
-If select 2 in Tree B #Subproblem: 24 Direction: Left
-RightB(3, 3) = 4
-Compute Free(3, 0)
-If select 3(rightmost) in Tree B #Subproblem: 24 Direction: Left
-FreeS(3, 0)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
-Compute Free(1, 1)
-If select 1 in Tree B #Subproblem: 9 Direction: Left
-LeftA[2, 1] = 1
-Compute Free(1, 1)
-If select 2(leftmost) in Tree A #Subproblem: 9 Direction: Right
-RightA[3, 1] set to 5
-Compute Free(1, 1)
-If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
-FreeS(1, 1)
-Keynode: 3 in Tree A
-Direction: left
-Leaf: 5
-Compute Free(1, 2)
-If select 2 in Tree B #Subproblem: 9 Direction: Left
-LeftA[2, 2] = 1
-Compute Free(1, 2)
-If select 2(leftmost) in Tree A #Subproblem: 9 Direction: Right
-RightA[3, 2] set to 5
-Compute Free(1, 2)
-If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
-FreeS(1, 2)
-Keynode: 3 in Tree A
-Direction: left
-Leaf: 5
-Compute Free(1, 3)
-If select 3 in Tree B #Subproblem: 9 Direction: Left
-LeftA[2, 3] = 1
-Compute Free(1, 3)
-If select 2(leftmost) in Tree A #Subproblem: 9 Direction: Right
-RightA[3, 3] set to 5
-Compute Free(1, 3)
-If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
-FreeS(1, 3)
-Keynode: 3 in Tree A
-Direction: left
-Leaf: 5
-LeftA[2, 0] = 6
-Compute Free(1, 0)
-If select 2(leftmost) in Tree A #Subproblem: 54 Direction: Right
-RightA[3, 0] set to 5
-Compute Free(1, 0)
-If select 3(rightmost) in Tree A #Subproblem: 42 Direction: Left
-LeftB[1, 1] = 9
-Compute Free(1, 0)
-If select 1(leftmost) in Tree B #Subproblem: 50 Direction: Right
-Compute Free(1, 0)
-If select 2 in Tree B #Subproblem: 46 Direction: Left
-RightB(1, 3) = 7
-Compute Free(1, 0)
-If select 3(rightmost) in Tree B #Subproblem: 42 Direction: Left
-FreeS(1, 0)
-Keynode: 3 in Tree A
-Direction: left
-Leaf: 5
-Compute Free(0, 1)
-If select 1 in Tree B #Subproblem: 10 Direction: Left
-aleftmost = 5 + 4 = 9
-LeftA[1, 1] = 7
-Compute Free(0, 1)
-If select 1(leftmost) in Tree A #Subproblem: 8 Direction: Right
-RightA[1, 1] set to 5
-Compute Free(0, 1)
-If select 1(rightmost) in Tree A #Subproblem: 8 Direction: Left
-FreeS(0, 1)
-Keynode: 1 in Tree A
-Direction: rightLeaf: 4
-Compute Free(0, 2)
-If select 2 in Tree B #Subproblem: 10 Direction: Left
-aleftmost = 5 + 4 = 9
-LeftA[1, 2] = 7
-Compute Free(0, 2)
-If select 1(leftmost) in Tree A #Subproblem: 8 Direction: Right
-RightA[1, 2] set to 5
-Compute Free(0, 2)
-If select 1(rightmost) in Tree A #Subproblem: 8 Direction: Left
-FreeS(0, 2)
-Keynode: 1 in Tree A
-Direction: rightLeaf: 4
-Compute Free(0, 3)
-If select 3 in Tree B #Subproblem: 10 Direction: Left
-aleftmost = 5 + 4 = 9
-LeftA[1, 3] = 7
-Compute Free(0, 3)
-If select 1(leftmost) in Tree A #Subproblem: 8 Direction: Right
-RightA[1, 3] set to 5
-Compute Free(0, 3)
-If select 1(rightmost) in Tree A #Subproblem: 8 Direction: Left
-FreeS(0, 3)
-Keynode: 1 in Tree A
-Direction: rightLeaf: 4
-aleftmost = 30 + 24 = 54
-LeftA[1, 0] = 47
+free[0][0] freeSumA = 8 freeSumB = 9
+LeftA[1, 0] = 6
 Compute Free(0, 0)
-If select 1(leftmost) in Tree A #Subproblem: 53 Direction: Right
-RightA[1, 0] set to 5
+If select 1(leftmost) in Tree A #Subproblem: 22 Direction: Right
+free(1, 0)(4) leftA(1, 0)(6)  b->getLeftmostForestNum() = 6 a->getSubTreeSize() - childrenA[0]->getSubTreeSize()2
+aleftmost = 22
+RightA[2, 0] set to 2
+arightmost = 22
 Compute Free(0, 0)
-If select 1(rightmost) in Tree A #Subproblem: 48 Direction: Left
-LeftB[0, 1] = 10
+If select 2(rightmost) in Tree A #Subproblem: 22 Direction: Left
+LeftB[0, 1] = 4
 Compute Free(0, 0)
-If select 1(leftmost) in Tree B #Subproblem: 56 Direction: Right
+If select 1(leftmost) in Tree B #Subproblem: 22 Direction: Right
+bleftmost = 22
+1 + childrenSizeSumB[1] = 2 childrenSizeSumB[2] - childrenSizeSumB[1] = 1
+left = 12
+1 + childrenSizeSumB[2] - childrenSizeSumB[1] = 1 childrenSizeSumB[0] = 1
+right = 12
 Compute Free(0, 0)
-If select 2 in Tree B #Subproblem: 52 Direction: Left
-RightB(0, 3) = 8
+If select 2 in Tree B #Subproblem: 22 Direction: Left
+RightB(0, 3) = 4
+brightmost = 22
 Compute Free(0, 0)
-If select 3(rightmost) in Tree B #Subproblem: 48 Direction: Left
+If select 3(rightmost) in Tree B #Subproblem: 22 Direction: Left
+Free[0][0] = 22
 FreeS(0, 0)
 Keynode: 1 in Tree A
-Direction: left
-Leaf: 5
+Direction: rightLeaf: 1
+1 is a leaf
+set S[1, 1] = 1
+set S[1, 2] = 1
+set S[1, 3] = 1
+set S[1, 0] = 1
+compute 1, 1
+parent i = 0 parent j = 0
+left leaf(j) in 1 = 1 tmpCost = 1.000000
+right leaf(j) in 1 = 1 tmpCost = 1.000000
+left leaf(i) in 1 = 1 tmpCost = 1.000000
+right leaf(i) in 1 = 1 tmpCost = 1.000000
+cost2_I[0] = -1.000000
+S[1, 1] = 1
+compute 1, 2
+parent i = 0 parent j = 0
+left leaf(j) in 2 = 2 tmpCost = 1.000000
+right leaf(j) in 2 = 2 tmpCost = 1.000000
+left leaf(i) in 1 = 1 tmpCost = 1.000000
+right leaf(i) in 1 = 1 tmpCost = 1.000000
+cost1_I[0, 0] = -1.000000
+S[1, 2] = 2
+compute 1, 3
+parent i = 0 parent j = 0
+left leaf(j) in 3 = 3 tmpCost = 1.000000
+right leaf(j) in 3 = 3 tmpCost = 1.000000
+left leaf(i) in 1 = 1 tmpCost = 1.000000
+right leaf(i) in 1 = 1 tmpCost = 1.000000
+cost2_I[0](-1.000000) += cost2_R[0](3.000000) = 2.000000
+S[1, 3] = 3
+compute 1, 0
+parent i = 0 parent j = NULL
+left leaf(j) in 0 = 1 tmpCost = 6.000000
+right leaf(j) in 0 = 3 tmpCost = 6.000000
+cost1_I[0, 0] = -6.000000
+S[1, 0] = 1
 2 is a leaf
 set S[2, 1] = 2
 set S[2, 2] = 2
 set S[2, 3] = 2
 set S[2, 0] = 2
 compute 2, 1
-parent i = 1 parent j = 0
+parent i = 0 parent j = 0
 left leaf(j) in 1 = 1 tmpCost = 1.000000
 right leaf(j) in 1 = 1 tmpCost = 1.000000
 left leaf(i) in 2 = 2 tmpCost = 1.000000
 right leaf(i) in 2 = 2 tmpCost = 1.000000
-cost1_I[1, 0] = -1.000000
+cost1_I[0, 1](-32761103880258910607638528.000000) += cost1_R[2, 1](-32761103880258910607638528.000000) = -65522207760517821215277056.000000
 cost2_I[0] = -1.000000
 S[2, 1] = 1
 compute 2, 2
-parent i = 1 parent j = 0
+parent i = 0 parent j = 0
 left leaf(j) in 2 = 2 tmpCost = 1.000000
 right leaf(j) in 2 = 2 tmpCost = 1.000000
 left leaf(i) in 2 = 2 tmpCost = 1.000000
 right leaf(i) in 2 = 2 tmpCost = 1.000000
-cost1_I[1, 0] = -1.000000
+cost1_I[0, 2](-1.000000) += cost1_R[2, 2](2.000000) = 1.000000
 S[2, 2] = 2
 compute 2, 3
-parent i = 1 parent j = 0
+parent i = 0 parent j = 0
 left leaf(j) in 3 = 3 tmpCost = 1.000000
 right leaf(j) in 3 = 3 tmpCost = 1.000000
 left leaf(i) in 2 = 2 tmpCost = 1.000000
 right leaf(i) in 2 = 2 tmpCost = 1.000000
-cost1_I[1, 0] = -1.000000
+cost1_I[0, 3](-32761103880258910607638528.000000) += cost1_R[2, 3](-32761103880258910607638528.000000) = -65522207760517821215277056.000000
 cost2_I[0](-1.000000) += cost2_R[0](3.000000) = 2.000000
 S[2, 3] = 3
 compute 2, 0
-parent i = 1 parent j = NULL
+parent i = 0 parent j = NULL
 left leaf(j) in 0 = 1 tmpCost = 6.000000
 right leaf(j) in 0 = 3 tmpCost = 6.000000
-cost1_I[1, 0] = -6.000000
+cost1_I[0, 0](-6.000000) += cost1_R[2, 0](12.000000) = 6.000000
 S[2, 0] = 1
-4 is a leaf
-set S[4, 1] = 4
-set S[4, 2] = 4
-set S[4, 3] = 4
-set S[4, 0] = 4
-compute 4, 1
-parent i = 3 parent j = 0
-left leaf(j) in 1 = 1 tmpCost = 1.000000
-right leaf(j) in 1 = 1 tmpCost = 1.000000
-left leaf(i) in 4 = 4 tmpCost = 1.000000
-right leaf(i) in 4 = 4 tmpCost = 1.000000
-cost1_I[3, 0] = -1.000000
-cost2_I[0] = -1.000000
-S[4, 1] = 1
-compute 4, 2
-parent i = 3 parent j = 0
-left leaf(j) in 2 = 2 tmpCost = 1.000000
-right leaf(j) in 2 = 2 tmpCost = 1.000000
-left leaf(i) in 4 = 4 tmpCost = 1.000000
-right leaf(i) in 4 = 4 tmpCost = 1.000000
-cost1_I[3, 0] = -1.000000
-S[4, 2] = 2
-compute 4, 3
-parent i = 3 parent j = 0
-left leaf(j) in 3 = 3 tmpCost = 1.000000
-right leaf(j) in 3 = 3 tmpCost = 1.000000
-left leaf(i) in 4 = 4 tmpCost = 1.000000
-right leaf(i) in 4 = 4 tmpCost = 1.000000
-cost1_I[3, 0] = -1.000000
-cost2_I[0](-1.000000) += cost2_R[0](3.000000) = 2.000000
-S[4, 3] = 3
-compute 4, 0
-parent i = 3 parent j = NULL
-left leaf(j) in 0 = 1 tmpCost = 6.000000
-right leaf(j) in 0 = 3 tmpCost = 6.000000
-cost1_I[3, 0] = -6.000000
-S[4, 0] = 1
-5 is a leaf
-set S[5, 1] = 5
-set S[5, 2] = 5
-set S[5, 3] = 5
-set S[5, 0] = 5
-compute 5, 1
-parent i = 3 parent j = 0
-left leaf(j) in 1 = 1 tmpCost = 1.000000
-right leaf(j) in 1 = 1 tmpCost = 1.000000
-left leaf(i) in 5 = 5 tmpCost = 1.000000
-right leaf(i) in 5 = 5 tmpCost = 1.000000
-cost1_I[3, 1](-1.000000) += cost1_R[5, 1](2.000000) = 1.000000
-cost2_I[0] = -1.000000
-S[5, 1] = 1
-compute 5, 2
-parent i = 3 parent j = 0
-left leaf(j) in 2 = 2 tmpCost = 1.000000
-right leaf(j) in 2 = 2 tmpCost = 1.000000
-left leaf(i) in 5 = 5 tmpCost = 1.000000
-right leaf(i) in 5 = 5 tmpCost = 1.000000
-cost1_I[3, 2](-1.000000) += cost1_R[5, 2](2.000000) = 1.000000
-S[5, 2] = 2
-compute 5, 3
-parent i = 3 parent j = 0
-left leaf(j) in 3 = 3 tmpCost = 1.000000
-right leaf(j) in 3 = 3 tmpCost = 1.000000
-left leaf(i) in 5 = 5 tmpCost = 1.000000
-right leaf(i) in 5 = 5 tmpCost = 1.000000
-cost1_I[3, 3](-1.000000) += cost1_R[5, 3](2.000000) = 1.000000
-cost2_I[0](-1.000000) += cost2_R[0](3.000000) = 2.000000
-S[5, 3] = 3
-compute 5, 0
-parent i = 3 parent j = NULL
-left leaf(j) in 0 = 1 tmpCost = 6.000000
-right leaf(j) in 0 = 3 tmpCost = 6.000000
-cost1_I[3, 0](-6.000000) += cost1_R[5, 0](12.000000) = 6.000000
-S[5, 0] = 1
-compute 3, 1
-parent i = 1 parent j = 0
-left leaf(i) in 3 = 4 tmpCost = 4.000000
-right leaf(i) in 3 = 5 tmpCost = 4.000000
-cost1_I[1, 0] = -3.000000
-cost1_I[1, 1](-3.000000) += cost1_R[3, 1](5.000000) = 2.000000
+compute 0, 1
+parent i = NULL parent j = 0
+left leaf(i) in 0 = 1 tmpCost = 4.000000
+right leaf(i) in 0 = 2 tmpCost = 4.000000
 cost2_I[0] = -4.000000
-S[3, 1] = 4
-compute 3, 2
-parent i = 1 parent j = 0
-left leaf(i) in 3 = 4 tmpCost = 4.000000
-right leaf(i) in 3 = 5 tmpCost = 4.000000
-cost1_I[1, 0] = -3.000000
-cost1_I[1, 2](-3.000000) += cost1_R[3, 2](170991431289055655878065127424.000000) = 170991431289055655878065127424.000000
-S[3, 2] = 4
-compute 3, 3
-parent i = 1 parent j = 0
-left leaf(i) in 3 = 4 tmpCost = 4.000000
-right leaf(i) in 3 = 5 tmpCost = 4.000000
-cost1_I[1, 0] = -3.000000
-cost1_I[1, 3](-3.000000) += cost1_R[3, 3](14728303500710641664.000000) = 14728303500710641664.000000
+S[0, 1] = 1
+compute 0, 2
+parent i = NULL parent j = 0
+left leaf(i) in 0 = 1 tmpCost = 4.000000
+right leaf(i) in 0 = 2 tmpCost = 4.000000
+S[0, 2] = 1
+compute 0, 3
+parent i = NULL parent j = 0
+left leaf(i) in 0 = 1 tmpCost = 4.000000
+right leaf(i) in 0 = 2 tmpCost = 4.000000
 cost2_I[0](-4.000000) += cost2_R[0](12.000000) = 8.000000
-S[3, 3] = 4
-compute 3, 0
-parent i = 1 parent j = NULL
-left leaf(i) in 3 = 4 tmpCost = 24.000000
-right leaf(i) in 3 = 5 tmpCost = 24.000000
-special leaf(i) in 3 = 4 tmpCost = 27.000000 cost1_I[3, 0] = 6.000000
+S[0, 3] = 1
+compute 0, 0
+parent i = NULL parent j = NULL
+left leaf(i) in 0 = 1 tmpCost = 24.000000
+right leaf(i) in 0 = 2 tmpCost = 24.000000
+special leaf(i) in 0 = 1 tmpCost = 27.000000 cost1_I[0, 0] = 6.000000
 left leaf(j) in 0 = 1 tmpCost = 24.000000
 right leaf(j) in 0 = 3 tmpCost = 24.000000
 special leaf(j) in 0 = 1 tmpCost = 24.000000 cost2_I[0] = 8
-cost1_I[1, 0] = -18.000000
-cost1_I[1, 0](-18.000000) += cost1_R[3, 0](4425593328041547970743254384640.000000) = 4425593328041547970743254384640.000000
-S[3, 0] = 4
-compute 1, 1
-parent i = 0 parent j = 0
-left leaf(i) in 1 = 2 tmpCost = 9.000000
-right leaf(i) in 1 = 5 tmpCost = 7.000000
-cost1_I[0, 0] = -5.000000
-cost1_I[0, 1](-5.000000) += cost1_R[1, 1](15972635629663002168393728.000000) = 15972635629663002168393728.000000
-cost2_I[0] = -7.000000
-S[1, 1] = 5
-compute 1, 2
-parent i = 0 parent j = 0
-left leaf(i) in 1 = 2 tmpCost = 9.000000
-right leaf(i) in 1 = 5 tmpCost = 7.000000
-cost1_I[0, 0] = 170991431289055655878065127424.000000
-cost1_I[0, 2](170991431289055655878065127424.000000) += cost1_R[1, 2](7.000000) = 170991431289055655878065127424.000000
-S[1, 2] = 5
-compute 1, 3
-parent i = 0 parent j = 0
-left leaf(i) in 1 = 2 tmpCost = 9.000000
-right leaf(i) in 1 = 5 tmpCost = 7.000000
-cost1_I[0, 3](1025300800.000000) += cost1_R[1, 3](308089638626126192980234994712576.000000) = 308089638626126192980234994712576.000000
-cost2_I[0](-7.000000) += cost2_R[0](21.000000) = 14.000000
-S[1, 3] = 5
-compute 1, 0
-parent i = 0 parent j = NULL
-left leaf(i) in 1 = 2 tmpCost = 54.000000
-right leaf(i) in 1 = 5 tmpCost = 4425593328041547970743254384640.000000
-special leaf(i) in 1 = 4 tmpCost = 4425593328041547970743254384640.000000 cost1_I[1, 0] = 4425593328041547970743254384640.000000
-left leaf(j) in 0 = 1 tmpCost = 50.000000
-right leaf(j) in 0 = 3 tmpCost = 42.000000
-special leaf(j) in 0 = 1 tmpCost = 50.000000 cost2_I[0] = 14
-cost1_I[0, 0](0.000000) += cost1_R[1, 0](71523079812553841311744.000000) = 71523079812553841311744.000000
-S[1, 0] = 3
-compute 0, 1
-parent i = NULL parent j = 0
-left leaf(i) in 0 = 2 tmpCost = 10.000000
-right leaf(i) in 0 = 5 tmpCost = 8.000000
-cost2_I[0] = -8.000000
-S[0, 1] = 5
-compute 0, 2
-parent i = NULL parent j = 0
-left leaf(i) in 0 = 2 tmpCost = 10.000000
-right leaf(i) in 0 = 5 tmpCost = 8.000000
-S[0, 2] = 5
-compute 0, 3
-parent i = NULL parent j = 0
-left leaf(i) in 0 = 2 tmpCost = 10.000000
-right leaf(i) in 0 = 5 tmpCost = 8.000000
-cost2_I[0](-8.000000) += cost2_R[0](24.000000) = 16.000000
-S[0, 3] = 5
-compute 0, 0
-parent i = NULL parent j = NULL
-left leaf(i) in 0 = 2 tmpCost = 999906496.000000
-right leaf(i) in 0 = 5 tmpCost = 4425593328041547970743254384640.000000
-special leaf(i) in 0 = -1 tmpCost = 71523079812553841311744.000000 cost1_I[0, 0] = 71523079812553841311744.000000
-left leaf(j) in 0 = 1 tmpCost = 56.000000
-right leaf(j) in 0 = 3 tmpCost = 48.000000
-special leaf(j) in 0 = 1 tmpCost = 56.000000 cost2_I[0] = 16
-S[0, 0] = 3
+S[0, 0] = 1
 RESULT
-5 in A 4 in A 4 in A 4 in A 
-5 in A 5 in A 5 in A 5 in A 
-2 in A 2 in A 2 in A 2 in A 
-4 in A 1 in B 2 in B 3 in B 
-4 in A 4 in A 4 in A 4 in A 
-5 in A 5 in A 5 in A 5 in A 
+1 in A 1 in B 2 in B 3 in B 
+1 in A 1 in B 2 in B 3 in B 
+2 in A 1 in B 2 in B 3 in B 
 RESULT 2
-3 in B 5 in A 5 in A 5 in A 
-3 in B 5 in A 5 in A 5 in A 
-1 in B 1 in B 2 in B 3 in B 
-4 in A 4 in A 4 in A 4 in A 
+1 in A 1 in A 1 in A 1 in A 
 1 in B 1 in B 2 in B 3 in B 
 1 in B 1 in B 2 in B 3 in B 
 Distance Matrix
@@ -522,443 +305,264 @@ U 4
 
 gted(0, 0)
 hasVisited[0, 0] = 0
-treeSizeA = 6
+treeSizeA = 3
 treeSizeB = 4
-getPathType A(0 ,5) = 1
-A child = 4 currentPathNode = 5 parent = 3
-gted(0, 0) create problem in A gted(4, 0)
-gted(4, 0)
-hasVisited[4, 0] = 0
-treeSizeA = 1
-treeSizeB = 4
-cost = 4.000000
-change E -> B from insert B nodeRenMinusIns = 0.000000
-change E -> C from insert C nodeRenMinusIns = 0.000000
-change E -> E from insert E nodeRenMinusIns = -1.000000
-change E -> F from insert F nodeRenMinusIns = 0.000000
-spf1(4, 0) = 3
-A child = 5 currentPathNode = 5 parent = 3
-A child = 2 currentPathNode = 3 parent = 1
+getPathType A(0 ,1) = 0
+A child = 1 currentPathNode = 1 parent = 0
+A child = 2 currentPathNode = 1 parent = 0
 gted(0, 0) create problem in A gted(2, 0)
 gted(2, 0)
 hasVisited[2, 0] = 0
 treeSizeA = 1
 treeSizeB = 4
 cost = 4.000000
-change C -> B from insert B nodeRenMinusIns = 0.000000
-change C -> C from insert C nodeRenMinusIns = -1.000000
-change C -> E from insert E nodeRenMinusIns = 0.000000
-change C -> F from insert F nodeRenMinusIns = 0.000000
-spf1(2, 0) = 3
-A child = 3 currentPathNode = 3 parent = 1
-A child = 1 currentPathNode = 1 parent = 0
-swap = false pathType = 1
-computeRevKeyRoots(0, 3, 0)
-computeRevKeyRoots(1, 1, 1)
-computeRevKeyRoots(2, 2, 2)
-RevTreeDistance(0, 2)
-aoff = -1
-boff = 0
-0 1 
-1 6.40969e-10 
-2 5.82761e-10 
-3 6.40969e-10 
-4 4.00464e-11 
-5 6.40969e-10 
-6 4.00464e-11 
-Compute revforestdist(5, 2)
-forestdist[0, 1] = 1.000000 delete F F + 1 da = 2.000000
-forestdist[1, 0] = 1.000000 insert G E + 1 db = 2.000000
-a1_preL = 5 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 2
-F -> E dc = 1.000000
-delta[5, 2] = forestdist[0, 0] = 0.000000
-da = 2.000000
-db = 2.000000
-dc = 1.000000
-forestdist[1, 1] = 1.000000
-Compute revforestdist(4, 2)
-forestdist[1, 1] = 1.000000 delete F E + 1 da = 2.000000
-forestdist[2, 0] = 2.000000 insert G E + 1 db = 3.000000
-a1_preL = 4 a1_rightmost_leaf = 4 a_rightmost_leaf_in_preL = 5
-b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 2
-dc = forestdist[1, 0](1.000000) + delta[4, 2](0.000000) = 1.000000
-da = 2.000000
-db = 3.000000
-dc = 1.000000
-forestdist[2, 1] = 1.000000
-Compute revforestdist(3, 2)
-forestdist[2, 1] = 1.000000 delete F D + 1 da = 2.000000
-forestdist[3, 0] = 3.000000 insert G E + 1 db = 4.000000
-a1_preL = 3 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 2
-D -> E dc = 3.000000
-delta[3, 2] = forestdist[2, 0] = 2.000000
-da = 2.000000
-db = 4.000000
-dc = 3.000000
-forestdist[3, 1] = 2.000000
-Compute revforestdist(2, 2)
-forestdist[3, 1] = 2.000000 delete F C + 1 da = 3.000000
-forestdist[4, 0] = 4.000000 insert G E + 1 db = 5.000000
-a1_preL = 2 a1_rightmost_leaf = 2 a_rightmost_leaf_in_preL = 5
-b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 2
-dc = forestdist[3, 0](3.000000) + delta[2, 2](0.000000) = 4.000000
-da = 3.000000
-db = 5.000000
-dc = 4.000000
-forestdist[4, 1] = 3.000000
-Compute revforestdist(1, 2)
-forestdist[4, 1] = 3.000000 delete F B + 1 da = 4.000000
-forestdist[5, 0] = 5.000000 insert G E + 1 db = 6.000000
-a1_preL = 1 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 2
-B -> E dc = 5.000000
-delta[1, 2] = forestdist[4, 0] = 4.000000
-da = 4.000000
-db = 6.000000
-dc = 5.000000
-forestdist[5, 1] = 4.000000
-Compute revforestdist(0, 2)
-forestdist[5, 1] = 4.000000 delete F A + 1 da = 5.000000
-forestdist[6, 0] = 6.000000 insert G E + 1 db = 7.000000
-a1_preL = 0 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 2
-A -> E dc = 6.000000
-delta[0, 2] = forestdist[5, 0] = 5.000000
-da = 5.000000
-db = 7.000000
-dc = 6.000000
-forestdist[6, 1] = 5.000000
-RevTreeDistance(0, 1)
-aoff = -1
-boff = 1
-0 1 
-1 1 
-2 1 
-3 2 
-4 3 
-5 4 
-6 5 
-Compute revforestdist(5, 1)
-forestdist[0, 1] = 1.000000 delete F F + 1 da = 2.000000
-forestdist[1, 0] = 1.000000 insert G C + 1 db = 2.000000
-a1_preL = 5 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 1
-F -> C dc = 1.000000
-delta[5, 1] = forestdist[0, 0] = 0.000000
-da = 2.000000
-db = 2.000000
-dc = 1.000000
-forestdist[1, 1] = 1.000000
-Compute revforestdist(4, 1)
-forestdist[1, 1] = 1.000000 delete F E + 1 da = 2.000000
-forestdist[2, 0] = 2.000000 insert G C + 1 db = 3.000000
-a1_preL = 4 a1_rightmost_leaf = 4 a_rightmost_leaf_in_preL = 5
-b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 1
-dc = forestdist[1, 0](1.000000) + delta[4, 1](0.000000) = 2.000000
-da = 2.000000
-db = 3.000000
-dc = 2.000000
-forestdist[2, 1] = 2.000000
-Compute revforestdist(3, 1)
-forestdist[2, 1] = 2.000000 delete F D + 1 da = 3.000000
-forestdist[3, 0] = 3.000000 insert G C + 1 db = 4.000000
-a1_preL = 3 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 1
-D -> C dc = 3.000000
-delta[3, 1] = forestdist[2, 0] = 2.000000
-da = 3.000000
-db = 4.000000
-dc = 3.000000
-forestdist[3, 1] = 3.000000
-Compute revforestdist(2, 1)
-forestdist[3, 1] = 3.000000 delete F C + 1 da = 4.000000
-forestdist[4, 0] = 4.000000 insert G C + 1 db = 5.000000
-a1_preL = 2 a1_rightmost_leaf = 2 a_rightmost_leaf_in_preL = 5
-b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 1
-dc = forestdist[3, 0](3.000000) + delta[2, 1](0.000000) = 3.000000
-da = 4.000000
-db = 5.000000
-dc = 3.000000
-forestdist[4, 1] = 3.000000
-Compute revforestdist(1, 1)
-forestdist[4, 1] = 3.000000 delete F B + 1 da = 4.000000
-forestdist[5, 0] = 5.000000 insert G C + 1 db = 6.000000
-a1_preL = 1 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 1
-B -> C dc = 5.000000
-delta[1, 1] = forestdist[4, 0] = 4.000000
-da = 4.000000
-db = 6.000000
-dc = 5.000000
-forestdist[5, 1] = 4.000000
-Compute revforestdist(0, 1)
-forestdist[5, 1] = 4.000000 delete F A + 1 da = 5.000000
-forestdist[6, 0] = 6.000000 insert G C + 1 db = 7.000000
-a1_preL = 0 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 1
-A -> C dc = 6.000000
-delta[0, 1] = forestdist[5, 0] = 5.000000
-da = 5.000000
-db = 7.000000
-dc = 6.000000
-forestdist[6, 1] = 5.000000
-RevTreeDistance(0, 0)
-aoff = -1
-boff = -1
-0 1 2 3 4 
-1 1 1.49237e-19 6.40941e-10 6.40969e-10 
-2 2 6.40969e-10 1.49237e-19 6.40941e-10 
-3 3 5.82761e-10 6.40969e-10 1.49237e-19 
-4 3 6.40969e-10 5.82761e-10 6.40969e-10 
-5 4 4.00464e-11 6.40969e-10 5.82761e-10 
-6 5 6.40969e-10 5.82761e-10 6.40969e-10 
-Compute revforestdist(5, 3)
-forestdist[0, 1] = 1.000000 delete F F + 1 da = 2.000000
-forestdist[1, 0] = 1.000000 insert G F + 1 db = 2.000000
-a1_preL = 5 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 3 b1_rightmost_leaf = 3 b_rightmost_leaf_in_preL = 3
-F -> F dc = 0.000000
-delta[5, 3] = forestdist[0, 0] = 0.000000
-da = 2.000000
-db = 2.000000
-dc = 0.000000
-forestdist[1, 1] = 0.000000
-Compute revforestdist(5, 2)
-forestdist[0, 2] = 2.000000 delete F F + 1 da = 3.000000
-forestdist[1, 1] = 0.000000 insert G E + 1 db = 1.000000
-a1_preL = 5 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 3
-dc = forestdist[0, 1](1.000000) + delta[5, 2](0.000000) = 2.000000
-da = 3.000000
-db = 1.000000
-dc = 2.000000
-forestdist[1, 2] = 1.000000
-Compute revforestdist(5, 1)
-forestdist[0, 3] = 3.000000 delete F F + 1 da = 4.000000
-forestdist[1, 2] = 1.000000 insert G C + 1 db = 2.000000
-a1_preL = 5 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 3
-dc = forestdist[0, 2](2.000000) + delta[5, 1](0.000000) = 3.000000
-da = 4.000000
-db = 2.000000
-dc = 3.000000
-forestdist[1, 3] = 2.000000
-Compute revforestdist(5, 0)
-forestdist[0, 4] = 4.000000 delete F F + 1 da = 5.000000
-forestdist[1, 3] = 2.000000 insert G B + 1 db = 3.000000
-a1_preL = 5 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 0 b1_rightmost_leaf = 3 b_rightmost_leaf_in_preL = 3
-F -> B dc = 4.000000
-delta[5, 0] = forestdist[0, 3] = 3.000000
-da = 5.000000
-db = 3.000000
-dc = 4.000000
-forestdist[1, 4] = 3.000000
-Compute revforestdist(4, 3)
-forestdist[1, 1] = 0.000000 delete F E + 1 da = 1.000000
-forestdist[2, 0] = 2.000000 insert G F + 1 db = 3.000000
-a1_preL = 4 a1_rightmost_leaf = 4 a_rightmost_leaf_in_preL = 5
-b1_preL = 3 b1_rightmost_leaf = 3 b_rightmost_leaf_in_preL = 3
-dc = forestdist[1, 0](1.000000) + delta[4, 3](0.000000) = 2.000000
-da = 1.000000
-db = 3.000000
-dc = 2.000000
-forestdist[2, 1] = 1.000000
-Compute revforestdist(4, 2)
-forestdist[1, 2] = 1.000000 delete F E + 1 da = 2.000000
-forestdist[2, 1] = 1.000000 insert G E + 1 db = 2.000000
-a1_preL = 4 a1_rightmost_leaf = 4 a_rightmost_leaf_in_preL = 5
-b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 3
-dc = forestdist[1, 1](0.000000) + delta[4, 2](0.000000) = 0.000000
-da = 2.000000
-db = 2.000000
-dc = 0.000000
-forestdist[2, 2] = 0.000000
-Compute revforestdist(4, 1)
-forestdist[1, 3] = 2.000000 delete F E + 1 da = 3.000000
-forestdist[2, 2] = 0.000000 insert G C + 1 db = 1.000000
-a1_preL = 4 a1_rightmost_leaf = 4 a_rightmost_leaf_in_preL = 5
-b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 3
-dc = forestdist[1, 2](1.000000) + delta[4, 1](0.000000) = 2.000000
-da = 3.000000
-db = 1.000000
-dc = 2.000000
-forestdist[2, 3] = 1.000000
-Compute revforestdist(4, 0)
-forestdist[1, 4] = 3.000000 delete F E + 1 da = 4.000000
-forestdist[2, 3] = 1.000000 insert G B + 1 db = 2.000000
-a1_preL = 4 a1_rightmost_leaf = 4 a_rightmost_leaf_in_preL = 5
-b1_preL = 0 b1_rightmost_leaf = 3 b_rightmost_leaf_in_preL = 3
-dc = forestdist[1, 0](1.000000) + delta[4, 0](3.000000) = 5.000000
-da = 4.000000
-db = 2.000000
-dc = 5.000000
-forestdist[2, 4] = 2.000000
-Compute revforestdist(3, 3)
-forestdist[2, 1] = 1.000000 delete F D + 1 da = 2.000000
-forestdist[3, 0] = 3.000000 insert G F + 1 db = 4.000000
-a1_preL = 3 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 3 b1_rightmost_leaf = 3 b_rightmost_leaf_in_preL = 3
-D -> F dc = 3.000000
-delta[3, 3] = forestdist[2, 0] = 2.000000
-da = 2.000000
-db = 4.000000
-dc = 3.000000
-forestdist[3, 1] = 2.000000
-Compute revforestdist(3, 2)
-forestdist[2, 2] = 0.000000 delete F D + 1 da = 1.000000
-forestdist[3, 1] = 2.000000 insert G E + 1 db = 3.000000
-a1_preL = 3 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 3
-dc = forestdist[0, 1](1.000000) + delta[3, 2](2.000000) = 4.000000
-da = 1.000000
-db = 3.000000
-dc = 4.000000
-forestdist[3, 2] = 1.000000
-Compute revforestdist(3, 1)
-forestdist[2, 3] = 1.000000 delete F D + 1 da = 2.000000
-forestdist[3, 2] = 1.000000 insert G C + 1 db = 2.000000
-a1_preL = 3 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 3
-dc = forestdist[0, 2](2.000000) + delta[3, 1](2.000000) = 5.000000
-da = 2.000000
-db = 2.000000
-dc = 5.000000
-forestdist[3, 3] = 2.000000
-Compute revforestdist(3, 0)
-forestdist[2, 4] = 2.000000 delete F D + 1 da = 3.000000
-forestdist[3, 3] = 2.000000 insert G B + 1 db = 3.000000
-a1_preL = 3 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 0 b1_rightmost_leaf = 3 b_rightmost_leaf_in_preL = 3
-D -> B dc = 2.000000
-delta[3, 0] = forestdist[2, 3] = 1.000000
-da = 3.000000
-db = 3.000000
-dc = 2.000000
-forestdist[3, 4] = 2.000000
-Compute revforestdist(2, 3)
-forestdist[3, 1] = 2.000000 delete F C + 1 da = 3.000000
-forestdist[4, 0] = 4.000000 insert G F + 1 db = 5.000000
-a1_preL = 2 a1_rightmost_leaf = 2 a_rightmost_leaf_in_preL = 5
-b1_preL = 3 b1_rightmost_leaf = 3 b_rightmost_leaf_in_preL = 3
-dc = forestdist[3, 0](3.000000) + delta[2, 3](0.000000) = 4.000000
-da = 3.000000
-db = 5.000000
-dc = 4.000000
-forestdist[4, 1] = 3.000000
-Compute revforestdist(2, 2)
-forestdist[3, 2] = 1.000000 delete F C + 1 da = 2.000000
-forestdist[4, 1] = 3.000000 insert G E + 1 db = 4.000000
-a1_preL = 2 a1_rightmost_leaf = 2 a_rightmost_leaf_in_preL = 5
-b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 3
-dc = forestdist[3, 1](2.000000) + delta[2, 2](0.000000) = 3.000000
-da = 2.000000
-db = 4.000000
-dc = 3.000000
-forestdist[4, 2] = 2.000000
-Compute revforestdist(2, 1)
-forestdist[3, 3] = 2.000000 delete F C + 1 da = 3.000000
-forestdist[4, 2] = 2.000000 insert G C + 1 db = 3.000000
-a1_preL = 2 a1_rightmost_leaf = 2 a_rightmost_leaf_in_preL = 5
-b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 3
-dc = forestdist[3, 2](1.000000) + delta[2, 1](0.000000) = 1.000000
-da = 3.000000
-db = 3.000000
-dc = 1.000000
-forestdist[4, 3] = 1.000000
-Compute revforestdist(2, 0)
-forestdist[3, 4] = 2.000000 delete F C + 1 da = 3.000000
-forestdist[4, 3] = 1.000000 insert G B + 1 db = 2.000000
-a1_preL = 2 a1_rightmost_leaf = 2 a_rightmost_leaf_in_preL = 5
-b1_preL = 0 b1_rightmost_leaf = 3 b_rightmost_leaf_in_preL = 3
-dc = forestdist[3, 0](3.000000) + delta[2, 0](3.000000) = 7.000000
-da = 3.000000
-db = 2.000000
-dc = 7.000000
-forestdist[4, 4] = 2.000000
-Compute revforestdist(1, 3)
-forestdist[4, 1] = 3.000000 delete F B + 1 da = 4.000000
-forestdist[5, 0] = 5.000000 insert G F + 1 db = 6.000000
-a1_preL = 1 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 3 b1_rightmost_leaf = 3 b_rightmost_leaf_in_preL = 3
-B -> F dc = 5.000000
-delta[1, 3] = forestdist[4, 0] = 4.000000
-da = 4.000000
-db = 6.000000
-dc = 5.000000
-forestdist[5, 1] = 4.000000
-Compute revforestdist(1, 2)
-forestdist[4, 2] = 2.000000 delete F B + 1 da = 3.000000
-forestdist[5, 1] = 4.000000 insert G E + 1 db = 5.000000
-a1_preL = 1 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 3
-dc = forestdist[0, 1](1.000000) + delta[1, 2](4.000000) = 6.000000
-da = 3.000000
-db = 5.000000
-dc = 6.000000
-forestdist[5, 2] = 3.000000
-Compute revforestdist(1, 1)
-forestdist[4, 3] = 1.000000 delete F B + 1 da = 2.000000
-forestdist[5, 2] = 3.000000 insert G C + 1 db = 4.000000
-a1_preL = 1 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 3
-dc = forestdist[0, 2](2.000000) + delta[1, 1](4.000000) = 7.000000
-da = 2.000000
-db = 4.000000
-dc = 7.000000
-forestdist[5, 3] = 2.000000
-Compute revforestdist(1, 0)
-forestdist[4, 4] = 2.000000 delete F B + 1 da = 3.000000
-forestdist[5, 3] = 2.000000 insert G B + 1 db = 3.000000
-a1_preL = 1 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 0 b1_rightmost_leaf = 3 b_rightmost_leaf_in_preL = 3
-B -> B dc = 1.000000
-delta[1, 0] = forestdist[4, 3] = 1.000000
-da = 3.000000
-db = 3.000000
-dc = 1.000000
-forestdist[5, 4] = 1.000000
-Compute revforestdist(0, 3)
-forestdist[5, 1] = 4.000000 delete F A + 1 da = 5.000000
-forestdist[6, 0] = 6.000000 insert G F + 1 db = 7.000000
-a1_preL = 0 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 3 b1_rightmost_leaf = 3 b_rightmost_leaf_in_preL = 3
-A -> F dc = 6.000000
-delta[0, 3] = forestdist[5, 0] = 5.000000
-da = 5.000000
-db = 7.000000
-dc = 6.000000
-forestdist[6, 1] = 5.000000
-Compute revforestdist(0, 2)
-forestdist[5, 2] = 3.000000 delete F A + 1 da = 4.000000
-forestdist[6, 1] = 5.000000 insert G E + 1 db = 6.000000
-a1_preL = 0 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 2 b1_rightmost_leaf = 2 b_rightmost_leaf_in_preL = 3
-dc = forestdist[0, 1](1.000000) + delta[0, 2](5.000000) = 7.000000
-da = 4.000000
-db = 6.000000
-dc = 7.000000
-forestdist[6, 2] = 4.000000
-Compute revforestdist(0, 1)
-forestdist[5, 3] = 2.000000 delete F A + 1 da = 3.000000
-forestdist[6, 2] = 4.000000 insert G C + 1 db = 5.000000
-a1_preL = 0 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 1 b1_rightmost_leaf = 1 b_rightmost_leaf_in_preL = 3
-dc = forestdist[0, 2](2.000000) + delta[0, 1](5.000000) = 8.000000
-da = 3.000000
-db = 5.000000
-dc = 8.000000
-forestdist[6, 3] = 3.000000
-Compute revforestdist(0, 0)
-forestdist[5, 4] = 1.000000 delete F A + 1 da = 2.000000
-forestdist[6, 3] = 3.000000 insert G B + 1 db = 4.000000
-a1_preL = 0 a1_rightmost_leaf = 5 a_rightmost_leaf_in_preL = 5
-b1_preL = 0 b1_rightmost_leaf = 3 b_rightmost_leaf_in_preL = 3
-A -> B dc = 3.000000
-delta[0, 0] = forestdist[5, 3] = 2.000000
-da = 2.000000
-db = 4.000000
-dc = 3.000000
-forestdist[6, 4] = 2.000000
+change F -> A from insert A nodeRenMinusIns = 0.000000
+change F -> B from insert B nodeRenMinusIns = 0.000000
+change F -> C from insert C nodeRenMinusIns = 0.000000
+change F -> D from insert D nodeRenMinusIns = 0.000000
+spf1(2, 0) = 4
+swap = false pathType = 0
+spfA_RL(0, 0) 0 
+new Round B'
+new Round C'
+Right (1, 2, 3, 1) counter  = 5
+case3 = 0
+case1_case3 = GcurrentForestCost = 1
+case1 += delete F
+case2_case1 = 1.000000
+case2 += insert D
+case3_case3 delta[1, 3] = 0.000000
+case3_case3 += E -> D = 1.000000
+case1 = 2.000000
+case2 = 2.000000
+case3 = 1.000000
+Save to s[2, 1] = 1.000000
+t[3, 1] = s[2, 1] = 1.000000
+new Round B'
+new Round C'
+Right (1, 2, 2, 2) counter  = 6
+case3 = 0
+case1_case3 = GcurrentForestCost = 1
+case1 += delete F
+case2_case1 = 1.000000
+case2 += insert C
+case3_case3 delta[1, 2] = 0.000000
+case3_case3 += E -> C = 1.000000
+case1 = 2.000000
+case2 = 2.000000
+case3 = 1.000000
+Save to s[2, 2] = 1.000000
+t[2, 2] = s[2, 2] = 1.000000
+new Round B'
+new Round C'
+Right (1, 2, 1, 3) counter  = 7
+case3 = 0
+case1_case3 = GcurrentForestCost = 1
+case1 += delete F
+case2_case1 = 1.000000
+case2 += insert B
+case3_case3 delta[1, 1] = 0.000000
+case3_case3 += E -> B = 1.000000
+case1 = 2.000000
+case2 = 2.000000
+case3 = 1.000000
+Save to s[2, 3] = 1.000000
+Right (1, 2, 1, 2) counter = 8
+Save to s[2, 2]
+case1_case3 GcurrentForestCost = 2 + delete F
+case2_case3 s[2, 3] = 1.000000 + insert C
+case3_case delta[1, 2] = 0.000000
+case3_case2 += GcurrentForestCost - G(rG) = 2.000000 - 1
+case3 += E -> C
+case1 = 3.000000
+case2 = 2.000000
+case3 = 2.000000
+s[2, 2] = 2.000000
+Right (1, 2, 1, 1) counter = 9
+Save to s[2, 1]
+case1_case3 GcurrentForestCost = 3 + delete F
+case2_case3 s[2, 2] = 2.000000 + insert D
+case3_case delta[1, 3] = 0.000000
+case3_case2 += GcurrentForestCost - G(rG) = 3.000000 - 1
+case3 += E -> D
+case1 = 4.000000
+case2 = 3.000000
+case3 = 3.000000
+s[2, 1] = 3.000000
+q[2] = s[2, 1] = 3.000000
+t[1, 3] = s[2, 3] = 1.000000
+t[1, 2] = s[2, 2] = 2.000000
+t[1, 1] = s[2, 1] = 3.000000
+new Round B'
+new Round C'
+Right (1, 2, 0, 0) counter  = 10
+case3 = 0
+case1_case3 = GcurrentForestCost = 4
+case1 += delete F
+case2_case2 = q[2] = 3.000000
+case2 += insert A
+case3_case3 delta[1, 0] = 3.000000
+case3_case3 += E -> A = 1.000000
+case1 = 5.000000
+case2 = 4.000000
+case3 = 4.000000
+Save to s[2, 0] = 4.000000
+t[0, 0] = s[2, 0] = 4.000000
+new Round B'
+new Round C'
+Right (1, 1, 3, 1) counter  = 11
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[3, 1] = 1.000000
+case1 += delete E
+case2_case1 = 2.000000
+case2 += insert D
+case3_case3 delta[2, 3] = 0.000000
+case3_case3 += F -> D = 1.000000
+case1 = 2.000000
+case2 = 3.000000
+case3 = 2.000000
+Save to s[1, 1] = 2.000000
+new Round C'
+Right (0, 0, 3, 1) counter  = 12
+case3 = 0
+case1_case1 = s[1, 1] = 2.000000
+case1 += delete C
+case2_case1 = 3.000000
+case2 += insert D
+case3_case3 delta[0, 3] = 2.000000
+case3_case3 += C -> D = 1.000000
+case1 = 3.000000
+case2 = 4.000000
+case3 = 3.000000
+Save to s[0, 1] = 3.000000
+t[3, 1] = s[0, 1] = 3.000000
+new Round B'
+new Round C'
+Right (1, 1, 2, 2) counter  = 13
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[2, 2] = 1.000000
+case1 += delete E
+case2_case1 = 2.000000
+case2 += insert C
+case3_case3 delta[2, 2] = 0.000000
+case3_case3 += F -> C = 1.000000
+case1 = 2.000000
+case2 = 3.000000
+case3 = 2.000000
+Save to s[1, 2] = 2.000000
+new Round C'
+Right (0, 0, 2, 2) counter  = 14
+case3 = 0
+case1_case1 = s[1, 2] = 2.000000
+case1 += delete C
+case2_case1 = 3.000000
+case2 += insert C
+case3_case3 delta[0, 2] = 2.000000
+case3_case3 += C -> C = 0.000000
+case1 = 3.000000
+case2 = 4.000000
+case3 = 2.000000
+Save to s[0, 2] = 2.000000
+t[2, 2] = s[0, 2] = 2.000000
+new Round B'
+new Round C'
+Right (1, 1, 1, 3) counter  = 15
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[1, 3] = 1.000000
+case1 += delete E
+case2_case1 = 2.000000
+case2 += insert B
+case3_case3 delta[2, 1] = 0.000000
+case3_case3 += F -> B = 1.000000
+case1 = 2.000000
+case2 = 3.000000
+case3 = 2.000000
+Save to s[1, 3] = 2.000000
+Right (1, 1, 1, 2) counter = 16
+Save to s[1, 2]
+case1_case2 t[1, 2] = 2.000000 + delete E
+case2_case3 s[1, 3] = 2.000000 + insert C
+case3_case delta[2, 2] = 0.000000
+case3_case3 += t[1, 3] = 1.000000
+case3 += F -> C
+case1 = 3.000000
+case2 = 3.000000
+case3 = 2.000000
+s[1, 2] = 2.000000
+Right (1, 1, 1, 1) counter = 17
+Save to s[1, 1]
+case1_case2 t[1, 1] = 3.000000 + delete E
+case2_case3 s[1, 2] = 2.000000 + insert D
+case3_case delta[2, 3] = 0.000000
+case3_case3 += t[1, 2] = 2.000000
+case3 += F -> D
+case1 = 4.000000
+case2 = 3.000000
+case3 = 3.000000
+s[1, 1] = 3.000000
+new Round C'
+Right (0, 0, 1, 3) counter  = 18
+case3 = 0
+case1_case1 = s[1, 3] = 2.000000
+case1 += delete C
+case2_case1 = 3.000000
+case2 += insert B
+case3_case3 delta[0, 1] = 2.000000
+case3_case3 += C -> B = 1.000000
+case1 = 3.000000
+case2 = 4.000000
+case3 = 3.000000
+Save to s[0, 3] = 3.000000
+Right (0, 0, 1, 2) counter = 19
+Save to s[0, 2]
+case1_case1 s[1, 2] = 2.000000 + delete C
+case2_case3 s[0, 3] = 3.000000 + insert C
+case3_case delta[0, 2] = 2.000000
+case3_case2 += GcurrentForestCost - G(rG) = 2.000000 - 1
+case1 = 3.000000
+case2 = 4.000000
+case3 = 3.000000
+s[0, 2] = 3.000000
+Right (0, 0, 1, 1) counter = 20
+Save to s[0, 1]
+case1_case1 s[1, 1] = 3.000000 + delete C
+case2_case3 s[0, 2] = 3.000000 + insert D
+case3_case delta[0, 3] = 2.000000
+case3_case2 += GcurrentForestCost - G(rG) = 3.000000 - 1
+case1 = 4.000000
+case2 = 4.000000
+case3 = 4.000000
+s[0, 1] = 4.000000
+save to delta[0, 0] = s[0, 1] = 3.000000
+q[1] = s[1, 1] = 3.000000
+q[0] = s[0, 1] = 4.000000
+t[1, 3] = s[0, 3] = 3.000000
+t[1, 2] = s[0, 2] = 3.000000
+t[1, 1] = s[0, 1] = 4.000000
+new Round B'
+new Round C'
+Right (1, 1, 0, 0) counter  = 21
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[0, 0] = 4.000000
+case1 += delete E
+case2_case2 = q[1] = 3.000000
+case2 += insert A
+case3_case3 delta[2, 0] = 3.000000
+case1 = 5.000000
+case2 = 4.000000
+case3 = 4.000000
+Save to s[1, 0] = 4.000000
+new Round C'
+Right (0, 0, 0, 0) counter  = 22
+case3 = 0
+case1_case1 = s[1, 0] = 4.000000
+case1 += delete C
+case2_case2 = q[0] = 4.000000
+case2 += insert A
+case3_case3 delta[0, 0] = 3.000000
+case3_case3 += C -> A = 1.000000
+case1 = 5.000000
+case2 = 5.000000
+case3 = 4.000000
+Save to s[0, 0] = 4.000000
+t[0, 0] = s[0, 0] = 4.000000
