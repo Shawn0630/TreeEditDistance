@@ -677,10 +677,10 @@ float TreeComparison::gted(Node* a, Node* b) {
     else if (pathType == 1) {
       return spfR(a, b, pathLeaf, false);
     }*/
-    if (pathType == 1) {
+/*    if (pathType == 1) {
       return spfR(a, b, pathLeaf, false);
     }
-    else {
+    else {*/
 		  while(parent != NULL && parent->getID() >= a->getID()) {
         vector<Node*> children = parent->getChildren();
         for(int i = 0; i < children.size(); i++) {
@@ -703,10 +703,10 @@ float TreeComparison::gted(Node* a, Node* b) {
       	ou << "swap = " << "false " << "pathType = " << to_string(pathType) << endl; 
       }
       if(direction == 1) return spfA_LR(a, b, pathLeaf, pathType, false);//direction = right first add left then right
-        else return spfA_RL(a, b, pathLeaf, pathType, false);//direction = left first add right then left
-        return spfA(a, b, pathLeaf, pathType, false);
-      }	
-	} 
+      else return spfA_RL(a, b, pathLeaf, pathType, false);//direction = left first add right then left
+      return spfA(a, b, pathLeaf, pathType, false);
+    }	
+	//} 
 
 	else if(treeToDecompose == 1) {
 		Node* parent = currentPathNode->getParent();
@@ -720,10 +720,10 @@ float TreeComparison::gted(Node* a, Node* b) {
     else if(pathType == 1) {
       return spfR(b, a, pathLeaf, true);
     }*/
-    if(pathType == 1) {
+/*    if(pathType == 1) {
       return spfR(b, a, pathLeaf, true);
     }
-    else {
+    else {*/
 		  while(parent != NULL && parent->getID() >= b->getID()) {
 			  vector<Node*> children = parent->getChildren();
 			  for(int i = 0; i < children.size(); i++) {
@@ -749,7 +749,7 @@ float TreeComparison::gted(Node* a, Node* b) {
       else return spfA_RL(b, a, pathLeaf, pathType, true);//direction = left first add right then left
 		  return spfA(b, a, pathLeaf, pathType, true);
     }
-	}
+	//}
 };
 
 float TreeComparison::spf1(Node* a, int treeSizeA, Node* b, int treeSizeB) {
@@ -2595,7 +2595,10 @@ float TreeComparison::spfA_LR(Node* a, Node* b, int leaf, int pathType, bool swa
             rGLast = parent_of_lG_in_preR + 1;
           }
         } else {// left and right
-          if(endPathNode == endF) rGLast = parent_of_lG_in_preR + 1;
+          if(endPathNode == endF) {
+             if(lG == endG || lGminus1_in_preL != parent_of_lG_in_preL) rGLast = rGFirst;
+             else rGLast = parent_of_lG_in_preR + 1;
+          }
           rGLast = rGFirst == endG_in_preR ? rGFirst : endG_in_preR;
         }
 
@@ -3547,7 +3550,10 @@ float TreeComparison::spfA_RL(Node* a, Node* b, int leaf, int pathType, bool swa
             lGLast = parent_of_rG_in_preL + 1;//lGLast is set to the leftmost child of rG's parent
           }
         } else {
-          if(endPathNode == endF) lGLast = parent_of_rG_in_preL + 1;
+          if(endPathNode == endF){
+            if(lGFirst == endG || rGminus1_in_preL != parent_of_rG_in_preL) lGLast = lGFirst;
+            else lGLast = parent_of_rG_in_preL + 1;
+          }
           lGLast = lGFirst == endG? lGFirst : endG + 1;//lGLast is set to the leftmost child of the whole tree
         }
       
