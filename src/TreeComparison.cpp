@@ -671,16 +671,13 @@ float TreeComparison::gted(Node* a, Node* b) {
 		if(DEBUG) {
 			ou << "getPathType A(" << to_string(a->getID()) << " ," << to_string(pathLeaf) << ") = " << to_string(pathType) << endl;
 		}
-    /*if (pathType == 0) {
+    if (pathType == 0) {
       return spfL(a, b, pathLeaf, false);
     }
     else if (pathType == 1) {
       return spfR(a, b, pathLeaf, false);
-    }*/
-/*    if (pathType == 1) {
-      return spfR(a, b, pathLeaf, false);
     }
-    else {*/
+    else {
 		  while(parent != NULL && parent->getID() >= a->getID()) {
         vector<Node*> children = parent->getChildren();
         for(int i = 0; i < children.size(); i++) {
@@ -706,7 +703,7 @@ float TreeComparison::gted(Node* a, Node* b) {
       else return spfA_RL(a, b, pathLeaf, pathType, false);//direction = left first add right then left
       return spfA(a, b, pathLeaf, pathType, false);
     }	
-	//} 
+	} 
 
 	else if(treeToDecompose == 1) {
 		Node* parent = currentPathNode->getParent();
@@ -714,16 +711,13 @@ float TreeComparison::gted(Node* a, Node* b) {
 		if(DEBUG) {
 			ou << "getPathType B (" << to_string(b->getID()) << " ," << to_string(pathLeaf) << ") = " << to_string(pathType) << endl;
 		}
-   /* if(pathType == 0) {
+    if(pathType == 0) {
       return spfL(b, a, pathLeaf, true);
     }
     else if(pathType == 1) {
       return spfR(b, a, pathLeaf, true);
-    }*/
-/*    if(pathType == 1) {
-      return spfR(b, a, pathLeaf, true);
     }
-    else {*/
+    else {
 		  while(parent != NULL && parent->getID() >= b->getID()) {
 			  vector<Node*> children = parent->getChildren();
 			  for(int i = 0; i < children.size(); i++) {
@@ -749,7 +743,7 @@ float TreeComparison::gted(Node* a, Node* b) {
       else return spfA_RL(b, a, pathLeaf, pathType, true);//direction = left first add right then left
 		  return spfA(b, a, pathLeaf, pathType, true);
     }
-	//}
+	}
 };
 
 float TreeComparison::spf1(Node* a, int treeSizeA, Node* b, int treeSizeB) {
@@ -2596,10 +2590,13 @@ float TreeComparison::spfA_LR(Node* a, Node* b, int leaf, int pathType, bool swa
           }
         } else {// left and right
           if(endPathNode == endF) {
-             if(lG == endG || lGminus1_in_preL != parent_of_lG_in_preL) rGLast = rGFirst;
-             else rGLast = parent_of_lG_in_preR + 1;
+            if(DEBUG) {
+              ou << "Last Round !!" << endl;
+            }
+            if(lG == endG || lGminus1_in_preL != parent_of_lG_in_preL) rGLast = rGFirst;
+            else rGLast = parent_of_lG_in_preR + 1;
           }
-          rGLast = rGFirst == endG_in_preR ? rGFirst : endG_in_preR;
+          else rGLast = rGFirst == endG_in_preR ? rGFirst : endG_in_preR;
         }
 
         FcurrentForestSize = FtmpForestSize;
@@ -2635,7 +2632,7 @@ float TreeComparison::spfA_LR(Node* a, Node* b, int leaf, int pathType, bool swa
           if(DEBUG) {
             ou << "new Round C'" << endl;
           }
-          lF = startPathNode;
+          //lF = startPathNode;
           if (rF == rFLast) {
               lF = lFLast;
           }
@@ -3554,7 +3551,7 @@ float TreeComparison::spfA_RL(Node* a, Node* b, int leaf, int pathType, bool swa
             if(lGFirst == endG || rGminus1_in_preL != parent_of_rG_in_preL) lGLast = lGFirst;
             else lGLast = parent_of_rG_in_preL + 1;
           }
-          lGLast = lGFirst == endG? lGFirst : endG + 1;//lGLast is set to the leftmost child of the whole tree
+          else lGLast = lGFirst == endG? lGFirst : endG + 1;//lGLast is set to the leftmost child of the whole tree
         }
       
         updateFnArray(G->preL_to_ln[lGFirst], lGFirst, endG); //stores the counter in D loop fn[ln] stores the start point

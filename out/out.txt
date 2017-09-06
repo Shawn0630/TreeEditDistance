@@ -685,7 +685,7 @@ Save to s[4, 0] = 4.000000
 t[0, 0] = s[4, 0] = 4.000000
 new Round B'
 new Round C'
-Right (3, 3, 4, 1) counter  = 26
+Right (2, 3, 4, 1) counter  = 26
 case3_case FcurrentForest - F(rF)
 case1_case2 = t[4, 1] = 1.000000
 case1 += delete E
@@ -713,7 +713,7 @@ Save to s[2, 1] = 3.000000
 t[4, 1] = s[2, 1] = 3.000000
 new Round B'
 new Round C'
-Right (3, 3, 3, 3) counter  = 28
+Right (2, 3, 3, 3) counter  = 28
 case3_case FcurrentForest - F(rF)
 case1_case2 = t[3, 3] = 0.000000
 case1 += delete E
@@ -723,7 +723,7 @@ case1 = 1.000000
 case2 = 3.000000
 case3 = 1.000000
 Save to s[3, 3] = 1.000000
-Right (3, 3, 3, 1) counter = 29
+Right (2, 3, 3, 1) counter = 29
 Save to s[3, 1]
 case1_case2 t[3, 1] = 1.000000 + delete E
 case2_case3 s[3, 3] = 1.000000 + insert D
@@ -762,7 +762,7 @@ t[3, 3] = s[2, 3] = 2.000000
 t[3, 1] = s[2, 1] = 2.000000
 new Round B'
 new Round C'
-Right (3, 3, 2, 2) counter  = 32
+Right (2, 3, 2, 2) counter  = 32
 case3_case FcurrentForest - F(rF)
 case1_case2 = t[2, 2] = 1.000000
 case1 += delete E
@@ -773,7 +773,7 @@ case1 = 2.000000
 case2 = 2.000000
 case3 = 2.000000
 Save to s[3, 2] = 2.000000
-Right (3, 3, 2, 1) counter = 33
+Right (2, 3, 2, 1) counter = 33
 Save to s[3, 1]
 case1_case2 t[2, 1] = 2.000000 + delete E
 case2_case3 s[3, 2] = 2.000000 + insert D
@@ -810,7 +810,7 @@ t[2, 2] = s[2, 2] = 1.000000
 t[2, 1] = s[2, 1] = 2.000000
 new Round B'
 new Round C'
-Right (3, 3, 1, 4) counter  = 36
+Right (2, 3, 1, 4) counter  = 36
 case3_case FcurrentForest - F(rF)
 case1_case2 = t[1, 4] = 1.000000
 case1 += delete E
@@ -822,7 +822,7 @@ case1 = 2.000000
 case2 = 3.000000
 case3 = 2.000000
 Save to s[3, 4] = 2.000000
-Right (3, 3, 1, 3) counter = 37
+Right (2, 3, 1, 3) counter = 37
 Save to s[3, 3]
 case1_case2 t[1, 3] = 1.000000 + delete E
 case2_case3 s[3, 4] = 2.000000 + insert E
@@ -833,7 +833,7 @@ case1 = 2.000000
 case2 = 3.000000
 case3 = 2.000000
 s[3, 3] = 2.000000
-Right (3, 3, 1, 2) counter = 38
+Right (2, 3, 1, 2) counter = 38
 Save to s[3, 2]
 case1_case2 t[1, 2] = 2.000000 + delete E
 case2_case3 s[3, 3] = 2.000000 + insert C
@@ -844,7 +844,7 @@ case1 = 3.000000
 case2 = 3.000000
 case3 = 3.000000
 s[3, 2] = 3.000000
-Right (3, 3, 1, 1) counter = 39
+Right (2, 3, 1, 1) counter = 39
 Save to s[3, 1]
 case1_case2 t[1, 1] = 3.000000 + delete E
 case2_case3 s[3, 2] = 3.000000 + insert D
@@ -908,7 +908,7 @@ t[1, 2] = s[2, 2] = 2.000000
 t[1, 1] = s[2, 1] = 3.000000
 new Round B'
 new Round C'
-Right (3, 3, 0, 0) counter  = 44
+Right (2, 3, 0, 0) counter  = 44
 case3_case FcurrentForest - F(rF)
 case1_case2 = t[0, 0] = 4.000000
 case1 += delete E
@@ -1038,8 +1038,9 @@ s[1, 0] = 2.000000
 rGminus1_in_preR = 2147483647 rG = 0 parent_of_rG_in_preL = 2147483647 parent_of_rG_in_preR = 2147483647
 t[0, 0] = s[1, 0]
 new Round B'
+Last Round !!
 new Round C'
-Right (2, 1, 4, 1) counter  = 56
+Right (1, 1, 4, 1) counter  = 56
 case3_case FcurrentForest - F(rF)
 case1_case2 = t[4, 1] = 4.000000
 case1 += delete B
@@ -1065,8 +1066,9 @@ case3 = 5.000000
 Save to s[0, 1] = 5.000000
 t[4, 1] = s[0, 1] = 5.000000
 new Round B'
+Last Round !!
 new Round C'
-Right (2, 1, 3, 3) counter  = 58
+Right (1, 1, 3, 3) counter  = 58
 case3_case FcurrentForest - F(rF)
 case1_case2 = t[3, 3] = 3.000000
 case1 += delete B
@@ -1076,19 +1078,8 @@ case1 = 4.000000
 case2 = 6.000000
 case3 = 4.000000
 Save to s[1, 3] = 4.000000
-Right (2, 1, 3, 1) counter = 59
-Save to s[1, 1]
-case1_case2 t[3, 1] = 3.000000 + delete B
-case2_case3 s[1, 3] = 4.000000 + insert D
-case3_case delta[5, 4] = 0.000000
-case3_case3 += t[3, 3] = 3.000000
-case3 += D -> D
-case1 = 4.000000
-case2 = 5.000000
-case3 = 3.000000
-s[1, 1] = 3.000000
 new Round C'
-Right (0, 0, 3, 3) counter  = 60
+Right (0, 0, 3, 3) counter  = 59
 case3 = 0
 case1_case1 = s[1, 3] = 4.000000
 case1 += delete A
@@ -1099,23 +1090,14 @@ case1 = 5.000000
 case2 = 7.000000
 case3 = 5.000000
 Save to s[0, 3] = 5.000000
-Right (0, 0, 3, 1) counter = 61
-Save to s[0, 1]
-case1_case1 s[1, 1] = 3.000000 + delete A
-case2_case3 s[0, 3] = 5.000000 + insert D
-case3_case delta[0, 4] = 5.000000
-case1 = 4.000000
-case2 = 6.000000
-case3 = 5.000000
-s[0, 1] = 4.000000
 save to delta[0, 2] = s[0, 3] = 4.000000
 q[1] = s[1, 3] = 4.000000
 q[0] = s[0, 3] = 5.000000
 t[3, 3] = s[0, 3] = 5.000000
-t[3, 1] = s[0, 1] = 4.000000
 new Round B'
+Last Round !!
 new Round C'
-Right (2, 1, 2, 2) counter  = 62
+Right (1, 1, 2, 2) counter  = 60
 case3_case FcurrentForest - F(rF)
 case1_case2 = t[2, 2] = 2.000000
 case1 += delete B
@@ -1125,19 +1107,8 @@ case1 = 3.000000
 case2 = 5.000000
 case3 = 4.000000
 Save to s[1, 2] = 3.000000
-Right (2, 1, 2, 1) counter = 63
-Save to s[1, 1]
-case1_case2 t[2, 1] = 3.000000 + delete B
-case2_case3 s[1, 2] = 3.000000 + insert D
-case3_case delta[5, 4] = 0.000000
-case3_case3 += t[2, 2] = 2.000000
-case3 += D -> D
-case1 = 4.000000
-case2 = 4.000000
-case3 = 2.000000
-s[1, 1] = 2.000000
 new Round C'
-Right (0, 0, 2, 2) counter  = 64
+Right (0, 0, 2, 2) counter  = 61
 case3 = 0
 case1_case1 = s[1, 2] = 3.000000
 case1 += delete A
@@ -1148,20 +1119,11 @@ case1 = 4.000000
 case2 = 6.000000
 case3 = 4.000000
 Save to s[0, 2] = 4.000000
-Right (0, 0, 2, 1) counter = 65
-Save to s[0, 1]
-case1_case1 s[1, 1] = 2.000000 + delete A
-case2_case3 s[0, 2] = 4.000000 + insert D
-case3_case delta[0, 4] = 5.000000
-case1 = 3.000000
-case2 = 5.000000
-case3 = 5.000000
-s[0, 1] = 3.000000
 t[2, 2] = s[0, 2] = 4.000000
-t[2, 1] = s[0, 1] = 3.000000
 new Round B'
+Last Round !!
 new Round C'
-Right (2, 1, 1, 4) counter  = 66
+Right (1, 1, 1, 4) counter  = 62
 case3_case FcurrentForest - F(rF)
 case1_case2 = t[1, 4] = 3.000000
 case1 += delete B
@@ -1171,7 +1133,7 @@ case1 = 4.000000
 case2 = 6.000000
 case3 = 4.000000
 Save to s[1, 4] = 4.000000
-Right (2, 1, 1, 3) counter = 67
+Right (1, 1, 1, 3) counter = 63
 Save to s[1, 3]
 case1_case2 t[1, 3] = 2.000000 + delete B
 case2_case3 s[1, 4] = 4.000000 + insert E
@@ -1181,7 +1143,7 @@ case1 = 3.000000
 case2 = 5.000000
 case3 = 3.000000
 s[1, 3] = 3.000000
-Right (2, 1, 1, 2) counter = 68
+Right (1, 1, 1, 2) counter = 64
 Save to s[1, 2]
 case1_case2 t[1, 2] = 1.000000 + delete B
 case2_case3 s[1, 3] = 3.000000 + insert C
@@ -1191,7 +1153,7 @@ case1 = 2.000000
 case2 = 4.000000
 case3 = 4.000000
 s[1, 2] = 2.000000
-Right (2, 1, 1, 1) counter = 69
+Right (1, 1, 1, 1) counter = 65
 Save to s[1, 1]
 case1_case2 t[1, 1] = 2.000000 + delete B
 case2_case3 s[1, 2] = 2.000000 + insert D
@@ -1203,7 +1165,7 @@ case2 = 3.000000
 case3 = 1.000000
 s[1, 1] = 1.000000
 new Round C'
-Right (0, 0, 1, 4) counter  = 70
+Right (0, 0, 1, 4) counter  = 66
 case3 = 0
 case1_case1 = s[1, 4] = 4.000000
 case1 += delete A
@@ -1214,7 +1176,7 @@ case1 = 5.000000
 case2 = 7.000000
 case3 = 5.000000
 Save to s[0, 4] = 5.000000
-Right (0, 0, 1, 3) counter = 71
+Right (0, 0, 1, 3) counter = 67
 Save to s[0, 3]
 case1_case1 s[1, 3] = 3.000000 + delete A
 case2_case3 s[0, 4] = 5.000000 + insert E
@@ -1223,7 +1185,7 @@ case1 = 4.000000
 case2 = 6.000000
 case3 = 5.000000
 s[0, 3] = 4.000000
-Right (0, 0, 1, 2) counter = 72
+Right (0, 0, 1, 2) counter = 68
 Save to s[0, 2]
 case1_case1 s[1, 2] = 2.000000 + delete A
 case2_case3 s[0, 3] = 4.000000 + insert C
@@ -1232,7 +1194,7 @@ case1 = 3.000000
 case2 = 5.000000
 case3 = 4.000000
 s[0, 2] = 3.000000
-Right (0, 0, 1, 1) counter = 73
+Right (0, 0, 1, 1) counter = 69
 Save to s[0, 1]
 case1_case1 s[1, 1] = 1.000000 + delete A
 case2_case3 s[0, 2] = 3.000000 + insert D
@@ -1249,8 +1211,9 @@ t[1, 3] = s[0, 3] = 4.000000
 t[1, 2] = s[0, 2] = 3.000000
 t[1, 1] = s[0, 1] = 2.000000
 new Round B'
+Last Round !!
 new Round C'
-Right (2, 1, 0, 0) counter  = 74
+Right (1, 1, 0, 0) counter  = 70
 case3_case FcurrentForest - F(rF)
 case1_case2 = t[0, 0] = 2.000000
 case1 += delete B
@@ -1261,7 +1224,7 @@ case2 = 2.000000
 case3 = 4.000000
 Save to s[1, 0] = 2.000000
 new Round C'
-Right (0, 0, 0, 0) counter  = 75
+Right (0, 0, 0, 0) counter  = 71
 case3 = 0
 case1_case1 = s[1, 0] = 2.000000
 case1 += delete A
