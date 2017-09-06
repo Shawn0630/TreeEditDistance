@@ -504,92 +504,18 @@ AllB
 -1 -1 2 1 -1 
 -1 -1 2 1 -1 
 
-gted(0, 0)
-hasVisited[0, 0] = 0
-treeSizeA = 6
-treeSizeB = 5
-getPathType A(0 ,3) = 2
-A child = 3 currentPathNode = 3 parent = 2
-A child = 4 currentPathNode = 3 parent = 2
-gted(0, 0) create problem in A gted(4, 0)
-gted(4, 0)
-hasVisited[4, 0] = 0
-treeSizeA = 1
-treeSizeB = 5
-cost = 5.000000
-change F -> A from insert A nodeRenMinusIns = 0.000000
-change F -> B from insert B nodeRenMinusIns = 0.000000
-change F -> C from insert C nodeRenMinusIns = 0.000000
-change F -> E from insert E nodeRenMinusIns = 0.000000
-change F -> D from insert D nodeRenMinusIns = 0.000000
-spf1(4, 0) = 5
-A child = 1 currentPathNode = 2 parent = 0
-gted(0, 0) create problem in A gted(1, 0)
-gted(1, 0)
-hasVisited[1, 0] = 0
-treeSizeA = 1
-treeSizeB = 5
-cost = 5.000000
-change B -> A from insert A nodeRenMinusIns = 0.000000
-change B -> B from insert B nodeRenMinusIns = -1.000000
-change B -> C from insert C nodeRenMinusIns = 0.000000
-change B -> E from insert E nodeRenMinusIns = 0.000000
-change B -> D from insert D nodeRenMinusIns = 0.000000
-spf1(1, 0) = 4
-A child = 2 currentPathNode = 2 parent = 0
-A child = 5 currentPathNode = 2 parent = 0
-gted(0, 0) create problem in A gted(5, 0)
-gted(5, 0)
-hasVisited[5, 0] = 0
-treeSizeA = 1
-treeSizeB = 5
-cost = 5.000000
-change D -> A from insert A nodeRenMinusIns = 0.000000
-change D -> B from insert B nodeRenMinusIns = 0.000000
-change D -> C from insert C nodeRenMinusIns = 0.000000
-change D -> E from insert E nodeRenMinusIns = 0.000000
-change D -> D from insert D nodeRenMinusIns = -1.000000
-spf1(5, 0) = 4
-swap = false pathType = 2
 spfA_LR(0, 0) 0 
 new Round B'
 new Round C'
 Right (3, 4, 4, 1) counter  = 16
-case3 = 0
-case1_case3 = GcurrentForestCost = 1
-case1 += delete F
-case2_case1 = 1.000000
-case2 += insert D
-case3_case3 delta[3, 4] = 0.000000
-case3_case3 += E -> D = 1.000000
-case1 = 2.000000
-case2 = 2.000000
-case3 = 1.000000
 Save to s[4, 1] = 1.000000
 t[4, 1] = s[4, 1] = 1.000000
 new Round B'
 new Round C'
 Right (3, 4, 3, 3) counter  = 17
-case3 = 0
-case1_case3 = GcurrentForestCost = 1
-case1 += delete F
-case2_case1 = 1.000000
-case2 += insert E
-case3_case3 delta[3, 3] = 0.000000
-case3_case3 += E -> E = 0.000000
-case1 = 2.000000
-case2 = 2.000000
-case3 = 0.000000
 Save to s[4, 3] = 0.000000
 Right (3, 4, 3, 1) counter = 18
 Save to s[4, 1]
-case1_case3 GcurrentForestCost = 2 + delete F
-case2_case3 s[4, 3] = 0.000000 + insert D
-case3_case delta[3, 4] = 0.000000
-case3_case2 += GcurrentForestCost - G(rG) = 2.000000 - 1
-case1 = 3.000000
-case2 = 1.000000
-case3 = 1.000000
 s[4, 1] = 1.000000
 q[4] = s[4, 3] = 0.000000
 t[3, 3] = s[4, 3] = 0.000000
@@ -597,72 +523,24 @@ t[3, 1] = s[4, 1] = 1.000000
 new Round B'
 new Round C'
 Right (3, 4, 2, 2) counter  = 19
-case3 = 0
-case1_case3 = GcurrentForestCost = 2
-case1 += delete F
-case2_case2 = q[4] = 0.000000
-case2 += insert C
-case3_case3 delta[3, 2] = 1.000000
-case1 = 3.000000
-case2 = 1.000000
-case3 = 1.000000
 Save to s[4, 2] = 1.000000
 Right (3, 4, 2, 1) counter = 20
 Save to s[4, 1]
-case1_case3 GcurrentForestCost = 3 + delete F
-case2_case3 s[4, 2] = 1.000000 + insert D
-case3_case delta[3, 4] = 0.000000
-case3_case2 += GcurrentForestCost - G(rG) = 3.000000 - 1
-case1 = 4.000000
-case2 = 2.000000
-case3 = 2.000000
 s[4, 1] = 2.000000
 t[2, 2] = s[4, 2] = 1.000000
 t[2, 1] = s[4, 1] = 2.000000
 new Round B'
 new Round C'
 Right (3, 4, 1, 4) counter  = 21
-case3 = 0
-case1_case3 = GcurrentForestCost = 1
-case1 += delete F
-case2_case1 = 1.000000
-case2 += insert B
-case3_case3 delta[3, 1] = 0.000000
-case3_case3 += E -> B = 1.000000
-case1 = 2.000000
-case2 = 2.000000
-case3 = 1.000000
 Save to s[4, 4] = 1.000000
 Right (3, 4, 1, 3) counter = 22
 Save to s[4, 3]
-case1_case3 GcurrentForestCost = 2 + delete F
-case2_case3 s[4, 4] = 1.000000 + insert E
-case3_case delta[3, 3] = 0.000000
-case3_case2 += GcurrentForestCost - G(rG) = 2.000000 - 1
-case3 += E -> E
-case1 = 3.000000
-case2 = 2.000000
-case3 = 1.000000
 s[4, 3] = 1.000000
 Right (3, 4, 1, 2) counter = 23
 Save to s[4, 2]
-case1_case3 GcurrentForestCost = 3 + delete F
-case2_case3 s[4, 3] = 1.000000 + insert C
-case3_case delta[3, 2] = 1.000000
-case3_case2 += GcurrentForestCost - G(rG) = 3.000000 - 2
-case1 = 4.000000
-case2 = 2.000000
-case3 = 2.000000
 s[4, 2] = 2.000000
 Right (3, 4, 1, 1) counter = 24
 Save to s[4, 1]
-case1_case3 GcurrentForestCost = 4 + delete F
-case2_case3 s[4, 2] = 2.000000 + insert D
-case3_case delta[3, 4] = 0.000000
-case3_case2 += GcurrentForestCost - G(rG) = 4.000000 - 1
-case1 = 5.000000
-case2 = 3.000000
-case3 = 3.000000
 s[4, 1] = 3.000000
 q[4] = s[4, 1] = 3.000000
 t[1, 4] = s[4, 4] = 1.000000
@@ -672,88 +550,28 @@ t[1, 1] = s[4, 1] = 3.000000
 new Round B'
 new Round C'
 Right (3, 4, 0, 0) counter  = 25
-case3 = 0
-case1_case3 = GcurrentForestCost = 5
-case1 += delete F
-case2_case2 = q[4] = 3.000000
-case2 += insert A
-case3_case3 delta[3, 0] = 4.000000
-case1 = 6.000000
-case2 = 4.000000
-case3 = 4.000000
 Save to s[4, 0] = 4.000000
 t[0, 0] = s[4, 0] = 4.000000
 new Round B'
 new Round C'
 Right (2, 3, 4, 1) counter  = 26
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[4, 1] = 1.000000
-case1 += delete E
-case2_case1 = 2.000000
-case2 += insert D
-case3_case3 delta[4, 4] = 0.000000
-case3_case3 += F -> D = 1.000000
-case1 = 2.000000
-case2 = 3.000000
-case3 = 2.000000
 Save to s[3, 1] = 2.000000
 new Round C'
 Right (2, 2, 4, 1) counter  = 27
-case3 = 0
-case1_case1 = s[3, 1] = 2.000000
-case1 += delete C
-case2_case1 = 3.000000
-case2 += insert D
-case3_case3 delta[2, 4] = 2.000000
-case3_case3 += C -> D = 1.000000
-case1 = 3.000000
-case2 = 4.000000
-case3 = 3.000000
 Save to s[2, 1] = 3.000000
 t[4, 1] = s[2, 1] = 3.000000
 new Round B'
 new Round C'
 Right (2, 3, 3, 3) counter  = 28
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[3, 3] = 0.000000
-case1 += delete E
-case2_case1 = 2.000000
-case2 += insert E
-case1 = 1.000000
-case2 = 3.000000
-case3 = 1.000000
 Save to s[3, 3] = 1.000000
 Right (2, 3, 3, 1) counter = 29
 Save to s[3, 1]
-case1_case2 t[3, 1] = 1.000000 + delete E
-case2_case3 s[3, 3] = 1.000000 + insert D
-case3_case delta[4, 4] = 0.000000
-case3_case3 += t[3, 3] = 0.000000
-case3 += F -> D
-case1 = 2.000000
-case2 = 2.000000
-case3 = 1.000000
 s[3, 1] = 1.000000
 new Round C'
 Right (2, 2, 3, 3) counter  = 30
-case3 = 0
-case1_case1 = s[3, 3] = 1.000000
-case1 += delete C
-case2_case1 = 3.000000
-case2 += insert E
-case3_case3 delta[2, 3] = 2.000000
-case1 = 2.000000
-case2 = 4.000000
-case3 = 2.000000
 Save to s[2, 3] = 2.000000
 Right (2, 2, 3, 1) counter = 31
 Save to s[2, 1]
-case1_case1 s[3, 1] = 1.000000 + delete C
-case2_case3 s[2, 3] = 2.000000 + insert D
-case3_case delta[2, 4] = 2.000000
-case1 = 2.000000
-case2 = 3.000000
-case3 = 2.000000
 s[2, 1] = 2.000000
 save to delta[2, 2] = s[2, 3] = 1.000000
 q[3] = s[3, 3] = 1.000000
@@ -763,141 +581,42 @@ t[3, 1] = s[2, 1] = 2.000000
 new Round B'
 new Round C'
 Right (2, 3, 2, 2) counter  = 32
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[2, 2] = 1.000000
-case1 += delete E
-case2_case2 = q[3] = 1.000000
-case2 += insert C
-case3_case3 delta[4, 2] = 1.000000
-case1 = 2.000000
-case2 = 2.000000
-case3 = 2.000000
 Save to s[3, 2] = 2.000000
 Right (2, 3, 2, 1) counter = 33
 Save to s[3, 1]
-case1_case2 t[2, 1] = 2.000000 + delete E
-case2_case3 s[3, 2] = 2.000000 + insert D
-case3_case delta[4, 4] = 0.000000
-case3_case3 += t[2, 2] = 1.000000
-case3 += F -> D
-case1 = 3.000000
-case2 = 3.000000
-case3 = 2.000000
 s[3, 1] = 2.000000
 new Round C'
 Right (2, 2, 2, 2) counter  = 34
-case3 = 0
-case1_case1 = s[3, 2] = 2.000000
-case1 += delete C
-case2_case2 = q[2] = 2.000000
-case2 += insert C
-case3_case3 delta[2, 2] = 1.000000
-case3_case3 += C -> C = 0.000000
-case1 = 3.000000
-case2 = 3.000000
-case3 = 1.000000
 Save to s[2, 2] = 1.000000
 Right (2, 2, 2, 1) counter = 35
 Save to s[2, 1]
-case1_case1 s[3, 1] = 2.000000 + delete C
-case2_case3 s[2, 2] = 1.000000 + insert D
-case3_case delta[2, 4] = 2.000000
-case1 = 3.000000
-case2 = 2.000000
-case3 = 2.000000
 s[2, 1] = 2.000000
 t[2, 2] = s[2, 2] = 1.000000
 t[2, 1] = s[2, 1] = 2.000000
 new Round B'
 new Round C'
 Right (2, 3, 1, 4) counter  = 36
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[1, 4] = 1.000000
-case1 += delete E
-case2_case1 = 2.000000
-case2 += insert B
-case3_case3 delta[4, 1] = 0.000000
-case3_case3 += F -> B = 1.000000
-case1 = 2.000000
-case2 = 3.000000
-case3 = 2.000000
 Save to s[3, 4] = 2.000000
 Right (2, 3, 1, 3) counter = 37
 Save to s[3, 3]
-case1_case2 t[1, 3] = 1.000000 + delete E
-case2_case3 s[3, 4] = 2.000000 + insert E
-case3_case delta[4, 3] = 0.000000
-case3_case3 += t[1, 4] = 1.000000
-case3 += F -> E
-case1 = 2.000000
-case2 = 3.000000
-case3 = 2.000000
 s[3, 3] = 2.000000
 Right (2, 3, 1, 2) counter = 38
 Save to s[3, 2]
-case1_case2 t[1, 2] = 2.000000 + delete E
-case2_case3 s[3, 3] = 2.000000 + insert C
-case3_case delta[4, 2] = 1.000000
-case3_case3 += t[1, 4] = 1.000000
-case3 += F -> C
-case1 = 3.000000
-case2 = 3.000000
-case3 = 3.000000
 s[3, 2] = 3.000000
 Right (2, 3, 1, 1) counter = 39
 Save to s[3, 1]
-case1_case2 t[1, 1] = 3.000000 + delete E
-case2_case3 s[3, 2] = 3.000000 + insert D
-case3_case delta[4, 4] = 0.000000
-case3_case3 += t[1, 2] = 2.000000
-case3 += F -> D
-case1 = 4.000000
-case2 = 4.000000
-case3 = 3.000000
 s[3, 1] = 3.000000
 new Round C'
 Right (2, 2, 1, 4) counter  = 40
-case3 = 0
-case1_case1 = s[3, 4] = 2.000000
-case1 += delete C
-case2_case1 = 3.000000
-case2 += insert B
-case3_case3 delta[2, 1] = 2.000000
-case3_case3 += C -> B = 1.000000
-case1 = 3.000000
-case2 = 4.000000
-case3 = 3.000000
 Save to s[2, 4] = 3.000000
 Right (2, 2, 1, 3) counter = 41
 Save to s[2, 3]
-case1_case1 s[3, 3] = 2.000000 + delete C
-case2_case3 s[2, 4] = 3.000000 + insert E
-case3_case delta[2, 3] = 2.000000
-case3_case2 += GcurrentForestCost - G(rG) = 2.000000 - 1
-case1 = 3.000000
-case2 = 4.000000
-case3 = 3.000000
 s[2, 3] = 3.000000
 Right (2, 2, 1, 2) counter = 42
 Save to s[2, 2]
-case1_case1 s[3, 2] = 3.000000 + delete C
-case2_case3 s[2, 3] = 3.000000 + insert C
-case3_case delta[2, 2] = 1.000000
-case3_case2 += GcurrentForestCost - G(rG) = 3.000000 - 2
-case3 += C -> C
-case1 = 4.000000
-case2 = 4.000000
-case3 = 2.000000
 s[2, 2] = 2.000000
 Right (2, 2, 1, 1) counter = 43
 Save to s[2, 1]
-case1_case1 s[3, 1] = 3.000000 + delete C
-case2_case3 s[2, 2] = 2.000000 + insert D
-case3_case delta[2, 4] = 2.000000
-case3_case2 += GcurrentForestCost - G(rG) = 4.000000 - 1
-case1 = 4.000000
-case2 = 3.000000
-case3 = 5.000000
 s[2, 1] = 3.000000
 save to delta[2, 0] = s[2, 1] = 3.000000
 q[3] = s[3, 1] = 3.000000
@@ -909,299 +628,114 @@ t[1, 1] = s[2, 1] = 3.000000
 new Round B'
 new Round C'
 Right (2, 3, 0, 0) counter  = 44
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[0, 0] = 4.000000
-case1 += delete E
-case2_case2 = q[3] = 3.000000
-case2 += insert A
-case3_case3 delta[4, 0] = 4.000000
-case1 = 5.000000
-case2 = 4.000000
-case3 = 5.000000
 Save to s[3, 0] = 4.000000
 new Round C'
 Right (2, 2, 0, 0) counter  = 45
-case3 = 0
-case1_case1 = s[3, 0] = 4.000000
-case1 += delete C
-case2_case2 = q[2] = 3.000000
-case2 += insert A
-case3_case3 delta[2, 0] = 3.000000
-case3_case3 += C -> A = 1.000000
-case1 = 5.000000
-case2 = 4.000000
-case3 = 4.000000
 Save to s[2, 0] = 4.000000
 t[0, 0] = s[2, 0] = 4.000000
 new Round B
-new round C hasLeftPart = 1
+new round C
 Left (1, 2, 1, 4) counter = 46
 Save to s[1, 1]
-case3_case FcurrentForest - F(lF) = 
-4.000000 - 1
-case1_case2 t[1, 4] = 3.000000
-case2_case1 FcurrentForestCost = 4.000000
-case3_case3 delta[1, 1] = 0.000000
-case3 += B -> B
 s[1, 1] = 3.000000
-rGminus1_in_preR = 3 rG = 4 parent_of_rG_in_preL = 0 parent_of_rG_in_preR = 0
 t[1, 4] = s[1, 1]
 new Round B
-new round C hasLeftPart = 1
+new round C
 Left (1, 2, 3, 3) counter = 47
 Save to s[1, 3]
-case3_case FcurrentForest - F(lF) = 
-4.000000 - 1
-case1_case2 t[3, 3] = 2.000000
-case2_case1 FcurrentForestCost = 4.000000
 s[1, 3] = 3.000000
 Left (1, 2, 1, 3) counter = 48
 Save to s[1, 1]
-case1_case2 t[1, 3] = 3.000000 + delete B
-case2 s[1, 3] = 3.000000 + insert B
-case3 = delta[1, 1] = 0.000000
-case3 += t[3, 3] = 2.000000
-case3 += B -> B
 s[1, 1] = 2.000000
-rGminus1_in_preR = 2 rG = 3 parent_of_rG_in_preL = 2 parent_of_rG_in_preR = 2
 q[1] = s[1, 3]
 t[3, 3] = s[1, 3]
 t[1, 3] = s[1, 1]
 new Round B
-new round C hasLeftPart = 1
+new round C
 Left (1, 2, 2, 2) counter = 49
 Save to s[1, 2]
-case3_case FcurrentForest - F(lF) = 
-4.000000 - 1
-case1_case2 t[2, 2] = 1.000000
-case2_case2 q[1] = 3.000000
 s[1, 2] = 2.000000
 Left (1, 2, 1, 2) counter = 50
 Save to s[1, 1]
-case1_case2 t[1, 2] = 2.000000 + delete B
-case2 s[1, 2] = 2.000000 + insert B
-case3 = delta[1, 1] = 0.000000
-case3 += t[2, 2] = 1.000000
-case3 += B -> B
 s[1, 1] = 1.000000
-rGminus1_in_preR = 1 rG = 2 parent_of_rG_in_preL = 0 parent_of_rG_in_preR = 0
 t[2, 2] = s[1, 2]
 t[1, 2] = s[1, 1]
 new Round B
-new round C hasLeftPart = 1
+new round C
 Left (1, 2, 4, 1) counter = 51
 Save to s[1, 4]
-case3_case FcurrentForest - F(lF) = 
-4.000000 - 1
-case1_case2 t[4, 1] = 3.000000
-case2_case1 FcurrentForestCost = 4.000000
-case3_case3 delta[1, 4] = 0.000000
-case3 += B -> D
 s[1, 4] = 4.000000
 Left (1, 2, 3, 1) counter = 52
 Save to s[1, 3]
-case1_case2 t[3, 1] = 2.000000 + delete B
-case2 s[1, 4] = 4.000000 + insert E
-case3 = delta[1, 3] = 0.000000
-case3 += t[4, 1] = 3.000000
 s[1, 3] = 3.000000
 Left (1, 2, 2, 1) counter = 53
 Save to s[1, 2]
-case1_case2 t[2, 1] = 2.000000 + delete B
-case2 s[1, 3] = 3.000000 + insert C
-case3 = delta[1, 2] = 1.000000
-case3 += t[4, 1] = 3.000000
 s[1, 2] = 3.000000
 Left (1, 2, 1, 1) counter = 54
 Save to s[1, 1]
-case1_case2 t[1, 1] = 3.000000 + delete B
-case2 s[1, 2] = 3.000000 + insert B
-case3 = delta[1, 1] = 0.000000
-case3 += t[2, 1] = 2.000000
-case3 += B -> B
 s[1, 1] = 2.000000
-rGminus1_in_preR = 0 rG = 1 parent_of_rG_in_preL = 0 parent_of_rG_in_preR = 0
 q[1] = s[1, 1]
 t[4, 1] = s[1, 4]
 t[3, 1] = s[1, 3]
 t[2, 1] = s[1, 2]
 t[1, 1] = s[1, 1]
 new Round B
-new round C hasLeftPart = 1
+new round C
 Left (1, 2, 0, 0) counter = 55
 Save to s[1, 0]
-case3_case FcurrentForest - F(lF) = 
-4.000000 - 1
-case1_case2 t[0, 0] = 4.000000
-case2_case2 q[1] = 2.000000
 s[1, 0] = 2.000000
-rGminus1_in_preR = 2147483647 rG = 0 parent_of_rG_in_preL = 2147483647 parent_of_rG_in_preR = 2147483647
 t[0, 0] = s[1, 0]
 new Round B'
-Last Round !!
 new Round C'
 Right (1, 1, 4, 1) counter  = 56
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[4, 1] = 4.000000
-case1 += delete B
-case2_case1 = 5.000000
-case2 += insert D
-case3_case3 delta[5, 4] = 0.000000
-case3_case3 += D -> D = 0.000000
-case1 = 5.000000
-case2 = 6.000000
-case3 = 4.000000
 Save to s[1, 1] = 4.000000
 new Round C'
 Right (0, 0, 4, 1) counter  = 57
-case3 = 0
-case1_case1 = s[1, 1] = 4.000000
-case1 += delete A
-case2_case1 = 6.000000
-case2 += insert D
-case3_case3 delta[0, 4] = 5.000000
-case1 = 5.000000
-case2 = 7.000000
-case3 = 5.000000
 Save to s[0, 1] = 5.000000
 t[4, 1] = s[0, 1] = 5.000000
 new Round B'
-Last Round !!
 new Round C'
 Right (1, 1, 3, 3) counter  = 58
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[3, 3] = 3.000000
-case1 += delete B
-case2_case1 = 5.000000
-case2 += insert E
-case1 = 4.000000
-case2 = 6.000000
-case3 = 4.000000
 Save to s[1, 3] = 4.000000
 new Round C'
 Right (0, 0, 3, 3) counter  = 59
-case3 = 0
-case1_case1 = s[1, 3] = 4.000000
-case1 += delete A
-case2_case1 = 6.000000
-case2 += insert E
-case3_case3 delta[0, 3] = 5.000000
-case1 = 5.000000
-case2 = 7.000000
-case3 = 5.000000
 Save to s[0, 3] = 5.000000
 save to delta[0, 2] = s[0, 3] = 4.000000
 q[1] = s[1, 3] = 4.000000
 q[0] = s[0, 3] = 5.000000
 t[3, 3] = s[0, 3] = 5.000000
 new Round B'
-Last Round !!
 new Round C'
 Right (1, 1, 2, 2) counter  = 60
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[2, 2] = 2.000000
-case1 += delete B
-case2_case2 = q[1] = 4.000000
-case2 += insert C
-case1 = 3.000000
-case2 = 5.000000
-case3 = 4.000000
 Save to s[1, 2] = 3.000000
 new Round C'
 Right (0, 0, 2, 2) counter  = 61
-case3 = 0
-case1_case1 = s[1, 2] = 3.000000
-case1 += delete A
-case2_case2 = q[0] = 5.000000
-case2 += insert C
-case3_case3 delta[0, 2] = 4.000000
-case1 = 4.000000
-case2 = 6.000000
-case3 = 4.000000
 Save to s[0, 2] = 4.000000
 t[2, 2] = s[0, 2] = 4.000000
 new Round B'
-Last Round !!
 new Round C'
 Right (1, 1, 1, 4) counter  = 62
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[1, 4] = 3.000000
-case1 += delete B
-case2_case1 = 5.000000
-case2 += insert B
-case1 = 4.000000
-case2 = 6.000000
-case3 = 4.000000
 Save to s[1, 4] = 4.000000
 Right (1, 1, 1, 3) counter = 63
 Save to s[1, 3]
-case1_case2 t[1, 3] = 2.000000 + delete B
-case2_case3 s[1, 4] = 4.000000 + insert E
-case3_case delta[5, 3] = 0.000000
-case3_case3 += t[1, 4] = 3.000000
-case1 = 3.000000
-case2 = 5.000000
-case3 = 3.000000
 s[1, 3] = 3.000000
 Right (1, 1, 1, 2) counter = 64
 Save to s[1, 2]
-case1_case2 t[1, 2] = 1.000000 + delete B
-case2_case3 s[1, 3] = 3.000000 + insert C
-case3_case delta[5, 2] = 1.000000
-case3_case3 += t[1, 4] = 3.000000
-case1 = 2.000000
-case2 = 4.000000
-case3 = 4.000000
 s[1, 2] = 2.000000
 Right (1, 1, 1, 1) counter = 65
 Save to s[1, 1]
-case1_case2 t[1, 1] = 2.000000 + delete B
-case2_case3 s[1, 2] = 2.000000 + insert D
-case3_case delta[5, 4] = 0.000000
-case3_case3 += t[1, 2] = 1.000000
-case3 += D -> D
-case1 = 3.000000
-case2 = 3.000000
-case3 = 1.000000
 s[1, 1] = 1.000000
 new Round C'
 Right (0, 0, 1, 4) counter  = 66
-case3 = 0
-case1_case1 = s[1, 4] = 4.000000
-case1 += delete A
-case2_case1 = 6.000000
-case2 += insert B
-case3_case3 delta[0, 1] = 5.000000
-case1 = 5.000000
-case2 = 7.000000
-case3 = 5.000000
 Save to s[0, 4] = 5.000000
 Right (0, 0, 1, 3) counter = 67
 Save to s[0, 3]
-case1_case1 s[1, 3] = 3.000000 + delete A
-case2_case3 s[0, 4] = 5.000000 + insert E
-case3_case delta[0, 3] = 5.000000
-case1 = 4.000000
-case2 = 6.000000
-case3 = 5.000000
 s[0, 3] = 4.000000
 Right (0, 0, 1, 2) counter = 68
 Save to s[0, 2]
-case1_case1 s[1, 2] = 2.000000 + delete A
-case2_case3 s[0, 3] = 4.000000 + insert C
-case3_case delta[0, 2] = 4.000000
-case1 = 3.000000
-case2 = 5.000000
-case3 = 4.000000
 s[0, 2] = 3.000000
 Right (0, 0, 1, 1) counter = 69
 Save to s[0, 1]
-case1_case1 s[1, 1] = 1.000000 + delete A
-case2_case3 s[0, 2] = 3.000000 + insert D
-case3_case delta[0, 4] = 5.000000
-case1 = 2.000000
-case2 = 4.000000
-case3 = 5.000000
 s[0, 1] = 2.000000
 save to delta[0, 0] = s[0, 1] = 1.000000
 q[1] = s[1, 1] = 1.000000
@@ -1211,29 +745,10 @@ t[1, 3] = s[0, 3] = 4.000000
 t[1, 2] = s[0, 2] = 3.000000
 t[1, 1] = s[0, 1] = 2.000000
 new Round B'
-Last Round !!
 new Round C'
 Right (1, 1, 0, 0) counter  = 70
-case3_case FcurrentForest - F(rF)
-case1_case2 = t[0, 0] = 2.000000
-case1 += delete B
-case2_case2 = q[1] = 1.000000
-case2 += insert A
-case1 = 3.000000
-case2 = 2.000000
-case3 = 4.000000
 Save to s[1, 0] = 2.000000
 new Round C'
 Right (0, 0, 0, 0) counter  = 71
-case3 = 0
-case1_case1 = s[1, 0] = 2.000000
-case1 += delete A
-case2_case2 = q[0] = 2.000000
-case2 += insert A
-case3_case3 delta[0, 0] = 1.000000
-case3_case3 += A -> A = 0.000000
-case1 = 3.000000
-case2 = 3.000000
-case3 = 1.000000
 Save to s[0, 0] = 1.000000
 t[0, 0] = s[0, 0] = 1.000000

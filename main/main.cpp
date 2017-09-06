@@ -11,12 +11,11 @@
 using namespace std;
 
 int main() {
-	string fileName = "rna19.data";
+	string fileName = "rna24.data";
 	string simiFileName = "ss_distance";
 	SimiMatrix matrix;
 	vector<RNA> RNAs;
-	//ofstream ou("out.txt");
-/*	FileManage* file = FileManage::getInstance();
+	FileManage* file = FileManage::getInstance();
 	file->setRNAFileName(fileName);
 	file->setSimiFileName(simiFileName);
 	RNAs = file->readRNAsFromFile();
@@ -26,57 +25,10 @@ int main() {
 	Tree* t2 = RNAs[1].buildTree();
 	matrix = file->readSimiFromFile();
 	TreeComparison tc(t1, t2, matrix);
-	tc.strategyComputation();*/
-	/*cout << matrix.toString() << endl;
-	cout << matrix['C'] << " " << matrix['A'] << " " << matrix['-'] << endl;*/
-	//ou << RNAs[0].toString() << endl;
-	//ou << RNAs[1].toString() << endl;
-/*	RNAs[0].getPreLSequence();
-	RNAs[1].getPreLSequence();
-	Tree* t1 = RNAs[0].buildTree();
-	Tree* t2 = RNAs[1].buildTree();
-	ou << "TreeA" << endl;
-	ou << t1->toString() << endl;
-	ou << "TreeB" << endl;
-	ou << t2->toString() << endl;
-	TreeComparison tc(t1, t2);
-	tc.strategyComputation();*/
-
-
-	/*if(DEBUG) {
-		for(int i = 0; i < RNAs.size(); i++) {
-			char* sequence = RNAs[i].getOriginalSequence();
-			int* structure = RNAs[i].getSecondaryStructure();
-			char* preOrderSequence = RNAs[i].getPreOrderSequence();
-			Tree* t = RNAs[i].buildTree();
-			vector<Node*> pre = t->getPre();
-			vector<Node*> post = t->getPost();
-			ou << "Sequence" << endl;
-			for(int j = 1; j < RNAs[i].getRNASize(); j++) ou << sequence[j];
-			ou << endl;
-			ou << "Structure" << endl;
-			for(int j = 1; j < RNAs[i].getRNASize(); j++) ou << structure[j] << " ";
-			ou << endl;
-			ou << "preOrderSequence" << endl;
-			for(int j = 0; j < RNAs[i].getPreOrderSequenceSize(); j++) ou << preOrderSequence[j];
-			ou << endl;
-
-			ou << "pre size = " << pre.size() << endl;
-			for(int j = 0; j < pre.size(); j++) {
-				ou << pre[j]->toString() << endl << endl;
-			}
-			ou << endl;
-
-			ou << "post size = " << post.size() << endl;
-			for(int j = 0; j < post.size(); j++) {
-				ou << post[j]->toString() << endl << endl;			
-			}
-			ou << endl;
-
-		}
-	}*/
-
-	RNA r1, r2;
+	tc.strategyComputation();
+	float dist = tc.getTreeDistance();
+	cout << "The distance is " << dist << endl;
+/*	RNA r1, r2;
 	FileManage* file = FileManage::getInstance();
 	file->setSimiFileName(simiFileName);
 	matrix = file->readSimiFromFile();
@@ -87,6 +39,7 @@ int main() {
 	ofstream ou("out2.txt");
 	r1.setRNAName("A");
 	r2.setRNAName("B");
+*/
 
 /*	file->setRNAFileName(fileName);
 	RNAs = file->readRNAsFromFile();
@@ -103,11 +56,12 @@ int main() {
 	ou << "TreeB" << endl;
 	ou << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
-	tc.strategyComputation();*/
+	tc.strategyComputation();
+*/
 
 
 
-	/*
+/*
 	 	       B                         B
 		      / \                       / \
     	   	 C   D                     C   D
@@ -118,7 +72,7 @@ int main() {
          / \                                   / \
         I   J                                 I   J
 
-	*/
+*/
 /*	string s1 = "(B(C(E(G(I)(J))(H))(F))(D))";
 	string s2 = "(B(C)(D(E)(F(G)(H(I)(J)))))";
 	r1.setPreOrderSequence(s1);
@@ -127,31 +81,32 @@ int main() {
 	r2.setTreeSize(9);
 */
 
-	/*
+
+/*
 		 A                               A
 	   / | \                            / \
       B  C  E                          B   D
          |                             |
          D                             C
 	
-	*/
-
+*/
 /*    string s1 = "(A(B)(C(D))(E))";
     string s2 = "(A(B(C))(D))";
     r1.setPreOrderSequence(s1);
     r1.setTreeSize(5);
     r2.setPreOrderSequence(s2);
-    r2.setTreeSize(4);*/
+    r2.setTreeSize(4);
+*/
 
-    /*
+
+/*
 		   A                                 A
 	   / / | \ \                            / \
       B C  D  F G                          B   D
            |                               |
            E                               C
 	
-	*/
-
+*/
 /*    string s1 = "(A(B)(C)(D(E))(F)(G))";
     string s2 = "(A(B(C))(D))";
     r1.setPreOrderSequence(s1);
@@ -159,6 +114,7 @@ int main() {
     r2.setPreOrderSequence(s2);
     r2.setTreeSize(4);
 */
+
 
 /*
 		   A                                   A
@@ -189,9 +145,8 @@ int main() {
     r1.setPreOrderSequence(s1);
     r1.setTreeSize(5);
     r2.setPreOrderSequence(s2);
-    r2.setTreeSize(5);*/
-
-
+    r2.setTreeSize(5);
+*/
 
 
 
@@ -210,7 +165,6 @@ int main() {
     r2.setPreOrderSequence(s2);
     r2.setTreeSize(10);
 */
-
 
 
 /*
@@ -351,7 +305,8 @@ int main() {
 */
 
 
-/*	      B                                        B
+/*	      
+          B                                        B
 	 /  /   \  \                              /  /    \  \ 
     C  D     E  F                            C  D      E  F
    /  / \    \                                  |          \
@@ -376,7 +331,8 @@ K   L     K                                              H   I
 */
 
 
-/*	 B                              B
+/*	 
+     B                              B
 	 |                             / \
 	 C                            C   D
 	 |
@@ -396,7 +352,8 @@ K   L     K                                              H   I
 	r2.setTreeSize(3);*/
 
 
-/*	 B                               B
+/*	 
+     B                               B
 	 |                             / | \
 	 C                            C  D  F
 	 |                               |
@@ -527,12 +484,12 @@ d = 3 something wrong
 /*
 d = 5
 */
-    string s1 = "(A(B(D)(E))(C))";
+/*    string s1 = "(A(B(D)(E))(C))";
 	string s2 = "(F(G(H)(I))(K))";
 	r1.setPreOrderSequence(s1);
 	r1.setTreeSize(5);
 	r2.setPreOrderSequence(s2);
-	r2.setTreeSize(5);
+	r2.setTreeSize(5);*/
 
 /*
 d = 2
@@ -555,11 +512,7 @@ d = 2
 	r2.setPreOrderSequence(s2);
 	r2.setTreeSize(4);*/
 
-
-
-
-
-	Tree* t1 = r1.buildTree();
+/*	Tree* t1 = r1.buildTree();
 	Tree* t2 = r2.buildTree();
 	ou << "TreeA" << endl;
 	ou << t1->toString() << endl;
@@ -568,7 +521,7 @@ d = 2
 	TreeComparison tc(t1, t2, matrix);
 	tc.strategyComputation();
 	ou << "Counter" << endl;
-	ou << to_string(tc.getCounter()) << endl;
+	ou << to_string(tc.getCounter()) << endl;*/
 
 
 }

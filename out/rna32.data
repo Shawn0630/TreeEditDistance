@@ -1,0 +1,73 @@
+Alcaligenes-eutrophus-pb-b
+       1  AAAGCAGGCC AGGCAACCGC UGCCUGCACC GCAAGGUGCA GGGGGAGGAA
+      51  AGUCCGGACU CCACAGGGCA GGGUGUUGGC UAACAGCCAU CCACGGCAAC
+     101  GUGCGGAAUA GGGCCACAGA GACGAGUCUU GCCGCCGGGU UCGCCCGGCG
+     151  GGAAGGGUGA AACGCGGUAA CCUCCACCUG GAGCAAUCCC AAAUAGGCAG
+     201  GCGAUGAAGC GGCCCGCUGA GUCUGCGGGU AGGGAGCUGG AGCCGGCUGG
+     251  UAACAGCCGG CCUAGAGGAA UGGUUGUCAC GCACCGUUUG CCGCAAGGCG
+     301  GGCGGGGCGC ACAGAAUCCG GCUUAUCGGC CUGCUUUGCU U
+>
+ (    1)       1     337      10      -6.0
+ (    2)      11     326       1      -7.9
+ (    3)      12     278       7      -5.3
+ (    4)      20      45       2      -8.6
+ (    5)      23      42       8      -3.4
+ (    6)      59     183       4      -1.3
+ (    7)      71     179       5      -2.9
+ (    8)      76      90       5      -2.1
+ (    9)      91     105       1      -8.1
+ (   10)      92     103       4     -11.7
+ (   11)     106     174       2      -1.8
+ (   12)     111     172       2      -8.8
+ (   13)     127     156       4      -8.8
+ (   14)     132     151       8      -2.1
+ (   15)     187     235       4     -17.0
+ (   16)     197     226       6     -17.0
+ (   17)     206     220       5      -8.1
+ (   18)     242     261       8      -6.9
+ (   19)     281     308       2      -6.9
+ (   20)     284     305       9      -3.7
+>
+ (    1)      50     324       3
+ (    2)      54     321       5
+ (    3)      66     215       4
+>
+
+Streptomyces-bikiniensis-gpb-h
+       1  CGAGCCGGGC GGGCGGCCGC GUGGGGGUCU UCGGACCUCC CCGAGGAACG
+      51  UCCGGGCUCC ACAGAGCAGG GUGGUGGCUA ACGGCCACCC GGGGUGACCC
+     101  GCGGGACAGU GCCACAGAAA ACAGACCGCC GGGGACCUCG GUCCUCGGUA
+     151  AGGGUGAAAC GGUGGUGUAA GAGACCACCA GCGCCUGAGG CGACUCAGGC
+     201  GGCUAGGUAA ACCCCACUCG GAGCAAGGUC AAGAGGGGAC ACCCCGGUGU
+     251  CCCUGCGCGG AUGUUCGAGG GCUGCUCGCC CGAGUCCGCG GGUAGACCGC
+     301  ACGAGGCCGG CGGCAACGCC GGCCCUAGAU GGAUGGCCGU CGCCCCGACG
+     351  ACCGCGAGGU CCCGGGGACA GAACCCGGCG UACAGCCCGA CUCGUCUG
+>
+ (    1)       1     394      10      -6.0
+ (    2)      11     383       1      -7.9
+ (    3)      12     341       7      -5.3
+ (    4)      20      43       2      -8.6
+ (    5)      23      40       7      -3.4
+ (    6)      57     223       4      -1.3
+ (    7)      69     219       5      -2.9
+ (    8)      74      88       5      -2.1
+ (    9)      89     103       1      -8.1
+ (   10)      90     101       4      -7.9
+ (   11)     104     214       2     -11.7
+ (   12)     109     212       2      -1.8
+ (   13)     126     153       2      -8.8
+ (   14)     128     149       9      -2.1
+ (   15)     161     179       6      -8.7
+ (   16)     182     201       8     -17.0
+ (   17)     227     298       4      -8.1
+ (   18)     235     254       8      -6.2
+ (   19)     257     289       6      -6.9
+ (   20)     267     283       6      -3.7
+ (   21)     305     324       8      -6.5
+ (   22)     343     367       5      -3.2
+ (   23)     350     361       4      -3.2
+>
+ (    1)      48     381       3
+ (    2)      52     378       5
+ (    3)      64     277       4
+>

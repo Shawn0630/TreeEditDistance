@@ -1,0 +1,38 @@
+Alcaligenes-eutrophus-pb-b
+      76  UUGGC UAACAGCCAU CCACGGCAAC
+     101  GUGCGGAAUA GGGCCACAGA GACGAGUCUU GCCGCCGGGU UCGCCCGGCG
+     151  GGAAGGGUGA AACGCGGUAA CCUC
+>
+ (    8)      77      89       4      -2.1
+ (    9)      91     105       1      -8.1
+ (   10)      92     103       4     -11.7
+ (   11)     106     174       2      -1.8
+ (   12)     111     172       2      -8.8
+ (   13)     127     156       4      -8.8
+ (   14)     132     151       8      -2.1
+>
+ (    1)      50     324       3
+ (    2)      54     321       5
+ (    3)      66     215       4
+>
+
+Streptomyces-bikiniensis-gpb-h
+      74  GUGGCUA ACGGCCACCC GGGGUGACCC
+     101  GCGGGACAGU GCCACAGAAA ACAGACCGCC GGGGACCUCG GUCCUCGGUA
+     151  AGGGUGAAAC GGUGGUGUAA GAGACCACCA GCGCCUGAGG CGACUCAGGC
+     201  GGCUAGGUAA ACCC
+>
+ (    8)      74      88       5      -2.1
+ (    9)      89     103       1      -8.1
+ (   10)      90     101       4      -7.9
+ (   11)     104     214       2     -11.7
+ (   12)     109     212       2      -1.8
+ (   13)     126     153       2      -8.8
+ (   14)     128     149       9      -2.1
+ (   15)     161     179       6      -8.7
+ (   16)     182     201       8     -17.0
+>
+ (    1)      48     381       3
+ (    2)      52     378       5
+ (    3)      64     277       4
+>
