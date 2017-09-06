@@ -3936,7 +3936,7 @@ void TreeComparison::strategyComputation() {
 	vector<Node*> preB = B_->getPreL();
 
 	free(preA[0], preB[0]);
-	Strategy** S = APTED_ComputeOptStrategy_postL();
+	//Strategy** S = APTED_ComputeOptStrategy_postL();
 	if(DEBUG) {
 		ou << "RESULT" << endl;
 		for(int i = 0; i < treeSizeA; i++) {
@@ -3950,7 +3950,9 @@ void TreeComparison::strategyComputation() {
 			ou << endl;
 		}
 
-		ou << "RESULT 2" << endl;
+
+
+	/*	ou << "RESULT 2" << endl;
 
 		for(int i = 0; i < treeSizeA; i++) {
 			for(int j = 0; j < treeSizeB; j++) {
@@ -3961,10 +3963,72 @@ void TreeComparison::strategyComputation() {
 				}
 			}
 			ou << endl;
-		}
+		}*/
 
-    ou << "Distance Matrix" << endl;
-    ou << costModel_.toString() << endl;
+    ou << "Free" << endl;
+    for(int i = 0; i < treeSizeA; i++) {
+      for(int j = 0; j < treeSizeB; j++) {
+        ou << Free[i][j] << " ";
+      }
+      ou << endl;
+    }
+    ou << endl;
+
+    ou << "LeftA" << endl;
+    for(int i = 0; i < treeSizeA; i++) {
+      for(int j = 0; j < treeSizeB; j++) {
+        ou << LeftA[i][j] << " ";
+      }
+      ou << endl;
+    }
+    ou << endl;
+
+    ou << "RightA" << endl;
+    for(int i = 0; i < treeSizeA; i++) {
+      for(int j = 0; j < treeSizeB; j++) {
+        ou << RightA[i][j] << " ";
+      }
+      ou << endl;
+    }
+    ou << endl;
+
+    ou << "AllA" << endl;
+    for(int i = 0; i < treeSizeA; i++) {
+      for(int j = 0; j < treeSizeB; j++) {
+        ou << AllA[i][j] << " ";
+      }
+      ou << endl;
+    }
+    ou << endl;
+
+    ou << "LeftB" << endl;
+    for(int i = 0; i < treeSizeA; i++) {
+      for(int j = 0; j < treeSizeB; j++) {
+        ou << LeftB[i][j] << " ";
+      }
+      ou << endl;
+    }
+    ou << endl;
+
+    ou << "RightB" << endl;
+    for(int i = 0; i < treeSizeA; i++) {
+      for(int j = 0; j < treeSizeB; j++) {
+        ou << RightB[i][j] << " ";
+      }
+      ou << endl;
+    }
+    ou << endl;
+
+
+    ou << "AllB" << endl;
+    for(int i = 0; i < treeSizeA; i++) {
+      for(int j = 0; j < treeSizeB; j++) {
+        ou << AllB[i][j] << " ";
+      }
+      ou << endl;
+    }
+    ou << endl;
+
 	}
 };
 
