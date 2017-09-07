@@ -974,14 +974,14 @@ float TreeComparison::treeEditDist(Node* a, Node* b, float** forestdist, bool sw
     forestdist[0][b1] = forestdist[0][b1 - 1] + (swap ? costModel_.del((*G)[b1_plus_boff_in_preL]->getLabel()) : costModel_.ins((*G)[b1_plus_boff_in_preL]->getLabel())); // USE COST MODEL - insert b1.
   }
 
-  if(DEBUG) {
+/*  if(DEBUG) {
     for(int i = 0; i <= a_in_postL - aoff; i++) {
       for(int j = 0; j <= b_in_postL - boff; j++) {
         ou << forestdist[i][j] << " ";
       }
       ou << endl;
     }
-  }
+  }*/
 
   // Fill in the remaining costs.
   for (int a1 = 1; a1 <= a_in_postL - aoff; a1++) {
@@ -1109,14 +1109,14 @@ float TreeComparison::revTreeEditDist(Node* a, Node* b, float** forestdist, bool
     forestdist[0][b1] = forestdist[0][b1 - 1] + (swap ? costModel_.del((*G)[b1_plus_boff_in_preL]->getLabel()) : costModel_.ins((*G)[b1_plus_boff_in_preL]->getLabel())); // USE COST MODEL - insert b1.
   }
 
-  if(DEBUG) {
+  /*if(DEBUG) {
     for(int i = 0; i <= a_in_postR - aoff; i++) {
       for(int j = 0; j <= b_in_postR - boff; j++) {
         ou << forestdist[i][j] << " ";
       }
       ou << endl;
     }
-  }
+  }*/
 
   // Fill in the remaining costs.
   for (int a1 = 1; a1 <= a_in_postR - aoff; a1++) {

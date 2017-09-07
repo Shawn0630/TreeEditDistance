@@ -30,7 +30,7 @@ PROGRAM      = TreeEditDistance
 
 # The source files directories (do not include last '/').
 # If not specified, only the current directory will be searched.
-SRC_DIRS     = src test
+SRC_DIRS     = src main
 
 # Header file directories (do not include last '/').
 INCLUDE_DIRS = 

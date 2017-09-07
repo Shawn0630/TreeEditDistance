@@ -26,6 +26,13 @@ int main() {
 	matrix = file->readSimiFromFile();
 	TreeComparison tc(t1, t2, matrix);
 	tc.strategyComputation();
+	ofstream ou("tree.txt");
+	if(DEBUG) {
+		ou << "Tree A" << endl;
+		ou << t1->toString() << endl;
+		ou << "Tree B" << endl;
+		ou << t2->toString() << endl;
+	}
 	float dist = tc.getTreeDistance();
 	cout << "The distance is " << dist << endl;
 /*	RNA r1, r2;
@@ -522,6 +529,4 @@ d = 2
 	tc.strategyComputation();
 	ou << "Counter" << endl;
 	ou << to_string(tc.getCounter()) << endl;*/
-
-
 }
