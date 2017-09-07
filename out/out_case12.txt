@@ -1,0 +1,374 @@
+Compute Free(2, 0)
+If select 2 in Tree A #Subproblem: 4 Direction: LeftCompute Free(2, 1)
+If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 1)
+If select 1 in Tree B #Subproblem: 1 Direction: Leftfree[2][1] freeSumA = 0 freeSumB = 0
+Free[2][1] = 1
+FreeS(2, 1)
+Keynode: 1 in TreeB
+Direction: rightLeaf: 1
+Compute Free(2, 2)
+If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 2)
+If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[2][2] freeSumA = 0 freeSumB = 0
+Free[2][2] = 1
+FreeS(2, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(2, 3)
+If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[2][3] freeSumA = 0 freeSumB = 0
+Free[2][3] = 1
+FreeS(2, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[2][0] freeSumA = 0 freeSumB = 3
+Compute Free(2, 0)
+If select 1(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(2, 0)
+If select 2 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(2, 0)
+If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[2][0] = 4
+FreeS(2, 0)
+Keynode: 2 in Tree A
+Direction: rightLeaf: 2
+Compute Free(4, 0)
+If select 4 in Tree A #Subproblem: 4 Direction: LeftCompute Free(4, 1)
+If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 1)
+If select 1 in Tree B #Subproblem: 1 Direction: Leftfree[4][1] freeSumA = 0 freeSumB = 0
+Free[4][1] = 1
+FreeS(4, 1)
+Keynode: 1 in TreeB
+Direction: rightLeaf: 1
+Compute Free(4, 2)
+If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 2)
+If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[4][2] freeSumA = 0 freeSumB = 0
+Free[4][2] = 1
+FreeS(4, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(4, 3)
+If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[4][3] freeSumA = 0 freeSumB = 0
+Free[4][3] = 1
+FreeS(4, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[4][0] freeSumA = 0 freeSumB = 3
+Compute Free(4, 0)
+If select 1(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(4, 0)
+If select 2 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(4, 0)
+If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[4][0] = 4
+FreeS(4, 0)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+Compute Free(5, 0)
+If select 5 in Tree A #Subproblem: 4 Direction: LeftCompute Free(5, 1)
+If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 1)
+If select 1 in Tree B #Subproblem: 1 Direction: Leftfree[5][1] freeSumA = 0 freeSumB = 0
+Free[5][1] = 1
+FreeS(5, 1)
+Keynode: 1 in TreeB
+Direction: rightLeaf: 1
+Compute Free(5, 2)
+If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 2)
+If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[5][2] freeSumA = 0 freeSumB = 0
+Free[5][2] = 1
+FreeS(5, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(5, 3)
+If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[5][3] freeSumA = 0 freeSumB = 0
+Free[5][3] = 1
+FreeS(5, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[5][0] freeSumA = 0 freeSumB = 3
+Compute Free(5, 0)
+If select 1(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(5, 0)
+If select 2 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(5, 0)
+If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[5][0] = 4
+FreeS(5, 0)
+Keynode: 5 in Tree A
+Direction: rightLeaf: 5
+Compute Free(3, 1)
+If select 1 in Tree B #Subproblem: 3 Direction: Leftfree[3][1] freeSumA = 2 freeSumB = 0
+Compute Free(3, 1)
+If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
+Compute Free(3, 1)
+If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
+Free[3][1] = 3
+FreeS(3, 1)
+Keynode: 1 in TreeB
+Direction: rightLeaf: 1
+Compute Free(3, 2)
+If select 2 in Tree B #Subproblem: 3 Direction: Leftfree[3][2] freeSumA = 2 freeSumB = 0
+Compute Free(3, 2)
+If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
+Compute Free(3, 2)
+If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
+Free[3][2] = 3
+FreeS(3, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(3, 3)
+If select 3 in Tree B #Subproblem: 3 Direction: Leftfree[3][3] freeSumA = 2 freeSumB = 0
+Compute Free(3, 3)
+If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
+Compute Free(3, 3)
+If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
+Free[3][3] = 3
+FreeS(3, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[3][0] freeSumA = 8 freeSumB = 9
+Compute Free(3, 0)
+If select 4(leftmost) in Tree A #Subproblem: 22 Direction: Right
+Compute Free(3, 0)
+If select 5(rightmost) in Tree A #Subproblem: 22 Direction: Left
+Compute Free(3, 0)
+If select 1(leftmost) in Tree B #Subproblem: 22 Direction: Right
+Compute Free(3, 0)
+If select 2 in Tree B #Subproblem: 22 Direction: Left
+Compute Free(3, 0)
+If select 3(rightmost) in Tree B #Subproblem: 22 Direction: Left
+Free[3][0] = 22
+FreeS(3, 0)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+Compute Free(1, 1)
+If select 1 in Tree B #Subproblem: 5 Direction: Leftfree[1][1] freeSumA = 4 freeSumB = 0
+Compute Free(1, 1)
+If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(1, 1)
+If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
+Free[1][1] = 5
+FreeS(1, 1)
+Keynode: 1 in TreeB
+Direction: rightLeaf: 1
+Compute Free(1, 2)
+If select 2 in Tree B #Subproblem: 5 Direction: Leftfree[1][2] freeSumA = 4 freeSumB = 0
+Compute Free(1, 2)
+If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(1, 2)
+If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
+Free[1][2] = 5
+FreeS(1, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(1, 3)
+If select 3 in Tree B #Subproblem: 5 Direction: Leftfree[1][3] freeSumA = 4 freeSumB = 0
+Compute Free(1, 3)
+If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(1, 3)
+If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
+Free[1][3] = 5
+FreeS(1, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[1][0] freeSumA = 26 freeSumB = 15
+Compute Free(1, 0)
+If select 2(leftmost) in Tree A #Subproblem: 52 Direction: Right
+Compute Free(1, 0)
+If select 3(rightmost) in Tree A #Subproblem: 38 Direction: Left
+Compute Free(1, 0)
+If select 1(leftmost) in Tree B #Subproblem: 46 Direction: Right
+Compute Free(1, 0)
+If select 2 in Tree B #Subproblem: 42 Direction: Left
+Compute Free(1, 0)
+If select 3(rightmost) in Tree B #Subproblem: 38 Direction: Left
+Free[1][0] = 38
+FreeS(1, 0)
+Keynode: 3 in Tree A
+Direction: left
+Leaf: 5
+Compute Free(0, 1)
+If select 1 in Tree B #Subproblem: 6 Direction: Leftfree[0][1] freeSumA = 5 freeSumB = 0
+Compute Free(0, 1)
+If select 1(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(0, 1)
+If select 1(rightmost) in Tree A #Subproblem: 8 Direction: Left
+Free[0][1] = 6
+FreeS(0, 1)
+Keynode: 1 in TreeB
+Direction: rightLeaf: 1
+Compute Free(0, 2)
+If select 2 in Tree B #Subproblem: 6 Direction: Leftfree[0][2] freeSumA = 5 freeSumB = 0
+Compute Free(0, 2)
+If select 1(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(0, 2)
+If select 1(rightmost) in Tree A #Subproblem: 8 Direction: Left
+Free[0][2] = 6
+FreeS(0, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(0, 3)
+If select 3 in Tree B #Subproblem: 6 Direction: Leftfree[0][3] freeSumA = 5 freeSumB = 0
+Compute Free(0, 3)
+If select 1(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(0, 3)
+If select 1(rightmost) in Tree A #Subproblem: 8 Direction: Left
+Free[0][3] = 6
+FreeS(0, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[0][0] freeSumA = 38 freeSumB = 18
+Compute Free(0, 0)
+If select 1(leftmost) in Tree A #Subproblem: 49 Direction: Right
+Compute Free(0, 0)
+If select 1(rightmost) in Tree A #Subproblem: 44 Direction: Left
+Compute Free(0, 0)
+If select 1(leftmost) in Tree B #Subproblem: 52 Direction: Right
+Compute Free(0, 0)
+If select 2 in Tree B #Subproblem: 48 Direction: Left
+Compute Free(0, 0)
+If select 3(rightmost) in Tree B #Subproblem: 44 Direction: Left
+Free[0][0] = 44
+FreeS(0, 0)
+Keynode: 1 in Tree A
+Direction: left
+Leaf: 5
+RESULT
+5 in A 1 in B 2 in B 3 in B 
+5 in A 1 in B 2 in B 3 in B 
+2 in A 1 in B 2 in B 3 in B 
+4 in A 1 in B 2 in B 3 in B 
+4 in A 1 in B 2 in B 3 in B 
+5 in A 1 in B 2 in B 3 in B 
+Free
+44 6 6 6 
+38 5 5 5 
+4 1 1 1 
+22 3 3 3 
+4 1 1 1 
+4 1 1 1 
+
+LeftA
+-1 -1 -1 -1 
+43 7 7 7 
+6 1 1 1 
+-1 -1 -1 -1 
+6 1 1 1 
+-1 -1 -1 -1 
+
+RightA
+-1 -1 -1 -1 
+38 7 7 7 
+-1 -1 -1 -1 
+22 4 4 4 
+-1 -1 -1 -1 
+6 1 1 1 
+
+AllA
+-1 -1 -1 -1 
+-1 -1 -1 -1 
+7 1 1 1 
+25 4 4 4 
+7 1 1 1 
+7 1 1 1 
+
+LeftB
+-1 10 -1 -1 
+-1 9 -1 -1 
+-1 1 -1 -1 
+-1 4 -1 -1 
+-1 1 -1 -1 
+-1 1 -1 -1 
+
+RightB
+-1 -1 -1 8 
+-1 -1 -1 7 
+-1 -1 -1 1 
+-1 -1 -1 4 
+-1 -1 -1 1 
+-1 -1 -1 1 
+
+AllB
+-1 -1 10 -1 
+-1 -1 9 -1 
+-1 -1 1 -1 
+-1 -1 4 -1 
+-1 -1 1 -1 
+-1 -1 1 -1 
+
+RevTreeDistance(0, 2)
+Compute revforestdist(5, 2)
+forestdist[1, 1] = 1.000000
+Compute revforestdist(4, 2)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(3, 2)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(2, 2)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(1, 2)
+forestdist[5, 1] = 4.000000
+Compute revforestdist(0, 2)
+forestdist[6, 1] = 5.000000
+RevTreeDistance(0, 1)
+Compute revforestdist(5, 1)
+forestdist[1, 1] = 1.000000
+Compute revforestdist(4, 1)
+forestdist[2, 1] = 2.000000
+Compute revforestdist(3, 1)
+forestdist[3, 1] = 3.000000
+Compute revforestdist(2, 1)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(1, 1)
+forestdist[5, 1] = 4.000000
+Compute revforestdist(0, 1)
+forestdist[6, 1] = 5.000000
+RevTreeDistance(0, 0)
+Compute revforestdist(5, 3)
+forestdist[1, 1] = 0.000000
+Compute revforestdist(5, 2)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(5, 1)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(5, 0)
+forestdist[1, 4] = 3.000000
+Compute revforestdist(4, 3)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(4, 2)
+forestdist[2, 2] = 0.000000
+Compute revforestdist(4, 1)
+forestdist[2, 3] = 1.000000
+Compute revforestdist(4, 0)
+forestdist[2, 4] = 2.000000
+Compute revforestdist(3, 3)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(3, 2)
+forestdist[3, 2] = 1.000000
+Compute revforestdist(3, 1)
+forestdist[3, 3] = 2.000000
+Compute revforestdist(3, 0)
+forestdist[3, 4] = 2.000000
+Compute revforestdist(2, 3)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(2, 2)
+forestdist[4, 2] = 2.000000
+Compute revforestdist(2, 1)
+forestdist[4, 3] = 1.000000
+Compute revforestdist(2, 0)
+forestdist[4, 4] = 2.000000
+Compute revforestdist(1, 3)
+forestdist[5, 1] = 4.000000
+Compute revforestdist(1, 2)
+forestdist[5, 2] = 3.000000
+Compute revforestdist(1, 1)
+forestdist[5, 3] = 2.000000
+Compute revforestdist(1, 0)
+forestdist[5, 4] = 1.000000
+Compute revforestdist(0, 3)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(0, 2)
+forestdist[6, 2] = 4.000000
+Compute revforestdist(0, 1)
+forestdist[6, 3] = 3.000000
+Compute revforestdist(0, 0)
+forestdist[6, 4] = 2.000000

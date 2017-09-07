@@ -1,0 +1,166 @@
+Tree A
+preL size = 6
+ID: 0 label: F
+Root
+childrenNum: 2
+1 2 
+subTreeSize: 6
+subTreeSizeSum: 15
+leftmostForestNum: 11
+rightmostForestNum: 9
+specialmostForestNum: 12
+
+ID: 1 label: A
+parent is 0
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 2 label: E
+parent is 0
+childrenNum: 2
+3 5 
+subTreeSize: 4
+subTreeSizeSum: 8
+leftmostForestNum: 5
+rightmostForestNum: 6
+specialmostForestNum: 6
+
+ID: 3 label: C
+parent is 2
+childrenNum: 1
+4 
+subTreeSize: 2
+subTreeSizeSum: 3
+leftmostForestNum: 2
+rightmostForestNum: 2
+specialmostForestNum: 2
+
+ID: 4 label: B
+parent is 3
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 5 label: D
+parent is 2
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+
+preL_to_preR
+0 5 1 3 4 2 
+preL_to_postL
+5 0 4 2 1 3 
+preL_to_postR
+5 4 3 2 1 0 
+preL_to_lid
+1 1 4 4 4 5 
+preL_to_rid
+5 1 5 4 4 5 
+preL_to_sumDelCost
+6 1 4 2 1 1 
+preL_to_sumInsCost
+6 1 4 2 1 1 
+preL_to_ln
+-1 -1 1 1 1 4 
+preR_to_ln
+-1 -1 -1 2 2 4 
+postL_to_preL
+1 4 3 5 2 0 
+Tree B
+preL size = 6
+ID: 0 label: F
+Root
+childrenNum: 2
+1 2 
+subTreeSize: 6
+subTreeSizeSum: 16
+leftmostForestNum: 11
+rightmostForestNum: 8
+specialmostForestNum: 11
+
+ID: 1 label: A
+parent is 0
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 2 label: C
+parent is 0
+childrenNum: 1
+3 
+subTreeSize: 4
+subTreeSizeSum: 9
+leftmostForestNum: 5
+rightmostForestNum: 5
+specialmostForestNum: 5
+
+ID: 3 label: E
+parent is 2
+childrenNum: 2
+4 5 
+subTreeSize: 3
+subTreeSizeSum: 5
+leftmostForestNum: 4
+rightmostForestNum: 4
+specialmostForestNum: 4
+
+ID: 4 label: B
+parent is 3
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 5 label: D
+parent is 3
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+
+preL_to_preR
+0 5 1 2 4 3 
+preL_to_postL
+5 0 4 3 1 2 
+preL_to_postR
+5 4 3 2 1 0 
+preL_to_lid
+1 1 4 4 4 5 
+preL_to_rid
+5 1 5 5 4 5 
+preL_to_sumDelCost
+6 1 4 3 1 1 
+preL_to_sumInsCost
+6 1 4 3 1 1 
+preL_to_ln
+-1 -1 1 1 1 4 
+preR_to_ln
+-1 -1 -1 -1 3 4 
+postL_to_preL
+1 4 5 3 2 0 

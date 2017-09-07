@@ -1,0 +1,126 @@
+Tree A
+preL size = 1
+ID: 0 label: K
+Root
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+
+preL_to_preR
+0 
+preL_to_postL
+0 
+preL_to_postR
+0 
+preL_to_lid
+0 
+preL_to_rid
+0 
+preL_to_sumDelCost
+1 
+preL_to_sumInsCost
+1 
+preL_to_ln
+-1 
+preR_to_ln
+-1 
+postL_to_preL
+0 
+Tree B
+preL size = 7
+ID: 0 label: A
+Root
+childrenNum: 2
+1 2 
+subTreeSize: 7
+subTreeSizeSum: 19
+leftmostForestNum: 16
+rightmostForestNum: 10
+specialmostForestNum: 16
+
+ID: 1 label: D
+parent is 0
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 2 label: E
+parent is 0
+childrenNum: 2
+3 4 
+subTreeSize: 5
+subTreeSizeSum: 11
+leftmostForestNum: 9
+rightmostForestNum: 7
+specialmostForestNum: 9
+
+ID: 3 label: L
+parent is 2
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 4 label: F
+parent is 2
+childrenNum: 2
+5 6 
+subTreeSize: 3
+subTreeSizeSum: 5
+leftmostForestNum: 4
+rightmostForestNum: 4
+specialmostForestNum: 4
+
+ID: 5 label: G
+parent is 4
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 6 label: H
+parent is 4
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+
+preL_to_preR
+0 6 1 5 2 4 3 
+preL_to_postL
+6 0 5 1 4 2 3 
+preL_to_postR
+6 5 4 3 2 1 0 
+preL_to_lid
+1 1 3 3 5 5 6 
+preL_to_rid
+6 1 6 3 6 5 6 
+preL_to_sumDelCost
+7 1 5 1 3 1 1 
+preL_to_sumInsCost
+7 1 5 1 3 1 1 
+preL_to_ln
+-1 -1 1 1 3 3 5 
+preR_to_ln
+-1 -1 -1 -1 3 4 5 
+postL_to_preL
+1 3 5 6 4 2 0 

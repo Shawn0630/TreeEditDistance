@@ -83,7 +83,7 @@ public:
 	void setTreeA(Tree*);
 	void setTreeB(Tree*);
 	void setCostModel(SimiMatrix);
-	void init(void);
+	void init(string);
 	void strategyComputation(void);
 	float getTreeDistance(void);
 	int getCounter(void);

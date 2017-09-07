@@ -57,8 +57,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init();
-  ou.open("tree.txt");
+  tc.init("out_case1.txt");
+  ou.open("tree_case1.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -84,8 +84,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init();
-  ou.open("tree.txt");
+  tc.init("out_case2.txt");
+  ou.open("tree_case2.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -111,8 +111,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init();
-  ou.open("tree.txt");
+  tc.init("out_case3.txt");
+  ou.open("tree_case3.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -138,8 +138,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init();
-  ou.open("tree.txt");
+  tc.init("out_case4.txt");
+  ou.open("tree_case4.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -165,8 +165,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init();
-  ou.open("tree.txt");
+  tc.init("out_case5.txt");
+  ou.open("tree_case5.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -192,8 +192,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init();
-  ou.open("tree.txt");
+  tc.init("out_case6.txt");
+  ou.open("tree_cas6.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -219,8 +219,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init();
-  ou.open("tree.txt");
+  tc.init("out_case7.txt");
+  ou.open("tree_case7.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -246,8 +246,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init();
-  ou.open("tree.txt");
+  tc.init("out_case8.txt");
+  ou.open("tree_case8.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -273,8 +273,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init();
-  ou.open("tree.txt");
+  tc.init("out_case9.txt");
+  ou.open("tree_case9.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -300,8 +300,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init();
-  ou.open("tree.txt");
+  tc.init("out_case10.txt");
+  ou.open("tree_case10.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -331,8 +331,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init();
-  ou.open("tree.txt");
+  tc.init("out_case11.txt");
+  ou.open("tree_case11.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -362,8 +362,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init();
-  ou.open("tree.txt");
+  tc.init("out_case12.txt");
+  ou.open("tree_case12.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -388,8 +388,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init();
-  ou.open("tree.txt");
+  tc.init("out_case13.txt");
+  ou.open("tree_case13.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -415,8 +415,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init();
-  ou.open("tree.txt");
+  tc.init("out_case14.txt");
+  ou.open("tree_case14.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
