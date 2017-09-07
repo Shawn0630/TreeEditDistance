@@ -1026,14 +1026,14 @@ float TreeComparison::treeEditDist(Node* a, Node* b, float** forestdist, bool sw
          }*/
          if (swap) {
            delta[b1_plus_boff_in_preL][a1_plus_aoff_in_preL] = forestdist[a1 - 1][b1 - 1];
-           /*if(DEBUG) {
+           if(DEBUG) {
             ou << "delta[" << to_string(b1_plus_boff_in_preL) << ", " << to_string(a1_plus_aoff_in_preL) << "] = " << to_string(delta[b1_plus_boff_in_preL][a1_plus_aoff_in_preL]) << endl;
-           }*/
+           }
          } else {
            delta[a1_plus_aoff_in_preL][b1_plus_boff_in_preL] = forestdist[a1 - 1][b1 - 1];
-           /*if(DEBUG) {
+           if(DEBUG) {
             ou << "delta[" << to_string(a1_plus_aoff_in_preL) << ", " << to_string(b1_plus_boff_in_preL) << "] = " << to_string(delta[a1_plus_aoff_in_preL][b1_plus_boff_in_preL]) << endl;
-           }*/
+           }
          }
       } else {
           int a1_leftmost_leaf_in_postL = F->preL_to_postL[a1_leftmost_leaf];
@@ -1161,14 +1161,14 @@ float TreeComparison::revTreeEditDist(Node* a, Node* b, float** forestdist, bool
          }*/
          if (swap) {
            delta[b1_plus_boff_in_preL][a1_plus_aoff_in_preL] = forestdist[a1 - 1][b1 - 1];
-           /*if(DEBUG) {
+           if(DEBUG) {
             ou << "delta[" << to_string(b1_plus_boff_in_preL) << ", " << to_string(a1_plus_aoff_in_preL) << "] = forestdist[" << to_string(a1 - 1) << ", " << to_string(b1 - 1) << "] = " << to_string(delta[b1_plus_boff_in_preL][a1_plus_aoff_in_preL]) << endl;
-           }*/
+           }
          } else {
            delta[a1_plus_aoff_in_preL][b1_plus_boff_in_preL] = forestdist[a1 - 1][b1 - 1];
-           /*if(DEBUG) {
+           if(DEBUG) {
             ou << "delta[" << to_string(a1_plus_aoff_in_preL) << ", " << to_string(b1_plus_boff_in_preL) << "] = forestdist[" << to_string(a1 - 1) << ", " << to_string(b1 - 1) << "] = " << to_string(delta[a1_plus_aoff_in_preL][b1_plus_boff_in_preL]) << endl;
-           }*/
+           }
          }
       } else {
           int a1_rightmost_leaf_in_postR = F->preL_to_postR[a1_rightmost_leaf];

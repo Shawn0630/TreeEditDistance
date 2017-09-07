@@ -24,6 +24,6 @@ public:
 	void setToLabel(char);
 	char getToLabel(void);
 
-}
+};
 
 #endif

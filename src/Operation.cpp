@@ -13,7 +13,7 @@ Operation::Operation(int from_ID, char from_label, int to_ID, char to_label) {
 };
 
 
-void Opeartion::setFromID(int from_ID) {
+void Operation::setFromID(int from_ID) {
 	from_ID_ = from_ID;
 };
 int Operation::getFromID(void) {
@@ -21,7 +21,7 @@ int Operation::getFromID(void) {
 };
 
 
-void Opeartion::setFromLabel(char from_label) {
+void Operation::setFromLabel(char from_label) {
 	from_label_ = from_label;
 };
 char Operation::getFromLabel(void) {

@@ -79,7 +79,7 @@ private:
 
 	int counter;
 
-	stack<Operation> ops;
+	//stack<Operation> ops;
 
 public:
 	TreeComparison(void);
