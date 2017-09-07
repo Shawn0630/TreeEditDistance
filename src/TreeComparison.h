@@ -3,8 +3,10 @@
 #include "Node.h"
 #include "Tree.h"
 #include "SimiMatrix.h"
+#include "Operation.h"
 
 #include <fstream>
+#include <stack>
 using namespace std;
 
 class TreeComparison {
@@ -76,6 +78,8 @@ private:
 	ofstream ou;
 
 	int counter;
+
+	stack<Operation> ops;
 
 public:
 	TreeComparison(void);

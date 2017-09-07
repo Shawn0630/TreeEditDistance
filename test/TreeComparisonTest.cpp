@@ -193,7 +193,7 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeA(t1);
   tc.setTreeB(t2);
   tc.init("out_case6.txt");
-  ou.open("tree_cas6.txt");
+  ou.open("tree_case6.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;

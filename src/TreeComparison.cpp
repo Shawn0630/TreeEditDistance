@@ -860,7 +860,7 @@ float TreeComparison::spfR(Node* a, Node* b, int leaf, bool swap) {
     F = A_;
     G = B_;
   }
-   if(DEBUG) {
+  if(DEBUG) {
     cout << "spfR(" << a->getID() << ", " << b->getID() << ") counter = " << counter << endl;
   }
   int* keyRoots = new int[(*G)[b->getID()]->getSubTreeSize()];
