@@ -28,6 +28,8 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 	fn_ft_length = maxSize + 1;
 
   counter = 0;
+  treeDist = 0;
+  //treeMapping.clear();
 
 	Free = new int*[treeSizeA];
 	LeftA = new int*[treeSizeA];
@@ -119,6 +121,8 @@ void TreeComparison::init(string fileName) {
   fn_ft_length = maxSize + 1;
 
   counter = 0;
+  treeDist = 0;
+  //treeMapping.clear();
 
   Free = new int*[treeSizeA];
   LeftA = new int*[treeSizeA];
@@ -4029,12 +4033,22 @@ void TreeComparison::strategyComputation() {
 float TreeComparison::getTreeDistance(void) {
   vector<Node*> preA = A_->getPreL();
   vector<Node*> preB = B_->getPreL();
-  float dist = gted(preA[0], preB[0]);
+  treeDist = gted(preA[0], preB[0]);
+  if(DEBUG) {
+    ou << "delta" << endl;
+    for(int i = 0; i < treeSizeA; i++) {
+      for(int j = 0; j < treeSizeB; j++) {
+        ou << delta[i][j] << " ";
+      }
+      ou << endl;
+    }
+    ou << endl;
+  }
   if(DEBUG) {
     cout << "counter = " << counter << " Free[0][0] = " << Free[0][0] << endl;
   }
   ou.close();
-  return dist;
+  return treeDist;
 };
 
 

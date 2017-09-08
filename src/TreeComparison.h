@@ -3,10 +3,9 @@
 #include "Node.h"
 #include "Tree.h"
 #include "SimiMatrix.h"
-#include "Operation.h"
 
 #include <fstream>
-#include <stack>
+#include <map>
 using namespace std;
 
 class TreeComparison {
@@ -44,6 +43,9 @@ private:
 
 	int fn_ft_length;
 
+	float treeDist;
+	map<int, int> treeMapping;
+
 	int free(Node*, Node*);
 	int leftA(Node*, Node*);
 	int leftB(Node*, Node*);
@@ -79,7 +81,6 @@ private:
 
 	int counter;
 
-	//stack<Operation> ops;
 
 public:
 	TreeComparison(void);

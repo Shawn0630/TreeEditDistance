@@ -1,0 +1,256 @@
+Tree A
+preL size = 11
+ID: 0 label: B
+Root
+childrenNum: 4
+1 6 9 10 
+subTreeSize: 11
+subTreeSizeSum: 29
+leftmostForestNum: 21
+rightmostForestNum: 23
+specialmostForestNum: 48
+
+ID: 1 label: F
+parent is 0
+childrenNum: 2
+2 3 
+subTreeSize: 5
+subTreeSizeSum: 11
+leftmostForestNum: 9
+rightmostForestNum: 7
+specialmostForestNum: 9
+
+ID: 2 label: A
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 3 label: F
+parent is 1
+childrenNum: 2
+4 5 
+subTreeSize: 3
+subTreeSizeSum: 5
+leftmostForestNum: 4
+rightmostForestNum: 4
+specialmostForestNum: 4
+
+ID: 4 label: A
+parent is 3
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 5 label: C
+parent is 3
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 6 label: F
+parent is 0
+childrenNum: 2
+7 8 
+subTreeSize: 3
+subTreeSizeSum: 5
+leftmostForestNum: 4
+rightmostForestNum: 4
+specialmostForestNum: 4
+
+ID: 7 label: A
+parent is 6
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 8 label: C
+parent is 6
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 9 label: A
+parent is 0
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 10 label: A
+parent is 0
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+
+preL_to_preR
+0 6 10 7 9 8 3 5 4 2 1 
+preL_to_postL
+10 4 0 3 1 2 7 5 6 8 9 
+preL_to_postR
+10 9 8 7 6 5 4 3 2 1 0 
+preL_to_lid
+2 2 2 4 4 5 7 7 8 9 10 
+preL_to_rid
+10 5 2 5 4 5 8 7 8 9 10 
+preL_to_sumDelCost
+11 5 1 3 1 1 3 1 1 1 1 
+preL_to_sumInsCost
+11 5 1 3 1 1 3 1 1 1 1 
+preL_to_ln
+-1 -1 -1 2 2 4 5 5 7 8 9 
+preR_to_ln
+-1 -1 1 2 2 4 5 5 5 8 9 
+postL_to_preL
+2 4 5 3 1 7 8 6 9 10 0 
+Tree B
+preL size = 10
+ID: 0 label: B
+Root
+childrenNum: 2
+1 6 
+subTreeSize: 10
+subTreeSizeSum: 28
+leftmostForestNum: 20
+rightmostForestNum: 19
+specialmostForestNum: 37
+
+ID: 1 label: F
+parent is 0
+childrenNum: 2
+2 3 
+subTreeSize: 5
+subTreeSizeSum: 11
+leftmostForestNum: 9
+rightmostForestNum: 7
+specialmostForestNum: 9
+
+ID: 2 label: A
+parent is 1
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 3 label: M
+parent is 1
+childrenNum: 2
+4 5 
+subTreeSize: 3
+subTreeSizeSum: 5
+leftmostForestNum: 4
+rightmostForestNum: 4
+specialmostForestNum: 4
+
+ID: 4 label: A
+parent is 3
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 5 label: C
+parent is 3
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 6 label: F
+parent is 0
+childrenNum: 3
+7 8 9 
+subTreeSize: 4
+subTreeSizeSum: 7
+leftmostForestNum: 6
+rightmostForestNum: 6
+specialmostForestNum: 7
+
+ID: 7 label: C
+parent is 6
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 8 label: A
+parent is 6
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 9 label: A
+parent is 6
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+
+preL_to_preR
+0 5 9 6 8 7 1 4 3 2 
+preL_to_postL
+9 4 0 3 1 2 8 5 6 7 
+preL_to_postR
+9 8 7 6 5 4 3 2 1 0 
+preL_to_lid
+2 2 2 4 4 5 7 7 8 9 
+preL_to_rid
+9 5 2 5 4 5 9 7 8 9 
+preL_to_sumDelCost
+10 5 1 3 1 1 4 1 1 1 
+preL_to_sumInsCost
+10 5 1 3 1 1 4 1 1 1 
+preL_to_ln
+-1 -1 -1 2 2 4 5 5 7 8 
+preR_to_ln
+-1 -1 -1 2 3 4 4 4 7 8 
+postL_to_preL
+2 4 5 3 1 7 8 9 6 0 

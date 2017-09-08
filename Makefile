@@ -71,7 +71,7 @@ CC           = gcc
 CXX          = g++
 
 # The pre-processor and compiler options for C programs.
-CFLAGS       = -g3 -O2 -c -g -std=c++11 #-pg
+CFLAGS       = -g3 -O2 -c -g -std=c++11 #-pg 
 
 # The pre-processor and compiler options for C++ programs.
 CXXFLAGS     = $(CFLAGS) 
