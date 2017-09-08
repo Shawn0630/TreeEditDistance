@@ -69,7 +69,13 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.strategyComputation();
   ASSERT_EQ(\
     tc.getTreeDistance(),\
-    2);  
+    2);
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    2);
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
+    2);     
   cout << "Pass" << endl;
 
 
@@ -96,6 +102,12 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.strategyComputation();
   ASSERT_EQ(\
     tc.getTreeDistance(),\
+    1); 
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    1); 
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
     1); 
   cout << "Pass" << endl;
 
@@ -124,6 +136,12 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     2); 
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    2); 
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
+    2); 
   cout << "Pass" << endl;
 
 
@@ -150,7 +168,13 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.strategyComputation();
   ASSERT_EQ(\
     tc.getTreeDistance(),\
-    3); 
+    3);
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    3);
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
+    3);       
   cout << "Pass" << endl;
 
 
@@ -177,6 +201,12 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.strategyComputation();
   ASSERT_EQ(\
     tc.getTreeDistance(),\
+    3);
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    3);
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
     3);
   cout << "Pass" << endl; 
 
@@ -205,6 +235,12 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     12);
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    12);
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
+    12);
   cout << "Pass" << endl; 
 
 
@@ -231,6 +267,12 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.strategyComputation();
   ASSERT_EQ(\
     tc.getTreeDistance(),\
+    13);
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    13);
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
     13);
   cout << "Pass" << endl;
 
@@ -259,6 +301,12 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     7);
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    7);
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
+    7);
   cout << "Pass" << endl;
 
 
@@ -286,6 +334,12 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     6);
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    6);
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
+    6);
   cout << "Pass" << endl;
 
 
@@ -312,6 +366,12 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.strategyComputation();
   ASSERT_EQ(\
     tc.getTreeDistance(),\
+    5);
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    5);
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
     5);
   cout << "Pass" << endl;
 
@@ -344,6 +404,12 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     2);
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    2);
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
+    2);
   cout << "Pass" << endl;
 
   /*
@@ -375,6 +441,12 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     2);
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    2);
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
+    2);
   cout << "Pass" << endl;
 
   cout << "Test case #13" << endl;
@@ -400,7 +472,13 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.strategyComputation();
   ASSERT_EQ(\
     tc.getTreeDistance(),\
+    4);
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
     4); 
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
+    4);    
   cout << "Pass" << endl;
 
 
@@ -428,5 +506,47 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     1); 
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    1); 
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
+    1); 
   cout << "Pass" << endl;
+
+
+  cout << "Test case #15" << endl;
+  s1 = "(A(A(A)(A(A)(A)))(A(A)(A(A))(A)))";
+  s2 = "(A(A(A)(A)(A))(A(A(A)(A)(A))))";
+  r1.setPreOrderSequence(s1);
+  r1.setTreeSize(11);
+  r2.setPreOrderSequence(s2);
+  r2.setTreeSize(10);
+  t1 = r1.buildTree();
+  t2 = r2.buildTree();
+  tc.setTreeA(t1);
+  tc.setTreeB(t2);
+  tc.init("out_case14.txt");
+  ou.open("tree_case14.txt");
+  if(DEBUG) {
+    ou << "Tree A" << endl;
+    ou << t1->toString() << endl;
+    ou << "Tree B" << endl;
+    ou << t2->toString() << endl;
+  }
+  ou.close();
+  tc.strategyComputation();
+  ASSERT_EQ(\
+    tc.getTreeDistance(),\
+    3); 
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    3); 
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
+    3); 
+  cout << "Pass" << endl;
+
+
+  
 } 

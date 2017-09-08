@@ -232,7 +232,183 @@ AllB
 -1 
 
 cost = 13.000000
-delta
+delta Result
+12 
+3 
+0 
+1 
+0 
+5 
+0 
+3 
+2 
+0 
+0 
+1 
+0 
+
+TreeDistance(11, 0)
+Compute forestdist(12, 0)
+delta[12, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(11, 0)
+delta[11, 0] = 1.000000
+forestdist[2, 1] = 2.000000
+TreeDistance(10, 0)
+Compute forestdist(10, 0)
+delta[10, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+TreeDistance(7, 0)
+Compute forestdist(9, 0)
+delta[9, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(10, 0)
+forestdist[2, 1] = 2.000000
+Compute forestdist(8, 0)
+delta[8, 0] = 2.000000
+forestdist[3, 1] = 3.000000
+Compute forestdist(7, 0)
+delta[7, 0] = 3.000000
+forestdist[4, 1] = 4.000000
+TreeDistance(5, 0)
+Compute forestdist(6, 0)
+delta[6, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(9, 0)
+forestdist[2, 1] = 2.000000
+Compute forestdist(10, 0)
+forestdist[3, 1] = 3.000000
+Compute forestdist(8, 0)
+forestdist[4, 1] = 4.000000
+Compute forestdist(7, 0)
+forestdist[5, 1] = 5.000000
+Compute forestdist(5, 0)
+delta[5, 0] = 5.000000
+forestdist[6, 1] = 6.000000
+TreeDistance(3, 0)
+Compute forestdist(4, 0)
+delta[4, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(3, 0)
+delta[3, 0] = 1.000000
+forestdist[2, 1] = 2.000000
+TreeDistance(0, 0)
+Compute forestdist(2, 0)
+delta[2, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(4, 0)
+forestdist[2, 1] = 2.000000
+Compute forestdist(3, 0)
+forestdist[3, 1] = 3.000000
+Compute forestdist(1, 0)
+delta[1, 0] = 3.000000
+forestdist[4, 1] = 4.000000
+Compute forestdist(6, 0)
+forestdist[5, 1] = 5.000000
+Compute forestdist(9, 0)
+forestdist[6, 1] = 6.000000
+Compute forestdist(10, 0)
+forestdist[7, 1] = 7.000000
+Compute forestdist(8, 0)
+forestdist[8, 1] = 8.000000
+Compute forestdist(7, 0)
+forestdist[9, 1] = 9.000000
+Compute forestdist(5, 0)
+forestdist[10, 1] = 10.000000
+Compute forestdist(12, 0)
+forestdist[11, 1] = 11.000000
+Compute forestdist(11, 0)
+forestdist[12, 1] = 12.000000
+Compute forestdist(0, 0)
+delta[0, 0] = 12.000000
+forestdist[13, 1] = 13.000000
+delta Result LL
+12 
+3 
+0 
+1 
+0 
+5 
+0 
+3 
+2 
+0 
+0 
+1 
+0 
+
+RevTreeDistance(6, 0)
+Compute revforestdist(6, 0)
+delta[6, 0] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+RevTreeDistance(9, 0)
+Compute revforestdist(9, 0)
+delta[9, 0] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+RevTreeDistance(5, 0)
+Compute revforestdist(10, 0)
+delta[10, 0] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(9, 0)
+forestdist[2, 1] = 2.000000
+Compute revforestdist(8, 0)
+delta[8, 0] = forestdist[2, 0] = 2.000000
+forestdist[3, 1] = 3.000000
+Compute revforestdist(7, 0)
+delta[7, 0] = forestdist[3, 0] = 3.000000
+forestdist[4, 1] = 4.000000
+Compute revforestdist(6, 0)
+forestdist[5, 1] = 5.000000
+Compute revforestdist(5, 0)
+delta[5, 0] = forestdist[5, 0] = 5.000000
+forestdist[6, 1] = 6.000000
+RevTreeDistance(2, 0)
+Compute revforestdist(2, 0)
+delta[2, 0] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+RevTreeDistance(1, 0)
+Compute revforestdist(4, 0)
+delta[4, 0] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(3, 0)
+delta[3, 0] = forestdist[1, 0] = 1.000000
+forestdist[2, 1] = 2.000000
+Compute revforestdist(2, 0)
+forestdist[3, 1] = 3.000000
+Compute revforestdist(1, 0)
+delta[1, 0] = forestdist[3, 0] = 3.000000
+forestdist[4, 1] = 4.000000
+RevTreeDistance(0, 0)
+Compute revforestdist(12, 0)
+delta[12, 0] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(11, 0)
+delta[11, 0] = forestdist[1, 0] = 1.000000
+forestdist[2, 1] = 2.000000
+Compute revforestdist(10, 0)
+forestdist[3, 1] = 3.000000
+Compute revforestdist(9, 0)
+forestdist[4, 1] = 4.000000
+Compute revforestdist(8, 0)
+forestdist[5, 1] = 5.000000
+Compute revforestdist(7, 0)
+forestdist[6, 1] = 6.000000
+Compute revforestdist(6, 0)
+forestdist[7, 1] = 7.000000
+Compute revforestdist(5, 0)
+forestdist[8, 1] = 8.000000
+Compute revforestdist(4, 0)
+forestdist[9, 1] = 9.000000
+Compute revforestdist(3, 0)
+forestdist[10, 1] = 10.000000
+Compute revforestdist(2, 0)
+forestdist[11, 1] = 11.000000
+Compute revforestdist(1, 0)
+forestdist[12, 1] = 12.000000
+Compute revforestdist(0, 0)
+delta[0, 0] = forestdist[12, 0] = 12.000000
+forestdist[13, 1] = 13.000000
+delta Result RR
 12 
 3 
 0 

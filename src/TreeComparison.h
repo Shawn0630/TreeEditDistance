@@ -67,7 +67,9 @@ private:
 	float spfA_RL(Node*, Node*, int, int, bool);
 	float spfA(Node*, Node*, int, int, bool);
 	float spfL(Node*, Node*, int, bool);
+	float spfLL(Node*, Node*, int, bool);
 	float spfR(Node*, Node*, int, bool);
+	float spfRR(Node*, Node*, int, bool);
 	float spf1(Node*, int, Node*, int);
 
 	int computeKeyRoots(Tree*, Node*, int, int*, int);
@@ -91,6 +93,8 @@ public:
 	void init(string);
 	void strategyComputation(void);
 	float getTreeDistance(void);
+	float getTreeDistance_LL(void);
+	float getTreeDistance_RR(void);
 	int getCounter(void);
 
 };

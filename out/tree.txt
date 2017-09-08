@@ -1,77 +1,197 @@
 Tree A
-preL size = 11
+preL size = 245
 ID: 0 label: B
 Root
-childrenNum: 4
-1 6 9 10 
-subTreeSize: 11
-subTreeSizeSum: 29
-leftmostForestNum: 21
-rightmostForestNum: 23
-specialmostForestNum: 48
+childrenNum: 5
+1 241 242 243 244 
+subTreeSize: 245
+subTreeSizeSum: 5993
+leftmostForestNum: 818
+rightmostForestNum: 1307
+specialmostForestNum: 24387
 
 ID: 1 label: F
 parent is 0
-childrenNum: 2
-2 3 
-subTreeSize: 5
-subTreeSizeSum: 11
-leftmostForestNum: 9
-rightmostForestNum: 7
-specialmostForestNum: 9
+childrenNum: 1
+2 
+subTreeSize: 240
+subTreeSizeSum: 5744
+leftmostForestNum: 809
+rightmostForestNum: 1059
+specialmostForestNum: 23416
 
-ID: 2 label: A
+ID: 2 label: F
 parent is 1
-childrenNum: 0
-
-subTreeSize: 1
-subTreeSizeSum: 1
-leftmostForestNum: 1
-rightmostForestNum: 1
-specialmostForestNum: 1
+childrenNum: 1
+3 
+subTreeSize: 239
+subTreeSizeSum: 5504
+leftmostForestNum: 808
+rightmostForestNum: 1058
+specialmostForestNum: 23415
 
 ID: 3 label: F
-parent is 1
-childrenNum: 2
-4 5 
-subTreeSize: 3
-subTreeSizeSum: 5
-leftmostForestNum: 4
-rightmostForestNum: 4
-specialmostForestNum: 4
+parent is 2
+childrenNum: 1
+4 
+subTreeSize: 238
+subTreeSizeSum: 5265
+leftmostForestNum: 807
+rightmostForestNum: 1057
+specialmostForestNum: 23414
 
-ID: 4 label: A
+ID: 4 label: J
 parent is 3
-childrenNum: 0
+childrenNum: 1
+5 
+subTreeSize: 237
+subTreeSizeSum: 5027
+leftmostForestNum: 806
+rightmostForestNum: 1056
+specialmostForestNum: 23413
 
-subTreeSize: 1
-subTreeSizeSum: 1
-leftmostForestNum: 1
-rightmostForestNum: 1
-specialmostForestNum: 1
-
-ID: 5 label: C
-parent is 3
-childrenNum: 0
-
-subTreeSize: 1
-subTreeSizeSum: 1
-leftmostForestNum: 1
-rightmostForestNum: 1
-specialmostForestNum: 1
+ID: 5 label: M
+parent is 4
+childrenNum: 1
+6 
+subTreeSize: 236
+subTreeSizeSum: 4790
+leftmostForestNum: 805
+rightmostForestNum: 1055
+specialmostForestNum: 23412
 
 ID: 6 label: F
-parent is 0
+parent is 5
+childrenNum: 1
+7 
+subTreeSize: 235
+subTreeSizeSum: 4554
+leftmostForestNum: 804
+rightmostForestNum: 1054
+specialmostForestNum: 23411
+
+ID: 7 label: J
+parent is 6
+childrenNum: 1
+8 
+subTreeSize: 234
+subTreeSizeSum: 4319
+leftmostForestNum: 803
+rightmostForestNum: 1053
+specialmostForestNum: 23410
+
+ID: 8 label: J
+parent is 7
+childrenNum: 1
+9 
+subTreeSize: 233
+subTreeSizeSum: 4085
+leftmostForestNum: 802
+rightmostForestNum: 1052
+specialmostForestNum: 23409
+
+ID: 9 label: M
+parent is 8
+childrenNum: 1
+10 
+subTreeSize: 232
+subTreeSizeSum: 3852
+leftmostForestNum: 801
+rightmostForestNum: 1051
+specialmostForestNum: 23408
+
+ID: 10 label: M
+parent is 9
 childrenNum: 2
-7 8 
-subTreeSize: 3
-subTreeSizeSum: 5
-leftmostForestNum: 4
-rightmostForestNum: 4
-specialmostForestNum: 4
+11 240 
+subTreeSize: 231
+subTreeSizeSum: 3620
+leftmostForestNum: 800
+rightmostForestNum: 1050
+specialmostForestNum: 23407
 
-ID: 7 label: A
-parent is 6
+ID: 11 label: F
+parent is 10
+childrenNum: 21
+12 204 205 206 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 
+subTreeSize: 229
+subTreeSizeSum: 3388
+leftmostForestNum: 797
+rightmostForestNum: 819
+specialmostForestNum: 23176
+
+ID: 12 label: J
+parent is 11
+childrenNum: 1
+13 
+subTreeSize: 192
+subTreeSizeSum: 3020
+leftmostForestNum: 707
+rightmostForestNum: 538
+specialmostForestNum: 15700
+
+ID: 13 label: K
+parent is 12
+childrenNum: 1
+14 
+subTreeSize: 191
+subTreeSizeSum: 2828
+leftmostForestNum: 706
+rightmostForestNum: 537
+specialmostForestNum: 15699
+
+ID: 14 label: M
+parent is 13
+childrenNum: 1
+15 
+subTreeSize: 190
+subTreeSizeSum: 2637
+leftmostForestNum: 705
+rightmostForestNum: 536
+specialmostForestNum: 15698
+
+ID: 15 label: F
+parent is 14
+childrenNum: 1
+16 
+subTreeSize: 189
+subTreeSizeSum: 2447
+leftmostForestNum: 704
+rightmostForestNum: 535
+specialmostForestNum: 15697
+
+ID: 16 label: F
+parent is 15
+childrenNum: 1
+17 
+subTreeSize: 188
+subTreeSizeSum: 2258
+leftmostForestNum: 703
+rightmostForestNum: 534
+specialmostForestNum: 15696
+
+ID: 17 label: M
+parent is 16
+childrenNum: 1
+18 
+subTreeSize: 187
+subTreeSizeSum: 2070
+leftmostForestNum: 702
+rightmostForestNum: 533
+specialmostForestNum: 15695
+
+ID: 18 label: M
+parent is 17
+childrenNum: 37
+19 20 36 37 38 39 40 41 42 43 44 45 46 47 48 49 139 140 141 142 176 177 178 179 180 181 182 194 195 196 197 198 199 200 201 202 203 
+subTreeSize: 186
+subTreeSizeSum: 1883
+leftmostForestNum: 701
+rightmostForestNum: 532
+specialmostForestNum: 15694
+
+ID: 19 label: G
+parent is 18
 childrenNum: 0
 
 subTreeSize: 1
@@ -80,8 +200,28 @@ leftmostForestNum: 1
 rightmostForestNum: 1
 specialmostForestNum: 1
 
-ID: 8 label: C
-parent is 6
+ID: 20 label: M
+parent is 18
+childrenNum: 1
+21 
+subTreeSize: 16
+subTreeSizeSum: 105
+leftmostForestNum: 32
+rightmostForestNum: 32
+specialmostForestNum: 47
+
+ID: 21 label: Q
+parent is 20
+childrenNum: 3
+22 23 35 
+subTreeSize: 15
+subTreeSizeSum: 89
+leftmostForestNum: 31
+rightmostForestNum: 31
+specialmostForestNum: 46
+
+ID: 22 label: G
+parent is 21
 childrenNum: 0
 
 subTreeSize: 1
@@ -90,7 +230,2187 @@ leftmostForestNum: 1
 rightmostForestNum: 1
 specialmostForestNum: 1
 
-ID: 9 label: A
+ID: 23 label: M
+parent is 21
+childrenNum: 1
+24 
+subTreeSize: 12
+subTreeSizeSum: 72
+leftmostForestNum: 15
+rightmostForestNum: 15
+specialmostForestNum: 18
+
+ID: 24 label: M
+parent is 23
+childrenNum: 1
+25 
+subTreeSize: 11
+subTreeSizeSum: 60
+leftmostForestNum: 14
+rightmostForestNum: 14
+specialmostForestNum: 17
+
+ID: 25 label: P
+parent is 24
+childrenNum: 1
+26 
+subTreeSize: 10
+subTreeSizeSum: 49
+leftmostForestNum: 13
+rightmostForestNum: 13
+specialmostForestNum: 16
+
+ID: 26 label: J
+parent is 25
+childrenNum: 1
+27 
+subTreeSize: 9
+subTreeSizeSum: 39
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 15
+
+ID: 27 label: M
+parent is 26
+childrenNum: 1
+28 
+subTreeSize: 8
+subTreeSizeSum: 30
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 14
+
+ID: 28 label: F
+parent is 27
+childrenNum: 1
+29 
+subTreeSize: 7
+subTreeSizeSum: 22
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 13
+
+ID: 29 label: M
+parent is 28
+childrenNum: 1
+30 
+subTreeSize: 6
+subTreeSizeSum: 15
+leftmostForestNum: 9
+rightmostForestNum: 9
+specialmostForestNum: 12
+
+ID: 30 label: M
+parent is 29
+childrenNum: 4
+31 32 33 34 
+subTreeSize: 5
+subTreeSizeSum: 9
+leftmostForestNum: 8
+rightmostForestNum: 8
+specialmostForestNum: 11
+
+ID: 31 label: G
+parent is 30
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 32 label: C
+parent is 30
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 33 label: A
+parent is 30
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 34 label: A
+parent is 30
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 35 label: G
+parent is 21
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 36 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 37 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 38 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 39 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 40 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 41 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 42 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 43 label: U
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 44 label: C
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 45 label: C
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 46 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 47 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 48 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 49 label: M
+parent is 18
+childrenNum: 1
+50 
+subTreeSize: 90
+subTreeSizeSum: 1199
+leftmostForestNum: 357
+rightmostForestNum: 197
+specialmostForestNum: 2986
+
+ID: 50 label: P
+parent is 49
+childrenNum: 1
+51 
+subTreeSize: 89
+subTreeSizeSum: 1109
+leftmostForestNum: 356
+rightmostForestNum: 196
+specialmostForestNum: 2985
+
+ID: 51 label: M
+parent is 50
+childrenNum: 1
+52 
+subTreeSize: 88
+subTreeSizeSum: 1020
+leftmostForestNum: 355
+rightmostForestNum: 195
+specialmostForestNum: 2984
+
+ID: 52 label: M
+parent is 51
+childrenNum: 9
+53 54 55 56 57 58 59 60 61 
+subTreeSize: 87
+subTreeSizeSum: 932
+leftmostForestNum: 354
+rightmostForestNum: 194
+specialmostForestNum: 2983
+
+ID: 53 label: A
+parent is 52
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 54 label: C
+parent is 52
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 55 label: A
+parent is 52
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 56 label: G
+parent is 52
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 57 label: G
+parent is 52
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 58 label: G
+parent is 52
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 59 label: C
+parent is 52
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 60 label: A
+parent is 52
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 61 label: K
+parent is 52
+childrenNum: 1
+62 
+subTreeSize: 78
+subTreeSizeSum: 837
+leftmostForestNum: 260
+rightmostForestNum: 177
+specialmostForestNum: 2322
+
+ID: 62 label: J
+parent is 61
+childrenNum: 1
+63 
+subTreeSize: 77
+subTreeSizeSum: 759
+leftmostForestNum: 259
+rightmostForestNum: 176
+specialmostForestNum: 2321
+
+ID: 63 label: J
+parent is 62
+childrenNum: 1
+64 
+subTreeSize: 76
+subTreeSizeSum: 682
+leftmostForestNum: 258
+rightmostForestNum: 175
+specialmostForestNum: 2320
+
+ID: 64 label: P
+parent is 63
+childrenNum: 1
+65 
+subTreeSize: 75
+subTreeSizeSum: 606
+leftmostForestNum: 257
+rightmostForestNum: 174
+specialmostForestNum: 2319
+
+ID: 65 label: J
+parent is 64
+childrenNum: 3
+66 76 86 
+subTreeSize: 74
+subTreeSizeSum: 531
+leftmostForestNum: 256
+rightmostForestNum: 173
+specialmostForestNum: 2318
+
+ID: 66 label: S
+parent is 65
+childrenNum: 1
+67 
+subTreeSize: 10
+subTreeSizeSum: 45
+leftmostForestNum: 14
+rightmostForestNum: 14
+specialmostForestNum: 20
+
+ID: 67 label: P
+parent is 66
+childrenNum: 1
+68 
+subTreeSize: 9
+subTreeSizeSum: 35
+leftmostForestNum: 13
+rightmostForestNum: 13
+specialmostForestNum: 19
+
+ID: 68 label: J
+parent is 67
+childrenNum: 1
+69 
+subTreeSize: 8
+subTreeSizeSum: 26
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 18
+
+ID: 69 label: J
+parent is 68
+childrenNum: 1
+70 
+subTreeSize: 7
+subTreeSizeSum: 18
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 17
+
+ID: 70 label: M
+parent is 69
+childrenNum: 5
+71 72 73 74 75 
+subTreeSize: 6
+subTreeSizeSum: 11
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 16
+
+ID: 71 label: U
+parent is 70
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 72 label: A
+parent is 70
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 73 label: A
+parent is 70
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 74 label: C
+parent is 70
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 75 label: A
+parent is 70
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 76 label: M
+parent is 65
+childrenNum: 2
+77 85 
+subTreeSize: 10
+subTreeSizeSum: 41
+leftmostForestNum: 14
+rightmostForestNum: 21
+specialmostForestNum: 24
+
+ID: 77 label: M
+parent is 76
+childrenNum: 1
+78 
+subTreeSize: 8
+subTreeSizeSum: 30
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 14
+
+ID: 78 label: F
+parent is 77
+childrenNum: 1
+79 
+subTreeSize: 7
+subTreeSizeSum: 22
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 13
+
+ID: 79 label: M
+parent is 78
+childrenNum: 1
+80 
+subTreeSize: 6
+subTreeSizeSum: 15
+leftmostForestNum: 9
+rightmostForestNum: 9
+specialmostForestNum: 12
+
+ID: 80 label: J
+parent is 79
+childrenNum: 4
+81 82 83 84 
+subTreeSize: 5
+subTreeSizeSum: 9
+leftmostForestNum: 8
+rightmostForestNum: 8
+specialmostForestNum: 11
+
+ID: 81 label: G
+parent is 80
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 82 label: C
+parent is 80
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 83 label: A
+parent is 80
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 84 label: A
+parent is 80
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 85 label: C
+parent is 76
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 86 label: J
+parent is 65
+childrenNum: 1
+87 
+subTreeSize: 53
+subTreeSizeSum: 371
+leftmostForestNum: 164
+rightmostForestNum: 117
+specialmostForestNum: 1113
+
+ID: 87 label: F
+parent is 86
+childrenNum: 4
+88 89 90 91 
+subTreeSize: 52
+subTreeSizeSum: 318
+leftmostForestNum: 163
+rightmostForestNum: 116
+specialmostForestNum: 1112
+
+ID: 88 label: A
+parent is 87
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 89 label: U
+parent is 87
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 90 label: A
+parent is 87
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 91 label: J
+parent is 87
+childrenNum: 1
+92 
+subTreeSize: 48
+subTreeSizeSum: 263
+leftmostForestNum: 109
+rightmostForestNum: 109
+specialmostForestNum: 961
+
+ID: 92 label: J
+parent is 91
+childrenNum: 29
+93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 125 126 127 128 129 130 131 132 133 134 135 136 137 138 
+subTreeSize: 47
+subTreeSizeSum: 215
+leftmostForestNum: 108
+rightmostForestNum: 108
+specialmostForestNum: 960
+
+ID: 93 label: G
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 94 label: C
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 95 label: C
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 96 label: A
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 97 label: C
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 98 label: A
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 99 label: G
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 100 label: A
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 101 label: G
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 102 label: A
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 103 label: C
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 104 label: G
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 105 label: A
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 106 label: G
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 107 label: Q
+parent is 92
+childrenNum: 1
+108 
+subTreeSize: 18
+subTreeSizeSum: 140
+leftmostForestNum: 34
+rightmostForestNum: 34
+specialmostForestNum: 49
+
+ID: 108 label: M
+parent is 107
+childrenNum: 1
+109 
+subTreeSize: 17
+subTreeSizeSum: 122
+leftmostForestNum: 33
+rightmostForestNum: 33
+specialmostForestNum: 48
+
+ID: 109 label: P
+parent is 108
+childrenNum: 1
+110 
+subTreeSize: 16
+subTreeSizeSum: 105
+leftmostForestNum: 32
+rightmostForestNum: 32
+specialmostForestNum: 47
+
+ID: 110 label: P
+parent is 109
+childrenNum: 3
+111 112 124 
+subTreeSize: 15
+subTreeSizeSum: 89
+leftmostForestNum: 31
+rightmostForestNum: 31
+specialmostForestNum: 46
+
+ID: 111 label: G
+parent is 110
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 112 label: M
+parent is 110
+childrenNum: 1
+113 
+subTreeSize: 12
+subTreeSizeSum: 72
+leftmostForestNum: 15
+rightmostForestNum: 15
+specialmostForestNum: 18
+
+ID: 113 label: M
+parent is 112
+childrenNum: 1
+114 
+subTreeSize: 11
+subTreeSizeSum: 60
+leftmostForestNum: 14
+rightmostForestNum: 14
+specialmostForestNum: 17
+
+ID: 114 label: J
+parent is 113
+childrenNum: 1
+115 
+subTreeSize: 10
+subTreeSizeSum: 49
+leftmostForestNum: 13
+rightmostForestNum: 13
+specialmostForestNum: 16
+
+ID: 115 label: M
+parent is 114
+childrenNum: 1
+116 
+subTreeSize: 9
+subTreeSizeSum: 39
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 15
+
+ID: 116 label: M
+parent is 115
+childrenNum: 1
+117 
+subTreeSize: 8
+subTreeSizeSum: 30
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 14
+
+ID: 117 label: J
+parent is 116
+childrenNum: 1
+118 
+subTreeSize: 7
+subTreeSizeSum: 22
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 13
+
+ID: 118 label: J
+parent is 117
+childrenNum: 1
+119 
+subTreeSize: 6
+subTreeSizeSum: 15
+leftmostForestNum: 9
+rightmostForestNum: 9
+specialmostForestNum: 12
+
+ID: 119 label: J
+parent is 118
+childrenNum: 4
+120 121 122 123 
+subTreeSize: 5
+subTreeSizeSum: 9
+leftmostForestNum: 8
+rightmostForestNum: 8
+specialmostForestNum: 11
+
+ID: 120 label: U
+parent is 119
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 121 label: U
+parent is 119
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 122 label: C
+parent is 119
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 123 label: G
+parent is 119
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 124 label: G
+parent is 110
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 125 label: G
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 126 label: U
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 127 label: G
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 128 label: A
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 129 label: A
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 130 label: A
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 131 label: C
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 132 label: G
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 133 label: C
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 134 label: G
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 135 label: G
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 136 label: U
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 137 label: A
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 138 label: A
+parent is 92
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 139 label: C
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 140 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 141 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 142 label: P
+parent is 18
+childrenNum: 1
+143 
+subTreeSize: 34
+subTreeSizeSum: 288
+leftmostForestNum: 79
+rightmostForestNum: 70
+specialmostForestNum: 341
+
+ID: 143 label: M
+parent is 142
+childrenNum: 1
+144 
+subTreeSize: 33
+subTreeSizeSum: 254
+leftmostForestNum: 78
+rightmostForestNum: 69
+specialmostForestNum: 340
+
+ID: 144 label: M
+parent is 143
+childrenNum: 1
+145 
+subTreeSize: 32
+subTreeSizeSum: 221
+leftmostForestNum: 77
+rightmostForestNum: 68
+specialmostForestNum: 339
+
+ID: 145 label: M
+parent is 144
+childrenNum: 12
+146 147 148 149 150 151 152 171 172 173 174 175 
+subTreeSize: 31
+subTreeSizeSum: 189
+leftmostForestNum: 76
+rightmostForestNum: 67
+specialmostForestNum: 338
+
+ID: 146 label: A
+parent is 145
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 147 label: A
+parent is 145
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 148 label: A
+parent is 145
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 149 label: U
+parent is 145
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 150 label: A
+parent is 145
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 151 label: G
+parent is 145
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 152 label: J
+parent is 145
+childrenNum: 1
+153 
+subTreeSize: 19
+subTreeSizeSum: 147
+leftmostForestNum: 35
+rightmostForestNum: 26
+specialmostForestNum: 62
+
+ID: 153 label: M
+parent is 152
+childrenNum: 1
+154 
+subTreeSize: 18
+subTreeSizeSum: 128
+leftmostForestNum: 34
+rightmostForestNum: 25
+specialmostForestNum: 61
+
+ID: 154 label: F
+parent is 153
+childrenNum: 1
+155 
+subTreeSize: 17
+subTreeSizeSum: 110
+leftmostForestNum: 33
+rightmostForestNum: 24
+specialmostForestNum: 60
+
+ID: 155 label: J
+parent is 154
+childrenNum: 1
+156 
+subTreeSize: 16
+subTreeSizeSum: 93
+leftmostForestNum: 32
+rightmostForestNum: 23
+specialmostForestNum: 59
+
+ID: 156 label: K
+parent is 155
+childrenNum: 1
+157 
+subTreeSize: 15
+subTreeSizeSum: 77
+leftmostForestNum: 31
+rightmostForestNum: 22
+specialmostForestNum: 58
+
+ID: 157 label: M
+parent is 156
+childrenNum: 4
+158 159 160 161 
+subTreeSize: 14
+subTreeSizeSum: 62
+leftmostForestNum: 30
+rightmostForestNum: 21
+specialmostForestNum: 57
+
+ID: 158 label: G
+parent is 157
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 159 label: A
+parent is 157
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 160 label: U
+parent is 157
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 161 label: H
+parent is 157
+childrenNum: 1
+162 
+subTreeSize: 10
+subTreeSizeSum: 45
+leftmostForestNum: 14
+rightmostForestNum: 14
+specialmostForestNum: 20
+
+ID: 162 label: D
+parent is 161
+childrenNum: 1
+163 
+subTreeSize: 9
+subTreeSizeSum: 35
+leftmostForestNum: 13
+rightmostForestNum: 13
+specialmostForestNum: 19
+
+ID: 163 label: F
+parent is 162
+childrenNum: 1
+164 
+subTreeSize: 8
+subTreeSizeSum: 26
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 18
+
+ID: 164 label: J
+parent is 163
+childrenNum: 1
+165 
+subTreeSize: 7
+subTreeSizeSum: 18
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 17
+
+ID: 165 label: M
+parent is 164
+childrenNum: 5
+166 167 168 169 170 
+subTreeSize: 6
+subTreeSizeSum: 11
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 16
+
+ID: 166 label: G
+parent is 165
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 167 label: G
+parent is 165
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 168 label: C
+parent is 165
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 169 label: C
+parent is 165
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 170 label: C
+parent is 165
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 171 label: G
+parent is 145
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 172 label: G
+parent is 145
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 173 label: G
+parent is 145
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 174 label: U
+parent is 145
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 175 label: A
+parent is 145
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 176 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 177 label: C
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 178 label: U
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 179 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 180 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 181 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 182 label: J
+parent is 18
+childrenNum: 1
+183 
+subTreeSize: 12
+subTreeSizeSum: 72
+leftmostForestNum: 15
+rightmostForestNum: 15
+specialmostForestNum: 18
+
+ID: 183 label: M
+parent is 182
+childrenNum: 1
+184 
+subTreeSize: 11
+subTreeSizeSum: 60
+leftmostForestNum: 14
+rightmostForestNum: 14
+specialmostForestNum: 17
+
+ID: 184 label: M
+parent is 183
+childrenNum: 1
+185 
+subTreeSize: 10
+subTreeSizeSum: 49
+leftmostForestNum: 13
+rightmostForestNum: 13
+specialmostForestNum: 16
+
+ID: 185 label: J
+parent is 184
+childrenNum: 1
+186 
+subTreeSize: 9
+subTreeSizeSum: 39
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 15
+
+ID: 186 label: J
+parent is 185
+childrenNum: 1
+187 
+subTreeSize: 8
+subTreeSizeSum: 30
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 14
+
+ID: 187 label: M
+parent is 186
+childrenNum: 1
+188 
+subTreeSize: 7
+subTreeSizeSum: 22
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 13
+
+ID: 188 label: P
+parent is 187
+childrenNum: 1
+189 
+subTreeSize: 6
+subTreeSizeSum: 15
+leftmostForestNum: 9
+rightmostForestNum: 9
+specialmostForestNum: 12
+
+ID: 189 label: J
+parent is 188
+childrenNum: 4
+190 191 192 193 
+subTreeSize: 5
+subTreeSizeSum: 9
+leftmostForestNum: 8
+rightmostForestNum: 8
+specialmostForestNum: 11
+
+ID: 190 label: G
+parent is 189
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 191 label: U
+parent is 189
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 192 label: A
+parent is 189
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 193 label: A
+parent is 189
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 194 label: C
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 195 label: U
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 196 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 197 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 198 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 199 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 200 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 201 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 202 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 203 label: U
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 204 label: A
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 205 label: C
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 206 label: J
+parent is 11
+childrenNum: 1
+207 
+subTreeSize: 17
+subTreeSizeSum: 120
+leftmostForestNum: 34
+rightmostForestNum: 34
+specialmostForestNum: 50
+
+ID: 207 label: M
+parent is 206
+childrenNum: 3
+208 209 222 
+subTreeSize: 16
+subTreeSizeSum: 103
+leftmostForestNum: 33
+rightmostForestNum: 33
+specialmostForestNum: 49
+
+ID: 208 label: A
+parent is 207
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 209 label: M
+parent is 207
+childrenNum: 1
+210 
+subTreeSize: 13
+subTreeSizeSum: 85
+leftmostForestNum: 16
+rightmostForestNum: 16
+specialmostForestNum: 19
+
+ID: 210 label: M
+parent is 209
+childrenNum: 1
+211 
+subTreeSize: 12
+subTreeSizeSum: 72
+leftmostForestNum: 15
+rightmostForestNum: 15
+specialmostForestNum: 18
+
+ID: 211 label: J
+parent is 210
+childrenNum: 1
+212 
+subTreeSize: 11
+subTreeSizeSum: 60
+leftmostForestNum: 14
+rightmostForestNum: 14
+specialmostForestNum: 17
+
+ID: 212 label: Q
+parent is 211
+childrenNum: 1
+213 
+subTreeSize: 10
+subTreeSizeSum: 49
+leftmostForestNum: 13
+rightmostForestNum: 13
+specialmostForestNum: 16
+
+ID: 213 label: Q
+parent is 212
+childrenNum: 1
+214 
+subTreeSize: 9
+subTreeSizeSum: 39
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 15
+
+ID: 214 label: Q
+parent is 213
+childrenNum: 1
+215 
+subTreeSize: 8
+subTreeSizeSum: 30
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 14
+
+ID: 215 label: J
+parent is 214
+childrenNum: 1
+216 
+subTreeSize: 7
+subTreeSizeSum: 22
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 13
+
+ID: 216 label: M
+parent is 215
+childrenNum: 1
+217 
+subTreeSize: 6
+subTreeSizeSum: 15
+leftmostForestNum: 9
+rightmostForestNum: 9
+specialmostForestNum: 12
+
+ID: 217 label: M
+parent is 216
+childrenNum: 4
+218 219 220 221 
+subTreeSize: 5
+subTreeSizeSum: 9
+leftmostForestNum: 8
+rightmostForestNum: 8
+specialmostForestNum: 11
+
+ID: 218 label: G
+parent is 217
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 219 label: C
+parent is 217
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 220 label: A
+parent is 217
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 221 label: A
+parent is 217
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 222 label: G
+parent is 207
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 223 label: G
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 224 label: C
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 225 label: A
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 226 label: C
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 227 label: A
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 228 label: G
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 229 label: A
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 230 label: A
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 231 label: U
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 232 label: C
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 233 label: C
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 234 label: G
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 235 label: G
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 236 label: C
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 237 label: U
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 238 label: U
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 239 label: A
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 240 label: C
+parent is 10
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 241 label: G
 parent is 0
 childrenNum: 0
 
@@ -100,7 +2420,27 @@ leftmostForestNum: 1
 rightmostForestNum: 1
 specialmostForestNum: 1
 
-ID: 10 label: A
+ID: 242 label: C
+parent is 0
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 243 label: U
+parent is 0
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 244 label: U
 parent is 0
 childrenNum: 0
 
@@ -112,69 +2452,219 @@ specialmostForestNum: 1
 
 
 preL_to_preR
-0 6 10 7 9 8 3 5 4 2 1 
+0 5 6 7 8 9 10 11 12 13 14 16 53 54 55 56 57 58 59 244 228 229 243 231 232 233 234 235 236 237 238 242 241 240 239 230 227 226 225 224 223 222 221 220 219 218 217 216 215 125 126 127 128 214 213 212 211 210 209 208 207 129 130 131 132 133 197 198 199 200 201 206 205 204 203 202 187 189 190 191 192 196 195 194 193 188 134 135 186 185 184 136 137 183 182 181 180 179 178 177 176 175 174 173 172 171 170 152 153 154 155 169 157 158 159 160 161 162 163 164 168 167 166 165 156 151 150 149 148 147 146 145 144 143 142 141 140 139 138 124 123 122 88 89 90 91 121 120 119 118 117 116 97 98 99 100 101 102 115 114 113 103 104 105 106 107 112 111 110 109 108 96 95 94 93 92 87 86 85 84 83 82 70 71 72 73 74 75 76 77 81 80 79 78 69 68 67 66 65 64 63 62 61 60 52 51 34 35 50 37 38 39 40 41 42 43 44 45 49 48 47 46 36 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 15 4 3 2 1 
 preL_to_postL
-10 4 0 3 1 2 7 5 6 8 9 
+244 239 238 237 236 235 234 233 232 231 230 228 191 190 189 188 187 186 185 0 16 15 1 13 12 11 10 9 8 7 6 2 3 4 5 14 17 18 19 20 21 22 23 24 25 26 27 28 29 119 118 117 116 30 31 32 33 34 35 36 37 115 114 113 112 111 47 46 45 44 43 38 39 40 41 42 57 55 54 53 52 48 49 50 51 56 110 109 58 59 60 108 107 61 62 63 64 65 66 67 68 69 70 71 72 73 74 92 91 90 89 75 87 86 85 84 83 82 81 80 76 77 78 79 88 93 94 95 96 97 98 99 100 101 102 103 104 105 106 120 121 122 156 155 154 153 123 124 125 126 127 128 147 146 145 144 143 142 129 130 131 141 140 139 138 137 132 133 134 135 136 148 149 150 151 152 157 158 159 160 161 162 174 173 172 171 170 169 168 167 163 164 165 166 175 176 177 178 179 180 181 182 183 184 192 193 210 209 194 207 206 205 204 203 202 201 200 199 195 196 197 198 208 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 229 240 241 242 243 
 preL_to_postR
-10 9 8 7 6 5 4 3 2 1 0 
+244 243 242 241 240 239 238 237 236 235 234 233 232 231 230 229 228 227 226 225 224 223 222 221 220 219 218 217 216 215 214 213 212 211 210 209 208 207 206 205 204 203 202 201 200 199 198 197 196 195 194 193 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 99 98 97 96 95 94 93 92 91 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 72 71 70 69 68 67 66 65 64 63 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 
 preL_to_lid
-2 2 2 4 4 5 7 7 8 9 10 
+19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 22 22 22 31 31 31 31 31 31 31 31 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 53 53 53 53 53 54 55 56 57 58 59 60 71 71 71 71 71 71 71 71 71 71 71 72 73 74 75 81 81 81 81 81 81 82 83 84 85 88 88 88 89 90 93 93 93 94 95 96 97 98 99 100 101 102 103 104 105 106 111 111 111 111 111 120 120 120 120 120 120 120 120 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 146 146 146 146 146 147 148 149 150 151 158 158 158 158 158 158 158 159 160 166 166 166 166 166 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 190 190 190 190 190 190 190 190 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 208 208 208 218 218 218 218 218 218 218 218 218 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 
 preL_to_rid
-10 5 2 5 4 5 8 7 8 9 10 
+244 240 240 240 240 240 240 240 240 240 240 239 203 203 203 203 203 203 203 19 35 35 22 34 34 34 34 34 34 34 34 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 138 138 138 138 53 54 55 56 57 58 59 60 138 138 138 138 138 75 75 75 75 75 71 72 73 74 75 85 84 84 84 84 81 82 83 84 85 138 138 88 89 90 138 138 93 94 95 96 97 98 99 100 101 102 103 104 105 106 124 124 124 124 111 123 123 123 123 123 123 123 123 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 175 175 175 175 146 147 148 149 150 151 170 170 170 170 170 170 158 159 160 170 170 170 170 170 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 193 193 193 193 193 193 193 193 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 222 222 208 221 221 221 221 221 221 221 221 221 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 
 preL_to_sumDelCost
-11 5 1 3 1 1 3 1 1 1 1 
+245 240 239 238 237 236 235 234 233 232 231 229 192 191 190 189 188 187 186 1 16 15 1 12 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 90 89 88 87 1 1 1 1 1 1 1 1 78 77 76 75 74 10 9 8 7 6 1 1 1 1 1 10 8 7 6 5 1 1 1 1 1 53 52 1 1 1 48 47 1 1 1 1 1 1 1 1 1 1 1 1 1 1 18 17 16 15 1 12 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 34 33 32 31 1 1 1 1 1 1 19 18 17 16 15 14 1 1 1 10 9 8 7 6 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 12 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 17 16 1 13 12 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 preL_to_sumInsCost
-11 5 1 3 1 1 3 1 1 1 1 
+245 240 239 238 237 236 235 234 233 232 231 229 192 191 190 189 188 187 186 1 16 15 1 12 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 90 89 88 87 1 1 1 1 1 1 1 1 78 77 76 75 74 10 9 8 7 6 1 1 1 1 1 10 8 7 6 5 1 1 1 1 1 53 52 1 1 1 48 47 1 1 1 1 1 1 1 1 1 1 1 1 1 1 18 17 16 15 1 12 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 34 33 32 31 1 1 1 1 1 1 19 18 17 16 15 14 1 1 1 10 9 8 7 6 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 12 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 17 16 1 13 12 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 preL_to_ln
--1 -1 -1 2 2 4 5 5 7 8 9 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 19 19 19 22 22 22 22 22 22 22 22 22 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 48 48 48 48 53 54 55 56 57 58 59 60 60 60 60 60 60 60 60 60 60 60 71 72 73 74 75 75 75 75 75 75 81 82 83 84 85 85 85 88 89 90 90 90 93 94 95 96 97 98 99 100 101 102 103 104 105 106 106 106 106 106 111 111 111 111 111 111 111 111 111 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 141 141 141 141 146 147 148 149 150 151 151 151 151 151 151 151 158 159 160 160 160 160 160 160 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 181 181 181 181 181 181 181 181 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 205 205 208 208 208 208 208 208 208 208 208 208 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 
 preR_to_ln
--1 -1 1 2 2 4 5 5 5 8 9 
+-1 -1 1 2 3 4 4 4 4 4 4 4 4 4 4 4 15 15 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 33 33 36 36 36 36 36 36 36 36 36 36 46 47 48 49 50 51 52 52 52 52 52 52 52 52 60 61 62 63 64 65 66 67 68 69 69 69 69 69 69 69 69 69 78 79 80 81 82 83 84 85 86 87 87 87 87 87 92 93 94 95 96 96 96 96 96 96 96 96 96 96 96 96 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 124 124 124 124 124 124 124 124 124 124 124 124 124 138 139 140 141 142 143 144 145 146 147 148 149 150 151 151 151 151 151 156 156 156 156 156 156 156 156 156 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 186 188 188 188 188 188 193 194 195 196 196 196 196 196 196 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 227 227 230 230 230 230 230 230 230 230 230 239 240 241 242 243 
 postL_to_preL
-2 4 5 3 1 7 8 6 9 10 0 
+19 22 31 32 33 34 30 29 28 27 26 25 24 23 35 21 20 36 37 38 39 40 41 42 43 44 45 46 47 48 53 54 55 56 57 58 59 60 71 72 73 74 75 70 69 68 67 66 81 82 83 84 80 79 78 77 85 76 88 89 90 93 94 95 96 97 98 99 100 101 102 103 104 105 106 111 120 121 122 123 119 118 117 116 115 114 113 112 124 110 109 108 107 125 126 127 128 129 130 131 132 133 134 135 136 137 138 92 91 87 86 65 64 63 62 61 52 51 50 49 139 140 141 146 147 148 149 150 151 158 159 160 166 167 168 169 170 165 164 163 162 161 157 156 155 154 153 152 171 172 173 174 175 145 144 143 142 176 177 178 179 180 181 190 191 192 193 189 188 187 186 185 184 183 182 194 195 196 197 198 199 200 201 202 203 18 17 16 15 14 13 12 204 205 208 218 219 220 221 217 216 215 214 213 212 211 210 209 222 207 206 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 11 240 10 9 8 7 6 5 4 3 2 1 241 242 243 244 0 
 Tree B
-preL size = 10
+preL size = 283
 ID: 0 label: B
 Root
-childrenNum: 2
-1 6 
-subTreeSize: 10
-subTreeSizeSum: 28
-leftmostForestNum: 20
-rightmostForestNum: 19
-specialmostForestNum: 37
+childrenNum: 5
+1 279 280 281 282 
+subTreeSize: 283
+subTreeSizeSum: 7365
+leftmostForestNum: 1022
+rightmostForestNum: 1553
+specialmostForestNum: 33104
 
-ID: 1 label: F
+ID: 1 label: M
 parent is 0
-childrenNum: 2
-2 3 
-subTreeSize: 5
-subTreeSizeSum: 11
-leftmostForestNum: 9
-rightmostForestNum: 7
-specialmostForestNum: 9
+childrenNum: 1
+2 
+subTreeSize: 278
+subTreeSizeSum: 7078
+leftmostForestNum: 1013
+rightmostForestNum: 1267
+specialmostForestNum: 31981
 
-ID: 2 label: A
+ID: 2 label: J
 parent is 1
-childrenNum: 0
+childrenNum: 1
+3 
+subTreeSize: 277
+subTreeSizeSum: 6800
+leftmostForestNum: 1012
+rightmostForestNum: 1266
+specialmostForestNum: 31980
 
-subTreeSize: 1
-subTreeSizeSum: 1
-leftmostForestNum: 1
-rightmostForestNum: 1
-specialmostForestNum: 1
+ID: 3 label: F
+parent is 2
+childrenNum: 1
+4 
+subTreeSize: 276
+subTreeSizeSum: 6523
+leftmostForestNum: 1011
+rightmostForestNum: 1265
+specialmostForestNum: 31979
 
-ID: 3 label: M
-parent is 1
+ID: 4 label: J
+parent is 3
+childrenNum: 1
+5 
+subTreeSize: 275
+subTreeSizeSum: 6247
+leftmostForestNum: 1010
+rightmostForestNum: 1264
+specialmostForestNum: 31978
+
+ID: 5 label: L
+parent is 4
+childrenNum: 1
+6 
+subTreeSize: 274
+subTreeSizeSum: 5972
+leftmostForestNum: 1009
+rightmostForestNum: 1263
+specialmostForestNum: 31977
+
+ID: 6 label: M
+parent is 5
+childrenNum: 1
+7 
+subTreeSize: 273
+subTreeSizeSum: 5698
+leftmostForestNum: 1008
+rightmostForestNum: 1262
+specialmostForestNum: 31976
+
+ID: 7 label: J
+parent is 6
+childrenNum: 1
+8 
+subTreeSize: 272
+subTreeSizeSum: 5425
+leftmostForestNum: 1007
+rightmostForestNum: 1261
+specialmostForestNum: 31975
+
+ID: 8 label: J
+parent is 7
+childrenNum: 1
+9 
+subTreeSize: 271
+subTreeSizeSum: 5153
+leftmostForestNum: 1006
+rightmostForestNum: 1260
+specialmostForestNum: 31974
+
+ID: 9 label: J
+parent is 8
+childrenNum: 1
+10 
+subTreeSize: 270
+subTreeSizeSum: 4882
+leftmostForestNum: 1005
+rightmostForestNum: 1259
+specialmostForestNum: 31973
+
+ID: 10 label: M
+parent is 9
 childrenNum: 2
-4 5 
-subTreeSize: 3
-subTreeSizeSum: 5
-leftmostForestNum: 4
-rightmostForestNum: 4
-specialmostForestNum: 4
+11 278 
+subTreeSize: 269
+subTreeSizeSum: 4612
+leftmostForestNum: 1004
+rightmostForestNum: 1258
+specialmostForestNum: 31972
 
-ID: 4 label: A
-parent is 3
+ID: 11 label: J
+parent is 10
+childrenNum: 18
+12 246 247 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 
+subTreeSize: 267
+subTreeSizeSum: 4342
+leftmostForestNum: 1001
+rightmostForestNum: 989
+specialmostForestNum: 31703
+
+ID: 12 label: J
+parent is 11
+childrenNum: 1
+13 
+subTreeSize: 234
+subTreeSizeSum: 3956
+leftmostForestNum: 923
+rightmostForestNum: 678
+specialmostForestNum: 23773
+
+ID: 13 label: K
+parent is 12
+childrenNum: 1
+14 
+subTreeSize: 233
+subTreeSizeSum: 3722
+leftmostForestNum: 922
+rightmostForestNum: 677
+specialmostForestNum: 23772
+
+ID: 14 label: M
+parent is 13
+childrenNum: 1
+15 
+subTreeSize: 232
+subTreeSizeSum: 3489
+leftmostForestNum: 921
+rightmostForestNum: 676
+specialmostForestNum: 23771
+
+ID: 15 label: J
+parent is 14
+childrenNum: 1
+16 
+subTreeSize: 231
+subTreeSizeSum: 3257
+leftmostForestNum: 920
+rightmostForestNum: 675
+specialmostForestNum: 23770
+
+ID: 16 label: J
+parent is 15
+childrenNum: 1
+17 
+subTreeSize: 230
+subTreeSizeSum: 3026
+leftmostForestNum: 919
+rightmostForestNum: 674
+specialmostForestNum: 23769
+
+ID: 17 label: M
+parent is 16
+childrenNum: 1
+18 
+subTreeSize: 229
+subTreeSizeSum: 2796
+leftmostForestNum: 918
+rightmostForestNum: 673
+specialmostForestNum: 23768
+
+ID: 18 label: M
+parent is 17
+childrenNum: 37
+19 20 35 36 37 38 39 40 41 42 43 44 45 46 47 48 167 168 169 170 218 219 220 221 222 223 224 236 237 238 239 240 241 242 243 244 245 
+subTreeSize: 228
+subTreeSizeSum: 2567
+leftmostForestNum: 917
+rightmostForestNum: 672
+specialmostForestNum: 23767
+
+ID: 19 label: G
+parent is 18
 childrenNum: 0
 
 subTreeSize: 1
@@ -183,28 +2673,28 @@ leftmostForestNum: 1
 rightmostForestNum: 1
 specialmostForestNum: 1
 
-ID: 5 label: C
-parent is 3
-childrenNum: 0
+ID: 20 label: M
+parent is 18
+childrenNum: 1
+21 
+subTreeSize: 15
+subTreeSizeSum: 91
+leftmostForestNum: 30
+rightmostForestNum: 30
+specialmostForestNum: 44
 
-subTreeSize: 1
-subTreeSizeSum: 1
-leftmostForestNum: 1
-rightmostForestNum: 1
-specialmostForestNum: 1
-
-ID: 6 label: F
-parent is 0
+ID: 21 label: J
+parent is 20
 childrenNum: 3
-7 8 9 
-subTreeSize: 4
-subTreeSizeSum: 7
-leftmostForestNum: 6
-rightmostForestNum: 6
-specialmostForestNum: 7
+22 23 34 
+subTreeSize: 14
+subTreeSizeSum: 76
+leftmostForestNum: 29
+rightmostForestNum: 29
+specialmostForestNum: 43
 
-ID: 7 label: C
-parent is 6
+ID: 22 label: U
+parent is 21
 childrenNum: 0
 
 subTreeSize: 1
@@ -213,8 +2703,78 @@ leftmostForestNum: 1
 rightmostForestNum: 1
 specialmostForestNum: 1
 
-ID: 8 label: A
-parent is 6
+ID: 23 label: J
+parent is 21
+childrenNum: 1
+24 
+subTreeSize: 11
+subTreeSizeSum: 60
+leftmostForestNum: 14
+rightmostForestNum: 14
+specialmostForestNum: 17
+
+ID: 24 label: J
+parent is 23
+childrenNum: 1
+25 
+subTreeSize: 10
+subTreeSizeSum: 49
+leftmostForestNum: 13
+rightmostForestNum: 13
+specialmostForestNum: 16
+
+ID: 25 label: K
+parent is 24
+childrenNum: 1
+26 
+subTreeSize: 9
+subTreeSizeSum: 39
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 15
+
+ID: 26 label: J
+parent is 25
+childrenNum: 1
+27 
+subTreeSize: 8
+subTreeSizeSum: 30
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 14
+
+ID: 27 label: J
+parent is 26
+childrenNum: 1
+28 
+subTreeSize: 7
+subTreeSizeSum: 22
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 13
+
+ID: 28 label: P
+parent is 27
+childrenNum: 1
+29 
+subTreeSize: 6
+subTreeSizeSum: 15
+leftmostForestNum: 9
+rightmostForestNum: 9
+specialmostForestNum: 12
+
+ID: 29 label: M
+parent is 28
+childrenNum: 4
+30 31 32 33 
+subTreeSize: 5
+subTreeSizeSum: 9
+leftmostForestNum: 8
+rightmostForestNum: 8
+specialmostForestNum: 11
+
+ID: 30 label: U
+parent is 29
 childrenNum: 0
 
 subTreeSize: 1
@@ -223,8 +2783,2518 @@ leftmostForestNum: 1
 rightmostForestNum: 1
 specialmostForestNum: 1
 
-ID: 9 label: A
-parent is 6
+ID: 31 label: U
+parent is 29
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 32 label: C
+parent is 29
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 33 label: G
+parent is 29
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 34 label: C
+parent is 21
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 35 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 36 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 37 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 38 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 39 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 40 label: C
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 41 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 42 label: U
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 43 label: C
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 44 label: C
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 45 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 46 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 47 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 48 label: M
+parent is 18
+childrenNum: 1
+49 
+subTreeSize: 119
+subTreeSizeSum: 1703
+leftmostForestNum: 500
+rightmostForestNum: 265
+specialmostForestNum: 5556
+
+ID: 49 label: P
+parent is 48
+childrenNum: 1
+50 
+subTreeSize: 118
+subTreeSizeSum: 1584
+leftmostForestNum: 499
+rightmostForestNum: 264
+specialmostForestNum: 5555
+
+ID: 50 label: M
+parent is 49
+childrenNum: 1
+51 
+subTreeSize: 117
+subTreeSizeSum: 1466
+leftmostForestNum: 498
+rightmostForestNum: 263
+specialmostForestNum: 5554
+
+ID: 51 label: M
+parent is 50
+childrenNum: 9
+52 53 54 55 56 57 58 59 60 
+subTreeSize: 116
+subTreeSizeSum: 1349
+leftmostForestNum: 497
+rightmostForestNum: 262
+specialmostForestNum: 5553
+
+ID: 52 label: A
+parent is 51
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 53 label: C
+parent is 51
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 54 label: A
+parent is 51
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 55 label: G
+parent is 51
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 56 label: A
+parent is 51
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 57 label: G
+parent is 51
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 58 label: C
+parent is 51
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 59 label: A
+parent is 51
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 60 label: J
+parent is 51
+childrenNum: 1
+61 
+subTreeSize: 107
+subTreeSizeSum: 1225
+leftmostForestNum: 374
+rightmostForestNum: 245
+specialmostForestNum: 4660
+
+ID: 61 label: K
+parent is 60
+childrenNum: 1
+62 
+subTreeSize: 106
+subTreeSizeSum: 1118
+leftmostForestNum: 373
+rightmostForestNum: 244
+specialmostForestNum: 4659
+
+ID: 62 label: J
+parent is 61
+childrenNum: 1
+63 
+subTreeSize: 105
+subTreeSizeSum: 1012
+leftmostForestNum: 372
+rightmostForestNum: 243
+specialmostForestNum: 4658
+
+ID: 63 label: P
+parent is 62
+childrenNum: 1
+64 
+subTreeSize: 104
+subTreeSizeSum: 907
+leftmostForestNum: 371
+rightmostForestNum: 242
+specialmostForestNum: 4657
+
+ID: 64 label: J
+parent is 63
+childrenNum: 3
+65 75 85 
+subTreeSize: 103
+subTreeSizeSum: 803
+leftmostForestNum: 370
+rightmostForestNum: 241
+specialmostForestNum: 4656
+
+ID: 65 label: J
+parent is 64
+childrenNum: 1
+66 
+subTreeSize: 10
+subTreeSizeSum: 45
+leftmostForestNum: 14
+rightmostForestNum: 14
+specialmostForestNum: 20
+
+ID: 66 label: P
+parent is 65
+childrenNum: 1
+67 
+subTreeSize: 9
+subTreeSizeSum: 35
+leftmostForestNum: 13
+rightmostForestNum: 13
+specialmostForestNum: 19
+
+ID: 67 label: J
+parent is 66
+childrenNum: 1
+68 
+subTreeSize: 8
+subTreeSizeSum: 26
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 18
+
+ID: 68 label: J
+parent is 67
+childrenNum: 1
+69 
+subTreeSize: 7
+subTreeSizeSum: 18
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 17
+
+ID: 69 label: M
+parent is 68
+childrenNum: 5
+70 71 72 73 74 
+subTreeSize: 6
+subTreeSizeSum: 11
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 16
+
+ID: 70 label: U
+parent is 69
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 71 label: A
+parent is 69
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 72 label: A
+parent is 69
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 73 label: C
+parent is 69
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 74 label: G
+parent is 69
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 75 label: M
+parent is 64
+childrenNum: 2
+76 84 
+subTreeSize: 10
+subTreeSizeSum: 41
+leftmostForestNum: 14
+rightmostForestNum: 21
+specialmostForestNum: 24
+
+ID: 76 label: M
+parent is 75
+childrenNum: 1
+77 
+subTreeSize: 8
+subTreeSizeSum: 30
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 14
+
+ID: 77 label: J
+parent is 76
+childrenNum: 1
+78 
+subTreeSize: 7
+subTreeSizeSum: 22
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 13
+
+ID: 78 label: J
+parent is 77
+childrenNum: 1
+79 
+subTreeSize: 6
+subTreeSizeSum: 15
+leftmostForestNum: 9
+rightmostForestNum: 9
+specialmostForestNum: 12
+
+ID: 79 label: J
+parent is 78
+childrenNum: 4
+80 81 82 83 
+subTreeSize: 5
+subTreeSizeSum: 9
+leftmostForestNum: 8
+rightmostForestNum: 8
+specialmostForestNum: 11
+
+ID: 80 label: G
+parent is 79
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 81 label: U
+parent is 79
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 82 label: G
+parent is 79
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 83 label: A
+parent is 79
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 84 label: C
+parent is 75
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 85 label: J
+parent is 64
+childrenNum: 1
+86 
+subTreeSize: 82
+subTreeSizeSum: 614
+leftmostForestNum: 249
+rightmostForestNum: 185
+specialmostForestNum: 2871
+
+ID: 86 label: J
+parent is 85
+childrenNum: 4
+87 88 89 90 
+subTreeSize: 81
+subTreeSizeSum: 532
+leftmostForestNum: 248
+rightmostForestNum: 184
+specialmostForestNum: 2870
+
+ID: 87 label: A
+parent is 86
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 88 label: C
+parent is 86
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 89 label: A
+parent is 86
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 90 label: J
+parent is 86
+childrenNum: 1
+91 
+subTreeSize: 77
+subTreeSizeSum: 448
+leftmostForestNum: 165
+rightmostForestNum: 177
+specialmostForestNum: 2632
+
+ID: 91 label: P
+parent is 90
+childrenNum: 36
+92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 124 125 126 127 128 129 130 131 144 145 146 158 159 160 161 162 163 164 165 166 
+subTreeSize: 76
+subTreeSizeSum: 371
+leftmostForestNum: 164
+rightmostForestNum: 176
+specialmostForestNum: 2631
+
+ID: 92 label: G
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 93 label: C
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 94 label: C
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 95 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 96 label: C
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 97 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 98 label: G
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 99 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 100 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 101 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 102 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 103 label: C
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 104 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 105 label: G
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 106 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 107 label: M
+parent is 91
+childrenNum: 1
+108 
+subTreeSize: 17
+subTreeSizeSum: 120
+leftmostForestNum: 22
+rightmostForestNum: 34
+specialmostForestNum: 50
+
+ID: 108 label: M
+parent is 107
+childrenNum: 3
+109 122 123 
+subTreeSize: 16
+subTreeSizeSum: 103
+leftmostForestNum: 21
+rightmostForestNum: 33
+specialmostForestNum: 49
+
+ID: 109 label: K
+parent is 108
+childrenNum: 1
+110 
+subTreeSize: 13
+subTreeSizeSum: 85
+leftmostForestNum: 16
+rightmostForestNum: 16
+specialmostForestNum: 19
+
+ID: 110 label: M
+parent is 109
+childrenNum: 1
+111 
+subTreeSize: 12
+subTreeSizeSum: 72
+leftmostForestNum: 15
+rightmostForestNum: 15
+specialmostForestNum: 18
+
+ID: 111 label: M
+parent is 110
+childrenNum: 1
+112 
+subTreeSize: 11
+subTreeSizeSum: 60
+leftmostForestNum: 14
+rightmostForestNum: 14
+specialmostForestNum: 17
+
+ID: 112 label: J
+parent is 111
+childrenNum: 1
+113 
+subTreeSize: 10
+subTreeSizeSum: 49
+leftmostForestNum: 13
+rightmostForestNum: 13
+specialmostForestNum: 16
+
+ID: 113 label: K
+parent is 112
+childrenNum: 1
+114 
+subTreeSize: 9
+subTreeSizeSum: 39
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 15
+
+ID: 114 label: J
+parent is 113
+childrenNum: 1
+115 
+subTreeSize: 8
+subTreeSizeSum: 30
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 14
+
+ID: 115 label: J
+parent is 114
+childrenNum: 1
+116 
+subTreeSize: 7
+subTreeSizeSum: 22
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 13
+
+ID: 116 label: F
+parent is 115
+childrenNum: 1
+117 
+subTreeSize: 6
+subTreeSizeSum: 15
+leftmostForestNum: 9
+rightmostForestNum: 9
+specialmostForestNum: 12
+
+ID: 117 label: M
+parent is 116
+childrenNum: 4
+118 119 120 121 
+subTreeSize: 5
+subTreeSizeSum: 9
+leftmostForestNum: 8
+rightmostForestNum: 8
+specialmostForestNum: 11
+
+ID: 118 label: C
+parent is 117
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 119 label: U
+parent is 117
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 120 label: C
+parent is 117
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 121 label: G
+parent is 117
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 122 label: A
+parent is 108
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 123 label: A
+parent is 108
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 124 label: G
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 125 label: U
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 126 label: G
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 127 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 128 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 129 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 130 label: C
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 131 label: J
+parent is 91
+childrenNum: 1
+132 
+subTreeSize: 13
+subTreeSizeSum: 70
+leftmostForestNum: 19
+rightmostForestNum: 19
+specialmostForestNum: 34
+
+ID: 132 label: J
+parent is 131
+childrenNum: 1
+133 
+subTreeSize: 12
+subTreeSizeSum: 57
+leftmostForestNum: 18
+rightmostForestNum: 18
+specialmostForestNum: 33
+
+ID: 133 label: P
+parent is 132
+childrenNum: 1
+134 
+subTreeSize: 11
+subTreeSizeSum: 45
+leftmostForestNum: 17
+rightmostForestNum: 17
+specialmostForestNum: 32
+
+ID: 134 label: J
+parent is 133
+childrenNum: 1
+135 
+subTreeSize: 10
+subTreeSizeSum: 34
+leftmostForestNum: 16
+rightmostForestNum: 16
+specialmostForestNum: 31
+
+ID: 135 label: J
+parent is 134
+childrenNum: 1
+136 
+subTreeSize: 9
+subTreeSizeSum: 24
+leftmostForestNum: 15
+rightmostForestNum: 15
+specialmostForestNum: 30
+
+ID: 136 label: P
+parent is 135
+childrenNum: 7
+137 138 139 140 141 142 143 
+subTreeSize: 8
+subTreeSizeSum: 15
+leftmostForestNum: 14
+rightmostForestNum: 14
+specialmostForestNum: 29
+
+ID: 137 label: G
+parent is 136
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 138 label: U
+parent is 136
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 139 label: A
+parent is 136
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 140 label: A
+parent is 136
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 141 label: G
+parent is 136
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 142 label: A
+parent is 136
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 143 label: G
+parent is 136
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 144 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 145 label: G
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 146 label: M
+parent is 91
+childrenNum: 1
+147 
+subTreeSize: 12
+subTreeSizeSum: 72
+leftmostForestNum: 15
+rightmostForestNum: 15
+specialmostForestNum: 18
+
+ID: 147 label: J
+parent is 146
+childrenNum: 1
+148 
+subTreeSize: 11
+subTreeSizeSum: 60
+leftmostForestNum: 14
+rightmostForestNum: 14
+specialmostForestNum: 17
+
+ID: 148 label: M
+parent is 147
+childrenNum: 1
+149 
+subTreeSize: 10
+subTreeSizeSum: 49
+leftmostForestNum: 13
+rightmostForestNum: 13
+specialmostForestNum: 16
+
+ID: 149 label: M
+parent is 148
+childrenNum: 1
+150 
+subTreeSize: 9
+subTreeSizeSum: 39
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 15
+
+ID: 150 label: P
+parent is 149
+childrenNum: 1
+151 
+subTreeSize: 8
+subTreeSizeSum: 30
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 14
+
+ID: 151 label: J
+parent is 150
+childrenNum: 1
+152 
+subTreeSize: 7
+subTreeSizeSum: 22
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 13
+
+ID: 152 label: F
+parent is 151
+childrenNum: 1
+153 
+subTreeSize: 6
+subTreeSizeSum: 15
+leftmostForestNum: 9
+rightmostForestNum: 9
+specialmostForestNum: 12
+
+ID: 153 label: J
+parent is 152
+childrenNum: 4
+154 155 156 157 
+subTreeSize: 5
+subTreeSizeSum: 9
+leftmostForestNum: 8
+rightmostForestNum: 8
+specialmostForestNum: 11
+
+ID: 154 label: G
+parent is 153
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 155 label: C
+parent is 153
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 156 label: G
+parent is 153
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 157 label: A
+parent is 153
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 158 label: G
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 159 label: C
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 160 label: U
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 161 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 162 label: G
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 163 label: G
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 164 label: U
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 165 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 166 label: A
+parent is 91
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 167 label: C
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 168 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 169 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 170 label: J
+parent is 18
+childrenNum: 1
+171 
+subTreeSize: 48
+subTreeSizeSum: 440
+leftmostForestNum: 112
+rightmostForestNum: 102
+specialmostForestNum: 784
+
+ID: 171 label: J
+parent is 170
+childrenNum: 1
+172 
+subTreeSize: 47
+subTreeSizeSum: 392
+leftmostForestNum: 111
+rightmostForestNum: 101
+specialmostForestNum: 783
+
+ID: 172 label: P
+parent is 171
+childrenNum: 1
+173 
+subTreeSize: 46
+subTreeSizeSum: 345
+leftmostForestNum: 110
+rightmostForestNum: 100
+specialmostForestNum: 782
+
+ID: 173 label: M
+parent is 172
+childrenNum: 13
+174 175 176 177 178 190 191 192 213 214 215 216 217 
+subTreeSize: 45
+subTreeSizeSum: 299
+leftmostForestNum: 109
+rightmostForestNum: 99
+specialmostForestNum: 781
+
+ID: 174 label: A
+parent is 173
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 175 label: A
+parent is 173
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 176 label: G
+parent is 173
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 177 label: A
+parent is 173
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 178 label: K
+parent is 173
+childrenNum: 1
+179 
+subTreeSize: 12
+subTreeSizeSum: 72
+leftmostForestNum: 15
+rightmostForestNum: 15
+specialmostForestNum: 18
+
+ID: 179 label: J
+parent is 178
+childrenNum: 1
+180 
+subTreeSize: 11
+subTreeSizeSum: 60
+leftmostForestNum: 14
+rightmostForestNum: 14
+specialmostForestNum: 17
+
+ID: 180 label: J
+parent is 179
+childrenNum: 1
+181 
+subTreeSize: 10
+subTreeSizeSum: 49
+leftmostForestNum: 13
+rightmostForestNum: 13
+specialmostForestNum: 16
+
+ID: 181 label: J
+parent is 180
+childrenNum: 1
+182 
+subTreeSize: 9
+subTreeSizeSum: 39
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 15
+
+ID: 182 label: F
+parent is 181
+childrenNum: 1
+183 
+subTreeSize: 8
+subTreeSizeSum: 30
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 14
+
+ID: 183 label: M
+parent is 182
+childrenNum: 1
+184 
+subTreeSize: 7
+subTreeSizeSum: 22
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 13
+
+ID: 184 label: F
+parent is 183
+childrenNum: 1
+185 
+subTreeSize: 6
+subTreeSizeSum: 15
+leftmostForestNum: 9
+rightmostForestNum: 9
+specialmostForestNum: 12
+
+ID: 185 label: M
+parent is 184
+childrenNum: 4
+186 187 188 189 
+subTreeSize: 5
+subTreeSizeSum: 9
+leftmostForestNum: 8
+rightmostForestNum: 8
+specialmostForestNum: 11
+
+ID: 186 label: C
+parent is 185
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 187 label: C
+parent is 185
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 188 label: C
+parent is 185
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 189 label: G
+parent is 185
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 190 label: G
+parent is 173
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 191 label: C
+parent is 173
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 192 label: J
+parent is 173
+childrenNum: 1
+193 
+subTreeSize: 21
+subTreeSizeSum: 171
+leftmostForestNum: 39
+rightmostForestNum: 29
+specialmostForestNum: 81
+
+ID: 193 label: M
+parent is 192
+childrenNum: 1
+194 
+subTreeSize: 20
+subTreeSizeSum: 150
+leftmostForestNum: 38
+rightmostForestNum: 28
+specialmostForestNum: 80
+
+ID: 194 label: J
+parent is 193
+childrenNum: 1
+195 
+subTreeSize: 19
+subTreeSizeSum: 130
+leftmostForestNum: 37
+rightmostForestNum: 27
+specialmostForestNum: 79
+
+ID: 195 label: J
+parent is 194
+childrenNum: 1
+196 
+subTreeSize: 18
+subTreeSizeSum: 111
+leftmostForestNum: 36
+rightmostForestNum: 26
+specialmostForestNum: 78
+
+ID: 196 label: F
+parent is 195
+childrenNum: 1
+197 
+subTreeSize: 17
+subTreeSizeSum: 93
+leftmostForestNum: 35
+rightmostForestNum: 25
+specialmostForestNum: 77
+
+ID: 197 label: Q
+parent is 196
+childrenNum: 5
+198 199 200 201 202 
+subTreeSize: 16
+subTreeSizeSum: 76
+leftmostForestNum: 34
+rightmostForestNum: 24
+specialmostForestNum: 76
+
+ID: 198 label: G
+parent is 197
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 199 label: U
+parent is 197
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 200 label: U
+parent is 197
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 201 label: C
+parent is 197
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 202 label: H
+parent is 197
+childrenNum: 1
+203 
+subTreeSize: 11
+subTreeSizeSum: 56
+leftmostForestNum: 15
+rightmostForestNum: 15
+specialmostForestNum: 21
+
+ID: 203 label: D
+parent is 202
+childrenNum: 1
+204 
+subTreeSize: 10
+subTreeSizeSum: 45
+leftmostForestNum: 14
+rightmostForestNum: 14
+specialmostForestNum: 20
+
+ID: 204 label: J
+parent is 203
+childrenNum: 1
+205 
+subTreeSize: 9
+subTreeSizeSum: 35
+leftmostForestNum: 13
+rightmostForestNum: 13
+specialmostForestNum: 19
+
+ID: 205 label: J
+parent is 204
+childrenNum: 1
+206 
+subTreeSize: 8
+subTreeSizeSum: 26
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 18
+
+ID: 206 label: J
+parent is 205
+childrenNum: 1
+207 
+subTreeSize: 7
+subTreeSizeSum: 18
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 17
+
+ID: 207 label: M
+parent is 206
+childrenNum: 5
+208 209 210 211 212 
+subTreeSize: 6
+subTreeSizeSum: 11
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 16
+
+ID: 208 label: U
+parent is 207
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 209 label: G
+parent is 207
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 210 label: C
+parent is 207
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 211 label: U
+parent is 207
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 212 label: C
+parent is 207
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 213 label: G
+parent is 173
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 214 label: G
+parent is 173
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 215 label: G
+parent is 173
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 216 label: U
+parent is 173
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 217 label: A
+parent is 173
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 218 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 219 label: C
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 220 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 221 label: C
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 222 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 223 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 224 label: J
+parent is 18
+childrenNum: 1
+225 
+subTreeSize: 12
+subTreeSizeSum: 72
+leftmostForestNum: 15
+rightmostForestNum: 15
+specialmostForestNum: 18
+
+ID: 225 label: J
+parent is 224
+childrenNum: 1
+226 
+subTreeSize: 11
+subTreeSizeSum: 60
+leftmostForestNum: 14
+rightmostForestNum: 14
+specialmostForestNum: 17
+
+ID: 226 label: M
+parent is 225
+childrenNum: 1
+227 
+subTreeSize: 10
+subTreeSizeSum: 49
+leftmostForestNum: 13
+rightmostForestNum: 13
+specialmostForestNum: 16
+
+ID: 227 label: M
+parent is 226
+childrenNum: 1
+228 
+subTreeSize: 9
+subTreeSizeSum: 39
+leftmostForestNum: 12
+rightmostForestNum: 12
+specialmostForestNum: 15
+
+ID: 228 label: J
+parent is 227
+childrenNum: 1
+229 
+subTreeSize: 8
+subTreeSizeSum: 30
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 14
+
+ID: 229 label: J
+parent is 228
+childrenNum: 1
+230 
+subTreeSize: 7
+subTreeSizeSum: 22
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 13
+
+ID: 230 label: M
+parent is 229
+childrenNum: 1
+231 
+subTreeSize: 6
+subTreeSizeSum: 15
+leftmostForestNum: 9
+rightmostForestNum: 9
+specialmostForestNum: 12
+
+ID: 231 label: J
+parent is 230
+childrenNum: 4
+232 233 234 235 
+subTreeSize: 5
+subTreeSizeSum: 9
+leftmostForestNum: 8
+rightmostForestNum: 8
+specialmostForestNum: 11
+
+ID: 232 label: G
+parent is 231
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 233 label: C
+parent is 231
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 234 label: A
+parent is 231
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 235 label: A
+parent is 231
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 236 label: C
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 237 label: U
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 238 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 239 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 240 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 241 label: U
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 242 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 243 label: G
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 244 label: A
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 245 label: U
+parent is 18
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 246 label: G
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 247 label: M
+parent is 11
+childrenNum: 1
+248 
+subTreeSize: 16
+subTreeSizeSum: 103
+leftmostForestNum: 29
+rightmostForestNum: 29
+specialmostForestNum: 49
+
+ID: 248 label: M
+parent is 247
+childrenNum: 1
+249 
+subTreeSize: 15
+subTreeSizeSum: 87
+leftmostForestNum: 28
+rightmostForestNum: 28
+specialmostForestNum: 48
+
+ID: 249 label: M
+parent is 248
+childrenNum: 1
+250 
+subTreeSize: 14
+subTreeSizeSum: 72
+leftmostForestNum: 27
+rightmostForestNum: 27
+specialmostForestNum: 47
+
+ID: 250 label: M
+parent is 249
+childrenNum: 1
+251 
+subTreeSize: 13
+subTreeSizeSum: 58
+leftmostForestNum: 26
+rightmostForestNum: 26
+specialmostForestNum: 46
+
+ID: 251 label: J
+parent is 250
+childrenNum: 4
+252 253 254 262 
+subTreeSize: 12
+subTreeSizeSum: 45
+leftmostForestNum: 25
+rightmostForestNum: 25
+specialmostForestNum: 45
+
+ID: 252 label: A
+parent is 251
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 253 label: C
+parent is 251
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 254 label: J
+parent is 251
+childrenNum: 1
+255 
+subTreeSize: 8
+subTreeSizeSum: 30
+leftmostForestNum: 11
+rightmostForestNum: 11
+specialmostForestNum: 14
+
+ID: 255 label: F
+parent is 254
+childrenNum: 1
+256 
+subTreeSize: 7
+subTreeSizeSum: 22
+leftmostForestNum: 10
+rightmostForestNum: 10
+specialmostForestNum: 13
+
+ID: 256 label: M
+parent is 255
+childrenNum: 1
+257 
+subTreeSize: 6
+subTreeSizeSum: 15
+leftmostForestNum: 9
+rightmostForestNum: 9
+specialmostForestNum: 12
+
+ID: 257 label: M
+parent is 256
+childrenNum: 4
+258 259 260 261 
+subTreeSize: 5
+subTreeSizeSum: 9
+leftmostForestNum: 8
+rightmostForestNum: 8
+specialmostForestNum: 11
+
+ID: 258 label: G
+parent is 257
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 259 label: C
+parent is 257
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 260 label: G
+parent is 257
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 261 label: A
+parent is 257
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 262 label: C
+parent is 251
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 263 label: A
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 264 label: C
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 265 label: A
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 266 label: G
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 267 label: A
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 268 label: A
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 269 label: C
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 270 label: C
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 271 label: C
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 272 label: G
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 273 label: G
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 274 label: C
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 275 label: G
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 276 label: U
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 277 label: A
+parent is 11
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 278 label: A
+parent is 10
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 279 label: U
+parent is 0
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 280 label: C
+parent is 0
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 281 label: U
+parent is 0
+childrenNum: 0
+
+subTreeSize: 1
+subTreeSizeSum: 1
+leftmostForestNum: 1
+rightmostForestNum: 1
+specialmostForestNum: 1
+
+ID: 282 label: G
+parent is 0
 childrenNum: 0
 
 subTreeSize: 1
@@ -235,22 +5305,22 @@ specialmostForestNum: 1
 
 
 preL_to_preR
-0 5 9 6 8 7 1 4 3 2 
+0 5 6 7 8 9 10 11 12 13 14 16 49 50 51 52 53 54 55 282 267 268 281 270 271 272 273 274 275 276 280 279 278 277 269 266 265 264 263 262 261 260 259 258 257 256 255 254 135 136 137 138 253 252 251 250 249 248 247 246 139 140 141 142 143 236 237 238 239 240 245 244 243 242 241 226 228 229 230 231 235 234 233 232 227 144 145 225 224 223 146 147 222 221 220 219 218 217 216 215 214 213 212 211 210 209 208 191 192 195 196 197 198 199 200 201 202 203 207 206 205 204 194 193 190 189 188 187 186 185 184 171 172 173 174 175 176 183 182 181 180 179 178 177 170 169 157 158 159 160 161 162 163 164 168 167 166 165 156 155 154 153 152 151 150 149 148 134 133 132 84 85 86 87 131 130 129 128 116 117 118 119 120 121 122 123 127 126 125 124 115 114 93 94 95 96 97 98 113 112 111 110 99 100 101 102 103 104 109 108 107 106 105 92 91 90 89 88 83 82 81 80 79 78 66 67 68 69 70 71 72 73 77 76 75 74 65 64 63 62 61 60 59 58 57 56 48 32 33 34 35 36 47 46 38 39 40 41 45 44 43 42 37 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 15 4 3 2 1 
 preL_to_postL
-9 4 0 3 1 2 8 5 6 7 
+282 277 276 275 274 273 272 271 270 269 268 266 233 232 231 230 229 228 227 0 15 14 1 12 11 10 9 8 7 6 2 3 4 5 13 16 17 18 19 20 21 22 23 24 25 26 27 28 147 146 145 144 29 30 31 32 33 34 35 36 143 142 141 140 139 46 45 44 43 42 37 38 39 40 41 56 54 53 52 51 47 48 49 50 55 138 137 57 58 59 136 135 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 91 90 87 86 85 84 83 82 81 80 79 75 76 77 78 88 89 92 93 94 95 96 97 98 111 110 109 108 107 106 99 100 101 102 103 104 105 112 113 125 124 123 122 121 120 119 118 114 115 116 117 126 127 128 129 130 131 132 133 134 148 149 150 198 197 196 195 151 152 153 154 166 165 164 163 162 161 160 159 155 156 157 158 167 168 189 188 187 186 185 184 169 170 171 172 183 182 181 180 179 178 173 174 175 176 177 190 191 192 193 194 199 200 201 202 203 204 216 215 214 213 212 211 210 209 205 206 207 208 217 218 219 220 221 222 223 224 225 226 234 250 249 248 247 246 235 236 244 243 242 241 237 238 239 240 245 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 267 278 279 280 281 
 preL_to_postR
-9 8 7 6 5 4 3 2 1 0 
+282 281 280 279 278 277 276 275 274 273 272 271 270 269 268 267 266 265 264 263 262 261 260 259 258 257 256 255 254 253 252 251 250 249 248 247 246 245 244 243 242 241 240 239 238 237 236 235 234 233 232 231 230 229 228 227 226 225 224 223 222 221 220 219 218 217 216 215 214 213 212 211 210 209 208 207 206 205 204 203 202 201 200 199 198 197 196 195 194 193 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 99 98 97 96 95 94 93 92 91 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 72 71 70 69 68 67 66 65 64 63 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 
 preL_to_lid
-2 2 2 4 4 5 7 7 8 9 
+19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 22 22 22 30 30 30 30 30 30 30 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 52 52 52 52 52 53 54 55 56 57 58 59 70 70 70 70 70 70 70 70 70 70 70 71 72 73 74 80 80 80 80 80 80 81 82 83 84 87 87 87 88 89 92 92 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 118 118 118 118 118 118 118 118 118 118 118 118 119 120 121 122 123 124 125 126 127 128 129 130 137 137 137 137 137 137 137 138 139 140 141 142 143 144 145 154 154 154 154 154 154 154 154 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 174 174 174 174 174 175 176 177 186 186 186 186 186 186 186 186 186 187 188 189 190 191 198 198 198 198 198 198 198 199 200 201 208 208 208 208 208 208 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 232 232 232 232 232 232 232 232 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 252 252 252 252 252 252 253 258 258 258 258 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 
 preL_to_rid
-9 5 2 5 4 5 9 7 8 9 
+282 278 278 278 278 278 278 278 278 278 278 277 245 245 245 245 245 245 245 19 34 34 22 33 33 33 33 33 33 33 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 166 166 166 166 52 53 54 55 56 57 58 59 166 166 166 166 166 74 74 74 74 74 70 71 72 73 74 84 83 83 83 83 80 81 82 83 84 166 166 87 88 89 166 166 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 123 123 121 121 121 121 121 121 121 121 121 118 119 120 121 122 123 124 125 126 127 128 129 130 143 143 143 143 143 143 137 138 139 140 141 142 143 144 145 157 157 157 157 157 157 157 157 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 217 217 217 217 174 175 176 177 189 189 189 189 189 189 189 189 186 187 188 189 190 191 212 212 212 212 212 212 198 199 200 201 212 212 212 212 212 212 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 235 235 235 235 235 235 235 235 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 262 262 262 262 262 252 253 261 261 261 261 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 
 preL_to_sumDelCost
-10 5 1 3 1 1 4 1 1 1 
+283 278 277 276 275 274 273 272 271 270 269 267 234 233 232 231 230 229 228 1 15 14 1 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 119 118 117 116 1 1 1 1 1 1 1 1 107 106 105 104 103 10 9 8 7 6 1 1 1 1 1 10 8 7 6 5 1 1 1 1 1 82 81 1 1 1 77 76 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 17 16 13 12 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 13 12 11 10 9 8 1 1 1 1 1 1 1 1 1 12 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 48 47 46 45 1 1 1 1 12 11 10 9 8 7 6 5 1 1 1 1 1 1 21 20 19 18 17 16 1 1 1 1 11 10 9 8 7 6 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 12 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 16 15 14 13 12 1 1 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 preL_to_sumInsCost
-10 5 1 3 1 1 4 1 1 1 
+283 278 277 276 275 274 273 272 271 270 269 267 234 233 232 231 230 229 228 1 15 14 1 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 119 118 117 116 1 1 1 1 1 1 1 1 107 106 105 104 103 10 9 8 7 6 1 1 1 1 1 10 8 7 6 5 1 1 1 1 1 82 81 1 1 1 77 76 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 17 16 13 12 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 13 12 11 10 9 8 1 1 1 1 1 1 1 1 1 12 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 48 47 46 45 1 1 1 1 12 11 10 9 8 7 6 5 1 1 1 1 1 1 21 20 19 18 17 16 1 1 1 1 11 10 9 8 7 6 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 12 11 10 9 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 16 15 14 13 12 1 1 8 7 6 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 preL_to_ln
--1 -1 -1 2 2 4 5 5 7 8 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 19 19 19 22 22 22 22 22 22 22 22 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 47 47 47 47 52 53 54 55 56 57 58 59 59 59 59 59 59 59 59 59 59 59 70 71 72 73 74 74 74 74 74 74 80 81 82 83 84 84 84 87 88 89 89 89 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 106 106 106 106 106 106 106 106 106 106 106 118 119 120 121 122 123 124 125 126 127 128 129 130 130 130 130 130 130 130 137 138 139 140 141 142 143 144 145 145 145 145 145 145 145 145 145 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 169 169 169 169 174 175 176 177 177 177 177 177 177 177 177 177 186 187 188 189 190 191 191 191 191 191 191 191 198 199 200 201 201 201 201 201 201 201 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 223 223 223 223 223 223 223 223 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 246 246 246 246 246 252 253 253 253 253 253 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 
 preR_to_ln
--1 -1 -1 2 3 4 4 4 7 8 
+-1 -1 1 2 3 4 4 4 4 4 4 4 4 4 4 4 15 15 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 31 31 31 31 31 37 37 37 37 37 42 43 44 45 46 47 48 48 48 48 48 48 48 48 56 57 58 59 60 61 62 63 64 65 65 65 65 65 65 65 65 65 74 75 76 77 78 79 80 81 82 83 83 83 83 83 88 89 90 91 92 92 92 92 92 92 92 92 92 92 92 92 92 105 106 107 108 109 110 111 112 113 114 115 115 115 115 115 115 115 115 115 124 125 126 127 128 129 130 131 132 133 134 134 134 134 134 134 134 134 134 134 134 134 134 134 148 149 150 151 152 153 154 155 156 156 156 156 156 156 156 156 156 165 166 167 168 169 170 170 170 170 170 170 170 177 178 179 180 181 182 183 184 185 186 187 188 189 190 190 190 193 194 194 194 194 194 194 194 194 194 194 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 225 227 227 227 227 227 232 233 234 235 235 235 235 235 235 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 266 266 269 269 269 269 269 269 269 269 277 278 279 280 281 
 postL_to_preL
-2 4 5 3 1 7 8 9 6 0 
+19 22 30 31 32 33 29 28 27 26 25 24 23 34 21 20 35 36 37 38 39 40 41 42 43 44 45 46 47 52 53 54 55 56 57 58 59 70 71 72 73 74 69 68 67 66 65 80 81 82 83 79 78 77 76 84 75 87 88 89 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 118 119 120 121 117 116 115 114 113 112 111 110 109 122 123 108 107 124 125 126 127 128 129 130 137 138 139 140 141 142 143 136 135 134 133 132 131 144 145 154 155 156 157 153 152 151 150 149 148 147 146 158 159 160 161 162 163 164 165 166 91 90 86 85 64 63 62 61 60 51 50 49 48 167 168 169 174 175 176 177 186 187 188 189 185 184 183 182 181 180 179 178 190 191 198 199 200 201 208 209 210 211 212 207 206 205 204 203 202 197 196 195 194 193 192 213 214 215 216 217 173 172 171 170 218 219 220 221 222 223 232 233 234 235 231 230 229 228 227 226 225 224 236 237 238 239 240 241 242 243 244 245 18 17 16 15 14 13 12 246 252 253 258 259 260 261 257 256 255 254 262 251 250 249 248 247 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 11 278 10 9 8 7 6 5 4 3 2 1 279 280 281 282 0 

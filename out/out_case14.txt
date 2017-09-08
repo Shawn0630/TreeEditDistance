@@ -1,114 +1,105 @@
-Compute Free(1, 0)
-If select 1 in Tree A #Subproblem: 5 Direction: LeftCompute Free(1, 1)
-If select 1 in Tree A #Subproblem: 1 Direction: LeftCompute Free(1, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Leftfree[1][1] freeSumA = 0 freeSumB = 0
-Free[1][1] = 1
-FreeS(1, 1)
-Keynode: 1 in TreeB
-Direction: rightLeaf: 1
-Compute Free(1, 2)
-If select 1 in Tree A #Subproblem: 2 Direction: LeftCompute Free(1, 3)
-If select 1 in Tree A #Subproblem: 1 Direction: LeftCompute Free(1, 3)
-If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[1][3] freeSumA = 0 freeSumB = 0
-Free[1][3] = 1
-FreeS(1, 3)
+Compute Free(2, 0)
+If select 2 in Tree A #Subproblem: 10 Direction: LeftCompute Free(2, 1)
+If select 2 in Tree A #Subproblem: 4 Direction: LeftCompute Free(2, 2)
+If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 2)
+If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[2][2] freeSumA = 0 freeSumB = 0
+Free[2][2] = 1
+FreeS(2, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(2, 3)
+If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[2][3] freeSumA = 0 freeSumB = 0
+Free[2][3] = 1
+FreeS(2, 3)
 Keynode: 3 in TreeB
 Direction: rightLeaf: 3
-free[1][2] freeSumA = 0 freeSumB = 1
-Compute Free(1, 2)
-If select 3(leftmost) in Tree B #Subproblem: 2 Direction: Right
-Compute Free(1, 2)
-If select 3(rightmost) in Tree B #Subproblem: 2 Direction: Left
-Free[1][2] = 2
-FreeS(1, 2)
-Keynode: 1 in Tree A
-Direction: rightLeaf: 1
-Compute Free(1, 4)
-If select 1 in Tree A #Subproblem: 1 Direction: LeftCompute Free(1, 4)
-If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[1][4] freeSumA = 0 freeSumB = 0
-Free[1][4] = 1
-FreeS(1, 4)
+Compute Free(2, 4)
+If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 4)
+If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[2][4] freeSumA = 0 freeSumB = 0
+Free[2][4] = 1
+FreeS(2, 4)
 Keynode: 4 in TreeB
 Direction: rightLeaf: 4
-free[1][0] freeSumA = 0 freeSumB = 4
-Compute Free(1, 0)
-If select 1(leftmost) in Tree B #Subproblem: 8 Direction: Right
-Compute Free(1, 0)
-If select 2 in Tree B #Subproblem: 7 Direction: Left
-Compute Free(1, 0)
-If select 4(rightmost) in Tree B #Subproblem: 8 Direction: Left
-Free[1][0] = 5
-FreeS(1, 0)
-Keynode: 1 in Tree A
-Direction: rightLeaf: 1
-Compute Free(3, 0)
-If select 3 in Tree A #Subproblem: 5 Direction: LeftCompute Free(3, 1)
-If select 3 in Tree A #Subproblem: 1 Direction: LeftCompute Free(3, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Leftfree[3][1] freeSumA = 0 freeSumB = 0
-Free[3][1] = 1
-FreeS(3, 1)
-Keynode: 1 in TreeB
-Direction: rightLeaf: 1
-Compute Free(3, 2)
-If select 3 in Tree A #Subproblem: 2 Direction: LeftCompute Free(3, 3)
-If select 3 in Tree A #Subproblem: 1 Direction: LeftCompute Free(3, 3)
-If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[3][3] freeSumA = 0 freeSumB = 0
-Free[3][3] = 1
-FreeS(3, 3)
-Keynode: 3 in TreeB
-Direction: rightLeaf: 3
-free[3][2] freeSumA = 0 freeSumB = 1
-Compute Free(3, 2)
-If select 3(leftmost) in Tree B #Subproblem: 2 Direction: Right
-Compute Free(3, 2)
-If select 3(rightmost) in Tree B #Subproblem: 2 Direction: Left
-Free[3][2] = 2
-FreeS(3, 2)
-Keynode: 3 in Tree A
-Direction: rightLeaf: 3
-Compute Free(3, 4)
-If select 3 in Tree A #Subproblem: 1 Direction: LeftCompute Free(3, 4)
-If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[3][4] freeSumA = 0 freeSumB = 0
-Free[3][4] = 1
-FreeS(3, 4)
-Keynode: 4 in TreeB
-Direction: rightLeaf: 4
-free[3][0] freeSumA = 0 freeSumB = 4
-Compute Free(3, 0)
-If select 1(leftmost) in Tree B #Subproblem: 8 Direction: Right
-Compute Free(3, 0)
-If select 2 in Tree B #Subproblem: 7 Direction: Left
-Compute Free(3, 0)
-If select 4(rightmost) in Tree B #Subproblem: 8 Direction: Left
-Free[3][0] = 5
-FreeS(3, 0)
-Keynode: 3 in Tree A
-Direction: rightLeaf: 3
+free[2][1] freeSumA = 0 freeSumB = 3
+Compute Free(2, 1)
+If select 2(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(2, 1)
+If select 3 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(2, 1)
+If select 4(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[2][1] = 4
+FreeS(2, 1)
+Keynode: 2 in Tree A
+Direction: rightLeaf: 2
+Compute Free(2, 5)
+If select 2 in Tree A #Subproblem: 5 Direction: LeftCompute Free(2, 6)
+If select 2 in Tree A #Subproblem: 4 Direction: LeftCompute Free(2, 7)
+If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 7)
+If select 7 in Tree B #Subproblem: 1 Direction: Leftfree[2][7] freeSumA = 0 freeSumB = 0
+Free[2][7] = 1
+FreeS(2, 7)
+Keynode: 7 in TreeB
+Direction: rightLeaf: 7
+Compute Free(2, 8)
+If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 8)
+If select 8 in Tree B #Subproblem: 1 Direction: Leftfree[2][8] freeSumA = 0 freeSumB = 0
+Free[2][8] = 1
+FreeS(2, 8)
+Keynode: 8 in TreeB
+Direction: rightLeaf: 8
+Compute Free(2, 9)
+If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 9)
+If select 9 in Tree B #Subproblem: 1 Direction: Leftfree[2][9] freeSumA = 0 freeSumB = 0
+Free[2][9] = 1
+FreeS(2, 9)
+Keynode: 9 in TreeB
+Direction: rightLeaf: 9
+free[2][6] freeSumA = 0 freeSumB = 3
+Compute Free(2, 6)
+If select 7(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(2, 6)
+If select 8 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(2, 6)
+If select 9(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[2][6] = 4
+FreeS(2, 6)
+Keynode: 2 in Tree A
+Direction: rightLeaf: 2
+free[2][5] freeSumA = 0 freeSumB = 4
+Compute Free(2, 5)
+If select 6(leftmost) in Tree B #Subproblem: 7 Direction: Right
+Compute Free(2, 5)
+If select 6(rightmost) in Tree B #Subproblem: 7 Direction: Left
+Free[2][5] = 5
+FreeS(2, 5)
+Keynode: 2 in Tree A
+Direction: rightLeaf: 2
+free[2][0] freeSumA = 0 freeSumB = 9
+Compute Free(2, 0)
+If select 1(leftmost) in Tree B #Subproblem: 17 Direction: Right
+Compute Free(2, 0)
+If select 5(rightmost) in Tree B #Subproblem: 16 Direction: Left
+Free[2][0] = 10
+FreeS(2, 0)
+Keynode: 2 in Tree A
+Direction: rightLeaf: 2
 Compute Free(4, 0)
-If select 4 in Tree A #Subproblem: 5 Direction: LeftCompute Free(4, 1)
-If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Leftfree[4][1] freeSumA = 0 freeSumB = 0
-Free[4][1] = 1
-FreeS(4, 1)
-Keynode: 1 in TreeB
-Direction: rightLeaf: 1
-Compute Free(4, 2)
-If select 4 in Tree A #Subproblem: 2 Direction: LeftCompute Free(4, 3)
+If select 4 in Tree A #Subproblem: 10 Direction: LeftCompute Free(4, 1)
+If select 4 in Tree A #Subproblem: 4 Direction: LeftCompute Free(4, 2)
+If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 2)
+If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[4][2] freeSumA = 0 freeSumB = 0
+Free[4][2] = 1
+FreeS(4, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(4, 3)
 If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 3)
 If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[4][3] freeSumA = 0 freeSumB = 0
 Free[4][3] = 1
 FreeS(4, 3)
 Keynode: 3 in TreeB
 Direction: rightLeaf: 3
-free[4][2] freeSumA = 0 freeSumB = 1
-Compute Free(4, 2)
-If select 3(leftmost) in Tree B #Subproblem: 2 Direction: Right
-Compute Free(4, 2)
-If select 3(rightmost) in Tree B #Subproblem: 2 Direction: Left
-Free[4][2] = 2
-FreeS(4, 2)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
 Compute Free(4, 4)
 If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 4)
 If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[4][4] freeSumA = 0 freeSumB = 0
@@ -116,101 +107,85 @@ Free[4][4] = 1
 FreeS(4, 4)
 Keynode: 4 in TreeB
 Direction: rightLeaf: 4
-free[4][0] freeSumA = 0 freeSumB = 4
+free[4][1] freeSumA = 0 freeSumB = 3
+Compute Free(4, 1)
+If select 2(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(4, 1)
+If select 3 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(4, 1)
+If select 4(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[4][1] = 4
+FreeS(4, 1)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+Compute Free(4, 5)
+If select 4 in Tree A #Subproblem: 5 Direction: LeftCompute Free(4, 6)
+If select 4 in Tree A #Subproblem: 4 Direction: LeftCompute Free(4, 7)
+If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 7)
+If select 7 in Tree B #Subproblem: 1 Direction: Leftfree[4][7] freeSumA = 0 freeSumB = 0
+Free[4][7] = 1
+FreeS(4, 7)
+Keynode: 7 in TreeB
+Direction: rightLeaf: 7
+Compute Free(4, 8)
+If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 8)
+If select 8 in Tree B #Subproblem: 1 Direction: Leftfree[4][8] freeSumA = 0 freeSumB = 0
+Free[4][8] = 1
+FreeS(4, 8)
+Keynode: 8 in TreeB
+Direction: rightLeaf: 8
+Compute Free(4, 9)
+If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 9)
+If select 9 in Tree B #Subproblem: 1 Direction: Leftfree[4][9] freeSumA = 0 freeSumB = 0
+Free[4][9] = 1
+FreeS(4, 9)
+Keynode: 9 in TreeB
+Direction: rightLeaf: 9
+free[4][6] freeSumA = 0 freeSumB = 3
+Compute Free(4, 6)
+If select 7(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(4, 6)
+If select 8 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(4, 6)
+If select 9(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[4][6] = 4
+FreeS(4, 6)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+free[4][5] freeSumA = 0 freeSumB = 4
+Compute Free(4, 5)
+If select 6(leftmost) in Tree B #Subproblem: 7 Direction: Right
+Compute Free(4, 5)
+If select 6(rightmost) in Tree B #Subproblem: 7 Direction: Left
+Free[4][5] = 5
+FreeS(4, 5)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+free[4][0] freeSumA = 0 freeSumB = 9
 Compute Free(4, 0)
-If select 1(leftmost) in Tree B #Subproblem: 8 Direction: Right
+If select 1(leftmost) in Tree B #Subproblem: 17 Direction: Right
 Compute Free(4, 0)
-If select 2 in Tree B #Subproblem: 7 Direction: Left
-Compute Free(4, 0)
-If select 4(rightmost) in Tree B #Subproblem: 8 Direction: Left
-Free[4][0] = 5
+If select 5(rightmost) in Tree B #Subproblem: 16 Direction: Left
+Free[4][0] = 10
 FreeS(4, 0)
 Keynode: 4 in Tree A
 Direction: rightLeaf: 4
-Compute Free(2, 1)
-If select 1 in Tree B #Subproblem: 3 Direction: Leftfree[2][1] freeSumA = 2 freeSumB = 0
-Compute Free(2, 1)
-If select 3(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(2, 1)
-If select 4(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[2][1] = 3
-FreeS(2, 1)
-Keynode: 1 in TreeB
-Direction: rightLeaf: 1
-Compute Free(2, 3)
-If select 3 in Tree B #Subproblem: 3 Direction: Leftfree[2][3] freeSumA = 2 freeSumB = 0
-Compute Free(2, 3)
-If select 3(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(2, 3)
-If select 4(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[2][3] = 3
-FreeS(2, 3)
-Keynode: 3 in TreeB
-Direction: rightLeaf: 3
-free[2][2] freeSumA = 4 freeSumB = 3
-Compute Free(2, 2)
-If select 3(leftmost) in Tree A #Subproblem: 8 Direction: Right
-Compute Free(2, 2)
-If select 4(rightmost) in Tree A #Subproblem: 8 Direction: Left
-Compute Free(2, 2)
-If select 3(leftmost) in Tree B #Subproblem: 8 Direction: Right
-Compute Free(2, 2)
-If select 3(rightmost) in Tree B #Subproblem: 8 Direction: Left
-Free[2][2] = 8
-FreeS(2, 2)
-Keynode: 3 in Tree A
-Direction: rightLeaf: 3
-Compute Free(2, 4)
-If select 4 in Tree B #Subproblem: 3 Direction: Leftfree[2][4] freeSumA = 2 freeSumB = 0
-Compute Free(2, 4)
-If select 3(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(2, 4)
-If select 4(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[2][4] = 3
-FreeS(2, 4)
-Keynode: 4 in TreeB
-Direction: rightLeaf: 4
-free[2][0] freeSumA = 10 freeSumB = 14
-Compute Free(2, 0)
-If select 3(leftmost) in Tree A #Subproblem: 29 Direction: Right
-Compute Free(2, 0)
-If select 4(rightmost) in Tree A #Subproblem: 29 Direction: Left
-Compute Free(2, 0)
-If select 1(leftmost) in Tree B #Subproblem: 31 Direction: Right
-Compute Free(2, 0)
-If select 2 in Tree B #Subproblem: 26 Direction: Left
-Compute Free(2, 0)
-If select 4(rightmost) in Tree B #Subproblem: 31 Direction: Left
-Free[2][0] = 26
-FreeS(2, 0)
-Keynode: 2 in TreeB
-Direction: left
-Leaf: 3
 Compute Free(5, 0)
-If select 5 in Tree A #Subproblem: 5 Direction: LeftCompute Free(5, 1)
-If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 1)
-If select 1 in Tree B #Subproblem: 1 Direction: Leftfree[5][1] freeSumA = 0 freeSumB = 0
-Free[5][1] = 1
-FreeS(5, 1)
-Keynode: 1 in TreeB
-Direction: rightLeaf: 1
-Compute Free(5, 2)
-If select 5 in Tree A #Subproblem: 2 Direction: LeftCompute Free(5, 3)
+If select 5 in Tree A #Subproblem: 10 Direction: LeftCompute Free(5, 1)
+If select 5 in Tree A #Subproblem: 4 Direction: LeftCompute Free(5, 2)
+If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 2)
+If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[5][2] freeSumA = 0 freeSumB = 0
+Free[5][2] = 1
+FreeS(5, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(5, 3)
 If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 3)
 If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[5][3] freeSumA = 0 freeSumB = 0
 Free[5][3] = 1
 FreeS(5, 3)
 Keynode: 3 in TreeB
 Direction: rightLeaf: 3
-free[5][2] freeSumA = 0 freeSumB = 1
-Compute Free(5, 2)
-If select 3(leftmost) in Tree B #Subproblem: 2 Direction: Right
-Compute Free(5, 2)
-If select 3(rightmost) in Tree B #Subproblem: 2 Direction: Left
-Free[5][2] = 2
-FreeS(5, 2)
-Keynode: 5 in Tree A
-Direction: rightLeaf: 5
 Compute Free(5, 4)
 If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 4)
 If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[5][4] freeSumA = 0 freeSumB = 0
@@ -218,403 +193,3672 @@ Free[5][4] = 1
 FreeS(5, 4)
 Keynode: 4 in TreeB
 Direction: rightLeaf: 4
-free[5][0] freeSumA = 0 freeSumB = 4
+free[5][1] freeSumA = 0 freeSumB = 3
+Compute Free(5, 1)
+If select 2(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(5, 1)
+If select 3 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(5, 1)
+If select 4(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[5][1] = 4
+FreeS(5, 1)
+Keynode: 5 in Tree A
+Direction: rightLeaf: 5
+Compute Free(5, 5)
+If select 5 in Tree A #Subproblem: 5 Direction: LeftCompute Free(5, 6)
+If select 5 in Tree A #Subproblem: 4 Direction: LeftCompute Free(5, 7)
+If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 7)
+If select 7 in Tree B #Subproblem: 1 Direction: Leftfree[5][7] freeSumA = 0 freeSumB = 0
+Free[5][7] = 1
+FreeS(5, 7)
+Keynode: 7 in TreeB
+Direction: rightLeaf: 7
+Compute Free(5, 8)
+If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 8)
+If select 8 in Tree B #Subproblem: 1 Direction: Leftfree[5][8] freeSumA = 0 freeSumB = 0
+Free[5][8] = 1
+FreeS(5, 8)
+Keynode: 8 in TreeB
+Direction: rightLeaf: 8
+Compute Free(5, 9)
+If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 9)
+If select 9 in Tree B #Subproblem: 1 Direction: Leftfree[5][9] freeSumA = 0 freeSumB = 0
+Free[5][9] = 1
+FreeS(5, 9)
+Keynode: 9 in TreeB
+Direction: rightLeaf: 9
+free[5][6] freeSumA = 0 freeSumB = 3
+Compute Free(5, 6)
+If select 7(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(5, 6)
+If select 8 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(5, 6)
+If select 9(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[5][6] = 4
+FreeS(5, 6)
+Keynode: 5 in Tree A
+Direction: rightLeaf: 5
+free[5][5] freeSumA = 0 freeSumB = 4
+Compute Free(5, 5)
+If select 6(leftmost) in Tree B #Subproblem: 7 Direction: Right
+Compute Free(5, 5)
+If select 6(rightmost) in Tree B #Subproblem: 7 Direction: Left
+Free[5][5] = 5
+FreeS(5, 5)
+Keynode: 5 in Tree A
+Direction: rightLeaf: 5
+free[5][0] freeSumA = 0 freeSumB = 9
 Compute Free(5, 0)
-If select 1(leftmost) in Tree B #Subproblem: 8 Direction: Right
+If select 1(leftmost) in Tree B #Subproblem: 17 Direction: Right
 Compute Free(5, 0)
-If select 2 in Tree B #Subproblem: 7 Direction: Left
-Compute Free(5, 0)
-If select 4(rightmost) in Tree B #Subproblem: 8 Direction: Left
-Free[5][0] = 5
+If select 5(rightmost) in Tree B #Subproblem: 16 Direction: Left
+Free[5][0] = 10
 FreeS(5, 0)
 Keynode: 5 in Tree A
 Direction: rightLeaf: 5
-Compute Free(0, 1)
-If select 1 in Tree B #Subproblem: 6 Direction: Leftfree[0][1] freeSumA = 5 freeSumB = 0
-Compute Free(0, 1)
-If select 1(leftmost) in Tree A #Subproblem: 10 Direction: Right
-Compute Free(0, 1)
-If select 2 in Tree A #Subproblem: 9 Direction: Left
-Compute Free(0, 1)
-If select 5(rightmost) in Tree A #Subproblem: 10 Direction: Left
-Free[0][1] = 6
-FreeS(0, 1)
-Keynode: 1 in TreeB
-Direction: rightLeaf: 1
+Compute Free(3, 2)
+If select 2 in Tree B #Subproblem: 3 Direction: Leftfree[3][2] freeSumA = 2 freeSumB = 0
+Compute Free(3, 2)
+If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
+Compute Free(3, 2)
+If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
+Free[3][2] = 3
+FreeS(3, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(3, 3)
+If select 3 in Tree B #Subproblem: 3 Direction: Leftfree[3][3] freeSumA = 2 freeSumB = 0
+Compute Free(3, 3)
+If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
+Compute Free(3, 3)
+If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
+Free[3][3] = 3
+FreeS(3, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+Compute Free(3, 4)
+If select 4 in Tree B #Subproblem: 3 Direction: Leftfree[3][4] freeSumA = 2 freeSumB = 0
+Compute Free(3, 4)
+If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
+Compute Free(3, 4)
+If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
+Free[3][4] = 3
+FreeS(3, 4)
+Keynode: 4 in TreeB
+Direction: rightLeaf: 4
+free[3][1] freeSumA = 8 freeSumB = 9
+Compute Free(3, 1)
+If select 4(leftmost) in Tree A #Subproblem: 22 Direction: Right
+Compute Free(3, 1)
+If select 5(rightmost) in Tree A #Subproblem: 22 Direction: Left
+Compute Free(3, 1)
+If select 2(leftmost) in Tree B #Subproblem: 22 Direction: Right
+Compute Free(3, 1)
+If select 3 in Tree B #Subproblem: 22 Direction: Left
+Compute Free(3, 1)
+If select 4(rightmost) in Tree B #Subproblem: 22 Direction: Left
+Free[3][1] = 22
+FreeS(3, 1)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+Compute Free(3, 7)
+If select 7 in Tree B #Subproblem: 3 Direction: Leftfree[3][7] freeSumA = 2 freeSumB = 0
+Compute Free(3, 7)
+If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
+Compute Free(3, 7)
+If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
+Free[3][7] = 3
+FreeS(3, 7)
+Keynode: 7 in TreeB
+Direction: rightLeaf: 7
+Compute Free(3, 8)
+If select 8 in Tree B #Subproblem: 3 Direction: Leftfree[3][8] freeSumA = 2 freeSumB = 0
+Compute Free(3, 8)
+If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
+Compute Free(3, 8)
+If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
+Free[3][8] = 3
+FreeS(3, 8)
+Keynode: 8 in TreeB
+Direction: rightLeaf: 8
+Compute Free(3, 9)
+If select 9 in Tree B #Subproblem: 3 Direction: Leftfree[3][9] freeSumA = 2 freeSumB = 0
+Compute Free(3, 9)
+If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
+Compute Free(3, 9)
+If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
+Free[3][9] = 3
+FreeS(3, 9)
+Keynode: 9 in TreeB
+Direction: rightLeaf: 9
+free[3][6] freeSumA = 8 freeSumB = 9
+Compute Free(3, 6)
+If select 4(leftmost) in Tree A #Subproblem: 22 Direction: Right
+Compute Free(3, 6)
+If select 5(rightmost) in Tree A #Subproblem: 22 Direction: Left
+Compute Free(3, 6)
+If select 7(leftmost) in Tree B #Subproblem: 22 Direction: Right
+Compute Free(3, 6)
+If select 8 in Tree B #Subproblem: 22 Direction: Left
+Compute Free(3, 6)
+If select 9(rightmost) in Tree B #Subproblem: 22 Direction: Left
+Free[3][6] = 22
+FreeS(3, 6)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+free[3][5] freeSumA = 10 freeSumB = 22
+Compute Free(3, 5)
+If select 4(leftmost) in Tree A #Subproblem: 26 Direction: Right
+Compute Free(3, 5)
+If select 5(rightmost) in Tree A #Subproblem: 26 Direction: Left
+Compute Free(3, 5)
+If select 6(leftmost) in Tree B #Subproblem: 26 Direction: Right
+Compute Free(3, 5)
+If select 6(rightmost) in Tree B #Subproblem: 26 Direction: Left
+Free[3][5] = 26
+FreeS(3, 5)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+free[3][0] freeSumA = 20 freeSumB = 48
+Compute Free(3, 0)
+If select 4(leftmost) in Tree A #Subproblem: 67 Direction: Right
+Compute Free(3, 0)
+If select 5(rightmost) in Tree A #Subproblem: 64 Direction: Left
+Compute Free(3, 0)
+If select 1(leftmost) in Tree B #Subproblem: 72 Direction: Right
+Compute Free(3, 0)
+If select 5(rightmost) in Tree B #Subproblem: 68 Direction: Left
+Free[3][0] = 64
+FreeS(3, 0)
+Keynode: 5 in Tree A
+Direction: left
+Leaf: 5
+Compute Free(1, 2)
+If select 2 in Tree B #Subproblem: 5 Direction: Leftfree[1][2] freeSumA = 4 freeSumB = 0
+Compute Free(1, 2)
+If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(1, 2)
+If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
+Free[1][2] = 5
+FreeS(1, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(1, 3)
+If select 3 in Tree B #Subproblem: 5 Direction: Leftfree[1][3] freeSumA = 4 freeSumB = 0
+Compute Free(1, 3)
+If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(1, 3)
+If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
+Free[1][3] = 5
+FreeS(1, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+Compute Free(1, 4)
+If select 4 in Tree B #Subproblem: 5 Direction: Leftfree[1][4] freeSumA = 4 freeSumB = 0
+Compute Free(1, 4)
+If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(1, 4)
+If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
+Free[1][4] = 5
+FreeS(1, 4)
+Keynode: 4 in TreeB
+Direction: rightLeaf: 4
+free[1][1] freeSumA = 26 freeSumB = 15
+Compute Free(1, 1)
+If select 2(leftmost) in Tree A #Subproblem: 52 Direction: Right
+Compute Free(1, 1)
+If select 3(rightmost) in Tree A #Subproblem: 38 Direction: Left
+Compute Free(1, 1)
+If select 2(leftmost) in Tree B #Subproblem: 46 Direction: Right
+Compute Free(1, 1)
+If select 3 in Tree B #Subproblem: 42 Direction: Left
+Compute Free(1, 1)
+If select 4(rightmost) in Tree B #Subproblem: 38 Direction: Left
+Free[1][1] = 38
+FreeS(1, 1)
+Keynode: 3 in Tree A
+Direction: left
+Leaf: 5
+Compute Free(1, 7)
+If select 7 in Tree B #Subproblem: 5 Direction: Leftfree[1][7] freeSumA = 4 freeSumB = 0
+Compute Free(1, 7)
+If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(1, 7)
+If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
+Free[1][7] = 5
+FreeS(1, 7)
+Keynode: 7 in TreeB
+Direction: rightLeaf: 7
+Compute Free(1, 8)
+If select 8 in Tree B #Subproblem: 5 Direction: Leftfree[1][8] freeSumA = 4 freeSumB = 0
+Compute Free(1, 8)
+If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(1, 8)
+If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
+Free[1][8] = 5
+FreeS(1, 8)
+Keynode: 8 in TreeB
+Direction: rightLeaf: 8
+Compute Free(1, 9)
+If select 9 in Tree B #Subproblem: 5 Direction: Leftfree[1][9] freeSumA = 4 freeSumB = 0
+Compute Free(1, 9)
+If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(1, 9)
+If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
+Free[1][9] = 5
+FreeS(1, 9)
+Keynode: 9 in TreeB
+Direction: rightLeaf: 9
+free[1][6] freeSumA = 26 freeSumB = 15
+Compute Free(1, 6)
+If select 2(leftmost) in Tree A #Subproblem: 52 Direction: Right
+Compute Free(1, 6)
+If select 3(rightmost) in Tree A #Subproblem: 38 Direction: Left
+Compute Free(1, 6)
+If select 7(leftmost) in Tree B #Subproblem: 46 Direction: Right
+Compute Free(1, 6)
+If select 8 in Tree B #Subproblem: 42 Direction: Left
+Compute Free(1, 6)
+If select 9(rightmost) in Tree B #Subproblem: 38 Direction: Left
+Free[1][6] = 38
+FreeS(1, 6)
+Keynode: 3 in Tree A
+Direction: left
+Leaf: 5
+free[1][5] freeSumA = 31 freeSumB = 38
+Compute Free(1, 5)
+If select 2(leftmost) in Tree A #Subproblem: 61 Direction: Right
+Compute Free(1, 5)
+If select 3(rightmost) in Tree A #Subproblem: 45 Direction: Left
+Compute Free(1, 5)
+If select 6(leftmost) in Tree B #Subproblem: 55 Direction: Right
+Compute Free(1, 5)
+If select 6(rightmost) in Tree B #Subproblem: 45 Direction: Left
+Free[1][5] = 45
+FreeS(1, 5)
+Keynode: 3 in Tree A
+Direction: left
+Leaf: 5
+free[1][0] freeSumA = 74 freeSumB = 83
+Compute Free(1, 0)
+If select 2(leftmost) in Tree A #Subproblem: 159 Direction: Right
+Compute Free(1, 0)
+If select 3(rightmost) in Tree A #Subproblem: 110 Direction: Left
+Compute Free(1, 0)
+If select 1(leftmost) in Tree B #Subproblem: 145 Direction: Right
+Compute Free(1, 0)
+If select 5(rightmost) in Tree B #Subproblem: 118 Direction: Left
+Free[1][0] = 110
+FreeS(1, 0)
+Keynode: 3 in Tree A
+Direction: left
+Leaf: 5
+Compute Free(7, 0)
+If select 7 in Tree A #Subproblem: 10 Direction: LeftCompute Free(7, 1)
+If select 7 in Tree A #Subproblem: 4 Direction: LeftCompute Free(7, 2)
+If select 7 in Tree A #Subproblem: 1 Direction: LeftCompute Free(7, 2)
+If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[7][2] freeSumA = 0 freeSumB = 0
+Free[7][2] = 1
+FreeS(7, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(7, 3)
+If select 7 in Tree A #Subproblem: 1 Direction: LeftCompute Free(7, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[7][3] freeSumA = 0 freeSumB = 0
+Free[7][3] = 1
+FreeS(7, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+Compute Free(7, 4)
+If select 7 in Tree A #Subproblem: 1 Direction: LeftCompute Free(7, 4)
+If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[7][4] freeSumA = 0 freeSumB = 0
+Free[7][4] = 1
+FreeS(7, 4)
+Keynode: 4 in TreeB
+Direction: rightLeaf: 4
+free[7][1] freeSumA = 0 freeSumB = 3
+Compute Free(7, 1)
+If select 2(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(7, 1)
+If select 3 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(7, 1)
+If select 4(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[7][1] = 4
+FreeS(7, 1)
+Keynode: 7 in Tree A
+Direction: rightLeaf: 7
+Compute Free(7, 5)
+If select 7 in Tree A #Subproblem: 5 Direction: LeftCompute Free(7, 6)
+If select 7 in Tree A #Subproblem: 4 Direction: LeftCompute Free(7, 7)
+If select 7 in Tree A #Subproblem: 1 Direction: LeftCompute Free(7, 7)
+If select 7 in Tree B #Subproblem: 1 Direction: Leftfree[7][7] freeSumA = 0 freeSumB = 0
+Free[7][7] = 1
+FreeS(7, 7)
+Keynode: 7 in TreeB
+Direction: rightLeaf: 7
+Compute Free(7, 8)
+If select 7 in Tree A #Subproblem: 1 Direction: LeftCompute Free(7, 8)
+If select 8 in Tree B #Subproblem: 1 Direction: Leftfree[7][8] freeSumA = 0 freeSumB = 0
+Free[7][8] = 1
+FreeS(7, 8)
+Keynode: 8 in TreeB
+Direction: rightLeaf: 8
+Compute Free(7, 9)
+If select 7 in Tree A #Subproblem: 1 Direction: LeftCompute Free(7, 9)
+If select 9 in Tree B #Subproblem: 1 Direction: Leftfree[7][9] freeSumA = 0 freeSumB = 0
+Free[7][9] = 1
+FreeS(7, 9)
+Keynode: 9 in TreeB
+Direction: rightLeaf: 9
+free[7][6] freeSumA = 0 freeSumB = 3
+Compute Free(7, 6)
+If select 7(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(7, 6)
+If select 8 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(7, 6)
+If select 9(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[7][6] = 4
+FreeS(7, 6)
+Keynode: 7 in Tree A
+Direction: rightLeaf: 7
+free[7][5] freeSumA = 0 freeSumB = 4
+Compute Free(7, 5)
+If select 6(leftmost) in Tree B #Subproblem: 7 Direction: Right
+Compute Free(7, 5)
+If select 6(rightmost) in Tree B #Subproblem: 7 Direction: Left
+Free[7][5] = 5
+FreeS(7, 5)
+Keynode: 7 in Tree A
+Direction: rightLeaf: 7
+free[7][0] freeSumA = 0 freeSumB = 9
+Compute Free(7, 0)
+If select 1(leftmost) in Tree B #Subproblem: 17 Direction: Right
+Compute Free(7, 0)
+If select 5(rightmost) in Tree B #Subproblem: 16 Direction: Left
+Free[7][0] = 10
+FreeS(7, 0)
+Keynode: 7 in Tree A
+Direction: rightLeaf: 7
+Compute Free(9, 0)
+If select 9 in Tree A #Subproblem: 10 Direction: LeftCompute Free(9, 1)
+If select 9 in Tree A #Subproblem: 4 Direction: LeftCompute Free(9, 2)
+If select 9 in Tree A #Subproblem: 1 Direction: LeftCompute Free(9, 2)
+If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[9][2] freeSumA = 0 freeSumB = 0
+Free[9][2] = 1
+FreeS(9, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(9, 3)
+If select 9 in Tree A #Subproblem: 1 Direction: LeftCompute Free(9, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[9][3] freeSumA = 0 freeSumB = 0
+Free[9][3] = 1
+FreeS(9, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+Compute Free(9, 4)
+If select 9 in Tree A #Subproblem: 1 Direction: LeftCompute Free(9, 4)
+If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[9][4] freeSumA = 0 freeSumB = 0
+Free[9][4] = 1
+FreeS(9, 4)
+Keynode: 4 in TreeB
+Direction: rightLeaf: 4
+free[9][1] freeSumA = 0 freeSumB = 3
+Compute Free(9, 1)
+If select 2(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(9, 1)
+If select 3 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(9, 1)
+If select 4(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[9][1] = 4
+FreeS(9, 1)
+Keynode: 9 in Tree A
+Direction: rightLeaf: 9
+Compute Free(9, 5)
+If select 9 in Tree A #Subproblem: 5 Direction: LeftCompute Free(9, 6)
+If select 9 in Tree A #Subproblem: 4 Direction: LeftCompute Free(9, 7)
+If select 9 in Tree A #Subproblem: 1 Direction: LeftCompute Free(9, 7)
+If select 7 in Tree B #Subproblem: 1 Direction: Leftfree[9][7] freeSumA = 0 freeSumB = 0
+Free[9][7] = 1
+FreeS(9, 7)
+Keynode: 7 in TreeB
+Direction: rightLeaf: 7
+Compute Free(9, 8)
+If select 9 in Tree A #Subproblem: 1 Direction: LeftCompute Free(9, 8)
+If select 8 in Tree B #Subproblem: 1 Direction: Leftfree[9][8] freeSumA = 0 freeSumB = 0
+Free[9][8] = 1
+FreeS(9, 8)
+Keynode: 8 in TreeB
+Direction: rightLeaf: 8
+Compute Free(9, 9)
+If select 9 in Tree A #Subproblem: 1 Direction: LeftCompute Free(9, 9)
+If select 9 in Tree B #Subproblem: 1 Direction: Leftfree[9][9] freeSumA = 0 freeSumB = 0
+Free[9][9] = 1
+FreeS(9, 9)
+Keynode: 9 in TreeB
+Direction: rightLeaf: 9
+free[9][6] freeSumA = 0 freeSumB = 3
+Compute Free(9, 6)
+If select 7(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(9, 6)
+If select 8 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(9, 6)
+If select 9(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[9][6] = 4
+FreeS(9, 6)
+Keynode: 9 in Tree A
+Direction: rightLeaf: 9
+free[9][5] freeSumA = 0 freeSumB = 4
+Compute Free(9, 5)
+If select 6(leftmost) in Tree B #Subproblem: 7 Direction: Right
+Compute Free(9, 5)
+If select 6(rightmost) in Tree B #Subproblem: 7 Direction: Left
+Free[9][5] = 5
+FreeS(9, 5)
+Keynode: 9 in Tree A
+Direction: rightLeaf: 9
+free[9][0] freeSumA = 0 freeSumB = 9
+Compute Free(9, 0)
+If select 1(leftmost) in Tree B #Subproblem: 17 Direction: Right
+Compute Free(9, 0)
+If select 5(rightmost) in Tree B #Subproblem: 16 Direction: Left
+Free[9][0] = 10
+FreeS(9, 0)
+Keynode: 9 in Tree A
+Direction: rightLeaf: 9
+Compute Free(8, 2)
+If select 2 in Tree B #Subproblem: 2 Direction: Leftfree[8][2] freeSumA = 1 freeSumB = 0
+Compute Free(8, 2)
+If select 9(leftmost) in Tree A #Subproblem: 2 Direction: Right
+Compute Free(8, 2)
+If select 9(rightmost) in Tree A #Subproblem: 2 Direction: Left
+Free[8][2] = 2
+FreeS(8, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(8, 3)
+If select 3 in Tree B #Subproblem: 2 Direction: Leftfree[8][3] freeSumA = 1 freeSumB = 0
+Compute Free(8, 3)
+If select 9(leftmost) in Tree A #Subproblem: 2 Direction: Right
+Compute Free(8, 3)
+If select 9(rightmost) in Tree A #Subproblem: 2 Direction: Left
+Free[8][3] = 2
+FreeS(8, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+Compute Free(8, 4)
+If select 4 in Tree B #Subproblem: 2 Direction: Leftfree[8][4] freeSumA = 1 freeSumB = 0
+Compute Free(8, 4)
+If select 9(leftmost) in Tree A #Subproblem: 2 Direction: Right
+Compute Free(8, 4)
+If select 9(rightmost) in Tree A #Subproblem: 2 Direction: Left
+Free[8][4] = 2
+FreeS(8, 4)
+Keynode: 4 in TreeB
+Direction: rightLeaf: 4
+free[8][1] freeSumA = 4 freeSumB = 6
+Compute Free(8, 1)
+If select 9(leftmost) in Tree A #Subproblem: 12 Direction: Right
+Compute Free(8, 1)
+If select 9(rightmost) in Tree A #Subproblem: 12 Direction: Left
+Compute Free(8, 1)
+If select 2(leftmost) in Tree B #Subproblem: 12 Direction: Right
+Compute Free(8, 1)
+If select 3 in Tree B #Subproblem: 12 Direction: Left
+Compute Free(8, 1)
+If select 4(rightmost) in Tree B #Subproblem: 12 Direction: Left
+Free[8][1] = 12
+FreeS(8, 1)
+Keynode: 9 in Tree A
+Direction: rightLeaf: 9
+Compute Free(8, 7)
+If select 7 in Tree B #Subproblem: 2 Direction: Leftfree[8][7] freeSumA = 1 freeSumB = 0
+Compute Free(8, 7)
+If select 9(leftmost) in Tree A #Subproblem: 2 Direction: Right
+Compute Free(8, 7)
+If select 9(rightmost) in Tree A #Subproblem: 2 Direction: Left
+Free[8][7] = 2
+FreeS(8, 7)
+Keynode: 7 in TreeB
+Direction: rightLeaf: 7
+Compute Free(8, 8)
+If select 8 in Tree B #Subproblem: 2 Direction: Leftfree[8][8] freeSumA = 1 freeSumB = 0
+Compute Free(8, 8)
+If select 9(leftmost) in Tree A #Subproblem: 2 Direction: Right
+Compute Free(8, 8)
+If select 9(rightmost) in Tree A #Subproblem: 2 Direction: Left
+Free[8][8] = 2
+FreeS(8, 8)
+Keynode: 8 in TreeB
+Direction: rightLeaf: 8
+Compute Free(8, 9)
+If select 9 in Tree B #Subproblem: 2 Direction: Leftfree[8][9] freeSumA = 1 freeSumB = 0
+Compute Free(8, 9)
+If select 9(leftmost) in Tree A #Subproblem: 2 Direction: Right
+Compute Free(8, 9)
+If select 9(rightmost) in Tree A #Subproblem: 2 Direction: Left
+Free[8][9] = 2
+FreeS(8, 9)
+Keynode: 9 in TreeB
+Direction: rightLeaf: 9
+free[8][6] freeSumA = 4 freeSumB = 6
+Compute Free(8, 6)
+If select 9(leftmost) in Tree A #Subproblem: 12 Direction: Right
+Compute Free(8, 6)
+If select 9(rightmost) in Tree A #Subproblem: 12 Direction: Left
+Compute Free(8, 6)
+If select 7(leftmost) in Tree B #Subproblem: 12 Direction: Right
+Compute Free(8, 6)
+If select 8 in Tree B #Subproblem: 12 Direction: Left
+Compute Free(8, 6)
+If select 9(rightmost) in Tree B #Subproblem: 12 Direction: Left
+Free[8][6] = 12
+FreeS(8, 6)
+Keynode: 9 in Tree A
+Direction: rightLeaf: 9
+free[8][5] freeSumA = 5 freeSumB = 12
+Compute Free(8, 5)
+If select 9(leftmost) in Tree A #Subproblem: 14 Direction: Right
+Compute Free(8, 5)
+If select 9(rightmost) in Tree A #Subproblem: 14 Direction: Left
+Compute Free(8, 5)
+If select 6(leftmost) in Tree B #Subproblem: 14 Direction: Right
+Compute Free(8, 5)
+If select 6(rightmost) in Tree B #Subproblem: 14 Direction: Left
+Free[8][5] = 14
+FreeS(8, 5)
+Keynode: 9 in Tree A
+Direction: rightLeaf: 9
+free[8][0] freeSumA = 10 freeSumB = 26
+Compute Free(8, 0)
+If select 9(leftmost) in Tree A #Subproblem: 38 Direction: Right
+Compute Free(8, 0)
+If select 9(rightmost) in Tree A #Subproblem: 36 Direction: Left
+Compute Free(8, 0)
+If select 1(leftmost) in Tree B #Subproblem: 38 Direction: Right
+Compute Free(8, 0)
+If select 5(rightmost) in Tree B #Subproblem: 36 Direction: Left
+Free[8][0] = 36
+FreeS(8, 0)
+Keynode: 9 in Tree A
+Direction: left
+Leaf: 9
+Compute Free(10, 0)
+If select 10 in Tree A #Subproblem: 10 Direction: LeftCompute Free(10, 1)
+If select 10 in Tree A #Subproblem: 4 Direction: LeftCompute Free(10, 2)
+If select 10 in Tree A #Subproblem: 1 Direction: LeftCompute Free(10, 2)
+If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[10][2] freeSumA = 0 freeSumB = 0
+Free[10][2] = 1
+FreeS(10, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(10, 3)
+If select 10 in Tree A #Subproblem: 1 Direction: LeftCompute Free(10, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[10][3] freeSumA = 0 freeSumB = 0
+Free[10][3] = 1
+FreeS(10, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+Compute Free(10, 4)
+If select 10 in Tree A #Subproblem: 1 Direction: LeftCompute Free(10, 4)
+If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[10][4] freeSumA = 0 freeSumB = 0
+Free[10][4] = 1
+FreeS(10, 4)
+Keynode: 4 in TreeB
+Direction: rightLeaf: 4
+free[10][1] freeSumA = 0 freeSumB = 3
+Compute Free(10, 1)
+If select 2(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(10, 1)
+If select 3 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(10, 1)
+If select 4(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[10][1] = 4
+FreeS(10, 1)
+Keynode: 10 in Tree A
+Direction: rightLeaf: 10
+Compute Free(10, 5)
+If select 10 in Tree A #Subproblem: 5 Direction: LeftCompute Free(10, 6)
+If select 10 in Tree A #Subproblem: 4 Direction: LeftCompute Free(10, 7)
+If select 10 in Tree A #Subproblem: 1 Direction: LeftCompute Free(10, 7)
+If select 7 in Tree B #Subproblem: 1 Direction: Leftfree[10][7] freeSumA = 0 freeSumB = 0
+Free[10][7] = 1
+FreeS(10, 7)
+Keynode: 7 in TreeB
+Direction: rightLeaf: 7
+Compute Free(10, 8)
+If select 10 in Tree A #Subproblem: 1 Direction: LeftCompute Free(10, 8)
+If select 8 in Tree B #Subproblem: 1 Direction: Leftfree[10][8] freeSumA = 0 freeSumB = 0
+Free[10][8] = 1
+FreeS(10, 8)
+Keynode: 8 in TreeB
+Direction: rightLeaf: 8
+Compute Free(10, 9)
+If select 10 in Tree A #Subproblem: 1 Direction: LeftCompute Free(10, 9)
+If select 9 in Tree B #Subproblem: 1 Direction: Leftfree[10][9] freeSumA = 0 freeSumB = 0
+Free[10][9] = 1
+FreeS(10, 9)
+Keynode: 9 in TreeB
+Direction: rightLeaf: 9
+free[10][6] freeSumA = 0 freeSumB = 3
+Compute Free(10, 6)
+If select 7(leftmost) in Tree B #Subproblem: 6 Direction: Right
+Compute Free(10, 6)
+If select 8 in Tree B #Subproblem: 6 Direction: Left
+Compute Free(10, 6)
+If select 9(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[10][6] = 4
+FreeS(10, 6)
+Keynode: 10 in Tree A
+Direction: rightLeaf: 10
+free[10][5] freeSumA = 0 freeSumB = 4
+Compute Free(10, 5)
+If select 6(leftmost) in Tree B #Subproblem: 7 Direction: Right
+Compute Free(10, 5)
+If select 6(rightmost) in Tree B #Subproblem: 7 Direction: Left
+Free[10][5] = 5
+FreeS(10, 5)
+Keynode: 10 in Tree A
+Direction: rightLeaf: 10
+free[10][0] freeSumA = 0 freeSumB = 9
+Compute Free(10, 0)
+If select 1(leftmost) in Tree B #Subproblem: 17 Direction: Right
+Compute Free(10, 0)
+If select 5(rightmost) in Tree B #Subproblem: 16 Direction: Left
+Free[10][0] = 10
+FreeS(10, 0)
+Keynode: 10 in Tree A
+Direction: rightLeaf: 10
+Compute Free(6, 2)
+If select 2 in Tree B #Subproblem: 5 Direction: Leftfree[6][2] freeSumA = 4 freeSumB = 0
+Compute Free(6, 2)
+If select 7(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(6, 2)
+If select 8 in Tree A #Subproblem: 7 Direction: Left
+Compute Free(6, 2)
+If select 10(rightmost) in Tree A #Subproblem: 8 Direction: Left
+Free[6][2] = 5
+FreeS(6, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+Compute Free(6, 3)
+If select 3 in Tree B #Subproblem: 5 Direction: Leftfree[6][3] freeSumA = 4 freeSumB = 0
+Compute Free(6, 3)
+If select 7(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(6, 3)
+If select 8 in Tree A #Subproblem: 7 Direction: Left
+Compute Free(6, 3)
+If select 10(rightmost) in Tree A #Subproblem: 8 Direction: Left
+Free[6][3] = 5
+FreeS(6, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+Compute Free(6, 4)
+If select 4 in Tree B #Subproblem: 5 Direction: Leftfree[6][4] freeSumA = 4 freeSumB = 0
+Compute Free(6, 4)
+If select 7(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(6, 4)
+If select 8 in Tree A #Subproblem: 7 Direction: Left
+Compute Free(6, 4)
+If select 10(rightmost) in Tree A #Subproblem: 8 Direction: Left
+Free[6][4] = 5
+FreeS(6, 4)
+Keynode: 4 in TreeB
+Direction: rightLeaf: 4
+free[6][1] freeSumA = 20 freeSumB = 15
+Compute Free(6, 1)
+If select 7(leftmost) in Tree A #Subproblem: 46 Direction: Right
+Compute Free(6, 1)
+If select 8 in Tree A #Subproblem: 41 Direction: Left
+Compute Free(6, 1)
+If select 10(rightmost) in Tree A #Subproblem: 46 Direction: Left
+Compute Free(6, 1)
+If select 2(leftmost) in Tree B #Subproblem: 42 Direction: Right
+Compute Free(6, 1)
+If select 3 in Tree B #Subproblem: 46 Direction: Left
+Compute Free(6, 1)
+If select 4(rightmost) in Tree B #Subproblem: 42 Direction: Left
+Free[6][1] = 41
+FreeS(6, 1)
+Keynode: 8 in Tree A
+Direction: left
+Leaf: 9
+Compute Free(6, 7)
+If select 7 in Tree B #Subproblem: 5 Direction: Leftfree[6][7] freeSumA = 4 freeSumB = 0
+Compute Free(6, 7)
+If select 7(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(6, 7)
+If select 8 in Tree A #Subproblem: 7 Direction: Left
+Compute Free(6, 7)
+If select 10(rightmost) in Tree A #Subproblem: 8 Direction: Left
+Free[6][7] = 5
+FreeS(6, 7)
+Keynode: 7 in TreeB
+Direction: rightLeaf: 7
+Compute Free(6, 8)
+If select 8 in Tree B #Subproblem: 5 Direction: Leftfree[6][8] freeSumA = 4 freeSumB = 0
+Compute Free(6, 8)
+If select 7(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(6, 8)
+If select 8 in Tree A #Subproblem: 7 Direction: Left
+Compute Free(6, 8)
+If select 10(rightmost) in Tree A #Subproblem: 8 Direction: Left
+Free[6][8] = 5
+FreeS(6, 8)
+Keynode: 8 in TreeB
+Direction: rightLeaf: 8
+Compute Free(6, 9)
+If select 9 in Tree B #Subproblem: 5 Direction: Leftfree[6][9] freeSumA = 4 freeSumB = 0
+Compute Free(6, 9)
+If select 7(leftmost) in Tree A #Subproblem: 8 Direction: Right
+Compute Free(6, 9)
+If select 8 in Tree A #Subproblem: 7 Direction: Left
+Compute Free(6, 9)
+If select 10(rightmost) in Tree A #Subproblem: 8 Direction: Left
+Free[6][9] = 5
+FreeS(6, 9)
+Keynode: 9 in TreeB
+Direction: rightLeaf: 9
+free[6][6] freeSumA = 20 freeSumB = 15
+Compute Free(6, 6)
+If select 7(leftmost) in Tree A #Subproblem: 46 Direction: Right
+Compute Free(6, 6)
+If select 8 in Tree A #Subproblem: 41 Direction: Left
+Compute Free(6, 6)
+If select 10(rightmost) in Tree A #Subproblem: 46 Direction: Left
+Compute Free(6, 6)
+If select 7(leftmost) in Tree B #Subproblem: 42 Direction: Right
+Compute Free(6, 6)
+If select 8 in Tree B #Subproblem: 46 Direction: Left
+Compute Free(6, 6)
+If select 9(rightmost) in Tree B #Subproblem: 42 Direction: Left
+Free[6][6] = 41
+FreeS(6, 6)
+Keynode: 8 in Tree A
+Direction: left
+Leaf: 9
+free[6][5] freeSumA = 24 freeSumB = 41
+Compute Free(6, 5)
+If select 7(leftmost) in Tree A #Subproblem: 54 Direction: Right
+Compute Free(6, 5)
+If select 8 in Tree A #Subproblem: 48 Direction: Left
+Compute Free(6, 5)
+If select 10(rightmost) in Tree A #Subproblem: 54 Direction: Left
+Compute Free(6, 5)
+If select 6(leftmost) in Tree B #Subproblem: 50 Direction: Right
+Compute Free(6, 5)
+If select 6(rightmost) in Tree B #Subproblem: 50 Direction: Left
+Free[6][5] = 48
+FreeS(6, 5)
+Keynode: 8 in Tree A
+Direction: left
+Leaf: 9
+free[6][0] freeSumA = 56 freeSumB = 89
+Compute Free(6, 0)
+If select 7(leftmost) in Tree A #Subproblem: 141 Direction: Right
+Compute Free(6, 0)
+If select 8 in Tree A #Subproblem: 164 Direction: Left
+Compute Free(6, 0)
+If select 10(rightmost) in Tree A #Subproblem: 136 Direction: Left
+Compute Free(6, 0)
+If select 1(leftmost) in Tree B #Subproblem: 138 Direction: Right
+Compute Free(6, 0)
+If select 5(rightmost) in Tree B #Subproblem: 131 Direction: Left
+Free[6][0] = 131
+FreeS(6, 0)
+Keynode: 5 in TreeB
+Direction: left
+Leaf: 9
+Compute Free(0, 2)
+If select 2 in Tree B #Subproblem: 11 Direction: Leftfree[0][2] freeSumA = 10 freeSumB = 0
+Compute Free(0, 2)
+If select 1(leftmost) in Tree A #Subproblem: 18 Direction: Right
+Compute Free(0, 2)
+If select 6(rightmost) in Tree A #Subproblem: 18 Direction: Left
+Free[0][2] = 11
+FreeS(0, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
 Compute Free(0, 3)
-If select 3 in Tree B #Subproblem: 6 Direction: Leftfree[0][3] freeSumA = 5 freeSumB = 0
+If select 3 in Tree B #Subproblem: 11 Direction: Leftfree[0][3] freeSumA = 10 freeSumB = 0
 Compute Free(0, 3)
-If select 1(leftmost) in Tree A #Subproblem: 10 Direction: Right
+If select 1(leftmost) in Tree A #Subproblem: 18 Direction: Right
 Compute Free(0, 3)
-If select 2 in Tree A #Subproblem: 9 Direction: Left
-Compute Free(0, 3)
-If select 5(rightmost) in Tree A #Subproblem: 10 Direction: Left
-Free[0][3] = 6
+If select 6(rightmost) in Tree A #Subproblem: 18 Direction: Left
+Free[0][3] = 11
 FreeS(0, 3)
 Keynode: 3 in TreeB
 Direction: rightLeaf: 3
-free[0][2] freeSumA = 12 freeSumB = 6
-Compute Free(0, 2)
-If select 1(leftmost) in Tree A #Subproblem: 22 Direction: Right
-Compute Free(0, 2)
-If select 2 in Tree A #Subproblem: 18 Direction: Left
-Compute Free(0, 2)
-If select 5(rightmost) in Tree A #Subproblem: 22 Direction: Left
-Compute Free(0, 2)
-If select 3(leftmost) in Tree B #Subproblem: 22 Direction: Right
-Compute Free(0, 2)
-If select 3(rightmost) in Tree B #Subproblem: 22 Direction: Left
-Free[0][2] = 18
-FreeS(0, 2)
-Keynode: 2 in Tree A
-Direction: left
-Leaf: 3
 Compute Free(0, 4)
-If select 4 in Tree B #Subproblem: 6 Direction: Leftfree[0][4] freeSumA = 5 freeSumB = 0
+If select 4 in Tree B #Subproblem: 11 Direction: Leftfree[0][4] freeSumA = 10 freeSumB = 0
 Compute Free(0, 4)
-If select 1(leftmost) in Tree A #Subproblem: 10 Direction: Right
+If select 1(leftmost) in Tree A #Subproblem: 18 Direction: Right
 Compute Free(0, 4)
-If select 2 in Tree A #Subproblem: 9 Direction: Left
-Compute Free(0, 4)
-If select 5(rightmost) in Tree A #Subproblem: 10 Direction: Left
-Free[0][4] = 6
+If select 6(rightmost) in Tree A #Subproblem: 18 Direction: Left
+Free[0][4] = 11
 FreeS(0, 4)
 Keynode: 4 in TreeB
 Direction: rightLeaf: 4
-free[0][0] freeSumA = 36 freeSumB = 30
-Compute Free(0, 0)
-If select 1(leftmost) in Tree A #Subproblem: 79 Direction: Right
-Compute Free(0, 0)
-If select 2 in Tree A #Subproblem: 71 Direction: Left
-Compute Free(0, 0)
-If select 5(rightmost) in Tree A #Subproblem: 79 Direction: Left
-Compute Free(0, 0)
-If select 1(leftmost) in Tree B #Subproblem: 79 Direction: Right
-Compute Free(0, 0)
-If select 2 in Tree B #Subproblem: 76 Direction: Left
-Compute Free(0, 0)
-If select 4(rightmost) in Tree B #Subproblem: 79 Direction: Left
-Free[0][0] = 71
-FreeS(0, 0)
-Keynode: 2 in Tree A
+free[0][1] freeSumA = 79 freeSumB = 33
+Compute Free(0, 1)
+If select 1(leftmost) in Tree A #Subproblem: 120 Direction: Right
+Compute Free(0, 1)
+If select 6(rightmost) in Tree A #Subproblem: 115 Direction: Left
+Compute Free(0, 1)
+If select 2(leftmost) in Tree B #Subproblem: 114 Direction: Right
+Compute Free(0, 1)
+If select 3 in Tree B #Subproblem: 154 Direction: Left
+Compute Free(0, 1)
+If select 4(rightmost) in Tree B #Subproblem: 106 Direction: Left
+Free[0][1] = 106
+FreeS(0, 1)
+Keynode: 4 in TreeB
 Direction: left
-Leaf: 3
+Leaf: 4
+Compute Free(0, 7)
+If select 7 in Tree B #Subproblem: 11 Direction: Leftfree[0][7] freeSumA = 10 freeSumB = 0
+Compute Free(0, 7)
+If select 1(leftmost) in Tree A #Subproblem: 18 Direction: Right
+Compute Free(0, 7)
+If select 6(rightmost) in Tree A #Subproblem: 18 Direction: Left
+Free[0][7] = 11
+FreeS(0, 7)
+Keynode: 7 in TreeB
+Direction: rightLeaf: 7
+Compute Free(0, 8)
+If select 8 in Tree B #Subproblem: 11 Direction: Leftfree[0][8] freeSumA = 10 freeSumB = 0
+Compute Free(0, 8)
+If select 1(leftmost) in Tree A #Subproblem: 18 Direction: Right
+Compute Free(0, 8)
+If select 6(rightmost) in Tree A #Subproblem: 18 Direction: Left
+Free[0][8] = 11
+FreeS(0, 8)
+Keynode: 8 in TreeB
+Direction: rightLeaf: 8
+Compute Free(0, 9)
+If select 9 in Tree B #Subproblem: 11 Direction: Leftfree[0][9] freeSumA = 10 freeSumB = 0
+Compute Free(0, 9)
+If select 1(leftmost) in Tree A #Subproblem: 18 Direction: Right
+Compute Free(0, 9)
+If select 6(rightmost) in Tree A #Subproblem: 18 Direction: Left
+Free[0][9] = 11
+FreeS(0, 9)
+Keynode: 9 in TreeB
+Direction: rightLeaf: 9
+free[0][6] freeSumA = 79 freeSumB = 33
+Compute Free(0, 6)
+If select 1(leftmost) in Tree A #Subproblem: 120 Direction: Right
+Compute Free(0, 6)
+If select 6(rightmost) in Tree A #Subproblem: 115 Direction: Left
+Compute Free(0, 6)
+If select 7(leftmost) in Tree B #Subproblem: 114 Direction: Right
+Compute Free(0, 6)
+If select 8 in Tree B #Subproblem: 154 Direction: Left
+Compute Free(0, 6)
+If select 9(rightmost) in Tree B #Subproblem: 106 Direction: Left
+Free[0][6] = 106
+FreeS(0, 6)
+Keynode: 9 in TreeB
+Direction: left
+Leaf: 9
+free[0][5] freeSumA = 93 freeSumB = 106
+Compute Free(0, 5)
+If select 1(leftmost) in Tree A #Subproblem: 140 Direction: Right
+Compute Free(0, 5)
+If select 6(rightmost) in Tree A #Subproblem: 135 Direction: Left
+Compute Free(0, 5)
+If select 6(leftmost) in Tree B #Subproblem: 137 Direction: Right
+Compute Free(0, 5)
+If select 6(rightmost) in Tree B #Subproblem: 127 Direction: Left
+Free[0][5] = 127
+FreeS(0, 5)
+Keynode: 6 in TreeB
+Direction: left
+Leaf: 9
+free[0][0] freeSumA = 241 freeSumB = 233
+Compute Free(0, 0)
+If select 1(leftmost) in Tree A #Subproblem: 404 Direction: Right
+Compute Free(0, 0)
+If select 6(rightmost) in Tree A #Subproblem: 354 Direction: Left
+Compute Free(0, 0)
+If select 1(leftmost) in Tree B #Subproblem: 379 Direction: Right
+Compute Free(0, 0)
+If select 5(rightmost) in Tree B #Subproblem: 338 Direction: Left
+Free[0][0] = 338
+FreeS(0, 0)
+Keynode: 5 in TreeB
+Direction: left
+Leaf: 9
 RESULT
-3 in A 1 in B 3 in A 3 in B 4 in B 
-1 in A 1 in B 1 in A 3 in B 4 in B 
-3 in B 1 in B 3 in A 3 in B 4 in B 
-3 in A 1 in B 3 in A 3 in B 4 in B 
-4 in A 1 in B 4 in A 3 in B 4 in B 
-5 in A 1 in B 5 in A 3 in B 4 in B 
+9 in B 4 in B 2 in B 3 in B 4 in B 9 in B 9 in B 7 in B 8 in B 9 in B 
+5 in A 5 in A 2 in B 3 in B 4 in B 5 in A 5 in A 7 in B 8 in B 9 in B 
+2 in A 2 in A 2 in B 3 in B 4 in B 2 in A 2 in A 7 in B 8 in B 9 in B 
+5 in A 4 in A 2 in B 3 in B 4 in B 4 in A 4 in A 7 in B 8 in B 9 in B 
+4 in A 4 in A 2 in B 3 in B 4 in B 4 in A 4 in A 7 in B 8 in B 9 in B 
+5 in A 5 in A 2 in B 3 in B 4 in B 5 in A 5 in A 7 in B 8 in B 9 in B 
+9 in B 9 in A 2 in B 3 in B 4 in B 9 in A 9 in A 7 in B 8 in B 9 in B 
+7 in A 7 in A 2 in B 3 in B 4 in B 7 in A 7 in A 7 in B 8 in B 9 in B 
+9 in A 9 in A 2 in B 3 in B 4 in B 9 in A 9 in A 7 in B 8 in B 9 in B 
+9 in A 9 in A 2 in B 3 in B 4 in B 9 in A 9 in A 7 in B 8 in B 9 in B 
+10 in A 10 in A 2 in B 3 in B 4 in B 10 in A 10 in A 7 in B 8 in B 9 in B 
 Free
-71 6 18 6 6 
-5 1 2 1 1 
-26 3 8 3 3 
-5 1 2 1 1 
-5 1 2 1 1 
-5 1 2 1 1 
+338 106 11 11 11 127 106 11 11 11 
+110 38 5 5 5 45 38 5 5 5 
+10 4 1 1 1 5 4 1 1 1 
+64 22 3 3 3 26 22 3 3 3 
+10 4 1 1 1 5 4 1 1 1 
+10 4 1 1 1 5 4 1 1 1 
+131 41 5 5 5 48 41 5 5 5 
+10 4 1 1 1 5 4 1 1 1 
+36 12 2 2 2 14 12 2 2 2 
+10 4 1 1 1 5 4 1 1 1 
+10 4 1 1 1 5 4 1 1 1 
 
 LeftA
--1 -1 -1 -1 -1 
-8 1 2 1 1 
--1 -1 -1 -1 -1 
-8 1 2 1 1 
--1 -1 -1 -1 -1 
--1 -1 -1 -1 -1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+159 43 7 7 7 50 43 7 7 7 
+19 6 1 1 1 7 6 1 1 1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+19 6 1 1 1 7 6 1 1 1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+19 6 1 1 1 7 6 1 1 1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+19 6 1 1 1 7 6 1 1 1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
 
 RightA
--1 -1 -1 -1 -1 
--1 -1 -1 -1 -1 
--1 -1 -1 -1 -1 
--1 -1 -1 -1 -1 
-8 1 2 1 1 
-8 1 2 1 1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+64 22 4 4 4 26 22 4 4 4 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+18 6 1 1 1 7 6 1 1 1 
+136 41 7 7 7 48 41 7 7 7 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+18 6 1 1 1 7 6 1 1 1 
+18 6 1 1 1 7 6 1 1 1 
 
 AllA
--1 -1 -1 -1 -1 
--1 -1 -1 -1 -1 
-35 4 8 4 4 
-10 1 2 1 1 
-10 1 2 1 1 
--1 -1 -1 -1 -1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+118 25 4 4 4 29 25 4 4 4 
+36 7 1 1 1 8 7 1 1 1 
+36 7 1 1 1 8 7 1 1 1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+36 7 1 1 1 8 7 1 1 1 
+72 14 2 2 2 16 14 2 2 2 
+36 7 1 1 1 8 7 1 1 1 
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
 
 LeftB
--1 11 -1 11 -1 
--1 1 -1 1 -1 
--1 4 -1 4 -1 
--1 1 -1 1 -1 
--1 1 -1 1 -1 
--1 1 -1 1 -1 
+-1 114 23 -1 -1 -1 114 23 -1 -1 
+-1 46 9 -1 -1 -1 46 9 -1 -1 
+-1 6 1 -1 -1 -1 6 1 -1 -1 
+-1 22 4 -1 -1 -1 22 4 -1 -1 
+-1 6 1 -1 -1 -1 6 1 -1 -1 
+-1 6 1 -1 -1 -1 6 1 -1 -1 
+-1 42 8 -1 -1 -1 42 8 -1 -1 
+-1 6 1 -1 -1 -1 6 1 -1 -1 
+-1 12 2 -1 -1 -1 12 2 -1 -1 
+-1 6 1 -1 -1 -1 6 1 -1 -1 
+-1 6 1 -1 -1 -1 6 1 -1 -1 
 
 RightB
--1 -1 -1 11 11 
--1 -1 -1 1 1 
--1 -1 -1 4 4 
--1 -1 -1 1 1 
--1 -1 -1 1 1 
--1 -1 -1 1 1 
+-1 -1 -1 -1 21 127 106 -1 -1 21 
+-1 -1 -1 -1 7 45 38 -1 -1 7 
+-1 -1 -1 -1 1 7 6 -1 -1 1 
+-1 -1 -1 -1 4 26 22 -1 -1 4 
+-1 -1 -1 -1 1 7 6 -1 -1 1 
+-1 -1 -1 -1 1 7 6 -1 -1 1 
+-1 -1 -1 -1 8 50 42 -1 -1 8 
+-1 -1 -1 -1 1 7 6 -1 -1 1 
+-1 -1 -1 -1 2 14 12 -1 -1 2 
+-1 -1 -1 -1 1 7 6 -1 -1 1 
+-1 -1 -1 -1 1 7 6 -1 -1 1 
 
 AllB
--1 -1 28 14 -1 
--1 -1 2 1 -1 
--1 -1 8 4 -1 
--1 -1 2 1 -1 
--1 -1 2 1 -1 
--1 -1 2 1 -1 
+-1 -1 -1 45 45 -1 202 45 45 45 
+-1 -1 -1 9 9 -1 46 9 9 9 
+-1 -1 -1 1 1 -1 6 1 1 1 
+-1 -1 -1 4 4 -1 22 4 4 4 
+-1 -1 -1 1 1 -1 6 1 1 1 
+-1 -1 -1 1 1 -1 6 1 1 1 
+-1 -1 -1 10 10 -1 50 10 10 10 
+-1 -1 -1 1 1 -1 6 1 1 1 
+-1 -1 -1 2 2 -1 12 2 2 2 
+-1 -1 -1 1 1 -1 6 1 1 1 
+-1 -1 -1 1 1 -1 6 1 1 1 
 
-spfA_LR(0, 0) 0 
-new Round B'
-new Round C'
-Right (3, 4, 4, 1) counter  = 16
-Save to s[4, 1] = 1.000000
-t[4, 1] = s[4, 1] = 1.000000
-new Round B'
-new Round C'
-Right (3, 4, 3, 3) counter  = 17
-Save to s[4, 3] = 0.000000
-Right (3, 4, 3, 1) counter = 18
-Save to s[4, 1]
-s[4, 1] = 1.000000
-q[4] = s[4, 3] = 0.000000
-t[3, 3] = s[4, 3] = 0.000000
-t[3, 1] = s[4, 1] = 1.000000
-new Round B'
-new Round C'
-Right (3, 4, 2, 2) counter  = 19
-Save to s[4, 2] = 1.000000
-Right (3, 4, 2, 1) counter = 20
-Save to s[4, 1]
-s[4, 1] = 2.000000
-t[2, 2] = s[4, 2] = 1.000000
-t[2, 1] = s[4, 1] = 2.000000
-new Round B'
-new Round C'
-Right (3, 4, 1, 4) counter  = 21
-Save to s[4, 4] = 1.000000
-Right (3, 4, 1, 3) counter = 22
-Save to s[4, 3]
-s[4, 3] = 1.000000
-Right (3, 4, 1, 2) counter = 23
-Save to s[4, 2]
-s[4, 2] = 2.000000
-Right (3, 4, 1, 1) counter = 24
-Save to s[4, 1]
-s[4, 1] = 3.000000
-q[4] = s[4, 1] = 3.000000
-t[1, 4] = s[4, 4] = 1.000000
-t[1, 3] = s[4, 3] = 1.000000
-t[1, 2] = s[4, 2] = 2.000000
-t[1, 1] = s[4, 1] = 3.000000
-new Round B'
-new Round C'
-Right (3, 4, 0, 0) counter  = 25
-Save to s[4, 0] = 4.000000
-t[0, 0] = s[4, 0] = 4.000000
-new Round B'
-new Round C'
-Right (2, 3, 4, 1) counter  = 26
-Save to s[3, 1] = 2.000000
-new Round C'
-Right (2, 2, 4, 1) counter  = 27
-Save to s[2, 1] = 3.000000
-t[4, 1] = s[2, 1] = 3.000000
-new Round B'
-new Round C'
-Right (2, 3, 3, 3) counter  = 28
-Save to s[3, 3] = 1.000000
-Right (2, 3, 3, 1) counter = 29
-Save to s[3, 1]
-s[3, 1] = 1.000000
-new Round C'
-Right (2, 2, 3, 3) counter  = 30
-Save to s[2, 3] = 2.000000
-Right (2, 2, 3, 1) counter = 31
-Save to s[2, 1]
-s[2, 1] = 2.000000
-save to delta[2, 2] = s[2, 3] = 1.000000
-q[3] = s[3, 3] = 1.000000
-q[2] = s[2, 3] = 2.000000
-t[3, 3] = s[2, 3] = 2.000000
-t[3, 1] = s[2, 1] = 2.000000
-new Round B'
-new Round C'
-Right (2, 3, 2, 2) counter  = 32
-Save to s[3, 2] = 2.000000
-Right (2, 3, 2, 1) counter = 33
-Save to s[3, 1]
-s[3, 1] = 2.000000
-new Round C'
-Right (2, 2, 2, 2) counter  = 34
-Save to s[2, 2] = 1.000000
-Right (2, 2, 2, 1) counter = 35
-Save to s[2, 1]
-s[2, 1] = 2.000000
-t[2, 2] = s[2, 2] = 1.000000
-t[2, 1] = s[2, 1] = 2.000000
-new Round B'
-new Round C'
-Right (2, 3, 1, 4) counter  = 36
-Save to s[3, 4] = 2.000000
-Right (2, 3, 1, 3) counter = 37
-Save to s[3, 3]
-s[3, 3] = 2.000000
-Right (2, 3, 1, 2) counter = 38
-Save to s[3, 2]
-s[3, 2] = 3.000000
-Right (2, 3, 1, 1) counter = 39
-Save to s[3, 1]
-s[3, 1] = 3.000000
-new Round C'
-Right (2, 2, 1, 4) counter  = 40
-Save to s[2, 4] = 3.000000
-Right (2, 2, 1, 3) counter = 41
-Save to s[2, 3]
-s[2, 3] = 3.000000
-Right (2, 2, 1, 2) counter = 42
-Save to s[2, 2]
-s[2, 2] = 2.000000
-Right (2, 2, 1, 1) counter = 43
-Save to s[2, 1]
-s[2, 1] = 3.000000
-save to delta[2, 0] = s[2, 1] = 3.000000
-q[3] = s[3, 1] = 3.000000
-q[2] = s[2, 1] = 3.000000
-t[1, 4] = s[2, 4] = 3.000000
-t[1, 3] = s[2, 3] = 3.000000
-t[1, 2] = s[2, 2] = 2.000000
-t[1, 1] = s[2, 1] = 3.000000
-new Round B'
-new Round C'
-Right (2, 3, 0, 0) counter  = 44
-Save to s[3, 0] = 4.000000
-new Round C'
-Right (2, 2, 0, 0) counter  = 45
-Save to s[2, 0] = 4.000000
-t[0, 0] = s[2, 0] = 4.000000
-new Round B
-new round C
-Left (1, 2, 1, 4) counter = 46
-Save to s[1, 1]
-s[1, 1] = 3.000000
-t[1, 4] = s[1, 1]
-new Round B
-new round C
-Left (1, 2, 3, 3) counter = 47
-Save to s[1, 3]
-s[1, 3] = 3.000000
-Left (1, 2, 1, 3) counter = 48
-Save to s[1, 1]
-s[1, 1] = 2.000000
-q[1] = s[1, 3]
-t[3, 3] = s[1, 3]
-t[1, 3] = s[1, 1]
-new Round B
-new round C
-Left (1, 2, 2, 2) counter = 49
-Save to s[1, 2]
-s[1, 2] = 2.000000
-Left (1, 2, 1, 2) counter = 50
-Save to s[1, 1]
-s[1, 1] = 1.000000
-t[2, 2] = s[1, 2]
-t[1, 2] = s[1, 1]
-new Round B
-new round C
-Left (1, 2, 4, 1) counter = 51
-Save to s[1, 4]
-s[1, 4] = 4.000000
-Left (1, 2, 3, 1) counter = 52
-Save to s[1, 3]
-s[1, 3] = 3.000000
-Left (1, 2, 2, 1) counter = 53
-Save to s[1, 2]
-s[1, 2] = 3.000000
-Left (1, 2, 1, 1) counter = 54
-Save to s[1, 1]
-s[1, 1] = 2.000000
-q[1] = s[1, 1]
-t[4, 1] = s[1, 4]
-t[3, 1] = s[1, 3]
-t[2, 1] = s[1, 2]
-t[1, 1] = s[1, 1]
-new Round B
-new round C
-Left (1, 2, 0, 0) counter = 55
-Save to s[1, 0]
-s[1, 0] = 2.000000
-t[0, 0] = s[1, 0]
-new Round B'
-new Round C'
-Right (1, 1, 4, 1) counter  = 56
-Save to s[1, 1] = 4.000000
-new Round C'
-Right (0, 0, 4, 1) counter  = 57
-Save to s[0, 1] = 5.000000
-t[4, 1] = s[0, 1] = 5.000000
-new Round B'
-new Round C'
-Right (1, 1, 3, 3) counter  = 58
-Save to s[1, 3] = 4.000000
-new Round C'
-Right (0, 0, 3, 3) counter  = 59
-Save to s[0, 3] = 5.000000
-save to delta[0, 2] = s[0, 3] = 4.000000
-q[1] = s[1, 3] = 4.000000
-q[0] = s[0, 3] = 5.000000
-t[3, 3] = s[0, 3] = 5.000000
-new Round B'
-new Round C'
-Right (1, 1, 2, 2) counter  = 60
-Save to s[1, 2] = 3.000000
-new Round C'
-Right (0, 0, 2, 2) counter  = 61
-Save to s[0, 2] = 4.000000
-t[2, 2] = s[0, 2] = 4.000000
-new Round B'
-new Round C'
-Right (1, 1, 1, 4) counter  = 62
-Save to s[1, 4] = 4.000000
-Right (1, 1, 1, 3) counter = 63
-Save to s[1, 3]
-s[1, 3] = 3.000000
-Right (1, 1, 1, 2) counter = 64
-Save to s[1, 2]
-s[1, 2] = 2.000000
-Right (1, 1, 1, 1) counter = 65
-Save to s[1, 1]
-s[1, 1] = 1.000000
-new Round C'
-Right (0, 0, 1, 4) counter  = 66
-Save to s[0, 4] = 5.000000
-Right (0, 0, 1, 3) counter = 67
-Save to s[0, 3]
-s[0, 3] = 4.000000
-Right (0, 0, 1, 2) counter = 68
-Save to s[0, 2]
-s[0, 2] = 3.000000
-Right (0, 0, 1, 1) counter = 69
-Save to s[0, 1]
-s[0, 1] = 2.000000
-save to delta[0, 0] = s[0, 1] = 1.000000
-q[1] = s[1, 1] = 1.000000
-q[0] = s[0, 1] = 2.000000
-t[1, 4] = s[0, 4] = 5.000000
-t[1, 3] = s[0, 3] = 4.000000
-t[1, 2] = s[0, 2] = 3.000000
-t[1, 1] = s[0, 1] = 2.000000
-new Round B'
-new Round C'
-Right (1, 1, 0, 0) counter  = 70
-Save to s[1, 0] = 2.000000
-new Round C'
-Right (0, 0, 0, 0) counter  = 71
-Save to s[0, 0] = 1.000000
-t[0, 0] = s[0, 0] = 1.000000
-delta
-1 5 4 5 5 
-4 0 1 0 0 
-3 2 1 2 2 
-4 0 1 0 0 
-4 0 1 0 0 
-4 0 1 0 0 
+cost = 11.000000
+cost = 11.000000
+cost = 11.000000
+cost = 11.000000
+RevTreeDistance(1, 2)
+Compute revforestdist(4, 2)
+delta[2, 4] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(3, 2)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(2, 2)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(1, 2)
+delta[2, 1] = forestdist[3, 0] = 3.000000
+forestdist[4, 1] = 3.000000
+RevTreeDistance(1, 4)
+Compute revforestdist(4, 4)
+delta[4, 4] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(3, 4)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(2, 4)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(1, 4)
+delta[4, 1] = forestdist[3, 0] = 3.000000
+forestdist[4, 1] = 3.000000
+RevTreeDistance(1, 1)
+Compute revforestdist(4, 5)
+delta[5, 4] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(4, 4)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(4, 3)
+delta[3, 4] = forestdist[0, 2] = 2.000000
+forestdist[1, 3] = 2.000000
+Compute revforestdist(4, 2)
+forestdist[1, 4] = 3.000000
+Compute revforestdist(4, 1)
+delta[1, 4] = forestdist[0, 4] = 4.000000
+forestdist[1, 5] = 4.000000
+Compute revforestdist(3, 5)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(3, 4)
+forestdist[2, 2] = 0.000000
+Compute revforestdist(3, 3)
+forestdist[2, 3] = 1.000000
+Compute revforestdist(3, 2)
+forestdist[2, 4] = 2.000000
+Compute revforestdist(3, 1)
+forestdist[2, 5] = 3.000000
+Compute revforestdist(2, 5)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(2, 4)
+forestdist[3, 2] = 1.000000
+Compute revforestdist(2, 3)
+forestdist[3, 3] = 2.000000
+Compute revforestdist(2, 2)
+forestdist[3, 4] = 1.000000
+Compute revforestdist(2, 1)
+forestdist[3, 5] = 2.000000
+Compute revforestdist(1, 5)
+delta[5, 1] = forestdist[3, 0] = 3.000000
+forestdist[4, 1] = 3.000000
+Compute revforestdist(1, 4)
+forestdist[4, 2] = 2.000000
+Compute revforestdist(1, 3)
+delta[3, 1] = forestdist[3, 2] = 1.000000
+forestdist[4, 3] = 1.000000
+Compute revforestdist(1, 2)
+forestdist[4, 4] = 2.000000
+Compute revforestdist(1, 1)
+delta[1, 1] = forestdist[3, 4] = 1.000000
+forestdist[4, 5] = 1.000000
+RevTreeDistance(1, 8)
+Compute revforestdist(4, 9)
+delta[9, 4] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(4, 8)
+delta[8, 4] = forestdist[0, 1] = 1.000000
+forestdist[1, 2] = 1.000000
+Compute revforestdist(3, 9)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(3, 8)
+forestdist[2, 2] = 2.000000
+Compute revforestdist(2, 9)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(2, 8)
+forestdist[3, 2] = 3.000000
+Compute revforestdist(1, 9)
+delta[9, 1] = forestdist[3, 0] = 3.000000
+forestdist[4, 1] = 3.000000
+Compute revforestdist(1, 8)
+delta[8, 1] = forestdist[3, 1] = 2.000000
+forestdist[4, 2] = 2.000000
+RevTreeDistance(1, 7)
+Compute revforestdist(4, 7)
+delta[7, 4] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(3, 7)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(2, 7)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(1, 7)
+delta[7, 1] = forestdist[3, 0] = 3.000000
+forestdist[4, 1] = 3.000000
+RevTreeDistance(1, 0)
+Compute revforestdist(4, 10)
+delta[10, 4] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(4, 9)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(4, 8)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(4, 7)
+forestdist[1, 4] = 3.000000
+Compute revforestdist(4, 6)
+delta[6, 4] = forestdist[0, 4] = 4.000000
+forestdist[1, 5] = 4.000000
+Compute revforestdist(4, 5)
+forestdist[1, 6] = 5.000000
+Compute revforestdist(4, 4)
+forestdist[1, 7] = 6.000000
+Compute revforestdist(4, 3)
+forestdist[1, 8] = 7.000000
+Compute revforestdist(4, 2)
+forestdist[1, 9] = 8.000000
+Compute revforestdist(4, 1)
+forestdist[1, 10] = 9.000000
+Compute revforestdist(4, 0)
+delta[0, 4] = forestdist[0, 10] = 10.000000
+forestdist[1, 11] = 10.000000
+Compute revforestdist(3, 10)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(3, 9)
+forestdist[2, 2] = 0.000000
+Compute revforestdist(3, 8)
+forestdist[2, 3] = 1.000000
+Compute revforestdist(3, 7)
+forestdist[2, 4] = 2.000000
+Compute revforestdist(3, 6)
+forestdist[2, 5] = 3.000000
+Compute revforestdist(3, 5)
+forestdist[2, 6] = 4.000000
+Compute revforestdist(3, 4)
+forestdist[2, 7] = 5.000000
+Compute revforestdist(3, 3)
+forestdist[2, 8] = 6.000000
+Compute revforestdist(3, 2)
+forestdist[2, 9] = 7.000000
+Compute revforestdist(3, 1)
+forestdist[2, 10] = 8.000000
+Compute revforestdist(3, 0)
+forestdist[2, 11] = 9.000000
+Compute revforestdist(2, 10)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(2, 9)
+forestdist[3, 2] = 1.000000
+Compute revforestdist(2, 8)
+forestdist[3, 3] = 2.000000
+Compute revforestdist(2, 7)
+forestdist[3, 4] = 1.000000
+Compute revforestdist(2, 6)
+forestdist[3, 5] = 2.000000
+Compute revforestdist(2, 5)
+forestdist[3, 6] = 3.000000
+Compute revforestdist(2, 4)
+forestdist[3, 7] = 4.000000
+Compute revforestdist(2, 3)
+forestdist[3, 8] = 5.000000
+Compute revforestdist(2, 2)
+forestdist[3, 9] = 6.000000
+Compute revforestdist(2, 1)
+forestdist[3, 10] = 7.000000
+Compute revforestdist(2, 0)
+forestdist[3, 11] = 8.000000
+Compute revforestdist(1, 10)
+delta[10, 1] = forestdist[3, 0] = 3.000000
+forestdist[4, 1] = 3.000000
+Compute revforestdist(1, 9)
+forestdist[4, 2] = 2.000000
+Compute revforestdist(1, 8)
+forestdist[4, 3] = 3.000000
+Compute revforestdist(1, 7)
+forestdist[4, 4] = 2.000000
+Compute revforestdist(1, 6)
+delta[6, 1] = forestdist[3, 4] = 1.000000
+forestdist[4, 5] = 1.000000
+Compute revforestdist(1, 5)
+forestdist[4, 6] = 2.000000
+Compute revforestdist(1, 4)
+forestdist[4, 7] = 3.000000
+Compute revforestdist(1, 3)
+forestdist[4, 8] = 4.000000
+Compute revforestdist(1, 2)
+forestdist[4, 9] = 5.000000
+Compute revforestdist(1, 1)
+forestdist[4, 10] = 6.000000
+Compute revforestdist(1, 0)
+delta[0, 1] = forestdist[3, 10] = 7.000000
+forestdist[4, 11] = 7.000000
+RevTreeDistance(0, 2)
+Compute revforestdist(9, 2)
+delta[2, 9] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(8, 2)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(7, 2)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(6, 2)
+delta[2, 6] = forestdist[3, 0] = 3.000000
+forestdist[4, 1] = 3.000000
+Compute revforestdist(5, 2)
+delta[2, 5] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(4, 2)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(3, 2)
+forestdist[7, 1] = 6.000000
+Compute revforestdist(2, 2)
+forestdist[8, 1] = 7.000000
+Compute revforestdist(1, 2)
+forestdist[9, 1] = 8.000000
+Compute revforestdist(0, 2)
+delta[2, 0] = forestdist[9, 0] = 9.000000
+forestdist[10, 1] = 9.000000
+RevTreeDistance(0, 4)
+Compute revforestdist(9, 4)
+delta[4, 9] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(8, 4)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(7, 4)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(6, 4)
+delta[4, 6] = forestdist[3, 0] = 3.000000
+forestdist[4, 1] = 3.000000
+Compute revforestdist(5, 4)
+delta[4, 5] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(4, 4)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(3, 4)
+forestdist[7, 1] = 6.000000
+Compute revforestdist(2, 4)
+forestdist[8, 1] = 7.000000
+Compute revforestdist(1, 4)
+forestdist[9, 1] = 8.000000
+Compute revforestdist(0, 4)
+delta[4, 0] = forestdist[9, 0] = 9.000000
+forestdist[10, 1] = 9.000000
+RevTreeDistance(0, 1)
+Compute revforestdist(9, 5)
+delta[5, 9] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(9, 4)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(9, 3)
+delta[3, 9] = forestdist[0, 2] = 2.000000
+forestdist[1, 3] = 2.000000
+Compute revforestdist(9, 2)
+forestdist[1, 4] = 3.000000
+Compute revforestdist(9, 1)
+delta[1, 9] = forestdist[0, 4] = 4.000000
+forestdist[1, 5] = 4.000000
+Compute revforestdist(8, 5)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(8, 4)
+forestdist[2, 2] = 0.000000
+Compute revforestdist(8, 3)
+forestdist[2, 3] = 1.000000
+Compute revforestdist(8, 2)
+forestdist[2, 4] = 2.000000
+Compute revforestdist(8, 1)
+forestdist[2, 5] = 3.000000
+Compute revforestdist(7, 5)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(7, 4)
+forestdist[3, 2] = 1.000000
+Compute revforestdist(7, 3)
+forestdist[3, 3] = 2.000000
+Compute revforestdist(7, 2)
+forestdist[3, 4] = 1.000000
+Compute revforestdist(7, 1)
+forestdist[3, 5] = 2.000000
+Compute revforestdist(6, 5)
+delta[5, 6] = forestdist[3, 0] = 3.000000
+forestdist[4, 1] = 3.000000
+Compute revforestdist(6, 4)
+forestdist[4, 2] = 2.000000
+Compute revforestdist(6, 3)
+delta[3, 6] = forestdist[3, 2] = 1.000000
+forestdist[4, 3] = 1.000000
+Compute revforestdist(6, 2)
+forestdist[4, 4] = 2.000000
+Compute revforestdist(6, 1)
+delta[1, 6] = forestdist[3, 4] = 1.000000
+forestdist[4, 5] = 1.000000
+Compute revforestdist(5, 5)
+delta[5, 5] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(5, 4)
+forestdist[5, 2] = 3.000000
+Compute revforestdist(5, 3)
+delta[3, 5] = forestdist[4, 2] = 2.000000
+forestdist[5, 3] = 2.000000
+Compute revforestdist(5, 2)
+forestdist[5, 4] = 3.000000
+Compute revforestdist(5, 1)
+delta[1, 5] = forestdist[4, 4] = 2.000000
+forestdist[5, 5] = 2.000000
+Compute revforestdist(4, 5)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(4, 4)
+forestdist[6, 2] = 4.000000
+Compute revforestdist(4, 3)
+forestdist[6, 3] = 3.000000
+Compute revforestdist(4, 2)
+forestdist[6, 4] = 2.000000
+Compute revforestdist(4, 1)
+forestdist[6, 5] = 3.000000
+Compute revforestdist(3, 5)
+forestdist[7, 1] = 6.000000
+Compute revforestdist(3, 4)
+forestdist[7, 2] = 5.000000
+Compute revforestdist(3, 3)
+forestdist[7, 3] = 4.000000
+Compute revforestdist(3, 2)
+forestdist[7, 4] = 3.000000
+Compute revforestdist(3, 1)
+forestdist[7, 5] = 4.000000
+Compute revforestdist(2, 5)
+forestdist[8, 1] = 7.000000
+Compute revforestdist(2, 4)
+forestdist[8, 2] = 6.000000
+Compute revforestdist(2, 3)
+forestdist[8, 3] = 5.000000
+Compute revforestdist(2, 2)
+forestdist[8, 4] = 4.000000
+Compute revforestdist(2, 1)
+forestdist[8, 5] = 5.000000
+Compute revforestdist(1, 5)
+forestdist[9, 1] = 8.000000
+Compute revforestdist(1, 4)
+forestdist[9, 2] = 7.000000
+Compute revforestdist(1, 3)
+forestdist[9, 3] = 6.000000
+Compute revforestdist(1, 2)
+forestdist[9, 4] = 5.000000
+Compute revforestdist(1, 1)
+forestdist[9, 5] = 6.000000
+Compute revforestdist(0, 5)
+delta[5, 0] = forestdist[9, 0] = 9.000000
+forestdist[10, 1] = 9.000000
+Compute revforestdist(0, 4)
+forestdist[10, 2] = 8.000000
+Compute revforestdist(0, 3)
+delta[3, 0] = forestdist[9, 2] = 7.000000
+forestdist[10, 3] = 7.000000
+Compute revforestdist(0, 2)
+forestdist[10, 4] = 6.000000
+Compute revforestdist(0, 1)
+delta[1, 0] = forestdist[9, 4] = 5.000000
+forestdist[10, 5] = 5.000000
+RevTreeDistance(0, 8)
+Compute revforestdist(9, 9)
+delta[9, 9] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(9, 8)
+delta[8, 9] = forestdist[0, 1] = 1.000000
+forestdist[1, 2] = 1.000000
+Compute revforestdist(8, 9)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(8, 8)
+forestdist[2, 2] = 2.000000
+Compute revforestdist(7, 9)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(7, 8)
+forestdist[3, 2] = 3.000000
+Compute revforestdist(6, 9)
+delta[9, 6] = forestdist[3, 0] = 3.000000
+forestdist[4, 1] = 3.000000
+Compute revforestdist(6, 8)
+delta[8, 6] = forestdist[3, 1] = 2.000000
+forestdist[4, 2] = 2.000000
+Compute revforestdist(5, 9)
+delta[9, 5] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(5, 8)
+delta[8, 5] = forestdist[4, 1] = 3.000000
+forestdist[5, 2] = 3.000000
+Compute revforestdist(4, 9)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(4, 8)
+forestdist[6, 2] = 4.000000
+Compute revforestdist(3, 9)
+forestdist[7, 1] = 6.000000
+Compute revforestdist(3, 8)
+forestdist[7, 2] = 5.000000
+Compute revforestdist(2, 9)
+forestdist[8, 1] = 7.000000
+Compute revforestdist(2, 8)
+forestdist[8, 2] = 6.000000
+Compute revforestdist(1, 9)
+forestdist[9, 1] = 8.000000
+Compute revforestdist(1, 8)
+forestdist[9, 2] = 7.000000
+Compute revforestdist(0, 9)
+delta[9, 0] = forestdist[9, 0] = 9.000000
+forestdist[10, 1] = 9.000000
+Compute revforestdist(0, 8)
+delta[8, 0] = forestdist[9, 1] = 8.000000
+forestdist[10, 2] = 8.000000
+RevTreeDistance(0, 7)
+Compute revforestdist(9, 7)
+delta[7, 9] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(8, 7)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(7, 7)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(6, 7)
+delta[7, 6] = forestdist[3, 0] = 3.000000
+forestdist[4, 1] = 3.000000
+Compute revforestdist(5, 7)
+delta[7, 5] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(4, 7)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(3, 7)
+forestdist[7, 1] = 6.000000
+Compute revforestdist(2, 7)
+forestdist[8, 1] = 7.000000
+Compute revforestdist(1, 7)
+forestdist[9, 1] = 8.000000
+Compute revforestdist(0, 7)
+delta[7, 0] = forestdist[9, 0] = 9.000000
+forestdist[10, 1] = 9.000000
+RevTreeDistance(0, 0)
+Compute revforestdist(9, 10)
+delta[10, 9] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(9, 9)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(9, 8)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(9, 7)
+forestdist[1, 4] = 3.000000
+Compute revforestdist(9, 6)
+delta[6, 9] = forestdist[0, 4] = 4.000000
+forestdist[1, 5] = 4.000000
+Compute revforestdist(9, 5)
+forestdist[1, 6] = 5.000000
+Compute revforestdist(9, 4)
+forestdist[1, 7] = 6.000000
+Compute revforestdist(9, 3)
+forestdist[1, 8] = 7.000000
+Compute revforestdist(9, 2)
+forestdist[1, 9] = 8.000000
+Compute revforestdist(9, 1)
+forestdist[1, 10] = 9.000000
+Compute revforestdist(9, 0)
+delta[0, 9] = forestdist[0, 10] = 10.000000
+forestdist[1, 11] = 10.000000
+Compute revforestdist(8, 10)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(8, 9)
+forestdist[2, 2] = 0.000000
+Compute revforestdist(8, 8)
+forestdist[2, 3] = 1.000000
+Compute revforestdist(8, 7)
+forestdist[2, 4] = 2.000000
+Compute revforestdist(8, 6)
+forestdist[2, 5] = 3.000000
+Compute revforestdist(8, 5)
+forestdist[2, 6] = 4.000000
+Compute revforestdist(8, 4)
+forestdist[2, 7] = 5.000000
+Compute revforestdist(8, 3)
+forestdist[2, 8] = 6.000000
+Compute revforestdist(8, 2)
+forestdist[2, 9] = 7.000000
+Compute revforestdist(8, 1)
+forestdist[2, 10] = 8.000000
+Compute revforestdist(8, 0)
+forestdist[2, 11] = 9.000000
+Compute revforestdist(7, 10)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(7, 9)
+forestdist[3, 2] = 1.000000
+Compute revforestdist(7, 8)
+forestdist[3, 3] = 2.000000
+Compute revforestdist(7, 7)
+forestdist[3, 4] = 1.000000
+Compute revforestdist(7, 6)
+forestdist[3, 5] = 2.000000
+Compute revforestdist(7, 5)
+forestdist[3, 6] = 3.000000
+Compute revforestdist(7, 4)
+forestdist[3, 7] = 4.000000
+Compute revforestdist(7, 3)
+forestdist[3, 8] = 5.000000
+Compute revforestdist(7, 2)
+forestdist[3, 9] = 6.000000
+Compute revforestdist(7, 1)
+forestdist[3, 10] = 7.000000
+Compute revforestdist(7, 0)
+forestdist[3, 11] = 8.000000
+Compute revforestdist(6, 10)
+delta[10, 6] = forestdist[3, 0] = 3.000000
+forestdist[4, 1] = 3.000000
+Compute revforestdist(6, 9)
+forestdist[4, 2] = 2.000000
+Compute revforestdist(6, 8)
+forestdist[4, 3] = 3.000000
+Compute revforestdist(6, 7)
+forestdist[4, 4] = 2.000000
+Compute revforestdist(6, 6)
+delta[6, 6] = forestdist[3, 4] = 1.000000
+forestdist[4, 5] = 1.000000
+Compute revforestdist(6, 5)
+forestdist[4, 6] = 2.000000
+Compute revforestdist(6, 4)
+forestdist[4, 7] = 3.000000
+Compute revforestdist(6, 3)
+forestdist[4, 8] = 4.000000
+Compute revforestdist(6, 2)
+forestdist[4, 9] = 5.000000
+Compute revforestdist(6, 1)
+forestdist[4, 10] = 6.000000
+Compute revforestdist(6, 0)
+delta[0, 6] = forestdist[3, 10] = 7.000000
+forestdist[4, 11] = 7.000000
+Compute revforestdist(5, 10)
+delta[10, 5] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(5, 9)
+forestdist[5, 2] = 3.000000
+Compute revforestdist(5, 8)
+forestdist[5, 3] = 4.000000
+Compute revforestdist(5, 7)
+forestdist[5, 4] = 3.000000
+Compute revforestdist(5, 6)
+delta[6, 5] = forestdist[4, 4] = 2.000000
+forestdist[5, 5] = 2.000000
+Compute revforestdist(5, 5)
+forestdist[5, 6] = 3.000000
+Compute revforestdist(5, 4)
+forestdist[5, 7] = 4.000000
+Compute revforestdist(5, 3)
+forestdist[5, 8] = 5.000000
+Compute revforestdist(5, 2)
+forestdist[5, 9] = 6.000000
+Compute revforestdist(5, 1)
+forestdist[5, 10] = 7.000000
+Compute revforestdist(5, 0)
+delta[0, 5] = forestdist[4, 10] = 6.000000
+forestdist[5, 11] = 6.000000
+Compute revforestdist(4, 10)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(4, 9)
+forestdist[6, 2] = 4.000000
+Compute revforestdist(4, 8)
+forestdist[6, 3] = 5.000000
+Compute revforestdist(4, 7)
+forestdist[6, 4] = 4.000000
+Compute revforestdist(4, 6)
+forestdist[6, 5] = 3.000000
+Compute revforestdist(4, 5)
+forestdist[6, 6] = 2.000000
+Compute revforestdist(4, 4)
+forestdist[6, 7] = 3.000000
+Compute revforestdist(4, 3)
+forestdist[6, 8] = 4.000000
+Compute revforestdist(4, 2)
+forestdist[6, 9] = 5.000000
+Compute revforestdist(4, 1)
+forestdist[6, 10] = 6.000000
+Compute revforestdist(4, 0)
+forestdist[6, 11] = 7.000000
+Compute revforestdist(3, 10)
+forestdist[7, 1] = 6.000000
+Compute revforestdist(3, 9)
+forestdist[7, 2] = 5.000000
+Compute revforestdist(3, 8)
+forestdist[7, 3] = 6.000000
+Compute revforestdist(3, 7)
+forestdist[7, 4] = 5.000000
+Compute revforestdist(3, 6)
+forestdist[7, 5] = 4.000000
+Compute revforestdist(3, 5)
+forestdist[7, 6] = 3.000000
+Compute revforestdist(3, 4)
+forestdist[7, 7] = 2.000000
+Compute revforestdist(3, 3)
+forestdist[7, 8] = 3.000000
+Compute revforestdist(3, 2)
+forestdist[7, 9] = 4.000000
+Compute revforestdist(3, 1)
+forestdist[7, 10] = 5.000000
+Compute revforestdist(3, 0)
+forestdist[7, 11] = 6.000000
+Compute revforestdist(2, 10)
+forestdist[8, 1] = 7.000000
+Compute revforestdist(2, 9)
+forestdist[8, 2] = 6.000000
+Compute revforestdist(2, 8)
+forestdist[8, 3] = 7.000000
+Compute revforestdist(2, 7)
+forestdist[8, 4] = 6.000000
+Compute revforestdist(2, 6)
+forestdist[8, 5] = 5.000000
+Compute revforestdist(2, 5)
+forestdist[8, 6] = 4.000000
+Compute revforestdist(2, 4)
+forestdist[8, 7] = 3.000000
+Compute revforestdist(2, 3)
+forestdist[8, 8] = 4.000000
+Compute revforestdist(2, 2)
+forestdist[8, 9] = 3.000000
+Compute revforestdist(2, 1)
+forestdist[8, 10] = 4.000000
+Compute revforestdist(2, 0)
+forestdist[8, 11] = 5.000000
+Compute revforestdist(1, 10)
+forestdist[9, 1] = 8.000000
+Compute revforestdist(1, 9)
+forestdist[9, 2] = 7.000000
+Compute revforestdist(1, 8)
+forestdist[9, 3] = 6.000000
+Compute revforestdist(1, 7)
+forestdist[9, 4] = 7.000000
+Compute revforestdist(1, 6)
+forestdist[9, 5] = 6.000000
+Compute revforestdist(1, 5)
+forestdist[9, 6] = 5.000000
+Compute revforestdist(1, 4)
+forestdist[9, 7] = 4.000000
+Compute revforestdist(1, 3)
+forestdist[9, 8] = 3.000000
+Compute revforestdist(1, 2)
+forestdist[9, 9] = 4.000000
+Compute revforestdist(1, 1)
+forestdist[9, 10] = 3.000000
+Compute revforestdist(1, 0)
+forestdist[9, 11] = 4.000000
+Compute revforestdist(0, 10)
+delta[10, 0] = forestdist[9, 0] = 9.000000
+forestdist[10, 1] = 9.000000
+Compute revforestdist(0, 9)
+forestdist[10, 2] = 8.000000
+Compute revforestdist(0, 8)
+forestdist[10, 3] = 7.000000
+Compute revforestdist(0, 7)
+forestdist[10, 4] = 8.000000
+Compute revforestdist(0, 6)
+delta[6, 0] = forestdist[9, 4] = 7.000000
+forestdist[10, 5] = 7.000000
+Compute revforestdist(0, 5)
+forestdist[10, 6] = 6.000000
+Compute revforestdist(0, 4)
+forestdist[10, 7] = 5.000000
+Compute revforestdist(0, 3)
+forestdist[10, 8] = 4.000000
+Compute revforestdist(0, 2)
+forestdist[10, 9] = 5.000000
+Compute revforestdist(0, 1)
+forestdist[10, 10] = 4.000000
+Compute revforestdist(0, 0)
+delta[0, 0] = forestdist[9, 10] = 3.000000
+forestdist[10, 11] = 3.000000
+delta Result
+3 7 10 10 10 6 7 10 10 10 
+5 1 4 4 4 2 1 4 4 4 
+9 3 0 0 0 4 3 0 0 0 
+7 1 2 2 2 2 1 2 2 2 
+9 3 0 0 0 4 3 0 0 0 
+9 3 0 0 0 4 3 0 0 0 
+7 1 4 4 4 2 1 4 4 4 
+9 3 0 0 0 4 3 0 0 0 
+8 2 1 1 1 3 2 1 1 1 
+9 3 0 0 0 4 3 0 0 0 
+9 3 0 0 0 4 3 0 0 0 
+
+TreeDistance(10, 9)
+Compute forestdist(10, 9)
+delta[10, 9] = 0.000000
+forestdist[1, 1] = 0.000000
+TreeDistance(10, 8)
+Compute forestdist(10, 8)
+delta[10, 8] = 0.000000
+forestdist[1, 1] = 0.000000
+TreeDistance(10, 5)
+Compute forestdist(10, 7)
+delta[10, 7] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(10, 8)
+forestdist[1, 2] = 1.000000
+Compute forestdist(10, 9)
+forestdist[1, 3] = 2.000000
+Compute forestdist(10, 6)
+delta[10, 6] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute forestdist(10, 5)
+delta[10, 5] = 4.000000
+forestdist[1, 5] = 4.000000
+TreeDistance(10, 4)
+Compute forestdist(10, 4)
+delta[10, 4] = 0.000000
+forestdist[1, 1] = 0.000000
+TreeDistance(10, 3)
+Compute forestdist(10, 3)
+delta[10, 3] = 0.000000
+forestdist[1, 1] = 0.000000
+TreeDistance(10, 0)
+Compute forestdist(10, 2)
+delta[10, 2] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(10, 3)
+forestdist[1, 2] = 1.000000
+Compute forestdist(10, 4)
+forestdist[1, 3] = 2.000000
+Compute forestdist(10, 1)
+delta[10, 1] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute forestdist(10, 7)
+forestdist[1, 5] = 4.000000
+Compute forestdist(10, 8)
+forestdist[1, 6] = 5.000000
+Compute forestdist(10, 9)
+forestdist[1, 7] = 6.000000
+Compute forestdist(10, 6)
+forestdist[1, 8] = 7.000000
+Compute forestdist(10, 5)
+forestdist[1, 9] = 8.000000
+Compute forestdist(10, 0)
+delta[10, 0] = 9.000000
+forestdist[1, 10] = 9.000000
+TreeDistance(8, 9)
+Compute forestdist(9, 9)
+delta[9, 9] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(8, 9)
+delta[8, 9] = 1.000000
+forestdist[2, 1] = 1.000000
+TreeDistance(8, 8)
+Compute forestdist(9, 8)
+delta[9, 8] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(8, 8)
+delta[8, 8] = 1.000000
+forestdist[2, 1] = 1.000000
+TreeDistance(8, 5)
+Compute forestdist(9, 7)
+delta[9, 7] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(9, 8)
+forestdist[1, 2] = 1.000000
+Compute forestdist(9, 9)
+forestdist[1, 3] = 2.000000
+Compute forestdist(9, 6)
+delta[9, 6] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute forestdist(9, 5)
+delta[9, 5] = 4.000000
+forestdist[1, 5] = 4.000000
+Compute forestdist(8, 7)
+delta[8, 7] = 1.000000
+forestdist[2, 1] = 1.000000
+Compute forestdist(8, 8)
+forestdist[2, 2] = 2.000000
+Compute forestdist(8, 9)
+forestdist[2, 3] = 3.000000
+Compute forestdist(8, 6)
+delta[8, 6] = 2.000000
+forestdist[2, 4] = 2.000000
+Compute forestdist(8, 5)
+delta[8, 5] = 3.000000
+forestdist[2, 5] = 3.000000
+TreeDistance(8, 4)
+Compute forestdist(9, 4)
+delta[9, 4] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(8, 4)
+delta[8, 4] = 1.000000
+forestdist[2, 1] = 1.000000
+TreeDistance(8, 3)
+Compute forestdist(9, 3)
+delta[9, 3] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(8, 3)
+delta[8, 3] = 1.000000
+forestdist[2, 1] = 1.000000
+TreeDistance(8, 0)
+Compute forestdist(9, 2)
+delta[9, 2] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(9, 3)
+forestdist[1, 2] = 1.000000
+Compute forestdist(9, 4)
+forestdist[1, 3] = 2.000000
+Compute forestdist(9, 1)
+delta[9, 1] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute forestdist(9, 7)
+forestdist[1, 5] = 4.000000
+Compute forestdist(9, 8)
+forestdist[1, 6] = 5.000000
+Compute forestdist(9, 9)
+forestdist[1, 7] = 6.000000
+Compute forestdist(9, 6)
+forestdist[1, 8] = 7.000000
+Compute forestdist(9, 5)
+forestdist[1, 9] = 8.000000
+Compute forestdist(9, 0)
+delta[9, 0] = 9.000000
+forestdist[1, 10] = 9.000000
+Compute forestdist(8, 2)
+delta[8, 2] = 1.000000
+forestdist[2, 1] = 1.000000
+Compute forestdist(8, 3)
+forestdist[2, 2] = 2.000000
+Compute forestdist(8, 4)
+forestdist[2, 3] = 3.000000
+Compute forestdist(8, 1)
+delta[8, 1] = 2.000000
+forestdist[2, 4] = 2.000000
+Compute forestdist(8, 7)
+forestdist[2, 5] = 3.000000
+Compute forestdist(8, 8)
+forestdist[2, 6] = 4.000000
+Compute forestdist(8, 9)
+forestdist[2, 7] = 5.000000
+Compute forestdist(8, 6)
+forestdist[2, 8] = 6.000000
+Compute forestdist(8, 5)
+forestdist[2, 9] = 7.000000
+Compute forestdist(8, 0)
+delta[8, 0] = 8.000000
+forestdist[2, 10] = 8.000000
+TreeDistance(6, 9)
+Compute forestdist(7, 9)
+delta[7, 9] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(9, 9)
+forestdist[2, 1] = 1.000000
+Compute forestdist(8, 9)
+forestdist[3, 1] = 2.000000
+Compute forestdist(10, 9)
+forestdist[4, 1] = 3.000000
+Compute forestdist(6, 9)
+delta[6, 9] = 4.000000
+forestdist[5, 1] = 4.000000
+TreeDistance(6, 8)
+Compute forestdist(7, 8)
+delta[7, 8] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(9, 8)
+forestdist[2, 1] = 1.000000
+Compute forestdist(8, 8)
+forestdist[3, 1] = 2.000000
+Compute forestdist(10, 8)
+forestdist[4, 1] = 3.000000
+Compute forestdist(6, 8)
+delta[6, 8] = 4.000000
+forestdist[5, 1] = 4.000000
+TreeDistance(6, 5)
+Compute forestdist(7, 7)
+delta[7, 7] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(7, 8)
+forestdist[1, 2] = 1.000000
+Compute forestdist(7, 9)
+forestdist[1, 3] = 2.000000
+Compute forestdist(7, 6)
+delta[7, 6] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute forestdist(7, 5)
+delta[7, 5] = 4.000000
+forestdist[1, 5] = 4.000000
+Compute forestdist(9, 7)
+forestdist[2, 1] = 1.000000
+Compute forestdist(9, 8)
+forestdist[2, 2] = 0.000000
+Compute forestdist(9, 9)
+forestdist[2, 3] = 1.000000
+Compute forestdist(9, 6)
+forestdist[2, 4] = 2.000000
+Compute forestdist(9, 5)
+forestdist[2, 5] = 3.000000
+Compute forestdist(8, 7)
+forestdist[3, 1] = 2.000000
+Compute forestdist(8, 8)
+forestdist[3, 2] = 1.000000
+Compute forestdist(8, 9)
+forestdist[3, 3] = 2.000000
+Compute forestdist(8, 6)
+forestdist[3, 4] = 3.000000
+Compute forestdist(8, 5)
+forestdist[3, 5] = 4.000000
+Compute forestdist(10, 7)
+forestdist[4, 1] = 3.000000
+Compute forestdist(10, 8)
+forestdist[4, 2] = 2.000000
+Compute forestdist(10, 9)
+forestdist[4, 3] = 1.000000
+Compute forestdist(10, 6)
+forestdist[4, 4] = 2.000000
+Compute forestdist(10, 5)
+forestdist[4, 5] = 3.000000
+Compute forestdist(6, 7)
+delta[6, 7] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute forestdist(6, 8)
+forestdist[5, 2] = 3.000000
+Compute forestdist(6, 9)
+forestdist[5, 3] = 2.000000
+Compute forestdist(6, 6)
+delta[6, 6] = 1.000000
+forestdist[5, 4] = 1.000000
+Compute forestdist(6, 5)
+delta[6, 5] = 2.000000
+forestdist[5, 5] = 2.000000
+TreeDistance(6, 4)
+Compute forestdist(7, 4)
+delta[7, 4] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(9, 4)
+forestdist[2, 1] = 1.000000
+Compute forestdist(8, 4)
+forestdist[3, 1] = 2.000000
+Compute forestdist(10, 4)
+forestdist[4, 1] = 3.000000
+Compute forestdist(6, 4)
+delta[6, 4] = 4.000000
+forestdist[5, 1] = 4.000000
+TreeDistance(6, 3)
+Compute forestdist(7, 3)
+delta[7, 3] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(9, 3)
+forestdist[2, 1] = 1.000000
+Compute forestdist(8, 3)
+forestdist[3, 1] = 2.000000
+Compute forestdist(10, 3)
+forestdist[4, 1] = 3.000000
+Compute forestdist(6, 3)
+delta[6, 3] = 4.000000
+forestdist[5, 1] = 4.000000
+TreeDistance(6, 0)
+Compute forestdist(7, 2)
+delta[7, 2] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(7, 3)
+forestdist[1, 2] = 1.000000
+Compute forestdist(7, 4)
+forestdist[1, 3] = 2.000000
+Compute forestdist(7, 1)
+delta[7, 1] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute forestdist(7, 7)
+forestdist[1, 5] = 4.000000
+Compute forestdist(7, 8)
+forestdist[1, 6] = 5.000000
+Compute forestdist(7, 9)
+forestdist[1, 7] = 6.000000
+Compute forestdist(7, 6)
+forestdist[1, 8] = 7.000000
+Compute forestdist(7, 5)
+forestdist[1, 9] = 8.000000
+Compute forestdist(7, 0)
+delta[7, 0] = 9.000000
+forestdist[1, 10] = 9.000000
+Compute forestdist(9, 2)
+forestdist[2, 1] = 1.000000
+Compute forestdist(9, 3)
+forestdist[2, 2] = 0.000000
+Compute forestdist(9, 4)
+forestdist[2, 3] = 1.000000
+Compute forestdist(9, 1)
+forestdist[2, 4] = 2.000000
+Compute forestdist(9, 7)
+forestdist[2, 5] = 3.000000
+Compute forestdist(9, 8)
+forestdist[2, 6] = 4.000000
+Compute forestdist(9, 9)
+forestdist[2, 7] = 5.000000
+Compute forestdist(9, 6)
+forestdist[2, 8] = 6.000000
+Compute forestdist(9, 5)
+forestdist[2, 9] = 7.000000
+Compute forestdist(9, 0)
+forestdist[2, 10] = 8.000000
+Compute forestdist(8, 2)
+forestdist[3, 1] = 2.000000
+Compute forestdist(8, 3)
+forestdist[3, 2] = 1.000000
+Compute forestdist(8, 4)
+forestdist[3, 3] = 2.000000
+Compute forestdist(8, 1)
+forestdist[3, 4] = 3.000000
+Compute forestdist(8, 7)
+forestdist[3, 5] = 4.000000
+Compute forestdist(8, 8)
+forestdist[3, 6] = 5.000000
+Compute forestdist(8, 9)
+forestdist[3, 7] = 6.000000
+Compute forestdist(8, 6)
+forestdist[3, 8] = 5.000000
+Compute forestdist(8, 5)
+forestdist[3, 9] = 6.000000
+Compute forestdist(8, 0)
+forestdist[3, 10] = 7.000000
+Compute forestdist(10, 2)
+forestdist[4, 1] = 3.000000
+Compute forestdist(10, 3)
+forestdist[4, 2] = 2.000000
+Compute forestdist(10, 4)
+forestdist[4, 3] = 1.000000
+Compute forestdist(10, 1)
+forestdist[4, 4] = 2.000000
+Compute forestdist(10, 7)
+forestdist[4, 5] = 3.000000
+Compute forestdist(10, 8)
+forestdist[4, 6] = 4.000000
+Compute forestdist(10, 9)
+forestdist[4, 7] = 5.000000
+Compute forestdist(10, 6)
+forestdist[4, 8] = 6.000000
+Compute forestdist(10, 5)
+forestdist[4, 9] = 7.000000
+Compute forestdist(10, 0)
+forestdist[4, 10] = 8.000000
+Compute forestdist(6, 2)
+delta[6, 2] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute forestdist(6, 3)
+forestdist[5, 2] = 3.000000
+Compute forestdist(6, 4)
+forestdist[5, 3] = 2.000000
+Compute forestdist(6, 1)
+delta[6, 1] = 1.000000
+forestdist[5, 4] = 1.000000
+Compute forestdist(6, 7)
+forestdist[5, 5] = 2.000000
+Compute forestdist(6, 8)
+forestdist[5, 6] = 3.000000
+Compute forestdist(6, 9)
+forestdist[5, 7] = 4.000000
+Compute forestdist(6, 6)
+forestdist[5, 8] = 5.000000
+Compute forestdist(6, 5)
+forestdist[5, 9] = 6.000000
+Compute forestdist(6, 0)
+delta[6, 0] = 7.000000
+forestdist[5, 10] = 7.000000
+TreeDistance(5, 9)
+Compute forestdist(5, 9)
+delta[5, 9] = 0.000000
+forestdist[1, 1] = 0.000000
+TreeDistance(5, 8)
+Compute forestdist(5, 8)
+delta[5, 8] = 0.000000
+forestdist[1, 1] = 0.000000
+TreeDistance(5, 5)
+Compute forestdist(5, 7)
+delta[5, 7] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(5, 8)
+forestdist[1, 2] = 1.000000
+Compute forestdist(5, 9)
+forestdist[1, 3] = 2.000000
+Compute forestdist(5, 6)
+delta[5, 6] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute forestdist(5, 5)
+delta[5, 5] = 4.000000
+forestdist[1, 5] = 4.000000
+TreeDistance(5, 4)
+Compute forestdist(5, 4)
+delta[5, 4] = 0.000000
+forestdist[1, 1] = 0.000000
+TreeDistance(5, 3)
+Compute forestdist(5, 3)
+delta[5, 3] = 0.000000
+forestdist[1, 1] = 0.000000
+TreeDistance(5, 0)
+Compute forestdist(5, 2)
+delta[5, 2] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(5, 3)
+forestdist[1, 2] = 1.000000
+Compute forestdist(5, 4)
+forestdist[1, 3] = 2.000000
+Compute forestdist(5, 1)
+delta[5, 1] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute forestdist(5, 7)
+forestdist[1, 5] = 4.000000
+Compute forestdist(5, 8)
+forestdist[1, 6] = 5.000000
+Compute forestdist(5, 9)
+forestdist[1, 7] = 6.000000
+Compute forestdist(5, 6)
+forestdist[1, 8] = 7.000000
+Compute forestdist(5, 5)
+forestdist[1, 9] = 8.000000
+Compute forestdist(5, 0)
+delta[5, 0] = 9.000000
+forestdist[1, 10] = 9.000000
+TreeDistance(3, 9)
+Compute forestdist(4, 9)
+delta[4, 9] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(5, 9)
+forestdist[2, 1] = 1.000000
+Compute forestdist(3, 9)
+delta[3, 9] = 2.000000
+forestdist[3, 1] = 2.000000
+TreeDistance(3, 8)
+Compute forestdist(4, 8)
+delta[4, 8] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(5, 8)
+forestdist[2, 1] = 1.000000
+Compute forestdist(3, 8)
+delta[3, 8] = 2.000000
+forestdist[3, 1] = 2.000000
+TreeDistance(3, 5)
+Compute forestdist(4, 7)
+delta[4, 7] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(4, 8)
+forestdist[1, 2] = 1.000000
+Compute forestdist(4, 9)
+forestdist[1, 3] = 2.000000
+Compute forestdist(4, 6)
+delta[4, 6] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute forestdist(4, 5)
+delta[4, 5] = 4.000000
+forestdist[1, 5] = 4.000000
+Compute forestdist(5, 7)
+forestdist[2, 1] = 1.000000
+Compute forestdist(5, 8)
+forestdist[2, 2] = 0.000000
+Compute forestdist(5, 9)
+forestdist[2, 3] = 1.000000
+Compute forestdist(5, 6)
+forestdist[2, 4] = 2.000000
+Compute forestdist(5, 5)
+forestdist[2, 5] = 3.000000
+Compute forestdist(3, 7)
+delta[3, 7] = 2.000000
+forestdist[3, 1] = 2.000000
+Compute forestdist(3, 8)
+forestdist[3, 2] = 1.000000
+Compute forestdist(3, 9)
+forestdist[3, 3] = 2.000000
+Compute forestdist(3, 6)
+delta[3, 6] = 1.000000
+forestdist[3, 4] = 1.000000
+Compute forestdist(3, 5)
+delta[3, 5] = 2.000000
+forestdist[3, 5] = 2.000000
+TreeDistance(3, 4)
+Compute forestdist(4, 4)
+delta[4, 4] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(5, 4)
+forestdist[2, 1] = 1.000000
+Compute forestdist(3, 4)
+delta[3, 4] = 2.000000
+forestdist[3, 1] = 2.000000
+TreeDistance(3, 3)
+Compute forestdist(4, 3)
+delta[4, 3] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(5, 3)
+forestdist[2, 1] = 1.000000
+Compute forestdist(3, 3)
+delta[3, 3] = 2.000000
+forestdist[3, 1] = 2.000000
+TreeDistance(3, 0)
+Compute forestdist(4, 2)
+delta[4, 2] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(4, 3)
+forestdist[1, 2] = 1.000000
+Compute forestdist(4, 4)
+forestdist[1, 3] = 2.000000
+Compute forestdist(4, 1)
+delta[4, 1] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute forestdist(4, 7)
+forestdist[1, 5] = 4.000000
+Compute forestdist(4, 8)
+forestdist[1, 6] = 5.000000
+Compute forestdist(4, 9)
+forestdist[1, 7] = 6.000000
+Compute forestdist(4, 6)
+forestdist[1, 8] = 7.000000
+Compute forestdist(4, 5)
+forestdist[1, 9] = 8.000000
+Compute forestdist(4, 0)
+delta[4, 0] = 9.000000
+forestdist[1, 10] = 9.000000
+Compute forestdist(5, 2)
+forestdist[2, 1] = 1.000000
+Compute forestdist(5, 3)
+forestdist[2, 2] = 0.000000
+Compute forestdist(5, 4)
+forestdist[2, 3] = 1.000000
+Compute forestdist(5, 1)
+forestdist[2, 4] = 2.000000
+Compute forestdist(5, 7)
+forestdist[2, 5] = 3.000000
+Compute forestdist(5, 8)
+forestdist[2, 6] = 4.000000
+Compute forestdist(5, 9)
+forestdist[2, 7] = 5.000000
+Compute forestdist(5, 6)
+forestdist[2, 8] = 6.000000
+Compute forestdist(5, 5)
+forestdist[2, 9] = 7.000000
+Compute forestdist(5, 0)
+forestdist[2, 10] = 8.000000
+Compute forestdist(3, 2)
+delta[3, 2] = 2.000000
+forestdist[3, 1] = 2.000000
+Compute forestdist(3, 3)
+forestdist[3, 2] = 1.000000
+Compute forestdist(3, 4)
+forestdist[3, 3] = 2.000000
+Compute forestdist(3, 1)
+delta[3, 1] = 1.000000
+forestdist[3, 4] = 1.000000
+Compute forestdist(3, 7)
+forestdist[3, 5] = 2.000000
+Compute forestdist(3, 8)
+forestdist[3, 6] = 3.000000
+Compute forestdist(3, 9)
+forestdist[3, 7] = 4.000000
+Compute forestdist(3, 6)
+forestdist[3, 8] = 5.000000
+Compute forestdist(3, 5)
+forestdist[3, 9] = 6.000000
+Compute forestdist(3, 0)
+delta[3, 0] = 7.000000
+forestdist[3, 10] = 7.000000
+TreeDistance(0, 9)
+Compute forestdist(2, 9)
+delta[2, 9] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(4, 9)
+forestdist[2, 1] = 1.000000
+Compute forestdist(5, 9)
+forestdist[3, 1] = 2.000000
+Compute forestdist(3, 9)
+forestdist[4, 1] = 3.000000
+Compute forestdist(1, 9)
+delta[1, 9] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute forestdist(7, 9)
+forestdist[6, 1] = 5.000000
+Compute forestdist(9, 9)
+forestdist[7, 1] = 6.000000
+Compute forestdist(8, 9)
+forestdist[8, 1] = 7.000000
+Compute forestdist(10, 9)
+forestdist[9, 1] = 8.000000
+Compute forestdist(6, 9)
+forestdist[10, 1] = 9.000000
+Compute forestdist(0, 9)
+delta[0, 9] = 10.000000
+forestdist[11, 1] = 10.000000
+TreeDistance(0, 8)
+Compute forestdist(2, 8)
+delta[2, 8] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(4, 8)
+forestdist[2, 1] = 1.000000
+Compute forestdist(5, 8)
+forestdist[3, 1] = 2.000000
+Compute forestdist(3, 8)
+forestdist[4, 1] = 3.000000
+Compute forestdist(1, 8)
+delta[1, 8] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute forestdist(7, 8)
+forestdist[6, 1] = 5.000000
+Compute forestdist(9, 8)
+forestdist[7, 1] = 6.000000
+Compute forestdist(8, 8)
+forestdist[8, 1] = 7.000000
+Compute forestdist(10, 8)
+forestdist[9, 1] = 8.000000
+Compute forestdist(6, 8)
+forestdist[10, 1] = 9.000000
+Compute forestdist(0, 8)
+delta[0, 8] = 10.000000
+forestdist[11, 1] = 10.000000
+TreeDistance(0, 5)
+Compute forestdist(2, 7)
+delta[2, 7] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(2, 8)
+forestdist[1, 2] = 1.000000
+Compute forestdist(2, 9)
+forestdist[1, 3] = 2.000000
+Compute forestdist(2, 6)
+delta[2, 6] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute forestdist(2, 5)
+delta[2, 5] = 4.000000
+forestdist[1, 5] = 4.000000
+Compute forestdist(4, 7)
+forestdist[2, 1] = 1.000000
+Compute forestdist(4, 8)
+forestdist[2, 2] = 0.000000
+Compute forestdist(4, 9)
+forestdist[2, 3] = 1.000000
+Compute forestdist(4, 6)
+forestdist[2, 4] = 2.000000
+Compute forestdist(4, 5)
+forestdist[2, 5] = 3.000000
+Compute forestdist(5, 7)
+forestdist[3, 1] = 2.000000
+Compute forestdist(5, 8)
+forestdist[3, 2] = 1.000000
+Compute forestdist(5, 9)
+forestdist[3, 3] = 0.000000
+Compute forestdist(5, 6)
+forestdist[3, 4] = 1.000000
+Compute forestdist(5, 5)
+forestdist[3, 5] = 2.000000
+Compute forestdist(3, 7)
+forestdist[4, 1] = 3.000000
+Compute forestdist(3, 8)
+forestdist[4, 2] = 2.000000
+Compute forestdist(3, 9)
+forestdist[4, 3] = 1.000000
+Compute forestdist(3, 6)
+forestdist[4, 4] = 2.000000
+Compute forestdist(3, 5)
+forestdist[4, 5] = 3.000000
+Compute forestdist(1, 7)
+delta[1, 7] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute forestdist(1, 8)
+forestdist[5, 2] = 3.000000
+Compute forestdist(1, 9)
+forestdist[5, 3] = 2.000000
+Compute forestdist(1, 6)
+delta[1, 6] = 1.000000
+forestdist[5, 4] = 1.000000
+Compute forestdist(1, 5)
+delta[1, 5] = 2.000000
+forestdist[5, 5] = 2.000000
+Compute forestdist(7, 7)
+forestdist[6, 1] = 5.000000
+Compute forestdist(7, 8)
+forestdist[6, 2] = 4.000000
+Compute forestdist(7, 9)
+forestdist[6, 3] = 3.000000
+Compute forestdist(7, 6)
+forestdist[6, 4] = 2.000000
+Compute forestdist(7, 5)
+forestdist[6, 5] = 3.000000
+Compute forestdist(9, 7)
+forestdist[7, 1] = 6.000000
+Compute forestdist(9, 8)
+forestdist[7, 2] = 5.000000
+Compute forestdist(9, 9)
+forestdist[7, 3] = 4.000000
+Compute forestdist(9, 6)
+forestdist[7, 4] = 3.000000
+Compute forestdist(9, 5)
+forestdist[7, 5] = 4.000000
+Compute forestdist(8, 7)
+forestdist[8, 1] = 7.000000
+Compute forestdist(8, 8)
+forestdist[8, 2] = 6.000000
+Compute forestdist(8, 9)
+forestdist[8, 3] = 5.000000
+Compute forestdist(8, 6)
+forestdist[8, 4] = 4.000000
+Compute forestdist(8, 5)
+forestdist[8, 5] = 5.000000
+Compute forestdist(10, 7)
+forestdist[9, 1] = 8.000000
+Compute forestdist(10, 8)
+forestdist[9, 2] = 7.000000
+Compute forestdist(10, 9)
+forestdist[9, 3] = 6.000000
+Compute forestdist(10, 6)
+forestdist[9, 4] = 5.000000
+Compute forestdist(10, 5)
+forestdist[9, 5] = 6.000000
+Compute forestdist(6, 7)
+forestdist[10, 1] = 9.000000
+Compute forestdist(6, 8)
+forestdist[10, 2] = 8.000000
+Compute forestdist(6, 9)
+forestdist[10, 3] = 7.000000
+Compute forestdist(6, 6)
+forestdist[10, 4] = 6.000000
+Compute forestdist(6, 5)
+forestdist[10, 5] = 7.000000
+Compute forestdist(0, 7)
+delta[0, 7] = 10.000000
+forestdist[11, 1] = 10.000000
+Compute forestdist(0, 8)
+forestdist[11, 2] = 9.000000
+Compute forestdist(0, 9)
+forestdist[11, 3] = 8.000000
+Compute forestdist(0, 6)
+delta[0, 6] = 7.000000
+forestdist[11, 4] = 7.000000
+Compute forestdist(0, 5)
+delta[0, 5] = 6.000000
+forestdist[11, 5] = 6.000000
+TreeDistance(0, 4)
+Compute forestdist(2, 4)
+delta[2, 4] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(4, 4)
+forestdist[2, 1] = 1.000000
+Compute forestdist(5, 4)
+forestdist[3, 1] = 2.000000
+Compute forestdist(3, 4)
+forestdist[4, 1] = 3.000000
+Compute forestdist(1, 4)
+delta[1, 4] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute forestdist(7, 4)
+forestdist[6, 1] = 5.000000
+Compute forestdist(9, 4)
+forestdist[7, 1] = 6.000000
+Compute forestdist(8, 4)
+forestdist[8, 1] = 7.000000
+Compute forestdist(10, 4)
+forestdist[9, 1] = 8.000000
+Compute forestdist(6, 4)
+forestdist[10, 1] = 9.000000
+Compute forestdist(0, 4)
+delta[0, 4] = 10.000000
+forestdist[11, 1] = 10.000000
+TreeDistance(0, 3)
+Compute forestdist(2, 3)
+delta[2, 3] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(4, 3)
+forestdist[2, 1] = 1.000000
+Compute forestdist(5, 3)
+forestdist[3, 1] = 2.000000
+Compute forestdist(3, 3)
+forestdist[4, 1] = 3.000000
+Compute forestdist(1, 3)
+delta[1, 3] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute forestdist(7, 3)
+forestdist[6, 1] = 5.000000
+Compute forestdist(9, 3)
+forestdist[7, 1] = 6.000000
+Compute forestdist(8, 3)
+forestdist[8, 1] = 7.000000
+Compute forestdist(10, 3)
+forestdist[9, 1] = 8.000000
+Compute forestdist(6, 3)
+forestdist[10, 1] = 9.000000
+Compute forestdist(0, 3)
+delta[0, 3] = 10.000000
+forestdist[11, 1] = 10.000000
+TreeDistance(0, 0)
+Compute forestdist(2, 2)
+delta[2, 2] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(2, 3)
+forestdist[1, 2] = 1.000000
+Compute forestdist(2, 4)
+forestdist[1, 3] = 2.000000
+Compute forestdist(2, 1)
+delta[2, 1] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute forestdist(2, 7)
+forestdist[1, 5] = 4.000000
+Compute forestdist(2, 8)
+forestdist[1, 6] = 5.000000
+Compute forestdist(2, 9)
+forestdist[1, 7] = 6.000000
+Compute forestdist(2, 6)
+forestdist[1, 8] = 7.000000
+Compute forestdist(2, 5)
+forestdist[1, 9] = 8.000000
+Compute forestdist(2, 0)
+delta[2, 0] = 9.000000
+forestdist[1, 10] = 9.000000
+Compute forestdist(4, 2)
+forestdist[2, 1] = 1.000000
+Compute forestdist(4, 3)
+forestdist[2, 2] = 0.000000
+Compute forestdist(4, 4)
+forestdist[2, 3] = 1.000000
+Compute forestdist(4, 1)
+forestdist[2, 4] = 2.000000
+Compute forestdist(4, 7)
+forestdist[2, 5] = 3.000000
+Compute forestdist(4, 8)
+forestdist[2, 6] = 4.000000
+Compute forestdist(4, 9)
+forestdist[2, 7] = 5.000000
+Compute forestdist(4, 6)
+forestdist[2, 8] = 6.000000
+Compute forestdist(4, 5)
+forestdist[2, 9] = 7.000000
+Compute forestdist(4, 0)
+forestdist[2, 10] = 8.000000
+Compute forestdist(5, 2)
+forestdist[3, 1] = 2.000000
+Compute forestdist(5, 3)
+forestdist[3, 2] = 1.000000
+Compute forestdist(5, 4)
+forestdist[3, 3] = 0.000000
+Compute forestdist(5, 1)
+forestdist[3, 4] = 1.000000
+Compute forestdist(5, 7)
+forestdist[3, 5] = 2.000000
+Compute forestdist(5, 8)
+forestdist[3, 6] = 3.000000
+Compute forestdist(5, 9)
+forestdist[3, 7] = 4.000000
+Compute forestdist(5, 6)
+forestdist[3, 8] = 5.000000
+Compute forestdist(5, 5)
+forestdist[3, 9] = 6.000000
+Compute forestdist(5, 0)
+forestdist[3, 10] = 7.000000
+Compute forestdist(3, 2)
+forestdist[4, 1] = 3.000000
+Compute forestdist(3, 3)
+forestdist[4, 2] = 2.000000
+Compute forestdist(3, 4)
+forestdist[4, 3] = 1.000000
+Compute forestdist(3, 1)
+forestdist[4, 4] = 2.000000
+Compute forestdist(3, 7)
+forestdist[4, 5] = 3.000000
+Compute forestdist(3, 8)
+forestdist[4, 6] = 4.000000
+Compute forestdist(3, 9)
+forestdist[4, 7] = 5.000000
+Compute forestdist(3, 6)
+forestdist[4, 8] = 4.000000
+Compute forestdist(3, 5)
+forestdist[4, 9] = 5.000000
+Compute forestdist(3, 0)
+forestdist[4, 10] = 6.000000
+Compute forestdist(1, 2)
+delta[1, 2] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute forestdist(1, 3)
+forestdist[5, 2] = 3.000000
+Compute forestdist(1, 4)
+forestdist[5, 3] = 2.000000
+Compute forestdist(1, 1)
+delta[1, 1] = 1.000000
+forestdist[5, 4] = 1.000000
+Compute forestdist(1, 7)
+forestdist[5, 5] = 2.000000
+Compute forestdist(1, 8)
+forestdist[5, 6] = 3.000000
+Compute forestdist(1, 9)
+forestdist[5, 7] = 4.000000
+Compute forestdist(1, 6)
+forestdist[5, 8] = 5.000000
+Compute forestdist(1, 5)
+forestdist[5, 9] = 6.000000
+Compute forestdist(1, 0)
+delta[1, 0] = 5.000000
+forestdist[5, 10] = 5.000000
+Compute forestdist(7, 2)
+forestdist[6, 1] = 5.000000
+Compute forestdist(7, 3)
+forestdist[6, 2] = 4.000000
+Compute forestdist(7, 4)
+forestdist[6, 3] = 3.000000
+Compute forestdist(7, 1)
+forestdist[6, 4] = 2.000000
+Compute forestdist(7, 7)
+forestdist[6, 5] = 1.000000
+Compute forestdist(7, 8)
+forestdist[6, 6] = 2.000000
+Compute forestdist(7, 9)
+forestdist[6, 7] = 3.000000
+Compute forestdist(7, 6)
+forestdist[6, 8] = 4.000000
+Compute forestdist(7, 5)
+forestdist[6, 9] = 5.000000
+Compute forestdist(7, 0)
+forestdist[6, 10] = 6.000000
+Compute forestdist(9, 2)
+forestdist[7, 1] = 6.000000
+Compute forestdist(9, 3)
+forestdist[7, 2] = 5.000000
+Compute forestdist(9, 4)
+forestdist[7, 3] = 4.000000
+Compute forestdist(9, 1)
+forestdist[7, 4] = 3.000000
+Compute forestdist(9, 7)
+forestdist[7, 5] = 2.000000
+Compute forestdist(9, 8)
+forestdist[7, 6] = 1.000000
+Compute forestdist(9, 9)
+forestdist[7, 7] = 2.000000
+Compute forestdist(9, 6)
+forestdist[7, 8] = 3.000000
+Compute forestdist(9, 5)
+forestdist[7, 9] = 4.000000
+Compute forestdist(9, 0)
+forestdist[7, 10] = 5.000000
+Compute forestdist(8, 2)
+forestdist[8, 1] = 7.000000
+Compute forestdist(8, 3)
+forestdist[8, 2] = 6.000000
+Compute forestdist(8, 4)
+forestdist[8, 3] = 5.000000
+Compute forestdist(8, 1)
+forestdist[8, 4] = 4.000000
+Compute forestdist(8, 7)
+forestdist[8, 5] = 3.000000
+Compute forestdist(8, 8)
+forestdist[8, 6] = 2.000000
+Compute forestdist(8, 9)
+forestdist[8, 7] = 3.000000
+Compute forestdist(8, 6)
+forestdist[8, 8] = 4.000000
+Compute forestdist(8, 5)
+forestdist[8, 9] = 5.000000
+Compute forestdist(8, 0)
+forestdist[8, 10] = 6.000000
+Compute forestdist(10, 2)
+forestdist[9, 1] = 8.000000
+Compute forestdist(10, 3)
+forestdist[9, 2] = 7.000000
+Compute forestdist(10, 4)
+forestdist[9, 3] = 6.000000
+Compute forestdist(10, 1)
+forestdist[9, 4] = 5.000000
+Compute forestdist(10, 7)
+forestdist[9, 5] = 4.000000
+Compute forestdist(10, 8)
+forestdist[9, 6] = 3.000000
+Compute forestdist(10, 9)
+forestdist[9, 7] = 2.000000
+Compute forestdist(10, 6)
+forestdist[9, 8] = 3.000000
+Compute forestdist(10, 5)
+forestdist[9, 9] = 4.000000
+Compute forestdist(10, 0)
+forestdist[9, 10] = 5.000000
+Compute forestdist(6, 2)
+forestdist[10, 1] = 9.000000
+Compute forestdist(6, 3)
+forestdist[10, 2] = 8.000000
+Compute forestdist(6, 4)
+forestdist[10, 3] = 7.000000
+Compute forestdist(6, 1)
+forestdist[10, 4] = 6.000000
+Compute forestdist(6, 7)
+forestdist[10, 5] = 5.000000
+Compute forestdist(6, 8)
+forestdist[10, 6] = 4.000000
+Compute forestdist(6, 9)
+forestdist[10, 7] = 3.000000
+Compute forestdist(6, 6)
+forestdist[10, 8] = 2.000000
+Compute forestdist(6, 5)
+forestdist[10, 9] = 3.000000
+Compute forestdist(6, 0)
+forestdist[10, 10] = 4.000000
+Compute forestdist(0, 2)
+delta[0, 2] = 10.000000
+forestdist[11, 1] = 10.000000
+Compute forestdist(0, 3)
+forestdist[11, 2] = 9.000000
+Compute forestdist(0, 4)
+forestdist[11, 3] = 8.000000
+Compute forestdist(0, 1)
+delta[0, 1] = 7.000000
+forestdist[11, 4] = 7.000000
+Compute forestdist(0, 7)
+forestdist[11, 5] = 6.000000
+Compute forestdist(0, 8)
+forestdist[11, 6] = 5.000000
+Compute forestdist(0, 9)
+forestdist[11, 7] = 4.000000
+Compute forestdist(0, 6)
+forestdist[11, 8] = 3.000000
+Compute forestdist(0, 5)
+forestdist[11, 9] = 4.000000
+Compute forestdist(0, 0)
+delta[0, 0] = 3.000000
+forestdist[11, 10] = 3.000000
+delta Result LL
+3 7 10 10 10 6 7 10 10 10 
+5 1 4 4 4 2 1 4 4 4 
+9 3 0 0 0 4 3 0 0 0 
+7 1 2 2 2 2 1 2 2 2 
+9 3 0 0 0 4 3 0 0 0 
+9 3 0 0 0 4 3 0 0 0 
+7 1 4 4 4 2 1 4 4 4 
+9 3 0 0 0 4 3 0 0 0 
+8 2 1 1 1 3 2 1 1 1 
+9 3 0 0 0 4 3 0 0 0 
+9 3 0 0 0 4 3 0 0 0 
+
+RevTreeDistance(2, 3)
+Compute revforestdist(2, 3)
+delta[2, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+RevTreeDistance(2, 2)
+Compute revforestdist(2, 2)
+delta[2, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+RevTreeDistance(2, 1)
+Compute revforestdist(2, 4)
+delta[2, 4] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(2, 3)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(2, 2)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(2, 1)
+delta[2, 1] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+RevTreeDistance(2, 8)
+Compute revforestdist(2, 8)
+delta[2, 8] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+RevTreeDistance(2, 7)
+Compute revforestdist(2, 7)
+delta[2, 7] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+RevTreeDistance(2, 0)
+Compute revforestdist(2, 9)
+delta[2, 9] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(2, 8)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(2, 7)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(2, 6)
+delta[2, 6] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute revforestdist(2, 5)
+delta[2, 5] = forestdist[0, 4] = 4.000000
+forestdist[1, 5] = 4.000000
+Compute revforestdist(2, 4)
+forestdist[1, 6] = 5.000000
+Compute revforestdist(2, 3)
+forestdist[1, 7] = 6.000000
+Compute revforestdist(2, 2)
+forestdist[1, 8] = 7.000000
+Compute revforestdist(2, 1)
+forestdist[1, 9] = 8.000000
+Compute revforestdist(2, 0)
+delta[2, 0] = forestdist[0, 9] = 9.000000
+forestdist[1, 10] = 9.000000
+RevTreeDistance(4, 3)
+Compute revforestdist(4, 3)
+delta[4, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+RevTreeDistance(4, 2)
+Compute revforestdist(4, 2)
+delta[4, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+RevTreeDistance(4, 1)
+Compute revforestdist(4, 4)
+delta[4, 4] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(4, 3)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(4, 2)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(4, 1)
+delta[4, 1] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+RevTreeDistance(4, 8)
+Compute revforestdist(4, 8)
+delta[4, 8] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+RevTreeDistance(4, 7)
+Compute revforestdist(4, 7)
+delta[4, 7] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+RevTreeDistance(4, 0)
+Compute revforestdist(4, 9)
+delta[4, 9] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(4, 8)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(4, 7)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(4, 6)
+delta[4, 6] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute revforestdist(4, 5)
+delta[4, 5] = forestdist[0, 4] = 4.000000
+forestdist[1, 5] = 4.000000
+Compute revforestdist(4, 4)
+forestdist[1, 6] = 5.000000
+Compute revforestdist(4, 3)
+forestdist[1, 7] = 6.000000
+Compute revforestdist(4, 2)
+forestdist[1, 8] = 7.000000
+Compute revforestdist(4, 1)
+forestdist[1, 9] = 8.000000
+Compute revforestdist(4, 0)
+delta[4, 0] = forestdist[0, 9] = 9.000000
+forestdist[1, 10] = 9.000000
+RevTreeDistance(1, 3)
+Compute revforestdist(5, 3)
+delta[5, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(4, 3)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(3, 3)
+delta[3, 3] = forestdist[2, 0] = 2.000000
+forestdist[3, 1] = 2.000000
+Compute revforestdist(2, 3)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(1, 3)
+delta[1, 3] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+RevTreeDistance(1, 2)
+Compute revforestdist(5, 2)
+delta[5, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(4, 2)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(3, 2)
+delta[3, 2] = forestdist[2, 0] = 2.000000
+forestdist[3, 1] = 2.000000
+Compute revforestdist(2, 2)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(1, 2)
+delta[1, 2] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+RevTreeDistance(1, 1)
+Compute revforestdist(5, 4)
+delta[5, 4] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(5, 3)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(5, 2)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(5, 1)
+delta[5, 1] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute revforestdist(4, 4)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(4, 3)
+forestdist[2, 2] = 0.000000
+Compute revforestdist(4, 2)
+forestdist[2, 3] = 1.000000
+Compute revforestdist(4, 1)
+forestdist[2, 4] = 2.000000
+Compute revforestdist(3, 4)
+delta[3, 4] = forestdist[2, 0] = 2.000000
+forestdist[3, 1] = 2.000000
+Compute revforestdist(3, 3)
+forestdist[3, 2] = 1.000000
+Compute revforestdist(3, 2)
+forestdist[3, 3] = 2.000000
+Compute revforestdist(3, 1)
+delta[3, 1] = forestdist[2, 3] = 1.000000
+forestdist[3, 4] = 1.000000
+Compute revforestdist(2, 4)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(2, 3)
+forestdist[4, 2] = 2.000000
+Compute revforestdist(2, 2)
+forestdist[4, 3] = 1.000000
+Compute revforestdist(2, 1)
+forestdist[4, 4] = 2.000000
+Compute revforestdist(1, 4)
+delta[1, 4] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(1, 3)
+forestdist[5, 2] = 3.000000
+Compute revforestdist(1, 2)
+forestdist[5, 3] = 2.000000
+Compute revforestdist(1, 1)
+delta[1, 1] = forestdist[4, 3] = 1.000000
+forestdist[5, 4] = 1.000000
+RevTreeDistance(1, 8)
+Compute revforestdist(5, 8)
+delta[5, 8] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(4, 8)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(3, 8)
+delta[3, 8] = forestdist[2, 0] = 2.000000
+forestdist[3, 1] = 2.000000
+Compute revforestdist(2, 8)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(1, 8)
+delta[1, 8] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+RevTreeDistance(1, 7)
+Compute revforestdist(5, 7)
+delta[5, 7] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(4, 7)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(3, 7)
+delta[3, 7] = forestdist[2, 0] = 2.000000
+forestdist[3, 1] = 2.000000
+Compute revforestdist(2, 7)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(1, 7)
+delta[1, 7] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+RevTreeDistance(1, 0)
+Compute revforestdist(5, 9)
+delta[5, 9] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(5, 8)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(5, 7)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(5, 6)
+delta[5, 6] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute revforestdist(5, 5)
+delta[5, 5] = forestdist[0, 4] = 4.000000
+forestdist[1, 5] = 4.000000
+Compute revforestdist(5, 4)
+forestdist[1, 6] = 5.000000
+Compute revforestdist(5, 3)
+forestdist[1, 7] = 6.000000
+Compute revforestdist(5, 2)
+forestdist[1, 8] = 7.000000
+Compute revforestdist(5, 1)
+forestdist[1, 9] = 8.000000
+Compute revforestdist(5, 0)
+delta[5, 0] = forestdist[0, 9] = 9.000000
+forestdist[1, 10] = 9.000000
+Compute revforestdist(4, 9)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(4, 8)
+forestdist[2, 2] = 0.000000
+Compute revforestdist(4, 7)
+forestdist[2, 3] = 1.000000
+Compute revforestdist(4, 6)
+forestdist[2, 4] = 2.000000
+Compute revforestdist(4, 5)
+forestdist[2, 5] = 3.000000
+Compute revforestdist(4, 4)
+forestdist[2, 6] = 4.000000
+Compute revforestdist(4, 3)
+forestdist[2, 7] = 5.000000
+Compute revforestdist(4, 2)
+forestdist[2, 8] = 6.000000
+Compute revforestdist(4, 1)
+forestdist[2, 9] = 7.000000
+Compute revforestdist(4, 0)
+forestdist[2, 10] = 8.000000
+Compute revforestdist(3, 9)
+delta[3, 9] = forestdist[2, 0] = 2.000000
+forestdist[3, 1] = 2.000000
+Compute revforestdist(3, 8)
+forestdist[3, 2] = 1.000000
+Compute revforestdist(3, 7)
+forestdist[3, 3] = 2.000000
+Compute revforestdist(3, 6)
+delta[3, 6] = forestdist[2, 3] = 1.000000
+forestdist[3, 4] = 1.000000
+Compute revforestdist(3, 5)
+delta[3, 5] = forestdist[2, 4] = 2.000000
+forestdist[3, 5] = 2.000000
+Compute revforestdist(3, 4)
+forestdist[3, 6] = 3.000000
+Compute revforestdist(3, 3)
+forestdist[3, 7] = 4.000000
+Compute revforestdist(3, 2)
+forestdist[3, 8] = 5.000000
+Compute revforestdist(3, 1)
+forestdist[3, 9] = 6.000000
+Compute revforestdist(3, 0)
+delta[3, 0] = forestdist[2, 9] = 7.000000
+forestdist[3, 10] = 7.000000
+Compute revforestdist(2, 9)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(2, 8)
+forestdist[4, 2] = 2.000000
+Compute revforestdist(2, 7)
+forestdist[4, 3] = 1.000000
+Compute revforestdist(2, 6)
+forestdist[4, 4] = 2.000000
+Compute revforestdist(2, 5)
+forestdist[4, 5] = 3.000000
+Compute revforestdist(2, 4)
+forestdist[4, 6] = 2.000000
+Compute revforestdist(2, 3)
+forestdist[4, 7] = 3.000000
+Compute revforestdist(2, 2)
+forestdist[4, 8] = 4.000000
+Compute revforestdist(2, 1)
+forestdist[4, 9] = 5.000000
+Compute revforestdist(2, 0)
+forestdist[4, 10] = 6.000000
+Compute revforestdist(1, 9)
+delta[1, 9] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(1, 8)
+forestdist[5, 2] = 3.000000
+Compute revforestdist(1, 7)
+forestdist[5, 3] = 2.000000
+Compute revforestdist(1, 6)
+delta[1, 6] = forestdist[4, 3] = 1.000000
+forestdist[5, 4] = 1.000000
+Compute revforestdist(1, 5)
+delta[1, 5] = forestdist[4, 4] = 2.000000
+forestdist[5, 5] = 2.000000
+Compute revforestdist(1, 4)
+forestdist[5, 6] = 3.000000
+Compute revforestdist(1, 3)
+forestdist[5, 7] = 4.000000
+Compute revforestdist(1, 2)
+forestdist[5, 8] = 5.000000
+Compute revforestdist(1, 1)
+forestdist[5, 9] = 6.000000
+Compute revforestdist(1, 0)
+delta[1, 0] = forestdist[4, 9] = 5.000000
+forestdist[5, 10] = 5.000000
+RevTreeDistance(8, 3)
+Compute revforestdist(9, 3)
+delta[9, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(8, 3)
+delta[8, 3] = forestdist[1, 0] = 1.000000
+forestdist[2, 1] = 1.000000
+RevTreeDistance(8, 2)
+Compute revforestdist(9, 2)
+delta[9, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(8, 2)
+delta[8, 2] = forestdist[1, 0] = 1.000000
+forestdist[2, 1] = 1.000000
+RevTreeDistance(8, 1)
+Compute revforestdist(9, 4)
+delta[9, 4] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(9, 3)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(9, 2)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(9, 1)
+delta[9, 1] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute revforestdist(8, 4)
+delta[8, 4] = forestdist[1, 0] = 1.000000
+forestdist[2, 1] = 1.000000
+Compute revforestdist(8, 3)
+forestdist[2, 2] = 2.000000
+Compute revforestdist(8, 2)
+forestdist[2, 3] = 3.000000
+Compute revforestdist(8, 1)
+delta[8, 1] = forestdist[1, 3] = 2.000000
+forestdist[2, 4] = 2.000000
+RevTreeDistance(8, 8)
+Compute revforestdist(9, 8)
+delta[9, 8] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(8, 8)
+delta[8, 8] = forestdist[1, 0] = 1.000000
+forestdist[2, 1] = 1.000000
+RevTreeDistance(8, 7)
+Compute revforestdist(9, 7)
+delta[9, 7] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(8, 7)
+delta[8, 7] = forestdist[1, 0] = 1.000000
+forestdist[2, 1] = 1.000000
+RevTreeDistance(8, 0)
+Compute revforestdist(9, 9)
+delta[9, 9] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(9, 8)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(9, 7)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(9, 6)
+delta[9, 6] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute revforestdist(9, 5)
+delta[9, 5] = forestdist[0, 4] = 4.000000
+forestdist[1, 5] = 4.000000
+Compute revforestdist(9, 4)
+forestdist[1, 6] = 5.000000
+Compute revforestdist(9, 3)
+forestdist[1, 7] = 6.000000
+Compute revforestdist(9, 2)
+forestdist[1, 8] = 7.000000
+Compute revforestdist(9, 1)
+forestdist[1, 9] = 8.000000
+Compute revforestdist(9, 0)
+delta[9, 0] = forestdist[0, 9] = 9.000000
+forestdist[1, 10] = 9.000000
+Compute revforestdist(8, 9)
+delta[8, 9] = forestdist[1, 0] = 1.000000
+forestdist[2, 1] = 1.000000
+Compute revforestdist(8, 8)
+forestdist[2, 2] = 2.000000
+Compute revforestdist(8, 7)
+forestdist[2, 3] = 3.000000
+Compute revforestdist(8, 6)
+delta[8, 6] = forestdist[1, 3] = 2.000000
+forestdist[2, 4] = 2.000000
+Compute revforestdist(8, 5)
+delta[8, 5] = forestdist[1, 4] = 3.000000
+forestdist[2, 5] = 3.000000
+Compute revforestdist(8, 4)
+forestdist[2, 6] = 4.000000
+Compute revforestdist(8, 3)
+forestdist[2, 7] = 5.000000
+Compute revforestdist(8, 2)
+forestdist[2, 8] = 6.000000
+Compute revforestdist(8, 1)
+forestdist[2, 9] = 7.000000
+Compute revforestdist(8, 0)
+delta[8, 0] = forestdist[1, 9] = 8.000000
+forestdist[2, 10] = 8.000000
+RevTreeDistance(7, 3)
+Compute revforestdist(7, 3)
+delta[7, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+RevTreeDistance(7, 2)
+Compute revforestdist(7, 2)
+delta[7, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+RevTreeDistance(7, 1)
+Compute revforestdist(7, 4)
+delta[7, 4] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(7, 3)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(7, 2)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(7, 1)
+delta[7, 1] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+RevTreeDistance(7, 8)
+Compute revforestdist(7, 8)
+delta[7, 8] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+RevTreeDistance(7, 7)
+Compute revforestdist(7, 7)
+delta[7, 7] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+RevTreeDistance(7, 0)
+Compute revforestdist(7, 9)
+delta[7, 9] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(7, 8)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(7, 7)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(7, 6)
+delta[7, 6] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute revforestdist(7, 5)
+delta[7, 5] = forestdist[0, 4] = 4.000000
+forestdist[1, 5] = 4.000000
+Compute revforestdist(7, 4)
+forestdist[1, 6] = 5.000000
+Compute revforestdist(7, 3)
+forestdist[1, 7] = 6.000000
+Compute revforestdist(7, 2)
+forestdist[1, 8] = 7.000000
+Compute revforestdist(7, 1)
+forestdist[1, 9] = 8.000000
+Compute revforestdist(7, 0)
+delta[7, 0] = forestdist[0, 9] = 9.000000
+forestdist[1, 10] = 9.000000
+RevTreeDistance(0, 3)
+Compute revforestdist(10, 3)
+delta[10, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(9, 3)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(8, 3)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(7, 3)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(6, 3)
+delta[6, 3] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(5, 3)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(4, 3)
+forestdist[7, 1] = 6.000000
+Compute revforestdist(3, 3)
+forestdist[8, 1] = 7.000000
+Compute revforestdist(2, 3)
+forestdist[9, 1] = 8.000000
+Compute revforestdist(1, 3)
+forestdist[10, 1] = 9.000000
+Compute revforestdist(0, 3)
+delta[0, 3] = forestdist[10, 0] = 10.000000
+forestdist[11, 1] = 10.000000
+RevTreeDistance(0, 2)
+Compute revforestdist(10, 2)
+delta[10, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(9, 2)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(8, 2)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(7, 2)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(6, 2)
+delta[6, 2] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(5, 2)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(4, 2)
+forestdist[7, 1] = 6.000000
+Compute revforestdist(3, 2)
+forestdist[8, 1] = 7.000000
+Compute revforestdist(2, 2)
+forestdist[9, 1] = 8.000000
+Compute revforestdist(1, 2)
+forestdist[10, 1] = 9.000000
+Compute revforestdist(0, 2)
+delta[0, 2] = forestdist[10, 0] = 10.000000
+forestdist[11, 1] = 10.000000
+RevTreeDistance(0, 1)
+Compute revforestdist(10, 4)
+delta[10, 4] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(10, 3)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(10, 2)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(10, 1)
+delta[10, 1] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute revforestdist(9, 4)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(9, 3)
+forestdist[2, 2] = 0.000000
+Compute revforestdist(9, 2)
+forestdist[2, 3] = 1.000000
+Compute revforestdist(9, 1)
+forestdist[2, 4] = 2.000000
+Compute revforestdist(8, 4)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(8, 3)
+forestdist[3, 2] = 1.000000
+Compute revforestdist(8, 2)
+forestdist[3, 3] = 2.000000
+Compute revforestdist(8, 1)
+forestdist[3, 4] = 3.000000
+Compute revforestdist(7, 4)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(7, 3)
+forestdist[4, 2] = 2.000000
+Compute revforestdist(7, 2)
+forestdist[4, 3] = 1.000000
+Compute revforestdist(7, 1)
+forestdist[4, 4] = 2.000000
+Compute revforestdist(6, 4)
+delta[6, 4] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(6, 3)
+forestdist[5, 2] = 3.000000
+Compute revforestdist(6, 2)
+forestdist[5, 3] = 2.000000
+Compute revforestdist(6, 1)
+delta[6, 1] = forestdist[4, 3] = 1.000000
+forestdist[5, 4] = 1.000000
+Compute revforestdist(5, 4)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(5, 3)
+forestdist[6, 2] = 4.000000
+Compute revforestdist(5, 2)
+forestdist[6, 3] = 3.000000
+Compute revforestdist(5, 1)
+forestdist[6, 4] = 2.000000
+Compute revforestdist(4, 4)
+forestdist[7, 1] = 6.000000
+Compute revforestdist(4, 3)
+forestdist[7, 2] = 5.000000
+Compute revforestdist(4, 2)
+forestdist[7, 3] = 4.000000
+Compute revforestdist(4, 1)
+forestdist[7, 4] = 3.000000
+Compute revforestdist(3, 4)
+forestdist[8, 1] = 7.000000
+Compute revforestdist(3, 3)
+forestdist[8, 2] = 6.000000
+Compute revforestdist(3, 2)
+forestdist[8, 3] = 5.000000
+Compute revforestdist(3, 1)
+forestdist[8, 4] = 4.000000
+Compute revforestdist(2, 4)
+forestdist[9, 1] = 8.000000
+Compute revforestdist(2, 3)
+forestdist[9, 2] = 7.000000
+Compute revforestdist(2, 2)
+forestdist[9, 3] = 6.000000
+Compute revforestdist(2, 1)
+forestdist[9, 4] = 5.000000
+Compute revforestdist(1, 4)
+forestdist[10, 1] = 9.000000
+Compute revforestdist(1, 3)
+forestdist[10, 2] = 8.000000
+Compute revforestdist(1, 2)
+forestdist[10, 3] = 7.000000
+Compute revforestdist(1, 1)
+forestdist[10, 4] = 6.000000
+Compute revforestdist(0, 4)
+delta[0, 4] = forestdist[10, 0] = 10.000000
+forestdist[11, 1] = 10.000000
+Compute revforestdist(0, 3)
+forestdist[11, 2] = 9.000000
+Compute revforestdist(0, 2)
+forestdist[11, 3] = 8.000000
+Compute revforestdist(0, 1)
+delta[0, 1] = forestdist[10, 3] = 7.000000
+forestdist[11, 4] = 7.000000
+RevTreeDistance(0, 8)
+Compute revforestdist(10, 8)
+delta[10, 8] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(9, 8)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(8, 8)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(7, 8)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(6, 8)
+delta[6, 8] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(5, 8)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(4, 8)
+forestdist[7, 1] = 6.000000
+Compute revforestdist(3, 8)
+forestdist[8, 1] = 7.000000
+Compute revforestdist(2, 8)
+forestdist[9, 1] = 8.000000
+Compute revforestdist(1, 8)
+forestdist[10, 1] = 9.000000
+Compute revforestdist(0, 8)
+delta[0, 8] = forestdist[10, 0] = 10.000000
+forestdist[11, 1] = 10.000000
+RevTreeDistance(0, 7)
+Compute revforestdist(10, 7)
+delta[10, 7] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(9, 7)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(8, 7)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(7, 7)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(6, 7)
+delta[6, 7] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(5, 7)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(4, 7)
+forestdist[7, 1] = 6.000000
+Compute revforestdist(3, 7)
+forestdist[8, 1] = 7.000000
+Compute revforestdist(2, 7)
+forestdist[9, 1] = 8.000000
+Compute revforestdist(1, 7)
+forestdist[10, 1] = 9.000000
+Compute revforestdist(0, 7)
+delta[0, 7] = forestdist[10, 0] = 10.000000
+forestdist[11, 1] = 10.000000
+RevTreeDistance(0, 0)
+Compute revforestdist(10, 9)
+delta[10, 9] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(10, 8)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(10, 7)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(10, 6)
+delta[10, 6] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute revforestdist(10, 5)
+delta[10, 5] = forestdist[0, 4] = 4.000000
+forestdist[1, 5] = 4.000000
+Compute revforestdist(10, 4)
+forestdist[1, 6] = 5.000000
+Compute revforestdist(10, 3)
+forestdist[1, 7] = 6.000000
+Compute revforestdist(10, 2)
+forestdist[1, 8] = 7.000000
+Compute revforestdist(10, 1)
+forestdist[1, 9] = 8.000000
+Compute revforestdist(10, 0)
+delta[10, 0] = forestdist[0, 9] = 9.000000
+forestdist[1, 10] = 9.000000
+Compute revforestdist(9, 9)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(9, 8)
+forestdist[2, 2] = 0.000000
+Compute revforestdist(9, 7)
+forestdist[2, 3] = 1.000000
+Compute revforestdist(9, 6)
+forestdist[2, 4] = 2.000000
+Compute revforestdist(9, 5)
+forestdist[2, 5] = 3.000000
+Compute revforestdist(9, 4)
+forestdist[2, 6] = 4.000000
+Compute revforestdist(9, 3)
+forestdist[2, 7] = 5.000000
+Compute revforestdist(9, 2)
+forestdist[2, 8] = 6.000000
+Compute revforestdist(9, 1)
+forestdist[2, 9] = 7.000000
+Compute revforestdist(9, 0)
+forestdist[2, 10] = 8.000000
+Compute revforestdist(8, 9)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(8, 8)
+forestdist[3, 2] = 1.000000
+Compute revforestdist(8, 7)
+forestdist[3, 3] = 2.000000
+Compute revforestdist(8, 6)
+forestdist[3, 4] = 3.000000
+Compute revforestdist(8, 5)
+forestdist[3, 5] = 4.000000
+Compute revforestdist(8, 4)
+forestdist[3, 6] = 5.000000
+Compute revforestdist(8, 3)
+forestdist[3, 7] = 6.000000
+Compute revforestdist(8, 2)
+forestdist[3, 8] = 7.000000
+Compute revforestdist(8, 1)
+forestdist[3, 9] = 6.000000
+Compute revforestdist(8, 0)
+forestdist[3, 10] = 7.000000
+Compute revforestdist(7, 9)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(7, 8)
+forestdist[4, 2] = 2.000000
+Compute revforestdist(7, 7)
+forestdist[4, 3] = 1.000000
+Compute revforestdist(7, 6)
+forestdist[4, 4] = 2.000000
+Compute revforestdist(7, 5)
+forestdist[4, 5] = 3.000000
+Compute revforestdist(7, 4)
+forestdist[4, 6] = 4.000000
+Compute revforestdist(7, 3)
+forestdist[4, 7] = 5.000000
+Compute revforestdist(7, 2)
+forestdist[4, 8] = 6.000000
+Compute revforestdist(7, 1)
+forestdist[4, 9] = 7.000000
+Compute revforestdist(7, 0)
+forestdist[4, 10] = 8.000000
+Compute revforestdist(6, 9)
+delta[6, 9] = forestdist[4, 0] = 4.000000
+forestdist[5, 1] = 4.000000
+Compute revforestdist(6, 8)
+forestdist[5, 2] = 3.000000
+Compute revforestdist(6, 7)
+forestdist[5, 3] = 2.000000
+Compute revforestdist(6, 6)
+delta[6, 6] = forestdist[4, 3] = 1.000000
+forestdist[5, 4] = 1.000000
+Compute revforestdist(6, 5)
+delta[6, 5] = forestdist[4, 4] = 2.000000
+forestdist[5, 5] = 2.000000
+Compute revforestdist(6, 4)
+forestdist[5, 6] = 3.000000
+Compute revforestdist(6, 3)
+forestdist[5, 7] = 4.000000
+Compute revforestdist(6, 2)
+forestdist[5, 8] = 5.000000
+Compute revforestdist(6, 1)
+forestdist[5, 9] = 6.000000
+Compute revforestdist(6, 0)
+delta[6, 0] = forestdist[4, 9] = 7.000000
+forestdist[5, 10] = 7.000000
+Compute revforestdist(5, 9)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(5, 8)
+forestdist[6, 2] = 4.000000
+Compute revforestdist(5, 7)
+forestdist[6, 3] = 3.000000
+Compute revforestdist(5, 6)
+forestdist[6, 4] = 2.000000
+Compute revforestdist(5, 5)
+forestdist[6, 5] = 3.000000
+Compute revforestdist(5, 4)
+forestdist[6, 6] = 2.000000
+Compute revforestdist(5, 3)
+forestdist[6, 7] = 3.000000
+Compute revforestdist(5, 2)
+forestdist[6, 8] = 4.000000
+Compute revforestdist(5, 1)
+forestdist[6, 9] = 5.000000
+Compute revforestdist(5, 0)
+forestdist[6, 10] = 6.000000
+Compute revforestdist(4, 9)
+forestdist[7, 1] = 6.000000
+Compute revforestdist(4, 8)
+forestdist[7, 2] = 5.000000
+Compute revforestdist(4, 7)
+forestdist[7, 3] = 4.000000
+Compute revforestdist(4, 6)
+forestdist[7, 4] = 3.000000
+Compute revforestdist(4, 5)
+forestdist[7, 5] = 4.000000
+Compute revforestdist(4, 4)
+forestdist[7, 6] = 3.000000
+Compute revforestdist(4, 3)
+forestdist[7, 7] = 2.000000
+Compute revforestdist(4, 2)
+forestdist[7, 8] = 3.000000
+Compute revforestdist(4, 1)
+forestdist[7, 9] = 4.000000
+Compute revforestdist(4, 0)
+forestdist[7, 10] = 5.000000
+Compute revforestdist(3, 9)
+forestdist[8, 1] = 7.000000
+Compute revforestdist(3, 8)
+forestdist[8, 2] = 6.000000
+Compute revforestdist(3, 7)
+forestdist[8, 3] = 5.000000
+Compute revforestdist(3, 6)
+forestdist[8, 4] = 4.000000
+Compute revforestdist(3, 5)
+forestdist[8, 5] = 5.000000
+Compute revforestdist(3, 4)
+forestdist[8, 6] = 4.000000
+Compute revforestdist(3, 3)
+forestdist[8, 7] = 3.000000
+Compute revforestdist(3, 2)
+forestdist[8, 8] = 4.000000
+Compute revforestdist(3, 1)
+forestdist[8, 9] = 3.000000
+Compute revforestdist(3, 0)
+forestdist[8, 10] = 4.000000
+Compute revforestdist(2, 9)
+forestdist[9, 1] = 8.000000
+Compute revforestdist(2, 8)
+forestdist[9, 2] = 7.000000
+Compute revforestdist(2, 7)
+forestdist[9, 3] = 6.000000
+Compute revforestdist(2, 6)
+forestdist[9, 4] = 5.000000
+Compute revforestdist(2, 5)
+forestdist[9, 5] = 6.000000
+Compute revforestdist(2, 4)
+forestdist[9, 6] = 5.000000
+Compute revforestdist(2, 3)
+forestdist[9, 7] = 4.000000
+Compute revforestdist(2, 2)
+forestdist[9, 8] = 3.000000
+Compute revforestdist(2, 1)
+forestdist[9, 9] = 4.000000
+Compute revforestdist(2, 0)
+forestdist[9, 10] = 5.000000
+Compute revforestdist(1, 9)
+forestdist[10, 1] = 9.000000
+Compute revforestdist(1, 8)
+forestdist[10, 2] = 8.000000
+Compute revforestdist(1, 7)
+forestdist[10, 3] = 7.000000
+Compute revforestdist(1, 6)
+forestdist[10, 4] = 6.000000
+Compute revforestdist(1, 5)
+forestdist[10, 5] = 7.000000
+Compute revforestdist(1, 4)
+forestdist[10, 6] = 6.000000
+Compute revforestdist(1, 3)
+forestdist[10, 7] = 5.000000
+Compute revforestdist(1, 2)
+forestdist[10, 8] = 4.000000
+Compute revforestdist(1, 1)
+forestdist[10, 9] = 3.000000
+Compute revforestdist(1, 0)
+forestdist[10, 10] = 4.000000
+Compute revforestdist(0, 9)
+delta[0, 9] = forestdist[10, 0] = 10.000000
+forestdist[11, 1] = 10.000000
+Compute revforestdist(0, 8)
+forestdist[11, 2] = 9.000000
+Compute revforestdist(0, 7)
+forestdist[11, 3] = 8.000000
+Compute revforestdist(0, 6)
+delta[0, 6] = forestdist[10, 3] = 7.000000
+forestdist[11, 4] = 7.000000
+Compute revforestdist(0, 5)
+delta[0, 5] = forestdist[10, 4] = 6.000000
+forestdist[11, 5] = 6.000000
+Compute revforestdist(0, 4)
+forestdist[11, 6] = 7.000000
+Compute revforestdist(0, 3)
+forestdist[11, 7] = 6.000000
+Compute revforestdist(0, 2)
+forestdist[11, 8] = 5.000000
+Compute revforestdist(0, 1)
+forestdist[11, 9] = 4.000000
+Compute revforestdist(0, 0)
+delta[0, 0] = forestdist[10, 9] = 3.000000
+forestdist[11, 10] = 3.000000
+delta Result RR
+3 7 10 10 10 6 7 10 10 10 
+5 1 4 4 4 2 1 4 4 4 
+9 3 0 0 0 4 3 0 0 0 
+7 1 2 2 2 2 1 2 2 2 
+9 3 0 0 0 4 3 0 0 0 
+9 3 0 0 0 4 3 0 0 0 
+7 1 4 4 4 2 1 4 4 4 
+9 3 0 0 0 4 3 0 0 0 
+8 2 1 1 1 3 2 1 1 1 
+9 3 0 0 0 4 3 0 0 0 
+9 3 0 0 0 4 3 0 0 0 
 

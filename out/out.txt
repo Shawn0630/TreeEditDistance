@@ -1,1707 +1,1405 @@
+Compute Free(1, 0)
+If select 1 in Tree A #Subproblem: 4 Direction: LeftCompute Free(1, 1)
+If select 1 in Tree A #Subproblem: 2 Direction: LeftCompute Free(1, 2)
+If select 1 in Tree A #Subproblem: 1 Direction: LeftCompute Free(1, 2)
+If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[1][2] freeSumA = 0 freeSumB = 0
+Free[1][2] = 1
+FreeS(1, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+free[1][1] freeSumA = 0 freeSumB = 1
+Compute Free(1, 1)
+If select 2(leftmost) in Tree B #Subproblem: 2 Direction: Right
+Compute Free(1, 1)
+If select 2(rightmost) in Tree B #Subproblem: 2 Direction: Left
+Free[1][1] = 2
+FreeS(1, 1)
+Keynode: 1 in Tree A
+Direction: rightLeaf: 1
+Compute Free(1, 3)
+If select 1 in Tree A #Subproblem: 1 Direction: LeftCompute Free(1, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[1][3] freeSumA = 0 freeSumB = 0
+Free[1][3] = 1
+FreeS(1, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[1][0] freeSumA = 0 freeSumB = 3
+Compute Free(1, 0)
+If select 1(leftmost) in Tree B #Subproblem: 5 Direction: Right
+Compute Free(1, 0)
+If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[1][0] = 4
+FreeS(1, 0)
+Keynode: 1 in Tree A
+Direction: rightLeaf: 1
 Compute Free(2, 0)
-If select 2 in Tree A #Subproblem: 10 Direction: LeftCompute Free(2, 1)
-If select 2 in Tree A #Subproblem: 5 Direction: LeftCompute Free(2, 2)
+If select 2 in Tree A #Subproblem: 4 Direction: LeftCompute Free(2, 1)
+If select 2 in Tree A #Subproblem: 2 Direction: LeftCompute Free(2, 2)
 If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 2)
 If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[2][2] freeSumA = 0 freeSumB = 0
 Free[2][2] = 1
 FreeS(2, 2)
 Keynode: 2 in TreeB
 Direction: rightLeaf: 2
-Compute Free(2, 3)
-If select 2 in Tree A #Subproblem: 3 Direction: LeftCompute Free(2, 4)
-If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 4)
-If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[2][4] freeSumA = 0 freeSumB = 0
-Free[2][4] = 1
-FreeS(2, 4)
-Keynode: 4 in TreeB
-Direction: rightLeaf: 4
-Compute Free(2, 5)
-If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 5)
-If select 5 in Tree B #Subproblem: 1 Direction: Leftfree[2][5] freeSumA = 0 freeSumB = 0
-Free[2][5] = 1
-FreeS(2, 5)
-Keynode: 5 in TreeB
-Direction: rightLeaf: 5
-free[2][3] freeSumA = 0 freeSumB = 2
-Compute Free(2, 3)
-If select 4(leftmost) in Tree B #Subproblem: 4 Direction: Right
-Compute Free(2, 3)
-If select 5(rightmost) in Tree B #Subproblem: 4 Direction: Left
-Free[2][3] = 3
-FreeS(2, 3)
-Keynode: 2 in Tree A
-Direction: rightLeaf: 2
-free[2][1] freeSumA = 0 freeSumB = 4
+free[2][1] freeSumA = 0 freeSumB = 1
 Compute Free(2, 1)
-If select 2(leftmost) in Tree B #Subproblem: 8 Direction: Right
+If select 2(leftmost) in Tree B #Subproblem: 2 Direction: Right
 Compute Free(2, 1)
-If select 3(rightmost) in Tree B #Subproblem: 7 Direction: Left
-Free[2][1] = 5
+If select 2(rightmost) in Tree B #Subproblem: 2 Direction: Left
+Free[2][1] = 2
 FreeS(2, 1)
 Keynode: 2 in Tree A
 Direction: rightLeaf: 2
-Compute Free(2, 6)
-If select 2 in Tree A #Subproblem: 4 Direction: LeftCompute Free(2, 7)
-If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 7)
-If select 7 in Tree B #Subproblem: 1 Direction: Leftfree[2][7] freeSumA = 0 freeSumB = 0
-Free[2][7] = 1
-FreeS(2, 7)
-Keynode: 7 in TreeB
-Direction: rightLeaf: 7
-Compute Free(2, 8)
-If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 8)
-If select 8 in Tree B #Subproblem: 1 Direction: Leftfree[2][8] freeSumA = 0 freeSumB = 0
-Free[2][8] = 1
-FreeS(2, 8)
-Keynode: 8 in TreeB
-Direction: rightLeaf: 8
-Compute Free(2, 9)
-If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 9)
-If select 9 in Tree B #Subproblem: 1 Direction: Leftfree[2][9] freeSumA = 0 freeSumB = 0
-Free[2][9] = 1
-FreeS(2, 9)
-Keynode: 9 in TreeB
-Direction: rightLeaf: 9
-free[2][6] freeSumA = 0 freeSumB = 3
-Compute Free(2, 6)
-If select 7(leftmost) in Tree B #Subproblem: 6 Direction: Right
-Compute Free(2, 6)
-If select 8 in Tree B #Subproblem: 6 Direction: Left
-Compute Free(2, 6)
-If select 9(rightmost) in Tree B #Subproblem: 6 Direction: Left
-Free[2][6] = 4
-FreeS(2, 6)
-Keynode: 2 in Tree A
-Direction: rightLeaf: 2
-free[2][0] freeSumA = 0 freeSumB = 9
+Compute Free(2, 3)
+If select 2 in Tree A #Subproblem: 1 Direction: LeftCompute Free(2, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[2][3] freeSumA = 0 freeSumB = 0
+Free[2][3] = 1
+FreeS(2, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[2][0] freeSumA = 0 freeSumB = 3
 Compute Free(2, 0)
-If select 1(leftmost) in Tree B #Subproblem: 16 Direction: Right
+If select 1(leftmost) in Tree B #Subproblem: 5 Direction: Right
 Compute Free(2, 0)
-If select 6(rightmost) in Tree B #Subproblem: 17 Direction: Left
-Free[2][0] = 10
+If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[2][0] = 4
 FreeS(2, 0)
 Keynode: 2 in Tree A
 Direction: rightLeaf: 2
 Compute Free(4, 0)
-If select 4 in Tree A #Subproblem: 10 Direction: LeftCompute Free(4, 1)
-If select 4 in Tree A #Subproblem: 5 Direction: LeftCompute Free(4, 2)
+If select 4 in Tree A #Subproblem: 4 Direction: LeftCompute Free(4, 1)
+If select 4 in Tree A #Subproblem: 2 Direction: LeftCompute Free(4, 2)
 If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 2)
 If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[4][2] freeSumA = 0 freeSumB = 0
 Free[4][2] = 1
 FreeS(4, 2)
 Keynode: 2 in TreeB
 Direction: rightLeaf: 2
-Compute Free(4, 3)
-If select 4 in Tree A #Subproblem: 3 Direction: LeftCompute Free(4, 4)
-If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 4)
-If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[4][4] freeSumA = 0 freeSumB = 0
-Free[4][4] = 1
-FreeS(4, 4)
-Keynode: 4 in TreeB
-Direction: rightLeaf: 4
-Compute Free(4, 5)
-If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 5)
-If select 5 in Tree B #Subproblem: 1 Direction: Leftfree[4][5] freeSumA = 0 freeSumB = 0
-Free[4][5] = 1
-FreeS(4, 5)
-Keynode: 5 in TreeB
-Direction: rightLeaf: 5
-free[4][3] freeSumA = 0 freeSumB = 2
-Compute Free(4, 3)
-If select 4(leftmost) in Tree B #Subproblem: 4 Direction: Right
-Compute Free(4, 3)
-If select 5(rightmost) in Tree B #Subproblem: 4 Direction: Left
-Free[4][3] = 3
-FreeS(4, 3)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
-free[4][1] freeSumA = 0 freeSumB = 4
+free[4][1] freeSumA = 0 freeSumB = 1
 Compute Free(4, 1)
-If select 2(leftmost) in Tree B #Subproblem: 8 Direction: Right
+If select 2(leftmost) in Tree B #Subproblem: 2 Direction: Right
 Compute Free(4, 1)
-If select 3(rightmost) in Tree B #Subproblem: 7 Direction: Left
-Free[4][1] = 5
+If select 2(rightmost) in Tree B #Subproblem: 2 Direction: Left
+Free[4][1] = 2
 FreeS(4, 1)
 Keynode: 4 in Tree A
 Direction: rightLeaf: 4
-Compute Free(4, 6)
-If select 4 in Tree A #Subproblem: 4 Direction: LeftCompute Free(4, 7)
-If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 7)
-If select 7 in Tree B #Subproblem: 1 Direction: Leftfree[4][7] freeSumA = 0 freeSumB = 0
-Free[4][7] = 1
-FreeS(4, 7)
-Keynode: 7 in TreeB
-Direction: rightLeaf: 7
-Compute Free(4, 8)
-If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 8)
-If select 8 in Tree B #Subproblem: 1 Direction: Leftfree[4][8] freeSumA = 0 freeSumB = 0
-Free[4][8] = 1
-FreeS(4, 8)
-Keynode: 8 in TreeB
-Direction: rightLeaf: 8
-Compute Free(4, 9)
-If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 9)
-If select 9 in Tree B #Subproblem: 1 Direction: Leftfree[4][9] freeSumA = 0 freeSumB = 0
-Free[4][9] = 1
-FreeS(4, 9)
-Keynode: 9 in TreeB
-Direction: rightLeaf: 9
-free[4][6] freeSumA = 0 freeSumB = 3
-Compute Free(4, 6)
-If select 7(leftmost) in Tree B #Subproblem: 6 Direction: Right
-Compute Free(4, 6)
-If select 8 in Tree B #Subproblem: 6 Direction: Left
-Compute Free(4, 6)
-If select 9(rightmost) in Tree B #Subproblem: 6 Direction: Left
-Free[4][6] = 4
-FreeS(4, 6)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
-free[4][0] freeSumA = 0 freeSumB = 9
+Compute Free(4, 3)
+If select 4 in Tree A #Subproblem: 1 Direction: LeftCompute Free(4, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[4][3] freeSumA = 0 freeSumB = 0
+Free[4][3] = 1
+FreeS(4, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[4][0] freeSumA = 0 freeSumB = 3
 Compute Free(4, 0)
-If select 1(leftmost) in Tree B #Subproblem: 16 Direction: Right
+If select 1(leftmost) in Tree B #Subproblem: 5 Direction: Right
 Compute Free(4, 0)
-If select 6(rightmost) in Tree B #Subproblem: 17 Direction: Left
-Free[4][0] = 10
+If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[4][0] = 4
 FreeS(4, 0)
 Keynode: 4 in Tree A
 Direction: rightLeaf: 4
+Compute Free(3, 2)
+If select 2 in Tree B #Subproblem: 2 Direction: Leftfree[3][2] freeSumA = 1 freeSumB = 0
+Compute Free(3, 2)
+If select 4(leftmost) in Tree A #Subproblem: 2 Direction: Right
+Compute Free(3, 2)
+If select 4(rightmost) in Tree A #Subproblem: 2 Direction: Left
+Free[3][2] = 2
+FreeS(3, 2)
+Keynode: 2 in TreeB
+Direction: rightLeaf: 2
+free[3][1] freeSumA = 2 freeSumB = 2
+Compute Free(3, 1)
+If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
+Compute Free(3, 1)
+If select 4(rightmost) in Tree A #Subproblem: 4 Direction: Left
+Compute Free(3, 1)
+If select 2(leftmost) in Tree B #Subproblem: 4 Direction: Right
+Compute Free(3, 1)
+If select 2(rightmost) in Tree B #Subproblem: 4 Direction: Left
+Free[3][1] = 4
+FreeS(3, 1)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
+Compute Free(3, 3)
+If select 3 in Tree B #Subproblem: 2 Direction: Leftfree[3][3] freeSumA = 1 freeSumB = 0
+Compute Free(3, 3)
+If select 4(leftmost) in Tree A #Subproblem: 2 Direction: Right
+Compute Free(3, 3)
+If select 4(rightmost) in Tree A #Subproblem: 2 Direction: Left
+Free[3][3] = 2
+FreeS(3, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[3][0] freeSumA = 4 freeSumB = 6
+Compute Free(3, 0)
+If select 4(leftmost) in Tree A #Subproblem: 10 Direction: Right
+Compute Free(3, 0)
+If select 4(rightmost) in Tree A #Subproblem: 12 Direction: Left
+Compute Free(3, 0)
+If select 1(leftmost) in Tree B #Subproblem: 10 Direction: Right
+Compute Free(3, 0)
+If select 3(rightmost) in Tree B #Subproblem: 12 Direction: Left
+Free[3][0] = 10
+FreeS(3, 0)
+Keynode: 4 in Tree A
+Direction: rightLeaf: 4
 Compute Free(5, 0)
-If select 5 in Tree A #Subproblem: 10 Direction: LeftCompute Free(5, 1)
-If select 5 in Tree A #Subproblem: 5 Direction: LeftCompute Free(5, 2)
+If select 5 in Tree A #Subproblem: 4 Direction: LeftCompute Free(5, 1)
+If select 5 in Tree A #Subproblem: 2 Direction: LeftCompute Free(5, 2)
 If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 2)
 If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[5][2] freeSumA = 0 freeSumB = 0
 Free[5][2] = 1
 FreeS(5, 2)
 Keynode: 2 in TreeB
 Direction: rightLeaf: 2
-Compute Free(5, 3)
-If select 5 in Tree A #Subproblem: 3 Direction: LeftCompute Free(5, 4)
-If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 4)
-If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[5][4] freeSumA = 0 freeSumB = 0
-Free[5][4] = 1
-FreeS(5, 4)
-Keynode: 4 in TreeB
-Direction: rightLeaf: 4
-Compute Free(5, 5)
-If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 5)
-If select 5 in Tree B #Subproblem: 1 Direction: Leftfree[5][5] freeSumA = 0 freeSumB = 0
-Free[5][5] = 1
-FreeS(5, 5)
-Keynode: 5 in TreeB
-Direction: rightLeaf: 5
-free[5][3] freeSumA = 0 freeSumB = 2
-Compute Free(5, 3)
-If select 4(leftmost) in Tree B #Subproblem: 4 Direction: Right
-Compute Free(5, 3)
-If select 5(rightmost) in Tree B #Subproblem: 4 Direction: Left
-Free[5][3] = 3
-FreeS(5, 3)
-Keynode: 5 in Tree A
-Direction: rightLeaf: 5
-free[5][1] freeSumA = 0 freeSumB = 4
+free[5][1] freeSumA = 0 freeSumB = 1
 Compute Free(5, 1)
-If select 2(leftmost) in Tree B #Subproblem: 8 Direction: Right
+If select 2(leftmost) in Tree B #Subproblem: 2 Direction: Right
 Compute Free(5, 1)
-If select 3(rightmost) in Tree B #Subproblem: 7 Direction: Left
-Free[5][1] = 5
+If select 2(rightmost) in Tree B #Subproblem: 2 Direction: Left
+Free[5][1] = 2
 FreeS(5, 1)
 Keynode: 5 in Tree A
 Direction: rightLeaf: 5
-Compute Free(5, 6)
-If select 5 in Tree A #Subproblem: 4 Direction: LeftCompute Free(5, 7)
-If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 7)
-If select 7 in Tree B #Subproblem: 1 Direction: Leftfree[5][7] freeSumA = 0 freeSumB = 0
-Free[5][7] = 1
-FreeS(5, 7)
-Keynode: 7 in TreeB
-Direction: rightLeaf: 7
-Compute Free(5, 8)
-If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 8)
-If select 8 in Tree B #Subproblem: 1 Direction: Leftfree[5][8] freeSumA = 0 freeSumB = 0
-Free[5][8] = 1
-FreeS(5, 8)
-Keynode: 8 in TreeB
-Direction: rightLeaf: 8
-Compute Free(5, 9)
-If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 9)
-If select 9 in Tree B #Subproblem: 1 Direction: Leftfree[5][9] freeSumA = 0 freeSumB = 0
-Free[5][9] = 1
-FreeS(5, 9)
-Keynode: 9 in TreeB
-Direction: rightLeaf: 9
-free[5][6] freeSumA = 0 freeSumB = 3
-Compute Free(5, 6)
-If select 7(leftmost) in Tree B #Subproblem: 6 Direction: Right
-Compute Free(5, 6)
-If select 8 in Tree B #Subproblem: 6 Direction: Left
-Compute Free(5, 6)
-If select 9(rightmost) in Tree B #Subproblem: 6 Direction: Left
-Free[5][6] = 4
-FreeS(5, 6)
-Keynode: 5 in Tree A
-Direction: rightLeaf: 5
-free[5][0] freeSumA = 0 freeSumB = 9
+Compute Free(5, 3)
+If select 5 in Tree A #Subproblem: 1 Direction: LeftCompute Free(5, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[5][3] freeSumA = 0 freeSumB = 0
+Free[5][3] = 1
+FreeS(5, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[5][0] freeSumA = 0 freeSumB = 3
 Compute Free(5, 0)
-If select 1(leftmost) in Tree B #Subproblem: 16 Direction: Right
+If select 1(leftmost) in Tree B #Subproblem: 5 Direction: Right
 Compute Free(5, 0)
-If select 6(rightmost) in Tree B #Subproblem: 17 Direction: Left
-Free[5][0] = 10
+If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[5][0] = 4
 FreeS(5, 0)
 Keynode: 5 in Tree A
 Direction: rightLeaf: 5
-Compute Free(3, 2)
-If select 2 in Tree B #Subproblem: 3 Direction: Leftfree[3][2] freeSumA = 2 freeSumB = 0
-Compute Free(3, 2)
-If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(3, 2)
-If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[3][2] = 3
-FreeS(3, 2)
+Compute Free(6, 0)
+If select 6 in Tree A #Subproblem: 4 Direction: LeftCompute Free(6, 1)
+If select 6 in Tree A #Subproblem: 2 Direction: LeftCompute Free(6, 2)
+If select 6 in Tree A #Subproblem: 1 Direction: LeftCompute Free(6, 2)
+If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[6][2] freeSumA = 0 freeSumB = 0
+Free[6][2] = 1
+FreeS(6, 2)
 Keynode: 2 in TreeB
 Direction: rightLeaf: 2
-Compute Free(3, 4)
-If select 4 in Tree B #Subproblem: 3 Direction: Leftfree[3][4] freeSumA = 2 freeSumB = 0
-Compute Free(3, 4)
-If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(3, 4)
-If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[3][4] = 3
-FreeS(3, 4)
-Keynode: 4 in TreeB
-Direction: rightLeaf: 4
-Compute Free(3, 5)
-If select 5 in Tree B #Subproblem: 3 Direction: Leftfree[3][5] freeSumA = 2 freeSumB = 0
-Compute Free(3, 5)
-If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(3, 5)
-If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[3][5] = 3
-FreeS(3, 5)
-Keynode: 5 in TreeB
-Direction: rightLeaf: 5
-free[3][3] freeSumA = 6 freeSumB = 6
-Compute Free(3, 3)
-If select 4(leftmost) in Tree A #Subproblem: 15 Direction: Right
-Compute Free(3, 3)
-If select 5(rightmost) in Tree A #Subproblem: 15 Direction: Left
-Compute Free(3, 3)
-If select 4(leftmost) in Tree B #Subproblem: 15 Direction: Right
-Compute Free(3, 3)
-If select 5(rightmost) in Tree B #Subproblem: 15 Direction: Left
-Free[3][3] = 15
-FreeS(3, 3)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
-free[3][1] freeSumA = 10 freeSumB = 18
-Compute Free(3, 1)
-If select 4(leftmost) in Tree A #Subproblem: 32 Direction: Right
-Compute Free(3, 1)
-If select 5(rightmost) in Tree A #Subproblem: 26 Direction: Left
-Compute Free(3, 1)
-If select 2(leftmost) in Tree B #Subproblem: 35 Direction: Right
-Compute Free(3, 1)
-If select 3(rightmost) in Tree B #Subproblem: 26 Direction: Left
-Free[3][1] = 26
-FreeS(3, 1)
-Keynode: 5 in Tree A
-Direction: left
-Leaf: 5
-Compute Free(3, 7)
-If select 7 in Tree B #Subproblem: 3 Direction: Leftfree[3][7] freeSumA = 2 freeSumB = 0
-Compute Free(3, 7)
-If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(3, 7)
-If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[3][7] = 3
-FreeS(3, 7)
-Keynode: 7 in TreeB
-Direction: rightLeaf: 7
-Compute Free(3, 8)
-If select 8 in Tree B #Subproblem: 3 Direction: Leftfree[3][8] freeSumA = 2 freeSumB = 0
-Compute Free(3, 8)
-If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(3, 8)
-If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[3][8] = 3
-FreeS(3, 8)
-Keynode: 8 in TreeB
-Direction: rightLeaf: 8
-Compute Free(3, 9)
-If select 9 in Tree B #Subproblem: 3 Direction: Leftfree[3][9] freeSumA = 2 freeSumB = 0
-Compute Free(3, 9)
-If select 4(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(3, 9)
-If select 5(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[3][9] = 3
-FreeS(3, 9)
-Keynode: 9 in TreeB
-Direction: rightLeaf: 9
-free[3][6] freeSumA = 8 freeSumB = 9
-Compute Free(3, 6)
-If select 4(leftmost) in Tree A #Subproblem: 22 Direction: Right
-Compute Free(3, 6)
-If select 5(rightmost) in Tree A #Subproblem: 22 Direction: Left
-Compute Free(3, 6)
-If select 7(leftmost) in Tree B #Subproblem: 22 Direction: Right
-Compute Free(3, 6)
-If select 8 in Tree B #Subproblem: 22 Direction: Left
-Compute Free(3, 6)
-If select 9(rightmost) in Tree B #Subproblem: 22 Direction: Left
-Free[3][6] = 22
-FreeS(3, 6)
-Keynode: 4 in Tree A
-Direction: rightLeaf: 4
-free[3][0] freeSumA = 20 freeSumB = 48
-Compute Free(3, 0)
-If select 4(leftmost) in Tree A #Subproblem: 70 Direction: Right
-Compute Free(3, 0)
-If select 5(rightmost) in Tree A #Subproblem: 67 Direction: Left
-Compute Free(3, 0)
-If select 1(leftmost) in Tree B #Subproblem: 68 Direction: Right
-Compute Free(3, 0)
-If select 6(rightmost) in Tree B #Subproblem: 72 Direction: Left
-Free[3][0] = 67
-FreeS(3, 0)
-Keynode: 5 in Tree A
-Direction: left
-Leaf: 5
-Compute Free(1, 2)
-If select 2 in Tree B #Subproblem: 5 Direction: Leftfree[1][2] freeSumA = 4 freeSumB = 0
-Compute Free(1, 2)
-If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
-Compute Free(1, 2)
-If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
-Free[1][2] = 5
-FreeS(1, 2)
-Keynode: 2 in TreeB
-Direction: rightLeaf: 2
-Compute Free(1, 4)
-If select 4 in Tree B #Subproblem: 5 Direction: Leftfree[1][4] freeSumA = 4 freeSumB = 0
-Compute Free(1, 4)
-If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
-Compute Free(1, 4)
-If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
-Free[1][4] = 5
-FreeS(1, 4)
-Keynode: 4 in TreeB
-Direction: rightLeaf: 4
-Compute Free(1, 5)
-If select 5 in Tree B #Subproblem: 5 Direction: Leftfree[1][5] freeSumA = 4 freeSumB = 0
-Compute Free(1, 5)
-If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
-Compute Free(1, 5)
-If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
-Free[1][5] = 5
-FreeS(1, 5)
-Keynode: 5 in TreeB
-Direction: rightLeaf: 5
-free[1][3] freeSumA = 18 freeSumB = 10
-Compute Free(1, 3)
-If select 2(leftmost) in Tree A #Subproblem: 35 Direction: Right
-Compute Free(1, 3)
-If select 3(rightmost) in Tree A #Subproblem: 26 Direction: Left
-Compute Free(1, 3)
-If select 4(leftmost) in Tree B #Subproblem: 32 Direction: Right
-Compute Free(1, 3)
-If select 5(rightmost) in Tree B #Subproblem: 26 Direction: Left
-Free[1][3] = 26
-FreeS(1, 3)
-Keynode: 3 in Tree A
-Direction: left
-Leaf: 5
-free[1][1] freeSumA = 31 freeSumB = 31
-Compute Free(1, 1)
-If select 2(leftmost) in Tree A #Subproblem: 71 Direction: Right
-Compute Free(1, 1)
-If select 3(rightmost) in Tree A #Subproblem: 45 Direction: Left
-Compute Free(1, 1)
-If select 2(leftmost) in Tree B #Subproblem: 71 Direction: Right
-Compute Free(1, 1)
-If select 3(rightmost) in Tree B #Subproblem: 45 Direction: Left
-Free[1][1] = 45
-FreeS(1, 1)
-Keynode: 3 in Tree A
-Direction: left
-Leaf: 5
-Compute Free(1, 7)
-If select 7 in Tree B #Subproblem: 5 Direction: Leftfree[1][7] freeSumA = 4 freeSumB = 0
-Compute Free(1, 7)
-If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
-Compute Free(1, 7)
-If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
-Free[1][7] = 5
-FreeS(1, 7)
-Keynode: 7 in TreeB
-Direction: rightLeaf: 7
-Compute Free(1, 8)
-If select 8 in Tree B #Subproblem: 5 Direction: Leftfree[1][8] freeSumA = 4 freeSumB = 0
-Compute Free(1, 8)
-If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
-Compute Free(1, 8)
-If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
-Free[1][8] = 5
-FreeS(1, 8)
-Keynode: 8 in TreeB
-Direction: rightLeaf: 8
-Compute Free(1, 9)
-If select 9 in Tree B #Subproblem: 5 Direction: Leftfree[1][9] freeSumA = 4 freeSumB = 0
-Compute Free(1, 9)
-If select 2(leftmost) in Tree A #Subproblem: 8 Direction: Right
-Compute Free(1, 9)
-If select 3(rightmost) in Tree A #Subproblem: 7 Direction: Left
-Free[1][9] = 5
-FreeS(1, 9)
-Keynode: 9 in TreeB
-Direction: rightLeaf: 9
-free[1][6] freeSumA = 26 freeSumB = 15
-Compute Free(1, 6)
-If select 2(leftmost) in Tree A #Subproblem: 52 Direction: Right
-Compute Free(1, 6)
-If select 3(rightmost) in Tree A #Subproblem: 38 Direction: Left
-Compute Free(1, 6)
-If select 7(leftmost) in Tree B #Subproblem: 46 Direction: Right
-Compute Free(1, 6)
-If select 8 in Tree B #Subproblem: 42 Direction: Left
-Compute Free(1, 6)
-If select 9(rightmost) in Tree B #Subproblem: 38 Direction: Left
-Free[1][6] = 38
-FreeS(1, 6)
-Keynode: 3 in Tree A
-Direction: left
-Leaf: 5
-free[1][0] freeSumA = 77 freeSumB = 83
-Compute Free(1, 0)
-If select 2(leftmost) in Tree A #Subproblem: 167 Direction: Right
-Compute Free(1, 0)
-If select 3(rightmost) in Tree A #Subproblem: 115 Direction: Left
-Compute Free(1, 0)
-If select 1(leftmost) in Tree B #Subproblem: 138 Direction: Right
-Compute Free(1, 0)
-If select 6(rightmost) in Tree B #Subproblem: 125 Direction: Left
-Free[1][0] = 115
-FreeS(1, 0)
-Keynode: 3 in Tree A
-Direction: left
-Leaf: 5
+free[6][1] freeSumA = 0 freeSumB = 1
+Compute Free(6, 1)
+If select 2(leftmost) in Tree B #Subproblem: 2 Direction: Right
+Compute Free(6, 1)
+If select 2(rightmost) in Tree B #Subproblem: 2 Direction: Left
+Free[6][1] = 2
+FreeS(6, 1)
+Keynode: 6 in Tree A
+Direction: rightLeaf: 6
+Compute Free(6, 3)
+If select 6 in Tree A #Subproblem: 1 Direction: LeftCompute Free(6, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[6][3] freeSumA = 0 freeSumB = 0
+Free[6][3] = 1
+FreeS(6, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[6][0] freeSumA = 0 freeSumB = 3
+Compute Free(6, 0)
+If select 1(leftmost) in Tree B #Subproblem: 5 Direction: Right
+Compute Free(6, 0)
+If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[6][0] = 4
+FreeS(6, 0)
+Keynode: 6 in Tree A
+Direction: rightLeaf: 6
 Compute Free(7, 0)
-If select 7 in Tree A #Subproblem: 10 Direction: LeftCompute Free(7, 1)
-If select 7 in Tree A #Subproblem: 5 Direction: LeftCompute Free(7, 2)
+If select 7 in Tree A #Subproblem: 4 Direction: LeftCompute Free(7, 1)
+If select 7 in Tree A #Subproblem: 2 Direction: LeftCompute Free(7, 2)
 If select 7 in Tree A #Subproblem: 1 Direction: LeftCompute Free(7, 2)
 If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[7][2] freeSumA = 0 freeSumB = 0
 Free[7][2] = 1
 FreeS(7, 2)
 Keynode: 2 in TreeB
 Direction: rightLeaf: 2
-Compute Free(7, 3)
-If select 7 in Tree A #Subproblem: 3 Direction: LeftCompute Free(7, 4)
-If select 7 in Tree A #Subproblem: 1 Direction: LeftCompute Free(7, 4)
-If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[7][4] freeSumA = 0 freeSumB = 0
-Free[7][4] = 1
-FreeS(7, 4)
-Keynode: 4 in TreeB
-Direction: rightLeaf: 4
-Compute Free(7, 5)
-If select 7 in Tree A #Subproblem: 1 Direction: LeftCompute Free(7, 5)
-If select 5 in Tree B #Subproblem: 1 Direction: Leftfree[7][5] freeSumA = 0 freeSumB = 0
-Free[7][5] = 1
-FreeS(7, 5)
-Keynode: 5 in TreeB
-Direction: rightLeaf: 5
-free[7][3] freeSumA = 0 freeSumB = 2
-Compute Free(7, 3)
-If select 4(leftmost) in Tree B #Subproblem: 4 Direction: Right
-Compute Free(7, 3)
-If select 5(rightmost) in Tree B #Subproblem: 4 Direction: Left
-Free[7][3] = 3
-FreeS(7, 3)
-Keynode: 7 in Tree A
-Direction: rightLeaf: 7
-free[7][1] freeSumA = 0 freeSumB = 4
+free[7][1] freeSumA = 0 freeSumB = 1
 Compute Free(7, 1)
-If select 2(leftmost) in Tree B #Subproblem: 8 Direction: Right
+If select 2(leftmost) in Tree B #Subproblem: 2 Direction: Right
 Compute Free(7, 1)
-If select 3(rightmost) in Tree B #Subproblem: 7 Direction: Left
-Free[7][1] = 5
+If select 2(rightmost) in Tree B #Subproblem: 2 Direction: Left
+Free[7][1] = 2
 FreeS(7, 1)
 Keynode: 7 in Tree A
 Direction: rightLeaf: 7
-Compute Free(7, 6)
-If select 7 in Tree A #Subproblem: 4 Direction: LeftCompute Free(7, 7)
-If select 7 in Tree A #Subproblem: 1 Direction: LeftCompute Free(7, 7)
-If select 7 in Tree B #Subproblem: 1 Direction: Leftfree[7][7] freeSumA = 0 freeSumB = 0
-Free[7][7] = 1
-FreeS(7, 7)
-Keynode: 7 in TreeB
-Direction: rightLeaf: 7
-Compute Free(7, 8)
-If select 7 in Tree A #Subproblem: 1 Direction: LeftCompute Free(7, 8)
-If select 8 in Tree B #Subproblem: 1 Direction: Leftfree[7][8] freeSumA = 0 freeSumB = 0
-Free[7][8] = 1
-FreeS(7, 8)
-Keynode: 8 in TreeB
-Direction: rightLeaf: 8
-Compute Free(7, 9)
-If select 7 in Tree A #Subproblem: 1 Direction: LeftCompute Free(7, 9)
-If select 9 in Tree B #Subproblem: 1 Direction: Leftfree[7][9] freeSumA = 0 freeSumB = 0
-Free[7][9] = 1
-FreeS(7, 9)
-Keynode: 9 in TreeB
-Direction: rightLeaf: 9
-free[7][6] freeSumA = 0 freeSumB = 3
-Compute Free(7, 6)
-If select 7(leftmost) in Tree B #Subproblem: 6 Direction: Right
-Compute Free(7, 6)
-If select 8 in Tree B #Subproblem: 6 Direction: Left
-Compute Free(7, 6)
-If select 9(rightmost) in Tree B #Subproblem: 6 Direction: Left
-Free[7][6] = 4
-FreeS(7, 6)
-Keynode: 7 in Tree A
-Direction: rightLeaf: 7
-free[7][0] freeSumA = 0 freeSumB = 9
+Compute Free(7, 3)
+If select 7 in Tree A #Subproblem: 1 Direction: LeftCompute Free(7, 3)
+If select 3 in Tree B #Subproblem: 1 Direction: Leftfree[7][3] freeSumA = 0 freeSumB = 0
+Free[7][3] = 1
+FreeS(7, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[7][0] freeSumA = 0 freeSumB = 3
 Compute Free(7, 0)
-If select 1(leftmost) in Tree B #Subproblem: 16 Direction: Right
+If select 1(leftmost) in Tree B #Subproblem: 5 Direction: Right
 Compute Free(7, 0)
-If select 6(rightmost) in Tree B #Subproblem: 17 Direction: Left
-Free[7][0] = 10
+If select 3(rightmost) in Tree B #Subproblem: 6 Direction: Left
+Free[7][0] = 4
 FreeS(7, 0)
 Keynode: 7 in Tree A
 Direction: rightLeaf: 7
-Compute Free(8, 0)
-If select 8 in Tree A #Subproblem: 10 Direction: LeftCompute Free(8, 1)
-If select 8 in Tree A #Subproblem: 5 Direction: LeftCompute Free(8, 2)
-If select 8 in Tree A #Subproblem: 1 Direction: LeftCompute Free(8, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[8][2] freeSumA = 0 freeSumB = 0
-Free[8][2] = 1
-FreeS(8, 2)
-Keynode: 2 in TreeB
-Direction: rightLeaf: 2
-Compute Free(8, 3)
-If select 8 in Tree A #Subproblem: 3 Direction: LeftCompute Free(8, 4)
-If select 8 in Tree A #Subproblem: 1 Direction: LeftCompute Free(8, 4)
-If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[8][4] freeSumA = 0 freeSumB = 0
-Free[8][4] = 1
-FreeS(8, 4)
-Keynode: 4 in TreeB
-Direction: rightLeaf: 4
-Compute Free(8, 5)
-If select 8 in Tree A #Subproblem: 1 Direction: LeftCompute Free(8, 5)
-If select 5 in Tree B #Subproblem: 1 Direction: Leftfree[8][5] freeSumA = 0 freeSumB = 0
-Free[8][5] = 1
-FreeS(8, 5)
-Keynode: 5 in TreeB
-Direction: rightLeaf: 5
-free[8][3] freeSumA = 0 freeSumB = 2
-Compute Free(8, 3)
-If select 4(leftmost) in Tree B #Subproblem: 4 Direction: Right
-Compute Free(8, 3)
-If select 5(rightmost) in Tree B #Subproblem: 4 Direction: Left
-Free[8][3] = 3
-FreeS(8, 3)
-Keynode: 8 in Tree A
-Direction: rightLeaf: 8
-free[8][1] freeSumA = 0 freeSumB = 4
-Compute Free(8, 1)
-If select 2(leftmost) in Tree B #Subproblem: 8 Direction: Right
-Compute Free(8, 1)
-If select 3(rightmost) in Tree B #Subproblem: 7 Direction: Left
-Free[8][1] = 5
-FreeS(8, 1)
-Keynode: 8 in Tree A
-Direction: rightLeaf: 8
-Compute Free(8, 6)
-If select 8 in Tree A #Subproblem: 4 Direction: LeftCompute Free(8, 7)
-If select 8 in Tree A #Subproblem: 1 Direction: LeftCompute Free(8, 7)
-If select 7 in Tree B #Subproblem: 1 Direction: Leftfree[8][7] freeSumA = 0 freeSumB = 0
-Free[8][7] = 1
-FreeS(8, 7)
-Keynode: 7 in TreeB
-Direction: rightLeaf: 7
-Compute Free(8, 8)
-If select 8 in Tree A #Subproblem: 1 Direction: LeftCompute Free(8, 8)
-If select 8 in Tree B #Subproblem: 1 Direction: Leftfree[8][8] freeSumA = 0 freeSumB = 0
-Free[8][8] = 1
-FreeS(8, 8)
-Keynode: 8 in TreeB
-Direction: rightLeaf: 8
-Compute Free(8, 9)
-If select 8 in Tree A #Subproblem: 1 Direction: LeftCompute Free(8, 9)
-If select 9 in Tree B #Subproblem: 1 Direction: Leftfree[8][9] freeSumA = 0 freeSumB = 0
-Free[8][9] = 1
-FreeS(8, 9)
-Keynode: 9 in TreeB
-Direction: rightLeaf: 9
-free[8][6] freeSumA = 0 freeSumB = 3
-Compute Free(8, 6)
-If select 7(leftmost) in Tree B #Subproblem: 6 Direction: Right
-Compute Free(8, 6)
-If select 8 in Tree B #Subproblem: 6 Direction: Left
-Compute Free(8, 6)
-If select 9(rightmost) in Tree B #Subproblem: 6 Direction: Left
-Free[8][6] = 4
-FreeS(8, 6)
-Keynode: 8 in Tree A
-Direction: rightLeaf: 8
-free[8][0] freeSumA = 0 freeSumB = 9
-Compute Free(8, 0)
-If select 1(leftmost) in Tree B #Subproblem: 16 Direction: Right
-Compute Free(8, 0)
-If select 6(rightmost) in Tree B #Subproblem: 17 Direction: Left
-Free[8][0] = 10
-FreeS(8, 0)
-Keynode: 8 in Tree A
-Direction: rightLeaf: 8
-Compute Free(6, 2)
-If select 2 in Tree B #Subproblem: 3 Direction: Leftfree[6][2] freeSumA = 2 freeSumB = 0
-Compute Free(6, 2)
-If select 7(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(6, 2)
-If select 8(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[6][2] = 3
-FreeS(6, 2)
-Keynode: 2 in TreeB
-Direction: rightLeaf: 2
-Compute Free(6, 4)
-If select 4 in Tree B #Subproblem: 3 Direction: Leftfree[6][4] freeSumA = 2 freeSumB = 0
-Compute Free(6, 4)
-If select 7(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(6, 4)
-If select 8(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[6][4] = 3
-FreeS(6, 4)
-Keynode: 4 in TreeB
-Direction: rightLeaf: 4
-Compute Free(6, 5)
-If select 5 in Tree B #Subproblem: 3 Direction: Leftfree[6][5] freeSumA = 2 freeSumB = 0
-Compute Free(6, 5)
-If select 7(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(6, 5)
-If select 8(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[6][5] = 3
-FreeS(6, 5)
-Keynode: 5 in TreeB
-Direction: rightLeaf: 5
-free[6][3] freeSumA = 6 freeSumB = 6
-Compute Free(6, 3)
-If select 7(leftmost) in Tree A #Subproblem: 15 Direction: Right
-Compute Free(6, 3)
-If select 8(rightmost) in Tree A #Subproblem: 15 Direction: Left
-Compute Free(6, 3)
-If select 4(leftmost) in Tree B #Subproblem: 15 Direction: Right
-Compute Free(6, 3)
-If select 5(rightmost) in Tree B #Subproblem: 15 Direction: Left
-Free[6][3] = 15
-FreeS(6, 3)
-Keynode: 7 in Tree A
-Direction: rightLeaf: 7
-free[6][1] freeSumA = 10 freeSumB = 18
-Compute Free(6, 1)
-If select 7(leftmost) in Tree A #Subproblem: 32 Direction: Right
-Compute Free(6, 1)
-If select 8(rightmost) in Tree A #Subproblem: 26 Direction: Left
-Compute Free(6, 1)
-If select 2(leftmost) in Tree B #Subproblem: 35 Direction: Right
-Compute Free(6, 1)
-If select 3(rightmost) in Tree B #Subproblem: 26 Direction: Left
-Free[6][1] = 26
-FreeS(6, 1)
-Keynode: 8 in Tree A
-Direction: left
-Leaf: 8
-Compute Free(6, 7)
-If select 7 in Tree B #Subproblem: 3 Direction: Leftfree[6][7] freeSumA = 2 freeSumB = 0
-Compute Free(6, 7)
-If select 7(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(6, 7)
-If select 8(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[6][7] = 3
-FreeS(6, 7)
-Keynode: 7 in TreeB
-Direction: rightLeaf: 7
-Compute Free(6, 8)
-If select 8 in Tree B #Subproblem: 3 Direction: Leftfree[6][8] freeSumA = 2 freeSumB = 0
-Compute Free(6, 8)
-If select 7(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(6, 8)
-If select 8(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[6][8] = 3
-FreeS(6, 8)
-Keynode: 8 in TreeB
-Direction: rightLeaf: 8
-Compute Free(6, 9)
-If select 9 in Tree B #Subproblem: 3 Direction: Leftfree[6][9] freeSumA = 2 freeSumB = 0
-Compute Free(6, 9)
-If select 7(leftmost) in Tree A #Subproblem: 4 Direction: Right
-Compute Free(6, 9)
-If select 8(rightmost) in Tree A #Subproblem: 4 Direction: Left
-Free[6][9] = 3
-FreeS(6, 9)
-Keynode: 9 in TreeB
-Direction: rightLeaf: 9
-free[6][6] freeSumA = 8 freeSumB = 9
-Compute Free(6, 6)
-If select 7(leftmost) in Tree A #Subproblem: 22 Direction: Right
-Compute Free(6, 6)
-If select 8(rightmost) in Tree A #Subproblem: 22 Direction: Left
-Compute Free(6, 6)
-If select 7(leftmost) in Tree B #Subproblem: 22 Direction: Right
-Compute Free(6, 6)
-If select 8 in Tree B #Subproblem: 22 Direction: Left
-Compute Free(6, 6)
-If select 9(rightmost) in Tree B #Subproblem: 22 Direction: Left
-Free[6][6] = 22
-FreeS(6, 6)
-Keynode: 7 in Tree A
-Direction: rightLeaf: 7
-free[6][0] freeSumA = 20 freeSumB = 48
-Compute Free(6, 0)
-If select 7(leftmost) in Tree A #Subproblem: 70 Direction: Right
-Compute Free(6, 0)
-If select 8(rightmost) in Tree A #Subproblem: 67 Direction: Left
-Compute Free(6, 0)
-If select 1(leftmost) in Tree B #Subproblem: 68 Direction: Right
-Compute Free(6, 0)
-If select 6(rightmost) in Tree B #Subproblem: 72 Direction: Left
-Free[6][0] = 67
-FreeS(6, 0)
-Keynode: 8 in Tree A
-Direction: left
-Leaf: 8
-Compute Free(9, 0)
-If select 9 in Tree A #Subproblem: 10 Direction: LeftCompute Free(9, 1)
-If select 9 in Tree A #Subproblem: 5 Direction: LeftCompute Free(9, 2)
-If select 9 in Tree A #Subproblem: 1 Direction: LeftCompute Free(9, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[9][2] freeSumA = 0 freeSumB = 0
-Free[9][2] = 1
-FreeS(9, 2)
-Keynode: 2 in TreeB
-Direction: rightLeaf: 2
-Compute Free(9, 3)
-If select 9 in Tree A #Subproblem: 3 Direction: LeftCompute Free(9, 4)
-If select 9 in Tree A #Subproblem: 1 Direction: LeftCompute Free(9, 4)
-If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[9][4] freeSumA = 0 freeSumB = 0
-Free[9][4] = 1
-FreeS(9, 4)
-Keynode: 4 in TreeB
-Direction: rightLeaf: 4
-Compute Free(9, 5)
-If select 9 in Tree A #Subproblem: 1 Direction: LeftCompute Free(9, 5)
-If select 5 in Tree B #Subproblem: 1 Direction: Leftfree[9][5] freeSumA = 0 freeSumB = 0
-Free[9][5] = 1
-FreeS(9, 5)
-Keynode: 5 in TreeB
-Direction: rightLeaf: 5
-free[9][3] freeSumA = 0 freeSumB = 2
-Compute Free(9, 3)
-If select 4(leftmost) in Tree B #Subproblem: 4 Direction: Right
-Compute Free(9, 3)
-If select 5(rightmost) in Tree B #Subproblem: 4 Direction: Left
-Free[9][3] = 3
-FreeS(9, 3)
-Keynode: 9 in Tree A
-Direction: rightLeaf: 9
-free[9][1] freeSumA = 0 freeSumB = 4
-Compute Free(9, 1)
-If select 2(leftmost) in Tree B #Subproblem: 8 Direction: Right
-Compute Free(9, 1)
-If select 3(rightmost) in Tree B #Subproblem: 7 Direction: Left
-Free[9][1] = 5
-FreeS(9, 1)
-Keynode: 9 in Tree A
-Direction: rightLeaf: 9
-Compute Free(9, 6)
-If select 9 in Tree A #Subproblem: 4 Direction: LeftCompute Free(9, 7)
-If select 9 in Tree A #Subproblem: 1 Direction: LeftCompute Free(9, 7)
-If select 7 in Tree B #Subproblem: 1 Direction: Leftfree[9][7] freeSumA = 0 freeSumB = 0
-Free[9][7] = 1
-FreeS(9, 7)
-Keynode: 7 in TreeB
-Direction: rightLeaf: 7
-Compute Free(9, 8)
-If select 9 in Tree A #Subproblem: 1 Direction: LeftCompute Free(9, 8)
-If select 8 in Tree B #Subproblem: 1 Direction: Leftfree[9][8] freeSumA = 0 freeSumB = 0
-Free[9][8] = 1
-FreeS(9, 8)
-Keynode: 8 in TreeB
-Direction: rightLeaf: 8
-Compute Free(9, 9)
-If select 9 in Tree A #Subproblem: 1 Direction: LeftCompute Free(9, 9)
-If select 9 in Tree B #Subproblem: 1 Direction: Leftfree[9][9] freeSumA = 0 freeSumB = 0
-Free[9][9] = 1
-FreeS(9, 9)
-Keynode: 9 in TreeB
-Direction: rightLeaf: 9
-free[9][6] freeSumA = 0 freeSumB = 3
-Compute Free(9, 6)
-If select 7(leftmost) in Tree B #Subproblem: 6 Direction: Right
-Compute Free(9, 6)
-If select 8 in Tree B #Subproblem: 6 Direction: Left
-Compute Free(9, 6)
-If select 9(rightmost) in Tree B #Subproblem: 6 Direction: Left
-Free[9][6] = 4
-FreeS(9, 6)
-Keynode: 9 in Tree A
-Direction: rightLeaf: 9
-free[9][0] freeSumA = 0 freeSumB = 9
-Compute Free(9, 0)
-If select 1(leftmost) in Tree B #Subproblem: 16 Direction: Right
-Compute Free(9, 0)
-If select 6(rightmost) in Tree B #Subproblem: 17 Direction: Left
-Free[9][0] = 10
-FreeS(9, 0)
-Keynode: 9 in Tree A
-Direction: rightLeaf: 9
-Compute Free(10, 0)
-If select 10 in Tree A #Subproblem: 10 Direction: LeftCompute Free(10, 1)
-If select 10 in Tree A #Subproblem: 5 Direction: LeftCompute Free(10, 2)
-If select 10 in Tree A #Subproblem: 1 Direction: LeftCompute Free(10, 2)
-If select 2 in Tree B #Subproblem: 1 Direction: Leftfree[10][2] freeSumA = 0 freeSumB = 0
-Free[10][2] = 1
-FreeS(10, 2)
-Keynode: 2 in TreeB
-Direction: rightLeaf: 2
-Compute Free(10, 3)
-If select 10 in Tree A #Subproblem: 3 Direction: LeftCompute Free(10, 4)
-If select 10 in Tree A #Subproblem: 1 Direction: LeftCompute Free(10, 4)
-If select 4 in Tree B #Subproblem: 1 Direction: Leftfree[10][4] freeSumA = 0 freeSumB = 0
-Free[10][4] = 1
-FreeS(10, 4)
-Keynode: 4 in TreeB
-Direction: rightLeaf: 4
-Compute Free(10, 5)
-If select 10 in Tree A #Subproblem: 1 Direction: LeftCompute Free(10, 5)
-If select 5 in Tree B #Subproblem: 1 Direction: Leftfree[10][5] freeSumA = 0 freeSumB = 0
-Free[10][5] = 1
-FreeS(10, 5)
-Keynode: 5 in TreeB
-Direction: rightLeaf: 5
-free[10][3] freeSumA = 0 freeSumB = 2
-Compute Free(10, 3)
-If select 4(leftmost) in Tree B #Subproblem: 4 Direction: Right
-Compute Free(10, 3)
-If select 5(rightmost) in Tree B #Subproblem: 4 Direction: Left
-Free[10][3] = 3
-FreeS(10, 3)
-Keynode: 10 in Tree A
-Direction: rightLeaf: 10
-free[10][1] freeSumA = 0 freeSumB = 4
-Compute Free(10, 1)
-If select 2(leftmost) in Tree B #Subproblem: 8 Direction: Right
-Compute Free(10, 1)
-If select 3(rightmost) in Tree B #Subproblem: 7 Direction: Left
-Free[10][1] = 5
-FreeS(10, 1)
-Keynode: 10 in Tree A
-Direction: rightLeaf: 10
-Compute Free(10, 6)
-If select 10 in Tree A #Subproblem: 4 Direction: LeftCompute Free(10, 7)
-If select 10 in Tree A #Subproblem: 1 Direction: LeftCompute Free(10, 7)
-If select 7 in Tree B #Subproblem: 1 Direction: Leftfree[10][7] freeSumA = 0 freeSumB = 0
-Free[10][7] = 1
-FreeS(10, 7)
-Keynode: 7 in TreeB
-Direction: rightLeaf: 7
-Compute Free(10, 8)
-If select 10 in Tree A #Subproblem: 1 Direction: LeftCompute Free(10, 8)
-If select 8 in Tree B #Subproblem: 1 Direction: Leftfree[10][8] freeSumA = 0 freeSumB = 0
-Free[10][8] = 1
-FreeS(10, 8)
-Keynode: 8 in TreeB
-Direction: rightLeaf: 8
-Compute Free(10, 9)
-If select 10 in Tree A #Subproblem: 1 Direction: LeftCompute Free(10, 9)
-If select 9 in Tree B #Subproblem: 1 Direction: Leftfree[10][9] freeSumA = 0 freeSumB = 0
-Free[10][9] = 1
-FreeS(10, 9)
-Keynode: 9 in TreeB
-Direction: rightLeaf: 9
-free[10][6] freeSumA = 0 freeSumB = 3
-Compute Free(10, 6)
-If select 7(leftmost) in Tree B #Subproblem: 6 Direction: Right
-Compute Free(10, 6)
-If select 8 in Tree B #Subproblem: 6 Direction: Left
-Compute Free(10, 6)
-If select 9(rightmost) in Tree B #Subproblem: 6 Direction: Left
-Free[10][6] = 4
-FreeS(10, 6)
-Keynode: 10 in Tree A
-Direction: rightLeaf: 10
-free[10][0] freeSumA = 0 freeSumB = 9
-Compute Free(10, 0)
-If select 1(leftmost) in Tree B #Subproblem: 16 Direction: Right
-Compute Free(10, 0)
-If select 6(rightmost) in Tree B #Subproblem: 17 Direction: Left
-Free[10][0] = 10
-FreeS(10, 0)
-Keynode: 10 in Tree A
-Direction: rightLeaf: 10
 Compute Free(0, 2)
-If select 2 in Tree B #Subproblem: 11 Direction: Leftfree[0][2] freeSumA = 10 freeSumB = 0
+If select 2 in Tree B #Subproblem: 8 Direction: Leftfree[0][2] freeSumA = 7 freeSumB = 0
 Compute Free(0, 2)
-If select 1(leftmost) in Tree A #Subproblem: 18 Direction: Right
+If select 1(leftmost) in Tree A #Subproblem: 14 Direction: Right
 Compute Free(0, 2)
-If select 6 in Tree A #Subproblem: 19 Direction: Left
+If select 2 in Tree A #Subproblem: 14 Direction: Left
 Compute Free(0, 2)
-If select 9 in Tree A #Subproblem: 20 Direction: Left
+If select 3 in Tree A #Subproblem: 13 Direction: Left
 Compute Free(0, 2)
-If select 10(rightmost) in Tree A #Subproblem: 20 Direction: Left
-Free[0][2] = 11
+If select 5 in Tree A #Subproblem: 14 Direction: Left
+Compute Free(0, 2)
+If select 6 in Tree A #Subproblem: 14 Direction: Left
+Compute Free(0, 2)
+If select 7(rightmost) in Tree A #Subproblem: 14 Direction: Left
+Free[0][2] = 8
 FreeS(0, 2)
 Keynode: 2 in TreeB
 Direction: rightLeaf: 2
-Compute Free(0, 4)
-If select 4 in Tree B #Subproblem: 11 Direction: Leftfree[0][4] freeSumA = 10 freeSumB = 0
-Compute Free(0, 4)
-If select 1(leftmost) in Tree A #Subproblem: 18 Direction: Right
-Compute Free(0, 4)
-If select 6 in Tree A #Subproblem: 19 Direction: Left
-Compute Free(0, 4)
-If select 9 in Tree A #Subproblem: 20 Direction: Left
-Compute Free(0, 4)
-If select 10(rightmost) in Tree A #Subproblem: 20 Direction: Left
-Free[0][4] = 11
-FreeS(0, 4)
-Keynode: 4 in TreeB
-Direction: rightLeaf: 4
-Compute Free(0, 5)
-If select 5 in Tree B #Subproblem: 11 Direction: Leftfree[0][5] freeSumA = 10 freeSumB = 0
-Compute Free(0, 5)
-If select 1(leftmost) in Tree A #Subproblem: 18 Direction: Right
-Compute Free(0, 5)
-If select 6 in Tree A #Subproblem: 19 Direction: Left
-Compute Free(0, 5)
-If select 9 in Tree A #Subproblem: 20 Direction: Left
-Compute Free(0, 5)
-If select 10(rightmost) in Tree A #Subproblem: 20 Direction: Left
-Free[0][5] = 11
-FreeS(0, 5)
-Keynode: 5 in TreeB
-Direction: rightLeaf: 5
-free[0][3] freeSumA = 47 freeSumB = 22
-Compute Free(0, 3)
-If select 1(leftmost) in Tree A #Subproblem: 71 Direction: Right
-Compute Free(0, 3)
-If select 6 in Tree A #Subproblem: 79 Direction: Left
-Compute Free(0, 3)
-If select 9 in Tree A #Subproblem: 88 Direction: Left
-Compute Free(0, 3)
-If select 10(rightmost) in Tree A #Subproblem: 88 Direction: Left
-Compute Free(0, 3)
-If select 4(leftmost) in Tree B #Subproblem: 74 Direction: Right
-Compute Free(0, 3)
-If select 5(rightmost) in Tree B #Subproblem: 80 Direction: Left
-Free[0][3] = 71
-FreeS(0, 3)
-Keynode: 1 in Tree A
-Direction: rightLeaf: 4
-free[0][1] freeSumA = 81 freeSumB = 82
+free[0][1] freeSumA = 14 freeSumB = 8
 Compute Free(0, 1)
-If select 1(leftmost) in Tree A #Subproblem: 145 Direction: Right
+If select 1(leftmost) in Tree A #Subproblem: 28 Direction: Right
 Compute Free(0, 1)
-If select 6 in Tree A #Subproblem: 147 Direction: Left
+If select 2 in Tree A #Subproblem: 28 Direction: Left
 Compute Free(0, 1)
-If select 9 in Tree A #Subproblem: 157 Direction: Left
+If select 3 in Tree A #Subproblem: 26 Direction: Left
 Compute Free(0, 1)
-If select 10(rightmost) in Tree A #Subproblem: 153 Direction: Left
+If select 5 in Tree A #Subproblem: 28 Direction: Left
 Compute Free(0, 1)
-If select 2(leftmost) in Tree B #Subproblem: 176 Direction: Right
+If select 6 in Tree A #Subproblem: 28 Direction: Left
 Compute Free(0, 1)
-If select 3(rightmost) in Tree B #Subproblem: 137 Direction: Left
-Free[0][1] = 137
+If select 7(rightmost) in Tree A #Subproblem: 28 Direction: Left
+Compute Free(0, 1)
+If select 2(leftmost) in Tree B #Subproblem: 28 Direction: Right
+Compute Free(0, 1)
+If select 2(rightmost) in Tree B #Subproblem: 28 Direction: Left
+Free[0][1] = 26
 FreeS(0, 1)
-Keynode: 3 in TreeB
+Keynode: 3 in Tree A
 Direction: left
-Leaf: 5
-Compute Free(0, 7)
-If select 7 in Tree B #Subproblem: 11 Direction: Leftfree[0][7] freeSumA = 10 freeSumB = 0
-Compute Free(0, 7)
-If select 1(leftmost) in Tree A #Subproblem: 18 Direction: Right
-Compute Free(0, 7)
-If select 6 in Tree A #Subproblem: 19 Direction: Left
-Compute Free(0, 7)
-If select 9 in Tree A #Subproblem: 20 Direction: Left
-Compute Free(0, 7)
-If select 10(rightmost) in Tree A #Subproblem: 20 Direction: Left
-Free[0][7] = 11
-FreeS(0, 7)
-Keynode: 7 in TreeB
-Direction: rightLeaf: 7
-Compute Free(0, 8)
-If select 8 in Tree B #Subproblem: 11 Direction: Leftfree[0][8] freeSumA = 10 freeSumB = 0
-Compute Free(0, 8)
-If select 1(leftmost) in Tree A #Subproblem: 18 Direction: Right
-Compute Free(0, 8)
-If select 6 in Tree A #Subproblem: 19 Direction: Left
-Compute Free(0, 8)
-If select 9 in Tree A #Subproblem: 20 Direction: Left
-Compute Free(0, 8)
-If select 10(rightmost) in Tree A #Subproblem: 20 Direction: Left
-Free[0][8] = 11
-FreeS(0, 8)
-Keynode: 8 in TreeB
-Direction: rightLeaf: 8
-Compute Free(0, 9)
-If select 9 in Tree B #Subproblem: 11 Direction: Leftfree[0][9] freeSumA = 10 freeSumB = 0
-Compute Free(0, 9)
-If select 1(leftmost) in Tree A #Subproblem: 18 Direction: Right
-Compute Free(0, 9)
-If select 6 in Tree A #Subproblem: 19 Direction: Left
-Compute Free(0, 9)
-If select 9 in Tree A #Subproblem: 20 Direction: Left
-Compute Free(0, 9)
-If select 10(rightmost) in Tree A #Subproblem: 20 Direction: Left
-Free[0][9] = 11
-FreeS(0, 9)
-Keynode: 9 in TreeB
-Direction: rightLeaf: 9
-free[0][6] freeSumA = 68 freeSumB = 33
-Compute Free(0, 6)
-If select 1(leftmost) in Tree A #Subproblem: 109 Direction: Right
-Compute Free(0, 6)
-If select 6 in Tree A #Subproblem: 121 Direction: Left
-Compute Free(0, 6)
-If select 9 in Tree A #Subproblem: 132 Direction: Left
-Compute Free(0, 6)
-If select 10(rightmost) in Tree A #Subproblem: 130 Direction: Left
-Compute Free(0, 6)
-If select 7(leftmost) in Tree B #Subproblem: 106 Direction: Right
-Compute Free(0, 6)
-If select 8 in Tree B #Subproblem: 160 Direction: Right
-Compute Free(0, 6)
-If select 9(rightmost) in Tree B #Subproblem: 114 Direction: Left
-Free[0][6] = 106
-FreeS(0, 6)
-Keynode: 7 in TreeB
-Direction: rightLeaf: 7
-free[0][0] freeSumA = 202 freeSumB = 243
+Leaf: 4
+Compute Free(0, 3)
+If select 3 in Tree B #Subproblem: 8 Direction: Leftfree[0][3] freeSumA = 7 freeSumB = 0
+Compute Free(0, 3)
+If select 1(leftmost) in Tree A #Subproblem: 14 Direction: Right
+Compute Free(0, 3)
+If select 2 in Tree A #Subproblem: 14 Direction: Left
+Compute Free(0, 3)
+If select 3 in Tree A #Subproblem: 13 Direction: Left
+Compute Free(0, 3)
+If select 5 in Tree A #Subproblem: 14 Direction: Left
+Compute Free(0, 3)
+If select 6 in Tree A #Subproblem: 14 Direction: Left
+Compute Free(0, 3)
+If select 7(rightmost) in Tree A #Subproblem: 14 Direction: Left
+Free[0][3] = 8
+FreeS(0, 3)
+Keynode: 3 in TreeB
+Direction: rightLeaf: 3
+free[0][0] freeSumA = 30 freeSumB = 34
 Compute Free(0, 0)
-If select 1(leftmost) in Tree A #Subproblem: 374 Direction: Right
+If select 1(leftmost) in Tree A #Subproblem: 66 Direction: Right
 Compute Free(0, 0)
-If select 6 in Tree A #Subproblem: 444 Direction: Left
+If select 2 in Tree A #Subproblem: 68 Direction: Right
 Compute Free(0, 0)
-If select 9 in Tree A #Subproblem: 437 Direction: Left
+If select 3 in Tree A #Subproblem: 64 Direction: Right
 Compute Free(0, 0)
-If select 10(rightmost) in Tree A #Subproblem: 401 Direction: Left
+If select 5 in Tree A #Subproblem: 71 Direction: Right
 Compute Free(0, 0)
-If select 1(leftmost) in Tree B #Subproblem: 387 Direction: Right
+If select 6 in Tree A #Subproblem: 72 Direction: Right
 Compute Free(0, 0)
-If select 6(rightmost) in Tree B #Subproblem: 389 Direction: Left
-Free[0][0] = 374
+If select 7(rightmost) in Tree A #Subproblem: 74 Direction: Left
+Compute Free(0, 0)
+If select 1(leftmost) in Tree B #Subproblem: 64 Direction: Right
+Compute Free(0, 0)
+If select 3(rightmost) in Tree B #Subproblem: 82 Direction: Left
+Free[0][0] = 64
 FreeS(0, 0)
-Keynode: 1 in Tree A
-Direction: rightLeaf: 2
+Keynode: 3 in Tree A
+Direction: rightLeaf: 4
 RESULT
-2 in A 5 in B 2 in B 4 in A 4 in B 5 in B 7 in B 7 in B 8 in B 9 in B 
-5 in A 5 in A 2 in B 5 in A 4 in B 5 in B 5 in A 7 in B 8 in B 9 in B 
-2 in A 2 in A 2 in B 2 in A 4 in B 5 in B 2 in A 7 in B 8 in B 9 in B 
-5 in A 5 in A 2 in B 4 in A 4 in B 5 in B 4 in A 7 in B 8 in B 9 in B 
-4 in A 4 in A 2 in B 4 in A 4 in B 5 in B 4 in A 7 in B 8 in B 9 in B 
-5 in A 5 in A 2 in B 5 in A 4 in B 5 in B 5 in A 7 in B 8 in B 9 in B 
-8 in A 8 in A 2 in B 7 in A 4 in B 5 in B 7 in A 7 in B 8 in B 9 in B 
-7 in A 7 in A 2 in B 7 in A 4 in B 5 in B 7 in A 7 in B 8 in B 9 in B 
-8 in A 8 in A 2 in B 8 in A 4 in B 5 in B 8 in A 7 in B 8 in B 9 in B 
-9 in A 9 in A 2 in B 9 in A 4 in B 5 in B 9 in A 7 in B 8 in B 9 in B 
-10 in A 10 in A 2 in B 10 in A 4 in B 5 in B 10 in A 7 in B 8 in B 9 in B 
+4 in A 4 in A 2 in B 3 in B 
+1 in A 1 in A 2 in B 3 in B 
+2 in A 2 in A 2 in B 3 in B 
+4 in A 4 in A 2 in B 3 in B 
+4 in A 4 in A 2 in B 3 in B 
+5 in A 5 in A 2 in B 3 in B 
+6 in A 6 in A 2 in B 3 in B 
+7 in A 7 in A 2 in B 3 in B 
 Free
-374 137 11 71 11 11 106 11 11 11 
-115 45 5 26 5 5 38 5 5 5 
-10 5 1 3 1 1 4 1 1 1 
-67 26 3 15 3 3 22 3 3 3 
-10 5 1 3 1 1 4 1 1 1 
-10 5 1 3 1 1 4 1 1 1 
-67 26 3 15 3 3 22 3 3 3 
-10 5 1 3 1 1 4 1 1 1 
-10 5 1 3 1 1 4 1 1 1 
-10 5 1 3 1 1 4 1 1 1 
-10 5 1 3 1 1 4 1 1 1 
+64 26 8 8 
+4 2 1 1 
+4 2 1 1 
+10 4 2 2 
+4 2 1 1 
+4 2 1 1 
+4 2 1 1 
+4 2 1 1 
 
 LeftA
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
-167 55 7 26 7 7 43 7 7 7 
-20 9 1 4 1 1 6 1 1 1 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
-20 9 1 4 1 1 6 1 1 1 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
-20 9 1 4 1 1 6 1 1 1 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+-1 -1 -1 -1 
+5 2 1 1 
+-1 -1 -1 -1 
+-1 -1 -1 -1 
+5 2 1 1 
+-1 -1 -1 -1 
+-1 -1 -1 -1 
+-1 -1 -1 -1 
 
 RightA
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
-67 26 4 15 4 4 22 4 4 4 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
-19 7 1 4 1 1 6 1 1 1 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
-19 7 1 4 1 1 6 1 1 1 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
-19 7 1 4 1 1 6 1 1 1 
+-1 -1 -1 -1 
+-1 -1 -1 -1 
+-1 -1 -1 -1 
+-1 -1 -1 -1 
+6 2 1 1 
+-1 -1 -1 -1 
+-1 -1 -1 -1 
+6 2 1 1 
 
 AllA
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
-121 32 4 15 4 4 25 4 4 4 
-37 9 1 4 1 1 7 1 1 1 
-37 9 1 4 1 1 7 1 1 1 
-121 32 4 15 4 4 25 4 4 4 
-37 9 1 4 1 1 7 1 1 1 
-37 9 1 4 1 1 7 1 1 1 
-37 9 1 4 1 1 7 1 1 1 
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+-1 -1 -1 -1 
+-1 -1 -1 -1 
+6 2 1 1 
+12 4 2 2 
+6 2 1 1 
+6 2 1 1 
+6 2 1 1 
+-1 -1 -1 -1 
 
 LeftB
--1 176 21 -1 21 -1 -1 21 -1 -1 
--1 55 9 -1 9 -1 -1 9 -1 -1 
--1 7 1 -1 1 -1 -1 1 -1 -1 
--1 26 4 -1 4 -1 -1 4 -1 -1 
--1 7 1 -1 1 -1 -1 1 -1 -1 
--1 7 1 -1 1 -1 -1 1 -1 -1 
--1 26 4 -1 4 -1 -1 4 -1 -1 
--1 7 1 -1 1 -1 -1 1 -1 -1 
--1 7 1 -1 1 -1 -1 1 -1 -1 
--1 7 1 -1 1 -1 -1 1 -1 -1 
--1 7 1 -1 1 -1 -1 1 -1 -1 
+-1 28 14 -1 
+-1 2 1 -1 
+-1 2 1 -1 
+-1 4 2 -1 
+-1 2 1 -1 
+-1 2 1 -1 
+-1 2 1 -1 
+-1 2 1 -1 
 
 RightB
--1 -1 -1 80 -1 23 114 -1 -1 23 
--1 -1 -1 26 -1 7 38 -1 -1 7 
--1 -1 -1 4 -1 1 6 -1 -1 1 
--1 -1 -1 15 -1 4 22 -1 -1 4 
--1 -1 -1 4 -1 1 6 -1 -1 1 
--1 -1 -1 4 -1 1 6 -1 -1 1 
--1 -1 -1 15 -1 4 22 -1 -1 4 
--1 -1 -1 4 -1 1 6 -1 -1 1 
--1 -1 -1 4 -1 1 6 -1 -1 1 
--1 -1 -1 4 -1 1 6 -1 -1 1 
--1 -1 -1 4 -1 1 6 -1 -1 1 
+-1 -1 14 14 
+-1 -1 1 1 
+-1 -1 1 1 
+-1 -1 2 2 
+-1 -1 1 1 
+-1 -1 1 1 
+-1 -1 1 1 
+-1 -1 1 1 
 
 AllB
--1 -1 -1 155 48 48 -1 48 48 -1 
--1 -1 -1 32 9 9 -1 9 9 -1 
--1 -1 -1 4 1 1 -1 1 1 -1 
--1 -1 -1 15 4 4 -1 4 4 -1 
--1 -1 -1 4 1 1 -1 1 1 -1 
--1 -1 -1 4 1 1 -1 1 1 -1 
--1 -1 -1 15 4 4 -1 4 4 -1 
--1 -1 -1 4 1 1 -1 1 1 -1 
--1 -1 -1 4 1 1 -1 1 1 -1 
--1 -1 -1 4 1 1 -1 1 1 -1 
--1 -1 -1 4 1 1 -1 1 1 -1 
+-1 -1 28 -1 
+-1 -1 1 -1 
+-1 -1 1 -1 
+-1 -1 2 -1 
+-1 -1 1 -1 
+-1 -1 1 -1 
+-1 -1 1 -1 
+-1 -1 1 -1 
 
-TreeDistance(0, 5)
-Compute forestdist(2, 5)
-delta[2, 5] = 0.000000
+spfA(0, 0) 0 
+new Round B'
+new Round C'
+Right (4, 5, 3, 1) counter  = 21
+case3 = 0
+case1_case3 = GcurrentForestCost = 1
+case1 += delete F
+case2_case1 = 1.000000
+case2 += insert D
+case3_case3 delta[4, 3] = 0.000000
+case3_case3 += E -> D = 1.000000
+case1 = 2.000000
+case2 = 2.000000
+case3 = 1.000000
+Save to s[5, 1] = 1.000000
+t[3, 1] = s[5, 1] = 1.000000
+new Round B'
+new Round C'
+Right (4, 5, 2, 3) counter  = 22
+case3 = 0
+case1_case3 = GcurrentForestCost = 1
+case1 += delete F
+case2_case1 = 1.000000
+case2 += insert C
+case3_case3 delta[4, 2] = 0.000000
+case3_case3 += E -> C = 1.000000
+case1 = 2.000000
+case2 = 2.000000
+case3 = 1.000000
+Save to s[5, 3] = 1.000000
+Right (4, 5, 2, 1) counter = 23
+Save to s[5, 1]
+case1_case3 GcurrentForestCost = 2 + delete F
+case2_case3 s[5, 3] = 1.000000 + insert D
+case3_case delta[4, 3] = 0.000000
+case3_case2 += GcurrentForestCost - G(rG) = 2.000000 - 1
+case3 += E -> D
+case1 = 3.000000
+case2 = 2.000000
+case3 = 2.000000
+s[5, 1] = 2.000000
+save to delta[3, 1] = s[5, 3] = 1.000000
+q[5] = s[5, 3] = 1.000000
+t[2, 3] = s[5, 3] = 1.000000
+t[2, 1] = s[5, 1] = 2.000000
+new Round B'
+new Round C'
+Right (4, 5, 1, 2) counter  = 24
+case3 = 0
+case1_case3 = GcurrentForestCost = 2
+case1 += delete F
+case2_case2 = q[5] = 1.000000
+case2 += insert B
+case3_case3 delta[4, 1] = 1.000000
+case3_case3 += E -> B = 1.000000
+case1 = 3.000000
+case2 = 2.000000
+case3 = 2.000000
+Save to s[5, 2] = 2.000000
+Right (4, 5, 1, 1) counter = 25
+Save to s[5, 1]
+case1_case3 GcurrentForestCost = 3 + delete F
+case2_case3 s[5, 2] = 2.000000 + insert D
+case3_case delta[4, 3] = 0.000000
+case3_case2 += GcurrentForestCost - G(rG) = 3.000000 - 1
+case3 += E -> D
+case1 = 4.000000
+case2 = 3.000000
+case3 = 3.000000
+s[5, 1] = 3.000000
+save to delta[3, 0] = s[5, 1] = 3.000000
+q[5] = s[5, 1] = 3.000000
+t[1, 2] = s[5, 2] = 2.000000
+t[1, 1] = s[5, 1] = 3.000000
+new Round B'
+new Round C'
+Right (4, 5, 0, 0) counter  = 26
+case3 = 0
+case1_case3 = GcurrentForestCost = 4
+case1 += delete F
+case2_case2 = q[5] = 3.000000
+case2 += insert A
+case3_case3 delta[4, 0] = 3.000000
+case3_case3 += E -> A = 1.000000
+case1 = 5.000000
+case2 = 4.000000
+case3 = 4.000000
+Save to s[5, 0] = 4.000000
+t[0, 0] = s[5, 0] = 4.000000
+spfA(0, 0) 0 
+new Round B'
+new Round C'
+Right (3, 4, 3, 1) counter  = 27
+case3 = 0
+case1_case2 = t[3, 1] = 1.000000
+case1 += delete E
+case2_case1 = 2.000000
+case2 += insert D
+case3_case3 delta[3, 3] = 1.000000
+case3_case3 += D -> D = 0.000000
+case1 = 2.000000
+case2 = 3.000000
+case3 = 1.000000
+Save to s[4, 1] = 1.000000
+t[3, 1] = s[4, 1] = 1.000000
+new Round B'
+new Round C'
+Right (3, 4, 2, 3) counter  = 28
+case3 = 0
+case1_case2 = t[2, 3] = 1.000000
+case1 += delete E
+case2_case1 = 2.000000
+case2 += insert C
+case3_case3 delta[3, 2] = 1.000000
+case3_case3 += D -> C = 1.000000
+case1 = 2.000000
+case2 = 3.000000
+case3 = 2.000000
+Save to s[4, 3] = 2.000000
+Right (3, 4, 2, 1) counter = 29
+Save to s[4, 1]
+case1_case2 t[2, 1] = 2.000000 + delete E
+case2_case3 s[4, 3] = 2.000000 + insert D
+case3_case delta[3, 3] = 1.000000
+case3_case2 += GcurrentForestCost - G(rG) = 2.000000 - 1
+case3 += D -> D
+case1 = 3.000000
+case2 = 3.000000
+case3 = 2.000000
+s[4, 1] = 2.000000
+q[4] = s[4, 3] = 2.000000
+t[2, 3] = s[4, 3] = 2.000000
+t[2, 1] = s[4, 1] = 2.000000
+new Round B'
+new Round C'
+Right (3, 4, 1, 2) counter  = 30
+case3 = 0
+case1_case2 = t[1, 2] = 2.000000
+case1 += delete E
+case2_case2 = q[4] = 2.000000
+case2 += insert B
+case3_case3 delta[3, 1] = 1.000000
+case3_case3 += D -> B = 1.000000
+case1 = 3.000000
+case2 = 3.000000
+case3 = 2.000000
+Save to s[4, 2] = 2.000000
+Right (3, 4, 1, 1) counter = 31
+Save to s[4, 1]
+case1_case2 t[1, 1] = 3.000000 + delete E
+case2_case3 s[4, 2] = 2.000000 + insert D
+case3_case delta[3, 3] = 1.000000
+case3_case2 += GcurrentForestCost - G(rG) = 3.000000 - 1
+case1 = 4.000000
+case2 = 3.000000
+case3 = 3.000000
+s[4, 1] = 3.000000
+q[4] = s[4, 1] = 3.000000
+t[1, 2] = s[4, 2] = 2.000000
+t[1, 1] = s[4, 1] = 3.000000
+new Round B'
+new Round C'
+Right (3, 4, 0, 0) counter  = 32
+case3 = 0
+case1_case2 = t[0, 0] = 4.000000
+case1 += delete E
+case2_case2 = q[4] = 3.000000
+case2 += insert A
+case3_case3 delta[3, 0] = 3.000000
+case3_case3 += D -> A = 1.000000
+case1 = 5.000000
+case2 = 4.000000
+case3 = 4.000000
+Save to s[4, 0] = 4.000000
+t[0, 0] = s[4, 0] = 4.000000
+spfA(0, 0) 0 
+new Round B
+new round C hasLeftPart = 1
+Left (2, 4, 2, 3) counter = 33
+Save to s[2, 2]
+case3_case FcurrentForest - F(lF) = 
+3.000000 - 1
+case1_case2 t[2, 3] = 2.000000
+case2_case1 FcurrentForestCost = 3.000000
+case3_case3 delta[2, 2] = 0.000000
+case3 += C -> C
+s[2, 2] = 2.000000
+new round C hasLeftPart = 1
+Left (1, 4, 2, 3) counter = 34
+Save to s[1, 2]
+case3_case FcurrentForest - F(lF) = 
+4.000000 - 1
+case1_case1 s[2, 2] = 2.000000
+case2_case1 FcurrentForestCost = 4.000000
+s[1, 2] = 3.000000
+rGminus1_in_preR = 2 rG = 3 parent_of_rG_in_preL = 1 parent_of_rG_in_preR = 2
+q[2] = s[2, 2]
+q[1] = s[1, 2]
+t[2, 3] = s[1, 2]
+new Round B
+new round C hasLeftPart = 1
+Left (2, 4, 1, 2) counter = 35
+Save to s[2, 1]
+case3_case FcurrentForest - F(lF) = 
+3.000000 - 1
+case1_case2 t[1, 2] = 2.000000
+case2_case2 q[2] = 2.000000
+s[2, 1] = 2.000000
+new round C hasLeftPart = 1
+Left (1, 4, 1, 2) counter = 36
+Save to s[1, 1]
+case3_case FcurrentForest - F(lF) = 
+4.000000 - 1
+case1_case1 s[2, 1] = 2.000000
+case2_case2 q[1] = 3.000000
+s[1, 1] = 3.000000
+rGminus1_in_preR = 1 rG = 2 parent_of_rG_in_preL = 0 parent_of_rG_in_preR = 0
+t[1, 2] = s[1, 1]
+new Round B
+new round C hasLeftPart = 1
+Left (2, 4, 3, 1) counter = 37
+Save to s[2, 3]
+case3_case FcurrentForest - F(lF) = 
+3.000000 - 1
+case1_case2 t[3, 1] = 1.000000
+case2_case1 FcurrentForestCost = 3.000000
+s[2, 3] = 2.000000
+Left (2, 4, 2, 1) counter = 38
+Save to s[2, 2]
+case1_case2 t[2, 1] = 2.000000 + delete C
+case2 s[2, 3] = 2.000000 + insert C
+case3 = delta[2, 2] = 0.000000
+case3 += t[3, 1] = 1.000000
+case3 += C -> C
+s[2, 2] = 1.000000
+Left (2, 4, 1, 1) counter = 39
+Save to s[2, 1]
+case1_case2 t[1, 1] = 3.000000 + delete C
+case2 s[2, 2] = 1.000000 + insert B
+case3 = delta[2, 1] = 1.000000
+case3 += t[3, 1] = 1.000000
+s[2, 1] = 2.000000
+new round C hasLeftPart = 1
+Left (1, 4, 3, 1) counter = 40
+Save to s[1, 3]
+case3_case FcurrentForest - F(lF) = 
+4.000000 - 1
+case1_case1 s[2, 3] = 2.000000
+case2_case1 FcurrentForestCost = 4.000000
+s[1, 3] = 3.000000
+Left (1, 4, 2, 1) counter = 41
+Save to s[1, 2]
+case1_case1 s[2, 2] = 1.000000 + delete B
+case2 s[1, 3] = 3.000000 + insert C
+case3 = delta[1, 2] = 0.000000
+case3 += s[2, 4] = 0.000000
+case3 += B -> C
+s[1, 2] = 1.000000
+Left (1, 4, 1, 1) counter = 42
+Save to s[1, 1]
+case1_case1 s[2, 1] = 2.000000 + delete B
+case2 s[1, 2] = 1.000000 + insert B
+case3 = delta[1, 1] = 1.000000
+case3 += s[2, 4] = 0.000000
+case3 += B -> B
+s[1, 1] = 1.000000
+rGminus1_in_preR = 0 rG = 1 parent_of_rG_in_preL = 0 parent_of_rG_in_preR = 0
+q[2] = s[2, 1]
+q[1] = s[1, 1]
+t[3, 1] = s[1, 3]
+t[2, 1] = s[1, 2]
+t[1, 1] = s[1, 1]
+new Round B
+new round C hasLeftPart = 1
+Left (2, 4, 0, 0) counter = 43
+Save to s[2, 0]
+case3_case FcurrentForest - F(lF) = 
+3.000000 - 1
+case1_case2 t[0, 0] = 4.000000
+case2_case2 q[2] = 2.000000
+s[2, 0] = 2.000000
+new round C hasLeftPart = 1
+Left (1, 4, 0, 0) counter = 44
+Save to s[1, 0]
+case3_case FcurrentForest - F(lF) = 
+4.000000 - 1
+case1_case1 s[2, 0] = 2.000000
+case2_case2 q[1] = 1.000000
+s[1, 0] = 1.000000
+rGminus1_in_preR = 2147483647 rG = 0 parent_of_rG_in_preL = 2147483647 parent_of_rG_in_preR = 2147483647
+t[0, 0] = s[1, 0]
+new Round B'
+new Round C'
+Right (1, 3, 3, 1) counter  = 45
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[3, 1] = 3.000000
+case1 += delete D
+case2_case1 = 5.000000
+case2 += insert D
+case1 = 4.000000
+case2 = 6.000000
+case3 = 4.000000
+Save to s[3, 1] = 4.000000
+new Round C'
+Right (1, 2, 3, 1) counter  = 46
+case3_case FcurrentForest - F(rF)
+case1_case1 = s[3, 1] = 4.000000
+case1 += delete C
+case2_case1 = 6.000000
+case2 += insert D
+case1 = 5.000000
+case2 = 7.000000
+case3 = 5.000000
+Save to s[2, 1] = 5.000000
+new Round C'
+Right (1, 1, 3, 1) counter  = 47
+case3_case FcurrentForest - F(rF)
+case1_case1 = s[2, 1] = 5.000000
+case1 += delete B
+case2_case1 = 7.000000
+case2 += insert D
+case1 = 6.000000
+case2 = 8.000000
+case3 = 6.000000
+Save to s[1, 1] = 6.000000
+new Round C'
+Right (0, 0, 3, 1) counter  = 48
+case3 = 0
+case1_case1 = s[1, 1] = 6.000000
+case1 += delete A
+case2_case1 = 8.000000
+case2 += insert D
+case3_case3 delta[0, 3] = 7.000000
+case1 = 7.000000
+case2 = 9.000000
+case3 = 7.000000
+Save to s[0, 1] = 7.000000
+t[3, 1] = s[0, 1] = 7.000000
+new Round B'
+new Round C'
+Right (1, 3, 2, 3) counter  = 49
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[2, 3] = 3.000000
+case1 += delete D
+case2_case1 = 5.000000
+case2 += insert C
+case1 = 4.000000
+case2 = 6.000000
+case3 = 4.000000
+Save to s[3, 3] = 4.000000
+Right (1, 3, 2, 1) counter = 50
+Save to s[3, 1]
+case1_case2 t[2, 1] = 1.000000 + delete D
+case2_case3 s[3, 3] = 4.000000 + insert D
+case3_case delta[5, 3] = 0.000000
+case3_case3 += t[2, 3] = 3.000000
+case1 = 2.000000
+case2 = 5.000000
+case3 = 3.000000
+s[3, 1] = 2.000000
+new Round C'
+Right (1, 2, 2, 3) counter  = 51
+case3_case FcurrentForest - F(rF)
+case1_case1 = s[3, 3] = 4.000000
+case1 += delete C
+case2_case1 = 6.000000
+case2 += insert C
+case1 = 5.000000
+case2 = 7.000000
+case3 = 5.000000
+Save to s[2, 3] = 5.000000
+Right (1, 2, 2, 1) counter = 52
+Save to s[2, 1]
+case1_case1 s[3, 1] = 2.000000 + delete C
+case2_case3 s[2, 3] = 5.000000 + insert D
+case3_case delta[6, 3] = 0.000000
+case3_case1 += s[3, 3] = 4.000000
+case1 = 3.000000
+case2 = 6.000000
+case3 = 4.000000
+s[2, 1] = 3.000000
+new Round C'
+Right (1, 1, 2, 3) counter  = 53
+case3_case FcurrentForest - F(rF)
+case1_case1 = s[2, 3] = 5.000000
+case1 += delete B
+case2_case1 = 7.000000
+case2 += insert C
+case1 = 6.000000
+case2 = 8.000000
+case3 = 6.000000
+Save to s[1, 3] = 6.000000
+Right (1, 1, 2, 1) counter = 54
+Save to s[1, 1]
+case1_case1 s[2, 1] = 3.000000 + delete B
+case2_case3 s[1, 3] = 6.000000 + insert D
+case3_case delta[7, 3] = 0.000000
+case3_case1 += s[2, 3] = 5.000000
+case1 = 4.000000
+case2 = 7.000000
+case3 = 5.000000
+s[1, 1] = 4.000000
+new Round C'
+Right (0, 0, 2, 3) counter  = 55
+case3 = 0
+case1_case1 = s[1, 3] = 6.000000
+case1 += delete A
+case2_case1 = 8.000000
+case2 += insert C
+case3_case3 delta[0, 2] = 7.000000
+case1 = 7.000000
+case2 = 9.000000
+case3 = 7.000000
+Save to s[0, 3] = 7.000000
+Right (0, 0, 2, 1) counter = 56
+Save to s[0, 1]
+case1_case1 s[1, 1] = 4.000000 + delete A
+case2_case3 s[0, 3] = 7.000000 + insert D
+case3_case delta[0, 3] = 7.000000
+case1 = 5.000000
+case2 = 8.000000
+case3 = 7.000000
+s[0, 1] = 5.000000
+save to delta[0, 1] = s[0, 3] = 6.000000
+q[3] = s[3, 3] = 4.000000
+q[2] = s[2, 3] = 5.000000
+q[1] = s[1, 3] = 6.000000
+q[0] = s[0, 3] = 7.000000
+t[2, 3] = s[0, 3] = 7.000000
+t[2, 1] = s[0, 1] = 5.000000
+new Round B'
+new Round C'
+Right (1, 3, 1, 2) counter  = 57
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[1, 2] = 3.000000
+case1 += delete D
+case2_case2 = q[3] = 4.000000
+case2 += insert B
+case1 = 4.000000
+case2 = 5.000000
+case3 = 4.000000
+Save to s[3, 2] = 4.000000
+Right (1, 3, 1, 1) counter = 58
+Save to s[3, 1]
+case1_case2 t[1, 1] = 1.000000 + delete D
+case2_case3 s[3, 2] = 4.000000 + insert D
+case3_case delta[5, 3] = 0.000000
+case3_case3 += t[1, 2] = 3.000000
+case1 = 2.000000
+case2 = 5.000000
+case3 = 3.000000
+s[3, 1] = 2.000000
+new Round C'
+Right (1, 2, 1, 2) counter  = 59
+case3_case FcurrentForest - F(rF)
+case1_case1 = s[3, 2] = 4.000000
+case1 += delete C
+case2_case2 = q[2] = 5.000000
+case2 += insert B
+case1 = 5.000000
+case2 = 6.000000
+case3 = 5.000000
+Save to s[2, 2] = 5.000000
+Right (1, 2, 1, 1) counter = 60
+Save to s[2, 1]
+case1_case1 s[3, 1] = 2.000000 + delete C
+case2_case3 s[2, 2] = 5.000000 + insert D
+case3_case delta[6, 3] = 0.000000
+case3_case1 += s[3, 2] = 4.000000
+case1 = 3.000000
+case2 = 6.000000
+case3 = 4.000000
+s[2, 1] = 3.000000
+new Round C'
+Right (1, 1, 1, 2) counter  = 61
+case3_case FcurrentForest - F(rF)
+case1_case1 = s[2, 2] = 5.000000
+case1 += delete B
+case2_case2 = q[1] = 6.000000
+case2 += insert B
+case1 = 6.000000
+case2 = 7.000000
+case3 = 6.000000
+Save to s[1, 2] = 6.000000
+Right (1, 1, 1, 1) counter = 62
+Save to s[1, 1]
+case1_case1 s[2, 1] = 3.000000 + delete B
+case2_case3 s[1, 2] = 6.000000 + insert D
+case3_case delta[7, 3] = 0.000000
+case3_case1 += s[2, 2] = 5.000000
+case1 = 4.000000
+case2 = 7.000000
+case3 = 5.000000
+s[1, 1] = 4.000000
+new Round C'
+Right (0, 0, 1, 2) counter  = 63
+case3 = 0
+case1_case1 = s[1, 2] = 6.000000
+case1 += delete A
+case2_case2 = q[0] = 7.000000
+case2 += insert B
+case3_case3 delta[0, 1] = 6.000000
+case3_case3 += A -> B = 1.000000
+case1 = 7.000000
+case2 = 8.000000
+case3 = 7.000000
+Save to s[0, 2] = 7.000000
+Right (0, 0, 1, 1) counter = 64
+Save to s[0, 1]
+case1_case1 s[1, 1] = 4.000000 + delete A
+case2_case3 s[0, 2] = 7.000000 + insert D
+case3_case delta[0, 3] = 7.000000
+case1 = 5.000000
+case2 = 8.000000
+case3 = 7.000000
+s[0, 1] = 5.000000
+save to delta[0, 0] = s[0, 1] = 4.000000
+q[3] = s[3, 1] = 2.000000
+q[2] = s[2, 1] = 3.000000
+q[1] = s[1, 1] = 4.000000
+q[0] = s[0, 1] = 5.000000
+t[1, 2] = s[0, 2] = 7.000000
+t[1, 1] = s[0, 1] = 5.000000
+new Round B'
+new Round C'
+Right (1, 3, 0, 0) counter  = 65
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[0, 0] = 1.000000
+case1 += delete D
+case2_case2 = q[3] = 2.000000
+case2 += insert A
+case1 = 2.000000
+case2 = 3.000000
+case3 = 4.000000
+Save to s[3, 0] = 2.000000
+new Round C'
+Right (1, 2, 0, 0) counter  = 66
+case3_case FcurrentForest - F(rF)
+case1_case1 = s[3, 0] = 2.000000
+case1 += delete C
+case2_case2 = q[2] = 3.000000
+case2 += insert A
+case1 = 3.000000
+case2 = 4.000000
+case3 = 5.000000
+Save to s[2, 0] = 3.000000
+new Round C'
+Right (1, 1, 0, 0) counter  = 67
+case3_case FcurrentForest - F(rF)
+case1_case1 = s[2, 0] = 3.000000
+case1 += delete B
+case2_case2 = q[1] = 4.000000
+case2 += insert A
+case1 = 4.000000
+case2 = 5.000000
+case3 = 6.000000
+Save to s[1, 0] = 4.000000
+new Round C'
+Right (0, 0, 0, 0) counter  = 68
+case3 = 0
+case1_case1 = s[1, 0] = 4.000000
+case1 += delete A
+case2_case2 = q[0] = 5.000000
+case2 += insert A
+case3_case3 delta[0, 0] = 4.000000
+case3_case3 += A -> A = 0.000000
+case1 = 5.000000
+case2 = 6.000000
+case3 = 4.000000
+Save to s[0, 0] = 4.000000
+t[0, 0] = s[0, 0] = 4.000000
+delta Result
+4 6 7 7 
+3 1 0 0 
+3 1 0 0 
+3 1 1 1 
+3 1 0 0 
+3 1 0 0 
+3 1 0 0 
+3 1 0 0 
+
+TreeDistance(7, 3)
+Compute forestdist(7, 3)
+delta[7, 3] = 0.000000
 forestdist[1, 1] = 1.000000
-Compute forestdist(4, 5)
-forestdist[2, 1] = 2.000000
-Compute forestdist(5, 5)
-forestdist[3, 1] = 2.000000
-Compute forestdist(3, 5)
-forestdist[4, 1] = 3.000000
-Compute forestdist(1, 5)
-delta[1, 5] = 4.000000
-forestdist[5, 1] = 4.000000
-Compute forestdist(7, 5)
-forestdist[6, 1] = 5.000000
-Compute forestdist(8, 5)
-forestdist[7, 1] = 6.000000
-Compute forestdist(6, 5)
-forestdist[8, 1] = 7.000000
-Compute forestdist(9, 5)
-forestdist[9, 1] = 8.000000
-Compute forestdist(10, 5)
-forestdist[10, 1] = 9.000000
-Compute forestdist(0, 5)
-delta[0, 5] = 10.000000
-forestdist[11, 1] = 10.000000
-TreeDistance(0, 3)
-Compute forestdist(2, 4)
-delta[2, 4] = 0.000000
-forestdist[1, 1] = 0.000000
-Compute forestdist(2, 5)
-forestdist[1, 2] = 1.000000
-Compute forestdist(2, 3)
-delta[2, 3] = 2.000000
-forestdist[1, 3] = 2.000000
-Compute forestdist(4, 4)
-forestdist[2, 1] = 1.000000
-Compute forestdist(4, 5)
-forestdist[2, 2] = 1.000000
-Compute forestdist(4, 3)
-forestdist[2, 3] = 2.000000
-Compute forestdist(5, 4)
-forestdist[3, 1] = 2.000000
-Compute forestdist(5, 5)
-forestdist[3, 2] = 1.000000
-Compute forestdist(5, 3)
-forestdist[3, 3] = 2.000000
-Compute forestdist(3, 4)
-forestdist[4, 1] = 3.000000
-Compute forestdist(3, 5)
-forestdist[4, 2] = 2.000000
-Compute forestdist(3, 3)
-forestdist[4, 3] = 2.000000
-Compute forestdist(1, 4)
-delta[1, 4] = 4.000000
-forestdist[5, 1] = 4.000000
-Compute forestdist(1, 5)
-forestdist[5, 2] = 3.000000
-Compute forestdist(1, 3)
-delta[1, 3] = 2.000000
-forestdist[5, 3] = 3.000000
-Compute forestdist(7, 4)
-forestdist[6, 1] = 5.000000
-Compute forestdist(7, 5)
-forestdist[6, 2] = 4.000000
-Compute forestdist(7, 3)
-forestdist[6, 3] = 4.000000
-Compute forestdist(8, 4)
-forestdist[7, 1] = 6.000000
-Compute forestdist(8, 5)
-forestdist[7, 2] = 5.000000
-Compute forestdist(8, 3)
-forestdist[7, 3] = 5.000000
-Compute forestdist(6, 4)
-forestdist[8, 1] = 7.000000
-Compute forestdist(6, 5)
-forestdist[8, 2] = 6.000000
-Compute forestdist(6, 3)
-forestdist[8, 3] = 6.000000
-Compute forestdist(9, 4)
-forestdist[9, 1] = 8.000000
-Compute forestdist(9, 5)
-forestdist[9, 2] = 7.000000
-Compute forestdist(9, 3)
-forestdist[9, 3] = 7.000000
-Compute forestdist(10, 4)
-forestdist[10, 1] = 9.000000
-Compute forestdist(10, 5)
-forestdist[10, 2] = 8.000000
-Compute forestdist(10, 3)
-forestdist[10, 3] = 8.000000
-Compute forestdist(0, 4)
-delta[0, 4] = 10.000000
-forestdist[11, 1] = 10.000000
-Compute forestdist(0, 5)
-forestdist[11, 2] = 9.000000
-Compute forestdist(0, 3)
-delta[0, 3] = 8.000000
-forestdist[11, 3] = 9.000000
-TreeDistance(0, 1)
-Compute forestdist(2, 2)
-delta[2, 2] = 0.000000
-forestdist[1, 1] = 0.000000
-Compute forestdist(2, 4)
-forestdist[1, 2] = 1.000000
-Compute forestdist(2, 5)
-forestdist[1, 3] = 2.000000
-Compute forestdist(2, 3)
-forestdist[1, 4] = 3.000000
-Compute forestdist(2, 1)
-delta[2, 1] = 4.000000
-forestdist[1, 5] = 4.000000
-Compute forestdist(4, 2)
-forestdist[2, 1] = 1.000000
-Compute forestdist(4, 4)
-forestdist[2, 2] = 0.000000
-Compute forestdist(4, 5)
-forestdist[2, 3] = 1.000000
-Compute forestdist(4, 3)
-forestdist[2, 4] = 2.000000
-Compute forestdist(4, 1)
-forestdist[2, 5] = 3.000000
-Compute forestdist(5, 2)
-forestdist[3, 1] = 2.000000
-Compute forestdist(5, 4)
-forestdist[3, 2] = 1.000000
-Compute forestdist(5, 5)
-forestdist[3, 3] = 0.000000
-Compute forestdist(5, 3)
-forestdist[3, 4] = 1.000000
-Compute forestdist(5, 1)
-forestdist[3, 5] = 2.000000
-Compute forestdist(3, 2)
-forestdist[4, 1] = 3.000000
-Compute forestdist(3, 4)
-forestdist[4, 2] = 2.000000
-Compute forestdist(3, 5)
-forestdist[4, 3] = 1.000000
-Compute forestdist(3, 3)
-forestdist[4, 4] = 1.000000
-Compute forestdist(3, 1)
-forestdist[4, 5] = 1.000000
-Compute forestdist(1, 2)
-delta[1, 2] = 4.000000
-forestdist[5, 1] = 4.000000
-Compute forestdist(1, 4)
-forestdist[5, 2] = 3.000000
-Compute forestdist(1, 5)
-forestdist[5, 3] = 2.000000
-Compute forestdist(1, 3)
-forestdist[5, 4] = 2.000000
-Compute forestdist(1, 1)
-delta[1, 1] = 1.000000
-forestdist[5, 5] = 1.000000
+TreeDistance(7, 0)
 Compute forestdist(7, 2)
-forestdist[6, 1] = 5.000000
-Compute forestdist(7, 4)
-forestdist[6, 2] = 4.000000
-Compute forestdist(7, 5)
-forestdist[6, 3] = 3.000000
-Compute forestdist(7, 3)
-forestdist[6, 4] = 3.000000
-Compute forestdist(7, 1)
-forestdist[6, 5] = 2.000000
-Compute forestdist(8, 2)
-forestdist[7, 1] = 6.000000
-Compute forestdist(8, 4)
-forestdist[7, 2] = 5.000000
-Compute forestdist(8, 5)
-forestdist[7, 3] = 4.000000
-Compute forestdist(8, 3)
-forestdist[7, 4] = 4.000000
-Compute forestdist(8, 1)
-forestdist[7, 5] = 3.000000
-Compute forestdist(6, 2)
-forestdist[8, 1] = 7.000000
-Compute forestdist(6, 4)
-forestdist[8, 2] = 6.000000
-Compute forestdist(6, 5)
-forestdist[8, 3] = 5.000000
-Compute forestdist(6, 3)
-forestdist[8, 4] = 5.000000
-Compute forestdist(6, 1)
-forestdist[8, 5] = 4.000000
-Compute forestdist(9, 2)
-forestdist[9, 1] = 8.000000
-Compute forestdist(9, 4)
-forestdist[9, 2] = 7.000000
-Compute forestdist(9, 5)
-forestdist[9, 3] = 6.000000
-Compute forestdist(9, 3)
-forestdist[9, 4] = 6.000000
-Compute forestdist(9, 1)
-forestdist[9, 5] = 5.000000
-Compute forestdist(10, 2)
-forestdist[10, 1] = 9.000000
-Compute forestdist(10, 4)
-forestdist[10, 2] = 8.000000
-Compute forestdist(10, 5)
-forestdist[10, 3] = 7.000000
-Compute forestdist(10, 3)
-forestdist[10, 4] = 7.000000
-Compute forestdist(10, 1)
-forestdist[10, 5] = 6.000000
-Compute forestdist(0, 2)
-delta[0, 2] = 10.000000
-forestdist[11, 1] = 10.000000
-Compute forestdist(0, 4)
-forestdist[11, 2] = 9.000000
-Compute forestdist(0, 5)
-forestdist[11, 3] = 8.000000
-Compute forestdist(0, 3)
-forestdist[11, 4] = 8.000000
-Compute forestdist(0, 1)
-delta[0, 1] = 7.000000
-forestdist[11, 5] = 7.000000
-TreeDistance(0, 8)
-Compute forestdist(2, 8)
-delta[2, 8] = 0.000000
-forestdist[1, 1] = 0.000000
-Compute forestdist(4, 8)
-forestdist[2, 1] = 1.000000
-Compute forestdist(5, 8)
-forestdist[3, 1] = 2.000000
-Compute forestdist(3, 8)
-forestdist[4, 1] = 3.000000
-Compute forestdist(1, 8)
-delta[1, 8] = 4.000000
-forestdist[5, 1] = 4.000000
-Compute forestdist(7, 8)
-forestdist[6, 1] = 5.000000
-Compute forestdist(8, 8)
-forestdist[7, 1] = 6.000000
-Compute forestdist(6, 8)
-forestdist[8, 1] = 7.000000
-Compute forestdist(9, 8)
-forestdist[9, 1] = 8.000000
-Compute forestdist(10, 8)
-forestdist[10, 1] = 9.000000
-Compute forestdist(0, 8)
-delta[0, 8] = 10.000000
-forestdist[11, 1] = 10.000000
-TreeDistance(0, 7)
-Compute forestdist(2, 7)
-delta[2, 7] = 0.000000
+delta[7, 2] = 0.000000
 forestdist[1, 1] = 1.000000
-Compute forestdist(4, 7)
-forestdist[2, 1] = 2.000000
-Compute forestdist(5, 7)
-forestdist[3, 1] = 2.000000
-Compute forestdist(3, 7)
-forestdist[4, 1] = 3.000000
-Compute forestdist(1, 7)
-delta[1, 7] = 4.000000
-forestdist[5, 1] = 4.000000
-Compute forestdist(7, 7)
-forestdist[6, 1] = 5.000000
-Compute forestdist(8, 7)
-forestdist[7, 1] = 6.000000
-Compute forestdist(6, 7)
-forestdist[8, 1] = 7.000000
-Compute forestdist(9, 7)
-forestdist[9, 1] = 8.000000
-Compute forestdist(10, 7)
-forestdist[10, 1] = 9.000000
-Compute forestdist(0, 7)
-delta[0, 7] = 10.000000
-forestdist[11, 1] = 10.000000
-TreeDistance(0, 0)
-Compute forestdist(2, 2)
-delta[2, 2] = 0.000000
-forestdist[1, 1] = 0.000000
-Compute forestdist(2, 4)
-forestdist[1, 2] = 1.000000
-Compute forestdist(2, 5)
-forestdist[1, 3] = 2.000000
-Compute forestdist(2, 3)
-forestdist[1, 4] = 3.000000
-Compute forestdist(2, 1)
-delta[2, 1] = 4.000000
-forestdist[1, 5] = 4.000000
-Compute forestdist(2, 7)
-forestdist[1, 6] = 5.000000
-Compute forestdist(2, 8)
-forestdist[1, 7] = 6.000000
-Compute forestdist(2, 9)
-forestdist[1, 8] = 7.000000
-Compute forestdist(2, 6)
-forestdist[1, 9] = 8.000000
-Compute forestdist(2, 0)
-delta[2, 0] = 9.000000
-forestdist[1, 10] = 9.000000
-Compute forestdist(4, 2)
-forestdist[2, 1] = 1.000000
-Compute forestdist(4, 4)
-forestdist[2, 2] = 0.000000
-Compute forestdist(4, 5)
-forestdist[2, 3] = 1.000000
-Compute forestdist(4, 3)
-forestdist[2, 4] = 2.000000
-Compute forestdist(4, 1)
-forestdist[2, 5] = 3.000000
-Compute forestdist(4, 7)
-forestdist[2, 6] = 4.000000
-Compute forestdist(4, 8)
-forestdist[2, 7] = 5.000000
-Compute forestdist(4, 9)
-forestdist[2, 8] = 6.000000
-Compute forestdist(4, 6)
-forestdist[2, 9] = 7.000000
-Compute forestdist(4, 0)
-forestdist[2, 10] = 8.000000
-Compute forestdist(5, 2)
-forestdist[3, 1] = 2.000000
-Compute forestdist(5, 4)
-forestdist[3, 2] = 1.000000
-Compute forestdist(5, 5)
-forestdist[3, 3] = 0.000000
-Compute forestdist(5, 3)
-forestdist[3, 4] = 1.000000
-Compute forestdist(5, 1)
-forestdist[3, 5] = 2.000000
-Compute forestdist(5, 7)
-forestdist[3, 6] = 3.000000
-Compute forestdist(5, 8)
-forestdist[3, 7] = 4.000000
-Compute forestdist(5, 9)
-forestdist[3, 8] = 5.000000
-Compute forestdist(5, 6)
-forestdist[3, 9] = 6.000000
-Compute forestdist(5, 0)
-forestdist[3, 10] = 7.000000
-Compute forestdist(3, 2)
-forestdist[4, 1] = 3.000000
-Compute forestdist(3, 4)
-forestdist[4, 2] = 2.000000
-Compute forestdist(3, 5)
-forestdist[4, 3] = 1.000000
-Compute forestdist(3, 3)
-forestdist[4, 4] = 1.000000
-Compute forestdist(3, 1)
-forestdist[4, 5] = 1.000000
-Compute forestdist(3, 7)
-forestdist[4, 6] = 2.000000
-Compute forestdist(3, 8)
-forestdist[4, 7] = 3.000000
-Compute forestdist(3, 9)
-forestdist[4, 8] = 4.000000
-Compute forestdist(3, 6)
-forestdist[4, 9] = 4.000000
-Compute forestdist(3, 0)
-forestdist[4, 10] = 2.000000
-Compute forestdist(1, 2)
-delta[1, 2] = 4.000000
-forestdist[5, 1] = 4.000000
-Compute forestdist(1, 4)
-forestdist[5, 2] = 3.000000
-Compute forestdist(1, 5)
-forestdist[5, 3] = 2.000000
-Compute forestdist(1, 3)
-forestdist[5, 4] = 2.000000
-Compute forestdist(1, 1)
-delta[1, 1] = 1.000000
-forestdist[5, 5] = 1.000000
-Compute forestdist(1, 7)
-forestdist[5, 6] = 2.000000
-Compute forestdist(1, 8)
-forestdist[5, 7] = 3.000000
-Compute forestdist(1, 9)
-forestdist[5, 8] = 4.000000
-Compute forestdist(1, 6)
-forestdist[5, 9] = 5.000000
-Compute forestdist(1, 0)
-delta[1, 0] = 4.000000
-forestdist[5, 10] = 3.000000
-Compute forestdist(7, 2)
-forestdist[6, 1] = 5.000000
-Compute forestdist(7, 4)
-forestdist[6, 2] = 4.000000
-Compute forestdist(7, 5)
-forestdist[6, 3] = 3.000000
-Compute forestdist(7, 3)
-forestdist[6, 4] = 3.000000
 Compute forestdist(7, 1)
-forestdist[6, 5] = 2.000000
-Compute forestdist(7, 7)
-forestdist[6, 6] = 2.000000
-Compute forestdist(7, 8)
-forestdist[6, 7] = 2.000000
-Compute forestdist(7, 9)
-forestdist[6, 8] = 3.000000
-Compute forestdist(7, 6)
-forestdist[6, 9] = 4.000000
+delta[7, 1] = 1.000000
+forestdist[1, 2] = 2.000000
+Compute forestdist(7, 3)
+forestdist[1, 3] = 3.000000
 Compute forestdist(7, 0)
-forestdist[6, 10] = 4.000000
-Compute forestdist(8, 2)
-forestdist[7, 1] = 6.000000
-Compute forestdist(8, 4)
-forestdist[7, 2] = 5.000000
-Compute forestdist(8, 5)
-forestdist[7, 3] = 4.000000
-Compute forestdist(8, 3)
-forestdist[7, 4] = 4.000000
-Compute forestdist(8, 1)
-forestdist[7, 5] = 3.000000
-Compute forestdist(8, 7)
-forestdist[7, 6] = 2.000000
-Compute forestdist(8, 8)
-forestdist[7, 7] = 3.000000
-Compute forestdist(8, 9)
-forestdist[7, 8] = 3.000000
-Compute forestdist(8, 6)
-forestdist[7, 9] = 4.000000
-Compute forestdist(8, 0)
-forestdist[7, 10] = 5.000000
-Compute forestdist(6, 2)
-forestdist[8, 1] = 7.000000
-Compute forestdist(6, 4)
-forestdist[8, 2] = 6.000000
-Compute forestdist(6, 5)
-forestdist[8, 3] = 5.000000
+delta[7, 0] = 3.000000
+forestdist[1, 4] = 4.000000
+TreeDistance(6, 3)
 Compute forestdist(6, 3)
-forestdist[8, 4] = 5.000000
+delta[6, 3] = 0.000000
+forestdist[1, 1] = 1.000000
+TreeDistance(6, 0)
+Compute forestdist(6, 2)
+delta[6, 2] = 0.000000
+forestdist[1, 1] = 1.000000
 Compute forestdist(6, 1)
-forestdist[8, 5] = 4.000000
-Compute forestdist(6, 7)
-forestdist[8, 6] = 3.000000
-Compute forestdist(6, 8)
-forestdist[8, 7] = 4.000000
-Compute forestdist(6, 9)
-forestdist[8, 8] = 4.000000
-Compute forestdist(6, 6)
-forestdist[8, 9] = 1.000000
+delta[6, 1] = 1.000000
+forestdist[1, 2] = 2.000000
+Compute forestdist(6, 3)
+forestdist[1, 3] = 3.000000
 Compute forestdist(6, 0)
-forestdist[8, 10] = 2.000000
-Compute forestdist(9, 2)
-forestdist[9, 1] = 8.000000
-Compute forestdist(9, 4)
-forestdist[9, 2] = 7.000000
-Compute forestdist(9, 5)
-forestdist[9, 3] = 6.000000
-Compute forestdist(9, 3)
-forestdist[9, 4] = 6.000000
-Compute forestdist(9, 1)
-forestdist[9, 5] = 5.000000
-Compute forestdist(9, 7)
-forestdist[9, 6] = 4.000000
-Compute forestdist(9, 8)
-forestdist[9, 7] = 3.000000
-Compute forestdist(9, 9)
-forestdist[9, 8] = 4.000000
-Compute forestdist(9, 6)
-forestdist[9, 9] = 2.000000
-Compute forestdist(9, 0)
-forestdist[9, 10] = 3.000000
-Compute forestdist(10, 2)
-forestdist[10, 1] = 9.000000
-Compute forestdist(10, 4)
-forestdist[10, 2] = 8.000000
-Compute forestdist(10, 5)
-forestdist[10, 3] = 7.000000
-Compute forestdist(10, 3)
-forestdist[10, 4] = 7.000000
-Compute forestdist(10, 1)
-forestdist[10, 5] = 6.000000
-Compute forestdist(10, 7)
-forestdist[10, 6] = 5.000000
-Compute forestdist(10, 8)
-forestdist[10, 7] = 4.000000
-Compute forestdist(10, 9)
-forestdist[10, 8] = 3.000000
-Compute forestdist(10, 6)
-forestdist[10, 9] = 3.000000
-Compute forestdist(10, 0)
-forestdist[10, 10] = 4.000000
-Compute forestdist(0, 2)
-delta[0, 2] = 10.000000
-forestdist[11, 1] = 10.000000
-Compute forestdist(0, 4)
-forestdist[11, 2] = 9.000000
-Compute forestdist(0, 5)
-forestdist[11, 3] = 8.000000
+delta[6, 0] = 3.000000
+forestdist[1, 4] = 4.000000
+TreeDistance(5, 3)
+Compute forestdist(5, 3)
+delta[5, 3] = 0.000000
+forestdist[1, 1] = 1.000000
+TreeDistance(5, 0)
+Compute forestdist(5, 2)
+delta[5, 2] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(5, 1)
+delta[5, 1] = 1.000000
+forestdist[1, 2] = 2.000000
+Compute forestdist(5, 3)
+forestdist[1, 3] = 3.000000
+Compute forestdist(5, 0)
+delta[5, 0] = 3.000000
+forestdist[1, 4] = 4.000000
+TreeDistance(3, 3)
+Compute forestdist(4, 3)
+delta[4, 3] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(3, 3)
+delta[3, 3] = 1.000000
+forestdist[2, 1] = 1.000000
+TreeDistance(3, 0)
+Compute forestdist(4, 2)
+delta[4, 2] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(4, 1)
+delta[4, 1] = 1.000000
+forestdist[1, 2] = 2.000000
+Compute forestdist(4, 3)
+forestdist[1, 3] = 3.000000
+Compute forestdist(4, 0)
+delta[4, 0] = 3.000000
+forestdist[1, 4] = 4.000000
+Compute forestdist(3, 2)
+delta[3, 2] = 1.000000
+forestdist[2, 1] = 2.000000
+Compute forestdist(3, 1)
+delta[3, 1] = 1.000000
+forestdist[2, 2] = 2.000000
+Compute forestdist(3, 3)
+forestdist[2, 3] = 3.000000
+Compute forestdist(3, 0)
+delta[3, 0] = 3.000000
+forestdist[2, 4] = 4.000000
+TreeDistance(2, 3)
+Compute forestdist(2, 3)
+delta[2, 3] = 0.000000
+forestdist[1, 1] = 1.000000
+TreeDistance(2, 0)
+Compute forestdist(2, 2)
+delta[2, 2] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(2, 1)
+delta[2, 1] = 1.000000
+forestdist[1, 2] = 1.000000
+Compute forestdist(2, 3)
+forestdist[1, 3] = 2.000000
+Compute forestdist(2, 0)
+delta[2, 0] = 3.000000
+forestdist[1, 4] = 3.000000
+TreeDistance(0, 3)
+Compute forestdist(1, 3)
+delta[1, 3] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(2, 3)
+forestdist[2, 1] = 2.000000
+Compute forestdist(4, 3)
+forestdist[3, 1] = 3.000000
+Compute forestdist(3, 3)
+forestdist[4, 1] = 3.000000
+Compute forestdist(5, 3)
+forestdist[5, 1] = 4.000000
+Compute forestdist(6, 3)
+forestdist[6, 1] = 5.000000
+Compute forestdist(7, 3)
+forestdist[7, 1] = 6.000000
 Compute forestdist(0, 3)
-forestdist[11, 4] = 8.000000
+delta[0, 3] = 7.000000
+forestdist[8, 1] = 7.000000
+TreeDistance(0, 0)
+Compute forestdist(1, 2)
+delta[1, 2] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(1, 1)
+delta[1, 1] = 1.000000
+forestdist[1, 2] = 1.000000
+Compute forestdist(1, 3)
+forestdist[1, 3] = 2.000000
+Compute forestdist(1, 0)
+delta[1, 0] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute forestdist(2, 2)
+forestdist[2, 1] = 1.000000
+Compute forestdist(2, 1)
+forestdist[2, 2] = 2.000000
+Compute forestdist(2, 3)
+forestdist[2, 3] = 2.000000
+Compute forestdist(2, 0)
+forestdist[2, 4] = 3.000000
+Compute forestdist(4, 2)
+forestdist[3, 1] = 2.000000
+Compute forestdist(4, 1)
+forestdist[3, 2] = 3.000000
+Compute forestdist(4, 3)
+forestdist[3, 3] = 3.000000
+Compute forestdist(4, 0)
+forestdist[3, 4] = 4.000000
+Compute forestdist(3, 2)
+forestdist[4, 1] = 3.000000
+Compute forestdist(3, 1)
+forestdist[4, 2] = 4.000000
+Compute forestdist(3, 3)
+forestdist[4, 3] = 3.000000
+Compute forestdist(3, 0)
+forestdist[4, 4] = 4.000000
+Compute forestdist(5, 2)
+forestdist[5, 1] = 4.000000
+Compute forestdist(5, 1)
+forestdist[5, 2] = 5.000000
+Compute forestdist(5, 3)
+forestdist[5, 3] = 4.000000
+Compute forestdist(5, 0)
+forestdist[5, 4] = 5.000000
+Compute forestdist(6, 2)
+forestdist[6, 1] = 5.000000
+Compute forestdist(6, 1)
+forestdist[6, 2] = 6.000000
+Compute forestdist(6, 3)
+forestdist[6, 3] = 5.000000
+Compute forestdist(6, 0)
+forestdist[6, 4] = 6.000000
+Compute forestdist(7, 2)
+forestdist[7, 1] = 6.000000
+Compute forestdist(7, 1)
+forestdist[7, 2] = 7.000000
+Compute forestdist(7, 3)
+forestdist[7, 3] = 6.000000
+Compute forestdist(7, 0)
+forestdist[7, 4] = 7.000000
+Compute forestdist(0, 2)
+delta[0, 2] = 7.000000
+forestdist[8, 1] = 7.000000
 Compute forestdist(0, 1)
-delta[0, 1] = 7.000000
-forestdist[11, 5] = 7.000000
-Compute forestdist(0, 7)
-forestdist[11, 6] = 6.000000
-Compute forestdist(0, 8)
-forestdist[11, 7] = 5.000000
-Compute forestdist(0, 9)
-forestdist[11, 8] = 4.000000
-Compute forestdist(0, 6)
-forestdist[11, 9] = 4.000000
+delta[0, 1] = 6.000000
+forestdist[8, 2] = 7.000000
+Compute forestdist(0, 3)
+forestdist[8, 3] = 7.000000
 Compute forestdist(0, 0)
-delta[0, 0] = 3.000000
-forestdist[11, 10] = 3.000000
-delta
-3 7 10 8 10 10 0 10 10 10 
-4 1 4 2 4 4 0 4 4 4 
-9 4 0 2 0 0 3 0 0 0 
-0 0 2 0 2 2 0 2 2 2 
-9 4 0 2 0 0 3 0 0 0 
-9 4 0 2 0 0 3 0 0 0 
-0 0 2 0 2 2 0 2 2 2 
-9 4 0 2 0 0 3 0 0 0 
-9 4 0 2 0 0 3 0 0 0 
-9 4 0 2 0 0 3 0 0 0 
-9 4 0 2 0 0 3 0 0 0 
+delta[0, 0] = 6.000000
+forestdist[8, 4] = 6.000000
+delta Result LL
+6 6 7 7 
+3 1 0 0 
+3 1 0 0 
+3 1 1 1 
+3 1 0 0 
+3 1 0 0 
+3 1 0 0 
+3 1 0 0 
+
+RevTreeDistance(6, 1)
+Compute revforestdist(6, 2)
+delta[6, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(6, 1)
+delta[6, 1] = forestdist[0, 1] = 1.000000
+forestdist[1, 2] = 2.000000
+RevTreeDistance(6, 0)
+Compute revforestdist(6, 3)
+delta[6, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(6, 2)
+forestdist[1, 2] = 2.000000
+Compute revforestdist(6, 1)
+forestdist[1, 3] = 3.000000
+Compute revforestdist(6, 0)
+delta[6, 0] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 4.000000
+RevTreeDistance(5, 1)
+Compute revforestdist(5, 2)
+delta[5, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(5, 1)
+delta[5, 1] = forestdist[0, 1] = 1.000000
+forestdist[1, 2] = 2.000000
+RevTreeDistance(5, 0)
+Compute revforestdist(5, 3)
+delta[5, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(5, 2)
+forestdist[1, 2] = 2.000000
+Compute revforestdist(5, 1)
+forestdist[1, 3] = 3.000000
+Compute revforestdist(5, 0)
+delta[5, 0] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 4.000000
+RevTreeDistance(3, 1)
+Compute revforestdist(4, 2)
+delta[4, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(4, 1)
+delta[4, 1] = forestdist[0, 1] = 1.000000
+forestdist[1, 2] = 2.000000
+Compute revforestdist(3, 2)
+delta[3, 2] = forestdist[1, 0] = 1.000000
+forestdist[2, 1] = 2.000000
+Compute revforestdist(3, 1)
+delta[3, 1] = forestdist[1, 1] = 1.000000
+forestdist[2, 2] = 2.000000
+RevTreeDistance(3, 0)
+Compute revforestdist(4, 3)
+delta[4, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(4, 2)
+forestdist[1, 2] = 2.000000
+Compute revforestdist(4, 1)
+forestdist[1, 3] = 3.000000
+Compute revforestdist(4, 0)
+delta[4, 0] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 4.000000
+Compute revforestdist(3, 3)
+delta[3, 3] = forestdist[1, 0] = 1.000000
+forestdist[2, 1] = 1.000000
+Compute revforestdist(3, 2)
+forestdist[2, 2] = 2.000000
+Compute revforestdist(3, 1)
+forestdist[2, 3] = 3.000000
+Compute revforestdist(3, 0)
+delta[3, 0] = forestdist[1, 3] = 3.000000
+forestdist[2, 4] = 4.000000
+RevTreeDistance(2, 1)
+Compute revforestdist(2, 2)
+delta[2, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(2, 1)
+delta[2, 1] = forestdist[0, 1] = 1.000000
+forestdist[1, 2] = 1.000000
+RevTreeDistance(2, 0)
+Compute revforestdist(2, 3)
+delta[2, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(2, 2)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(2, 1)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(2, 0)
+delta[2, 0] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+RevTreeDistance(1, 1)
+Compute revforestdist(1, 2)
+delta[1, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(1, 1)
+delta[1, 1] = forestdist[0, 1] = 1.000000
+forestdist[1, 2] = 1.000000
+RevTreeDistance(1, 0)
+Compute revforestdist(1, 3)
+delta[1, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(1, 2)
+forestdist[1, 2] = 2.000000
+Compute revforestdist(1, 1)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(1, 0)
+delta[1, 0] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+RevTreeDistance(0, 1)
+Compute revforestdist(7, 2)
+delta[7, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(7, 1)
+delta[7, 1] = forestdist[0, 1] = 1.000000
+forestdist[1, 2] = 2.000000
+Compute revforestdist(6, 2)
+forestdist[2, 1] = 2.000000
+Compute revforestdist(6, 1)
+forestdist[2, 2] = 3.000000
+Compute revforestdist(5, 2)
+forestdist[3, 1] = 3.000000
+Compute revforestdist(5, 1)
+forestdist[3, 2] = 4.000000
+Compute revforestdist(4, 2)
+forestdist[4, 1] = 4.000000
+Compute revforestdist(4, 1)
+forestdist[4, 2] = 5.000000
+Compute revforestdist(3, 2)
+forestdist[5, 1] = 5.000000
+Compute revforestdist(3, 1)
+forestdist[5, 2] = 5.000000
+Compute revforestdist(2, 2)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(2, 1)
+forestdist[6, 2] = 6.000000
+Compute revforestdist(1, 2)
+forestdist[7, 1] = 6.000000
+Compute revforestdist(1, 1)
+forestdist[7, 2] = 7.000000
+Compute revforestdist(0, 2)
+delta[0, 2] = forestdist[7, 0] = 7.000000
+forestdist[8, 1] = 7.000000
+Compute revforestdist(0, 1)
+delta[0, 1] = forestdist[7, 1] = 6.000000
+forestdist[8, 2] = 7.000000
+RevTreeDistance(0, 0)
+Compute revforestdist(7, 3)
+delta[7, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(7, 2)
+forestdist[1, 2] = 2.000000
+Compute revforestdist(7, 1)
+forestdist[1, 3] = 3.000000
+Compute revforestdist(7, 0)
+delta[7, 0] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 4.000000
+Compute revforestdist(6, 3)
+forestdist[2, 1] = 2.000000
+Compute revforestdist(6, 2)
+forestdist[2, 2] = 2.000000
+Compute revforestdist(6, 1)
+forestdist[2, 3] = 3.000000
+Compute revforestdist(6, 0)
+forestdist[2, 4] = 4.000000
+Compute revforestdist(5, 3)
+forestdist[3, 1] = 3.000000
+Compute revforestdist(5, 2)
+forestdist[3, 2] = 3.000000
+Compute revforestdist(5, 1)
+forestdist[3, 3] = 4.000000
+Compute revforestdist(5, 0)
+forestdist[3, 4] = 5.000000
+Compute revforestdist(4, 3)
+forestdist[4, 1] = 4.000000
+Compute revforestdist(4, 2)
+forestdist[4, 2] = 4.000000
+Compute revforestdist(4, 1)
+forestdist[4, 3] = 5.000000
+Compute revforestdist(4, 0)
+forestdist[4, 4] = 6.000000
+Compute revforestdist(3, 3)
+forestdist[5, 1] = 4.000000
+Compute revforestdist(3, 2)
+forestdist[5, 2] = 5.000000
+Compute revforestdist(3, 1)
+forestdist[5, 3] = 5.000000
+Compute revforestdist(3, 0)
+forestdist[5, 4] = 6.000000
+Compute revforestdist(2, 3)
+forestdist[6, 1] = 5.000000
+Compute revforestdist(2, 2)
+forestdist[6, 2] = 4.000000
+Compute revforestdist(2, 1)
+forestdist[6, 3] = 5.000000
+Compute revforestdist(2, 0)
+forestdist[6, 4] = 6.000000
+Compute revforestdist(1, 3)
+forestdist[7, 1] = 6.000000
+Compute revforestdist(1, 2)
+forestdist[7, 2] = 5.000000
+Compute revforestdist(1, 1)
+forestdist[7, 3] = 6.000000
+Compute revforestdist(1, 0)
+forestdist[7, 4] = 7.000000
+Compute revforestdist(0, 3)
+delta[0, 3] = forestdist[7, 0] = 7.000000
+forestdist[8, 1] = 7.000000
+Compute revforestdist(0, 2)
+forestdist[8, 2] = 6.000000
+Compute revforestdist(0, 1)
+forestdist[8, 3] = 7.000000
+Compute revforestdist(0, 0)
+delta[0, 0] = forestdist[7, 3] = 6.000000
+forestdist[8, 4] = 6.000000
+delta Result RR
+6 6 7 7 
+3 1 0 0 
+3 1 0 0 
+3 1 1 1 
+3 1 0 0 
+3 1 0 0 
+3 1 0 0 
+3 1 0 0 
 

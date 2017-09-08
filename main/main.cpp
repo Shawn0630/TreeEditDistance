@@ -11,10 +11,10 @@
 using namespace std;
 
 int main() {
-	string fileName = "rna24.data";
+	string fileName = "rna32.data";
 	string simiFileName = "ss_distance";
 	SimiMatrix matrix;
-	vector<RNA> RNAs;
+/*	vector<RNA> RNAs;
 	FileManage* file = FileManage::getInstance();
 	file->setRNAFileName(fileName);
 	file->setSimiFileName(simiFileName);
@@ -35,7 +35,16 @@ int main() {
 	}
 	float dist = tc.getTreeDistance();
 	cout << "The distance is " << dist << endl;
-/*	RNA r1, r2;
+
+	float dist_LL = tc.getTreeDistance_LL();
+	cout << "The distance(LL) is " << dist_LL << endl;
+
+	float dist_RR = tc.getTreeDistance_RR();
+	cout << "The distance(RR) is " << dist_RR << endl;*/
+
+
+	
+	RNA r1, r2;
 	FileManage* file = FileManage::getInstance();
 	file->setSimiFileName(simiFileName);
 	matrix = file->readSimiFromFile();
@@ -46,7 +55,7 @@ int main() {
 	ofstream ou("out2.txt");
 	r1.setRNAName("A");
 	r2.setRNAName("B");
-*/
+
 
 /*	file->setRNAFileName(fileName);
 	RNAs = file->readRNAsFromFile();
@@ -130,13 +139,13 @@ int main() {
            |                                 |
            E                                 C	
 */
-/*  string s1 = "(A(B)(C)(D(E))(F)(G)(H))";
+  string s1 = "(A(B)(C)(D(E))(F)(G)(H))";
     string s2 = "(A(B(C))(D))";
     r1.setPreOrderSequence(s1);
     r1.setTreeSize(8);
     r2.setPreOrderSequence(s2);
     r2.setTreeSize(4);
-*/
+
 
 
 
@@ -249,8 +258,8 @@ int main() {
 	r1.setPreOrderSequence(s1);
 	r1.setTreeSize(29);
 	r2.setPreOrderSequence(s2);
-	r2.setTreeSize(9);
-*/
+	r2.setTreeSize(9);*/
+
 
 
 
@@ -262,15 +271,15 @@ int main() {
       / \       / | \                                 
      I  J      I  J  K                              
                                                        
-                                                      
+     wrong                                                 
 */
 /*	string s1 = "(B(C(F(I)(J))(G)(H))(D(F)(G(I)(J)(K))(H))(E))";
 	string s2 = "(B(C)(D))";
 	r1.setPreOrderSequence(s1);
 	r1.setTreeSize(15);
 	r2.setPreOrderSequence(s2);
-	r2.setTreeSize(3);
-*/
+	r2.setTreeSize(3);*/
+
 
 
 /*	                                          B
@@ -519,7 +528,7 @@ d = 2
 	r2.setPreOrderSequence(s2);
 	r2.setTreeSize(4);*/
 
-/*	Tree* t1 = r1.buildTree();
+	Tree* t1 = r1.buildTree();
 	Tree* t2 = r2.buildTree();
 	ou << "TreeA" << endl;
 	ou << t1->toString() << endl;
@@ -527,6 +536,12 @@ d = 2
 	ou << t2->toString() << endl;
 	TreeComparison tc(t1, t2, matrix);
 	tc.strategyComputation();
-	ou << "Counter" << endl;
-	ou << to_string(tc.getCounter()) << endl;*/
+	float dist = tc.getTreeDistance();
+	cout << "The distance is " << dist << endl;
+
+	float dist_LL = tc.getTreeDistance_LL();
+	cout << "The distance(LL) is " << dist_LL << endl;
+
+	float dist_RR = tc.getTreeDistance_RR();
+	cout << "The distance(RR) is " << dist_RR << endl;
 }

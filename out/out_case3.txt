@@ -292,30 +292,84 @@ AllB
 -1 -1 1 -1 
 -1 -1 1 -1 
 
-spfA_LR(0, 0) 0 
+spfA(0, 0) 0 
 new Round B'
 new Round C'
 Right (3, 4, 3, 1) counter  = 13
+case3 = 0
+case1_case3 = GcurrentForestCost = 1
+case1 += delete F
+case2_case1 = 1.000000
+case2 += insert D
+case3_case3 delta[3, 3] = 0.000000
+case3_case3 += E -> D = 1.000000
+case1 = 2.000000
+case2 = 2.000000
+case3 = 1.000000
 Save to s[4, 1] = 1.000000
 t[3, 1] = s[4, 1] = 1.000000
 new Round B'
 new Round C'
 Right (3, 4, 2, 2) counter  = 14
+case3 = 0
+case1_case3 = GcurrentForestCost = 1
+case1 += delete F
+case2_case1 = 1.000000
+case2 += insert C
+case3_case3 delta[3, 2] = 0.000000
+case3_case3 += E -> C = 1.000000
+case1 = 2.000000
+case2 = 2.000000
+case3 = 1.000000
 Save to s[4, 2] = 1.000000
 Right (3, 4, 2, 1) counter = 15
 Save to s[4, 1]
+case1_case3 GcurrentForestCost = 2 + delete F
+case2_case3 s[4, 2] = 1.000000 + insert D
+case3_case delta[3, 3] = 0.000000
+case3_case2 += GcurrentForestCost - G(rG) = 2.000000 - 1
+case3 += E -> D
+case1 = 3.000000
+case2 = 2.000000
+case3 = 2.000000
 s[4, 1] = 2.000000
 t[2, 2] = s[4, 2] = 1.000000
 t[2, 1] = s[4, 1] = 2.000000
 new Round B'
 new Round C'
 Right (3, 4, 1, 3) counter  = 16
+case3 = 0
+case1_case3 = GcurrentForestCost = 1
+case1 += delete F
+case2_case1 = 1.000000
+case2 += insert B
+case3_case3 delta[3, 1] = 0.000000
+case3_case3 += E -> B = 1.000000
+case1 = 2.000000
+case2 = 2.000000
+case3 = 1.000000
 Save to s[4, 3] = 1.000000
 Right (3, 4, 1, 2) counter = 17
 Save to s[4, 2]
+case1_case3 GcurrentForestCost = 2 + delete F
+case2_case3 s[4, 3] = 1.000000 + insert C
+case3_case delta[3, 2] = 0.000000
+case3_case2 += GcurrentForestCost - G(rG) = 2.000000 - 1
+case3 += E -> C
+case1 = 3.000000
+case2 = 2.000000
+case3 = 2.000000
 s[4, 2] = 2.000000
 Right (3, 4, 1, 1) counter = 18
 Save to s[4, 1]
+case1_case3 GcurrentForestCost = 3 + delete F
+case2_case3 s[4, 2] = 2.000000 + insert D
+case3_case delta[3, 3] = 0.000000
+case3_case2 += GcurrentForestCost - G(rG) = 3.000000 - 1
+case3 += E -> D
+case1 = 4.000000
+case2 = 3.000000
+case3 = 3.000000
 s[4, 1] = 3.000000
 q[4] = s[4, 1] = 3.000000
 t[1, 3] = s[4, 3] = 1.000000
@@ -324,49 +378,165 @@ t[1, 1] = s[4, 1] = 3.000000
 new Round B'
 new Round C'
 Right (3, 4, 0, 0) counter  = 19
+case3 = 0
+case1_case3 = GcurrentForestCost = 4
+case1 += delete F
+case2_case2 = q[4] = 3.000000
+case2 += insert A
+case3_case3 delta[3, 0] = 3.000000
+case3_case3 += E -> A = 1.000000
+case1 = 5.000000
+case2 = 4.000000
+case3 = 4.000000
 Save to s[4, 0] = 4.000000
 t[0, 0] = s[4, 0] = 4.000000
+spfA(0, 0) 0 
 new Round B'
 new Round C'
-Right (2, 3, 3, 1) counter  = 20
+Right (3, 3, 3, 1) counter  = 20
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[3, 1] = 1.000000
+case1 += delete E
+case2_case1 = 2.000000
+case2 += insert D
+case3_case3 delta[4, 3] = 0.000000
+case3_case3 += F -> D = 1.000000
+case1 = 2.000000
+case2 = 3.000000
+case3 = 2.000000
 Save to s[3, 1] = 2.000000
 new Round C'
 Right (2, 2, 3, 1) counter  = 21
+case3 = 0
+case1_case1 = s[3, 1] = 2.000000
+case1 += delete C
+case2_case1 = 3.000000
+case2 += insert D
+case3_case3 delta[2, 3] = 2.000000
+case3_case3 += C -> D = 1.000000
+case1 = 3.000000
+case2 = 4.000000
+case3 = 3.000000
 Save to s[2, 1] = 3.000000
 t[3, 1] = s[2, 1] = 3.000000
 new Round B'
 new Round C'
-Right (2, 3, 2, 2) counter  = 22
+Right (3, 3, 2, 2) counter  = 22
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[2, 2] = 1.000000
+case1 += delete E
+case2_case1 = 2.000000
+case2 += insert C
+case3_case3 delta[4, 2] = 0.000000
+case3_case3 += F -> C = 1.000000
+case1 = 2.000000
+case2 = 3.000000
+case3 = 2.000000
 Save to s[3, 2] = 2.000000
-Right (2, 3, 2, 1) counter = 23
+Right (3, 3, 2, 1) counter = 23
 Save to s[3, 1]
+case1_case2 t[2, 1] = 2.000000 + delete E
+case2_case3 s[3, 2] = 2.000000 + insert D
+case3_case delta[4, 3] = 0.000000
+case3_case3 += t[2, 2] = 1.000000
+case3 += F -> D
+case1 = 3.000000
+case2 = 3.000000
+case3 = 2.000000
 s[3, 1] = 2.000000
 new Round C'
 Right (2, 2, 2, 2) counter  = 24
+case3 = 0
+case1_case1 = s[3, 2] = 2.000000
+case1 += delete C
+case2_case1 = 3.000000
+case2 += insert C
+case3_case3 delta[2, 2] = 2.000000
+case3_case3 += C -> C = 0.000000
+case1 = 3.000000
+case2 = 4.000000
+case3 = 2.000000
 Save to s[2, 2] = 2.000000
 Right (2, 2, 2, 1) counter = 25
 Save to s[2, 1]
+case1_case1 s[3, 1] = 2.000000 + delete C
+case2_case3 s[2, 2] = 2.000000 + insert D
+case3_case delta[2, 3] = 2.000000
+case3_case2 += GcurrentForestCost - G(rG) = 2.000000 - 1
+case1 = 3.000000
+case2 = 3.000000
+case3 = 3.000000
 s[2, 1] = 3.000000
 t[2, 2] = s[2, 2] = 2.000000
 t[2, 1] = s[2, 1] = 3.000000
 new Round B'
 new Round C'
-Right (2, 3, 1, 3) counter  = 26
+Right (3, 3, 1, 3) counter  = 26
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[1, 3] = 1.000000
+case1 += delete E
+case2_case1 = 2.000000
+case2 += insert B
+case3_case3 delta[4, 1] = 0.000000
+case3_case3 += F -> B = 1.000000
+case1 = 2.000000
+case2 = 3.000000
+case3 = 2.000000
 Save to s[3, 3] = 2.000000
-Right (2, 3, 1, 2) counter = 27
+Right (3, 3, 1, 2) counter = 27
 Save to s[3, 2]
+case1_case2 t[1, 2] = 2.000000 + delete E
+case2_case3 s[3, 3] = 2.000000 + insert C
+case3_case delta[4, 2] = 0.000000
+case3_case3 += t[1, 3] = 1.000000
+case3 += F -> C
+case1 = 3.000000
+case2 = 3.000000
+case3 = 2.000000
 s[3, 2] = 2.000000
-Right (2, 3, 1, 1) counter = 28
+Right (3, 3, 1, 1) counter = 28
 Save to s[3, 1]
+case1_case2 t[1, 1] = 3.000000 + delete E
+case2_case3 s[3, 2] = 2.000000 + insert D
+case3_case delta[4, 3] = 0.000000
+case3_case3 += t[1, 2] = 2.000000
+case3 += F -> D
+case1 = 4.000000
+case2 = 3.000000
+case3 = 3.000000
 s[3, 1] = 3.000000
 new Round C'
 Right (2, 2, 1, 3) counter  = 29
+case3 = 0
+case1_case1 = s[3, 3] = 2.000000
+case1 += delete C
+case2_case1 = 3.000000
+case2 += insert B
+case3_case3 delta[2, 1] = 2.000000
+case3_case3 += C -> B = 1.000000
+case1 = 3.000000
+case2 = 4.000000
+case3 = 3.000000
 Save to s[2, 3] = 3.000000
 Right (2, 2, 1, 2) counter = 30
 Save to s[2, 2]
+case1_case1 s[3, 2] = 2.000000 + delete C
+case2_case3 s[2, 3] = 3.000000 + insert C
+case3_case delta[2, 2] = 2.000000
+case3_case2 += GcurrentForestCost - G(rG) = 2.000000 - 1
+case1 = 3.000000
+case2 = 4.000000
+case3 = 3.000000
 s[2, 2] = 3.000000
 Right (2, 2, 1, 1) counter = 31
 Save to s[2, 1]
+case1_case1 s[3, 1] = 3.000000 + delete C
+case2_case3 s[2, 2] = 3.000000 + insert D
+case3_case delta[2, 3] = 2.000000
+case3_case2 += GcurrentForestCost - G(rG) = 3.000000 - 1
+case1 = 4.000000
+case2 = 4.000000
+case3 = 4.000000
 s[2, 1] = 4.000000
 save to delta[2, 0] = s[2, 1] = 3.000000
 q[3] = s[3, 1] = 3.000000
@@ -376,83 +546,243 @@ t[1, 2] = s[2, 2] = 3.000000
 t[1, 1] = s[2, 1] = 4.000000
 new Round B'
 new Round C'
-Right (2, 3, 0, 0) counter  = 32
+Right (3, 3, 0, 0) counter  = 32
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[0, 0] = 4.000000
+case1 += delete E
+case2_case2 = q[3] = 3.000000
+case2 += insert A
+case3_case3 delta[4, 0] = 3.000000
+case1 = 5.000000
+case2 = 4.000000
+case3 = 4.000000
 Save to s[3, 0] = 4.000000
 new Round C'
 Right (2, 2, 0, 0) counter  = 33
+case3 = 0
+case1_case1 = s[3, 0] = 4.000000
+case1 += delete C
+case2_case2 = q[2] = 4.000000
+case2 += insert A
+case3_case3 delta[2, 0] = 3.000000
+case3_case3 += C -> A = 1.000000
+case1 = 5.000000
+case2 = 5.000000
+case3 = 4.000000
 Save to s[2, 0] = 4.000000
 t[0, 0] = s[2, 0] = 4.000000
+spfA(0, 0) 0 
 new Round B
-new round C
+new round C hasLeftPart = 1
 Left (1, 2, 1, 3) counter = 34
 Save to s[1, 1]
+case3_case FcurrentForest - F(lF) = 
+4.000000 - 1
+case1_case2 t[1, 3] = 3.000000
+case2_case1 FcurrentForestCost = 4.000000
+case3_case3 delta[1, 1] = 0.000000
+case3 += B -> B
 s[1, 1] = 3.000000
+rGminus1_in_preR = 2 rG = 3 parent_of_rG_in_preL = 0 parent_of_rG_in_preR = 0
 t[1, 3] = s[1, 1]
 new Round B
-new round C
+new round C hasLeftPart = 1
 Left (1, 2, 2, 2) counter = 35
 Save to s[1, 2]
+case3_case FcurrentForest - F(lF) = 
+4.000000 - 1
+case1_case2 t[2, 2] = 2.000000
+case2_case1 FcurrentForestCost = 4.000000
 s[1, 2] = 3.000000
 Left (1, 2, 1, 2) counter = 36
 Save to s[1, 1]
+case1_case2 t[1, 2] = 3.000000 + delete B
+case2 s[1, 2] = 3.000000 + insert B
+case3 = delta[1, 1] = 0.000000
+case3 += t[2, 2] = 2.000000
+case3 += B -> B
 s[1, 1] = 2.000000
+rGminus1_in_preR = 1 rG = 2 parent_of_rG_in_preL = 0 parent_of_rG_in_preR = 0
 t[2, 2] = s[1, 2]
 t[1, 2] = s[1, 1]
 new Round B
-new round C
+new round C hasLeftPart = 1
 Left (1, 2, 3, 1) counter = 37
 Save to s[1, 3]
+case3_case FcurrentForest - F(lF) = 
+4.000000 - 1
+case1_case2 t[3, 1] = 3.000000
+case2_case1 FcurrentForestCost = 4.000000
+case3_case3 delta[1, 3] = 0.000000
+case3 += B -> D
 s[1, 3] = 4.000000
 Left (1, 2, 2, 1) counter = 38
 Save to s[1, 2]
+case1_case2 t[2, 1] = 3.000000 + delete B
+case2 s[1, 3] = 4.000000 + insert C
+case3 = delta[1, 2] = 0.000000
+case3 += t[3, 1] = 3.000000
+case3 += B -> C
 s[1, 2] = 4.000000
 Left (1, 2, 1, 1) counter = 39
 Save to s[1, 1]
+case1_case2 t[1, 1] = 4.000000 + delete B
+case2 s[1, 2] = 4.000000 + insert B
+case3 = delta[1, 1] = 0.000000
+case3 += t[2, 1] = 3.000000
+case3 += B -> B
 s[1, 1] = 3.000000
+rGminus1_in_preR = 0 rG = 1 parent_of_rG_in_preL = 0 parent_of_rG_in_preR = 0
 q[1] = s[1, 1]
 t[3, 1] = s[1, 3]
 t[2, 1] = s[1, 2]
 t[1, 1] = s[1, 1]
 new Round B
-new round C
+new round C hasLeftPart = 1
 Left (1, 2, 0, 0) counter = 40
 Save to s[1, 0]
+case3_case FcurrentForest - F(lF) = 
+4.000000 - 1
+case1_case2 t[0, 0] = 4.000000
+case2_case2 q[1] = 3.000000
 s[1, 0] = 3.000000
+rGminus1_in_preR = 2147483647 rG = 0 parent_of_rG_in_preL = 2147483647 parent_of_rG_in_preR = 2147483647
 t[0, 0] = s[1, 0]
 new Round B'
 new Round C'
-Right (1, 1, 3, 1) counter  = 41
+Right (2, 1, 3, 1) counter  = 41
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[3, 1] = 4.000000
+case1 += delete B
+case2_case1 = 5.000000
+case2 += insert D
+case3_case3 delta[5, 3] = 0.000000
+case3_case3 += D -> D = 0.000000
+case1 = 5.000000
+case2 = 6.000000
+case3 = 4.000000
 Save to s[1, 1] = 4.000000
 new Round C'
 Right (0, 0, 3, 1) counter  = 42
+case3 = 0
+case1_case1 = s[1, 1] = 4.000000
+case1 += delete A
+case2_case1 = 6.000000
+case2 += insert D
+case3_case3 delta[0, 3] = 5.000000
+case1 = 5.000000
+case2 = 7.000000
+case3 = 5.000000
 Save to s[0, 1] = 5.000000
 t[3, 1] = s[0, 1] = 5.000000
 new Round B'
 new Round C'
-Right (1, 1, 2, 2) counter  = 43
+Right (2, 1, 2, 2) counter  = 43
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[2, 2] = 3.000000
+case1 += delete B
+case2_case1 = 5.000000
+case2 += insert C
+case1 = 4.000000
+case2 = 6.000000
+case3 = 4.000000
 Save to s[1, 2] = 4.000000
+Right (2, 1, 2, 1) counter = 44
+Save to s[1, 1]
+case1_case2 t[2, 1] = 4.000000 + delete B
+case2_case3 s[1, 2] = 4.000000 + insert D
+case3_case delta[5, 3] = 0.000000
+case3_case3 += t[2, 2] = 3.000000
+case3 += D -> D
+case1 = 5.000000
+case2 = 5.000000
+case3 = 3.000000
+s[1, 1] = 3.000000
 new Round C'
-Right (0, 0, 2, 2) counter  = 44
+Right (0, 0, 2, 2) counter  = 45
+case3 = 0
+case1_case1 = s[1, 2] = 4.000000
+case1 += delete A
+case2_case1 = 6.000000
+case2 += insert C
+case3_case3 delta[0, 2] = 5.000000
+case1 = 5.000000
+case2 = 7.000000
+case3 = 5.000000
 Save to s[0, 2] = 5.000000
+Right (0, 0, 2, 1) counter = 46
+Save to s[0, 1]
+case1_case1 s[1, 1] = 3.000000 + delete A
+case2_case3 s[0, 2] = 5.000000 + insert D
+case3_case delta[0, 3] = 5.000000
+case1 = 4.000000
+case2 = 6.000000
+case3 = 5.000000
+s[0, 1] = 4.000000
 t[2, 2] = s[0, 2] = 5.000000
+t[2, 1] = s[0, 1] = 4.000000
 new Round B'
 new Round C'
-Right (1, 1, 1, 3) counter  = 45
+Right (2, 1, 1, 3) counter  = 47
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[1, 3] = 3.000000
+case1 += delete B
+case2_case1 = 5.000000
+case2 += insert B
+case1 = 4.000000
+case2 = 6.000000
+case3 = 4.000000
 Save to s[1, 3] = 4.000000
-Right (1, 1, 1, 2) counter = 46
+Right (2, 1, 1, 2) counter = 48
 Save to s[1, 2]
+case1_case2 t[1, 2] = 2.000000 + delete B
+case2_case3 s[1, 3] = 4.000000 + insert C
+case3_case delta[5, 2] = 0.000000
+case3_case3 += t[1, 3] = 3.000000
+case1 = 3.000000
+case2 = 5.000000
+case3 = 3.000000
 s[1, 2] = 3.000000
-Right (1, 1, 1, 1) counter = 47
+Right (2, 1, 1, 1) counter = 49
 Save to s[1, 1]
+case1_case2 t[1, 1] = 3.000000 + delete B
+case2_case3 s[1, 2] = 3.000000 + insert D
+case3_case delta[5, 3] = 0.000000
+case3_case3 += t[1, 2] = 2.000000
+case3 += D -> D
+case1 = 4.000000
+case2 = 4.000000
+case3 = 2.000000
 s[1, 1] = 2.000000
 new Round C'
-Right (0, 0, 1, 3) counter  = 48
+Right (0, 0, 1, 3) counter  = 50
+case3 = 0
+case1_case1 = s[1, 3] = 4.000000
+case1 += delete A
+case2_case1 = 6.000000
+case2 += insert B
+case3_case3 delta[0, 1] = 5.000000
+case1 = 5.000000
+case2 = 7.000000
+case3 = 5.000000
 Save to s[0, 3] = 5.000000
-Right (0, 0, 1, 2) counter = 49
+Right (0, 0, 1, 2) counter = 51
 Save to s[0, 2]
+case1_case1 s[1, 2] = 3.000000 + delete A
+case2_case3 s[0, 3] = 5.000000 + insert C
+case3_case delta[0, 2] = 5.000000
+case1 = 4.000000
+case2 = 6.000000
+case3 = 5.000000
 s[0, 2] = 4.000000
-Right (0, 0, 1, 1) counter = 50
+Right (0, 0, 1, 1) counter = 52
 Save to s[0, 1]
+case1_case1 s[1, 1] = 2.000000 + delete A
+case2_case3 s[0, 2] = 4.000000 + insert D
+case3_case delta[0, 3] = 5.000000
+case1 = 3.000000
+case2 = 5.000000
+case3 = 5.000000
 s[0, 1] = 3.000000
 save to delta[0, 0] = s[0, 1] = 2.000000
 q[1] = s[1, 1] = 2.000000
@@ -462,13 +792,383 @@ t[1, 2] = s[0, 2] = 4.000000
 t[1, 1] = s[0, 1] = 3.000000
 new Round B'
 new Round C'
-Right (1, 1, 0, 0) counter  = 51
+Right (2, 1, 0, 0) counter  = 53
+case3_case FcurrentForest - F(rF)
+case1_case2 = t[0, 0] = 3.000000
+case1 += delete B
+case2_case2 = q[1] = 2.000000
+case2 += insert A
+case1 = 4.000000
+case2 = 3.000000
+case3 = 4.000000
 Save to s[1, 0] = 3.000000
 new Round C'
-Right (0, 0, 0, 0) counter  = 52
+Right (0, 0, 0, 0) counter  = 54
+case3 = 0
+case1_case1 = s[1, 0] = 3.000000
+case1 += delete A
+case2_case2 = q[0] = 3.000000
+case2 += insert A
+case3_case3 delta[0, 0] = 2.000000
+case3_case3 += A -> A = 0.000000
+case1 = 4.000000
+case2 = 4.000000
+case3 = 2.000000
 Save to s[0, 0] = 2.000000
 t[0, 0] = s[0, 0] = 2.000000
-delta
+delta Result
+2 5 5 5 
+3 0 0 0 
+3 2 2 2 
+3 0 0 0 
+3 0 0 0 
+3 0 0 0 
+
+TreeDistance(5, 3)
+Compute forestdist(5, 3)
+delta[5, 3] = 0.000000
+forestdist[1, 1] = 0.000000
+TreeDistance(5, 2)
+Compute forestdist(5, 2)
+delta[5, 2] = 0.000000
+forestdist[1, 1] = 1.000000
+TreeDistance(5, 0)
+Compute forestdist(5, 1)
+delta[5, 1] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(5, 2)
+forestdist[1, 2] = 2.000000
+Compute forestdist(5, 3)
+forestdist[1, 3] = 2.000000
+Compute forestdist(5, 0)
+delta[5, 0] = 3.000000
+forestdist[1, 4] = 3.000000
+TreeDistance(4, 3)
+Compute forestdist(4, 3)
+delta[4, 3] = 0.000000
+forestdist[1, 1] = 1.000000
+TreeDistance(4, 2)
+Compute forestdist(4, 2)
+delta[4, 2] = 0.000000
+forestdist[1, 1] = 1.000000
+TreeDistance(4, 0)
+Compute forestdist(4, 1)
+delta[4, 1] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(4, 2)
+forestdist[1, 2] = 2.000000
+Compute forestdist(4, 3)
+forestdist[1, 3] = 3.000000
+Compute forestdist(4, 0)
+delta[4, 0] = 3.000000
+forestdist[1, 4] = 4.000000
+TreeDistance(2, 3)
+Compute forestdist(3, 3)
+delta[3, 3] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(4, 3)
+forestdist[2, 1] = 2.000000
+Compute forestdist(2, 3)
+delta[2, 3] = 2.000000
+forestdist[3, 1] = 3.000000
+TreeDistance(2, 2)
+Compute forestdist(3, 2)
+delta[3, 2] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(4, 2)
+forestdist[2, 1] = 2.000000
+Compute forestdist(2, 2)
+delta[2, 2] = 2.000000
+forestdist[3, 1] = 2.000000
+TreeDistance(2, 0)
+Compute forestdist(3, 1)
+delta[3, 1] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(3, 2)
+forestdist[1, 2] = 2.000000
+Compute forestdist(3, 3)
+forestdist[1, 3] = 3.000000
+Compute forestdist(3, 0)
+delta[3, 0] = 3.000000
+forestdist[1, 4] = 4.000000
+Compute forestdist(4, 1)
+forestdist[2, 1] = 2.000000
+Compute forestdist(4, 2)
+forestdist[2, 2] = 2.000000
+Compute forestdist(4, 3)
+forestdist[2, 3] = 3.000000
+Compute forestdist(4, 0)
+forestdist[2, 4] = 4.000000
+Compute forestdist(2, 1)
+delta[2, 1] = 2.000000
+forestdist[3, 1] = 3.000000
+Compute forestdist(2, 2)
+forestdist[3, 2] = 3.000000
+Compute forestdist(2, 3)
+forestdist[3, 3] = 4.000000
+Compute forestdist(2, 0)
+delta[2, 0] = 3.000000
+forestdist[3, 4] = 4.000000
+TreeDistance(0, 3)
+Compute forestdist(1, 3)
+delta[1, 3] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(3, 3)
+forestdist[2, 1] = 2.000000
+Compute forestdist(4, 3)
+forestdist[3, 1] = 3.000000
+Compute forestdist(2, 3)
+forestdist[4, 1] = 4.000000
+Compute forestdist(5, 3)
+forestdist[5, 1] = 4.000000
+Compute forestdist(0, 3)
+delta[0, 3] = 5.000000
+forestdist[6, 1] = 5.000000
+TreeDistance(0, 2)
+Compute forestdist(1, 2)
+delta[1, 2] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute forestdist(3, 2)
+forestdist[2, 1] = 2.000000
+Compute forestdist(4, 2)
+forestdist[3, 1] = 3.000000
+Compute forestdist(2, 2)
+forestdist[4, 1] = 3.000000
+Compute forestdist(5, 2)
+forestdist[5, 1] = 4.000000
+Compute forestdist(0, 2)
+delta[0, 2] = 5.000000
+forestdist[6, 1] = 5.000000
+TreeDistance(0, 0)
+Compute forestdist(1, 1)
+delta[1, 1] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute forestdist(1, 2)
+forestdist[1, 2] = 1.000000
+Compute forestdist(1, 3)
+forestdist[1, 3] = 2.000000
+Compute forestdist(1, 0)
+delta[1, 0] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute forestdist(3, 1)
+forestdist[2, 1] = 1.000000
+Compute forestdist(3, 2)
+forestdist[2, 2] = 1.000000
+Compute forestdist(3, 3)
+forestdist[2, 3] = 2.000000
+Compute forestdist(3, 0)
+forestdist[2, 4] = 3.000000
+Compute forestdist(4, 1)
+forestdist[3, 1] = 2.000000
+Compute forestdist(4, 2)
+forestdist[3, 2] = 2.000000
+Compute forestdist(4, 3)
+forestdist[3, 3] = 2.000000
+Compute forestdist(4, 0)
+forestdist[3, 4] = 3.000000
+Compute forestdist(2, 1)
+forestdist[4, 1] = 3.000000
+Compute forestdist(2, 2)
+forestdist[4, 2] = 2.000000
+Compute forestdist(2, 3)
+forestdist[4, 3] = 3.000000
+Compute forestdist(2, 0)
+forestdist[4, 4] = 4.000000
+Compute forestdist(5, 1)
+forestdist[5, 1] = 4.000000
+Compute forestdist(5, 2)
+forestdist[5, 2] = 3.000000
+Compute forestdist(5, 3)
+forestdist[5, 3] = 2.000000
+Compute forestdist(5, 0)
+forestdist[5, 4] = 3.000000
+Compute forestdist(0, 1)
+delta[0, 1] = 5.000000
+forestdist[6, 1] = 5.000000
+Compute forestdist(0, 2)
+forestdist[6, 2] = 4.000000
+Compute forestdist(0, 3)
+forestdist[6, 3] = 3.000000
+Compute forestdist(0, 0)
+delta[0, 0] = 2.000000
+forestdist[6, 4] = 2.000000
+delta Result LL
+2 5 5 5 
+3 0 0 0 
+3 2 2 2 
+3 0 0 0 
+3 0 0 0 
+3 0 0 0 
+
+RevTreeDistance(3, 2)
+Compute revforestdist(3, 2)
+delta[3, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+RevTreeDistance(3, 1)
+Compute revforestdist(3, 1)
+delta[3, 1] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+RevTreeDistance(3, 0)
+Compute revforestdist(3, 3)
+delta[3, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(3, 2)
+forestdist[1, 2] = 2.000000
+Compute revforestdist(3, 1)
+forestdist[1, 3] = 3.000000
+Compute revforestdist(3, 0)
+delta[3, 0] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 4.000000
+RevTreeDistance(2, 2)
+Compute revforestdist(4, 2)
+delta[4, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(3, 2)
+forestdist[2, 1] = 2.000000
+Compute revforestdist(2, 2)
+delta[2, 2] = forestdist[2, 0] = 2.000000
+forestdist[3, 1] = 2.000000
+RevTreeDistance(2, 1)
+Compute revforestdist(4, 1)
+delta[4, 1] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(3, 1)
+forestdist[2, 1] = 2.000000
+Compute revforestdist(2, 1)
+delta[2, 1] = forestdist[2, 0] = 2.000000
+forestdist[3, 1] = 3.000000
+RevTreeDistance(2, 0)
+Compute revforestdist(4, 3)
+delta[4, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(4, 2)
+forestdist[1, 2] = 2.000000
+Compute revforestdist(4, 1)
+forestdist[1, 3] = 3.000000
+Compute revforestdist(4, 0)
+delta[4, 0] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 4.000000
+Compute revforestdist(3, 3)
+forestdist[2, 1] = 2.000000
+Compute revforestdist(3, 2)
+forestdist[2, 2] = 2.000000
+Compute revforestdist(3, 1)
+forestdist[2, 3] = 3.000000
+Compute revforestdist(3, 0)
+forestdist[2, 4] = 4.000000
+Compute revforestdist(2, 3)
+delta[2, 3] = forestdist[2, 0] = 2.000000
+forestdist[3, 1] = 3.000000
+Compute revforestdist(2, 2)
+forestdist[3, 2] = 3.000000
+Compute revforestdist(2, 1)
+forestdist[3, 3] = 4.000000
+Compute revforestdist(2, 0)
+delta[2, 0] = forestdist[2, 3] = 3.000000
+forestdist[3, 4] = 4.000000
+RevTreeDistance(1, 2)
+Compute revforestdist(1, 2)
+delta[1, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+RevTreeDistance(1, 1)
+Compute revforestdist(1, 1)
+delta[1, 1] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+RevTreeDistance(1, 0)
+Compute revforestdist(1, 3)
+delta[1, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(1, 2)
+forestdist[1, 2] = 2.000000
+Compute revforestdist(1, 1)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(1, 0)
+delta[1, 0] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+RevTreeDistance(0, 2)
+Compute revforestdist(5, 2)
+delta[5, 2] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(4, 2)
+forestdist[2, 1] = 2.000000
+Compute revforestdist(3, 2)
+forestdist[3, 1] = 3.000000
+Compute revforestdist(2, 2)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(1, 2)
+forestdist[5, 1] = 4.000000
+Compute revforestdist(0, 2)
+delta[0, 2] = forestdist[5, 0] = 5.000000
+forestdist[6, 1] = 5.000000
+RevTreeDistance(0, 1)
+Compute revforestdist(5, 1)
+delta[5, 1] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 1.000000
+Compute revforestdist(4, 1)
+forestdist[2, 1] = 2.000000
+Compute revforestdist(3, 1)
+forestdist[3, 1] = 3.000000
+Compute revforestdist(2, 1)
+forestdist[4, 1] = 4.000000
+Compute revforestdist(1, 1)
+forestdist[5, 1] = 4.000000
+Compute revforestdist(0, 1)
+delta[0, 1] = forestdist[5, 0] = 5.000000
+forestdist[6, 1] = 5.000000
+RevTreeDistance(0, 0)
+Compute revforestdist(5, 3)
+delta[5, 3] = forestdist[0, 0] = 0.000000
+forestdist[1, 1] = 0.000000
+Compute revforestdist(5, 2)
+forestdist[1, 2] = 1.000000
+Compute revforestdist(5, 1)
+forestdist[1, 3] = 2.000000
+Compute revforestdist(5, 0)
+delta[5, 0] = forestdist[0, 3] = 3.000000
+forestdist[1, 4] = 3.000000
+Compute revforestdist(4, 3)
+forestdist[2, 1] = 1.000000
+Compute revforestdist(4, 2)
+forestdist[2, 2] = 1.000000
+Compute revforestdist(4, 1)
+forestdist[2, 3] = 2.000000
+Compute revforestdist(4, 0)
+forestdist[2, 4] = 3.000000
+Compute revforestdist(3, 3)
+forestdist[3, 1] = 2.000000
+Compute revforestdist(3, 2)
+forestdist[3, 2] = 2.000000
+Compute revforestdist(3, 1)
+forestdist[3, 3] = 2.000000
+Compute revforestdist(3, 0)
+forestdist[3, 4] = 3.000000
+Compute revforestdist(2, 3)
+forestdist[4, 1] = 3.000000
+Compute revforestdist(2, 2)
+forestdist[4, 2] = 2.000000
+Compute revforestdist(2, 1)
+forestdist[4, 3] = 3.000000
+Compute revforestdist(2, 0)
+forestdist[4, 4] = 4.000000
+Compute revforestdist(1, 3)
+forestdist[5, 1] = 4.000000
+Compute revforestdist(1, 2)
+forestdist[5, 2] = 3.000000
+Compute revforestdist(1, 1)
+forestdist[5, 3] = 2.000000
+Compute revforestdist(1, 0)
+forestdist[5, 4] = 3.000000
+Compute revforestdist(0, 3)
+delta[0, 3] = forestdist[5, 0] = 5.000000
+forestdist[6, 1] = 5.000000
+Compute revforestdist(0, 2)
+forestdist[6, 2] = 4.000000
+Compute revforestdist(0, 1)
+forestdist[6, 3] = 3.000000
+Compute revforestdist(0, 0)
+delta[0, 0] = forestdist[5, 3] = 2.000000
+forestdist[6, 4] = 2.000000
+delta Result RR
 2 5 5 5 
 3 0 0 0 
 3 2 2 2 

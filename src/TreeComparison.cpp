@@ -122,7 +122,7 @@ void TreeComparison::init(string fileName) {
 
   counter = 0;
   treeDist = 0;
-  //treeMapping.clear();
+  treeMapping.clear();
 
   Free = new int*[treeSizeA];
   LeftA = new int*[treeSizeA];
@@ -649,8 +649,9 @@ float TreeComparison::gted(Node* a, Node* b) {
     ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
     ou << "hasVisited[" << to_string(a->getID()) << ", " << to_string(b->getID()) << "] = " << to_string(hasVisited[a->getID()][b->getID()]) << endl;
   }*/
-	if(hasVisited[a->getID()][b->getID()] == true) return delta[a->getID()][b->getID()] + costModel_.ren(a->getLabel(), b->getLabel());
-	hasVisited[a->getID()][b->getID()] = true;
+	//if(hasVisited[a->getID()][b->getID()] == true) return delta[a->getID()][b->getID()] + costModel_.ren(a->getLabel(), b->getLabel());
+  //if(hasVisited[a->getID()][b->getID()] == true) return delta[a->getID()][b->getID()];
+	//hasVisited[a->getID()][b->getID()] = true;
 	int treeSizeA = a->getSubTreeSize();
 	int treeSizeB = b->getSubTreeSize();
 	/*if(DEBUG) {
@@ -675,25 +676,25 @@ float TreeComparison::gted(Node* a, Node* b) {
 		/*if(DEBUG) {
 			ou << "getPathType A(" << to_string(a->getID()) << " ," << to_string(pathLeaf) << ") = " << to_string(pathType) << endl;
 		}*/
-    if (pathType == 0) {
-      return spfL(a, b, pathLeaf, false);
+    /*if(pathType == 0) {
+       return spfL(a, b, pathLeaf, false);
     }
-    else if (pathType == 1) {
-      return spfR(a, b, pathLeaf, false);
+    else if(pathType == 1) {
+       return spfR(a, b, pathLeaf, false);
     }
-    else {
+    else {*/
 		  while(parent != NULL && parent->getID() >= a->getID()) {
         vector<Node*> children = parent->getChildren();
         for(int i = 0; i < children.size(); i++) {
           Node* child = children[i];
           /*if(DEBUG) {
-          	ou << "A child = " << to_string(child->getID()) << " currentPathNode = " << to_string(currentPathNode->getID()) << " parent = " << to_string(parent->getID()) << endl;
+            ou << "A child = " << to_string(child->getID()) << " currentPathNode = " << to_string(currentPathNode->getID()) << " parent = " << to_string(parent->getID()) << endl;
           }*/
           if(child->getID() != currentPathNode->getID()) {
-          	/*if(DEBUG) {
-          		ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") ";
-          		ou << "create problem in A " << "gted(" << to_string(child->getID()) << ", " << to_string(b->getID()) << ")" << endl;
-          	}*/
+            /*if(DEBUG) {
+          	 ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") ";
+          	 ou << "create problem in A " << "gted(" << to_string(child->getID()) << ", " << to_string(b->getID()) << ")" << endl;
+            }*/
             gted(child, b);
           }
         }
@@ -701,13 +702,20 @@ float TreeComparison::gted(Node* a, Node* b) {
         parent = currentPathNode->getParent();
       }
       /*if(DEBUG) {
-      	ou << "swap = " << "false " << "pathType = " << to_string(pathType) << endl; 
+        ou << "swap = " << "false " << "pathType = " << to_string(pathType) << endl; 
       }*/
-      if(direction == 1) return spfA_LR(a, b, pathLeaf, pathType, false);//direction = right first add left then right
-      else return spfA_RL(a, b, pathLeaf, pathType, false);//direction = left first add right then left
+      if (pathType == 0) {
+        return spfL(a, b, pathLeaf, false);
+      }
+      else if (pathType == 1) {
+        return spfR(a, b, pathLeaf, false);
+      }
+      else {
+        /*if(direction == 1) return spfA_LR(a, b, pathLeaf, pathType, false);//direction = right first add left then right
+        else return spfA_RL(a, b, pathLeaf, pathType, false);//direction = left first add right then left*/
       return spfA(a, b, pathLeaf, pathType, false);
     }	
-	} 
+  } 
 
 	else if(treeToDecompose == 1) {
 		Node* parent = currentPathNode->getParent();
@@ -715,39 +723,46 @@ float TreeComparison::gted(Node* a, Node* b) {
 		/*if(DEBUG) {
 			ou << "getPathType B (" << to_string(b->getID()) << " ," << to_string(pathLeaf) << ") = " << to_string(pathType) << endl;
 		}*/
-    if(pathType == 0) {
-      return spfL(b, a, pathLeaf, true);
+   /* if(pathType == 0) {
+       return spfL(a, b, pathLeaf, false);
     }
     else if(pathType == 1) {
-      return spfR(b, a, pathLeaf, true);
+       return spfR(a, b, pathLeaf, false);
     }
-    else {
+    else {*/
 		  while(parent != NULL && parent->getID() >= b->getID()) {
 			  vector<Node*> children = parent->getChildren();
 			  for(int i = 0; i < children.size(); i++) {
 				  Node* child = children[i];
 				  /*if(DEBUG) {
-          	ou << "A child = " << to_string(child->getID()) << " currentPathNode = " << to_string(currentPathNode->getID()) << " parent = " << to_string(parent->getID()) << endl;
+            ou << "A child = " << to_string(child->getID()) << " currentPathNode = " << to_string(currentPathNode->getID()) << " parent = " << to_string(parent->getID()) << endl;
           }*/
 				  if(child->getID() != currentPathNode->getID()) {
-					  /*if(DEBUG) {
+					 /*if(DEBUG) {
 						  ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") ";
-          	  ou << "create problem in B " << "gted(" << to_string(a->getID()) << ", " << to_string(child->getID()) << ")" << endl;
+          	 ou << "create problem in B " << "gted(" << to_string(a->getID()) << ", " << to_string(child->getID()) << ")" << endl;
             }*/
-					  gted(a, child);
+					 gted(a, child);
 				  }
 			  }
         currentPathNode = parent;
         parent = currentPathNode->getParent();
 		  }
-		  /*if(DEBUG) {
-      	ou << "swap = " << "true " << "pathType = " << to_string(pathType) << endl; 
-      }*/
-      if(direction == 1) return spfA_LR(b, a, pathLeaf, pathType, true);//direction = right first add left then right
-      else return spfA_RL(b, a, pathLeaf, pathType, true);//direction = left first add right then left
+		/*if(DEBUG) {
+      ou << "swap = " << "true " << "pathType = " << to_string(pathType) << endl; 
+    }*/
+    if(pathType == 0) {
+      return spfL(b, a, pathLeaf, true);
+    }
+    else if(pathType == 1) {
+      return spfR(b, a, pathLeaf, true);
+    } else {
+     /* if(direction == 1) return spfA_LR(b, a, pathLeaf, pathType, true);//direction = right first add left then right
+      else return spfA_RL(b, a, pathLeaf, pathType, true);//direction = left first add right then left*/
 		  return spfA(b, a, pathLeaf, pathType, true);
     }
 	}
+
 };
 
 float TreeComparison::spf1(Node* a, int treeSizeA, Node* b, int treeSizeB) {
@@ -842,7 +857,7 @@ float TreeComparison::spfL(Node* a, Node* b, int leaf, bool swap) {
     cout << "spfL(" << a->getID() << ", " << b->getID() << ") counter = " << counter << endl;
   }
 	int* keyRoots = new int[(*G)[b->getID()]->getSubTreeSize()];
-	int firstKeyRoot = computeKeyRoots(G, b, G->preL_to_rid[b->getID()], keyRoots, 0);	
+	int firstKeyRoot = computeKeyRoots(G, b, G->preL_to_lid[b->getID()], keyRoots, 0);	
 
 	float** forestdist = new float*[(*F)[a->getID()]->getSubTreeSize() + 1];//consider the null
 	for(int i = 0; i < (*F)[a->getID()]->getSubTreeSize() + 1; i++) {//consider the null
@@ -851,6 +866,36 @@ float TreeComparison::spfL(Node* a, Node* b, int leaf, bool swap) {
   float dist = 0;
   for (int i = firstKeyRoot - 1; i >= 0; i--) {
       dist = treeEditDist(a, (*G)[keyRoots[i]], forestdist, swap);
+  }
+  return dist;
+}
+
+float TreeComparison::spfLL(Node* a, Node* b, int leaf, bool swap) {
+  Tree *F, *G;
+  if(swap) {
+    F = B_;
+    G = A_;
+  } else {
+    F = A_;
+    G = B_;
+  }
+  if(DEBUG) {
+    cout << "spfLL(" << a->getID() << ", " << b->getID() << ") counter = " << counter << endl;
+  }
+  int* GkeyRoots = new int[(*G)[b->getID()]->getSubTreeSize()];
+  int GfirstKeyRoot = computeKeyRoots(G, b, G->preL_to_lid[b->getID()], GkeyRoots, 0);  
+
+  int* FkeyRoots = new int[(*F)[a->getID()]->getSubTreeSize()];
+  int FfirstKeyRoot = computeKeyRoots(F, a, F->preL_to_lid[a->getID()], FkeyRoots, 0);
+
+  float** forestdist = new float*[(*F)[a->getID()]->getSubTreeSize() + 1];//consider the null
+  for(int i = 0; i < (*F)[a->getID()]->getSubTreeSize() + 1; i++) {//consider the null
+    forestdist[i] = new float[(*G)[b->getID()]->getSubTreeSize() + 1];
+  }
+  float dist = 0;
+  for (int i = FfirstKeyRoot - 1; i >= 0; i--) {
+    for (int j = GfirstKeyRoot - 1; j >= 0; j--)
+      dist = treeEditDist((*F)[FkeyRoots[i]], (*G)[GkeyRoots[j]], forestdist, swap);
   }
   return dist;
 }
@@ -878,6 +923,37 @@ float TreeComparison::spfR(Node* a, Node* b, int leaf, bool swap) {
   float dist = 0;
   for (int i = firstKeyRoot - 1; i >= 0; i--) {
       dist = revTreeEditDist(a, (*G)[keyRoots[i]], forestdist, swap);
+  }
+  return dist;
+}
+
+float TreeComparison::spfRR(Node* a, Node* b, int leaf, bool swap) {
+  Tree *F, *G;
+  if(swap) {
+    F = B_;
+    G = A_;
+  } else {
+    F = A_;
+    G = B_;
+  }
+  if(DEBUG) {
+    cout << "spfRR(" << a->getID() << ", " << b->getID() << ") counter = " << counter << endl;
+  }
+  int* GkeyRoots = new int[(*G)[b->getID()]->getSubTreeSize()];
+  int GfirstKeyRoot = computeRevKeyRoots(G, b, G->preL_to_rid[b->getID()], GkeyRoots, 0); 
+
+  int* FkeyRoots = new int[(*F)[a->getID()]->getSubTreeSize()];
+  int FfirstKeyRoot = computeRevKeyRoots(F, a, F->preL_to_rid[a->getID()], FkeyRoots, 0);   
+
+  float** forestdist = new float*[(*F)[a->getID()]->getSubTreeSize() + 1];//consider the null
+  for(int i = 0; i < (*F)[a->getID()]->getSubTreeSize() + 1; i++) {//consider the null
+    forestdist[i] = new float[(*G)[b->getID()]->getSubTreeSize() + 1];
+  }
+
+  float dist = 0;
+  for (int i = FfirstKeyRoot - 1; i >= 0; i--) {
+    for (int j = GfirstKeyRoot - 1; j >= 0; j--)
+      dist = revTreeEditDist((*F)[FkeyRoots[i]], (*G)[GkeyRoots[j]], forestdist, swap);
   }
   return dist;
 }
@@ -1736,7 +1812,7 @@ float TreeComparison::spfA(Node* a, Node* b, int leaf, int pathType, bool swap) 
           if(DEBUG) {
             ou << "new Round C'" << endl;
           }
-          lF = startPathNode;
+          //lF = startPathNode;
           if (rF == rFLast) {
               lF = lFLast;
           }
@@ -4035,7 +4111,34 @@ float TreeComparison::getTreeDistance(void) {
   vector<Node*> preB = B_->getPreL();
   treeDist = gted(preA[0], preB[0]);
   if(DEBUG) {
-    ou << "delta" << endl;
+    ou << "delta Result" << endl;
+    for(int i = 0; i < treeSizeA; i++) {
+      for(int j = 0; j < treeSizeB; j++) {
+        ou << delta[i][j] << " ";
+      }
+      ou << endl;
+    }
+    ou << endl;
+  }
+  if(DEBUG) {
+    cout << "counter = " << counter << " Free[0][0] = " << Free[0][0] << endl;
+  }
+  //ou.close();
+  return treeDist;
+};
+
+float TreeComparison::getTreeDistance_RR(void) {
+  vector<Node*> preA = A_->getPreL();
+  vector<Node*> preB = B_->getPreL();
+  counter = 0;
+  for(int i = 0; i < treeSizeA; i++) {
+    for(int j = 0; j < treeSizeB; j++) {
+      delta[i][j] = 0.0f;
+    }
+  }
+  treeDist = spfRR(preA[0], preB[0], A_->preL_to_rid[preA[0]->getID()], false);
+  if(DEBUG) {
+    ou << "delta Result RR" << endl;
     for(int i = 0; i < treeSizeA; i++) {
       for(int j = 0; j < treeSizeB; j++) {
         ou << delta[i][j] << " ";
@@ -4048,6 +4151,33 @@ float TreeComparison::getTreeDistance(void) {
     cout << "counter = " << counter << " Free[0][0] = " << Free[0][0] << endl;
   }
   ou.close();
+  return treeDist;
+};
+
+float TreeComparison::getTreeDistance_LL(void) {
+  vector<Node*> preA = A_->getPreL();
+  vector<Node*> preB = B_->getPreL();
+  counter = 0;
+  for(int i = 0; i < treeSizeA; i++) {
+    for(int j = 0; j < treeSizeB; j++) {
+      delta[i][j] = 0.0f;
+    }
+  }
+  treeDist = spfLL(preA[0], preB[0], A_->preL_to_lid[preA[0]->getID()], false);
+  if(DEBUG) {
+    ou << "delta Result LL" << endl;
+    for(int i = 0; i < treeSizeA; i++) {
+      for(int j = 0; j < treeSizeB; j++) {
+        ou << delta[i][j] << " ";
+      }
+      ou << endl;
+    }
+    ou << endl;
+  }
+  if(DEBUG) {
+    cout << "counter = " << counter << " Free[0][0] = " << Free[0][0] << endl;
+  }
+  //ou.close();
   return treeDist;
 };
 
