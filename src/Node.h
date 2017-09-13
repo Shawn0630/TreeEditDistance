@@ -31,8 +31,14 @@ public:
 	int getSubTreeSize(void) const;
 	void setSubTreeSizeSum(int);
 	int getSubTreeSizeSum(void) const;
+	/*
+	leftmost forest = left path = right decompose
+	*/
 	void setLeftmostForestNum(int);
 	int getLeftmostForestNum(void)const;
+	/*
+	rightmost forest = right path = left decompose
+	*/
 	void setRightmostForestNum(int);
 	int getRightmostForestNum(void)const;
 	void setSpecialForestNum(int);
