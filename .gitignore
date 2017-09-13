@@ -26,6 +26,9 @@ $RECYCLE.BIN/
 # Operating System Files
 # =========================
 
+# Log files
+*.txt
+
 # OSX
 # =========================
 
