@@ -32,7 +32,7 @@ void TreeMap::setTreeF(Tree* F_) {
 void TreeMap::setTreeG(Tree* G_) {
 	G = G_;
 };
-void TreeMap::setSimiMatrix(SimiMatrix costModel_) {
+void TreeMap::setCostModel(SimiMatrix costModel_) {
 	costModel = costModel_;
 };
 
@@ -110,15 +110,21 @@ int TreeMap::getCount() {
 	for(int i = 0; i < FTreeSize; i++) {
 		if(FtoG[i] == -1) {
 			counter += costModel.del((*F)[i]->getLabel());
+			/*cout << costModel.del((*F)[i]->getLabel()) << endl;
+			cout << "del " << (*F)[i]->getLabel() << " counter = " << counter << endl;*/
 		} else {
 			counter += costModel.ren((*F)[i]->getLabel(), (*G)[FtoG[i]]->getLabel());
+			/*cout << costModel.ren((*F)[i]->getLabel(), (*G)[FtoG[i]]->getLabel()) << endl;
+			cout << "ren " << (*F)[i]->getLabel()  << " -> " << (*G)[FtoG[i]]->getLabel() << " counter = " << counter << endl;*/
 		}
 	}
 	for(int i = 0; i < GTreeSize; i++) {
 		if(GtoF[i] != -1) continue;
 		counter += costModel.ins((*G)[i]->getLabel());
+		/*cout << costModel.ins((*G)[i]->getLabel()) << endl;
+		cout << "ins " << (*G)[i]->getLabel() << " counter = " << counter << endl;*/
 	}
-
+	//cout << "Treemap counter = " << counter << endl;
 	return counter;
 };
 

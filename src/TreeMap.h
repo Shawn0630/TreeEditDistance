@@ -30,7 +30,7 @@ public:
 
 	void setTreeF(Tree*);
 	void setTreeG(Tree*);
-	void setSimiMatrix(SimiMatrix);
+	void setCostModel(SimiMatrix);
 
 	void init(void);
 
