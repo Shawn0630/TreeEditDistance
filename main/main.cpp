@@ -6,15 +6,16 @@
 #include "src/Errors.h"
 #include "src/SimiMatrix.h"
 #include "src/FileManage.h"
+#include "src/TreeMap.h"
 #include "src/TreeComparison.h"
 
 using namespace std;
 
 int main() {
-	string fileName = "rna32.data";
+	string fileName = "rna22.data";
 	string simiFileName = "ss_distance";
 	SimiMatrix matrix;
-/*	vector<RNA> RNAs;
+	vector<RNA> RNAs;
 	FileManage* file = FileManage::getInstance();
 	file->setRNAFileName(fileName);
 	file->setSimiFileName(simiFileName);
@@ -25,6 +26,7 @@ int main() {
 	Tree* t2 = RNAs[1].buildTree();
 	matrix = file->readSimiFromFile();
 	TreeComparison tc(t1, t2, matrix);
+	TreeMap map = tc.getTreeMap();
 	tc.strategyComputation();
 	ofstream ou("tree.txt");
 	if(DEBUG) {
@@ -34,17 +36,27 @@ int main() {
 		ou << t2->toString() << endl;
 	}
 	float dist = tc.getTreeDistance();
-	cout << "The distance is " << dist << endl;
+	cout << "The distance is " << dist << endl;;
+
+	cout << map.toString();
+	cout << "operation count is " << map.getCount() << endl;
 
 	float dist_LL = tc.getTreeDistance_LL();
 	cout << "The distance(LL) is " << dist_LL << endl;
 
+	cout << map.toString();
+	cout << "operation count is " << map.getCount() << endl;
+
 	float dist_RR = tc.getTreeDistance_RR();
-	cout << "The distance(RR) is " << dist_RR << endl;*/
+	cout << "The distance(RR) is " << dist_RR << endl;
+
+	cout << map.toString();
+	cout << "operation count is " << map.getCount() << endl;
+
 
 
 	
-	RNA r1, r2;
+/*	RNA r1, r2;
 	FileManage* file = FileManage::getInstance();
 	file->setSimiFileName(simiFileName);
 	matrix = file->readSimiFromFile();
@@ -52,9 +64,9 @@ int main() {
 		cout << "Error in reading simi file!" << endl;
 		exit(1);
 	}
-	ofstream ou("out2.txt");
+	ofstream ou("out.txt");
 	r1.setRNAName("A");
-	r2.setRNAName("B");
+	r2.setRNAName("B");*/
 
 
 /*	file->setRNAFileName(fileName);
@@ -139,12 +151,12 @@ int main() {
            |                                 |
            E                                 C	
 */
-  string s1 = "(A(B)(C)(D(E))(F)(G)(H))";
+  /*string s1 = "(A(B)(C)(D(E))(F)(G)(H))";
     string s2 = "(A(B(C))(D))";
     r1.setPreOrderSequence(s1);
     r1.setTreeSize(8);
     r2.setPreOrderSequence(s2);
-    r2.setTreeSize(4);
+    r2.setTreeSize(4);*/
 
 
 
@@ -528,7 +540,7 @@ d = 2
 	r2.setPreOrderSequence(s2);
 	r2.setTreeSize(4);*/
 
-	Tree* t1 = r1.buildTree();
+/*	Tree* t1 = r1.buildTree();
 	Tree* t2 = r2.buildTree();
 	ou << "TreeA" << endl;
 	ou << t1->toString() << endl;
@@ -543,5 +555,5 @@ d = 2
 	cout << "The distance(LL) is " << dist_LL << endl;
 
 	float dist_RR = tc.getTreeDistance_RR();
-	cout << "The distance(RR) is " << dist_RR << endl;
+	cout << "The distance(RR) is " << dist_RR << endl;*/
 }

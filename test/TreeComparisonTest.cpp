@@ -2,6 +2,7 @@
 #include "Tree.h"
 #include "FileManage.h"
 #include "TreeComparison.h"
+#include "TreeMap.h"
 #include "gtest/gtest.h"  
 
 #include <string>
@@ -37,6 +38,7 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   Tree *t1, *t2;
 
   SimiMatrix matrix;
+  TreeMap* map;
   string simiFileName = "ss_distance";
   FileManage* file = FileManage::getInstance();
   file->setSimiFileName(simiFileName);
@@ -59,6 +61,7 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeB(t2);
   tc.init("out_case1.txt");
   ou.open("tree_case1.txt");
+  map = tc.getTreeMap();
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -70,12 +73,18 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     2);
+  cout << map->toString();
+  cout << "Operation count: " << map->getCount() << endl;
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     2);
+  cout << map->toString();
+  cout << "Operation count: " << map->getCount() << endl;
   ASSERT_EQ(\
     tc.getTreeDistance_RR(),\
-    2);     
+    2);
+  cout << map->toString();
+  cout << "Operation count: " << map->getCount() << endl;     
   cout << "Pass" << endl;
 
 
@@ -106,9 +115,14 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     1); 
+  map = tc.getTreeMap();
+  cout << map->toString();
+  cout << "Operation count: " << map->getCount() << endl;
   ASSERT_EQ(\
     tc.getTreeDistance_RR(),\
     1); 
+  cout << map->toString();
+  cout << "Operation count: " << map->getCount() << endl;
   cout << "Pass" << endl;
 
 
@@ -125,6 +139,7 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeB(t2);
   tc.init("out_case3.txt");
   ou.open("tree_case3.txt");
+  map = tc.getTreeMap();
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -142,6 +157,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance_RR(),\
     2); 
+  cout << map->toString();
+  cout << "Operation count: " << map->getCount() << endl;
   cout << "Pass" << endl;
 
 
@@ -158,6 +175,7 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeB(t2);
   tc.init("out_case4.txt");
   ou.open("tree_case4.txt");
+  map = tc.getTreeMap();
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -172,9 +190,13 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     3);
+  cout << map->toString();
+  cout << "Operation count: " << map->getCount() << endl;
   ASSERT_EQ(\
     tc.getTreeDistance_RR(),\
     3);       
+  cout << map->toString();
+  cout << "Operation count: " << map->getCount() << endl;
   cout << "Pass" << endl;
 
 
@@ -191,6 +213,7 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeB(t2);
   tc.init("out_case5.txt");
   ou.open("tree_case5.txt");
+  map = tc.getTreeMap();
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -205,9 +228,13 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     3);
+  cout << map->toString();
+  cout << "Operation count: " << map->getCount() << endl;
   ASSERT_EQ(\
     tc.getTreeDistance_RR(),\
     3);
+  cout << map->toString();
+  cout << "Operation count: " << map->getCount() << endl;
   cout << "Pass" << endl; 
 
 
@@ -376,10 +403,6 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   cout << "Pass" << endl;
 
 
-  /*
-  right path 
-  */
-
   cout << "Test case #11" << endl;
   s1 = "(A(B(C)(D(E)(F))))";
   s2 = "(B(C)(E)(F))";
@@ -412,9 +435,6 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
     2);
   cout << "Pass" << endl;
 
-  /*
-  right path
-  */
 
 
   cout << "Test case #12" << endl;
@@ -526,8 +546,8 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   t2 = r2.buildTree();
   tc.setTreeA(t1);
   tc.setTreeB(t2);
-  tc.init("out_case14.txt");
-  ou.open("tree_case14.txt");
+  tc.init("out_case15.txt");
+  ou.open("tree_case15.txt");
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;

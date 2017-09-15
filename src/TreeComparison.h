@@ -3,10 +3,17 @@
 #include "Node.h"
 #include "Tree.h"
 #include "SimiMatrix.h"
+#include "TreeMap.h"
 
 #include <fstream>
 #include <map>
 using namespace std;
+
+struct Tuple{
+	int Findex;
+	int Gindex;
+	Tuple(int Findex_, int Gindex_): Findex(Findex_), Gindex(Gindex_){};
+};
 
 class TreeComparison {
 private:	
@@ -44,8 +51,10 @@ private:
 	int fn_ft_length;
 
 	float treeDist;
-	map<int, int> treeMapping;
 
+	TreeMap* map;
+
+	
 	int free(Node*, Node*);
 	int leftA(Node*, Node*);
 	int leftB(Node*, Node*);
@@ -74,8 +83,8 @@ private:
 
 	int computeKeyRoots(Tree*, Node*, int, int*, int);
 	int computeRevKeyRoots(Tree*, Node*, int, int*, int);
-	float treeEditDist(Node*, Node*, float**, bool);
-	float revTreeEditDist(Node*, Node*, float**, bool);	
+	float treeEditDist(Node*, Node*, float**, bool, bool);
+	float revTreeEditDist(Node*, Node*, float**, bool, bool);	
 
 	Strategy** APTED_ComputeOptStrategy_postL();
 
@@ -96,5 +105,7 @@ public:
 	float getTreeDistance_LL(void);
 	float getTreeDistance_RR(void);
 	int getCounter(void);
+	TreeMap* getTreeMap(void);
+
 
 };
