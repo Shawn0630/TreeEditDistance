@@ -568,5 +568,41 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   cout << "Pass" << endl;
 
 
+  cout << "Test case #16" << endl;
+  s1 = "(A(B)(C)(D(E))(F)(G)(H))";
+  s2 = "(A(B(C))(D))";
+  r1.setPreOrderSequence(s1);
+  r1.setTreeSize(8);
+  r2.setPreOrderSequence(s2);
+  r2.setTreeSize(4);
+  t1 = r1.buildTree();
+  t2 = r2.buildTree();
+  tc.setTreeA(t1);
+  tc.setTreeB(t2);
+  tc.init("out_case16.txt");
+  ou.open("tree_case16.txt");
+  if(DEBUG) {
+    ou << "Tree A" << endl;
+    ou << t1->toString() << endl;
+    ou << "Tree B" << endl;
+    ou << t2->toString() << endl;
+  }
+  ou.close();
+  tc.strategyComputation();
+  ASSERT_EQ(\
+    tc.getTreeDistance(),\
+    6); 
+  map = tc.getTreeMap();
+  cout << map->toString();
+  cout << "Operation count: " << map->getCount() << endl;
+  ASSERT_EQ(\
+    tc.getTreeDistance_LL(),\
+    6); 
+  ASSERT_EQ(\
+    tc.getTreeDistance_RR(),\
+    6); 
+  cout << "Pass" << endl;
+
+
   
 } 

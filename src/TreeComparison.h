@@ -65,6 +65,7 @@ private:
 
 	void deltaInit();
 	float gted(Node*, Node*);
+	void gteo(Node*, Node*);
 	int getPathType(Tree*, Node*, int);
 	void computeSumInsAndDelCost(Tree*);
 	void computeTreeDistance();
