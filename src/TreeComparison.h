@@ -73,8 +73,8 @@ private:
 	void updateFnArray(int, int, int);
 	void updateFtArray(int, int);
 
-	float spfA_LR(Node*, Node*, int, int, bool);
-	float spfA_RL(Node*, Node*, int, int, bool);
+	float spfA_LR(Node*, Node*, int, int, float***, bool, bool);
+	float spfA_RL(Node*, Node*, int, int, float***, bool, bool);
 	float spfA(Node*, Node*, int, int, bool);
 	float spfL(Node*, Node*, int, bool);
 	float spfLL(Node*, Node*, int, bool);

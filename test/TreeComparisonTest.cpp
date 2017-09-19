@@ -61,7 +61,7 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.setTreeB(t2);
   tc.init("out_case1.txt");
   ou.open("tree_case1.txt");
-  map = tc.getTreeMap();
+  
   if(DEBUG) {
     ou << "Tree A" << endl;
     ou << t1->toString() << endl;
@@ -73,17 +73,16 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     2);
+  map = tc.getTreeMap();
   cout << map->toString();
   cout << "Operation count: " << map->getCount() << endl;
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     2);
-  cout << map->toString();
   cout << "Operation count: " << map->getCount() << endl;
   ASSERT_EQ(\
     tc.getTreeDistance_RR(),\
     2);
-  cout << map->toString();
   cout << "Operation count: " << map->getCount() << endl;     
   cout << "Pass" << endl;
 
@@ -115,8 +114,7 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     1); 
-  map = tc.getTreeMap();
-  cout << map->toString();
+
   cout << "Operation count: " << map->getCount() << endl;
   ASSERT_EQ(\
     tc.getTreeDistance_RR(),\
@@ -526,6 +524,9 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     1); 
+  map = tc.getTreeMap();
+  cout << map->toString();
+  cout << "Operation count: " << map->getCount() << endl;
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     1); 
@@ -559,6 +560,9 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     3); 
+  map = tc.getTreeMap();
+  cout << map->toString();
+  cout << "Operation count: " << map->getCount() << endl;
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     3); 
