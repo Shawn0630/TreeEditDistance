@@ -238,11 +238,14 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     3);
+  map = tc.getTreeMap();
+  cout << map->toString();
+  ASSERT_EQ(\
+    map->getCount(),\
+    3);
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     3);
-  cout << map->toString();
-  cout << "Operation count: " << map->getCount() << endl;
   ASSERT_EQ(\
     tc.getTreeDistance_RR(),\
     3);
@@ -274,6 +277,11 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.strategyComputation();
   ASSERT_EQ(\
     tc.getTreeDistance(),\
+    12);
+  map = tc.getTreeMap();
+  cout << map->toString();
+  ASSERT_EQ(\
+    map->getCount(),\
     12);
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
@@ -308,6 +316,11 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     13);
+  map = tc.getTreeMap();
+  cout << map->toString();
+  ASSERT_EQ(\
+    map->getCount(),\
+    13);
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     13);
@@ -340,6 +353,11 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.strategyComputation();
   ASSERT_EQ(\
     tc.getTreeDistance(),\
+    7);
+  map = tc.getTreeMap();
+  cout << map->toString();
+  ASSERT_EQ(\
+    map->getCount(),\
     7);
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
@@ -374,6 +392,11 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     6);
+  map = tc.getTreeMap();
+  cout << map->toString();
+  ASSERT_EQ(\
+    map->getCount(),\
+    6);
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     6);
@@ -407,6 +430,11 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     5);
+  map = tc.getTreeMap();
+  cout << map->toString();
+  ASSERT_EQ(\
+    map->getCount(),\
+    5);
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     5);
@@ -439,6 +467,11 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.strategyComputation();
   ASSERT_EQ(\
     tc.getTreeDistance(),\
+    2);
+  map = tc.getTreeMap();
+  cout << map->toString();
+  ASSERT_EQ(\
+    map->getCount(),\
     2);
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
