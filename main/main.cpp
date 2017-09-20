@@ -12,7 +12,7 @@
 using namespace std;
 
 int main() {
-	string fileName = "rna24.data";
+	string fileName = "rna16.data";
 	string simiFileName = "ss_distance";
 	SimiMatrix matrix;
 	vector<RNA> RNAs;

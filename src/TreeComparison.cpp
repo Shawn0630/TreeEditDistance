@@ -5846,12 +5846,173 @@ int TreeComparison::getCounter(void) {
 };
 TreeMap* TreeComparison::getTreeMap(void) {
   map = new TreeMap(A_, B_, costModel_);
-  gteo((*A_)[0], (*B_)[0]);
+  //gteo((*A_)[0], (*B_)[0]);
+  gteo_LL((*A_)[0], (*B_)[0]);
   return map;
 };
 
+void TreeComparison::gteo_LL(Node* a, Node* b) {
+  Tree *F = A_;
+  Tree *G = B_;
+  if(DEBUG) {
+    ou << "gteo_LL(" << a->getID() << ", " << b->getID() << ")" << endl;
+  }
 
-void TreeComparison::gteo(Node* a, Node* b) {
+  if(a->getSubTreeSize() == 1 || b->getSubTreeSize() == 1) {
+    F = A_;
+    G = B_;
+    ou << "spf1" << endl;
+    float min = FLT_MAX;
+    int from = 0;
+    int to = 0;
+    if(a->getSubTreeSize() == 1) {
+      int a_in_preL = a->getID();
+      for(int i = 0; i < b->getSubTreeSize(); i++) {
+        float cost = costModel_.ren((*F)[a_in_preL]->getLabel(), (*G)[i]->getLabel()) - costModel_.del((*F)[a_in_preL]->getLabel());
+        if(cost < min) {
+          from = a_in_preL;
+          to = i;
+          min = cost;
+        }
+      }
+    } else if(b->getSubTreeSize() == 1) {
+      int b_in_preL = b->getID();
+      for(int i = 0; i < a->getSubTreeSize(); i++) {
+        float cost = costModel_.ren((*F)[i]->getLabel(), (*G)[b->getID()]->getLabel()) - costModel_.ins((*G)[b_in_preL]->getLabel());
+        if(cost < min) {
+          from = i;
+          to = b_in_preL;
+          min = cost;
+        }
+      }
+    }
+    map->setMap(from, to);
+    return;
+  }
+
+  float** forestdist;
+  forestdist = new float*[a->getSubTreeSize() + 1];
+  for(int i = 0; i < a->getSubTreeSize() + 1; i++) {
+    forestdist[i] = new float[b->getSubTreeSize() + 1];
+  }
+  treeEditDist(a, b, forestdist, false, true);
+
+  int a_leftmost_leaf_in_preL = F->preL_to_lid[a->getID()];
+  int b_leftmost_leaf_in_preL = G->preL_to_lid[b->getID()];
+
+  int a_leftmost_leaf_in_postL = F->preL_to_postL[a_leftmost_leaf_in_preL];
+  int b_leftmost_leaf_in_postL = G->preL_to_postL[b_leftmost_leaf_in_preL];
+
+  int aoff = a_leftmost_leaf_in_postL - 1;//consider gap
+  int boff = b_leftmost_leaf_in_postL - 1;//consider gap
+
+  if(DEBUG) {
+    ou << "forestdist" << endl;
+    for(int i = 0; i < a->getSubTreeSize() + 1; i++) {
+      for(int j = 0; j < b->getSubTreeSize() + 1; j++) {
+        ou << forestdist[i][j] << " ";
+      }
+      ou << endl;
+    } 
+  }
+
+  int i = F->preL_to_postL[a->getID()] - aoff;
+  int j = G->preL_to_postL[b->getID()] - boff;
+
+  int FcurrentForestSize = a->getSubTreeSize();
+  int GcurrentForestSize = b->getSubTreeSize();
+
+  if(a->getID() != 0 && b->getID() != 0) {
+    i--;
+    j--;
+    FcurrentForestSize--;
+    GcurrentForestSize--;
+  }
+
+  while(FcurrentForestSize > 0 && GcurrentForestSize > 0) {
+
+    int i_minus1_in_preL = F->postL_to_preL[i + aoff];
+    int j_minus1_in_preL = G->postL_to_preL[j + boff];
+    bool isFTree = F->preL_to_lid[i_minus1_in_preL] == F->preL_to_lid[a->getID()];
+    bool isGTree = G->preL_to_lid[j_minus1_in_preL] == G->preL_to_lid[b->getID()];
+    float da = forestdist[i - 1][j] + costModel_.del((*F)[i_minus1_in_preL]->getLabel());
+    float db = forestdist[i][j - 1] + costModel_.ins((*G)[j_minus1_in_preL]->getLabel());
+    int size_of_i_minus1_in_preL = (*F)[i_minus1_in_preL]->getSubTreeSize();
+    int size_of_j_minus1_in_preL = (*G)[j_minus1_in_preL]->getSubTreeSize();
+    float dc = forestdist[i - size_of_i_minus1_in_preL][j - size_of_j_minus1_in_preL] + delta[i_minus1_in_preL][j_minus1_in_preL] + costModel_.ren((*F)[i_minus1_in_preL]->getLabel(), (*G)[j_minus1_in_preL]->getLabel());
+       
+    if(DEBUG) {
+      ou << "i = " << i_minus1_in_preL << " j = " << j_minus1_in_preL << endl;
+      ou << "FcurrentForestSize = " << FcurrentForestSize << ", " << "GcurrentForestSize = " << GcurrentForestSize << endl;
+    }
+
+    if(DEBUG) {
+      ou << "da = " << da << " db = " << db << " dc = " << dc << endl;
+      ou << "forestdist[" << i - 1 << ", " << j << "] = " << forestdist[i - 1][j] << endl;
+      ou << "forestdist[" << i << ", " << j - 1 << "] = " << forestdist[i][j - 1] << endl;
+      ou << "forestdist[" << i - size_of_i_minus1_in_preL << ", " << j - size_of_j_minus1_in_preL << "] = " << forestdist[i - size_of_i_minus1_in_preL][j - size_of_j_minus1_in_preL] << endl;
+      ou << "forestdist[" << i << ", " << j << "] = " << forestdist[i][j] << endl;    
+    }
+    if(da == forestdist[i][j]) {
+      if(DEBUG) {
+        ou << (*F)[i_minus1_in_preL]->getLabel() << "(" << i_minus1_in_preL << ")" << " -> -" << endl;
+      }
+      map->setMap(i_minus1_in_preL, -1);
+      i = i - 1;
+      FcurrentForestSize--;
+    } else if(db == forestdist[i][j]) {
+      if(DEBUG) {
+        ou << "- -> " << (*G)[j_minus1_in_preL] << "(" << j_minus1_in_preL << ")" << endl;
+      }
+      map->setMap(-1, j_minus1_in_preL);
+      j = j - 1;
+      GcurrentForestSize--;
+    } else if(dc == forestdist[i][j]) {
+      if(DEBUG) {
+        ou << (*F)[i_minus1_in_preL]->getLabel() << "(" << i_minus1_in_preL << ") -> " << (*G)[j_minus1_in_preL]->getLabel() << "(" << j_minus1_in_preL << ")" << endl;
+      }
+      map->setMap(i_minus1_in_preL, j_minus1_in_preL);
+      if(isFTree && isGTree) {
+        i = i - 1;
+        j = j - 1;
+        FcurrentForestSize--;
+        GcurrentForestSize--;
+      } else {
+        if((*F)[i_minus1_in_preL]->getSubTreeSize() > 1 && (*G)[j_minus1_in_preL]->getSubTreeSize() > 1) {
+          gteo_LL((*F)[i_minus1_in_preL], (*G)[j_minus1_in_preL]);
+        }
+        i = i - size_of_i_minus1_in_preL;
+        j = j - size_of_j_minus1_in_preL;
+        FcurrentForestSize -= size_of_i_minus1_in_preL;
+        GcurrentForestSize -= size_of_j_minus1_in_preL;
+      }
+    }
+  }
+  while(FcurrentForestSize > 0) {
+    if(DEBUG) {
+      ou << "i = " << i << " j = 0" << endl;
+    } 
+    int i_minus1_in_preL = F->postL_to_preL[i - 1];
+    map->setMap(i_minus1_in_preL, -1);
+    i = i - 1;
+    FcurrentForestSize--;
+  }
+  while(GcurrentForestSize > 0) {
+    if(DEBUG) {
+      ou << "i = 0 j = " << j << endl;
+    }
+    int j_minus1_in_preL = G->postL_to_preL[j - 1];
+    map->setMap(-1, j_minus1_in_preL);
+    j = j - 1;
+    GcurrentForestSize--;
+  }
+}
+
+
+
+
+
+/*void TreeComparison::gteo(Node* a, Node* b) {
   int pathLeaf = FreeStrategies[a->getID()][b->getID()].getLeaf();
   int direction = FreeStrategies[a->getID()][b->getID()].getDirection();
   int treeToDecompose = FreeStrategies[a->getID()][b->getID()].getTreeToDecompose();
@@ -5993,7 +6154,7 @@ void TreeComparison::gteo(Node* a, Node* b) {
             FcurrentForestSize--;
             GcurrentForestSize--;
           } else {
-            if((*F)[i_minus1_in_preL]->getSubTreeSize() > 1 && (*G)[j_minus1_in_preL]->getSubTreeSize() > 1 && !isFTree && !isGTree) {
+            if((*F)[i_minus1_in_preL]->getSubTreeSize() > 1 && (*G)[j_minus1_in_preL]->getSubTreeSize() > 1) {
               gteo((*F)[i_minus1_in_preL], (*G)[j_minus1_in_preL]);
             }
             i = i - size_of_i_minus1_in_preL;
@@ -6118,7 +6279,7 @@ void TreeComparison::gteo(Node* a, Node* b) {
             j = j - size_of_j_minus1_in_preL;
             FcurrentForestSize -= size_of_i_minus1_in_preL;
             GcurrentForestSize -= size_of_j_minus1_in_preL;
-            if((*F)[i_minus1_in_preL]->getSubTreeSize() > 1 && (*G)[j_minus1_in_preL]->getSubTreeSize() > 1 && !isFTree && !isGTree) {
+            if((*F)[i_minus1_in_preL]->getSubTreeSize() > 1 && (*G)[j_minus1_in_preL]->getSubTreeSize() > 1) {
               gteo((*F)[i_minus1_in_preL], (*G)[j_minus1_in_preL]);
             }
           }
@@ -6162,22 +6323,31 @@ void TreeComparison::gteo(Node* a, Node* b) {
         int rG = G->preL_to_preR[lG];
         int GcurrentForestSize = b->getSubTreeSize();
 
-        if(!(a->getID() == 0 && b->getID() == 0)) {
-          lF++;
-          rF++;
-          lG++;
-          rG++;
-        }
+
         int direction = 1;//0 for right 1 for left;
         int leaf = FreeStrategies[a->getID()][b->getID()].getLeaf();
         Node* parent = (*F)[leaf]->getParent();
         int* favouriteChild = new int[F->getTreeSize()];
         int count = 0;
-        while(parent != NULL) {
+
+        while(leaf != a->getID()) {
           favouriteChild[count++] = leaf;
           leaf = parent->getID();
           parent = (*F)[leaf]->getParent();
         }
+        favouriteChild[count++] = leaf;
+        int i = count - 1;
+        if(!(a->getID() == 0 && b->getID() == 0)) {
+          lF++;
+          rF++;
+          lG++;
+          rG++;
+          FcurrentForestSize--;
+          GcurrentForestSize--;
+          i--;
+        }
+        int prev_fav_child = favouriteChild[count - 1];
+        int prev_fav_child_in_preR = F->preL_to_preR[prev_fav_child];
 
         if(DEBUG) {
           ou << "favouriteChild: " << endl;
@@ -6187,7 +6357,6 @@ void TreeComparison::gteo(Node* a, Node* b) {
           ou << endl;
         }
 
-        int i = count - 1;
         while(FcurrentForestSize > 0 && GcurrentForestSize > 0) {
           if(DEBUG) {
             ou << "(" << lF << ", " << rF << ", " << lG << ", " << rG << ")" << endl;
@@ -6198,7 +6367,6 @@ void TreeComparison::gteo(Node* a, Node* b) {
           int rF_in_preL = F->preR_to_preL[rF];
           int rG_in_preL = G->preR_to_preL[rG];
           int lF_in_preR = F->preL_to_preR[lF];
-          int favouriteChild_in_preR = F->preL_to_preR[favouriteChild[i]];
 
           float da = 0;
           float db = 0;
@@ -6206,23 +6374,27 @@ void TreeComparison::gteo(Node* a, Node* b) {
 
           bool isFTree = rF_in_preL == lF;
           bool isGTree = rG_in_preL == lG;
-
-          bool hasRightPart = (abs(favouriteChild_in_preR - rF) > 1);
-          bool hasLeftPart = (abs(favouriteChild[i] - lF) > 1); 
-
-          if(DEBUG) {
-            ou << "favouriteChild = " << favouriteChild[i] << endl;
-            ou << "hasRightPart = " << hasRightPart << endl;
-            ou << "hasLeftPart = " << hasLeftPart << endl;
-          }
-
+          int favouriteChild_in_preR = F->preL_to_preR[favouriteChild[i]];
 
           if(lF == favouriteChild[i]) {
             direction = 0;
           }
           if(rF == favouriteChild_in_preR) {
+            prev_fav_child = favouriteChild[i];
+            prev_fav_child_in_preR = F->preL_to_preR[prev_fav_child];
             i--;
             direction = 1;
+            favouriteChild_in_preR = F->preL_to_preR[favouriteChild[i]];
+          }
+
+
+          bool hasRightPart = (abs(favouriteChild_in_preR - prev_fav_child_in_preR) > 1);
+          bool hasLeftPart = (abs(favouriteChild[i] - prev_fav_child) > 1); 
+
+          if(DEBUG) {
+            ou << "favouriteChild = " << favouriteChild[i] << endl;
+            ou << "hasRightPart = " << hasRightPart << endl;
+            ou << "hasLeftPart = " << hasLeftPart << endl;
           }
 
           if(isGTree && isFTree) {
@@ -6549,9 +6721,11 @@ void TreeComparison::gteo(Node* a, Node* b) {
               ou << "da = " << da << endl;
               ou << "db = " << db << endl;
               ou << "dc = " << dc << endl; 
-              ou << "forestdist[" << lF + 1 << ", " << lG << ", " << rG << "] = " << forestdist[lF + 1][lG][rG] << endl;
+              if(lF + 1 == favouriteChild[i]) ou << "forestdist[" << rF_in_preL << ", " << lG << ", " << rG << "] = " << forestdist[rF_in_preL][lG][rG] << endl;
+              else ou << "forestdist[" << lF + 1 << ", " << lG << ", " << rG << "] = " << forestdist[lF + 1][lG][rG] << endl;
               ou << "forestdist[" << lF << ", " << lG + 1 << ", " << rG << "] = " << forestdist[lF][lG + 1][rG] << endl;
-              ou << "forestdist[" << lF + size_of_lF << ", " << lG + size_of_lG << ", " << rG << "] = " << forestdist[lF + size_of_lF][lG + size_of_lG][rG] << endl;
+              if(lF + size_of_lF == favouriteChild[i]) ou << "forestdist[" << rF_in_preL << ", " << lG + size_of_lG << ", " << rG << "] = " << forestdist[rF_in_preL][lG + size_of_lG][rG] << endl;
+              else ou << "forestdist[" << lF + size_of_lF << ", " << lG + size_of_lG << ", " << rG << "] = " << forestdist[lF + size_of_lF][lG + size_of_lG][rG] << endl;
               ou << "forestdist[" << lF << ", " << lG << ", " << rG << "] = " << forestdist[lF][lG][rG] << endl;
             }
 
@@ -6612,23 +6786,31 @@ void TreeComparison::gteo(Node* a, Node* b) {
         int rG = G->preL_to_preR[lG];
         int GcurrentForestSize = b->getSubTreeSize();
 
-        if(!(a->getID() == 0 && b->getID() == 0)) {
-          lF++;
-          rF++;
-          lG++;
-          rG++;
-        }
+
         int direction = 0;//0 for right 1 for left;
         int leaf = FreeStrategies[a->getID()][b->getID()].getLeaf();
         Node* parent = (*F)[leaf]->getParent();
         int* favouriteChild = new int[F->getTreeSize()];
         int count = 0;
-        while(parent != NULL) {
+        while(leaf != a->getID()) {
           favouriteChild[count++] = leaf;
           leaf = parent->getID();
           parent = (*F)[leaf]->getParent();
         }
+        favouriteChild[count++] = leaf;
+        int i = count - 1;
+        if(!(a->getID() == 0 && b->getID() == 0)) {
+          lF++;
+          rF++;
+          lG++;
+          rG++;
+          FcurrentForestSize--;
+          GcurrentForestSize--;
+          i--;
+        } 
 
+        int prev_fav_child = favouriteChild[count - 1];
+        int prev_fav_child_in_preR = F->preL_to_preR[prev_fav_child];
         if(DEBUG) {
           ou << "favouriteChild: " << endl;
           for(int i = count - 1; i >= 0; i--) {
@@ -6637,7 +6819,7 @@ void TreeComparison::gteo(Node* a, Node* b) {
           ou << endl;
         }
 
-        int i = count - 1;
+
         while(FcurrentForestSize > 0 && GcurrentForestSize > 0) {
           if(DEBUG) {
             ou << "(" << lF << ", " << rF << ", " << lG << ", " << rG << ")" << endl;
@@ -6647,7 +6829,7 @@ void TreeComparison::gteo(Node* a, Node* b) {
           int rF_in_preL = F->preR_to_preL[rF];
           int rG_in_preL = G->preR_to_preL[rG];
           int lF_in_preR = F->preL_to_preR[lF];
-          int favouriteChild_in_preR = F->preL_to_preR[favouriteChild[i]];
+
 
           float da = 0;
           float db = 0;
@@ -6656,16 +6838,23 @@ void TreeComparison::gteo(Node* a, Node* b) {
           bool isFTree = rF_in_preL == lF;
           bool isGTree = rG_in_preL == lG;
 
-          bool hasRightPart = (abs(favouriteChild_in_preR - rF) > 1);
-          bool hasLeftPart = (abs(favouriteChild[i] - lF) > 1); 
+          int favouriteChild_in_preR = F->preL_to_preR[favouriteChild[i]];
 
           if(rF == favouriteChild_in_preR) {
             direction = 1;
           }
           if(lF == favouriteChild[i]) {
+            prev_fav_child = favouriteChild[i];
+            prev_fav_child_in_preR = F->preL_to_preR[prev_fav_child];
             i--;
             direction = 0;
+            favouriteChild_in_preR = F->preL_to_preR[favouriteChild[i]];
           }
+
+
+          bool hasRightPart = (abs(favouriteChild_in_preR - prev_fav_child_in_preR) > 1);
+          bool hasLeftPart = (abs(favouriteChild[i] - prev_fav_child) > 1); 
+
       
           if(isGTree && isFTree) {
             int lF_plus_one_in_preR = F->preL_to_preR[lF + 1];
@@ -7297,22 +7486,31 @@ void TreeComparison::gteo(Node* a, Node* b) {
         int rG = G->preL_to_preR[lG];
         int GcurrentForestSize = a->getSubTreeSize();
 
-        if(!(a->getID() == 0 && b->getID() == 0)) {
-          lF++;
-          rF++;
-          lG++;
-          rG++;
-        }
+
         int direction = 0;//0 for right 1 for left;
         int leaf = FreeStrategies[a->getID()][b->getID()].getLeaf();
         Node* parent = (*F)[leaf]->getParent();
         int* favouriteChild = new int[F->getTreeSize()];
         int count = 0;
-        while(parent != NULL) {
+        while(leaf != b->getID()) {
           favouriteChild[count++] = leaf;
           leaf = parent->getID();
           parent = (*F)[leaf]->getParent();
         }
+        favouriteChild[count++] = leaf;
+        int i = count - 1;
+        if(!(a->getID() == 0 && b->getID() == 0)) {
+          lF++;
+          rF++;
+          lG++;
+          rG++;
+          FcurrentForestSize--;
+          GcurrentForestSize--;
+          i--;
+        }
+
+        int prev_fav_child = favouriteChild[count - 1];
+        int prev_fav_child_in_preR = F->preL_to_preR[prev_fav_child];
 
         if(DEBUG) {
           ou << "favouriteChild: " << endl;
@@ -7322,7 +7520,7 @@ void TreeComparison::gteo(Node* a, Node* b) {
           ou << endl;
         }
 
-        int i = count - 1;
+
         while(FcurrentForestSize > 0 && GcurrentForestSize > 0) {
           if(DEBUG) {
             ou << "(" << lF << ", " << rF << ", " << lG << ", " << rG << ")" << endl;
@@ -7332,7 +7530,6 @@ void TreeComparison::gteo(Node* a, Node* b) {
           int rF_in_preL = F->preR_to_preL[rF];
           int rG_in_preL = G->preR_to_preL[rG];
           int lF_in_preR = F->preL_to_preR[lF];
-          int favouriteChild_in_preR = F->preL_to_preR[favouriteChild[i]];
 
           float da = 0;
           float db = 0;
@@ -7340,17 +7537,22 @@ void TreeComparison::gteo(Node* a, Node* b) {
 
           bool isFTree = rF_in_preL == lF;
           bool isGTree = rG_in_preL == lG;
-
-          bool hasRightPart = (abs(favouriteChild_in_preR - rF) > 1);
-          bool hasLeftPart = (abs(favouriteChild[i] - lF) > 1); 
+          int favouriteChild_in_preR = F->preL_to_preR[favouriteChild[i]];
 
           if(rF == favouriteChild_in_preR) {
             direction = 1;
           }
-          else if(lF == favouriteChild[i]) {
+          if(lF == favouriteChild[i]) {
+            prev_fav_child = favouriteChild[i];
+            prev_fav_child_in_preR = F->preL_to_preR[prev_fav_child];
             i--;
             direction = 0;
+            favouriteChild_in_preR = F->preL_to_preR[favouriteChild[i]];
           }
+
+
+          bool hasRightPart = (abs(favouriteChild_in_preR - prev_fav_child_in_preR) > 1);
+          bool hasLeftPart = (abs(favouriteChild[i] - prev_fav_child) > 1); 
       
           if(isGTree && isFTree) {
             int lF_plus_one_in_preR = F->preL_to_preR[lF + 1];
@@ -7729,22 +7931,31 @@ void TreeComparison::gteo(Node* a, Node* b) {
         int rG = G->preL_to_preR[lG];
         int GcurrentForestSize = a->getSubTreeSize();
 
-        if(!(a->getID() == 0 && b->getID() == 0)) {
-          lF++;
-          rF++;
-          lG++;
-          rG++;
-        }
+
         int direction = 1;//0 for right 1 for left;
         int leaf = FreeStrategies[a->getID()][b->getID()].getLeaf();
         Node* parent = (*F)[leaf]->getParent();
         int* favouriteChild = new int[F->getTreeSize()];
         int count = 0;
-        while(parent != NULL) {
+        while(leaf != b->getID()) {
           favouriteChild[count++] = leaf;
           leaf = parent->getID();
           parent = (*F)[leaf]->getParent();
         }
+        favouriteChild[count++] = leaf;
+        int i = count - 1;
+        if(!(a->getID() == 0 && b->getID() == 0)) {
+          lF++;
+          rF++;
+          lG++;
+          rG++;
+          FcurrentForestSize--;
+          GcurrentForestSize--;
+          i--;
+        }
+
+        int prev_fav_child = favouriteChild[count - 1];
+        int prev_fav_child_in_preR = F->preL_to_preR[prev_fav_child];
 
         if(DEBUG) {
           ou << "favouriteChild: " << endl;
@@ -7754,7 +7965,7 @@ void TreeComparison::gteo(Node* a, Node* b) {
           ou << endl;
         }
 
-        int i = count - 1;
+
         while(FcurrentForestSize > 0 && GcurrentForestSize > 0) {
           if(DEBUG) {
             ou << "(" << lF << ", " << rF << ", " << lG << ", " << rG << ")" << endl;
@@ -7764,29 +7975,35 @@ void TreeComparison::gteo(Node* a, Node* b) {
           int rF_in_preL = F->preR_to_preL[rF];
           int rG_in_preL = G->preR_to_preL[rG];
           int lF_in_preR = F->preL_to_preR[lF];
-          int favouriteChild_in_preR = F->preL_to_preR[favouriteChild[i]];
 
           float da = 0;
           float db = 0;
           float dc = 0;
 
-          bool isFTree = rF_in_preL == lF;
-          bool isGTree = rG_in_preL == lG;
-
-          bool hasRightPart = (abs(favouriteChild_in_preR - rF) > 1);
-          bool hasLeftPart = (abs(favouriteChild[i] - lF) > 1); 
-          if(DEBUG) {
-            ou << "hasRightPart = " << hasRightPart << endl;
-            ou << "hasLeftPart = " << hasLeftPart << endl;
-          }
-
+          int favouriteChild_in_preR = F->preL_to_preR[favouriteChild[i]];
 
           if(lF == favouriteChild[i]) {
             direction = 0;
           }
-          else if(rF == favouriteChild_in_preR) {
+          if(rF == favouriteChild_in_preR) {
+            prev_fav_child = favouriteChild[i];
+            prev_fav_child_in_preR = F->preL_to_preR[prev_fav_child];
             i--;
             direction = 1;
+            favouriteChild_in_preR = F->preL_to_preR[favouriteChild[i]];
+          }
+
+          bool isFTree = rF_in_preL == lF;
+          bool isGTree = rG_in_preL == lG;
+
+
+          bool hasRightPart = (abs(favouriteChild_in_preR - prev_fav_child_in_preR) > 1);
+          bool hasLeftPart = (abs(favouriteChild[i] - prev_fav_child) > 1); 
+          if(DEBUG) {
+            ou << "hasRightPart = " << hasRightPart << endl;
+            ou << "hasLeftPart = " << hasLeftPart << endl;
+            ou << "favouriteChild = " << favouriteChild[i] << endl;
+            ou << "favouriteChild_in_preR = " << favouriteChild_in_preR << endl;
           }
 
           if(isGTree && isFTree) {
@@ -8159,3 +8376,4 @@ void TreeComparison::gteo(Node* a, Node* b) {
     }
   }
 };
+*/
