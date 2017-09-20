@@ -5932,8 +5932,8 @@ void TreeComparison::gteo(Node* a, Node* b) {
         } 
       }
 
-      int i = F->preL_to_postR[a->getID()] - aoff;
-      int j = G->preL_to_postR[b->getID()] - boff;
+      int i = F->preL_to_postL[a->getID()] - aoff;
+      int j = G->preL_to_postL[b->getID()] - boff;
 
       int FcurrentForestSize = a->getSubTreeSize();
       int GcurrentForestSize = b->getSubTreeSize();
@@ -6145,11 +6145,11 @@ void TreeComparison::gteo(Node* a, Node* b) {
     else if(pathType == 2) {
       if(direction == 1) {
         float*** forestdist;
-        forestdist = new float**[a->getSubTreeSize() + 1];
-        for(int i = 0; i < a->getSubTreeSize() + 1; i++) {
-          forestdist[i] = new float*[b->getSubTreeSize() + 1];
-          for(int j = 0; j < b->getSubTreeSize() + 1; j++) {
-            forestdist[i][j] = new float[b->getSubTreeSize() + 1];
+        forestdist = new float**[treeSizeA+ 1];
+        for(int i = 0; i < treeSizeA + 1; i++) {
+          forestdist[i] = new float*[treeSizeB + 1];
+          for(int j = 0; j < treeSizeB + 1; j++) {
+            forestdist[i][j] = new float[treeSizeB + 1];
           }
         }
         spfA_RL(a, b, pathLeaf, pathType, forestdist, false, true);
@@ -6595,11 +6595,11 @@ void TreeComparison::gteo(Node* a, Node* b) {
 
       else if(direction == 0) {
         float*** forestdist; 
-        forestdist = new float**[a->getSubTreeSize() + 1];
-        for(int i = 0; i < a->getSubTreeSize() + 1; i++) {
-          forestdist[i] = new float*[b->getSubTreeSize() + 1];
-          for(int j = 0; j < b->getSubTreeSize() + 1; j++) {
-            forestdist[i][j] = new float[b->getSubTreeSize() + 1];
+        forestdist = new float**[treeSizeA + 1];
+        for(int i = 0; i < treeSizeA + 1; i++) {
+          forestdist[i] = new float*[treeSizeB + 1];
+          for(int j = 0; j < treeSizeB + 1; j++) {
+            forestdist[i][j] = new float[treeSizeB + 1];
           }
         }
         spfA_LR(a, b, pathLeaf, pathType, forestdist, false, true);
@@ -7064,8 +7064,8 @@ void TreeComparison::gteo(Node* a, Node* b) {
         } 
       }
 
-      int i = F->preL_to_postR[b->getID()] - boff;
-      int j = G->preL_to_postR[a->getID()] - aoff;
+      int i = F->preL_to_postL[b->getID()] - boff;
+      int j = G->preL_to_postL[a->getID()] - aoff;
 
       if(b->getID() != 0 && a->getID() != 0) {
         i--;
@@ -7280,11 +7280,11 @@ void TreeComparison::gteo(Node* a, Node* b) {
       if(direction == 0) {
 
         float*** forestdist; 
-        forestdist = new float**[b->getSubTreeSize() + 1];
-        for(int i = 0; i < b->getSubTreeSize() + 1; i++) {
-          forestdist[i] = new float*[a->getSubTreeSize() + 1];
-          for(int j = 0; j < b->getSubTreeSize() + 1; j++) {
-            forestdist[i][j] = new float[a->getSubTreeSize() + 1];
+        forestdist = new float**[treeSizeB + 1];
+        for(int i = 0; i < treeSizeB + 1; i++) {
+          forestdist[i] = new float*[treeSizeA + 1];
+          for(int j = 0; j < treeSizeA + 1; j++) {
+            forestdist[i][j] = new float[treeSizeA + 1];
           }
         }
         spfA_LR(b, a, pathLeaf, pathType, forestdist, true, true);
@@ -7712,11 +7712,11 @@ void TreeComparison::gteo(Node* a, Node* b) {
       else if(direction == 1) {
 
         float*** forestdist;
-        forestdist = new float**[b->getSubTreeSize() + 1];
-        for(int i = 0; i < b->getSubTreeSize() + 1; i++) {
-          forestdist[i] = new float*[a->getSubTreeSize() + 1];
-          for(int j = 0; j < a->getSubTreeSize() + 1; j++) {
-            forestdist[i][j] = new float[a->getSubTreeSize() + 1];
+        forestdist = new float**[treeSizeB + 1];
+        for(int i = 0; i < treeSizeB + 1; i++) {
+          forestdist[i] = new float*[treeSizeA + 1];
+          for(int j = 0; j < treeSizeA + 1; j++) {
+            forestdist[i][j] = new float[treeSizeA + 1];
           }
         }
         spfA_RL(b, a, pathLeaf, pathType, forestdist, true, true);

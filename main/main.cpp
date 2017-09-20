@@ -12,7 +12,7 @@
 using namespace std;
 
 int main() {
-	string fileName = "rna22.data";
+	string fileName = "rna24.data";
 	string simiFileName = "ss_distance";
 	SimiMatrix matrix;
 	vector<RNA> RNAs;
@@ -26,7 +26,8 @@ int main() {
 	Tree* t2 = RNAs[1].buildTree();
 	matrix = file->readSimiFromFile();
 	TreeComparison tc(t1, t2, matrix);
-	TreeMap map = tc.getTreeMap();
+	TreeMap* map;
+
 	tc.strategyComputation();
 	ofstream ou("tree.txt");
 	if(DEBUG) {
@@ -38,20 +39,16 @@ int main() {
 	float dist = tc.getTreeDistance();
 	cout << "The distance is " << dist << endl;;
 
-	cout << map.toString();
-	cout << "operation count is " << map.getCount() << endl;
+	map = tc.getTreeMap();
+	cout << map->toString();
+	cout << "operation count is " << map->getCount() << endl;
 
 	float dist_LL = tc.getTreeDistance_LL();
 	cout << "The distance(LL) is " << dist_LL << endl;
 
-	cout << map.toString();
-	cout << "operation count is " << map.getCount() << endl;
-
 	float dist_RR = tc.getTreeDistance_RR();
 	cout << "The distance(RR) is " << dist_RR << endl;
 
-	cout << map.toString();
-	cout << "operation count is " << map.getCount() << endl;
 
 
 

@@ -507,6 +507,11 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   ASSERT_EQ(\
     tc.getTreeDistance(),\
     2);
+  map = tc.getTreeMap();
+  cout << map->toString();
+  ASSERT_EQ(\
+    map->getCount(),\
+    2);
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     2);
@@ -538,6 +543,11 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
   tc.strategyComputation();
   ASSERT_EQ(\
     tc.getTreeDistance(),\
+    4);
+  map = tc.getTreeMap();
+  cout << map->toString();
+  ASSERT_EQ(\
+    map->getCount(),\
     4);
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
@@ -574,7 +584,9 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
     1); 
   map = tc.getTreeMap();
   cout << map->toString();
-  cout << "Operation count: " << map->getCount() << endl;
+  ASSERT_EQ(\
+    map->getCount(),\
+    1);
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     1); 
@@ -610,7 +622,9 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
     3); 
   map = tc.getTreeMap();
   cout << map->toString();
-  cout << "Operation count: " << map->getCount() << endl;
+  ASSERT_EQ(\
+    map->getCount(),\
+    3);
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     3); 
@@ -646,7 +660,9 @@ TEST_F(TreeComparisonTest, getTreeEditDistance) {
     6); 
   map = tc.getTreeMap();
   cout << map->toString();
-  cout << "Operation count: " << map->getCount() << endl;
+  ASSERT_EQ(\
+    map->getCount(),\
+    6);
   ASSERT_EQ(\
     tc.getTreeDistance_LL(),\
     6); 
