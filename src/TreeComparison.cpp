@@ -6191,17 +6191,18 @@ void TreeComparison::gteo(Node* a, Node* b) {
           }
 
           if(isGTree && isFTree) {
-            da = forestdist[lF + 1][lG][rG] + costModel_.del((*F)[lF]->getLabel());
+            int rF_plus_one_in_preL = F->preR_to_preL[rF + 1];
+            da = forestdist[rF_plus_one_in_preL][lG][rG] + costModel_.del((*F)[lF]->getLabel());
             db = forestdist[lF][lG + 1][rG + 1] + costModel_.ins((*G)[lG]->getLabel());
             //dc = forestdist[lF + 1][lG + 1][rG + 1] + delta[lF][lG] +costModel_.ren((*F)[lF]->getLabel(), (*G)[lG]->getLabel());
-            dc = delta[lF][lG] +costModel_.ren((*F)[lF]->getLabel(), (*G)[lG]->getLabel());
+            dc = delta[lF][lG] + costModel_.ren((*F)[lF]->getLabel(), (*G)[lG]->getLabel());
             if(DEBUG) {
               ou << "isGTree && isFTree" << endl;
               ou << "da = " << da << endl;
               ou << "db = " << db << endl;
               ou << "dc = " << dc << endl; 
+              ou << "forestdist[" << rF_plus_one_in_preL << ", " << lG << ", " << rG << "] = " << forestdist[rF_plus_one_in_preL][lG][rG] << endl;
               ou << "forestdist[" << lF << ", " << lG + 1 << ", " << rG + 1 << "] = " << forestdist[lF][lG + 1][rG + 1] << endl;
-              ou << "forestdist[" << lF + 1 << ", " << lG + 1 << ", " << rG + 1 << "] = " << forestdist[lF + 1][lG + 1][rG + 1] << endl;
               ou << "forestdist[" << lF << ", " << lG << ", " << rG << "] = " << forestdist[lF][lG][rG] << endl;
             }
 
@@ -6614,7 +6615,8 @@ void TreeComparison::gteo(Node* a, Node* b) {
           }
       
           if(isGTree && isFTree) {
-            da = forestdist[rF + 1][lG][rG] + costModel_.del((*F)[rF_in_preL]->getLabel());
+            int lF_plus_one_in_preR = F->preL_to_preR[lF + 1];
+            da = forestdist[lF_plus_one_in_preR][lG][rG] + costModel_.del((*F)[rF_in_preL]->getLabel());
             db = forestdist[rF][lG + 1][rG + 1] + costModel_.ins((*G)[lG]->getLabel());
             //dc = forestdist[rF + 1][lG + 1][rG + 1] + delta[rF_in_preL][lG] +costModel_.ren((*F)[rF_in_preL]->getLabel(), (*G)[lG]->getLabel());
             dc = delta[rF_in_preL][lG] +costModel_.ren((*F)[rF_in_preL]->getLabel(), (*G)[lG]->getLabel());
@@ -6623,8 +6625,8 @@ void TreeComparison::gteo(Node* a, Node* b) {
               ou << "da = " << da << endl;
               ou << "db = " << db << endl;
               ou << "dc = " << dc << endl; 
+              ou << "forestdist[" << lF_plus_one_in_preR << ", " << lG << ", " << rG << "] = " << forestdist[lF_plus_one_in_preR][lG][rG] << endl;
               ou << "forestdist[" << rF << ", " << lG + 1 << ", " << rG + 1 << "] = " << forestdist[rF][lG + 1][rG + 1] << endl;
-              ou << "forestdist[" << rF + 1 << ", " << lG + 1 << ", " << rG + 1 << "] = " << forestdist[rF + 1][lG + 1][rG + 1] << endl;
               ou << "forestdist[" << rF << ", " << lG << ", " << rG << "] = " << forestdist[rF][lG][rG] << endl;
             }
 
@@ -7289,7 +7291,8 @@ void TreeComparison::gteo(Node* a, Node* b) {
           }
       
           if(isGTree && isFTree) {
-            da = forestdist[rF + 1][lG][rG] + costModel_.ins((*F)[rF_in_preL]->getLabel());
+            int lF_plus_one_in_preR = F->preL_to_preR[lF + 1];
+            da = forestdist[lF_plus_one_in_preR][lG][rG] + costModel_.ins((*F)[rF_in_preL]->getLabel());
             db = forestdist[rF][lG + 1][rG + 1] + costModel_.del((*G)[lG]->getLabel());
             //dc = forestdist[rF + 1][lG + 1][rG + 1] + delta[lG][rF_in_preL] +costModel_.ren((*G)[lG]->getLabel(), (*F)[rF_in_preL]->getLabel());
             dc = delta[lG][rF_in_preL] +costModel_.ren((*G)[lG]->getLabel(), (*F)[rF_in_preL]->getLabel());
@@ -7298,8 +7301,8 @@ void TreeComparison::gteo(Node* a, Node* b) {
               ou << "da = " << da << endl;
               ou << "db = " << db << endl;
               ou << "dc = " << dc << endl; 
+              ou << "forestdist[" << lF_plus_one_in_preR << ", " << lG << ", " << rG << "] = " << forestdist[lF_plus_one_in_preR][lG][rG] << endl;
               ou << "forestdist[" << rF << ", " << lG + 1 << ", " << rG + 1 << "] = " << forestdist[rF][lG + 1][rG + 1] << endl;
-              ou << "forestdist[" << rF + 1 << ", " << lG + 1 << ", " << rG + 1 << "] = " << forestdist[rF + 1][lG + 1][rG + 1] << endl;
               ou << "forestdist[" << rF << ", " << lG << ", " << rG << "] = " << forestdist[rF][lG][rG] << endl;
             }
 
@@ -7712,7 +7715,8 @@ void TreeComparison::gteo(Node* a, Node* b) {
           }
 
           if(isGTree && isFTree) {
-            da = forestdist[lF + 1][lG][rG] + costModel_.ins((*F)[lF]->getLabel());
+            int rF_plus_one_in_preL = F->preR_to_preL[rF + 1];
+            da = forestdist[rF_plus_one_in_preL][lG][rG] + costModel_.ins((*F)[lF]->getLabel());
             db = forestdist[lF][lG + 1][rG + 1] + costModel_.del((*G)[lG]->getLabel());
             //dc = forestdist[lF + 1][lG + 1][rG + 1] + delta[lG][lF] +costModel_.ren((*G)[lG]->getLabel(), (*F)[lF]->getLabel());
             dc = delta[lG][lF] +costModel_.ren((*G)[lG]->getLabel(), (*F)[lF]->getLabel());
@@ -7721,8 +7725,8 @@ void TreeComparison::gteo(Node* a, Node* b) {
               ou << "da = " << da << endl;
               ou << "db = " << db << endl;
               ou << "dc = " << dc << endl; 
+              ou << "forestdist[" << rF_plus_one_in_preL << ", " << lG << ", " << rG << "] = " << forestdist[rF_plus_one_in_preL][lG][rG] << endl;
               ou << "forestdist[" << lF << ", " << lG + 1 << ", " << rG + 1 << "] = " << forestdist[lF][lG + 1][rG + 1] << endl;
-              ou << "forestdist[" << lF + 1 << ", " << lG + 1 << ", " << rG + 1 << "] = " << forestdist[lF + 1][lG + 1][rG + 1] << endl;
               ou << "forestdist[" << lF << ", " << lG << ", " << rG << "] = " << forestdist[lF][lG][rG] << endl;
             }
 
