@@ -19,6 +19,7 @@ private:
 	int secondaryStructure[maxSize];
 	char preLSequence[2 * maxSize];
 	int tree_to_original[maxSize];
+	int original_to_tree[maxSize];
 	
 public:
 	RNA();

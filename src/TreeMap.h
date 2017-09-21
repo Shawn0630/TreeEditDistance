@@ -42,6 +42,8 @@ public:
 	string toString(void);
 
 	int getCount();
+
+	//friend class TreeComparison;
 };
 
 

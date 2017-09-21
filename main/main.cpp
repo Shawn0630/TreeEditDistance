@@ -11,8 +11,14 @@
 
 using namespace std;
 
-int main() {
-	string fileName = "rna24.data";
+int main(int argc, char *argv[]) {
+	string fileName = "";
+	if(argc == 1) {
+		fileName = "rna16.data";
+		cout << "No input RNA file, use the default file(rna16.data)" << endl;
+	} else {
+		fileName = argv[1];
+	}
 	string simiFileName = "ss_distance";
 	SimiMatrix matrix;
 	vector<RNA> RNAs;
@@ -22,20 +28,28 @@ int main() {
 	RNAs = file->readRNAsFromFile();
 	RNAs[0].getPreLSequence();
 	RNAs[1].getPreLSequence();
-	cout << "RNA1:" << endl;
-	cout << RNAs[0].toString() << endl;
-	cout << RNAs[0].getPreLSequence() << endl;
-	cout << "RNA2:" << endl;
-	cout << RNAs[1].toString() << endl;
-	cout << RNAs[1].getPreLSequence() << endl;
+	string outputFileName = "RESULT_" + RNAs[0].getRNAName() + "_" + RNAs[1].getRNAName();
+	ofstream out(outputFileName);
+	out << "RNA1:" << endl;
+	out << RNAs[0].toString() << endl;
+	out << endl;
+	//out << RNAs[0].getPreLSequence() << endl;
+	out << "RNA2:" << endl;
+	out << RNAs[1].toString() << endl;
+	out << endl;
+	//out << RNAs[1].getPreLSequence() << endl;
 	Tree* t1 = RNAs[0].buildTree();
 	Tree* t2 = RNAs[1].buildTree();
 	matrix = file->readSimiFromFile();
 	TreeComparison tc(t1, t2, matrix);
+	tc.setRNAA(RNAs[0]);
+	tc.setRNAB(RNAs[1]);
 	TreeMap* map;
+	char** result;
 
 	tc.strategyComputation();
 	ofstream ou("tree.txt");
+
 	if(DEBUG) {
 		ou << "Tree A" << endl;
 		ou << t1->toString() << endl;
@@ -43,17 +57,25 @@ int main() {
 		ou << t2->toString() << endl;
 	}
 	float dist = tc.getTreeDistance();
-	cout << "The distance is " << dist << endl;;
+	out << "The distance is " << dist << endl;;
 
 	map = tc.getTreeMap();
-	cout << map->toString();
-	cout << "operation count is " << map->getCount() << endl;
+	//cout << map->toString();
+	out << "The edit distance count(For debug use) is " << map->getCount() << endl;
+	out << endl;
+	result = tc.getResult();
+
+	for(int i = 0; i < 4; i++) {
+		out << result[i] << endl;
+	}
+	out << endl;
 
 	float dist_LL = tc.getTreeDistance_LL();
-	cout << "The distance(LL) is " << dist_LL << endl;
+	out << "The distance(LL)(For debug use) is " << dist_LL << endl;
 
 	float dist_RR = tc.getTreeDistance_RR();
-	cout << "The distance(RR) is " << dist_RR << endl;
+	out << "The distance(RR)(For debug use) is " << dist_RR << endl;
+
 
 
 

@@ -52,9 +52,6 @@ private:
 	TreeMap* map;
 
 
-	char** result;
-
-	
 	int free(Node*, Node*);
 	int leftA(Node*, Node*);
 	int leftB(Node*, Node*);

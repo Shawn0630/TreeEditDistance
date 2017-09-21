@@ -8389,48 +8389,142 @@ void TreeComparison::gteo_LL(Node* a, Node* b) {
 
 
 char** TreeComparison::getResult(void) {
-  int maxSize = rA_.getRNASize() < rB_.getRNASize()? rB_.getRNASize() - 1 : rA_.getRNASize() - 1;
+  int maxSize = rB_.getRNASize() + rA_.getRNASize();
+
+
+  char** result;
 
   result = new char*[4];
   for(int i = 0; i < 4; i++) {
-    result = new char[maxSize];
+    result[i] = new char[maxSize];
   }
 
-  for(int i = 0; i < 4; i++) {
-    for(int j = 0; j < maxSize - 1; j++) {
-      result[i][j] = ' ';
+
+/*  int i;
+  for(int rnaAIndex = 2; rnaAIndex < rA_.RNASize_; rnaAIndex++) {
+    if(rA_.secondaryStructure[rnaAIndex] == rnaAIndex) {
+      if((*map)[treeAIndex] == -1)
+      result[0][i - 2] = '-';
+      result[2][i - 2] = rA_.originalSequence[i];
+    } else if(rA_.secondaryStructure[i] > i) {
+      result[0][i - 2] = '(';
+      result[2][i - 2] = rA_.originalSequence[i];
+      result[0][rA_.secondaryStructure[i] - 2] = ')';
+      result[2][rA_.secondaryStructure[i] - 2] = rA_.originalSequence[rA_.secondaryStructure[i]];
     }
   }
-  
-  result[0][maxSize - 1] = '\0';
-  result[1][maxSize - 1] = '\0';
-  result[2][maxSize - 1] = '\0';
-  result[3][maxSize - 1] = '\0'; 
+  result[0][i - 2] = '\0';
+  result[2][i - 2] = '\0';
 
-  int rAIndex = 2;
+  for(i = 2; i < rB_.RNASize_; i++) {
+    if(rB_.secondaryStructure[i] == i) {
+      result[1][i - 2] = '-';
+      result[3][i - 2] = rB_.originalSequence[i];
+    } else if(rB_.secondaryStructure[i] > i) {
+      result[1][i - 2] = '(';
+      result[3][i - 2] = rB_.originalSequence[i];
+      result[1][rB_.secondaryStructure[i] - 2] = ')';
+      result[3][rB_.secondaryStructure[i] - 2] = rB_.originalSequence[rB_.secondaryStructure[i]];
+    }
+  }
+  result[1][i - 2] = '\0';
+  result[3][i - 2] = '\0';
+*/
+
+  int rnaAIndex = 2;
+  int rnaBIndex = 2;
+  int resultIndex = 0;
+  while(rnaAIndex < rA_.RNASize_ && rnaBIndex < rB_.RNASize_) {
+    int treeAIndex = rA_.original_to_tree[rnaAIndex];
+    int treeBIndex = rB_.original_to_tree[rnaBIndex];
+    if((*map)[treeAIndex] == treeBIndex) {
+      result[2][resultIndex] = rA_.originalSequence[rnaAIndex];
+      result[3][resultIndex] = rB_.originalSequence[rnaBIndex];
+      rnaAIndex++;
+      rnaBIndex++;
+    }
+
+    else if((*map)[treeAIndex] == -1) {
+      result[2][resultIndex] = rA_.originalSequence[rnaAIndex];
+      result[3][resultIndex] = '-';
+      rnaAIndex++;
+    }
+
+    else if((*map)(treeBIndex) == -1) {
+      result[2][resultIndex] = '-';
+      result[3][resultIndex] = rB_.originalSequence[rnaBIndex];
+      rnaBIndex++;
+    }
+
+    if(rA_.secondaryStructure[rnaAIndex] == rnaAIndex) {
+      result[0][resultIndex] = '-';
+    } else if(rA_.secondaryStructure[rnaAIndex] > rnaAIndex) {
+      result[0][resultIndex] = '(';
+    } else if(rA_.secondaryStructure[rnaAIndex] < rnaAIndex) {
+      result[0][resultIndex] = ')';
+    }
+
+    if(rB_.secondaryStructure[rnaBIndex] == rnaBIndex) {
+      result[1][resultIndex] = '-';
+    } else if(rB_.secondaryStructure[rnaBIndex] > rnaBIndex) {
+      result[1][resultIndex] = '(';
+    } else if(rB_.secondaryStructure[rnaBIndex] < rnaBIndex) {
+      result[1][resultIndex] = ')';
+    }
+    resultIndex++;
+  }
+
+  result[0][resultIndex] = '\0';
+  result[1][resultIndex] = '\0';
+  result[2][resultIndex] = '\0';
+  result[3][resultIndex] = '\0';
+
+/*  int rAIndex = 2;
   int rBIndex = 2;
   int tAIndex = 1;
   int tBIndex = 1;
 
-  for(int i = 0; i < maxSize - 1; i++) {
-    if(rA_.secondaryStructure[rAIndex] < rAIndex) {
-      rAIndex++;
-      i++;
-      continue;
+  string s1 = "";
+  string s2 = "";
+
+  while(tAIndex < treeSizeA && tBIndex < treeSizeB) {
+    //cout << tAIndex << ", " << tBIndex << endl;
+    if((*map)[tAIndex] == tBIndex) {
+      s1 += (*A_)[tAIndex]->getLabel();
+      s2 += (*B_)[tBIndex]->getLabel();
+      tAIndex++;
+      tBIndex++;
     }
-    if(rB_.secondaryStructure[rBIndex] < rBIndex) {
-      rBIndex++;
-      i++;
-      continue;
+
+     else if((*map)[tAIndex] == -1) {
+      s1 += (*A_)[tAIndex]->getLabel();
+      s2 += '-';
+      tAIndex++;
     }
-    if(rA_.secondaryStructure[rAIndex] == rAIndex) {
-      result[0][i] = '-';
+
+    else if((*map)(tBIndex) == -1) {
+      s1 += '-';
+      s2 += (*B_)[tBIndex]->getLabel();
+      tBIndex++;
     }
-    if(rB_.secondaryStructure[rBIndex] == rBIndex) {
-      result[1][i] = '-';
-    }
-    result[0][i] = 
-    if()
+
   }
+
+  while(tAIndex < treeSizeA) {
+    s1 += (*A_)[tAIndex]->getLabel();
+    s2 += '-';
+    tAIndex++;
+  }
+
+  while(tBIndex < treeSizeB) {
+    s1 += '-';
+    s2 += (*B_)[tBIndex]->getLabel();
+    tBIndex++;
+  }
+
+  cout << s1 << endl;
+  cout << s2 << endl;*/
+
+  return result;
 
 };
