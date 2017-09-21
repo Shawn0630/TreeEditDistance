@@ -12,7 +12,7 @@
 using namespace std;
 
 int main() {
-	string fileName = "rna16.data";
+	string fileName = "rna24.data";
 	string simiFileName = "ss_distance";
 	SimiMatrix matrix;
 	vector<RNA> RNAs;
@@ -22,6 +22,12 @@ int main() {
 	RNAs = file->readRNAsFromFile();
 	RNAs[0].getPreLSequence();
 	RNAs[1].getPreLSequence();
+	cout << "RNA1:" << endl;
+	cout << RNAs[0].toString() << endl;
+	cout << RNAs[0].getPreLSequence() << endl;
+	cout << "RNA2:" << endl;
+	cout << RNAs[1].toString() << endl;
+	cout << RNAs[1].getPreLSequence() << endl;
 	Tree* t1 = RNAs[0].buildTree();
 	Tree* t2 = RNAs[1].buildTree();
 	matrix = file->readSimiFromFile();

@@ -93,6 +93,7 @@ char* RNA::getPreLSequence(void) {
 			preLSequence[j++] = '(';
 			preLSequence[j++] = originalSequence[i];
 			preLSequence[j++] = ')';
+			tree_to_original[treeSize] = i;
 			treeSize++;
 		}
 		// if the base have pair, process the smaller one 
@@ -147,6 +148,7 @@ char* RNA::getPreLSequence(void) {
 			else if(originalSequence[i] == 'U' && originalSequence[secondaryStructure[i]] == 'U'){
 				preLSequence[j++] = 'S';
 			}
+			tree_to_original[treeSize] = i;
 			treeSize++;
 		}
 		else {

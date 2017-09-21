@@ -26,6 +26,7 @@ TreeComparison::TreeComparison(Tree* A, Tree* B, SimiMatrix costModel) {
 	fn = new int[maxSize + 1];
 	ft = new int[maxSize + 1];
 
+
 	fn_ft_length = maxSize + 1;
 
   counter = 0;
@@ -110,6 +111,13 @@ void TreeComparison::setTreeB(Tree* B) {
   B_ = B;
 };
 
+void TreeComparison::setRNAA(RNA rA) {
+  rA_ = rA;
+} ;
+void TreeComparison::setRNAB(RNA rB) {
+  rB_ = rB;
+};
+
 void TreeComparison::setCostModel(SimiMatrix costModel) {
   costModel_ = costModel;
 }
@@ -125,6 +133,7 @@ void TreeComparison::init(string fileName) {
   ft = new int[maxSize + 1];
 
   fn_ft_length = maxSize + 1;
+
 
   counter = 0;
   treeDist = 0;
@@ -8377,3 +8386,51 @@ void TreeComparison::gteo_LL(Node* a, Node* b) {
   }
 };
 */
+
+
+char** TreeComparison::getResult(void) {
+  int maxSize = rA_.getRNASize() < rB_.getRNASize()? rB_.getRNASize() - 1 : rA_.getRNASize() - 1;
+
+  result = new char*[4];
+  for(int i = 0; i < 4; i++) {
+    result = new char[maxSize];
+  }
+
+  for(int i = 0; i < 4; i++) {
+    for(int j = 0; j < maxSize - 1; j++) {
+      result[i][j] = ' ';
+    }
+  }
+  
+  result[0][maxSize - 1] = '\0';
+  result[1][maxSize - 1] = '\0';
+  result[2][maxSize - 1] = '\0';
+  result[3][maxSize - 1] = '\0'; 
+
+  int rAIndex = 2;
+  int rBIndex = 2;
+  int tAIndex = 1;
+  int tBIndex = 1;
+
+  for(int i = 0; i < maxSize - 1; i++) {
+    if(rA_.secondaryStructure[rAIndex] < rAIndex) {
+      rAIndex++;
+      i++;
+      continue;
+    }
+    if(rB_.secondaryStructure[rBIndex] < rBIndex) {
+      rBIndex++;
+      i++;
+      continue;
+    }
+    if(rA_.secondaryStructure[rAIndex] == rAIndex) {
+      result[0][i] = '-';
+    }
+    if(rB_.secondaryStructure[rBIndex] == rBIndex) {
+      result[1][i] = '-';
+    }
+    result[0][i] = 
+    if()
+  }
+
+};

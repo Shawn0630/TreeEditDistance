@@ -18,6 +18,7 @@ private:
 	char originalSequence[maxSize];
 	int secondaryStructure[maxSize];
 	char preLSequence[2 * maxSize];
+	int tree_to_original[maxSize];
 	
 public:
 	RNA();
@@ -42,6 +43,8 @@ public:
 	Tree* buildTree(void);
 
 	string toString(void);
+
+	friend class TreeComparison;
 
 };
 

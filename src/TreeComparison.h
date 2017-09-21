@@ -2,6 +2,7 @@
 #include "Strategy.h"
 #include "Node.h"
 #include "Tree.h"
+#include "RNA.h"
 #include "SimiMatrix.h"
 #include "TreeMap.h"
 
@@ -9,16 +10,12 @@
 #include <map>
 using namespace std;
 
-struct Tuple{
-	int Findex;
-	int Gindex;
-	Tuple(int Findex_, int Gindex_): Findex(Findex_), Gindex(Gindex_){};
-};
-
 class TreeComparison {
 private:	
 	Tree* A_;
 	Tree* B_;
+	RNA rA_;
+	RNA rB_;
 	SimiMatrix costModel_;
 	int treeSizeA;
 	int treeSizeB;
@@ -53,6 +50,9 @@ private:
 	float treeDist;
 
 	TreeMap* map;
+
+
+	char** result;
 
 	
 	int free(Node*, Node*);
@@ -100,6 +100,8 @@ public:
 	TreeComparison(Tree*, Tree*, SimiMatrix);
 	void setTreeA(Tree*);
 	void setTreeB(Tree*);
+	void setRNAA(RNA);
+	void setRNAB(RNA);
 	void setCostModel(SimiMatrix);
 	void init(string);
 	void strategyComputation(void);
@@ -108,6 +110,8 @@ public:
 	float getTreeDistance_RR(void);
 	int getCounter(void);
 	TreeMap* getTreeMap(void);
+
+	char** getResult(void);
 
 
 };
