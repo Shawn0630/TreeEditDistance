@@ -8579,9 +8579,11 @@ char** TreeComparison::getResult(void) {
   int rnaAIndex = 2;
   int rnaBIndex = 2;
   int resultIndex = 0;
+  
   while(rnaAIndex < rA_.RNASize_ && rnaBIndex < rB_.RNASize_) {
     int treeAIndex = rA_.original_to_tree[rnaAIndex];
     int treeBIndex = rB_.original_to_tree[rnaBIndex];
+
     if((*map)[treeAIndex] == treeBIndex) {
       result[2][resultIndex] = rA_.originalSequence[rnaAIndex];
       result[3][resultIndex] = rB_.originalSequence[rnaBIndex];
@@ -8618,13 +8620,15 @@ char** TreeComparison::getResult(void) {
         result[0][resultIndex] = ')';
       }
 
-      if(rB_.secondaryStructure[rnaBIndex] == rnaBIndex) {
+      result[1][resultIndex] = '-';
+
+      /*if(rB_.secondaryStructure[rnaBIndex] == rnaBIndex) {
         result[1][resultIndex] = '-';
       } else if(rB_.secondaryStructure[rnaBIndex] > rnaBIndex) {
         result[1][resultIndex] = '(';
       } else if(rB_.secondaryStructure[rnaBIndex] < rnaBIndex) {
         result[1][resultIndex] = ')';
-      }
+      }*/
 
       rnaAIndex++;
     }
@@ -8633,13 +8637,15 @@ char** TreeComparison::getResult(void) {
       result[2][resultIndex] = '-';
       result[3][resultIndex] = rB_.originalSequence[rnaBIndex];
 
-      if(rA_.secondaryStructure[rnaAIndex] == rnaAIndex) {
+      result[0][resultIndex] = '-';
+
+      /*if(rA_.secondaryStructure[rnaAIndex] == rnaAIndex) {
         result[0][resultIndex] = '-';
       } else if(rA_.secondaryStructure[rnaAIndex] > rnaAIndex) {
         result[0][resultIndex] = '(';
       } else if(rA_.secondaryStructure[rnaAIndex] < rnaAIndex) {
         result[0][resultIndex] = ')';
-      }
+      }*/
 
       if(rB_.secondaryStructure[rnaBIndex] == rnaBIndex) {
         result[1][resultIndex] = '-';
@@ -8652,6 +8658,56 @@ char** TreeComparison::getResult(void) {
       rnaBIndex++;
     }
     resultIndex++;
+  }
+  while(rnaAIndex < rA_.RNASize_) {
+     result[2][resultIndex] = rA_.originalSequence[rnaAIndex];
+      result[3][resultIndex] = '-';
+
+      if(rA_.secondaryStructure[rnaAIndex] == rnaAIndex) {
+        result[0][resultIndex] = '-';
+      } else if(rA_.secondaryStructure[rnaAIndex] > rnaAIndex) {
+        result[0][resultIndex] = '(';
+      } else if(rA_.secondaryStructure[rnaAIndex] < rnaAIndex) {
+        result[0][resultIndex] = ')';
+      }
+
+      result[1][resultIndex] = '-';
+
+      /*if(rB_.secondaryStructure[rnaBIndex] == rnaBIndex) {
+        result[1][resultIndex] = '-';
+      } else if(rB_.secondaryStructure[rnaBIndex] > rnaBIndex) {
+        result[1][resultIndex] = '(';
+      } else if(rB_.secondaryStructure[rnaBIndex] < rnaBIndex) {
+        result[1][resultIndex] = ')';
+      }*/
+
+      rnaAIndex++;
+      resultIndex++;
+  }
+  while(rnaBIndex < rB_.RNASize_) {
+    result[2][resultIndex] = '-';
+      result[3][resultIndex] = rB_.originalSequence[rnaBIndex];
+
+      result[0][resultIndex] = '-';
+
+      /*if(rA_.secondaryStructure[rnaAIndex] == rnaAIndex) {
+        result[0][resultIndex] = '-';
+      } else if(rA_.secondaryStructure[rnaAIndex] > rnaAIndex) {
+        result[0][resultIndex] = '(';
+      } else if(rA_.secondaryStructure[rnaAIndex] < rnaAIndex) {
+        result[0][resultIndex] = ')';
+      }*/
+
+      if(rB_.secondaryStructure[rnaBIndex] == rnaBIndex) {
+        result[1][resultIndex] = '-';
+      } else if(rB_.secondaryStructure[rnaBIndex] > rnaBIndex) {
+        result[1][resultIndex] = '(';
+      } else if(rB_.secondaryStructure[rnaBIndex] < rnaBIndex) {
+        result[1][resultIndex] = ')';
+      }
+
+      rnaBIndex++;
+      resultIndex++;
   }
 
   result[0][resultIndex] = '\0';
