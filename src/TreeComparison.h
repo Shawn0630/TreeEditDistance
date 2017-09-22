@@ -62,6 +62,7 @@ private:
 
 	void deltaInit();
 	float gted(Node*, Node*);
+	float gted_ND(Node*, Node*);
 	//void gteo(Node*, Node*);
 	void gteo_LL(Node* a, Node* b);
 	int getPathType(Tree*, Node*, int);
@@ -105,6 +106,7 @@ public:
 	float getTreeDistance(void);
 	float getTreeDistance_LL(void);
 	float getTreeDistance_RR(void);
+	float getTreeDistance_ND(void);
 	int getCounter(void);
 	TreeMap* getTreeMap(void);
 

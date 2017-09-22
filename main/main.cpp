@@ -14,7 +14,7 @@ using namespace std;
 int main(int argc, char *argv[]) {
 	string fileName = "";
 	if(argc == 1) {
-		fileName = "rna16.data";
+		fileName = "rna36.data";
 		cout << "No input RNA file, use the default file(rna16.data)" << endl;
 	} else {
 		fileName = argv[1];
@@ -47,17 +47,19 @@ int main(int argc, char *argv[]) {
 	TreeMap* map;
 	char** result;
 
-	tc.strategyComputation();
 	ofstream ou("tree.txt");
-
 	if(DEBUG) {
 		ou << "Tree A" << endl;
 		ou << t1->toString() << endl;
 		ou << "Tree B" << endl;
 		ou << t2->toString() << endl;
 	}
+
+	tc.strategyComputation();
+
 	float dist = tc.getTreeDistance();
-	out << "The distance is " << dist << endl;;
+	out << "The distance is " << dist << " #Subproblem: " << tc.getCounter() << endl;
+	cout << "The distance is " << dist << " #Subproblem: " << tc.getCounter() << endl;
 
 	map = tc.getTreeMap();
 	//cout << map->toString();
@@ -70,11 +72,18 @@ int main(int argc, char *argv[]) {
 	}
 	out << endl;
 
+	float dist_ND = tc.getTreeDistance_ND();
+	cout << "The distance_ND(For debug use) is " << dist_ND << " #Subproblem: " << tc.getCounter() << endl;
+	out << "The distance_ND(For debug use) is " << dist_ND << " #Subproblem: " << tc.getCounter() << endl;
+
+
 	float dist_LL = tc.getTreeDistance_LL();
-	out << "The distance(LL)(For debug use) is " << dist_LL << endl;
+	cout << "The distance(LL)(For debug use) is " << dist_LL << " #Subproblem: " << tc.getCounter() << endl;
+	out << "The distance(LL)(For debug use) is " << dist_LL << " #Subproblem: " << tc.getCounter() << endl;
 
 	float dist_RR = tc.getTreeDistance_RR();
-	out << "The distance(RR)(For debug use) is " << dist_RR << endl;
+	cout << "The distance(RR)(For debug use) is " << dist_RR << " #Subproblem: " << tc.getCounter() << endl;
+	out << "The distance(RR)(For debug use) is " << dist_RR << " #Subproblem: " << tc.getCounter() << endl;
 
 
 

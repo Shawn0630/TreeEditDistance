@@ -727,7 +727,7 @@ float TreeComparison::gted(Node* a, Node* b) {
       else {
         if(direction == 1) return spfA_RL(a, b, pathLeaf, pathType, NULL, false, false);//direction = right first add left then right
         else return spfA_LR(a, b, pathLeaf, pathType, NULL, false, false);//direction = left first add right then left
-        return spfA(a, b, pathLeaf, pathType, false);
+        //return spfA(a, b, pathLeaf, pathType, false);
     }	
   } 
 
@@ -773,9 +773,132 @@ float TreeComparison::gted(Node* a, Node* b) {
     } else {
       if(direction == 1) return spfA_RL(b, a, pathLeaf, pathType, NULL, true, false);//direction = right first add left then right
       else return spfA_LR(b, a, pathLeaf, pathType, NULL, true, false);//direction = left first add right then left
-		  return spfA(b, a, pathLeaf, pathType, true);
+		  //return spfA(b, a, pathLeaf, pathType, true);
     }
 	}
+
+};
+
+
+float TreeComparison::gted_ND(Node* a, Node* b) {
+  
+  /*if(DEBUG) {
+    ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ")" << endl;
+    ou << "hasVisited[" << to_string(a->getID()) << ", " << to_string(b->getID()) << "] = " << to_string(hasVisited[a->getID()][b->getID()]) << endl;
+  }*/
+  //if(hasVisited[a->getID()][b->getID()] == true) return delta[a->getID()][b->getID()] + costModel_.ren(a->getLabel(), b->getLabel());
+  //if(hasVisited[a->getID()][b->getID()] == true) return delta[a->getID()][b->getID()];
+  //hasVisited[a->getID()][b->getID()] = true;
+  int treeSizeA = a->getSubTreeSize();
+  int treeSizeB = b->getSubTreeSize();
+  /*if(DEBUG) {
+    ou << "treeSizeA = " << to_string(treeSizeA) << endl;
+    ou << "treeSizeB = " << to_string(treeSizeB) << endl;
+  }*/
+  
+  if ((treeSizeA == 1 || treeSizeB == 1)) {
+    return spf1(a, treeSizeA, b, treeSizeB);
+  }
+
+
+  int pathLeaf = FreeStrategies[a->getID()][b->getID()].getLeaf();
+  int direction = FreeStrategies[a->getID()][b->getID()].getDirection();
+  int treeToDecompose = FreeStrategies[a->getID()][b->getID()].getTreeToDecompose();
+  Node* currentPathNode = treeToDecompose == 0? (*A_)[pathLeaf] : (*B_)[pathLeaf];
+
+
+  if(treeToDecompose == 0) { // decompose tree A
+    Node* parent = currentPathNode->getParent();
+    int pathType = getPathType(A_, a, pathLeaf);// 0 left 1 right 2 special
+    /*if(DEBUG) {
+      ou << "getPathType A(" << to_string(a->getID()) << " ," << to_string(pathLeaf) << ") = " << to_string(pathType) << endl;
+    }*/
+    /*if(pathType == 0) {
+       return spfL(a, b, pathLeaf, false);
+    }
+    else if(pathType == 1) {
+       return spfR(a, b, pathLeaf, false);
+    }
+    else {*/
+      while(parent != NULL && parent->getID() >= a->getID()) {
+        vector<Node*> children = parent->getChildren();
+        for(int i = 0; i < children.size(); i++) {
+          Node* child = children[i];
+          /*if(DEBUG) {
+            ou << "A child = " << to_string(child->getID()) << " currentPathNode = " << to_string(currentPathNode->getID()) << " parent = " << to_string(parent->getID()) << endl;
+          }*/
+          if(child->getID() != currentPathNode->getID()) {
+            /*if(DEBUG) {
+             ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") ";
+             ou << "create problem in A " << "gted(" << to_string(child->getID()) << ", " << to_string(b->getID()) << ")" << endl;
+            }*/
+            gted_ND(child, b);
+          }
+        }
+        currentPathNode = parent;
+        parent = currentPathNode->getParent();
+      }
+      /*if(DEBUG) {
+        ou << "swap = " << "false " << "pathType = " << to_string(pathType) << endl; 
+      }*/
+      if (pathType == 0) {
+        return spfL(a, b, pathLeaf, false);
+      }
+      else if (pathType == 1) {
+        return spfR(a, b, pathLeaf, false);
+      }
+      else {
+        //if(direction == 1) return spfA_RL(a, b, pathLeaf, pathType, NULL, false, false);//direction = right first add left then right
+        //else return spfA_LR(a, b, pathLeaf, pathType, NULL, false, false);//direction = left first add right then left
+        return spfA(a, b, pathLeaf, pathType, false);
+    } 
+  } 
+
+  else if(treeToDecompose == 1) {
+    Node* parent = currentPathNode->getParent();
+    int pathType = getPathType(B_, b, pathLeaf);
+    /*if(DEBUG) {
+      ou << "getPathType B (" << to_string(b->getID()) << " ," << to_string(pathLeaf) << ") = " << to_string(pathType) << endl;
+    }*/
+   /* if(pathType == 0) {
+       return spfL(a, b, pathLeaf, false);
+    }
+    else if(pathType == 1) {
+       return spfR(a, b, pathLeaf, false);
+    }
+    else {*/
+      while(parent != NULL && parent->getID() >= b->getID()) {
+        vector<Node*> children = parent->getChildren();
+        for(int i = 0; i < children.size(); i++) {
+          Node* child = children[i];
+          /*if(DEBUG) {
+            ou << "A child = " << to_string(child->getID()) << " currentPathNode = " << to_string(currentPathNode->getID()) << " parent = " << to_string(parent->getID()) << endl;
+          }*/
+          if(child->getID() != currentPathNode->getID()) {
+           /*if(DEBUG) {
+              ou << "gted(" << to_string(a->getID()) << ", " << to_string(b->getID()) << ") ";
+             ou << "create problem in B " << "gted(" << to_string(a->getID()) << ", " << to_string(child->getID()) << ")" << endl;
+            }*/
+           gted_ND(a, child);
+          }
+        }
+        currentPathNode = parent;
+        parent = currentPathNode->getParent();
+      }
+    /*if(DEBUG) {
+      ou << "swap = " << "true " << "pathType = " << to_string(pathType) << endl; 
+    }*/
+    if(pathType == 0) {
+      return spfL(b, a, pathLeaf, true);
+    }
+    else if(pathType == 1) {
+      return spfR(b, a, pathLeaf, true);
+    } else {
+      //if(direction == 1) return spfA_RL(b, a, pathLeaf, pathType, NULL, true, false);//direction = right first add left then right
+      //else return spfA_LR(b, a, pathLeaf, pathType, NULL, true, false);//direction = left first add right then left
+      return spfA(b, a, pathLeaf, pathType, true);
+    }
+  }
 
 };
 
@@ -5217,6 +5340,28 @@ float TreeComparison::getTreeDistance(void) {
   return treeDist;
 };
 
+float TreeComparison::getTreeDistance_ND(void) {
+  vector<Node*> preA = A_->getPreL();
+  vector<Node*> preB = B_->getPreL();
+  counter = 0;
+  treeDist = gted_ND(preA[0], preB[0]);
+  if(DEBUG) {
+    ou << "delta Result" << endl;
+    for(int i = 0; i < treeSizeA; i++) {
+      for(int j = 0; j < treeSizeB; j++) {
+        ou << delta[i][j] << " ";
+      }
+      ou << endl;
+    }
+    ou << endl;
+  }
+  if(DEBUG) {
+    cout << "counter = " << counter << " Free[0][0] = " << Free[0][0] << endl;
+  }
+  //ou.close();
+  return treeDist;
+};
+
 float TreeComparison::getTreeDistance_RR(void) {
   vector<Node*> preA = A_->getPreL();
   vector<Node*> preB = B_->getPreL();
@@ -8440,6 +8585,23 @@ char** TreeComparison::getResult(void) {
     if((*map)[treeAIndex] == treeBIndex) {
       result[2][resultIndex] = rA_.originalSequence[rnaAIndex];
       result[3][resultIndex] = rB_.originalSequence[rnaBIndex];
+      
+      if(rA_.secondaryStructure[rnaAIndex] == rnaAIndex) {
+        result[0][resultIndex] = '-';
+      } else if(rA_.secondaryStructure[rnaAIndex] > rnaAIndex) {
+        result[0][resultIndex] = '(';
+      } else if(rA_.secondaryStructure[rnaAIndex] < rnaAIndex) {
+        result[0][resultIndex] = ')';
+      }
+
+      if(rB_.secondaryStructure[rnaBIndex] == rnaBIndex) {
+        result[1][resultIndex] = '-';
+      } else if(rB_.secondaryStructure[rnaBIndex] > rnaBIndex) {
+        result[1][resultIndex] = '(';
+      } else if(rB_.secondaryStructure[rnaBIndex] < rnaBIndex) {
+        result[1][resultIndex] = ')';
+      }
+
       rnaAIndex++;
       rnaBIndex++;
     }
@@ -8447,29 +8609,47 @@ char** TreeComparison::getResult(void) {
     else if((*map)[treeAIndex] == -1) {
       result[2][resultIndex] = rA_.originalSequence[rnaAIndex];
       result[3][resultIndex] = '-';
+
+      if(rA_.secondaryStructure[rnaAIndex] == rnaAIndex) {
+        result[0][resultIndex] = '-';
+      } else if(rA_.secondaryStructure[rnaAIndex] > rnaAIndex) {
+        result[0][resultIndex] = '(';
+      } else if(rA_.secondaryStructure[rnaAIndex] < rnaAIndex) {
+        result[0][resultIndex] = ')';
+      }
+
+      if(rB_.secondaryStructure[rnaBIndex] == rnaBIndex) {
+        result[1][resultIndex] = '-';
+      } else if(rB_.secondaryStructure[rnaBIndex] > rnaBIndex) {
+        result[1][resultIndex] = '(';
+      } else if(rB_.secondaryStructure[rnaBIndex] < rnaBIndex) {
+        result[1][resultIndex] = ')';
+      }
+
       rnaAIndex++;
     }
 
     else if((*map)(treeBIndex) == -1) {
       result[2][resultIndex] = '-';
       result[3][resultIndex] = rB_.originalSequence[rnaBIndex];
+
+      if(rA_.secondaryStructure[rnaAIndex] == rnaAIndex) {
+        result[0][resultIndex] = '-';
+      } else if(rA_.secondaryStructure[rnaAIndex] > rnaAIndex) {
+        result[0][resultIndex] = '(';
+      } else if(rA_.secondaryStructure[rnaAIndex] < rnaAIndex) {
+        result[0][resultIndex] = ')';
+      }
+
+      if(rB_.secondaryStructure[rnaBIndex] == rnaBIndex) {
+        result[1][resultIndex] = '-';
+      } else if(rB_.secondaryStructure[rnaBIndex] > rnaBIndex) {
+        result[1][resultIndex] = '(';
+      } else if(rB_.secondaryStructure[rnaBIndex] < rnaBIndex) {
+        result[1][resultIndex] = ')';
+      }
+
       rnaBIndex++;
-    }
-
-    if(rA_.secondaryStructure[rnaAIndex] == rnaAIndex) {
-      result[0][resultIndex] = '-';
-    } else if(rA_.secondaryStructure[rnaAIndex] > rnaAIndex) {
-      result[0][resultIndex] = '(';
-    } else if(rA_.secondaryStructure[rnaAIndex] < rnaAIndex) {
-      result[0][resultIndex] = ')';
-    }
-
-    if(rB_.secondaryStructure[rnaBIndex] == rnaBIndex) {
-      result[1][resultIndex] = '-';
-    } else if(rB_.secondaryStructure[rnaBIndex] > rnaBIndex) {
-      result[1][resultIndex] = '(';
-    } else if(rB_.secondaryStructure[rnaBIndex] < rnaBIndex) {
-      result[1][resultIndex] = ')';
     }
     resultIndex++;
   }
