@@ -7,12 +7,13 @@
 #include "src/SimiMatrix.h"
 #include "src/FileManage.h"
 #include "src/TreeMap.h"
+#include "src/CompressedTree.h"
 #include "src/TreeComparison.h"
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
-	string fileName = "";
+	/*string fileName = "";
 	if(argc == 1) {
 		fileName = "rna36.data";
 		cout << "No input RNA file, use the default file(rna16.data)" << endl;
@@ -83,15 +84,17 @@ int main(int argc, char *argv[]) {
 
 	float dist_RR = tc.getTreeDistance_RR();
 	cout << "The distance(RR)(For debug use) is " << dist_RR << " #Subproblem: " << tc.getCounter() << endl;
-	out << "The distance(RR)(For debug use) is " << dist_RR << " #Subproblem: " << tc.getCounter() << endl;
+	out << "The distance(RR)(For debug use) is " << dist_RR << " #Subproblem: " << tc.getCounter() << endl;*/
 
 
 
 
 
 	
-/*	RNA r1, r2;
+	RNA r1, r2;
 	FileManage* file = FileManage::getInstance();
+	string simiFileName = "ss_distance";
+	SimiMatrix matrix;
 	file->setSimiFileName(simiFileName);
 	matrix = file->readSimiFromFile();
 	if(readSimiFileError) {
@@ -100,7 +103,7 @@ int main(int argc, char *argv[]) {
 	}
 	ofstream ou("out.txt");
 	r1.setRNAName("A");
-	r2.setRNAName("B");*/
+	r2.setRNAName("B");
 
 
 /*	file->setRNAFileName(fileName);
@@ -140,8 +143,94 @@ int main(int argc, char *argv[]) {
 	r1.setPreOrderSequence(s1);
 	r1.setTreeSize(9);
 	r2.setPreOrderSequence(s2);
-	r2.setTreeSize(9);
+	r2.setTreeSize(9);*/
+
+
+/*	          B                        B 
+	          |                        |
+	          C                        C
+	          |                        |
+ 	          D                        D
+              |                       / \
+              E                      E   G
+             /|\                     |
+            F E I                    F
+            | | |
+            G F J
+            |   |
+            H   K
+
 */
+
+/*	string s1 = "(B(C(D(E(F(G(H)))(E(F))(I(J(K)))))))";
+	string s2 = "(B(C(D(E(F))(G))))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(12);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(6);*/
+
+/*	          B                         
+	          |                        
+	          C                        
+	          |                        
+ 	          D                         B
+              |                       / | \
+              E                      F  E  I
+             /|\                     
+            F E I                    
+            | | |
+            G F J
+            |   |
+            H   K
+
+*/
+
+/*	string s1 = "(B(C(D(E(F(G(H)))(E(F))(I(J(K)))))))";
+	string s2 = "(B(F)(E)(I))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(12);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(4);*/
+
+
+/*	           B                         
+	           |                        
+	           C                        
+	           |                        
+ 	           D                         B
+               |                       / | \
+               E                      F  E  I
+            /  |  \                     / \
+           F   E   I                   F   F
+           |  / \  |                      / \
+           G  F  F J                     F   E
+           |     | |
+           H     H K
+				/ \
+			   F   E
+			   |
+			   G
+			   |
+			   H
+*/
+	string s1 = "(B(C(D(E(F(G(H)))(E(F)(F(H(F(G(H)(E))))))(I(J(K)))))))";
+	string s2 = "(B(F)(E(F)(F(F)(E)))(I))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(18);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(8);
+
+/*	        B                       B
+	                               / \
+	                              C   D
+*/
+/*	string s1 = "(B)";
+	string s2 = "(B(C)(D))";
+	r1.setPreOrderSequence(s1);
+	r1.setTreeSize(1);
+	r2.setPreOrderSequence(s2);
+	r2.setTreeSize(3);*/
+
 
 
 /*
@@ -574,13 +663,25 @@ d = 2
 	r2.setPreOrderSequence(s2);
 	r2.setTreeSize(4);*/
 
-/*	Tree* t1 = r1.buildTree();
+	Tree* t1 = r1.buildTree();
 	Tree* t2 = r2.buildTree();
-	ou << "TreeA" << endl;
+/*	CompressedTree* ct1 = new CompressedTree(t1);
+	CompressedTree* ct2 = new CompressedTree(t2);*/
+/*	ou << "TreeA" << endl;
 	ou << t1->toString() << endl;
 	ou << "TreeB" << endl;
-	ou << t2->toString() << endl;
+	ou << t2->toString() << endl;*/
+
+/*	cout << "CompressedTreeA" << endl;
+	cout << ct1->toString() << endl;
+	cout << "CompressedTreeB" << endl;
+	cout << ct2->toString() << endl;*/
+
 	TreeComparison tc(t1, t2, matrix);
+/*	ou << "TreeA" << endl;
+	ou << t1->toString() << endl;
+	ou << "TreeB" << endl;
+	ou << t2->toString() << endl;*/
 	tc.strategyComputation();
 	float dist = tc.getTreeDistance();
 	cout << "The distance is " << dist << endl;
@@ -589,5 +690,5 @@ d = 2
 	cout << "The distance(LL) is " << dist_LL << endl;
 
 	float dist_RR = tc.getTreeDistance_RR();
-	cout << "The distance(RR) is " << dist_RR << endl;*/
+	cout << "The distance(RR) is " << dist_RR << endl;
 }

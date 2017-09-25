@@ -47,6 +47,7 @@ public:
 
 	friend class RNA;
 	friend class TreeComparison;
+	friend class CompressedTree;
 
 	string toString()const;
 

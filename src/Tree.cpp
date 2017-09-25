@@ -83,6 +83,7 @@ void Tree::pushNodeToPreL(Node* node) {
 	post.push_back(node);
 };*/
 
+
 string Tree::toString() const {
 	string res = "";
 	res += "preL size = " + to_string(preL.size()) + "\n";
