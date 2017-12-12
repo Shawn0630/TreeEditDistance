@@ -33,6 +33,8 @@ Tree::Tree(string label, int treeSize) {
 	keyRoot_L = new int[treeSize_];
 	keyRoot_R = new int[treeSize_];
 
+	preL_to_hid = new int[treeSize_];
+
 
 	fill_n(preL_to_preR, treeSize_, 0); 
 	fill_n(preR_to_preL, treeSize_, 0); 
@@ -45,7 +47,8 @@ Tree::Tree(string label, int treeSize) {
 	fill_n(preL_to_sumDelCost, treeSize_, 0); 
 	fill_n(preL_to_sumInsCost, treeSize_, 0);
 	fill_n(keyRoot_L, treeSize_, 0);
-	fill_n(keyRoot_R, treeSize_, 0); 
+	fill_n(keyRoot_R, treeSize_, 0);
+	fill_n(preL_to_hid, treeSize_, 0); 
 
 };
 
@@ -82,6 +85,7 @@ void Tree::pushNodeToPreL(Node* node) {
 /*void Tree::pushNodeToPost(Node* node) {
 	post.push_back(node);
 };*/
+
 
 string Tree::toString() const {
 	string res = "";

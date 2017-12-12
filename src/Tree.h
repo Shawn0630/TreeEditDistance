@@ -23,11 +23,14 @@ private:
 	int* postR_to_preL;
 	int* preL_to_lid;//left-to-right preorder to the leftmost tree leaf's id in left-to-right preorder
 	int* preL_to_rid;//left-to-right preorder to the rightmost tree leaf's id in left-to-right preorder
+	int* preL_to_hid;
 	int* preL_to_ln;//first leaf node to the left of n in left-to-right preorder.
 	int* preR_to_ln;//first leaf node to the right of n in right-to-left preorder.
 
 	int* preL_to_sumDelCost;
 	int* preL_to_sumInsCost;
+
+
 
 	int* keyRoot_L;
 	int* keyRoot_R;
@@ -47,6 +50,7 @@ public:
 
 	friend class RNA;
 	friend class TreeComparison;
+	friend class CompressedTree;
 
 	string toString()const;
 

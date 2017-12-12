@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <limits.h>
 #include <stdlib.h>
 #include <stack>
 #include <string>
@@ -196,6 +197,8 @@ Tree* RNA::buildTree(void) {
 			vector<Node*> children = nodes.top()->getChildren();
 			int size = 0;
 			int sum = 0;
+			int max = INT_MIN;
+			int max_child = -1;
 			int leftmostForestNum = 0;
 			int rightmostForestNum = 0;
 			int specialForestNum = 0;
@@ -204,6 +207,10 @@ Tree* RNA::buildTree(void) {
 			for(int i = 0; i < children.size(); i++) {
 				sum += children[i]->getSubTreeSizeSum();
 				size += children[i]->getSubTreeSize();
+				if(max < children[i]->getSubTreeSize()) {
+					max = children[i]->getSubTreeSize();
+					max_child = children[i]->getID();
+				}
 				leftmostForestNum += children[i]->getLeftmostForestNum();
 				rightmostForestNum += children[i]->getRightmostForestNum();
 			}
@@ -228,9 +235,11 @@ Tree* RNA::buildTree(void) {
 			if(nodes.top()->getSubTreeSize() == 1) {
 				tree->preL_to_lid[nodes.top()->getID()] = nodes.top()->getID();
 				tree->preL_to_rid[nodes.top()->getID()] = nodes.top()->getID();
+				tree->preL_to_hid[nodes.top()->getID()] = nodes.top()->getID();
 			} else {
 				tree->preL_to_lid[nodes.top()->getID()] = tree->preL_to_lid[nodes.top()->getLeftmostChild()->getID()];
       			tree->preL_to_rid[nodes.top()->getID()] = tree->preL_to_rid[nodes.top()->getRightmostChild()->getID()];
+      			tree->preL_to_hid[nodes.top()->getID()] = tree->preL_to_hid[max_child];
 			}
 			tree->preL_to_preR[nodes.top()->getID()] = tree->treeSize_ - 1 - tree->preL_to_postL[nodes.top()->getID()];
 			tree->preR_to_preL[tree->treeSize_ - 1 - tree->preL_to_postL[nodes.top()->getID()]] = nodes.top()->getID();
