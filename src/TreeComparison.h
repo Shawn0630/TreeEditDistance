@@ -2,7 +2,6 @@
 #include "Strategy.h"
 #include "Node.h"
 #include "Tree.h"
-#include "CompressedTree.h"
 #include "RNA.h"
 #include "SimiMatrix.h"
 #include "TreeMap.h"
@@ -15,15 +14,11 @@ class TreeComparison {
 private:	
 	Tree* A_;
 	Tree* B_;
-	CompressedTree* cA_;
-	CompressedTree* cB_;
 	RNA rA_;
 	RNA rB_;
 	SimiMatrix costModel_;
 	int treeSizeA;
 	int treeSizeB;
-	int compressedTreeSizeA;
-	int compressedTreeSizeB;
 	int** Free;
 	int** LeftA;
 	int** LeftB;
@@ -72,7 +67,6 @@ private:
 	//void gteo(Node*, Node*);
 	void gteo_LL(Node* a, Node* b);
 	int getPathType(Tree*, Node*, int);
-	void computeSumInsAndDelCost_compressed(CompressedTree*);
 	void computeSumInsAndDelCost(Tree*);
 	void computeTreeDistance();
 
@@ -111,13 +105,8 @@ public:
 	void setCostModel(SimiMatrix);
 	void init(string);
 	void strategyComputation(void);
-<<<<<<< Updated upstream
-	void strategyComputation_compressed(void);
-=======
 	void demaineStrategyComputation(void);
->>>>>>> Stashed changes
 	float getTreeDistance(void);
-	float getTreeDistance_compressed(void);
 	float getTreeDistance_LL(void);
 	float getTreeDistance_RR(void);
 	float getTreeDistance_ND(void);
