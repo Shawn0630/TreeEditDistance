@@ -1,6 +1,5 @@
 # Tree Edit Distance
-> This prject is under the supervision of Dr. Kaizhong Zhang. 
-****
+The master thesis project under the supervision of Dr. Kaizhong Zhang. 
 ## Contract Information:
 **Author:** Shaofeng Jiang, the masters' student in the Department of Computer Science, University of Western Ontario. 
 
