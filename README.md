@@ -1,20 +1,10 @@
-# TreeEditDistance
-Tree Edit Distance
+# Tree Edit Distance
+> This prject is under the supervision of Dr. Kaizhong Zhang. 
+****
+**Author:** Shaofeng Jiang, the masters' student in the Department of Computer Science, University of Western Ontario. 
 
-Shaofeng Jiang
+**Address:** Middlesex College 222
 
-Masters' student supervised by Dr. Kaizhong Zhang
-
-Department of Computer Science
-
-University of Western Ontario
-
-Address: Middlesex College 222
-
-University of Western Ontario
-
-London, Ontario, N6A 5B7, Canada
-
-e-mail:  sjian7@uwo.ca
+**E-mail:** sjian7@uwo.ca
 
 
